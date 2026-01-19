@@ -47,7 +47,7 @@ If PDF rendering fails due to missing LaTeX:
 | **Office** | Physics 239 |
 | **Office Hours** | Fridays 11:00 am–12:00 pm (and by appointment) |
 | **Class meetings** | Tues/Thurs 12:30–1:45 pm |
-| **Location** | LH 245 |
+| **Location** | LH 249 |
 | **Course website** | <https://astrobytes-edu.github.io/astr201-sp26> |
 | **Platforms:** <br>*(where things happen)* | [Canvas](https://sdsu.instructure.com) *(announcements, submissions, gradebook)*<br>[Course website](https://astrobytes-edu.github.io/astr201-sp26) *(course materials, handouts, assignments)*<br>[iClicker](https://student.iclicker.com/) *(in-class scholarly engagement)* |
 | **Virtual ASTR 201 AI Tutor:** <br>*(for studying, enhanced learning)* | **ASTR 201 NotebookLM Notebook** <br>*(Grounded in course materials only. Invitation via your SDSU email.)* |
