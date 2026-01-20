@@ -14,7 +14,7 @@
   --slide-safe-left: 0;
   --slide-safe-right: 0;
 
-  --slide-logo-h: 7vh;
+  --slide-logo-h: 4.66vh;
   --slide-logo-bottom: 1.65rem;
   --slide-logo-right: 2vw;
 }
@@ -69,6 +69,10 @@
   align-items: start;
 }
 
+.reveal .columns > .column {
+  overflow: hidden;
+}
+
 // ---------------------------------------------------------------------------
 // Fragments (slightly softer entrance; does not change layout)
 // ---------------------------------------------------------------------------
@@ -89,6 +93,8 @@ body.spotlight-on .cursor-dot {
 // ---------------------------------------------------------------------------
 .reveal .media-block {
   position: relative;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .reveal .media-embed {
