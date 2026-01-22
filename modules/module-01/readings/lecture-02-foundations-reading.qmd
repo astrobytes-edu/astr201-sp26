@@ -1,0 +1,879 @@
+---
+title: "Lecture 2: Tools of the Trade"
+subtitle: "Mastering Astrophysical Reasoning"
+author: "Dr. Anna Rosen"
+date: "2026-01-22"
+description: "Four problem-solving tools—dimensional analysis, ratios, unit conversions, and order-of-magnitude estimation—transform points of light into physical understanding."
+draft: false
+categories: [foundations, math-tools]
+course: ASTR 201
+module: "1 - Foundations"
+learning-objectives:
+  - Use dimensional analysis to verify equation validity and derive scaling relationships
+  - Apply the ratio method to compare astronomical quantities without big-number arithmetic
+  - Convert fluently between SI and CGS unit systems
+  - Perform order-of-magnitude estimations to sanity-check results
+Concept-Throughline:
+  - Dimensions catch mistakes before they become beliefs
+  - Ratios eliminate "big number" paralysis
+  - Unit conversions translate between measurement systems
+  - OOM estimation sanity-checks reality
+math-level: symbolic_with_interpretation
+mode: Refine
+prerequisites: Comfort with basic algebra; familiarity with exponents and scientific notation
+---
+
+## Learning Objectives
+
+By the end of this reading, you will be able to:
+
+1. **Use dimensional analysis** to verify whether an equation could possibly be correct
+2. **Apply the ratio method** to compare astronomical quantities without wrestling with enormous numbers
+3. **Convert** between SI and CGS unit systems fluently
+4. **Perform order-of-magnitude estimations** to sanity-check whether your answers make physical sense
+
+::: {.callout-tip title="The Big Idea"}
+**Every physics mistake leaves a fingerprint.**
+
+Dimensional analysis is your smoke detector—it catches errors *before* you waste time calculating. Ratios eliminate the paralysis of giant numbers. Unit conversions let you speak the language of astrophysics. And order-of-magnitude thinking keeps you grounded in physical reality.
+
+These four tools transform astronomy from memorizing facts into *doing physics*.
+:::
+
+---
+
+## Why This Matters: The Challenge of Points of Light
+
+Stars appear as mere points of light. Is that faint red glow a tiny nearby dwarf or a massive distant supergiant? We can't visit them. We can't weigh them directly. We can't send a probe to measure their temperature.
+
+So how do we know *anything* about them?
+
+We need a toolkit that extracts physics from limited data. That's what this lecture provides: four methods that turn "points of light" into physical understanding.
+
+::: {.callout-roadmap title="Your Roadmap Through Lecture 2"}
+**Section 2.1 — Dimensional Analysis:** The "smoke detector" for physics. Learn to catch impossible equations before you waste time calculating.
+
+**Section 2.2 — The Ratio Method:** Escape the trap of enormous numbers by comparing quantities to known references.
+
+**Section 2.3 — Unit Conversions:** Master the CGS system that astrophysicists use, and learn to translate fluently.
+
+**Section 2.4 — Order-of-Magnitude Estimation:** Develop intuition for cosmic scales and learn when an answer is "in the right ballpark."
+
+**Section 2.5 — Connecting the Toolkit:** See how all four tools work together in practice.
+
+**Fair warning:** These aren't just "math drills"—they're *inference tools*. By the end of this reading, you'll be able to derive how planets orbit and estimate the size of a black hole using nothing but dimensional logic.
+:::
+
+---
+
+## 2.1 Tool 1: Dimensional Analysis
+
+### The Smoke Detector for Physics
+
+Here's a student's attempt to calculate Mars's orbital period:
+
+$$P = \frac{r^2}{GM}$$
+
+Their calculator gives $P = 3.5 \times 10^{14}$... something.
+
+**Can you tell this equation is wrong without doing any calculation?**
+
+Yes. And the method is called **dimensional analysis**.
+
+::: {.column-margin}
+**Dimension:** The physical nature of a quantity—what *kind* of thing it is (length, mass, time, etc.). Dimensions are invariant; units are conventions.
+:::
+
+### Units vs. Dimensions
+
+Every physical quantity has two aspects:
+
+- **Units** are human conventions: meters vs. centimeters, grams vs. kilograms
+- **Dimensions** are physical invariants: length is length, no matter what unit you measure it in
+
+{{< fig units-vs-dimensions >}}
+
+We denote dimensions with square brackets:
+
+| Dimension | Symbol | Examples of Units |
+|-----------|--------|-------------------|
+| Length | $[L]$ | cm, m, AU, pc, ly |
+| Mass | $[M]$ | g, kg, $M_\odot$ |
+| Time | $[T]$ | s, yr, Myr |
+
+::: {.callout-key-insight title="The Fundamental Trio"}
+Every physical quantity in mechanics can be built from three fundamental dimensions: **Length**, **Mass**, and **Time**.
+
+Velocity? That's $[L]/[T] = [LT^{-1}]$.
+Energy? That's mass times velocity squared: $[M][L^2][T^{-2}] = [ML^2T^{-2}]$.
+
+Dimensions are the DNA of physical quantities.
+:::
+
+### Derived Quantities
+
+Here's how common quantities build from the fundamental three:
+
+{{< fig fundamental-dimensions >}}
+
+| Quantity | Dimensions | CGS Unit |
+|----------|------------|----------|
+| Velocity | $[LT^{-1}]$ | cm/s |
+| Acceleration | $[LT^{-2}]$ | cm/s² |
+| Force | $[MLT^{-2}]$ | dyne (g cm/s²) |
+| Energy | $[ML^2T^{-2}]$ | erg (g cm²/s²) |
+| Pressure | $[ML^{-1}T^{-2}]$ | dyne/cm² |
+
+::: {.callout-check-yourself}
+What are the dimensions of momentum $p = mv$?
+
+*(Think first... then check: $[M][LT^{-1}] = [MLT^{-1}]$. Momentum has dimensions of mass times velocity.)*
+:::
+
+### The Smoke Detector Test
+
+Here's the key insight: **both sides of any valid physics equation must have the same dimensions.**
+
+If you calculate a star's mass and get an answer with dimensions of time, *the physics is wrong*. You don't need a calculator to know something is broken.
+
+Let's apply this to the student's equation:
+
+$$P = \frac{r^2}{GM}$$
+
+The left side should be period: $[P] = [T]$.
+
+What's on the right side?
+
+- $[r^2] = [L^2]$
+- What about $[GM]$? We need to figure out $[G]$ first.
+
+### What Are the Dimensions of $G$?
+
+Newton's law of gravity tells us:
+
+$$F = \frac{GMm}{r^2}$$
+
+::: {.callout-tip .eq-gloss appearance="minimal" title="What's in this equation?"}
+- $F$: gravitational force between two masses
+- $G$: gravitational constant (how strong is gravity?)
+- $M$: mass of the central object (e.g., star)
+- $m$: mass of the orbiting object (e.g., planet)
+- $r$: distance between the two masses
+:::
+
+We know $[F] = [MLT^{-2}]$. Solving for $[G]$:
+
+$$[G] = \frac{[F][r^2]}{[M][m]} = \frac{[MLT^{-2}][L^2]}{[M^2]} = [M^{-1}L^3T^{-2}]$$
+
+::: {.callout-important title="Memorize This"}
+$$[G] = [M^{-1}L^3T^{-2}]$$
+
+$G$ has composite dimensions because it converts mass and distance into accelerations and timescales. This is the gravitational constant's dimensional "fingerprint."
+:::
+
+{{< fig physical-constants >}}
+
+### Back to the Student's Error
+
+Now we can check $[GM]$:
+
+$$[GM] = [M^{-1}L^3T^{-2}][M] = [L^3T^{-2}]$$
+
+So the student's equation gives:
+
+$$\left[\frac{r^2}{GM}\right] = \frac{[L^2]}{[L^3T^{-2}]} = [L^{-1}T^2]$$
+
+That's "time squared per length"—physically meaningless. **The equation is guaranteed wrong.**
+
+::: {.callout-check-yourself}
+A student claims that orbital period scales as $P \propto \sqrt{r^3/GM}$. Check whether this has dimensions of time.
+
+*(Think first... then check: $[r^3/GM] = [L^3]/[L^3T^{-2}] = [T^2]$. Taking the square root gives $[T]$. Yes, this has dimensions of time—it could be correct!)*
+:::
+
+### The Dimensional Analysis Protocol
+
+{{< fig da-protocol >}}
+
+Here's the systematic approach:
+
+1. **Identify the target**: What are you trying to find? What dimensions should it have?
+2. **List the ingredients**: What quantities could the answer depend on? What are their dimensions?
+3. **Build a combination**: Assume the answer is a product of powers: $\text{target} \propto x^a y^b z^c ...$
+4. **Match exponents**: Set up equations so the dimensions match on both sides
+5. **Solve**: Find the exponents $a, b, c, ...$
+
+### Worked Example: Deriving Kepler's Third Law
+
+Let's derive how orbital period $P$ scales with orbital radius $r$ and central mass $M$.
+
+**Step 1: Target**
+
+We want $[P] = [T]$.
+
+**Step 2: Ingredients**
+
+| Quantity | Dimensions |
+|----------|------------|
+| $r$ (orbital radius) | $[L]$ |
+| $M$ (central mass) | $[M]$ |
+| $G$ (gravitational constant) | $[M^{-1}L^3T^{-2}]$ |
+
+**Step 3: Assume a power-law form**
+
+$$P \propto r^a M^b G^c$$
+
+**Step 4: Match dimensions**
+
+$$[T] = [L]^a [M]^b [M^{-1}L^3T^{-2}]^c$$
+
+Expand:
+$$[T] = [L]^{a+3c} [M]^{b-c} [T]^{-2c}$$
+
+Match exponents:
+- Time: $1 = -2c \Rightarrow c = -\frac{1}{2}$
+- Mass: $0 = b - c \Rightarrow b = c = -\frac{1}{2}$
+- Length: $0 = a + 3c \Rightarrow a = -3c = \frac{3}{2}$
+
+**Step 5: Result**
+
+$$P \propto r^{3/2} M^{-1/2} G^{-1/2} = \sqrt{\frac{r^3}{GM}}$$
+
+::: {.callout-key-insight title="What This Tells Us"}
+**What it predicts:** Given $r$, $M$, and $G$, we can determine the orbital period.
+
+**What it depends on:** Period increases with orbital radius ($r \uparrow \Rightarrow P \uparrow$) and decreases with central mass ($M \uparrow \Rightarrow P \downarrow$—stronger gravity means faster orbits).
+
+**What it says:** Farther orbits take *much* longer ($P \propto r^{3/2}$). More mass makes orbits faster.
+
+**The exact formula:** With the numerical factor that DA can't determine: $P = 2\pi\sqrt{r^3/GM}$
+:::
+
+::: {.callout-note title="What Dimensional Analysis Cannot Do"}
+Dimensional analysis determines *scaling relationships* but cannot determine *pure numbers* like $2\pi$, $\frac{1}{2}$, or $4/3$. It tells you *how* things scale, not the exact numerical prefactor.
+
+This is still enormously powerful—knowing $P \propto r^{3/2}$ lets you compare any two orbits without knowing $G$ or doing detailed calculations.
+:::
+
+### Another Example: Black Hole Event Horizon
+
+What sets the "point of no return" around a black hole?
+
+**Target:** A length scale $R$ where gravity wins against light.
+
+**Ingredients:**
+
+| Quantity | Dimensions |
+|----------|------------|
+| $M$ (black hole mass) | $[M]$ |
+| $G$ (gravity) | $[M^{-1}L^3T^{-2}]$ |
+| $c$ (speed of light) | $[LT^{-1}]$ |
+
+::: {.column-margin}
+**Event horizon:** The boundary beyond which nothing—not even light—can escape a black hole's gravitational pull.
+:::
+
+Assume $R \propto G^a M^b c^d$ and match dimensions to $[L]$:
+
+$$[L] = [M^{-1}L^3T^{-2}]^a [M]^b [LT^{-1}]^d$$
+
+Expanding:
+$$[L] = [L]^{3a+d} [M]^{-a+b} [T]^{-2a-d}$$
+
+Matching:
+- Time: $0 = -2a - d \Rightarrow d = -2a$
+- Mass: $0 = -a + b \Rightarrow b = a$
+- Length: $1 = 3a + d = 3a - 2a \Rightarrow a = 1$
+
+Therefore $a = 1$, $b = 1$, $d = -2$:
+
+$$R \propto \frac{GM}{c^2}$$
+
+::: {.callout-key-insight title="The Schwarzschild Radius"}
+The exact result (from general relativity) is:
+
+$$R_s = \frac{2GM}{c^2}$$
+
+Dimensional analysis got the scaling exactly right. The factor of 2 comes from solving Einstein's equations—but we captured the essential physics without any of that machinery.
+
+**What it tells us:** More mass $\Rightarrow$ bigger event horizon (linear scaling). If the speed of light were larger, horizons would be smaller (harder to trap light).
+:::
+
+::: {.callout-check-yourself}
+Using $R_s \propto GM/c^2$, predict what happens to the event horizon if you double the black hole's mass.
+
+*(Think first... then check: Since $R_s \propto M$ linearly, doubling the mass doubles the event horizon radius.)*
+:::
+
+---
+
+## 2.2 Tool 2: The Ratio Method
+
+### Escaping the "Big Number" Trap
+
+The mass of the Sun: $M_\odot = 2 \times 10^{33}$ g
+The mass of Earth: $M_\oplus = 6 \times 10^{27}$ g
+
+What can we do with these numbers?
+
+**Subtraction fails:**
+$$M_\odot - M_\oplus = 1.999... \times 10^{33} \text{ g}$$
+
+That's useless—it's still just a giant number that conveys no intuition.
+
+**Division works:**
+$$\frac{M_\odot}{M_\oplus} = \frac{2 \times 10^{33}}{6 \times 10^{27}} = \frac{2}{6} \times 10^{6} \approx 333{,}000$$
+
+The Sun is about **333,000 times** more massive than Earth. *That* tells you something.
+
+::: {.callout-key-insight title="Why Ratios Work"}
+Ratios give **relative scale**. Absolute numbers often don't.
+
+When you hear "the Sun's mass is $2 \times 10^{33}$ grams," your brain has no intuition for what that means. When you hear "the Sun is 333,000 Earths," you can start to picture it.
+:::
+
+### The Cancellation Trick
+
+Most physical laws are proportionality relationships:
+
+$$A = k B^n$$
+
+where $k$ is some constant (often involving $\pi$, $G$, etc.).
+
+When comparing two systems:
+
+$$\frac{A_2}{A_1} = \frac{k B_2^n}{k B_1^n} = \left(\frac{B_2}{B_1}\right)^n$$
+
+**The constant $k$ cancels!**
+
+This means you don't need to know $G$, $\pi$, or any other constant numerically. You just need to know the *scaling*.
+
+::: {.callout-worked-example title="How Many Earths Fit in the Sun?"}
+The Sun's radius is 109 times Earth's radius:
+$$\frac{R_\odot}{R_\oplus} = 109$$
+
+Volume of a sphere: $V = \frac{4}{3}\pi R^3$
+
+How many Earths fit inside the Sun?
+
+$$\frac{V_\odot}{V_\oplus} = \left(\frac{R_\odot}{R_\oplus}\right)^3 = 109^3 \approx 1.3 \times 10^6$$
+
+**Over 1 million Earths!**
+
+Notice: we never calculated actual volumes in cm³. The $\frac{4}{3}\pi$ cancelled completely. Ratios are enough.
+:::
+
+### Scaling Intuition
+
+The power in a scaling law tells you the physical story:
+
+| Scaling | Physical Meaning | Example |
+|---------|------------------|---------|
+| $A \propto B$ | Linear | Schwarzschild radius vs. mass |
+| $A \propto B^2$ | Area scaling | Surface area, cross-section |
+| $A \propto B^3$ | Volume scaling | Mass (if density constant) |
+| $A \propto B^{-2}$ | Inverse-square | Gravity, light intensity |
+| $A \propto B^{3/2}$ | Kepler scaling | Orbital period vs. radius |
+
+**Small changes in input $\Rightarrow$ big changes in output when $n > 1$.**
+
+::: {.callout-check-yourself}
+If you double a planet's orbital radius, by what factor does its orbital period increase?
+
+*(Think first... then check: Using $P \propto r^{3/2}$, doubling $r$ gives $P_2/P_1 = 2^{3/2} = 2\sqrt{2} \approx 2.8$. The period increases by about a factor of 2.8.)*
+:::
+
+### Applying Ratios: Mars's Orbital Period
+
+Kepler's Third Law, in ratio form using Earth as the reference:
+
+$$\left(\frac{P}{1\,\text{yr}}\right)^2 = \left(\frac{a}{1\,\text{AU}}\right)^3$$
+
+Mars orbits at $a = 1.52$ AU. What's its period?
+
+**Step 1:** Substitute:
+$$\left(\frac{P}{1\,\text{yr}}\right)^2 = (1.52)^3 \approx 3.5$$
+
+**Step 2:** Solve:
+$$\frac{P}{1\,\text{yr}} = \sqrt{3.5} \approx 1.87$$
+
+**Result:** $P_\text{Mars} \approx 1.9$ years
+
+The actual value is 1.88 years. We got excellent agreement without knowing $G$ or doing any complicated calculation—just ratios.
+
+::: {.callout-check-yourself}
+Jupiter orbits at 5.2 AU. Estimate its orbital period.
+
+*(Think first... then check: $P^2 = 5.2^3 \approx 141$, so $P \approx \sqrt{141} \approx 12$ years. Actual value: 11.9 years.)*
+:::
+
+::: {.callout-deep-dive title="Why Does $P \propto a^{3/2}$?" collapse="true"}
+A planet farther from the Sun experiences two effects:
+
+1. **Longer path:** The circumference of the orbit scales as $2\pi a \propto a$
+2. **Slower speed:** Weaker gravity at larger distances means the planet moves more slowly
+
+The orbital speed for a circular orbit is $v = \sqrt{GM/a}$, so $v \propto a^{-1/2}$.
+
+Period = distance/speed:
+$$P = \frac{2\pi a}{v} \propto \frac{a}{a^{-1/2}} = a^{3/2}$$
+
+The two effects combine to give $P \propto a^{3/2}$—period grows *faster* than linearly with distance.
+:::
+
+---
+
+## 2.3 Tool 3: Unit Conversions
+
+### Why Astronomers Use CGS
+
+Astronomy uses the **CGS** system (centimeter-gram-second), not SI (meter-kilogram-second).
+
+| Base Unit | CGS | SI |
+|-----------|-----|-----|
+| Length | cm | m |
+| Mass | g | kg |
+| Time | s | s |
+
+**Derived units:**
+
+| Quantity | CGS | SI |
+|----------|-----|-----|
+| Energy | erg | Joule |
+| Force | dyne | Newton |
+| Power | erg/s | Watt |
+
+::: {.column-margin}
+**Historical note:** CGS became the astronomical standard in the 19th century and stuck. One practical advantage: stellar luminosities and masses come out with "reasonable" exponents. The Sun's luminosity is $3.8 \times 10^{33}$ erg/s, which has a nice relationship to the solar mass $2 \times 10^{33}$ g.
+:::
+
+### Scientific Notation: The Language of Extremes
+
+Numbers in astronomy span over 40 orders of magnitude. Scientific notation makes them manageable.
+
+$$a \times 10^n$$
+
+| Part | Meaning |
+|------|---------|
+| $a$ | Coefficient (1–10) |
+| $10^n$ | Power of 10 |
+| $n > 0$ | Big number |
+| $n < 0$ | Small number |
+
+**Rules for exponents:**
+
+| Operation | Rule | Example |
+|-----------|------|---------|
+| Multiplication | Add exponents | $10^3 \times 10^5 = 10^8$ |
+| Division | Subtract exponents | $10^{33}/10^{27} = 10^6$ |
+| Powers | Multiply exponents | $(10^3)^2 = 10^6$ |
+
+::: {.callout-check-yourself}
+Simplify: $(3 \times 10^{33}) / (6 \times 10^{27})$
+
+*(Think first... then check: $(3/6) \times 10^{33-27} = 0.5 \times 10^6 = 5 \times 10^5$)*
+:::
+
+### SI Prefixes You'll Use
+
+| Prefix | Symbol | Power | Astronomy Example |
+|--------|--------|-------|-------------------|
+| giga | G | $10^{9}$ | GHz (radio frequencies) |
+| mega | M | $10^{6}$ | Mpc (galaxy distances) |
+| kilo | k | $10^{3}$ | km, kpc |
+| centi | c | $10^{-2}$ | cm (CGS base) |
+| milli | m | $10^{-3}$ | mm |
+| micro | μ | $10^{-6}$ | μm (infrared) |
+| nano | n | $10^{-9}$ | nm (visible light) |
+
+### The Conversion Method: Multiplying by 1
+
+The key insight: $1 \text{ m} = 100 \text{ cm}$ can be written as:
+
+$$\frac{100\text{ cm}}{1\text{ m}} = 1$$
+
+**Multiplying by 1 doesn't change the physics.** It only changes how we write the number.
+
+::: {.callout-worked-example title="Converting Speed: km/s to cm/s"}
+Convert 30 km/s (Earth's orbital speed) to cm/s.
+
+**Step 1: Set up conversion factors**
+$$\frac{10^3\,\text{m}}{1\,\text{km}} = 1 \quad \text{and} \quad \frac{10^2\,\text{cm}}{1\,\text{m}} = 1$$
+
+**Step 2: Chain them together**
+$$30\,\frac{\text{km}}{\text{s}} \times \frac{10^3\,\text{m}}{1\,\text{km}} \times \frac{10^2\,\text{cm}}{1\,\text{m}}$$
+
+**Step 3: Cancel units**
+$$= 30 \times 10^3 \times 10^2 \,\frac{\text{cm}}{\text{s}} = 30 \times 10^5 \,\text{cm/s}$$
+
+**Step 4: Express in standard form**
+$$= 3 \times 10^6 \,\text{cm/s}$$
+:::
+
+::: {.callout-worked-example title="Converting Luminosity: Watts to erg/s"}
+Convert the Sun's luminosity from SI to CGS:
+
+$L_\odot = 3.8 \times 10^{26}$ W = ?  erg/s
+
+**Key conversions:**
+- 1 W = 1 J/s
+- 1 J = $10^7$ erg
+
+**Calculation:**
+$$3.8 \times 10^{26}\,\text{W} = 3.8 \times 10^{26}\,\text{J/s} = 3.8 \times 10^{26} \times 10^7\,\text{erg/s}$$
+
+$$= 3.8 \times 10^{33}\,\text{erg/s}$$
+:::
+
+::: {.callout-warning title="Watch Out for Squared/Cubed Units!"}
+When converting areas or volumes, the conversion factor gets squared or cubed.
+
+**Example:** How many erg in 1 Joule?
+
+$$1\,\text{J} = 1\,\text{kg}\cdot\text{m}^2\cdot\text{s}^{-2}$$
+
+Converting:
+- 1 kg = $10^3$ g
+- 1 m = $10^2$ cm, so 1 m² = $(10^2)^2 = 10^4$ cm²
+
+$$1\,\text{J} = 10^3\,\text{g} \times 10^4\,\text{cm}^2 \times \text{s}^{-2} = 10^7\,\text{erg}$$
+
+**Common mistake:** Forgetting to square the 100 when converting m² to cm².
+:::
+
+::: {.callout-check-yourself}
+Convert 1 AU ($1.5 \times 10^{13}$ cm) to kilometers.
+
+*(Think first... then check: $1.5 \times 10^{13}$ cm × $(1\,\text{m}/10^2\,\text{cm})$ × $(1\,\text{km}/10^3\,\text{m})$ = $1.5 \times 10^{13-2-3}$ km = $1.5 \times 10^8$ km)*
+:::
+
+### Key Values to Memorize
+
+| Quantity | CGS Value |
+|----------|-----------|
+| 1 parsec | $3.09 \times 10^{18}$ cm |
+| 1 AU | $1.50 \times 10^{13}$ cm |
+| Solar mass $M_\odot$ | $2.0 \times 10^{33}$ g |
+| Solar radius $R_\odot$ | $7.0 \times 10^{10}$ cm |
+| Solar luminosity $L_\odot$ | $3.8 \times 10^{33}$ erg/s |
+| Speed of light $c$ | $3.0 \times 10^{10}$ cm/s |
+| Gravitational constant $G$ | $6.67 \times 10^{-8}$ cm³ g⁻¹ s⁻² |
+
+---
+
+## 2.4 Tool 4: Order-of-Magnitude Estimation
+
+### You Already Do This
+
+"Can I drive there before dinner?"
+
+You estimate:
+- Distance: ~50 miles
+- Speed: ~50 mph
+- Time: ~1 hour
+
+No calculator needed. **Good enough.**
+
+This is order-of-magnitude reasoning—and it's essential in astronomy.
+
+### Why It's Essential
+
+Astronomical numbers span **over 40 orders of magnitude**:
+
+{{< fig logarithmic-cosmic-scales >}}
+
+| Scale | Size (cm) | What |
+|-------|-----------|------|
+| $10^{-13}$ | Atomic nucleus | Where fusion happens |
+| $10^{-5}$ | Visible light wavelength | What we detect |
+| $10^{10}$ | Solar radius | A typical star |
+| $10^{18}$ | 1 parsec | Distance scale |
+| $10^{28}$ | Observable universe | Cosmic horizon |
+
+Exact precision can *hide* the physics. If you're off by a factor of 2, that's a triumph. If you're off by $10^{10}$, something is fundamentally wrong.
+
+### The "Rule of 3"
+
+When estimating, use this guideline:
+
+- Coefficient < 3 → round **down** to 1
+- Coefficient > 3 → round **up** to 10
+
+**Examples:**
+- $2 \times 10^{33}$ → $10^{33}$
+- $7 \times 10^{10}$ → $10^{11}$
+
+The **exponent tells the story**. Coefficients are refinement.
+
+### The Universe's "Phone Number"
+
+Here's a mnemonic for cosmic scales:
+
+{{< fig universe-phone-number >}}
+
+**555-711-2555**
+
+- **555 (area code):** Three steps *down* from human scale
+  - × $10^{-5}$: human → cells
+  - × $10^{-5}$: cells → atoms
+  - × $10^{-5}$: atoms → nucleus
+
+- **711 (exchange):** Solar system scales
+  - × $10^{7}$: human → Earth
+  - × $10^{1}$: Earth → Jupiter
+  - × $10^{1}$: Jupiter → Sun
+
+- **2555 (subscriber):** The cosmos
+  - × $10^{2}$: Sun → 1 AU
+  - × $10^{5}$: 1 AU → nearest stars (~1 pc)
+  - × $10^{5}$: nearest stars → Milky Way
+  - × $10^{5}$: Milky Way → observable universe
+
+::: {.callout-tip title="Using the Phone Number as a Sanity Check"}
+If your calculation gives a stellar distance = $10^{11}$ cm...
+
+That's Sun-sized, not star-distance. **Red flag!**
+
+Stellar distances should be ~$10^{18}$ cm (parsecs), not $10^{11}$ cm (solar radii).
+:::
+
+### Classic Fermi Problem: Piano Tuners in Chicago
+
+How many piano tuners work in Chicago?
+
+**Estimate the pieces:**
+- Population: ~3 million → $10^6$
+- Households: ~1 million → $10^6$
+- Pianos per household: ~1/10 → $10^{-1}$
+- Pianos: $10^5$
+- Tunings per piano per year: ~1
+- Tunings per tuner per year: ~500 → $10^{2.7}$ ≈ $10^3$
+
+**Combine:**
+$$\frac{10^5 \times 1}{10^3} = 10^2 \approx 100\text{–}300 \text{ tuners}$$
+
+We got a reasonable ballpark without any exact data.
+
+::: {.callout-worked-example title="Verifying the Black Hole Anchor Value"}
+Earlier we said a 1 $M_\odot$ black hole has $R_s \approx 3$ km. Let's verify this with OOM estimation.
+
+$$R_s \approx \frac{GM}{c^2}$$
+
+**Using CGS and rounding:**
+- $G \approx 10^{-7}$ cm³ g⁻¹ s⁻²
+- $M_\odot \approx 10^{33}$ g
+- $c \approx 10^{10}$ cm/s
+
+$$R_s \approx \frac{10^{-7} \times 10^{33}}{(10^{10})^2} = \frac{10^{26}}{10^{20}} = 10^6\,\text{cm} = 10\,\text{km}$$
+
+**Exact answer: 3 km.** We're off by a factor of 3—*that's OOM success!*
+:::
+
+::: {.callout-check-yourself}
+Estimate the Schwarzschild radius of Sgr A*, the supermassive black hole at the center of the Milky Way, which has mass $\approx 4 \times 10^6\,M_\odot$.
+
+*(Think first... then check: Since $R_s \propto M$, we scale from the 1 $M_\odot$ value: $R_s \approx 3\,\text{km} \times 4 \times 10^6 \approx 10^7$ km. That's about 17 solar radii, or roughly 0.08 AU—well inside Mercury's orbit!)*
+:::
+
+---
+
+## 2.5 Connecting the Toolkit
+
+### The Problem-Solving Flow
+
+These four tools work together:
+
+1. **Dimensional Analysis:** Is this equation even physically valid?
+2. **Ratio Method:** How does this compare to something I know?
+3. **Unit Conversion:** What's the numeric value in CGS?
+4. **OOM Check:** Does this answer make sense?
+
+**Use all four for robust reasoning.**
+
+### Example: Complete Workflow
+
+**Problem:** How long does it take light to cross the Milky Way?
+
+**Step 1: Set up (DA check)**
+
+Time = distance/speed. Dimensions: $[T] = [L]/[LT^{-1}] = [T]$ ✓
+
+**Step 2: Identify values**
+
+- Milky Way diameter: ~100,000 light-years = $10^5$ ly
+- Speed of light: 1 ly/year (by definition!)
+
+**Step 3: Calculate with ratios**
+
+$$t = \frac{10^5\,\text{ly}}{1\,\text{ly/yr}} = 10^5\,\text{yr} = 100{,}000\,\text{years}$$
+
+**Step 4: OOM sanity check**
+
+Light crosses 1 ly in 1 year. The Milky Way is $10^5$ ly across. So ~$10^5$ years makes sense. ✓
+
+**Step 5: Convert to other units if needed**
+
+$10^5$ years = $10^5 \times 3 \times 10^7$ s ≈ $3 \times 10^{12}$ s
+
+::: {.callout-check-yourself}
+Light from the Sun takes 8.3 minutes to reach Earth. How far away is the Sun in AU? (This is essentially the definition of 1 AU, so use it as a sanity check.)
+
+*(Think first... then check: Distance = speed × time = $c \times 8.3$ min = $3 \times 10^{10}$ cm/s × 500 s ≈ $1.5 \times 10^{13}$ cm. That's exactly 1 AU. ✓)*
+:::
+
+---
+
+## Summary: Your New Superpowers
+
+{{< fig math-toolbox >}}
+
+| Tool | Question It Answers | Key Insight |
+|------|---------------------|-------------|
+| **Dimensional Analysis** | Is this equation physically valid? | Dimensions must match on both sides |
+| **Ratio Method** | How does this compare to something known? | Constants cancel; scaling tells the story |
+| **Unit Conversions** | What's the numeric value in CGS? | Multiply by 1; cancel units like variables |
+| **OOM Estimation** | Does this answer make sense? | Exponents matter; coefficients are refinement |
+
+### The Workflow
+
+1. **Before calculating:** Check dimensions
+2. **When comparing:** Use ratios
+3. **When computing:** Convert to CGS
+4. **After getting an answer:** OOM sanity check
+
+### What You Can Now Do
+
+Using just these tools:
+- **Derive** how orbital period scales with distance (Kepler's Third Law)
+- **Estimate** black hole sizes from first principles
+- **Compare** planetary orbits without knowing $G$
+- **Catch** physics errors before wasting time calculating
+
+---
+
+## Self-Assessment Checklist
+
+### ✅ Section 2.1: Dimensional Analysis
+- [ ] I can identify the dimensions of any mechanical quantity using $[L]$, $[M]$, $[T]$
+- [ ] I can verify whether an equation is dimensionally valid
+- [ ] I can derive scaling relationships using the dimensional analysis protocol
+- [ ] I know that $[G] = [M^{-1}L^3T^{-2}]$
+
+### ✅ Section 2.2: The Ratio Method
+- [ ] I can compare astronomical quantities using ratios to avoid big-number arithmetic
+- [ ] I can use Kepler's scaling $P^2 \propto a^3$ to estimate orbital periods
+- [ ] I understand why constants cancel in ratio calculations
+
+### ✅ Section 2.3: Unit Conversions
+- [ ] I can convert between SI and CGS using the "multiply by 1" method
+- [ ] I remember key CGS values: $M_\odot$, $R_\odot$, $L_\odot$, $c$
+- [ ] I know that 1 J = $10^7$ erg
+
+### ✅ Section 2.4: Order-of-Magnitude
+- [ ] I can estimate cosmic quantities to within an order of magnitude
+- [ ] I can use the "phone number" mnemonic to sanity-check scale
+- [ ] I understand that being off by a factor of 3 is OOM success
+
+**All boxes checked?** You're ready for Module 2!
+
+---
+
+## Practice Problems
+
+### Conceptual Questions
+
+1. **Dimensional analysis.** A student proposes that gravitational potential energy is $U = GMmr$. Use dimensional analysis to determine if this could be correct. What should the dimensions of energy be? What does this formula give?
+
+2. **Scaling interpretation.** The Stefan-Boltzmann law says a star's luminosity scales as $L \propto R^2 T^4$. If you double the temperature while keeping the radius constant, by what factor does the luminosity change? What if you double the radius while keeping temperature constant?
+
+3. **Ratio reasoning.** Two stars have the same surface temperature but Star A is 4 times as luminous as Star B. What can you conclude about their relative radii?
+
+### Quick Calculations
+
+4. **Kepler scaling.** Saturn orbits at 9.5 AU. Estimate its orbital period in years.
+
+5. **Black hole size.** A stellar-mass black hole has $M = 10\,M_\odot$. Estimate its Schwarzschild radius in km.
+
+6. **Unit conversion.** Convert Earth's orbital speed of 30 km/s to AU/year. (Hint: 1 AU = $1.5 \times 10^8$ km and 1 year = $3.15 \times 10^7$ s)
+
+7. **OOM estimation.** The Milky Way contains about $10^{11}$ stars. If the average stellar mass is $\sim 0.5\,M_\odot$, estimate the total mass of stars in the galaxy in grams.
+
+### Synthesis
+
+8. **Deriving a new relationship.** Use dimensional analysis to find how the escape velocity $v_\text{esc}$ from a planet scales with the planet's mass $M$ and radius $R$. (Ingredients: $G$, $M$, $R$. Target: velocity $[LT^{-1}]$.)
+
+9. **Applying the toolkit.** You observe two stars of the same spectral type (same temperature). Star A appears 16 times brighter than Star B.
+   - (a) What is the ratio of their distances?
+   - (b) If Star A is at 10 pc, how far away is Star B?
+
+10. **Black hole comparison.** The black hole at the center of M87 has mass $\approx 6.5 \times 10^9\,M_\odot$.
+    - (a) Estimate its Schwarzschild radius in km.
+    - (b) Compare this to the size of our solar system (Pluto's orbit ≈ 40 AU).
+
+::: {.callout-note title="Answers" collapse="true"}
+**1.** Energy has dimensions $[ML^2T^{-2}]$. The formula gives $[GM][m][r] = [M^{-1}L^3T^{-2}][M][M][L] = [ML^4T^{-2}]$. Wrong! (The correct formula is $U = -GMm/r$.)
+
+**2.** Doubling $T$: $L$ increases by $2^4 = 16$. Doubling $R$: $L$ increases by $2^2 = 4$.
+
+**3.** Since $L \propto R^2$ (at constant $T$), if $L_A = 4L_B$, then $R_A = 2R_B$. Star A has twice the radius.
+
+**4.** $P^2 = 9.5^3 \approx 857$, so $P \approx 29$ years. (Actual: 29.5 years)
+
+**5.** $R_s \approx 3\,\text{km} \times 10 = 30$ km.
+
+**6.** $30\,\text{km/s} = 30 \times (3.15 \times 10^7\,\text{s/yr}) / (1.5 \times 10^8\,\text{km/AU}) \approx 6.3$ AU/yr. (Exact: $2\pi$ AU/yr ≈ 6.28)
+
+**7.** $10^{11} \times 0.5 \times 2 \times 10^{33}\,\text{g} = 10^{44}$ g.
+
+**8.** $v_\text{esc} \propto G^a M^b R^c$ with target $[LT^{-1}]$. Solving: $v_\text{esc} \propto \sqrt{GM/R}$.
+
+**9.** (a) Flux $\propto 1/d^2$, so $d_B/d_A = \sqrt{16} = 4$. (b) $d_B = 4 \times 10 = 40$ pc.
+
+**10.** (a) $R_s \approx 3\,\text{km} \times 6.5 \times 10^9 \approx 2 \times 10^{10}$ km ≈ $1.3 \times 10^{11}$ km = 130 AU. (b) That's about 3× Pluto's orbital radius—the event horizon would swallow much of our solar system!
+:::
+
+---
+
+## Glossary
+
+::: {.column-margin}
+**CGS:** The centimeter-gram-second system of units, standard in astrophysics.
+:::
+
+::: {.column-margin}
+**Dimension:** The physical nature of a quantity—length, mass, or time (or combinations). Dimensions are invariant under unit changes.
+:::
+
+::: {.column-margin}
+**Dimensional analysis:** The technique of checking or deriving relationships by matching dimensions on both sides of an equation.
+:::
+
+::: {.column-margin}
+**Event horizon:** The boundary around a black hole beyond which nothing can escape. Its radius is the Schwarzschild radius.
+:::
+
+::: {.column-margin}
+**Fermi estimation:** Order-of-magnitude estimation using rough approximations for unknown quantities.
+:::
+
+::: {.column-margin}
+**Order of magnitude:** A power of 10. Two quantities are "within an order of magnitude" if their ratio is between 0.1 and 10.
+:::
+
+::: {.column-margin}
+**Ratio method:** Comparing quantities by division rather than subtraction, allowing constants to cancel.
+:::
+
+::: {.column-margin}
+**Scaling relationship:** A proportionality showing how one quantity depends on another: $A \propto B^n$.
+:::
+
+::: {.column-margin}
+**Schwarzschild radius:** The radius of a black hole's event horizon: $R_s = 2GM/c^2$.
+:::
+
+::: {.column-margin}
+**Scientific notation:** Expressing numbers as $a \times 10^n$ where $1 \leq a < 10$.
+:::
+
+{{< glossary module=1 >}}
