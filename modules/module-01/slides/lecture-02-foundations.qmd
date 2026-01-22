@@ -119,6 +119,74 @@ The equation is [*guaranteed* wrong]{.text-warning .font-bold}. No calculator ne
 
 ---
 
+## Stop & Solve 1: Dimensional Detective {#stop-solve-1 .smaller}
+
+::: {.callout-note appearance="minimal"}
+### Goal
+Decide if an equation could *possibly* be right **without computing**.
+:::
+
+A student claims the orbital period scales like one of these.
+
+**Which formula(s) could represent an orbital period $P$?**
+(Select all that have dimensions of time.)
+
+::: {.incremental}
+1. $P \propto \dfrac{r^2}{GM}$
+2. $P \propto \sqrt{\dfrac{r^3}{GM}}$
+3. $P \propto \dfrac{r}{\sqrt{GM}}$
+4. $P \propto \sqrt{\dfrac{GM}{r^3}}$
+:::
+
+::: {.callout-tip appearance="minimal"}
+**Given**: $[G] = [M^{-1}L^3T^{-2}]$, $[r]=[L]$, $[M]=[M]$
+:::
+
+::: {.fragment}
+**Work rule:** Don't "plug numbers." Only track $[L],[M],[T]$.
+:::
+
+::: {.fragment .mt-2 .text-sm}
+[→ Quick solution](#solution-1) | [→ Detailed step-by-step](#detailed-solution-1)
+:::
+
+::: {.notes}
+**4–7 min (6–8 minutes total: think → pair → share).**
+- 90s silent: each student checks one or two options.
+- 2–3 min pairs: compare results, resolve disagreements.
+- 2–3 min whole-class: poll options; ask one group to defend their pick using dimensions.
+Emphasize: the point is *error detection*, not memorizing Kepler yet.
+**Navigation:** Press **G** then type slide number to jump to solutions.
+:::
+
+---
+
+## Stop & Solve 1 — Solution {#solution-1 .smaller}
+
+We want $[P]=[T]$. Use $[GM]=[L^3T^{-2}]$ because $[G][M]=[M^{-1}L^3T^{-2}][M]=[L^3T^{-2}]$.
+
+::: {.incremental}
+1) $\dfrac{r^2}{GM} \sim \dfrac{[L^2]}{[L^3T^{-2}]}=[L^{-1}T^2]$ ❌ not time
+2) $\sqrt{\dfrac{r^3}{GM}} \sim \sqrt{\dfrac{[L^3]}{[L^3T^{-2}]}}=\sqrt{[T^2]}=[T]$ ✅
+3) $\dfrac{r}{\sqrt{GM}} \sim \dfrac{[L]}{\sqrt{[L^3T^{-2}]}}=\dfrac{[L]}{[L^{3/2}T^{-1}]}=[L^{-1/2}T]$ ❌ not time
+4) $\sqrt{\dfrac{GM}{r^3}} \sim \sqrt{\dfrac{[L^3T^{-2}]}{[L^3]}}=\sqrt{[T^{-2}]}=[T^{-1}]$ ❌ this is a *frequency* scale
+:::
+
+::: {.fragment .highlight-green}
+**Only option 2** has dimensions of time.
+:::
+
+::: {.mt-2 .text-sm}
+[← Back to problem](#stop-solve-1) | [→ Detailed solution](#detailed-solution-1)
+:::
+
+::: {.notes}
+Key teaching move: #4 is a great "almost-right" — it has the inverse of a period. Name it as an angular/oscillation timescale.
+Reinforce the slogan: "Units don't prove truth, but they can prove wrongness."
+:::
+
+---
+
 ## What You'll Do Today
 
 Using only dimensional analysis, you will:
@@ -126,7 +194,7 @@ Using only dimensional analysis, you will:
 ::: {.incremental}
 - **Derive** how planets orbit (Kepler's Third Law)
 - **Estimate** the size of a black hole's event horizon
-- **Explain** why white dwarfs get *smaller* when they gain mass
+- **Preview** why white dwarfs get *smaller* when they gain mass *(HW derivation)*
 :::
 
 . . .
@@ -135,6 +203,11 @@ No calculus. No memorizing formulas. Just dimensional logic.
 
 ::: {.notes}
 4–5 min. Build anticipation. These are genuinely surprising results—especially the white dwarf one. Students should feel "I want to know how to do that."
+
+**Vocabulary (define when needed later, not here):**
+
+- Event horizon = boundary beyond which nothing can escape; in GR language, no signals reach infinity.
+- White dwarf = stellar remnant supported by electron degeneracy pressure.
 :::
 
 ---
@@ -163,57 +236,22 @@ This isn't talent. It's a **skill** you're about to learn.
 
 ---
 
-## But First: Why Do We Need These Tools?
+## The Challenge: Points of Light
 
-Stars appear as points of light.
-
-We can't visit them. We can't weigh them.
-
-. . .
-
-**So how do we know anything about them?**
-
-. . .
-
-We need a toolkit that extracts physics from limited data.
-
-::: {.notes}
-6–7 min. Transition to the Ambiguity Problem. This bridges the motivation (new) to the framing (existing).
-:::
-
----
-
-## {background-image="/assets/images/common/noirlab-nightsky-mosaic.jpg" background-opacity="0.3"}
-
-::: {.r-fit-text}
-The Ambiguity Problem
-:::
-
-::: {.notes}
-Hook: 0–5 min. Start with mystery, not answers.
-:::
-
----
-
-## Points of Light
-
-When we look at the night sky, stars appear as mere points.
-
-Is that faint red glow...
-
-::: {.incremental}
-- A tiny, nearby dwarf?
-- A massive, distant supergiant?
-:::
+Stars appear as mere points. Is that faint red glow a tiny nearby dwarf or a massive distant supergiant?
 
 . . .
 
 We can't visit them. We can't weigh them directly.
 
-**So how do we know anything about stars?**
+. . .
+
+**So how do we know anything about them?**
+
+We need a toolkit that extracts physics from limited data.
 
 ::: {.notes}
-Build the tension. They have no depth perception. Everything is a 2D projection.
+7–8 min. Quick transition. The hook already established the problem — now pivot to the solution.
 :::
 
 ---
@@ -335,7 +373,7 @@ Tool 1: Dimensional Analysis
 {{< fig units-vs-dimensions >}}
 
 ::: {.notes}
-5–6 min. Key insight: units are human inventions, dimensions are physical reality.
+12–13 min. Key insight: units are human inventions, dimensions are physical reality.
 :::
 
 ---
@@ -357,7 +395,7 @@ Every physical quantity in this course is built from three ingredients:
 [**Dimensions**]{.rn rn-type="underline" rn-color="#ff6b6b"} are invariant physical DNA.
 
 ::: {.notes}
-6–8 min. Emphasize: you can change units, but you can't change what a quantity *is*. Press **R** twice to annotate Units then Dimensions.
+13–14 min. Emphasize: you can change units, but you can't change what a quantity *is*. Press **R** twice to annotate Units then Dimensions.
 :::
 
 ---
@@ -373,7 +411,7 @@ Every physical quantity in this course is built from three ingredients:
 | Pressure | $[ML^{-1}T^{-2}]$ | dyne/cm$^2$ |
 
 ::: {.notes}
-8–9 min. These are recipes. Energy = mass × length² / time².
+14–15 min. These are recipes. Energy = mass × length² / time².
 :::
 
 ---
@@ -383,7 +421,7 @@ Every physical quantity in this course is built from three ingredients:
 {{< fig fundamental-dimensions >}}
 
 ::: {.notes}
-9–10 min. Visual equation builder. Note the sanity check box.
+15–16 min. Visual equation builder. Note the sanity check box.
 :::
 
 ---
@@ -401,7 +439,7 @@ You don't need a calculator to know something's broken.
 :::
 
 ::: {.notes}
-9–11 min. This catches errors *before* you waste time computing. The red highlight draws attention to the key insight.
+16–17 min. This catches errors *before* you waste time computing. The red highlight draws attention to the key insight.
 :::
 
 ---
@@ -457,7 +495,7 @@ Solve for $[G]$:
 $$[G] = \frac{[F][r^2]}{[M][m]} = \frac{[MLT^{-2}][L^2]}{[M^2]} = [M^{-1}L^3T^{-2}]$$
 
 ::: {.notes}
-11–13 min. Walk through cancellation slowly. "G has weird units because gravity is weak."
+17–18 min. Walk through cancellation slowly. "G has composite units because it converts mass + distance into accelerations and timescales in Newton's law."
 :::
 
 ---
@@ -467,7 +505,7 @@ $$[G] = \frac{[F][r^2]}{[M][m]} = \frac{[MLT^{-2}][L^2]}{[M^2]} = [M^{-1}L^3T^{-
 {{< fig physical-constants >}}
 
 ::: {.notes}
-13–14 min. Constants are not arbitrary numbers—they're conversion factors built into the universe.
+18 min. Constants are not arbitrary numbers—they're conversion factors built into the universe.
 :::
 
 ---
@@ -482,7 +520,7 @@ $$P \propto \sqrt{\frac{r^3}{GM}}$$
 **Question:** Verify the dimensions work out to time $[T]$.
 
 ::: {.notes}
-14–15 min. Give them 30 seconds to think.
+19 min. Give them 30 seconds to think.
 
 Answer: $[r^3/GM] = [L^3]/[M^{-1}L^3T^{-2}][M] = [L^3]/[L^3T^{-2}] = [T^2]$
 
@@ -510,7 +548,7 @@ Yes. Using only dimensional analysis.
 {{< fig da-protocol >}}
 
 ::: {.notes}
-16–17 min. This is the recipe. We'll use it repeatedly.
+19–20 min. This is the recipe. We'll use it repeatedly.
 :::
 
 ---
@@ -546,7 +584,7 @@ $$[P] = [T]$$
 ::::
 
 ::: {.notes}
-17–18 min. Remind: we are NOT solving the orbit. We're deducing how P scales with r and M.
+20 min. Remind: we are NOT solving the orbit. We're deducing how P scales with r and M.
 :::
 
 ---
@@ -577,7 +615,7 @@ Dimensional analysis can't determine **pure numbers** like $2\pi$.
 :::
 
 ::: {.notes}
-18–20 min. Point out the "matching exponents" move explicitly. Students confuse units with dimensions—restate: [L] is "length-ness," not meters specifically.
+20–21 min. Point out the "matching exponents" move explicitly. Students confuse units with dimensions—restate: [L] is "length-ness," not meters specifically.
 :::
 
 ---
@@ -614,7 +652,68 @@ $$P = 2\pi\sqrt{\frac{r^{3}}{GM}} \quad \text{(exact for circular orbits)}$$
 :::
 
 ::: {.notes}
-20–21 min. Mention hidden assumptions: roughly circular orbit, central mass dominates, Newtonian gravity.
+21–22 min. Mention hidden assumptions: roughly circular orbit, central mass dominates, Newtonian gravity.
+:::
+
+---
+
+## Stop & Solve 2: Ratio Method — Mars' Year {#stop-solve-2 .smaller}
+
+::: {.callout-note appearance="minimal"}
+### Goal
+Use *ratios* to avoid big-number arithmetic.
+:::
+
+For planets orbiting the Sun, Kepler scaling gives:
+$$\left(\frac{P}{1\,\text{yr}}\right)^2=\left(\frac{a}{1\,\text{AU}}\right)^3$$
+
+Mars has $a = 1.52\,\text{AU}$.
+
+::: {.incremental}
+1. Estimate $P_{\text{Mars}}$ in years (1 significant figure is fine).
+2. Write **one sentence** explaining why $P$ grows faster than linearly with distance.
+:::
+
+::: {.callout-tip appearance="minimal"}
+**Hint:** $1.5^3 \approx 3.4$. Then take a square root.
+:::
+
+::: {.fragment .mt-2 .text-sm}
+[→ Quick solution](#solution-2) | [→ Detailed step-by-step](#detailed-solution-2)
+:::
+
+::: {.notes}
+**19–22 min (7–9 minutes total).**
+- 2 min silent: compute rough $1.52^3$ and sqrt.
+- 3 min pair: agree on estimate + interpretation sentence.
+- 2–3 min share: solicit 2 interpretations; correct gently.
+Emphasize: constants cancel; you're using the solar system as a "calibration."
+**Navigation:** Press **G** then type slide number to jump to solutions.
+:::
+
+---
+
+## Stop & Solve 2 — Solution {#solution-2 .smaller}
+
+$$\left(\frac{P}{1\,\text{yr}}\right)^2=\left(1.52\right)^3 \approx 3.5
+\Rightarrow \frac{P}{1\,\text{yr}} \approx \sqrt{3.5}\approx 1.9$$
+
+::: {.fragment .highlight-green}
+$$P_{\text{Mars}} \approx 1.9\,\text{yr}$$
+:::
+
+::: {.fragment}
+**Interpretation (sample):**
+Farther orbits feel weaker gravity and have more distance to travel; the combination produces $P \propto a^{3/2}$, so period grows quickly with distance.
+:::
+
+::: {.mt-2 .text-sm}
+[← Back to problem](#stop-solve-2) | [→ Detailed solution](#detailed-solution-2)
+:::
+
+::: {.notes}
+If students get ~2 years, celebrate. If they get ~3 years, it's usually a squaring mistake; if they get ~1.2 years, they likely forgot the square root.
+Tie back to "scaling tells the story."
 :::
 
 ---
@@ -649,7 +748,7 @@ $$[R]=[L]$$
 ::::
 
 ::: {.notes}
-21–22 min. Frame as "scale-setting": we're not doing GR, we're figuring out how the size must scale with mass.
+28–29 min. Frame as "scale-setting": we're not doing GR, we're figuring out how the size must scale with mass.
 :::
 
 ---
@@ -679,7 +778,7 @@ $$R_s=\frac{2GM}{c^2}$$
 :::
 
 ::: {.notes}
-22–23 min. Reinforce: DA gives scaling, not factors of 2. Name "Schwarzschild radius" once (no deep dive).
+29–30 min. Reinforce: DA gives scaling, not factors of 2. Name "Schwarzschild radius" once (no deep dive).
 :::
 
 ---
@@ -711,12 +810,12 @@ Given $M$, it predicts the black hole's horizon size.
 ::::
 
 ::: {.notes}
-23–24 min. Call out assumptions gently: non-spinning/uncharged. Students love knowing there's more complexity later.
+30 min. Call out assumptions gently: non-spinning/uncharged. Students love knowing there's more complexity later.
 :::
 
 ---
 
-## Exit ticket (retrieval)
+## Checkpoint 1 (retrieval)
 
 ::: {.incremental}
 1. If $F \propto \dfrac{GMm}{r^2}$, what are the dimensions of $F$?
@@ -729,7 +828,7 @@ Give 60–90 seconds silent think time. Then pair-share. Collect answers with a 
 
 ---
 
-## Exit ticket — solutions
+## Checkpoint 1 — solutions
 
 1. $[F] = [MLT^{-2}]$
 2. $R_s \propto M$, so if $M$ doubles, $R_s$ doubles.
@@ -740,22 +839,37 @@ Make a point: "We did this without knowing any deep force law derivation—just 
 
 ---
 
-## Advanced: White Dwarf Degeneracy Pressure {.smaller}
+## Advanced: White Dwarf Degeneracy Pressure (Teaser) {.smaller}
 
 {{< fig case-c-whitedwarf-1 >}}
 
+::: {.callout-note appearance="minimal"}
+### Homework teaser
+You'll get to **try this derivation yourself on the homework**: using dimensional + scaling logic to uncover why white dwarfs behave weirdly.
+:::
+
 ::: {.notes}
-23–24 min. **OPTIONAL** — skip if short on time. When quantum mechanics enters through ℏ. Press → to skip to Tool 2, or continue for the payoff.
+**23–24 min. Optional in lecture (30–60 seconds):**
+- Tease: quantum mechanics introduces $\hbar$ → new "ingredient" sets pressure scale.
+- Do not derive live here; just frame it as "same toolkit, new physics ingredient."
+Then move on to Tool 2.
 :::
 
 ---
 
-## The Counter-Intuitive Result {.smaller}
+## The Counter-Intuitive Result (Teaser) {.smaller}
 
 {{< fig case-c-whitedwarf-2 >}}
 
+::: {.callout-warning appearance="minimal"}
+### This is the punchline you'll earn on HW
+**More mass → smaller white dwarf** (until the Chandrasekhar limit).
+You'll use the toolkit to see *why* that scaling emerges.
+:::
+
 ::: {.notes}
-24–25 min. **OPTIONAL** — More mass = smaller white dwarf. Counterintuitive but true! This is the "weird radius-mass relation" promised in the intro.
+Keep it fast: promise payoff, don't open the quantum rabbit hole.
+This makes the homework feel like a "mystery reveal," not extra labor.
 :::
 
 ---
@@ -798,7 +912,7 @@ Ratios give relative scale. Absolute numbers often don't.
 :::
 
 ::: {.notes}
-17–19 min. Key insight: ratios reveal physical relationships that raw numbers hide.
+33–34 min. Key insight: ratios reveal physical relationships that raw numbers hide.
 :::
 
 ---
@@ -818,7 +932,7 @@ $$\frac{A_2}{A_1} = \frac{kB_2^n}{kB_1^n} = \left(\frac{B_2}{B_1}\right)^n$$
 We don't need to know $G$, $\pi$, or $\sigma$ numerically.
 
 ::: {.notes}
-19–22 min. This is the key insight. Constants are "nuisances" that vanish in ratios.
+34–35 min. This is the key insight. Constants are "nuisances" that vanish in ratios.
 :::
 
 ---
@@ -839,7 +953,7 @@ $$\frac{V_\odot}{V_\oplus} = \left(\frac{R_\odot}{R_\oplus}\right)^3 = 109^3 \ap
 **Over 1 million Earths!**
 
 ::: {.notes}
-22–25 min. Notice: we never calculated actual volumes in cm³. Ratios are enough.
+35–36 min. Notice: we never calculated actual volumes in cm³. Ratios are enough.
 :::
 
 ---
@@ -857,7 +971,7 @@ $$\frac{V_\odot}{V_\oplus} = \left(\frac{R_\odot}{R_\oplus}\right)^3 = 109^3 \ap
 **Small changes in input → big changes in output when $n > 1$**
 
 ::: {.notes}
-25–27 min. The power tells the physical story.
+36–37 min. The power tells the physical story.
 :::
 
 ---
@@ -914,7 +1028,7 @@ Nobody writes that. Instead:
 $$M_\odot = 2 \times 10^{33} \text{ g}$$
 
 ::: {.notes}
-25–26 min. This is the language of big (and small) numbers. Essential skill.
+38–39 min. This is the language of big (and small) numbers. Essential skill.
 :::
 
 ---
@@ -935,7 +1049,7 @@ $$a \times 10^n$$
 **Example:** $3.0 \times 10^{10}$ = 30,000,000,000 = 30 billion
 
 ::: {.notes}
-26–27 min. The exponent tells you the magnitude. The coefficient is refinement.
+39 min. The exponent tells you the magnitude. The coefficient is refinement.
 :::
 
 ---
@@ -956,7 +1070,7 @@ $$\frac{10^{33}}{10^{27}} = 10^{33-27} = 10^6$$
 $$(10^3)^2 = 10^{3 \times 2} = 10^6$$
 
 ::: {.notes}
-27–28 min. These rules make astrophysical math manageable.
+39–40 min. These rules make astrophysical math manageable.
 :::
 
 ---
@@ -975,7 +1089,7 @@ $$(10^3)^2 = 10^{3 \times 2} = 10^6$$
 | nano | n | $10^{-9}$ | nm (visible light) |
 
 ::: {.notes}
-28–29 min. You already know most of these! Astronomy just uses bigger/smaller ones.
+40 min. You already know most of these! Astronomy just uses bigger/smaller ones.
 :::
 
 ---
@@ -1015,7 +1129,7 @@ Astronomy uses **CGS** (centimeter-gram-second), not SI.
 - Luminosity: **erg/s** (not Watt)
 
 ::: {.notes}
-27–29 min. Historical convention that stuck. Numbers stay more manageable.
+40–41 min. Historical convention that stuck. Numbers stay more manageable.
 :::
 
 ---
@@ -1055,25 +1169,68 @@ $$\frac{100 \text{ cm}}{1 \text{ m}} = 1$$
 It only changes how we *write* the number.
 
 ::: {.notes}
-29–31 min. Treat units like algebraic variables. They cancel.
+34–35 min. Treat units like algebraic variables. They cancel.
 :::
 
 ---
 
-## Example 1: Speed
+## Stop & Solve 3: Unit Conversions = Algebra {#stop-solve-3 .smaller}
 
-Earth's orbital speed: 30 km/s
+::: {.callout-note appearance="minimal"}
+### Goal
+Convert units by multiplying by **1** (factor-label method).
+:::
 
-Convert to CGS:
+### 3A. Speed (SI → CGS)
+Convert $30\,\mathrm{km/s}$ to $\mathrm{cm/s}$. Show the chain:
+$$30\,\frac{\mathrm{km}}{\mathrm{s}}
+\times\frac{10^3\,\mathrm{m}}{1\,\mathrm{km}}
+\times\frac{10^2\,\mathrm{cm}}{1\,\mathrm{m}}$$
 
-$$30 \frac{\text{km}}{\text{s}} \times \frac{10^3 \text{ m}}{1 \text{ km}} \times \frac{10^2 \text{ cm}}{1 \text{ m}}$$
+### 3B. Power / Luminosity units
+Convert $3.8\times 10^{26}\,\mathrm{W}$ to $\mathrm{erg/s}$.
 
-. . .
+::: {.callout-tip appearance="minimal"}
+**Given:** $1\,\mathrm{W}=1\,\mathrm{J/s}$, and $1\,\mathrm{J}=10^7\,\mathrm{erg}$
+:::
 
-$$= 30 \times 10^5 \frac{\text{cm}}{\text{s}} = 3 \times 10^6 \text{ cm/s}$$
+::: {.fragment .mt-2 .text-sm}
+[→ Quick solution](#solution-3) | [→ Detailed 3A](#detailed-solution-3a) | [→ Detailed 3B](#detailed-solution-3b)
+:::
 
 ::: {.notes}
-31–33 min. Walk through unit cancellation explicitly.
+**35–38 min (8–10 minutes total).**
+- 3 min: do 3A individually (watch cancellation).
+- 3 min: do 3B in pairs.
+- 2–3 min: quick board solution; highlight "multiply by 1" mindset.
+Call out the classic trap: exponents apply to the *conversion factor* when units are squared/cubed.
+**Navigation:** Press **G** then type slide number to jump to solutions.
+:::
+
+---
+
+## Stop & Solve 3 — Solution {#solution-3 .smaller}
+
+### 3A
+$$30\,\frac{\mathrm{km}}{\mathrm{s}}
+\times\frac{10^3\,\mathrm{m}}{1\,\mathrm{km}}
+\times\frac{10^2\,\mathrm{cm}}{1\,\mathrm{m}}
+=30\times 10^5\,\frac{\mathrm{cm}}{\mathrm{s}}
+=3\times 10^6\,\mathrm{cm/s}$$
+
+### 3B
+$$3.8\times 10^{26}\,\mathrm{W}
+=3.8\times 10^{26}\,\mathrm{J/s}
+=3.8\times 10^{26}\times 10^7\,\mathrm{erg/s}
+=3.8\times 10^{33}\,\mathrm{erg/s}$$
+
+::: {.mt-2 .text-sm}
+[← Back to problem](#stop-solve-3) | [→ Detailed 3A](#detailed-solution-3a) | [→ Detailed 3B](#detailed-solution-3b)
+:::
+
+::: {.notes}
+Reinforce: the unit cancellation is the "proof."
+Optional: ask them why CGS is convenient (community standard + fewer awkward prefixes in astro contexts).
 :::
 
 ---
@@ -1091,7 +1248,7 @@ $$= (10^3 \text{ g})(10^2 \text{ cm})^2 \text{ s}^{-2}$$
 $$= 10^3 \times 10^4 \text{ g cm}^2 \text{ s}^{-2} = 10^7 \text{ erg}$$
 
 ::: {.notes}
-33–35 min. Common mistake: forgetting to square the 100.
+48–49 min. Common mistake: forgetting to square the 100.
 :::
 
 ---
@@ -1124,7 +1281,7 @@ $$\sigma = 5.67 \times 10^{-8} \times 10^7 \times 10^{-4} = 5.67 \times 10^{-5} 
 | Solar luminosity $L_\odot$ | $3.8 \times 10^{33}$ erg/s |
 
 ::: {.notes}
-37–39 min. Pin these to your brain. You'll use them constantly.
+49–50 min. Pin these to your brain. You'll use them constantly.
 :::
 
 ---
@@ -1156,7 +1313,7 @@ You estimate:
 No calculator needed. **Good enough.**
 
 ::: {.notes}
-39–41 min. Connect to everyday reasoning. This is natural.
+51–52 min. Connect to everyday reasoning. This is natural.
 :::
 
 ---
@@ -1195,7 +1352,7 @@ When estimating:
 - $7 \times 10^{10}$ → $10^{11}$
 
 ::: {.notes}
-42–44 min. The exponent tells the story. Coefficients are refinement.
+52–53 min. The exponent tells the story. Coefficients are refinement.
 :::
 
 ---
@@ -1205,7 +1362,7 @@ When estimating:
 {{< fig universe-phone-number >}}
 
 ::: {.notes}
-44–46 min. The staircase shows each multiplication factor. The phone number encodes the jumps between scales. Have students write this down—they'll use it as a sanity check all semester.
+53–54 min. The staircase shows each multiplication factor. The phone number encodes the jumps between scales. Have students write this down—they'll use it as a sanity check all semester.
 :::
 
 ---
@@ -1215,7 +1372,7 @@ When estimating:
 {{< fig logarithmic-cosmic-scales >}}
 
 ::: {.notes}
-46–47 min. Another visualization of the same idea. Each step is ×10. Human scale sits in the middle. Point out that we're roughly halfway between nucleus and universe on a log scale.
+54 min. Another visualization of the same idea. Each step is ×10. Human scale sits in the middle. Point out that we're roughly halfway between nucleus and universe on a log scale.
 :::
 
 ---
@@ -1224,17 +1381,17 @@ When estimating:
 
 **Area Code (555):** Three steps DOWN from human scale
 
-- $10^{-5}$ → cells
-- $10^{-5}$ → atoms
-- $10^{-5}$ → nucleus
+- × $10^{-5}$ : human → cells
+- × $10^{-5}$ : cells → atoms
+- × $10^{-5}$ : atoms → nucleus
 
 . . .
 
 **Exchange (711):** Solar system
 
-- $10^{7}$ → Earth
-- $10^{1}$ → Jupiter
-- $10^{1}$ → Sun
+- × $10^{7}$ : human → Earth
+- × $10^{1}$ : Earth → Jupiter
+- × $10^{1}$ : Jupiter → Sun
 
 ---
 
@@ -1242,10 +1399,10 @@ When estimating:
 
 **Subscriber (2555):** Cosmos
 
-- $10^{2}$ → 1 AU (Earth-Sun)
-- $10^{5}$ → nearest stars (~1 pc)
-- $10^{5}$ → Milky Way
-- $10^{5}$ → observable universe
+- × $10^{2}$ : Sun → 1 AU (Earth–Sun distance)
+- × $10^{5}$ : 1 AU → nearest stars (~1 pc)
+- × $10^{5}$ : nearest stars → Milky Way
+- × $10^{5}$ : Milky Way → observable universe
 
 . . .
 
@@ -1271,33 +1428,79 @@ How many piano tuners work in Chicago?
 $$\frac{10^6 \times 10^{-1} \times 1}{10^3} = 10^2 \approx 100\text{–}300 \text{ tuners}$$
 
 ::: {.notes}
-47–49 min. Classic Fermi problem. We got ballpark without exact data.
+54–55 min. Classic Fermi problem. We got ballpark without exact data.
 :::
 
 ---
 
-## Prediction: Black Hole Size
+## Stop & Solve 4: OOM + Scaling — Black Hole Sizes {#stop-solve-4 .smaller}
 
-**Order of magnitude:** The Schwarzschild radius of a solar-mass black hole is closest to:
+::: {.callout-note appearance="minimal"}
+### Goal
+Use a known anchor + scaling to stay in the right powers-of-ten "zip code."
+:::
 
-A. 1 meter
+Assume:
 
-B. 1 kilometer
+- A **1 $M_\odot$** black hole has $R_s \approx 3\,\mathrm{km}$.
+- $R_s$ scales **linearly** with mass: $R_s \propto M$.
 
-C. 100 kilometers
+::: {.incremental}
+1. Estimate $R_s$ for a **10 $M_\odot$** black hole.
+2. Estimate $R_s$ for a **4 million $M_\odot$** black hole (Sgr A* scale).
+3. Convert your #2 answer into scientific notation in km, then decide: closer to
+   - Earth size ($\sim 10^4$ km),
+   - Sun size ($\sim 10^6$ km),
+   - or AU size ($\sim 10^8$ km)?
+:::
 
-D. 1000 kilometers
+::: {.fragment .mt-2 .text-sm}
+[→ Quick solution](#solution-4) | [→ Detailed step-by-step](#detailed-solution-4)
+:::
 
 ::: {.notes}
-Give students 30 seconds. Most will guess too large. Emphasize: black holes are *compact*.
+**44–47 min (8–10 minutes total).**
+- 2 min silent: #1 and #2.
+- 2–3 min pair: #3 classification argument.
+- 3–4 min share: get multiple answers; focus on order-of-magnitude reasoning.
+Key message: you can get powerful insight from one anchor value + proportionality.
+**Navigation:** Press **G** then type slide number to jump to solutions.
 :::
 
 ---
 
-## Astronomy Example: Schwarzschild Radius
+## Stop & Solve 4 — Solution {#solution-4 .smaller}
 
-Estimate the radius of a solar-mass black hole:
-$$R \approx \frac{GM}{c^2}$$
+Since $R_s \propto M$:
+
+::: {.incremental}
+1) 10 $M_\odot$:
+$$R_s \approx 3\,\mathrm{km}\times 10 \approx 30\,\mathrm{km}$$
+
+2) $4\times 10^6\,M_\odot$:
+$$R_s \approx 3\,\mathrm{km}\times 4\times 10^6 \approx 1.2\times 10^7\,\mathrm{km}$$
+
+3) Comparison:
+$$1.2\times 10^7\,\mathrm{km}$$
+is bigger than Sun-scale ($\sim 10^6$ km) and smaller than AU-scale ($\sim 10^8$ km) — **closer to AU than to the Sun**, but still within an order of magnitude of "solar system" scales.
+:::
+
+::: {.mt-2 .text-sm}
+[← Back to problem](#stop-solve-4) | [→ Detailed solution](#detailed-solution-4)
+:::
+
+::: {.notes}
+This is a great moment to remind them: black holes are *compact* per unit mass, but supermassive ones are still physically enormous in km.
+If students got ~$10^7$ km, celebrate! That's Sgr A* — about $0.08$ AU, well inside Mercury's orbit.
+:::
+
+---
+
+## Bonus: Verify the Anchor Value
+
+Where did $R_s \approx 3$ km come from?
+
+$$R_s \approx \frac{GM}{c^2}$$
 
 . . .
 
@@ -1307,11 +1510,11 @@ Using CGS:
 - $M_\odot \approx 10^{33}$ g
 - $c \approx 10^{10}$ cm/s
 
-$$R \approx \frac{10^{-7} \times 10^{33}}{(10^{10})^2} = \frac{10^{26}}{10^{20}} = 10^{6} \text{ cm} = 10 \text{ km}$$
+$$R_s \approx \frac{10^{-7} \times 10^{33}}{(10^{10})^2} = \frac{10^{26}}{10^{20}} = 10^{6} \text{ cm} = 10 \text{ km}$$
 
 . . .
 
-**Exact answer: 3 km.** We were within a factor of 3. *Success!*
+**Exact answer: 3 km.** Factor of 3 off — *that's OOM success!*
 
 ---
 
@@ -1398,7 +1601,7 @@ If they don't match, the physics is [*guaranteed* to be wrong]{.text-warning .fo
 :::
 
 ::: {.notes}
-48–49 min. This is the core message. Emphasize: dimensional analysis catches errors before they cost you time and points. The fade-up animation and fit-text make this memorable.
+63–64 min. This is the core message. Emphasize: dimensional analysis catches errors before they cost you time and points. The fade-up animation and fit-text make this memorable.
 :::
 
 ---
@@ -1414,7 +1617,222 @@ Common questions at this point:
 :::
 
 ::: {.notes}
-49–50 min. Address these directly. Work = show dimensional analysis. Units = CGS always. Phone number = useful mnemonic, not required.
+64–65 min. Address these directly. Work = show dimensional analysis. Units = CGS always. Phone number = useful mnemonic, not required.
+:::
+
+---
+
+## {.center}
+
+::: {.r-fit-text}
+Solutions Reference
+:::
+
+*Detailed step-by-step solutions for self-study*
+
+::: {.notes}
+These slides are for students to review after class, or for you to jump to if you want to show complete worked solutions. Press **G** then type slide number to jump quickly.
+:::
+
+---
+
+## Solution 1: Dimensional Detective — Full Work {#detailed-solution-1 .smaller}
+
+::: {.callout-note appearance="minimal"}
+### Setup
+**Given:** Four candidate formulas for orbital period $P$
+**Find:** Which have dimensions of time $[T]$
+**Key fact:** $[G] = [M^{-1}L^3T^{-2}]$, so $[GM] = [L^3T^{-2}]$
+:::
+
+**Option 1:** $P \propto \dfrac{r^2}{GM}$
+
+$$\left[\frac{r^2}{GM}\right] = \frac{[L]^2}{[L^3T^{-2}]} = \frac{[L^2]}{[L^3][T^{-2}]} = [L^{2-3}][T^{+2}] = [L^{-1}T^2]$$
+
+$$\boxed{\text{Not } [T] \text{ — WRONG}}$$
+
+[→ Back to problem](#stop-solve-1)
+
+---
+
+## Solution 1 (cont.) — Options 2–4 {.smaller}
+
+**Option 2:** $P \propto \sqrt{\dfrac{r^3}{GM}}$
+
+$$\left[\sqrt{\frac{r^3}{GM}}\right] = \sqrt{\frac{[L^3]}{[L^3T^{-2}]}} = \sqrt{\frac{[L^3]}{[L^3]}\cdot[T^2]} = \sqrt{[T^2]} = [T] \quad \boxed{\checkmark \text{ CORRECT}}$$
+
+**Option 3:** $P \propto \dfrac{r}{\sqrt{GM}}$
+
+$$\left[\frac{r}{\sqrt{GM}}\right] = \frac{[L]}{\sqrt{[L^3T^{-2}]}} = \frac{[L]}{[L^{3/2}T^{-1}]} = [L^{1-3/2}][T^1] = [L^{-1/2}T] \quad \boxed{\text{WRONG}}$$
+
+**Option 4:** $P \propto \sqrt{\dfrac{GM}{r^3}}$
+
+$$\left[\sqrt{\frac{GM}{r^3}}\right] = \sqrt{\frac{[L^3T^{-2}]}{[L^3]}} = \sqrt{[T^{-2}]} = [T^{-1}] \quad \boxed{\text{WRONG (frequency, not period)}}$$
+
+---
+
+## Solution 2: Mars Year — Full Work {#detailed-solution-2 .smaller}
+
+::: {.callout-note appearance="minimal"}
+### Setup
+**Given:** Mars orbital distance $a = 1.52$ AU
+**Find:** Mars orbital period $P$ in years
+**Formula:** $\left(\dfrac{P}{1\,\text{yr}}\right)^2 = \left(\dfrac{a}{1\,\text{AU}}\right)^3$ (Kepler's Third Law)
+:::
+
+**Step 1:** Substitute known value
+$$\left(\frac{P}{1\,\text{yr}}\right)^2 = (1.52)^3$$
+
+**Step 2:** Evaluate the cube (show your work!)
+$$1.52^3 = 1.52 \times 1.52 \times 1.52 = 2.31 \times 1.52 \approx 3.51$$
+
+**Step 3:** Take square root of both sides
+$$\frac{P}{1\,\text{yr}} = \sqrt{3.51} \approx 1.87$$
+
+**Step 4:** Solve for $P$
+$$\boxed{P_{\text{Mars}} \approx 1.9 \text{ years}}$$
+
+*Actual value: 1.88 years — excellent agreement!*
+
+[→ Back to problem](#stop-solve-2)
+
+---
+
+## Solution 2 (cont.) — Why $P \propto a^{3/2}$? {.smaller}
+
+**Physical interpretation:**
+
+A planet farther from the Sun experiences two effects:
+
+1. **Longer path:** Circumference $\propto a$, so more distance to travel
+2. **Weaker gravity:** Force $\propto 1/a^2$, so slower orbital speed
+
+Combined effect: $P \propto a^{3/2}$ — period grows *faster* than linearly with distance.
+
+::: {.callout-tip appearance="minimal"}
+### Sanity check
+- Earth at 1 AU: $P = 1$ yr ✓
+- Mars at 1.52 AU: $P \approx 1.9$ yr ✓ (farther → longer)
+- Jupiter at 5.2 AU: $P = 5.2^{1.5} \approx 12$ yr ✓
+:::
+
+---
+
+## Solution 3A: Speed Conversion — Full Work {#detailed-solution-3a .smaller}
+
+::: {.callout-note appearance="minimal"}
+### Setup
+**Given:** Earth's orbital speed = $30$ km/s
+**Find:** Speed in cm/s (CGS)
+**Method:** Multiply by conversion factors = 1
+:::
+
+**Step 1:** Write conversion factors
+$$1\,\text{km} = 10^3\,\text{m} \quad \Rightarrow \quad \frac{10^3\,\text{m}}{1\,\text{km}} = 1$$
+$$1\,\text{m} = 10^2\,\text{cm} \quad \Rightarrow \quad \frac{10^2\,\text{cm}}{1\,\text{m}} = 1$$
+
+**Step 2:** Chain the conversions (watch units cancel!)
+$$30\,\frac{\cancel{\text{km}}}{\text{s}} \times \frac{10^3\,\cancel{\text{m}}}{1\,\cancel{\text{km}}} \times \frac{10^2\,\text{cm}}{1\,\cancel{\text{m}}} = 30 \times 10^3 \times 10^2 \,\frac{\text{cm}}{\text{s}}$$
+
+**Step 3:** Combine powers of 10
+$$= 30 \times 10^{3+2}\,\text{cm/s} = 30 \times 10^5\,\text{cm/s} = \boxed{3 \times 10^6\,\text{cm/s}}$$
+
+[→ Back to problem](#stop-solve-3)
+
+---
+
+## Solution 3B: Luminosity Conversion — Full Work {#detailed-solution-3b .smaller}
+
+::: {.callout-note appearance="minimal"}
+### Setup
+**Given:** $L_\odot = 3.8 \times 10^{26}$ W (SI)
+**Find:** $L_\odot$ in erg/s (CGS)
+**Key conversion:** $1\,\text{W} = 1\,\text{J/s}$ and $1\,\text{J} = 10^7\,\text{erg}$
+:::
+
+**Step 1:** Expand Watts to fundamental units
+$$3.8 \times 10^{26}\,\text{W} = 3.8 \times 10^{26}\,\frac{\text{J}}{\text{s}}$$
+
+**Step 2:** Convert Joules to ergs
+$$= 3.8 \times 10^{26}\,\frac{\cancel{\text{J}}}{\text{s}} \times \frac{10^7\,\text{erg}}{1\,\cancel{\text{J}}}$$
+
+**Step 3:** Combine powers of 10
+$$= 3.8 \times 10^{26} \times 10^7\,\frac{\text{erg}}{\text{s}} = 3.8 \times 10^{26+7}\,\text{erg/s}$$
+
+$$\boxed{L_\odot = 3.8 \times 10^{33}\,\text{erg/s}}$$
+
+::: {.callout-warning appearance="minimal"}
+**Common error:** Forgetting that 1 J = $10^7$ erg (not $10^3$!). Energy in CGS uses small units.
+:::
+
+---
+
+## Solution 4: Black Hole Scaling — Full Work {#detailed-solution-4 .smaller}
+
+::: {.callout-note appearance="minimal"}
+### Setup
+**Given:** $R_s(1\,M_\odot) \approx 3$ km (anchor value)
+**Scaling law:** $R_s \propto M$ (linear)
+**Find:** $R_s$ for 10 $M_\odot$ and $4 \times 10^6\,M_\odot$
+:::
+
+**Part 1:** Stellar-mass black hole (10 $M_\odot$)
+$$\frac{R_s(10\,M_\odot)}{R_s(1\,M_\odot)} = \frac{10\,M_\odot}{1\,M_\odot} = 10$$
+
+$$R_s(10\,M_\odot) = 10 \times 3\,\text{km} = \boxed{30\,\text{km}}$$
+
+**Part 2:** Supermassive black hole ($4 \times 10^6\,M_\odot$, like Sgr A*)
+$$\frac{R_s(4\times10^6\,M_\odot)}{R_s(1\,M_\odot)} = \frac{4\times10^6\,M_\odot}{1\,M_\odot} = 4\times10^6$$
+
+$$R_s = (4\times10^6) \times 3\,\text{km} = 12\times10^6\,\text{km} = \boxed{1.2\times10^7\,\text{km}}$$
+
+[→ Back to problem](#stop-solve-4)
+
+---
+
+## Solution 4 (cont.) — Scale Comparison {.smaller}
+
+**Part 3:** How big is $1.2 \times 10^7$ km?
+
+| Object | Size |
+|--------|------|
+| Earth radius | $6.4 \times 10^3$ km |
+| Sun radius | $7 \times 10^5$ km |
+| **Sgr A* horizon** | **$1.2 \times 10^7$ km** |
+| Mercury's orbit | $5.8 \times 10^7$ km |
+| 1 AU | $1.5 \times 10^8$ km |
+
+$$\boxed{\text{Sgr A* is about 17× the Sun's radius, or } \sim 0.08 \text{ AU}}$$
+
+::: {.callout-tip appearance="minimal"}
+### Sanity check
+- Bigger than Sun? ✓ (by factor ~17)
+- Smaller than 1 AU? ✓ (by factor ~12)
+- Sgr A*'s horizon (~0.08 AU) fits well *inside* Mercury's orbit (~0.39 AU)
+:::
+
+---
+
+## Problem-Solving Best Practices {.smaller}
+
+::: {.callout-note appearance="minimal"}
+### The Template
+Every solution should follow this structure:
+:::
+
+1. **Setup box:** State what's given and what you're finding
+2. **Write the formula:** Include units/dimensions
+3. **Substitute:** Put numbers in, keep units attached
+4. **Cancel units:** Cross out matching units explicitly
+5. **Compute:** Show exponent arithmetic ($10^a \times 10^b = 10^{a+b}$)
+6. **Box the answer:** With units!
+7. **Sanity check:** Does the answer make physical sense?
+
+::: {.callout-warning appearance="minimal"}
+### Common pitfalls
+- Dropping units mid-calculation
+- Forgetting to square/cube conversion factors
+- Not checking if answer is in the right "ballpark"
 :::
 
 ---
