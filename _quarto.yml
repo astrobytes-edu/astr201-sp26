@@ -99,7 +99,7 @@ website:
               - text: "Slides"
                 href: modules/module-01/slides/lecture-02-foundations.qmd
               - text: "Reading"
-                href: modules/module-01/readings/lecture-02-foundations.qmd
+                href: modules/module-01/readings/lecture-02-foundations-reading.qmd
               - text: "Reference Tables"
                 href: handouts/lecture-02-reference-tables.qmd
 

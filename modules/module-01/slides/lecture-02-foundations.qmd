@@ -8,6 +8,7 @@ draft: false
 format:
   revealjs:
     theme: [default, ../../../assets/theme/slides/theme.scss]
+    smaller: true
     slide-number: true
     transition: fade
     transition-speed: fast
@@ -119,34 +120,35 @@ The equation is [*guaranteed* wrong]{.text-warning .font-bold}. No calculator ne
 
 ## Stop & Solve 1: Dimensional Detective {#stop-solve-1 .smaller}
 
-::: {.callout-note appearance="minimal"}
-### Goal
-Decide if an equation could *possibly* be right **without computing**.
+**Which formula(s) could represent an orbital period $P$?** <br>Select all with dimensions of $[T]$ (time).
+
+:::: {.columns}
+::: {.column width="35%" .text-base}
+| | Formula |
+|:--|:--|
+| **a)** | $P \propto \frac{r^2}{GM}$ |
+| **b)** | $P \propto \sqrt{\frac{r^3}{GM}}$ |
+| **c)** | $P \propto \frac{r}{\sqrt{GM}}$ |
+| **d)** | $P \propto \sqrt{\frac{GM}{r^3}}$ |
+
+: {.borderless}
 :::
-
-A student claims the orbital period scales like one of these.
-
-**Which formula(s) could represent an orbital period $P$?**
-(Select all that have dimensions of time.)
-
-::: {.incremental}
-1. $P \propto \dfrac{r^2}{GM}$
-2. $P \propto \sqrt{\dfrac{r^3}{GM}}$
-3. $P \propto \dfrac{r}{\sqrt{GM}}$
-4. $P \propto \sqrt{\dfrac{GM}{r^3}}$
+::: {.column width="5%"}
 :::
-
-::: {.callout-tip appearance="minimal"}
-**Given**: $[G] = [M^{-1}L^3T^{-2}]$, $[r]=[L]$, $[M]=[M]$
+::: {.column width="60%"}
+::: {.callout-tip appearance="minimal" title="Given" .text-lg}
+$[G] = M^{-1}L^3T^{-2}$, $\;[r]=L$, $\;[M]=M$
 :::
 
 ::: {.fragment}
-**Work rule:** Don't "plug numbers." Only track $[L],[M],[T]$.
+**Work rule:** Track $[L],[M],[T]$ only — no numbers.
 :::
 
-::: {.fragment .mt-2 .text-sm}
-[→ Quick solution](#solution-1) | [→ Detailed step-by-step](#detailed-solution-1)
+::: {.fragment .text-sm .mt-2}
+[→ Quick solution](#solution-1) | [→ Step-by-step](#detailed-solution-1)
 :::
+:::
+::::
 
 ::: {.notes}
 **4–7 min (6–8 minutes total: think → pair → share).**
@@ -258,7 +260,7 @@ We need a toolkit that extracts physics from limited data.
 
 Four methods that turn "points of light" into physics:
 
-::: {.incremental}
+::: {.incremental .text-sm}
 1. **Dimensional Analysis** — Is this equation even possible?
 2. **The Ratio Method** — How does this compare to something known?
 3. **Unit Conversions** — What's the numeric value in useful units?
@@ -267,7 +269,9 @@ Four methods that turn "points of light" into physics:
 
 . . .
 
+:::{.text-center}
 These aren't math drills—they're *inference tools*.
+:::
 
 ::: {.notes}
 Frame as empowerment. "You're about to get superpowers."
@@ -284,7 +288,7 @@ Astronomy is the art of inferring physical reality from limited measurements.
 Today's superpower: **units + dimensions** catch mistakes *before* they become beliefs.
 :::
 
-::: {.incremental}
+::: {.incremental .text-sm}
 - We usually can't touch the system — we observe light, motion, and time.
 - We build simplified models that connect measurements to physics.
 - We sanity-check **(dimensions, units, scaling, limits)** so we don't compute nonsense confidently.
@@ -304,7 +308,7 @@ Later this semester (and in your physics sequence) you'll learn where they come 
 
 **Rules for today**
 
-1. Treat them as **reliable tools** (like using a calculator before proving how transistors work).
+1. Treat them as **reliable tools**.
 2. You do **not** need deep physical intuition yet.
 3. You *do* need to know what each symbol means, and what the equation is claiming.
 :::
@@ -323,7 +327,7 @@ we can use trusted relations while building understanding over time.
 For any equation, ask:
 :::
 
-::: {.incremental}
+::: {.incremental .text-sm}
 1. **What does it predict?** (output)
 2. **What does it depend on?** (inputs)
 3. **What happens if a variable increases?** (direction + scaling)
@@ -368,7 +372,7 @@ Tool 1: Dimensional Analysis
 
 ## Units vs. Dimensions
 
-{{< fig units-vs-dimensions >}}
+{{< img units-vs-dimensions >}}
 
 ::: {.notes}
 12–13 min. Key insight: units are human inventions, dimensions are physical reality.
@@ -416,7 +420,7 @@ Every physical quantity in this course is built from three ingredients:
 
 ## Building Blocks
 
-{{< fig fundamental-dimensions >}}
+{{< img fundamental-dimensions >}}
 
 ::: {.notes}
 15–16 min. Visual equation builder. Note the sanity check box.
@@ -461,7 +465,7 @@ $$F = \frac{GMm}{r^2}$$
 :::
 
 ::: {.column width="50%"}
-{{< fig planetary-orbit >}}
+{{< img planetary-orbit >}}
 :::
 ::::
 
@@ -478,19 +482,34 @@ Point to the figure: "This shows an orbit — $M$ is the star, $m$ is the planet
 
 ## Worked Example: What are the dimensions of $G$?
 
+:::{.columns}
+:::{.column width=40% .text-sm}
 Newton's law of gravity:
 $$F = \frac{GMm}{r^2}$$
 
-We know:
+**Known dimensions:**
 
-- $[F] = [MLT^{-2}]$ (force)
-- $[M], [m] = [M]$ (mass)
-- $[r] = [L]$ (length)
+- $[F] = MLT^{-2}$
+- $[M], [m] = M$
+- $[r] = L$
+:::
 
-. . .
+:::{.column width=60% .text-sm}
+::: {.fragment}
+**Rearrange:** $G = \dfrac{F r^2}{M m}$
+:::
 
-Solve for $[G]$:
-$$[G] = \frac{[F][r^2]}{[M][m]} = \frac{[MLT^{-2}][L^2]}{[M^2]} = [M^{-1}L^3T^{-2}]$$
+::: {.fragment}
+$$
+\begin{aligned}
+[G] &= \frac{[F][r]^2}{[M][m]} = \frac{(MLT^{-2})(L^2)}{M \cdot M} \\[0.5em]
+&= \frac{ML^3T^{-2}}{M^2} = M^{-1}L^3T^{-2} \\[0.5em]
+&\rightarrow \boxed{[G]= M^{-1}L^3T^{-2}}
+\end{aligned}
+$$
+:::
+:::
+:::
 
 ::: {.notes}
 17–18 min. Walk through cancellation slowly. "G has composite units because it converts mass + distance into accelerations and timescales in Newton's law."
@@ -500,7 +519,7 @@ $$[G] = \frac{[F][r^2]}{[M][m]} = \frac{[MLT^{-2}][L^2]}{[M^2]} = [M^{-1}L^3T^{-
 
 ## Constants Are Physical Quantities
 
-{{< fig physical-constants >}}
+{{< img physical-constants >}}
 
 ::: {.notes}
 18 min. Constants are not arbitrary numbers—they're conversion factors built into the universe.
@@ -543,7 +562,7 @@ Yes. Using only dimensional analysis.
 
 ## The Protocol
 
-{{< fig da-protocol >}}
+{{< img da-protocol >}}
 
 ::: {.notes}
 19–20 min. This is the recipe. We'll use it repeatedly.
@@ -551,14 +570,14 @@ Yes. Using only dimensional analysis.
 
 ---
 
-## Case A: Orbital period — setup
+### Case A: Orbital period — setup
 
-### What can the orbital period depend on?
+#### What can the orbital period depend on?
 
 We want a formula for **orbital period** $P$: "time for one orbit."
 
 :::: {.columns}
-::: {.column width="55%"}
+::: {.column width="55%" .text-sm}
 **Ingredients (allowed today):**
 
 - Orbit size $r$ → $[L]$
@@ -587,29 +606,32 @@ $$[P] = [T]$$
 
 ---
 
-## Case A: Orbital period — solve (slow) {.smaller}
+### Case A: Orbital period — solve (slow)
 
-### Match dimensions to solve for exponents
+:::{.columns}
+:::{.column width=45%}
+**Assume:** $P \propto r^{a}M^{b}G^{c}$
 
-Assume:
-$$P \propto r^{a}M^{b}G^{c}$$
+::: {.fragment}
+**Convert to dimensions:**
+$$[T] = [L]^a[M]^b[M^{-1}L^3T^{-2}]^c$$
+$$= [L]^{a+3c}[M]^{b-c}[T]^{-2c}$$
+:::
+:::
 
-::: {.incremental}
-Convert to dimensions:
-$$[T] = [L]^a[M]^b\left([M^{-1}L^3T^{-2}]\right)^c = [L]^{a+3c}[M]^{b-c}[T]^{-2c}$$
-
-Match with $[L]^0[M]^0[T]^1$:
+:::{.column width=55%}
+::: {.fragment}
+**Match exponents:**
 
 - $T:\; 1=-2c \Rightarrow c=-\tfrac12$
 - $M:\; 0=b-c \Rightarrow b=-\tfrac12$
 - $L:\; 0=a+3c \Rightarrow a=\tfrac32$
-
-Therefore:
-$$P \propto \sqrt{\frac{r^{3}}{GM}}$$
 :::
 
-::: {.callout-note appearance="minimal"}
-Dimensional analysis can't determine **pure numbers** like $2\pi$.
+::: {.fragment}
+$$\boxed{P \propto \sqrt{\frac{r^{3}}{GM}}}$$
+:::
+:::
 :::
 
 ::: {.notes}
@@ -753,26 +775,37 @@ $$[R]=[L]$$
 
 ## Case B: Black hole horizon — solve (slow) {.smaller}
 
-Assume:
-$$R \propto G^{a}M^{b}c^{d}$$
+:::: {.columns}
+::: {.column width="45%"}
+**Assume:** $R \propto G^{a}M^{b}c^{d}$
 
-::: {.incremental}
-Dimensions:
-$$[L] =([M^{-1}L^3T^{-2}])^a[M]^b([LT^{-1}])^d = [L]^{3a+d}[M]^{-a+b}[T]^{-2a-d}$$
+($c = 3 \times 10^{8}\,\text{m/s}$, speed of light)
 
-Match with $[L]^1[M]^0[T]^0$:
+::: {.fragment}
+**Dimensions:**
+$$[L] = [M^{-1}L^3T^{-2}]^a[M]^b[LT^{-1}]^d$$
+$$= [L]^{3a+d}[M]^{-a+b}[T]^{-2a-d}$$
+:::
+:::
+
+::: {.column width="55%"}
+::: {.fragment}
+**Match exponents:**
 
 - $T:\;0=-2a-d \Rightarrow d=-2a$
 - $M:\;0=-a+b \Rightarrow b=a$
-- $L:\;1=3a+d=3a-2a \Rightarrow a=1$
-
-So:
-$$R \propto \frac{GM}{c^2}$$
+- $L:\;1=3a+d \Rightarrow a=1$
 :::
 
+::: {.fragment}
+$$\boxed{R \propto \frac{GM}{c^2}}$$
+:::
+:::
+::::
+
 ::: {.callout-note appearance="minimal"}
-Later-semester "exact" result (Schwarzschild, non-spinning, uncharged):
-$$R_s=\frac{2GM}{c^2}$$
+Later-semester "exact" result (Schwarzschild):
+$R_s=\frac{2GM}{c^2}$
 :::
 
 ::: {.notes}
@@ -837,9 +870,9 @@ Make a point: "We did this without knowing any deep force law derivation—just 
 
 ---
 
-## Advanced: White Dwarf Degeneracy Pressure (Teaser) {.smaller}
+## White Dwarf Degeneracy Pressure (Teaser) {.smaller}
 
-{{< fig case-c-whitedwarf-1 >}}
+{{< img case-c-whitedwarf-1 >}}
 
 ::: {.callout-note appearance="minimal"}
 ### Homework teaser
@@ -857,7 +890,7 @@ Then move on to Tool 2.
 
 ## The Counter-Intuitive Result (Teaser) {.smaller}
 
-{{< fig case-c-whitedwarf-2 >}}
+{{< img case-c-whitedwarf-2 >}}
 
 ::: {.callout-warning appearance="minimal"}
 ### This is the punchline you'll earn on HW
@@ -980,7 +1013,7 @@ $$\frac{V_\odot}{V_\oplus} = \left(\frac{R_\odot}{R_\oplus}\right)^3 = 109^3 \ap
 If you double a nebula's radius, by what factor does its surface area increase?
 
 - [ ] 2× (the radius doubled)
-- [x] 4× (surface area scales as R²)
+- [ ] 4× (surface area scales as R²)
 - [ ] 8× (volume scaling)
 - [ ] 16× (that would be R⁴)
 :::
@@ -1357,7 +1390,7 @@ When estimating:
 
 ## The Universe's Phone Number
 
-{{< fig universe-phone-number >}}
+{{< img universe-phone-number >}}
 
 ::: {.notes}
 53–54 min. The staircase shows each multiplication factor. The phone number encodes the jumps between scales. Have students write this down—they'll use it as a sanity check all semester.
@@ -1367,7 +1400,7 @@ When estimating:
 
 ## Cosmic Scales: Powers of 10
 
-{{< fig logarithmic-cosmic-scales >}}
+{{< img logarithmic-cosmic-scales >}}
 
 ::: {.notes}
 54 min. Another visualization of the same idea. Each step is ×10. Human scale sits in the middle. Point out that we're roughly halfway between nucleus and universe on a log scale.
@@ -1433,24 +1466,30 @@ $$\frac{10^6 \times 10^{-1} \times 1}{10^3} = 10^2 \approx 100\text{–}300 \tex
 
 ## Stop & Solve 4: OOM + Scaling — Black Hole Sizes {#stop-solve-4 .smaller}
 
+:::: {.columns}
+::: {.column width="45%"}
 ::: {.callout-note appearance="minimal"}
 ### Goal
 Use a known anchor + scaling to stay in the right powers-of-ten "zip code."
 :::
 
-Assume:
+**Assume:**
 
 - A **1 $M_\odot$** black hole has $R_s \approx 3\,\mathrm{km}$.
 - $R_s$ scales **linearly** with mass: $R_s \propto M$.
+:::
 
+::: {.column width="55%"}
 ::: {.incremental}
 1. Estimate $R_s$ for a **10 $M_\odot$** black hole.
 2. Estimate $R_s$ for a **4 million $M_\odot$** black hole (Sgr A* scale).
-3. Convert your #2 answer into scientific notation in km, then decide: closer to
+3. Convert #2 to scientific notation (km), then decide: closer to
    - Earth size ($\sim 10^4$ km),
    - Sun size ($\sim 10^6$ km),
    - or AU size ($\sim 10^8$ km)?
 :::
+:::
+::::
 
 ::: {.fragment .mt-2 .text-sm}
 [→ Quick solution](#solution-4) | [→ Detailed step-by-step](#detailed-solution-4)
@@ -1494,25 +1533,36 @@ If students got ~$10^7$ km, celebrate! That's Sgr A* — about $0.08$ AU, well i
 
 ---
 
-## Bonus: Verify the Anchor Value
+## Bonus: Verify the Anchor Value {.smaller}
 
-Where did $R_s \approx 3$ km come from?
+Where did $R_s \approx 3$ km come from? Use $R_s \approx \frac{GM}{c^2}$
 
-$$R_s \approx \frac{GM}{c^2}$$
+:::: {.columns}
+::: {.column width="35%"}
+::: {.fragment}
+**CGS values:**
 
-. . .
+- $G \approx 10^{-7}\,\frac{\text{cm}^3}{\text{g}\cdot\text{s}^{2}}$
+- $M_\odot \approx 10^{33}\,\text{g}$
+- $c \approx 10^{10}\,\frac{\text{cm}}{\text{s}}$
+:::
+:::
 
-Using CGS:
+::: {.column width="65%"}
+::: {.fragment}
+**Substitute:**
+$$R_s \approx \frac{10^{-7} \cdot 10^{33}}{(10^{10})^2}\,\frac{\text{cm}^3 \cdot \cancel{\text{g}} \cdot \cancel{\text{s}^{2}}}{\cancel{\text{g}} \cdot \cancel{\text{s}^{2}} \cdot \text{cm}^2}$$
+:::
 
-- $G \approx 10^{-7}$ cm$^3$ g$^{-1}$ s$^{-2}$
-- $M_\odot \approx 10^{33}$ g
-- $c \approx 10^{10}$ cm/s
+::: {.fragment}
+$$= \frac{10^{26}}{10^{20}}\,\text{cm} = 10^{6}\,\text{cm} = 10\,\text{km}$$
+:::
 
-$$R_s \approx \frac{10^{-7} \times 10^{33}}{(10^{10})^2} = \frac{10^{26}}{10^{20}} = 10^{6} \text{ cm} = 10 \text{ km}$$
-
-. . .
-
-**Exact answer: 3 km.** Factor of 3 off — *that's OOM success!*
+::: {.fragment}
+**Exact: 3 km.** Factor of 3 off — *OOM success!*
+:::
+:::
+::::
 
 ---
 
@@ -1552,7 +1602,7 @@ Use all four tools together for robust reasoning.
 
 ## The Toolbox
 
-{{< fig math-toolbox >}}
+{{< img math-toolbox >}}
 
 ::: {.notes}
 Key message: We don't just memorize formulas. We interrogate them.
@@ -1634,15 +1684,18 @@ These slides are for students to review after class, or for you to jump to if yo
 
 ---
 
-## Solution 1: Dimensional Detective — Full Work {#detailed-solution-1 .smaller}
+## Solution 1: Dimensional Detective — Full Work {#detailed-solution-1 .small}
 
-::: {.callout-note appearance="minimal"}
+::: {.callout-note appearance="minimal" .text-sm}
 ### Setup
 **Given:** Four candidate formulas for orbital period $P$
+
 **Find:** Which have dimensions of time $[T]$
+
 **Key fact:** $[G] = [M^{-1}L^3T^{-2}]$, so $[GM] = [L^3T^{-2}]$
 :::
 
+:::{.text-xs}
 **Option 1:** $P \propto \dfrac{r^2}{GM}$
 
 $$\left[\frac{r^2}{GM}\right] = \frac{[L]^2}{[L^3T^{-2}]} = \frac{[L^2]}{[L^3][T^{-2}]} = [L^{2-3}][T^{+2}] = [L^{-1}T^2]$$
@@ -1650,11 +1703,12 @@ $$\left[\frac{r^2}{GM}\right] = \frac{[L]^2}{[L^3T^{-2}]} = \frac{[L^2]}{[L^3][T
 $$\boxed{\text{Not } [T] \text{ — WRONG}}$$
 
 [→ Back to problem](#stop-solve-1)
-
+:::
 ---
 
 ## Solution 1 (cont.) — Options 2–4 {.smaller}
 
+:::{.text-sm}
 **Option 2:** $P \propto \sqrt{\dfrac{r^3}{GM}}$
 
 $$\left[\sqrt{\frac{r^3}{GM}}\right] = \sqrt{\frac{[L^3]}{[L^3T^{-2}]}} = \sqrt{\frac{[L^3]}{[L^3]}\cdot[T^2]} = \sqrt{[T^2]} = [T] \quad \boxed{\checkmark \text{ CORRECT}}$$
@@ -1666,7 +1720,7 @@ $$\left[\frac{r}{\sqrt{GM}}\right] = \frac{[L]}{\sqrt{[L^3T^{-2}]}} = \frac{[L]}
 **Option 4:** $P \propto \sqrt{\dfrac{GM}{r^3}}$
 
 $$\left[\sqrt{\frac{GM}{r^3}}\right] = \sqrt{\frac{[L^3T^{-2}]}{[L^3]}} = \sqrt{[T^{-2}]} = [T^{-1}] \quad \boxed{\text{WRONG (frequency, not period)}}$$
-
+:::
 ---
 
 ## Solution 2: Mars Year — Full Work {#detailed-solution-2 .smaller}
