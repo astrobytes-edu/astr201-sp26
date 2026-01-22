@@ -219,6 +219,8 @@ We want $[P] = [T]$.
 | $M$ (central mass) | $[M]$ |
 | $G$ (gravitational constant) | $[M^{-1}L^3T^{-2}]$ |
 
+{{< fig case-a-orbits-1 >}}
+
 **Step 3: Assume a power-law form**
 
 $$P \propto r^a M^b G^c$$
@@ -235,6 +237,8 @@ Match exponents:
 - Mass: $0 = b - c \Rightarrow b = c = -\frac{1}{2}$
 - Length: $0 = a + 3c \Rightarrow a = -3c = \frac{3}{2}$
 
+{{< fig case-a-orbits-2 >}}
+
 **Step 5: Result**
 
 $$P \propto r^{3/2} M^{-1/2} G^{-1/2} = \sqrt{\frac{r^3}{GM}}$$
@@ -248,6 +252,8 @@ $$P \propto r^{3/2} M^{-1/2} G^{-1/2} = \sqrt{\frac{r^3}{GM}}$$
 
 **The exact formula:** With the numerical factor that DA can't determine: $P = 2\pi\sqrt{r^3/GM}$
 :::
+
+{{< fig case-a-orbits-3 >}}
 
 ::: {.callout-note title="What Dimensional Analysis Cannot Do"}
 Dimensional analysis determines *scaling relationships* but cannot determine *pure numbers* like $2\pi$, $\frac{1}{2}$, or $4/3$. It tells you *how* things scale, not the exact numerical prefactor.
@@ -269,6 +275,8 @@ What sets the "point of no return" around a black hole?
 | $G$ (gravity) | $[M^{-1}L^3T^{-2}]$ |
 | $c$ (speed of light) | $[LT^{-1}]$ |
 
+{{< fig case-b-blackhole-1 >}}
+
 ::: {.column-margin}
 **Event horizon:** The boundary beyond which nothing—not even light—can escape a black hole's gravitational pull.
 :::
@@ -288,6 +296,8 @@ Matching:
 Therefore $a = 1$, $b = 1$, $d = -2$:
 
 $$R \propto \frac{GM}{c^2}$$
+
+{{< fig case-b-blackhole-2 >}}
 
 ::: {.callout-key-insight title="The Schwarzschild Radius"}
 The exact result (from general relativity) is:
