@@ -76,9 +76,7 @@ Every physics mistake leaves a fingerprint.
 
 A student calculates the orbital period of Mars using:
 
-$$P = \frac{r^2}{GM}$$
-
-Their answer: $P = 3.5 \times 10^{14}$ ... something.
+$$P = \frac{r^2}{GM} \rightarrow P = 3.5 \times 10^{14} \text{ ... something.}$$
 
 . . .
 
@@ -94,22 +92,22 @@ Can you tell this equation is *wrong*?
 
 ## The Fingerprint
 
-Let's check the dimensions. Period $P$ should be time: [$[T]$]{.text-accent}.
+Check the Dimensions: period $P$ should be time: [$[T]$]{.text-accent}.
 
-::: {.fragment}
+::: {.fragment .text-sm}
 - $r^2$ has dimensions $[L]^2$
 - $GM$ has dimensions $[L^3 T^{-2}]$
 :::
 
-::: {.fragment}
+::: {.fragment .text-sm}
 $$\frac{r^2}{GM} = \frac{[L^2]}{[L^3 T^{-2}]} = [L^{-1} T^2]$$
 :::
 
-::: {.fragment .highlight-red}
-**That's not time.** It's "time squared per length"—physically meaningless.
+::: {.fragment .highlight-red .text-sm}
+**That's not time.** It's "time squared per length" — its physically meaningless.
 :::
 
-::: {.fragment}
+::: {.fragment .text-sm}
 The equation is [*guaranteed* wrong]{.text-warning .font-bold}. No calculator needed.
 :::
 
