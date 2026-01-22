@@ -1,0 +1,610 @@
+---
+title: "Math Survival Kit"
+subtitle: "ASTR 201 • Tools of the Trade Companion"
+author: "Dr. Anna Rosen"
+date: "2026-01-22"
+description: "A quick-reference + practice set for scientific notation, exponent rules, unit conversions, and order-of-magnitude reasoning used throughout ASTR 201."
+draft: false
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    number-sections: true
+  pdf:
+    toc: true
+    number-sections: true
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+## Why this exists
+
+Astronomy is full of numbers that are **too big**, **too small**, or **too many units** to handle by “gut feel” alone. In ASTR 201, you’re expected to be able to:
+
+- read and manipulate **scientific notation**
+- use **exponent rules** fluently
+- do **unit conversions** using factor-label (units-as-algebra)
+- make **order-of-magnitude** estimates and sanity checks
+
+::: {.callout-warning appearance="minimal"}
+### Expectations (friendly but firm)
+You are responsible for these math skills in this course.
+
+That does **not** mean you already have them. It means you will build them, and you will practice them until they’re reliable.
+:::
+
+## How to use this handout
+
+1. Take the **Core diagnostic** below (~5 min). If you miss 2+, do the practice set.
+2. Try the **Extended diagnostic** if you want to check roots/scaling fluency.
+3. Keep this open while you do homework. It's a **reference**, not a punishment.
+
+**Section guide:**
+
+- **Core (used constantly):** scientific notation, exponents, PEMDAS, units, OOM
+- **Extended (used often):** roots/fractional exponents, logarithms, proportionality
+
+---
+
+## Core diagnostic (~5 minutes) {#sec-diagnostic}
+
+**Instructions:** Work without a calculator if you can. Circle anything you're unsure about.
+
+**Scientific notation & exponents**
+
+1. Rewrite in standard decimal form: $3\times 10^4$ = ____________________
+2. Rewrite in scientific notation: $0.00072$ = ____________________
+3. Compare: which is larger? $4\times 10^6$ or $9\times 10^5$
+   Answer: ____________________
+4. $10^3\times 10^5 = 10^{\_\_}$
+5. $10^{12}/10^7 = 10^{\_\_}$
+6. $(10^4)^2 = 10^{\_\_}$
+7. $2\times 10^3 \times 5\times 10^{-2} =$ ____________________
+
+**Unit conversions**
+
+8. Convert: $3\,\mathrm{km} =$ ____________________ $\mathrm{cm}$
+9. Convert: $1\,\mathrm{m}^2 =$ ____________________ $\mathrm{cm}^2$
+
+**OOM**
+
+10. Order of magnitude: $7\times 10^{10}$ rounds to $10^{\_\_}$
+
+::: {.callout-tip collapse="true" appearance="minimal"}
+### Core diagnostic answer key
+1. 30,000
+2. $7.2\times 10^{-4}$
+3. $4\times 10^6$ (bigger exponent wins)
+4. 8
+5. 5
+6. 8
+7. $(2\cdot 5)\times 10^{3-2} = 10\times 10^1 = 10^2$
+8. $3\times 10^5\,\mathrm{cm}$
+9. $10^4\,\mathrm{cm}^2$
+10. 11 (rule of 3)
+:::
+
+---
+
+## Extended diagnostic (~5 minutes) {#sec-diagnostic-extended}
+
+**Order of operations & roots**
+
+11. Evaluate: $-2^4 =$ ____________________
+12. Evaluate: $(-2)^4 =$ ____________________
+13. $\sqrt{10^{8}} = 10^{?}$ → ____________________
+14. $(10^{6})^{1/2} = 10^{?}$ → ____________________
+
+**Proportionality**
+
+15. If $A \propto B^2$ and $B$ triples, by what factor does $A$ change? ____________________
+
+::: {.callout-tip collapse="true" appearance="minimal"}
+### Extended diagnostic answer key
+11. $-16$ (exponent binds first, then negative)
+12. $16$ (parentheses make the base negative)
+13. 4 (square root halves the exponent)
+14. 3
+15. $3^2 = 9$ (ninefold increase)
+:::
+
+---
+
+## Scientific notation (the language of astronomy) {#sec-scinot}
+
+### What $a\times 10^n$ means
+- $a$ is the **coefficient** (usually $1\le a < 10$)
+- $10^n$ tells you how many places the decimal moves
+  - $n>0$: big number (moves right)
+  - $n<0$: small number (moves left)
+
+**Example:** $3.2\times 10^{5} = 320{,}000$
+
+### Normalizing (getting $1\le a < 10$)
+- $32\times 10^5 = 3.2\times 10^6$
+- $0.32\times 10^5 = 3.2\times 10^4$
+
+::: {.callout-warning appearance="minimal"}
+### Common mistake
+Forgetting to change the exponent when you move the decimal.
+:::
+
+### Comparing numbers quickly
+When comparing $a\times 10^n$ values:
+- **Exponent first** (bigger $n$ wins)
+- If exponents match, compare coefficients
+
+---
+
+## Exponent rules you must know {#sec-exponents}
+
+These are not “math trivia.” They’re the rules that make astronomy manageable.
+
+### The Big Three
+$$
+10^a\times 10^b = 10^{a+b}
+$$
+$$
+\frac{10^a}{10^b} = 10^{a-b}
+$$
+$$
+(10^a)^b = 10^{ab}
+$$
+
+### Negative exponents
+$$
+10^{-3} = \frac{1}{10^3} = 0.001
+$$
+
+### Mixing coefficients and powers of ten
+Treat it like: **(numbers) × (powers of ten)**.
+
+**Example:**
+$$
+(2\times 10^3)(5\times 10^{-2}) = (2\cdot 5)\times 10^{3-2} = 10\times 10^1 = 10^2
+$$
+
+::: {.callout-tip appearance="minimal"}
+### Sanity trick
+If you get $a\ge 10$, rewrite (normalize) so the coefficient is between 1 and 10.
+:::
+
+---
+
+## Order of operations (PEMDAS) {#sec-pemdas}
+
+When you see $F = GMm/r^2$, how do you parse it?
+
+### The hierarchy
+
+**P**arentheses → **E**xponents → **M**ultiplication/**D**ivision → **A**ddition/**S**ubtraction
+
+Operations at the same level go **left to right**.
+
+### The traps that catch students
+
+**Trap 1: Negatives and exponents**
+$$
+-3^2 = -(3^2) = -9 \qquad \text{but} \qquad (-3)^2 = 9
+$$
+The exponent binds tighter than the negative sign unless you use parentheses.
+
+**Trap 2: Division chains**
+
+The expression $a/bc$ is ambiguous. It could mean either:
+$$
+\frac{a}{bc} \qquad \text{or} \qquad \left(\frac{a}{b}\right)c = \frac{ac}{b}
+$$
+**Never write it that way.** Use parentheses or a stacked fraction.
+
+**Trap 3: Fractions of fractions**
+$$
+\frac{a/b}{c} = \frac{a}{bc} \qquad \text{and} \qquad \frac{a}{b/c} = \frac{ac}{b}
+$$
+Dividing by a fraction = multiplying by its reciprocal.
+
+### Astronomy example
+
+Parse $F = GMm/r^2$:
+
+1. Exponent first: $r^2$
+2. Then multiplication/division left to right: $G \cdot M \cdot m / r^2$
+3. Result: $\displaystyle F = \frac{GMm}{r^2}$
+
+::: {.callout-warning appearance="minimal"}
+### The fix
+When in doubt, add parentheses. They cost nothing and prevent errors.
+:::
+
+---
+
+## Fractional exponents and roots {#sec-roots}
+
+Roots are just exponents in disguise.
+
+### The connection
+$$
+a^{1/2} = \sqrt{a} \qquad a^{1/3} = \sqrt[3]{a} \qquad a^{1/n} = \sqrt[n]{a}
+$$
+
+### The power rule still works
+$$
+(10^6)^{1/2} = 10^{6 \times 1/2} = 10^3
+$$
+
+**Translation:** Taking a square root **halves the exponent**.
+
+### Kepler's Law uses this constantly
+
+$$
+P \propto r^{3/2} = r^{1.5} = r \cdot \sqrt{r}
+$$
+
+If $r$ doubles:
+$$
+P_{\text{new}} = P_{\text{old}} \times 2^{3/2} = P_{\text{old}} \times 2\sqrt{2} \approx 2.8 \, P_{\text{old}}
+$$
+
+### Breaking apart roots
+
+$$
+\sqrt{ab} = \sqrt{a} \cdot \sqrt{b}
+$$
+
+**Example:** Simplify $\sqrt{\dfrac{r^3}{GM}}$
+$$
+\sqrt{\frac{r^3}{GM}} = \frac{\sqrt{r^3}}{\sqrt{GM}} = \frac{r^{3/2}}{\sqrt{G}\sqrt{M}}
+$$
+
+::: {.callout-tip appearance="minimal"}
+### The pattern
+To take a square root of $10^n$: divide the exponent by 2.
+
+$\sqrt{10^{6}} = 10^3$, $\sqrt{10^{33}} = 10^{16.5} \approx 3\times 10^{16}$
+:::
+
+---
+
+## Unit conversions: factor-label method (units as algebra) {#sec-units}
+
+### The core idea
+A conversion factor is just **multiplying by 1**.
+
+If $1\,\mathrm{m}=100\,\mathrm{cm}$, then both are true:
+$$
+\frac{100\,\mathrm{cm}}{1\,\mathrm{m}} = 1 \qquad \text{and} \qquad \frac{1\,\mathrm{m}}{100\,\mathrm{cm}} = 1
+$$
+
+### The template
+1. Write the quantity with units.
+2. Multiply by conversion factors so the unwanted unit cancels.
+3. Cancel units explicitly.
+4. Combine powers of ten.
+
+**Example:** $30\,\mathrm{km/s}\rightarrow \mathrm{cm/s}$
+$$
+30\,\frac{\mathrm{km}}{\mathrm{s}}
+\times \frac{10^3\,\mathrm{m}}{1\,\mathrm{km}}
+\times \frac{10^2\,\mathrm{cm}}{1\,\mathrm{m}}
+= 30\times 10^5\,\frac{\mathrm{cm}}{\mathrm{s}}
+= 3\times 10^6\,\mathrm{cm/s}
+$$
+
+::: {.callout-warning appearance="minimal"}
+### The #1 unit mistake
+Dropping units mid-calculation.
+
+**Rule:** If units disappear before the last line, something went wrong.
+:::
+
+### Squared and cubed units (the sneaky trap)
+If $1\,\mathrm{m}=10^2\,\mathrm{cm}$, then:
+$$
+1\,\mathrm{m}^2 = (10^2\,\mathrm{cm})^2 = 10^4\,\mathrm{cm}^2
+$$
+$$
+1\,\mathrm{m}^3 = (10^2\,\mathrm{cm})^3 = 10^6\,\mathrm{cm}^3
+$$
+
+**Translation:** You must raise the conversion factor to the same power.
+
+---
+
+## Order-of-magnitude (OOM) thinking {#sec-oom}
+
+Astronomy often rewards being **roughly right**.
+
+### Rule of 3 (fast rounding)
+When estimating:
+- coefficient $<3$ → round down to **1**
+- coefficient $>3$ → round up to **10**
+
+Examples:
+- $2\times 10^{33} \approx 10^{33}$
+- $7\times 10^{10} \approx 10^{11}$
+
+### What OOM is (and isn’t)
+- OOM means you care about the **exponent** most.
+- Being off by a factor of **2–3** is often fine.
+- Being off by a factor of **10^8** means your model or units are broken.
+
+::: {.callout-tip appearance="minimal"}
+### The sanity-check question
+"What real-world scale should this live near?"
+
+If your result puts a star at $10^{11}\,\mathrm{cm}$, that's **Sun-sized**, not star-distance.
+:::
+
+---
+
+## Logarithms (just enough) {#sec-logs}
+
+Logarithms extract exponents. That's the whole idea.
+
+### The definition
+$$
+\log_{10}(10^n) = n
+$$
+
+If $x = 10^n$, then $\log_{10}(x) = n$.
+
+### Why astronomers care
+
+1. **"Order of magnitude" literally means "the log."** When we say two quantities differ by 3 orders of magnitude, we mean $\log_{10}(A/B) = 3$.
+
+2. **Magnitudes use logs.** The brightness scale:
+$$
+m_1 - m_2 = -2.5\log_{10}\left(\frac{F_1}{F_2}\right)
+$$
+
+3. **Log scales compress huge ranges.** A plot from $10^{-13}$ to $10^{28}$ cm is impossible on a linear axis but simple on a log axis.
+
+### The rules you need
+
+| Rule | Formula | Example |
+|------|---------|---------|
+| Log of a product | $\log(ab) = \log a + \log b$ | $\log(10^3 \times 10^5) = 3+5 = 8$ |
+| Log of a quotient | $\log(a/b) = \log a - \log b$ | $\log(10^{12}/10^7) = 12-7 = 5$ |
+| Log of a power | $\log(a^n) = n\log a$ | $\log(10^{3\times 2}) = 6$ |
+
+::: {.callout-note appearance="minimal"}
+### You won't need to compute logs by hand
+Calculators handle the numbers. You need to understand what logs *mean* and why they appear in formulas.
+:::
+
+---
+
+## Proportionality notation {#sec-proportionality}
+
+The symbol $\propto$ means "is proportional to." It's everywhere in physics.
+
+### What it means
+
+$$
+A \propto B \quad \Longleftrightarrow \quad A = k \cdot B \text{ for some constant } k
+$$
+
+"A is proportional to B" means if you double B, A doubles too.
+
+### What it does NOT mean
+
+$\propto$ does **not** tell you the value of the constant $k$. It only tells you the **relationship**.
+
+### The power of ratios
+
+If $A \propto B^n$, then for two systems:
+$$
+\frac{A_2}{A_1} = \left(\frac{B_2}{B_1}\right)^n
+$$
+
+The constant $k$ **cancels**. You don't need to know it.
+
+### Examples from ASTR 201
+
+| Relationship | Meaning | If input doubles... |
+|--------------|---------|---------------------|
+| $P \propto r^{3/2}$ | Period scales with radius | $P$ increases by $2^{1.5} \approx 2.8\times$ |
+| $F \propto 1/r^2$ | Inverse-square law | $F$ decreases by $4\times$ |
+| $L \propto R^2 T^4$ | Stefan-Boltzmann | Double $T$ → $L$ increases $16\times$ |
+| $R_s \propto M$ | Schwarzschild radius | $R_s$ doubles |
+
+::: {.callout-tip appearance="minimal"}
+### The workflow
+1. Write down the proportionality.
+2. Form a ratio between two cases.
+3. Cancel constants and compute.
+:::
+
+---
+
+## Calculator survival (optional, but useful) {#sec-calculator}
+
+You do not need a fancy calculator, but you do need to avoid common traps.
+
+- Use the **EE**/**EXP** key for scientific notation input.
+  - $3.8\times 10^{26}$ should be typed like `3.8 EE 26`.
+- Use **parentheses** aggressively.
+- After a calculation, ask: **does the exponent make sense?**
+
+::: {.callout-warning appearance="minimal"}
+### Common calculator failure mode
+Typing $3.8\times 10^{26}$ as $3.8\times 10$ then $+26$.
+
+That is not how exponents work. (The calculator will happily let you be wrong.)
+:::
+
+---
+
+## Quick reference tables {#sec-reference}
+
+### SI prefixes (the ones we actually use)
+
+| Prefix | Symbol | Power |
+|---|---:|---:|
+| tera | T | $10^{12}$ |
+| giga | G | $10^{9}$ |
+| mega | M | $10^{6}$ |
+| kilo | k | $10^{3}$ |
+| centi | c | $10^{-2}$ |
+| milli | m | $10^{-3}$ |
+| micro | $\mu$ | $10^{-6}$ |
+| nano | n | $10^{-9}$ |
+
+### High-use conversions
+
+| Conversion | Value |
+|---|---:|
+| $1\,\mathrm{km}$ | $10^5\,\mathrm{cm}$ |
+| $1\,\mathrm{m}$ | $10^2\,\mathrm{cm}$ |
+| $1\,\mathrm{kg}$ | $10^3\,\mathrm{g}$ |
+| $1\,\mathrm{J}$ | $10^7\,\mathrm{erg}$ |
+| $1\,\mathrm{W}$ | $10^7\,\mathrm{erg/s}$ |
+
+### Course anchor values (CGS where appropriate)
+
+| Quantity | Approx value |
+|---|---:|
+| Speed of light $c$ | $3\times 10^{10}\,\mathrm{cm/s}$ |
+| Gravitational constant $G$ | $6.67\times 10^{-8}\,\mathrm{cm^3\,g^{-1}\,s^{-2}}$ |
+| 1 AU | $1.50\times 10^{13}\,\mathrm{cm}$ |
+| 1 pc | $3.09\times 10^{18}\,\mathrm{cm}$ |
+| Solar mass $M_\odot$ | $2.0\times 10^{33}\,\mathrm{g}$ |
+| Solar radius $R_\odot$ | $7.0\times 10^{10}\,\mathrm{cm}$ |
+| Solar luminosity $L_\odot$ | $3.8\times 10^{33}\,\mathrm{erg/s}$ |
+
+::: {.callout-note appearance="minimal"}
+### Reality check
+These values are the “mental yardsticks” you’ll use all semester.
+You do **not** need to memorize everything at once.
+:::
+
+---
+
+## Practice set {#sec-practice}
+
+### Level 0 — warm-up (scientific notation + exponents)
+
+1. Normalize: $45\times 10^6$ → ____________________
+2. Normalize: $0.008\times 10^5$ → ____________________
+3. Compute: $10^{-3}\times 10^{8} = 10^{\;\_\_}$
+4. Compute: $10^{12}/10^{-4} = 10^{\;\_\_}$
+5. Compute: $(10^2)^5 = 10^{\;\_\_}$
+
+### Level 1 — order of operations and roots
+
+6. Evaluate: $-5^2$ = ____________________
+7. Evaluate: $(-5)^2$ = ____________________
+8. Simplify: $\dfrac{12/4}{3}$ = ____________________
+9. Simplify: $\sqrt{10^{12}} = 10^{?}$ → ____________________
+10. Compute: $(10^9)^{1/3} = 10^{?}$ → ____________________
+11. If $P \propto r^{3/2}$ and $r = 4$, what is $r^{3/2}$? ____________________
+
+### Level 2 — unit conversions (factor-label)
+
+12. Convert $12\,\mathrm{km}$ to cm.
+13. Convert $0.35\,\mathrm{m}$ to cm.
+14. Convert $250\,\mathrm{m/s}$ to cm/s.
+15. Convert $2.0\,\mathrm{m^2}$ to $\mathrm{cm^2}$.
+16. Convert $5\,\mathrm{J}$ to erg.
+
+### Level 3 — astronomy-flavored problems
+
+17. The Sun's luminosity is $3.8\times 10^{26}\,\mathrm{W}$. Convert to $\mathrm{erg/s}$.
+18. OOM round: $2.7\times 10^{33}\,\mathrm{g}$ → ____________________
+19. OOM round: $9.1\times 10^{-28}\,\mathrm{g}$ → ____________________
+20. If $R_s \propto M$ and $R_s(1\,M_\odot)\approx 3\,\mathrm{km}$, estimate $R_s(10\,M_\odot)$.
+21. A quantity comes out to $4\times 10^{11}\,\mathrm{cm}$. Is that closer to an Earth radius ($\sim 10^9\,\mathrm{cm}$) or a solar radius ($\sim 10^{11}\,\mathrm{cm}$)? Explain in one sentence.
+
+### Level 4 — proportionality and scaling
+
+22. If $L \propto R^2$ and a star's radius doubles, by what factor does its luminosity change?
+23. If $F \propto 1/r^2$ and distance triples, by what factor does flux change?
+24. Using $P \propto r^{3/2}$: Earth orbits at 1 AU with $P = 1$ yr. Mars orbits at 1.52 AU. Estimate Mars's period.
+25. The Schwarzschild radius scales as $R_s \propto M$. Sgr A* has mass $4\times 10^6\,M_\odot$. If $R_s(1\,M_\odot) \approx 3\,\mathrm{km}$, estimate $R_s$ for Sgr A* in km.
+
+::: {.callout-tip collapse="true" appearance="minimal"}
+## Practice answer key
+
+**Level 0**
+
+1. $4.5\times 10^7$
+2. $8\times 10^2$
+3. 5
+4. 16
+5. 10
+
+**Level 1**
+
+6. $-25$ (exponent binds before negative)
+7. $25$
+8. $1$ (it's $(12/4)/3 = 3/3 = 1$)
+9. 6 (square root halves the exponent: $\sqrt{10^{12}} = 10^6$)
+10. 3 (cube root divides by 3: $(10^9)^{1/3} = 10^3$)
+11. $4^{3/2} = 4 \cdot \sqrt{4} = 4 \cdot 2 = 8$
+
+**Level 2**
+
+12. $12\times 10^5 = 1.2\times 10^6\,\mathrm{cm}$
+13. $35\,\mathrm{cm}$
+14. $250\times 10^2 = 2.5\times 10^4\,\mathrm{cm/s}$
+15. $2.0\times 10^4\,\mathrm{cm^2}$
+16. $5\times 10^7\,\mathrm{erg}$
+
+**Level 3**
+
+17. $3.8\times 10^{33}\,\mathrm{erg/s}$
+18. $10^{33}\,\mathrm{g}$ (rule of 3)
+19. $10^{-27}\,\mathrm{g}$ (rule of 3)
+20. $\approx 30\,\mathrm{km}$
+21. Solar-radius scale ($10^{11}\,\mathrm{cm}$) — exponent matches Sun scale.
+
+**Level 4**
+
+22. $2^2 = 4$ (luminosity quadruples)
+23. $1/3^2 = 1/9$ (flux decreases by factor of 9)
+24. $P^2 = 1.52^3 \approx 3.5$, so $P \approx \sqrt{3.5} \approx 1.9$ years
+25. $R_s = 3\,\mathrm{km} \times 4\times 10^6 = 1.2\times 10^7\,\mathrm{km}$
+:::
+
+---
+
+## What "show your work" means in ASTR 201
+
+When math is part of the physics, your work needs to be readable—and **checkable**.
+
+### Why this matters
+
+Small mistakes are easy to make: a dropped exponent, a flipped fraction, a unit that didn't cancel. The only reliable way to catch them is to **write every step explicitly**.
+
+If you skip steps, you can't find your error. Neither can we.
+
+### The template
+
+1. **Write the equation first** — before plugging in numbers. This separates "what physics am I using?" from "what numbers go where?"
+2. **Carry units through every step** — not just at the start and end. Units that don't cancel are a red flag.
+3. **Show exponent arithmetic explicitly** — write $10^{26}\times 10^7 = 10^{33}$, not just the answer.
+4. **Simplify before you calculate** — cancel terms, combine exponents, reduce fractions *on paper* first. The calculator is the last step, not the first.
+5. **Box the final answer with units** — make it easy to find.
+6. **Sanity check** — one sentence. Does the magnitude make sense?
+
+::: {.callout-warning appearance="minimal"}
+### Calculator errors are sneaky
+Typing mistakes are easy to make and hard to spot. A misplaced parenthesis or a wrong exponent key can silently wreck your answer.
+
+**Always check your calculator work.** Re-enter the calculation a second way, or estimate the answer by hand first so you know what ballpark to expect. If the calculator says $10^{47}$ but your estimate says $10^{33}$, trust the estimate—you probably made a typo.
+:::
+
+::: {.callout-warning appearance="minimal"}
+### The hard truth
+Most errors aren't conceptual—they're mechanical. A sign flip. A forgotten square. A unit that should have been squared but wasn't.
+
+**Showing your work isn't about proving you know the material.** It's about building a trail you can follow when something goes wrong. And something *will* go wrong.
+:::
+
+::: {.callout-note appearance="minimal"}
+### The real skill
+You're not being graded on "being fast." You're being graded on **being trustworthy**—and trustworthy work can be checked.
+:::
+
