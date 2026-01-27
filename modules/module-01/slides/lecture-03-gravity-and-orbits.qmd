@@ -198,9 +198,9 @@ Students see $P^2 = a^3$ in intro courses. Explain why it's misleading for real 
 
 ---
 
-## Prediction Question
+## Prediction Question [📊 Poll]{.poll-badge}
 
-**Before I show you:** If you move a planet to *twice* its orbital distance, by what factor does its period increase?
+If you move a planet to *twice* its orbital distance, by what factor does its period increase?
 
 :::: {.columns}
 ::: {.column width="50%"}
@@ -217,8 +217,23 @@ D. 8× (cubed)
 ::::
 
 ::: {.notes}
-Give 30 seconds. Answer: **C**. From $P^2 \propto a^3$: if $a$ doubles, $P^2 \to 2^3 = 8$, so $P \to \sqrt{8} \approx 2.83$.
+Give 30 seconds for think-pair-share. Then advance to reveal answer.
 :::
+
+---
+
+## Prediction Question — Answer
+
+::: {.quiz}
+If you move a planet to *twice* its orbital distance, by what factor does its period increase?
+
+- [ ] 2× (linear)
+- [ ] 4× (squared)
+- [x] 2.83× ($2^{3/2}$)
+- [ ] 8× (cubed)
+:::
+
+From $P^2 \propto a^3$: if $a$ doubles, $P^2 \to 2^3 = 8$, so $P \to \sqrt{8} \approx 2.83$.
 
 ---
 
@@ -330,7 +345,25 @@ Build intuition BEFORE showing formula. Draw attention to the direction changing
 
 ---
 
-## Concept Check
+## Concept Check [📊 Poll]{.poll-badge}
+
+A car drives around a circular track at constant speedometer reading. Is the car accelerating?
+
+A. Yes—direction is changing, so velocity is changing
+
+B. No—speed is constant, so no acceleration
+
+C. Only when the car speeds up or slows down
+
+D. Only at certain points on the track
+
+::: {.notes}
+Give 30 seconds for think-pair-share. Then advance to reveal answer.
+:::
+
+---
+
+## Concept Check — Answer
 
 ::: {.quiz}
 A car drives around a circular track at constant speedometer reading. Is the car accelerating?
@@ -341,9 +374,7 @@ A car drives around a circular track at constant speedometer reading. Is the car
 - [ ] Only at certain points on the track
 :::
 
-::: {.notes}
-Press **C** to reveal. Common misconception: confusing speed with velocity.
-:::
+Common misconception: confusing *speed* with *velocity*.
 
 ---
 
@@ -440,7 +471,7 @@ $G$ is the same everywhere in the universe—on Earth, on Mars, in distant galax
 
 ---
 
-## Prediction Question
+## Prediction Question [📊 Poll]{.poll-badge}
 
 Using $F_g = \dfrac{Gm_1 m_2}{r^2}$:
 
@@ -461,8 +492,23 @@ D. Unchanged
 ::::
 
 ::: {.notes}
-30 seconds. Answer: **B**. Inverse-square: $(2r)^2 = 4r^2$, so force is 1/4.
+Give 30 seconds for think-pair-share. Then advance to reveal answer.
 :::
+
+---
+
+## Prediction Question — Answer
+
+::: {.quiz}
+If you double the distance between two masses, by what factor does the force change?
+
+- [ ] Halves (1/2)
+- [x] Quarters (1/4)
+- [ ] Doubles (2×)
+- [ ] Unchanged
+:::
+
+Inverse-square: $(2r)^2 = 4r^2$, so force is 1/4.
 
 ---
 
@@ -673,7 +719,25 @@ Apollo needed smaller rockets to leave the Moon!
 
 ---
 
-## Concept Check
+## Concept Check [📊 Poll]{.poll-badge}
+
+Jupiter orbits at 5 AU from the Sun. Earth orbits at 1 AU. How does Jupiter's orbital velocity compare to Earth's?
+
+A. Jupiter is faster (farther out, longer path)
+
+B. Earth is faster by factor ~2.2 ($\sqrt{5}$)
+
+C. They're the same (same Sun)
+
+D. Jupiter is faster by factor 5
+
+::: {.notes}
+Give 30 seconds for think-pair-share. Then advance to reveal answer.
+:::
+
+---
+
+## Concept Check — Answer
 
 ::: {.quiz}
 Jupiter orbits at 5 AU from the Sun. Earth orbits at 1 AU. How does Jupiter's orbital velocity compare to Earth's?
@@ -684,9 +748,7 @@ Jupiter orbits at 5 AU from the Sun. Earth orbits at 1 AU. How does Jupiter's or
 - [ ] Jupiter is faster by factor 5
 :::
 
-::: {.notes}
-Press **C**. From $v_{orb} \propto 1/\sqrt{r}$: Earth is $\sqrt{5} \approx 2.2$ times faster.
-:::
+From $v_{orb} \propto 1/\sqrt{r}$: Earth is $\sqrt{5} \approx 2.2$ times faster.
 
 ---
 
@@ -825,7 +887,7 @@ This is the deep connection Kepler couldn't see.
 
 ---
 
-## Prediction Question
+## Prediction Question [📊 Poll]{.poll-badge}
 
 A planet has perihelion at 1 AU and aphelion at 4 AU. Using $L = mvr = \text{const}$:
 
@@ -846,8 +908,23 @@ D. 8× (ratio cubed)
 ::::
 
 ::: {.notes}
-30 seconds. Answer: **B**. From $v_p r_p = v_a r_a$: $v_p/v_a = r_a/r_p = 4/1 = 4$.
+Give 30 seconds for think-pair-share. Then advance to reveal answer.
 :::
+
+---
+
+## Prediction Question — Answer
+
+::: {.quiz}
+A planet has perihelion at 1 AU and aphelion at 4 AU. By what factor is the linear speed larger at perihelion?
+
+- [ ] 2× (ratio of distances)
+- [x] 4× (ratio of distances)
+- [ ] 16× (ratio squared)
+- [ ] 8× (ratio cubed)
+:::
+
+From $v_p r_p = v_a r_a$: $v_p/v_a = r_a/r_p = 4/1 = 4$.
 
 ---
 

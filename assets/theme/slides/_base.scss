@@ -36,3 +36,18 @@
   font-style: italic;
   color: $link-color;  // Darker teal (#2f6f6f)
 }
+
+// -----------------------------------------------------------------------------
+// Poll/TPS badge for interactive slides
+// -----------------------------------------------------------------------------
+.reveal .poll-badge {
+  display: inline-block;
+  font-size: $text-sm;
+  font-weight: $font-semibold;
+  color: $accent-dark-color;
+  background-color: rgba($accent-dark-color, 0.12);
+  padding: 0.15em 0.5em;
+  border-radius: $radius-sm;
+  margin-left: 0.5em;
+  vertical-align: middle;
+}
