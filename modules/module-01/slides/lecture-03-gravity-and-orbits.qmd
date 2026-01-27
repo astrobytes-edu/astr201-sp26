@@ -48,7 +48,7 @@ execute:
 
 By the end of this lecture, you will be able to:
 
-::: {.incremental}
+::: {.incremental .text-md}
 - Distinguish between **empirical laws** (patterns) and **physical laws** (mechanisms)
 - Describe how Newton *derived* the inverse-square law from Kepler's observations
 - Apply Newton's laws of motion to orbital problems using force balance
@@ -144,7 +144,7 @@ Point to the figure. Emphasize: nature doesn't care about "perfect" circles.
 
 > A line from planet to Sun sweeps **equal areas in equal times**.
 
-{{< img kepler-second-law width="80%" >}}
+{{< img kepler-second-law width="75%" >}}
 
 ::: {.fragment}
 **Translation:** Planets move [faster near the Sun]{.rn rn-type="underline" rn-color="#ff6b6b"}.
@@ -160,18 +160,32 @@ Press R to animate underline. Foreshadow: this hints at angular momentum conserv
 
 > For orbits around a central mass: $P^2 \propto a^3$
 
-. . .
-
+:::: {.columns}
+::: {.column width="50%"}
 **What this means:**
 
 ::: {.incremental}
-- Move a planet 2× farther → period increases by $2^{3/2} \approx 2.83$
-- It's a *proportionality*, not an equality
-- The constant depends on the central mass (Newton will show this)
+- Move 2× farther → period ×$2^{3/2} \approx 2.83$
+- It's a *proportionality*, not equality
+- Constant depends on central mass
+:::
 :::
 
+::: {.column width="50%"}
+::: {.fragment}
+**Ratio method example:**
+
+Mars: $a = 1.52$ AU. Earth: $a = 1$ AU, $P = 1$ yr.
+
+$$\frac{P_{Mars}^2}{P_{Earth}^2} = \frac{a_{Mars}^3}{a_{Earth}^3}$$
+
+$$P_{Mars} = \sqrt{1.52^3} = 1.87\,\text{yr}$$
+:::
+:::
+::::
+
 ::: {.notes}
-Emphasize: this is empirical—extracted from data. No explanation of *why*.
+Emphasize: this is empirical—extracted from data. No explanation of *why*. The ratio method avoids needing constants.
 :::
 
 ---
@@ -333,7 +347,7 @@ An object moving in a circle at constant speed is **accelerating**.
 
 . . .
 
-{{< img newton-ball-on-string width="100%" >}}
+{{< img newton-ball-on-string width="80%" >}}
 
 ::: {.fragment}
 **Centripetal acceleration:** $a_c = \dfrac{v^2}{r}$ (points toward center)
