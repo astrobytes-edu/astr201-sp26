@@ -31,8 +31,8 @@
 // Title slide subtitle
 // -----------------------------------------------------------------------------
 .reveal .subtitle {
-  font-size: $text-lg;
+  font-size: $text-xl;
   font-weight: $font-semibold;
   font-style: italic;
-  color: $accent-dark-color;  // Dark teal
+  color: $link-color;  // Darker teal (#2f6f6f)
 }
