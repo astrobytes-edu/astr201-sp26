@@ -160,41 +160,118 @@ Press R to animate underline. Foreshadow: this hints at angular momentum conserv
 
 > For orbits around a central mass: $P^2 \propto a^3$
 
-:::: {.columns}
-::: {.column width="50%"}
 **What this means:**
 
 ::: {.incremental}
-- Move 2× farther → period ×$2^{3/2} \approx 2.83$
-- It's a *proportionality*, not equality
-- Constant depends on central mass
-:::
+- Move 2× farther → period increases by $2^{3/2} \approx 2.83$
+- It's a *proportionality*, not an equality
+- The constant depends on the central mass
 :::
 
-::: {.column width="50%"}
+::: {.notes}
+Emphasize: this is empirical—extracted from data. No explanation of *why*.
+:::
+
+---
+
+## Kepler III: Ratio Method {.smallest}
+
+**Start with Kepler III:**
+$P^2 \propto a^3$
+
+. . .
+
+**Take square root of both sides:**
+$P \propto a^{3/2}$
+
+. . .
+
+**Write as equality with constant $C$:** For any object orbiting the same central mass:
+$P = C \cdot a^{3/2}$
+
+. . .
+
+**For two objects (1 and 2) orbiting the same mass:**
+$P_1 = C \cdot a_1^{3/2} \quad \text{and} \quad P_2 = C \cdot a_2^{3/2}$
+
+. . .
+
+**Divide to eliminate $C$:**
+$$\frac{P_2}{P_1} = \frac{\cancel{C} \cdot a_2^{3/2}}{\cancel{C} \cdot a_1^{3/2}} = \left(\frac{a_2}{a_1}\right)^{3/2}$$
+
+::: {.text-xs .text-muted}
+**Why this works:** Proportionality ($\propto$) hides an unknown constant. When you divide two proportionalities *with the same constant*, it cancels—leaving a true equality ($=$).
+:::
+
+::: {.notes}
+Walk through every step. Students struggle with proportionality → equality → ratio. Emphasize: the ratio method turns "$\propto$" into "$=$" by canceling what we don't know.
+:::
+
+---
+
+## Kepler III: Ratio Formula
+
+**From the previous slide:**
+$$\frac{P_2}{P_1} = \left(\frac{a_2}{a_1}\right)^{3/2}$$
+
+. . .
+
+**Solve for $P_2$:**
+$$P_2 = P_1 \times \left(\frac{a_2}{a_1}\right)^{3/2}$$
+
+. . .
+
+This is the **ratio method**. If you know $P_1$, $a_1$, and $a_2$, you can find $P_2$ without knowing $G$ or the central mass.
+
+::: {.notes}
+Box this formula. They'll use it repeatedly.
+:::
+
+---
+
+## Kepler III: Mars Example {.smallest}
+
+**Given:** $a_\text{Mars} = 1.52\,\text{AU}$, $a_\text{Earth} = 1\,\text{AU}$, $P_\text{Earth} = 1\,\text{yr}$. **Find:** $P_\text{Mars}$
+
+:::: {.columns}
+::: {.column width="48%"}
+**Start:** $P^2 \propto a^3$ → $P \propto a^{3/2}$
+
 ::: {.fragment}
-**Ratio method example:**
+**Ratio formula:**
+$$P_2 = P_1 \times \left(\dfrac{a_2}{a_1}\right)^{3/2}$$
+:::
 
-Mars: $a = 1.52$ AU. Earth: $a = 1$ AU, $P = 1$ yr.
+::: {.fragment}
+**Let:** 1 = Earth, 2 = Mars
+:::
+:::
 
-$$\frac{P_{Mars}^2}{P_{Earth}^2} = \frac{a_{Mars}^3}{a_{Earth}^3}$$
+::: {.column width="48%"}
+::: {.fragment}
+**Substitute with units:**
+$$P_\text{Mars} = 1\,\text{yr} \times \left(\dfrac{1.52\,\cancel{\text{AU}}}{1\,\cancel{\text{AU}}}\right)^{3/2}$$
+:::
 
-$$P_{Mars} = \sqrt{1.52^3} = 1.87\,\text{yr}$$
+::: {.fragment}
+**Calculate:** $1\,\text{yr} \times (1.52)^{3/2} = 1\,\text{yr} \times 1.87$
+:::
+
+::: {.fragment}
+$$\boxed{P_\text{Mars} = 1.87\,\text{yr}}$$
 :::
 :::
 ::::
 
 ::: {.notes}
-Emphasize: this is empirical—extracted from data. No explanation of *why*. The ratio method avoids needing constants.
+Show every unit. Show the cancellation. Students need to see AU/AU = 1.
 :::
 
 ---
 
 ## Common Notation Trap
 
-::: {.callout-warning appearance="minimal"}
-**Avoid "$P^2 = a^3$"** — this hides units and mass dependence!
-:::
+> **Avoid "$P^2 = a^3$"** — this hides units and mass dependence!
 
 . . .
 
@@ -204,7 +281,7 @@ $$P^2 = \frac{4\pi^2}{G(M+m)} a^3$$
 
 . . .
 
-The "shortcut" only works for Solar System orbits measured in years and AU around a ~$1\,M_\odot$ star.
+The "shortcut" only works for Solar System orbits with $m \ll M$ measured in years and AU around a ~$1\,M_\odot$ star.
 
 ::: {.notes}
 Students see $P^2 = a^3$ in intro courses. Explain why it's misleading for real astrophysics.
@@ -345,13 +422,17 @@ An object moving in a circle at constant speed is **accelerating**.
 
 **Intuition:** Faster motion → direction changes more rapidly. Tighter curve → direction changes more sharply. Both increase acceleration.
 
-. . .
-
-{{< img newton-ball-on-string width="80%" >}}
-
-::: {.fragment}
-**Centripetal acceleration:** $a_c = \dfrac{v^2}{r}$ (points toward center)
+:::: {.columns}
+:::{.column width="60%"}
+{{< img newton-ball-on-string width="90%" >}}
 :::
+
+:::{.column width="40%"}
+::: {.fragment}
+**Centripetal acceleration:** $$\boxed{a_c = \dfrac{v^2}{r}}$$ (points toward center)
+:::
+:::
+::::
 
 ::: {.notes}
 Build intuition BEFORE showing formula. Draw attention to the direction changing even as speed stays constant.
@@ -363,13 +444,13 @@ Build intuition BEFORE showing formula. Draw attention to the direction changing
 
 A car drives around a circular track at constant speedometer reading. Is the car accelerating?
 
-A. Yes—direction is changing, so velocity is changing
+- A. Yes — direction is changing, so velocity is changing
 
-B. No—speed is constant, so no acceleration
+- B. No — speed is constant, so no acceleration
 
-C. Only when the car speeds up or slows down
+- C. Only when the car speeds up or slows down
 
-D. Only at certain points on the track
+- D. Only at certain points on the track
 
 ::: {.notes}
 Give 30 seconds for think-pair-share. Then advance to reveal answer.
@@ -424,35 +505,31 @@ Part 3: Newton's Law of Gravitation
 
 ---
 
-## The Universal Law of Gravity
+## The Universal Law of Gravity {.smaller}
 
-$$F_g = \frac{Gm_1 m_2}{r^2}$$
-
+:::: {.columns}
+::: {.column width="45%"}
 {{< img gravity-law width="100%" >}}
-
-::: {.notes}
-Newton's big insight: one law explains both falling apples and orbiting planets.
 :::
 
----
-
-## Unpacking the Equation
-
+::: {.column width="55%"}
 $$F_g = \frac{Gm_1 m_2}{r^2}$$
 
 ::: {.incremental}
-- $G = 6.67 \times 10^{-8}\ \mathrm{cm^3\,g^{-1}\,s^{-2}}$ — gravitational constant
-- $m_1, m_2$ — the two masses (in grams)
-- $r$ — distance between centers (in cm)
-- $F_g$ — force (in dynes), attractive
+- $F_g$ — gravitational force (dynes)
+- $G = 6.67 \times 10^{-8}\,\mathrm{cm^3\,g^{-1}\,s^{-2}}$
+- $m_1, m_2$ — the two masses (g)
+- $r$ — distance between centers (cm)
+:::
+:::
+::::
+
+::: {.fragment .text-xs}
+> *"Every particle of matter in the universe attracts every other particle with a force that is proportional to the product of their masses and inversely proportional to the square of the distance between their centres."* — Newton, *Principia* (1687)
 :::
 
-. . .
-
-**Unit check:** $[G] = \dfrac{\text{dyne} \cdot \text{cm}^2}{\text{g}^2} = \mathrm{cm^3\,g^{-1}\,s^{-2}}$ ✓
-
 ::: {.notes}
-Walk through the units. This verifies the equation makes dimensional sense.
+Newton's big insight: one law explains both falling apples and orbiting planets. Walk through each term.
 :::
 
 ---
@@ -613,15 +690,28 @@ This is how we "weigh" stars in binaries, black holes, galaxies.
 
 ## Two-Body Reality: Center of Mass
 
-Both bodies orbit their common **center of mass** (barycenter).
+:::: {.columns}
+::: {.column width="55%"}
+{{< img center-of-mass width="110%" >}}
 
-{{< img center-of-mass width="100%" >}}
+Both bodies orbit their common **center of mass** (barycenter).
+:::
+
+::: {.column width="45%"}
+$$m_1 \, d_1 = m_2 \, d_2$$
+
+- $m_1, m_2$ — masses of the two bodies
+- $d_1, d_2$ — distances from the CM
 
 ::: {.fragment}
 When $M \gg m$: barycenter ≈ center of $M$ (Kepler's approximation works)
+:::
 
+::: {.fragment}
 This wobble is how we detect **exoplanets**!
 :::
+:::
+::::
 
 ::: {.notes}
 Connect to radial velocity method. The Sun wobbles ~1 solar radius due to Jupiter.
@@ -679,20 +769,24 @@ Earth travels 108,000 km/hr just to stay in orbit!
 
 ---
 
-## Worked Example: Earth's Orbit
+## Worked Example: Earth's Orbit {.smallest}
 
-**Given:** $M_\odot = 2 \times 10^{33}$ g, $r = 1.5 \times 10^{13}$ cm, $G = 6.67 \times 10^{-8}$
-
-. . .
-
-$$v_{orb} = \sqrt{\frac{GM_\odot}{r}} = \sqrt{\frac{(6.67 \times 10^{-8})(2 \times 10^{33})}{1.5 \times 10^{13}}}$$
+**Given:** $M_\odot = 2 \times 10^{33}\,\text{g}$, $r = 1.5 \times 10^{13}\,\text{cm}$, $G = 6.67 \times 10^{-8}\,\frac{\text{cm}^3}{\text{g}\cdot\text{s}^2}$
 
 . . .
 
-$$= \sqrt{8.9 \times 10^{12}} \approx 3 \times 10^6\ \text{cm/s} = 30\ \text{km/s}$$
+$$v_{orb} = \sqrt{\frac{GM_\odot}{r}} = \sqrt{\frac{(6.67 \times 10^{-8}\,\frac{\text{cm}^3}{\text{g}\cdot\text{s}^2})(2 \times 10^{33}\,\text{g})}{1.5 \times 10^{13}\,\text{cm}}}$$
+
+. . .
+
+**Units:** $\sqrt{\dfrac{\text{cm}^3 \cdot \cancel{\text{g}}}{\cancel{\text{g}} \cdot \text{s}^2 \cdot \text{cm}}} = \sqrt{\dfrac{\text{cm}^{\cancel{3}2}}{\text{s}^2}} = \dfrac{\text{cm}}{\text{s}}$ ✓
+
+. . .
+
+**Numbers:** $\sqrt{\frac{(6.67)(2)}{1.5} \times 10^{-8+33-13}} = \sqrt{8.9 \times 10^{12}} \approx 3 \times 10^6\,\frac{\text{cm}}{\text{s}} = 30\,\frac{\text{km}}{\text{s}}$
 
 ::: {.notes}
-Walk through the calculation showing unit cancellation.
+Show units FIRST, then numbers. Students need to see cancellation.
 :::
 
 ---
@@ -717,8 +811,12 @@ Key relationship: escape is √2 times orbital velocity.
 
 ## Escape Velocity: What It Means
 
+:::: {.columns}
+::: {.column width="55%"}
 {{< img escape-velocity width="100%" >}}
+:::
 
+::: {.column width="45%"}
 ::: {.fragment}
 | Location | $v_{orb}$ | $v_{esc}$ |
 |----------|-----------|-----------|
@@ -726,6 +824,8 @@ Key relationship: escape is √2 times orbital velocity.
 | Moon surface | 1.7 km/s | 2.4 km/s |
 | Sun surface | 434 km/s | 618 km/s |
 :::
+:::
+::::
 
 ::: {.notes}
 Apollo needed smaller rockets to leave the Moon!
@@ -823,8 +923,12 @@ The debt metaphor really helps students. Relate to energy budget.
 
 ## Energy Determines Orbit Type
 
+:::: {.columns}
+::: {.column width="55%"}
 {{< img orbit-types width="100%" >}}
+:::
 
+::: {.column width="45%"}
 ::: {.fragment}
 | Total Energy | Orbit Type |
 |--------------|------------|
@@ -832,6 +936,8 @@ The debt metaphor really helps students. Relate to energy budget.
 | $E = 0$ | Parabolic (just escapes) |
 | $E > 0$ | Hyperbolic (escapes with speed to spare) |
 :::
+:::
+::::
 
 ::: {.notes}
 Key insight: the sign of E tells you the orbital fate.
@@ -841,8 +947,12 @@ Key insight: the sign of E tells you the orbital fate.
 
 ## Energy Conservation in Orbits
 
+:::: {.columns}
+::: {.column width="55%"}
 {{< img conservation-energy-orbit width="100%" >}}
+:::
 
+::: {.column width="45%"}
 ::: {.fragment}
 **At perihelion:** High $K$, low $U$ (fast, close)
 
@@ -850,6 +960,8 @@ Key insight: the sign of E tells you the orbital fate.
 
 **Total $E$:** Always constant!
 :::
+:::
+::::
 
 ::: {.notes}
 K and U trade off, but E stays fixed.
@@ -859,19 +971,25 @@ K and U trade off, but E stays fixed.
 
 ## Angular Momentum Conservation
 
+:::: {.columns}
+::: {.column width="50%"}
 For orbital motion:
 
 $$L = mvr = mr^2\dot{\phi} = \text{constant}$$
 
-. . .
-
+::: {.fragment}
 **Two equivalent forms:** $v = r\dot{\phi}$ (arc length per time), so both give the same $L$.
+:::
 
-. . .
-
+::: {.fragment}
 **Why conserved?** Gravity is a *central force*—it exerts no *torque* (twisting force).
+:::
+:::
 
+::: {.column width="50%"}
 {{< img conservation-angular-momentum width="100%" >}}
+:::
+::::
 
 ::: {.notes}
 Torque = what makes things spin faster/slower. Central force → no torque → L conserved. $\dot{\phi}$ = angular velocity (rad/s).
