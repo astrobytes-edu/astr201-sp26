@@ -4,7 +4,7 @@ subtitle: "From Patterns to Physics"
 author: "Dr. Anna Rosen"
 date: "2026-01-27"
 description: "Kepler told us what planets do; Newton told us why. The transition from empirical patterns to physical explanations marks the birth of predictive physics."
-draft: true
+draft: false
 format:
   revealjs:
     theme: [default, ../../../assets/theme/slides/theme.scss]
@@ -51,9 +51,10 @@ By the end of this lecture, you will be able to:
 ::: {.incremental}
 - Distinguish between **empirical laws** (patterns) and **physical laws** (mechanisms)
 - Describe how Newton *derived* the inverse-square law from Kepler's observations
-- Calculate orbital velocity and escape velocity
-- Use energy and angular momentum to predict orbital behavior
-- Explain the virial theorem for bound systems at equilibrium
+- Apply Newton's laws of motion to orbital problems using force balance
+- Calculate orbital velocity and escape velocity, and explain what each represents
+- Use energy and angular momentum conservation to predict orbital behavior
+- Explain the virial theorem for bound systems *at equilibrium or time-averaged*
 :::
 
 ::: {.notes}
@@ -162,6 +163,28 @@ Press R to animate underline. Foreshadow: this hints at angular momentum conserv
 
 ::: {.notes}
 Emphasize: this is empirical—extracted from data. No explanation of *why*.
+:::
+
+---
+
+## Common Notation Trap
+
+::: {.callout-warning appearance="minimal"}
+**Avoid "$P^2 = a^3$"** — this hides units and mass dependence!
+:::
+
+. . .
+
+**The full physical law (Newton's version):**
+
+$$P^2 = \frac{4\pi^2}{G(M+m)} a^3$$
+
+. . .
+
+The "shortcut" only works for Solar System orbits measured in years and AU around a ~$1\,M_\odot$ star.
+
+::: {.notes}
+Students see $P^2 = a^3$ in intro courses. Explain why it's misleading for real astrophysics.
 :::
 
 ---
@@ -282,6 +305,10 @@ An object moving in a circle at constant speed is **accelerating**.
 
 . . .
 
+**Intuition:** Faster motion → direction changes more rapidly. Tighter curve → direction changes more sharply. Both increase acceleration.
+
+. . .
+
 {{< img newton-ball-on-string >}}
 
 ::: {.fragment}
@@ -289,7 +316,7 @@ An object moving in a circle at constant speed is **accelerating**.
 :::
 
 ::: {.notes}
-Draw attention to the direction changing even as speed stays constant.
+Build intuition BEFORE showing formula. Draw attention to the direction changing even as speed stays constant.
 :::
 
 ---
@@ -749,18 +776,20 @@ K and U trade off, but E stays fixed.
 
 For orbital motion:
 
-$$L = mvr = \text{constant}$$
+$$L = mvr = mr^2\dot{\phi} = \text{constant}$$
+
+. . .
+
+**Two equivalent forms:** $v = r\dot{\phi}$ (arc length per time), so both give the same $L$.
 
 . . .
 
 **Why conserved?** Gravity is a *central force*—it exerts no *torque* (twisting force).
 
-. . .
-
 {{< img conservation-angular-momentum >}}
 
 ::: {.notes}
-Torque = what makes things spin faster/slower. Central force → no torque → L conserved.
+Torque = what makes things spin faster/slower. Central force → no torque → L conserved. $\dot{\phi}$ = angular velocity (rad/s).
 :::
 
 ---
@@ -815,20 +844,23 @@ D. 8× (ratio cubed)
 
 ## The Virial Theorem
 
-For bound systems **in equilibrium** (or averaged over orbits):
+For bound systems, the virial theorem applies in **two situations:**
+
+::: {.incremental}
+1. **Truly static systems:** A star in hydrostatic equilibrium
+2. **Periodic systems:** Time-averaged over complete orbits
+:::
+
+. . .
 
 $$\langle K \rangle = -\frac{1}{2}\langle U \rangle$$
 
 . . .
 
-**Verify for circular orbit:**
-
-$$K = \frac{GMm}{2r}, \quad U = -\frac{GMm}{r}$$
-
-$$K = -\frac{1}{2}U \quad \checkmark$$
+For circular orbit (instant = average): $K = \dfrac{GMm}{2r}$, $U = -\dfrac{GMm}{r}$ → $K = -\frac{1}{2}U$ ✓
 
 ::: {.notes}
-The virial theorem connects K and U in any equilibrium gravitational system.
+Distinguish equilibrium vs. time-averaged. The angle brackets mean "average."
 :::
 
 ---
@@ -1011,9 +1043,11 @@ Core message. Let this land.
 |----------|----------|
 | Gravitational Force | $F_g = \dfrac{Gm_1m_2}{r^2}$ |
 | Orbital Velocity | $v_{orb} = \sqrt{\dfrac{GM}{r}}$ |
-| Escape Velocity | $v_{esc} = \sqrt{\dfrac{2GM}{r}}$ |
+| Escape Velocity | $v_{esc} = \sqrt{\dfrac{2GM}{r}} = \sqrt{2}\,v_{orb}$ |
 | Newton's Kepler III | $P^2 = \dfrac{4\pi^2}{G(M+m)}a^3$ |
 | Total Energy | $E = \dfrac{1}{2}mv^2 - \dfrac{GMm}{r}$ |
+| Bound Orbit Energy | $E = -\dfrac{GMm}{2a}$ |
+| Angular Momentum | $L = mvr = mr^2\dot{\phi}$ |
 | Virial Theorem | $\langle K \rangle = -\frac{1}{2}\langle U \rangle$ |
 
 ---
@@ -1036,13 +1070,13 @@ Address these directly if time permits.
 
 ## Looking Ahead
 
-**Next time:** Stellar distances and the cosmic distance ladder
+**Next time:** Light as information — blackbody radiation and stellar spectra
 
 **Before then:**
 
-- Read: Lecture 3 reading (gravity and orbits)
-- Review: Unit analysis and scaling methods
+- Read: Lecture 3 reading (gravity and orbits) — especially the worked examples
+- Review: Unit analysis and how $v_{orb}$, $v_{esc}$, and energy tell you about orbital fate
 
 ::: {.notes}
-Connect to what's coming.
+Next lecture begins Module 1's transition to light and stellar properties.
 :::
