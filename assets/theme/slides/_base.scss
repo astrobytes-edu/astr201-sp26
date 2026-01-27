@@ -19,10 +19,10 @@
 }
 
 // -----------------------------------------------------------------------------
-// Blockquotes - use body color (Quarto default is light gray for dark themes)
+// Blockquotes - use slate gray (Quarto default is light gray for dark themes)
 // -----------------------------------------------------------------------------
 .reveal blockquote {
-  color: $body-color;
+  color: $neutral-accent-color;  // Slate gray - softer than body text
   border-left-color: rgba($heading-color, 0.4);
   font-style: italic;
 }
