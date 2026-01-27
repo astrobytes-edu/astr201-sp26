@@ -17,3 +17,12 @@
 .reveal a:hover {
   border-bottom-color: rgba($link-hover-color, 0.5);
 }
+
+// -----------------------------------------------------------------------------
+// Blockquotes - use body color (Quarto default is light gray for dark themes)
+// -----------------------------------------------------------------------------
+.reveal blockquote {
+  color: $body-color;
+  border-left-color: rgba($heading-color, 0.4);
+  font-style: italic;
+}
