@@ -11,6 +11,7 @@ This repo is a Quarto website + RevealJS slide system for **ASTR 201: Astronomy 
 
 ## Non‑Negotiables (Session Discipline)
 
+- Activate the course conda environment before running repo commands: `conda activate astro`. If `conda`/`astro` isn’t available in this shell, stop and ask (don’t guess paths).
 - Read relevant files before editing.
 - Follow the phase separation in `docs/llm-lab-protocol.md` (understanding → assumptions → exploration → implementation).
 - Treat `docs/software-engineering-playbook.md` as the general engineering checklist for repo changes.
