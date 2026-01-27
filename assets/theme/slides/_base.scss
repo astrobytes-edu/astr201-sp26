@@ -26,3 +26,13 @@
   border-left-color: rgba($heading-color, 0.4);
   font-style: italic;
 }
+
+// -----------------------------------------------------------------------------
+// Title slide subtitle
+// -----------------------------------------------------------------------------
+.reveal .subtitle {
+  font-size: $text-lg;
+  font-weight: $font-semibold;
+  font-style: italic;
+  color: $accent-dark-color;  // Dark teal
+}
