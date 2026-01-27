@@ -1,5 +1,5 @@
 ---
-title: "Lecture 3: Gravity and Orbits"
+title: "Lecture 3:<br> Gravity and Orbits"
 subtitle: "From Patterns to Physics"
 author: "Dr. Anna Rosen"
 date: "2026-01-27"
@@ -116,14 +116,23 @@ You discover three remarkable patterns:
 
 > Planets move in **ellipses** with the Sun at one focus.
 
-{{< img kepler-first-law >}}
+:::: {.columns}
+::: {.column width="55%"}
 
+{{< img kepler-first-law width="100%" >}}
+
+:::
+
+::: {.column width=45%}
 ::: {.fragment}
 **Key terms:**
 
-- Semi-major axis $a$: average distance
-- Eccentricity $e$: how "squashed" (0 = circle, 1 = line)
+- **Semi-major axis** $a$:<br> average distance
+- **Eccentricity** $e$:<br> how "squashed"<br> (0 = circle, 1 = line)
 :::
+:::
+
+::::
 
 ::: {.notes}
 Point to the figure. Emphasize: nature doesn't care about "perfect" circles.
@@ -135,7 +144,7 @@ Point to the figure. Emphasize: nature doesn't care about "perfect" circles.
 
 > A line from planet to Sun sweeps **equal areas in equal times**.
 
-{{< img kepler-second-law >}}
+{{< img kepler-second-law width="80%" >}}
 
 ::: {.fragment}
 **Translation:** Planets move [faster near the Sun]{.rn rn-type="underline" rn-color="#ff6b6b"}.
@@ -309,7 +318,7 @@ An object moving in a circle at constant speed is **accelerating**.
 
 . . .
 
-{{< img newton-ball-on-string >}}
+{{< img newton-ball-on-string width="100%" >}}
 
 ::: {.fragment}
 **Centripetal acceleration:** $a_c = \dfrac{v^2}{r}$ (points toward center)
@@ -374,7 +383,7 @@ Part 3: Newton's Law of Gravitation
 
 $$F_g = \frac{Gm_1 m_2}{r^2}$$
 
-{{< img gravity-law >}}
+{{< img gravity-law width="100%" >}}
 
 ::: {.notes}
 Newton's big insight: one law explains both falling apples and orbiting planets.
@@ -546,7 +555,7 @@ This is how we "weigh" stars in binaries, black holes, galaxies.
 
 Both bodies orbit their common **center of mass** (barycenter).
 
-{{< img center-of-mass >}}
+{{< img center-of-mass width="100%" >}}
 
 ::: {.fragment}
 When $M \gg m$: barycenter ≈ center of $M$ (Kepler's approximation works)
@@ -648,7 +657,7 @@ Key relationship: escape is √2 times orbital velocity.
 
 ## Escape Velocity: What It Means
 
-{{< img escape-velocity >}}
+{{< img escape-velocity width="100%" >}}
 
 ::: {.fragment}
 | Location | $v_{orb}$ | $v_{esc}$ |
@@ -738,7 +747,7 @@ The debt metaphor really helps students. Relate to energy budget.
 
 ## Energy Determines Orbit Type
 
-{{< img orbit-types >}}
+{{< img orbit-types width="100%" >}}
 
 ::: {.fragment}
 | Total Energy | Orbit Type |
@@ -756,7 +765,7 @@ Key insight: the sign of E tells you the orbital fate.
 
 ## Energy Conservation in Orbits
 
-{{< img conservation-energy-orbit >}}
+{{< img conservation-energy-orbit width="100%" >}}
 
 ::: {.fragment}
 **At perihelion:** High $K$, low $U$ (fast, close)
@@ -786,7 +795,7 @@ $$L = mvr = mr^2\dot{\phi} = \text{constant}$$
 
 **Why conserved?** Gravity is a *central force*—it exerts no *torque* (twisting force).
 
-{{< img conservation-angular-momentum >}}
+{{< img conservation-angular-momentum width="100%" >}}
 
 ::: {.notes}
 Torque = what makes things spin faster/slower. Central force → no torque → L conserved. $\dot{\phi}$ = angular velocity (rad/s).
@@ -963,7 +972,7 @@ Tease General Relativity without going deep.
 
 ## Curved Spacetime
 
-{{< img gravity-curved-space >}}
+{{< img gravity-curved-space width="100%" >}}
 
 ::: {.fragment}
 Einstein: *"Mass tells spacetime how to curve; spacetime tells mass how to move."*
