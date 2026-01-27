@@ -990,13 +990,17 @@ function defn(args, kwargs)
   return pandoc.Str(definition)
 end
 
--- {{< glossary >}} or {{< glossary module=1 >}} - full glossary section
+-- {{< glossary >}} or {{< glossary module=1 >}} or {{< glossary first_use="Lecture 3" >}} - full glossary section
 function glossary(args, kwargs)
   local glossary_data = get_glossary()
   local filter_module = nil
+  local filter_first_use = nil
 
   if kwargs and kwargs.module then
     filter_module = tonumber(pandoc.utils.stringify(kwargs.module))
+  end
+  if kwargs and kwargs.first_use then
+    filter_first_use = pandoc.utils.stringify(kwargs.first_use)
   end
 
   if not glossary_data or not next(glossary_data) then
@@ -1007,7 +1011,10 @@ function glossary(args, kwargs)
   local sorted = {}
   for id, entry in pairs(glossary_data) do
     -- Filter by module if specified
-    if not filter_module or (entry.module and tonumber(entry.module) == filter_module) then
+    local module_match = not filter_module or (entry.module and tonumber(entry.module) == filter_module)
+    -- Filter by first_use if specified
+    local first_use_match = not filter_first_use or (entry.first_use and entry.first_use == filter_first_use)
+    if module_match and first_use_match then
       table.insert(sorted, {id = id, entry = entry, sort_key = (entry.term or id):lower()})
     end
   end

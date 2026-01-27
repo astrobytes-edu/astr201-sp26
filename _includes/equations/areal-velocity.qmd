@@ -1,0 +1,3 @@
+$$
+\frac{dA}{dt} = \frac{L}{2m} = \text{constant}
+$$ {#eq-areal-velocity}

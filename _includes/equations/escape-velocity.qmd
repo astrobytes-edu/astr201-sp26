@@ -1,0 +1,3 @@
+$$
+v_{\text{esc}} = \sqrt{\frac{2GM}{r}} = \sqrt{2}\,v_{\text{orb}}
+$$ {#eq-escape-velocity}

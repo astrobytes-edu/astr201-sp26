@@ -55,3 +55,63 @@ wien-displacement:
   anchor: "eq-wien-displacement"
   include: "_includes/equations/wien-displacement.qmd"
   card: "wien_displacement"
+
+centripetal-acceleration:
+  title: "Centripetal acceleration"
+  anchor: "eq-centripetal-acceleration"
+  include: "_includes/equations/centripetal-acceleration.qmd"
+  card: "centripetal_acceleration"
+
+centripetal-force:
+  title: "Centripetal force"
+  anchor: "eq-centripetal-force"
+  include: "_includes/equations/centripetal-force.qmd"
+  card: "centripetal_force"
+
+orbital-velocity:
+  title: "Orbital velocity"
+  anchor: "eq-orbital-velocity"
+  include: "_includes/equations/orbital-velocity.qmd"
+  card: "orbital_velocity"
+
+escape-velocity:
+  title: "Escape velocity"
+  anchor: "eq-escape-velocity"
+  include: "_includes/equations/escape-velocity.qmd"
+  card: "escape_velocity"
+
+gravitational-pe:
+  title: "Gravitational potential energy"
+  anchor: "eq-gravitational-pe"
+  include: "_includes/equations/gravitational-pe.qmd"
+  card: "gravitational_pe"
+
+angular-momentum:
+  title: "Angular momentum"
+  anchor: "eq-angular-momentum"
+  include: "_includes/equations/angular-momentum.qmd"
+  card: "angular_momentum"
+
+areal-velocity:
+  title: "Areal velocity (Kepler II)"
+  anchor: "eq-areal-velocity"
+  include: "_includes/equations/areal-velocity.qmd"
+  card: "areal_velocity"
+
+virial-theorem:
+  title: "Virial theorem"
+  anchor: "eq-virial-theorem"
+  include: "_includes/equations/virial-theorem.qmd"
+  card: "virial_theorem"
+
+total-mechanical-energy:
+  title: "Total mechanical energy"
+  anchor: "eq-total-energy"
+  include: "_includes/equations/total-mechanical-energy.qmd"
+  card: "total_mechanical_energy"
+
+bound-orbit-energy:
+  title: "Bound orbit energy"
+  anchor: "eq-bound-orbit-energy"
+  include: "_includes/equations/bound-orbit-energy.qmd"
+  card: "bound_orbit_energy"

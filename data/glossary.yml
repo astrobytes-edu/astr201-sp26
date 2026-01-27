@@ -232,3 +232,196 @@ cosmic-web:
   context: "The cosmic web is still evolving—gravity continues to pull matter from voids into filaments and clusters."
   first_use: "Lecture 1"
   module: 1
+
+# =============================================================
+# Lecture 3: Gravity and Orbits
+# =============================================================
+
+empirical_law:
+  term: "Empirical law"
+  definition: "A pattern extracted from data that describes *what* happens without explaining *why*."
+  context: "Kepler's laws are empirical—they predict planetary positions but don't explain the mechanism."
+  first_use: "Lecture 3"
+  module: 1
+
+physical_law:
+  term: "Physical law"
+  definition: "A fundamental principle explaining mechanisms—*why* things happen—from which empirical patterns follow as consequences."
+  context: "Newton's law of gravitation is physical—Kepler's laws emerge as consequences."
+  first_use: "Lecture 3"
+  module: 1
+
+eccentricity:
+  term: "Eccentricity (e)"
+  definition: "A measure of how 'squashed' an ellipse is; $e=0$ is a circle, $e=1$ is a parabola."
+  context: "Most planetary orbits have small eccentricities (Earth's is 0.017)."
+  first_use: "Lecture 3"
+  module: 1
+
+semi_major_axis:
+  term: "Semi-major axis (a)"
+  definition: "Half the longest diameter of an ellipse; the 'average' distance from an orbiting body to its host."
+  context: "We reserve the symbol $a$ for this quantity throughout the course."
+  first_use: "Lecture 3"
+  module: 1
+
+perihelion:
+  term: "Perihelion"
+  definition: "The point in an orbit closest to the Sun, where $r_p = a(1-e)$."
+  context: "At perihelion, orbital speed is maximum (Kepler II)."
+  first_use: "Lecture 3"
+  module: 1
+
+aphelion:
+  term: "Aphelion"
+  definition: "The point in an orbit farthest from the Sun, where $r_a = a(1+e)$."
+  context: "At aphelion, orbital speed is minimum."
+  first_use: "Lecture 3"
+  module: 1
+
+central_force:
+  term: "Central force"
+  definition: "A force that always points directly toward (or away from) a fixed center point."
+  context: "Gravity is a central force. Central forces conserve angular momentum."
+  first_use: "Lecture 3"
+  module: 1
+
+vector:
+  term: "Vector"
+  definition: "A quantity with both magnitude (how much) and direction (which way)."
+  context: "Velocity is a vector; speed is just the magnitude of velocity."
+  first_use: "Lecture 3"
+  module: 1
+
+velocity:
+  term: "Velocity"
+  definition: "The rate of change of position—how fast something moves *and* in what direction."
+  context: "Velocity is a vector. Speed is its magnitude (always ≥ 0)."
+  first_use: "Lecture 3"
+  module: 1
+
+acceleration:
+  term: "Acceleration"
+  definition: "The rate of change of velocity—any change in speed *or* direction."
+  context: "An object moving in a circle at constant speed is still accelerating because direction changes."
+  first_use: "Lecture 3"
+  module: 1
+
+inertia:
+  term: "Inertia"
+  definition: "The resistance of an object to changes in its motion; quantified by mass."
+  context: "Newton's First Law: objects resist changes to their velocity."
+  first_use: "Lecture 3"
+  module: 1
+
+kinematics:
+  term: "Kinematics"
+  definition: "The mathematical description of motion (position, velocity, acceleration) without reference to forces."
+  context: "Kinematics describes *how* things move; dynamics explains *why*."
+  first_use: "Lecture 3"
+  module: 1
+
+centripetal_acceleration:
+  term: "Centripetal acceleration"
+  definition: "The inward acceleration required for circular motion, with magnitude $a_c = v^2/r$."
+  context: "Points toward the center of the circle; caused by whatever force maintains the circular path."
+  first_use: "Lecture 3"
+  module: 1
+
+centripetal_force:
+  term: "Centripetal force"
+  definition: "The net inward force required to maintain circular motion: $F_c = mv^2/r$."
+  context: "Not a new type of force—it's a role played by gravity, tension, friction, etc."
+  first_use: "Lecture 3"
+  module: 1
+
+barycenter:
+  term: "Barycenter (center of mass)"
+  definition: "The 'balance point' of a two-body system; both bodies orbit this point."
+  context: "When $M \\gg m$, the barycenter lies near the massive body's center."
+  first_use: "Lecture 3"
+  module: 1
+
+orbital_velocity:
+  term: "Orbital velocity"
+  definition: "The speed required for a stable circular orbit at radius $r$: $v_{orb} = \\sqrt{GM/r}$."
+  context: "Faster orbits are closer to the central mass."
+  first_use: "Lecture 3"
+  module: 1
+
+escape_velocity:
+  term: "Escape velocity"
+  definition: "The minimum speed to escape a gravitational field: $v_{esc} = \\sqrt{2GM/r} = \\sqrt{2}\\,v_{orb}$."
+  context: "Independent of the escaping object's mass."
+  first_use: "Lecture 3"
+  module: 1
+
+kinetic_energy:
+  term: "Kinetic energy (K)"
+  definition: "Energy of motion: $K = \\frac{1}{2}mv^2$. Always positive or zero."
+  context: "Measured in ergs (CGS) or joules (SI)."
+  first_use: "Lecture 3"
+  module: 1
+
+gravitational_potential_energy:
+  term: "Gravitational potential energy (U)"
+  definition: "Energy stored in gravitational position: $U = -GMm/r$. Always negative (with zero at infinity)."
+  context: "Think of negative U as 'gravitational debt'—how much energy is owed to escape."
+  first_use: "Lecture 3"
+  module: 1
+
+angular_momentum:
+  term: "Angular momentum (L)"
+  definition: "A conserved quantity for orbital motion: $L = mvr = mr^2\\dot{\\phi}$."
+  context: "Conservation of angular momentum explains Kepler's Second Law."
+  first_use: "Lecture 3"
+  module: 1
+
+angular_velocity:
+  term: "Angular velocity ($\\dot{\\phi}$)"
+  definition: "The rate at which an angle changes, in radians per second."
+  context: "$\\dot{\\phi} = d\\phi/dt \\approx \\Delta\\phi/\\Delta t$"
+  first_use: "Lecture 3"
+  module: 1
+
+torque:
+  term: "Torque"
+  definition: "A twisting force—what causes angular acceleration (spinning faster or slower)."
+  context: "A central force exerts no torque about the center, so angular momentum is conserved."
+  first_use: "Lecture 3"
+  module: 1
+
+areal_velocity:
+  term: "Areal velocity"
+  definition: "The rate at which an orbiting object sweeps out area: $dA/dt = L/(2m)$."
+  context: "Kepler's Second Law: areal velocity is constant for any orbit under gravity."
+  first_use: "Lecture 3"
+  module: 1
+
+virial_theorem:
+  term: "Virial theorem"
+  definition: "For bound systems in equilibrium: $\\langle K \\rangle = -\\frac{1}{2}\\langle U \\rangle$."
+  context: "Relates kinetic and potential energy in stars, galaxies, and orbits (time-averaged)."
+  first_use: "Lecture 3"
+  module: 1
+
+general_relativity:
+  term: "General Relativity"
+  definition: "Einstein's 1915 theory: gravity is the curvature of spacetime, not a force acting at a distance."
+  context: "Newton's gravity is an excellent approximation except near extreme masses or at high speeds."
+  first_use: "Lecture 3"
+  module: 1
+
+schwarzschild_radius:
+  term: "Schwarzschild radius"
+  definition: "The radius of a black hole's event horizon: $r_s = 2GM/c^2$."
+  context: "Inside this radius, escape velocity exceeds the speed of light."
+  first_use: "Lecture 3"
+  module: 1
+
+event_horizon:
+  term: "Event horizon"
+  definition: "The boundary of a black hole beyond which nothing—not even light—can escape."
+  context: "Not a physical surface, but a point of no return in spacetime."
+  first_use: "Lecture 3"
+  module: 1

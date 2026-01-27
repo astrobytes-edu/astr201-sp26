@@ -78,3 +78,84 @@ wien_displacement:
   assumptions:
     - "Object radiates as a blackbody (or approximately so)"
     - "Applies to thermal (temperature-driven) radiation"
+
+centripetal_acceleration:
+  predicts: "How much acceleration is needed to maintain circular motion at speed $v$ and radius $r$"
+  depends: "Speed ($v$), radius ($r$)"
+  says: "Faster motion or tighter curves require more acceleration toward the center"
+  assumptions:
+    - "Circular (not elliptical) motion"
+    - "Constant speed"
+
+centripetal_force:
+  predicts: "The net inward force required for circular motion"
+  depends: "Mass ($m$), speed ($v$), radius ($r$)"
+  says: "This is a requirement, not a new force type—some real force (gravity, tension, friction) must supply it"
+  assumptions:
+    - "Circular motion"
+    - "Constant speed"
+
+orbital_velocity:
+  predicts: "The speed needed for a stable circular orbit at radius $r$ around mass $M$"
+  depends: "Central mass ($M$), orbital radius ($r$)"
+  says: "Closer orbits require higher speeds; the orbiting object's mass doesn't matter"
+  assumptions:
+    - "Circular orbit"
+    - "$m \\ll M$ (orbiter much less massive than central body)"
+
+escape_velocity:
+  predicts: "The minimum speed to escape a gravitational field from radius $r$"
+  depends: "Central mass ($M$), starting radius ($r$)"
+  says: "Equal to $\\sqrt{2}$ times orbital velocity; escaping mass doesn't matter"
+  assumptions:
+    - "No additional forces (drag, thrust)"
+    - "Starting from rest at infinity = zero total energy"
+
+gravitational_pe:
+  predicts: "The energy stored in gravitational position relative to infinity"
+  depends: "Both masses ($M$, $m$), separation ($r$)"
+  says: "Negative because we define $U=0$ at infinity; more negative = deeper in the gravity well"
+  assumptions:
+    - "Point masses (or spherically symmetric)"
+    - "Reference: $U=0$ at $r=\\infty$"
+
+angular_momentum:
+  predicts: "A conserved quantity for motion under central forces"
+  depends: "Mass ($m$), radius ($r$), tangential velocity ($v$) or angular velocity ($\\dot{\\phi}$)"
+  says: "Conserved because central forces exert no torque; explains Kepler's Second Law"
+  assumptions:
+    - "Central force (points toward/away from a fixed center)"
+    - "No external torques"
+
+areal_velocity:
+  predicts: "The rate at which an orbiting body sweeps out area"
+  depends: "Angular momentum ($L$), mass ($m$)"
+  says: "Constant for any orbit under gravity—this IS Kepler's Second Law"
+  assumptions:
+    - "Central force (gravity)"
+    - "Two-body problem"
+
+virial_theorem:
+  predicts: "The ratio of kinetic to potential energy in bound, equilibrium systems"
+  depends: "Time-averaged kinetic energy $\\langle K \\rangle$, potential energy $\\langle U \\rangle$"
+  says: "In equilibrium, kinetic energy is half the magnitude of potential energy"
+  assumptions:
+    - "Gravitationally bound system"
+    - "In equilibrium OR time-averaged over complete orbits"
+    - "Does NOT apply instant-by-instant in elliptical orbits"
+
+total_mechanical_energy:
+  predicts: "Whether an orbit is bound ($E<0$), unbound ($E>0$), or marginally bound ($E=0$)"
+  depends: "Kinetic energy ($K$), potential energy ($U$)"
+  says: "Energy is conserved; $K$ and $U$ trade off but total stays constant"
+  assumptions:
+    - "No non-gravitational forces"
+    - "Isolated two-body system"
+
+bound_orbit_energy:
+  predicts: "The total energy of any bound (elliptical or circular) orbit"
+  depends: "Both masses ($M$, $m$), semi-major axis ($a$)"
+  says: "Total energy depends only on $a$, not on eccentricity"
+  assumptions:
+    - "Bound orbit ($E<0$)"
+    - "Two-body gravitational system"

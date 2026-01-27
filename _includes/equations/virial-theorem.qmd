@@ -1,0 +1,3 @@
+$$
+\langle K \rangle = -\frac{1}{2}\langle U \rangle
+$$ {#eq-virial-theorem}

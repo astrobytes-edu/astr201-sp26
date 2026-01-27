@@ -1,0 +1,3 @@
+$$
+L = mvr = mr^2\dot{\phi}
+$$ {#eq-angular-momentum}

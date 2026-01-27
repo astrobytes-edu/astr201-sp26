@@ -102,6 +102,12 @@ website:
                 href: modules/module-01/readings/lecture-02-foundations-reading.qmd
               - text: "Reference Tables"
                 href: handouts/lecture-02-reference-tables.qmd
+          - section: "Lecture 3: Gravity and Orbits"
+            contents:
+              - text: "Slides"
+                href: modules/module-01/slides/lecture-03-gravity-and-orbits.qmd
+              - text: "Reading"
+                href: modules/module-01/readings/lecture-03-gravity-and-orbits.qmd
 
       - section: "Module 2: Inferring Star Properties"
         href: modules/module-02/index.qmd

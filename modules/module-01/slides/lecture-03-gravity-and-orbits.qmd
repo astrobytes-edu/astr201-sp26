@@ -1,0 +1,1048 @@
+---
+title: "Lecture 3: Gravity and Orbits"
+subtitle: "From Patterns to Physics"
+author: "Dr. Anna Rosen"
+date: "2026-01-27"
+description: "Kepler told us what planets do; Newton told us why. The transition from empirical patterns to physical explanations marks the birth of predictive physics."
+draft: true
+format:
+  revealjs:
+    theme: [default, ../../../assets/theme/slides/theme.scss]
+    smaller: true
+    slide-number: true
+    transition: fade
+    transition-speed: fast
+    background-transition: fade
+    center: false
+    footer: "ASTR 201 • Lecture 3"
+    chalkboard: true
+    code-line-numbers: true
+    fig-align: center
+    html-math-method: mathjax
+    pointer:
+      color: "#dc2626"
+      pointerSize: 18
+    spotlight:
+      size: 80
+      fadeInAndOut: 150
+      toggleSpotlightOnMouseDown: true
+      initialPresentationMode: false
+    quiz:
+      shuffleOptions: true
+      defaultCorrect: "✓ Correct!"
+      defaultIncorrect: "✗ Not quite—let's discuss."
+revealjs-plugins:
+  - pointer
+  - spotlight
+  - attribution
+  - quiz
+filters:
+  - roughnotation
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+## Learning Objectives
+
+By the end of this lecture, you will be able to:
+
+::: {.incremental}
+- Distinguish between **empirical laws** (patterns) and **physical laws** (mechanisms)
+- Describe how Newton *derived* the inverse-square law from Kepler's observations
+- Calculate orbital velocity and escape velocity
+- Use energy and angular momentum to predict orbital behavior
+- Explain the virial theorem for bound systems at equilibrium
+:::
+
+::: {.notes}
+Read these aloud. Emphasize the through-line: Kepler → Newton → conservation laws.
+Timing: ~2 min.
+:::
+
+---
+
+## {background-image="/assets/images/common/noirlab-nightsky-mosaic.jpg" background-opacity="0.2"}
+
+::: {.r-fit-text}
+Kepler told us **what**.
+
+Newton told us **why**.
+:::
+
+::: {.notes}
+Hook: Let this sit for 5 seconds. The through-line for today is the transition from pattern-finding to mechanism-explaining.
+:::
+
+---
+
+## {.center}
+
+::: {.r-fit-text}
+Part 1: Patterns Without Explanation
+:::
+
+*Kepler's Empirical Laws*
+
+---
+
+## The Scene: 1600s
+
+Imagine spending **twenty years** recording planet positions...
+
+. . .
+
+You discover three remarkable patterns:
+
+::: {.incremental}
+- Orbits are ellipses, not circles
+- Planets speed up near the Sun
+- Farther planets take longer to orbit
+:::
+
+. . .
+
+**But you have no idea *why*.**
+
+::: {.notes}
+3–4 min. Set up Kepler's achievement and its limitations. This is pattern recognition without mechanism.
+:::
+
+---
+
+## Kepler's First Law: Orbits Are Ellipses
+
+> Planets move in **ellipses** with the Sun at one focus.
+
+{{< img kepler-first-law >}}
+
+::: {.fragment}
+**Key terms:**
+
+- Semi-major axis $a$: average distance
+- Eccentricity $e$: how "squashed" (0 = circle, 1 = line)
+:::
+
+::: {.notes}
+Point to the figure. Emphasize: nature doesn't care about "perfect" circles.
+:::
+
+---
+
+## Kepler's Second Law: Equal Areas
+
+> A line from planet to Sun sweeps **equal areas in equal times**.
+
+{{< img kepler-second-law >}}
+
+::: {.fragment}
+**Translation:** Planets move [faster near the Sun]{.rn rn-type="underline" rn-color="#ff6b6b"}.
+:::
+
+::: {.notes}
+Press R to animate underline. Foreshadow: this hints at angular momentum conservation.
+:::
+
+---
+
+## Kepler's Third Law: The Scaling Relation
+
+> For orbits around a central mass: $P^2 \propto a^3$
+
+. . .
+
+**What this means:**
+
+::: {.incremental}
+- Move a planet 2× farther → period increases by $2^{3/2} \approx 2.83$
+- It's a *proportionality*, not an equality
+- The constant depends on the central mass (Newton will show this)
+:::
+
+::: {.notes}
+Emphasize: this is empirical—extracted from data. No explanation of *why*.
+:::
+
+---
+
+## Prediction Question
+
+**Before I show you:** If you move a planet to *twice* its orbital distance, by what factor does its period increase?
+
+:::: {.columns}
+::: {.column width="50%"}
+A. 2× (linear)
+
+B. 4× (squared)
+:::
+
+::: {.column width="50%"}
+C. 2.83× ($2^{3/2}$)
+
+D. 8× (cubed)
+:::
+::::
+
+::: {.notes}
+Give 30 seconds. Answer: **C**. From $P^2 \propto a^3$: if $a$ doubles, $P^2 \to 2^3 = 8$, so $P \to \sqrt{8} \approx 2.83$.
+:::
+
+---
+
+## What Kepler *Couldn't* Explain
+
+::: {.incremental}
+- **Why** ellipses and not some other shape?
+- **What** causes planets to speed up near the Sun?
+- **Why** exactly $P^2 \propto a^3$?
+- **Does** this work beyond our solar system?
+:::
+
+. . .
+
+**Empirical laws summarize data. They don't explain physics.**
+
+::: {.notes}
+This sets up the need for Newton's contribution.
+:::
+
+---
+
+## {.center}
+
+::: {.r-fit-text}
+Part 2: The Physics of Motion
+:::
+
+*Newton's Laws + Circular Motion*
+
+---
+
+## Newton's Three Laws (Quick Review)
+
+**First Law:** Objects in motion stay in motion (unless acted on by a force)
+
+. . .
+
+**Second Law:** $\vec{F} = m\vec{a}$
+
+::: {.fragment}
+- Force tells matter how to accelerate
+- Mass tells matter how to resist
+:::
+
+. . .
+
+**Third Law:** Every action has an equal and opposite reaction
+
+::: {.notes}
+Brief review—students saw this in physics. Emphasize F = ma is the workhorse.
+:::
+
+---
+
+## Vectors: Direction Matters
+
+$\vec{F}$, $\vec{v}$, $\vec{a}$ have arrows because they're **vectors**.
+
+. . .
+
+:::: {.columns}
+::: {.column width="50%"}
+**Speed:** how fast
+
+*"30 km/s"*
+:::
+
+::: {.column width="50%"}
+**Velocity:** how fast *and which way*
+
+*"30 km/s heading east"*
+:::
+::::
+
+. . .
+
+::: {.callout-important appearance="minimal"}
+Changing direction = changing velocity = **acceleration**
+
+Even without speeding up!
+:::
+
+::: {.notes}
+Critical for understanding circular motion. Many students miss this.
+:::
+
+---
+
+## The Key Insight: Circular Motion
+
+An object moving in a circle at constant speed is **accelerating**.
+
+. . .
+
+{{< img newton-ball-on-string >}}
+
+::: {.fragment}
+**Centripetal acceleration:** $a_c = \dfrac{v^2}{r}$ (points toward center)
+:::
+
+::: {.notes}
+Draw attention to the direction changing even as speed stays constant.
+:::
+
+---
+
+## Concept Check
+
+::: {.quiz}
+A car drives around a circular track at constant speedometer reading. Is the car accelerating?
+
+- [x] Yes—direction is changing, so velocity is changing
+- [ ] No—speed is constant, so no acceleration
+- [ ] Only when the car speeds up or slows down
+- [ ] Only at certain points on the track
+:::
+
+::: {.notes}
+Press **C** to reveal. Common misconception: confusing speed with velocity.
+:::
+
+---
+
+## Centripetal Force
+
+By $F = ma$, if there's acceleration, there must be a force:
+
+$$F_c = ma_c = \frac{mv^2}{r}$$
+
+. . .
+
+::: {.callout-tip appearance="minimal"}
+**Key insight:** "Centripetal force" isn't a new force—it's the *role* played by whatever force pulls toward the center.
+
+- For planets: **gravity**
+- For a ball on a string: tension
+- For a car turning: friction
+:::
+
+::: {.notes}
+This connects circular motion physics to gravity.
+:::
+
+---
+
+## {.center}
+
+::: {.r-fit-text}
+Part 3: Newton's Law of Gravitation
+:::
+
+*From Patterns to Mechanism*
+
+---
+
+## The Universal Law of Gravity
+
+$$F_g = \frac{Gm_1 m_2}{r^2}$$
+
+{{< img gravity-law >}}
+
+::: {.notes}
+Newton's big insight: one law explains both falling apples and orbiting planets.
+:::
+
+---
+
+## Unpacking the Equation
+
+$$F_g = \frac{Gm_1 m_2}{r^2}$$
+
+::: {.incremental}
+- $G = 6.67 \times 10^{-8}\ \mathrm{cm^3\,g^{-1}\,s^{-2}}$ — gravitational constant
+- $m_1, m_2$ — the two masses (in grams)
+- $r$ — distance between centers (in cm)
+- $F_g$ — force (in dynes), attractive
+:::
+
+. . .
+
+**Unit check:** $[G] = \dfrac{\text{dyne} \cdot \text{cm}^2}{\text{g}^2} = \mathrm{cm^3\,g^{-1}\,s^{-2}}$ ✓
+
+::: {.notes}
+Walk through the units. This verifies the equation makes dimensional sense.
+:::
+
+---
+
+## Physical Interpretation
+
+:::: {.columns}
+::: {.column width="50%"}
+**$Gm_1 m_2$ (numerator)**
+
+More mass → more pull
+
+Product of masses (Newton III)
+:::
+
+::: {.column width="50%"}
+**$r^2$ (denominator)**
+
+Inverse-square law
+
+Double distance → 1/4 the force
+:::
+::::
+
+. . .
+
+::: {.callout-note appearance="minimal"}
+$G$ is the same everywhere in the universe—on Earth, on Mars, in distant galaxies.
+:::
+
+---
+
+## Prediction Question
+
+Using $F_g = \dfrac{Gm_1 m_2}{r^2}$:
+
+**If you double the distance between two masses, by what factor does the force change?**
+
+:::: {.columns}
+::: {.column width="50%"}
+A. Halves (1/2)
+
+B. Quarters (1/4)
+:::
+
+::: {.column width="50%"}
+C. Doubles (2×)
+
+D. Unchanged
+:::
+::::
+
+::: {.notes}
+30 seconds. Answer: **B**. Inverse-square: $(2r)^2 = 4r^2$, so force is 1/4.
+:::
+
+---
+
+## How Did Newton *Know* It's Inverse-Square?
+
+He didn't guess—he **derived** it from Kepler III.
+
+. . .
+
+**The logic:**
+
+1. Assume $F \propto 1/r^n$ for unknown $n$
+2. Apply circular motion: gravity = centripetal force
+3. Connect to Kepler: $P^2 \propto r^3$
+4. Solve for $n$
+
+::: {.notes}
+This is the beautiful synthesis: empirical → physical.
+:::
+
+---
+
+## The Derivation (Setup)
+
+For circular orbit, gravity provides centripetal force:
+
+$$k\frac{Mm}{r^n} = \frac{mv^2}{r}$$
+
+. . .
+
+Planet mass $m$ cancels (same orbit speed regardless of mass!):
+
+$$\frac{kM}{r^n} = \frac{v^2}{r}$$
+
+::: {.notes}
+Point out that m canceling explains why all objects fall at the same rate.
+:::
+
+---
+
+## The Derivation (Key Step)
+
+Using $v = \dfrac{2\pi r}{P}$ (circumference/period):
+
+$$P^2 = \frac{4\pi^2}{kM} r^{n+1}$$
+
+. . .
+
+**Compare to Kepler III:** $P^2 \propto r^3$
+
+. . .
+
+$$n + 1 = 3 \quad \Rightarrow \quad \boxed{n = 2}$$
+
+. . .
+
+::: {.callout-tip appearance="minimal"}
+**The inverse-square law is required by Kepler's Third Law!**
+:::
+
+::: {.notes}
+This is the punchline. Newton didn't assume inverse-square—he proved it.
+:::
+
+---
+
+## Newton's Version of Kepler III
+
+Armed with $F = GMm/r^2$, Newton derived:
+
+$$P^2 = \frac{4\pi^2}{G(M + m)} a^3$$
+
+. . .
+
+**What's new?**
+
+::: {.incremental}
+- The constant is now *determined*: depends on $G$ and total mass
+- Both masses appear: $(M + m)$
+- Applies to *any* gravitational system, not just our solar system
+:::
+
+::: {.notes}
+This is how we "weigh" stars in binaries, black holes, galaxies.
+:::
+
+---
+
+## Two-Body Reality: Center of Mass
+
+Both bodies orbit their common **center of mass** (barycenter).
+
+{{< img center-of-mass >}}
+
+::: {.fragment}
+When $M \gg m$: barycenter ≈ center of $M$ (Kepler's approximation works)
+
+This wobble is how we detect **exoplanets**!
+:::
+
+::: {.notes}
+Connect to radial velocity method. The Sun wobbles ~1 solar radius due to Jupiter.
+:::
+
+---
+
+## {.center}
+
+::: {.r-fit-text}
+Part 4: Orbital and Escape Velocity
+:::
+
+*How fast must you go?*
+
+---
+
+## Orbital Velocity
+
+For a circular orbit at radius $r$ around mass $M$:
+
+$$\frac{GMm}{r^2} = \frac{mv_{orb}^2}{r}$$
+
+. . .
+
+Mass $m$ cancels (a feather and bowling ball orbit at the same speed!):
+
+. . .
+
+$$\boxed{v_{orb} = \sqrt{\frac{GM}{r}}}$$
+
+::: {.notes}
+Derive step by step. Emphasize the mass independence.
+:::
+
+---
+
+## Orbital Velocity: Physical Interpretation
+
+$$v_{orb} = \sqrt{\frac{GM}{r}}$$
+
+::: {.incremental}
+- Larger $M$ → stronger gravity → must orbit **faster**
+- Larger $r$ → weaker gravity → can orbit **slower**
+- Orbiting mass doesn't matter!
+:::
+
+. . .
+
+**Earth's orbital velocity:** $v_{orb} \approx 30$ km/s
+
+::: {.notes}
+Earth travels 108,000 km/hr just to stay in orbit!
+:::
+
+---
+
+## Worked Example: Earth's Orbit
+
+**Given:** $M_\odot = 2 \times 10^{33}$ g, $r = 1.5 \times 10^{13}$ cm, $G = 6.67 \times 10^{-8}$
+
+. . .
+
+$$v_{orb} = \sqrt{\frac{GM_\odot}{r}} = \sqrt{\frac{(6.67 \times 10^{-8})(2 \times 10^{33})}{1.5 \times 10^{13}}}$$
+
+. . .
+
+$$= \sqrt{8.9 \times 10^{12}} \approx 3 \times 10^6\ \text{cm/s} = 30\ \text{km/s}$$
+
+::: {.notes}
+Walk through the calculation showing unit cancellation.
+:::
+
+---
+
+## Escape Velocity
+
+To escape to infinity, you need enough kinetic energy to overcome gravity:
+
+$$\frac{1}{2}mv_{esc}^2 = \frac{GMm}{r}$$
+
+. . .
+
+Solving (mass cancels again!):
+
+$$\boxed{v_{esc} = \sqrt{\frac{2GM}{r}} = \sqrt{2} \cdot v_{orb}}$$
+
+::: {.notes}
+Key relationship: escape is √2 times orbital velocity.
+:::
+
+---
+
+## Escape Velocity: What It Means
+
+{{< img escape-velocity >}}
+
+::: {.fragment}
+| Location | $v_{orb}$ | $v_{esc}$ |
+|----------|-----------|-----------|
+| Earth surface | 7.9 km/s | 11.2 km/s |
+| Moon surface | 1.7 km/s | 2.4 km/s |
+| Sun surface | 434 km/s | 618 km/s |
+:::
+
+::: {.notes}
+Apollo needed smaller rockets to leave the Moon!
+:::
+
+---
+
+## Concept Check
+
+::: {.quiz}
+Jupiter orbits at 5 AU from the Sun. Earth orbits at 1 AU. How does Jupiter's orbital velocity compare to Earth's?
+
+- [ ] Jupiter is faster (farther out, longer path)
+- [x] Earth is faster by factor ~2.2 ($\sqrt{5}$)
+- [ ] They're the same (same Sun)
+- [ ] Jupiter is faster by factor 5
+:::
+
+::: {.notes}
+Press **C**. From $v_{orb} \propto 1/\sqrt{r}$: Earth is $\sqrt{5} \approx 2.2$ times faster.
+:::
+
+---
+
+## {.center}
+
+::: {.r-fit-text}
+Part 5: Conservation Laws
+:::
+
+*Energy and Angular Momentum*
+
+---
+
+## Energy in Orbits
+
+Total mechanical energy:
+
+$$E = K + U = \frac{1}{2}mv^2 - \frac{GMm}{r}$$
+
+. . .
+
+::: {.incremental}
+- $K = \frac{1}{2}mv^2$ — kinetic energy (always positive)
+- $U = -\frac{GMm}{r}$ — potential energy (always negative)
+:::
+
+::: {.notes}
+Students often confused by negative PE. Address this next.
+:::
+
+---
+
+## Why Is Potential Energy Negative?
+
+::: {.callout-tip appearance="minimal"}
+**We define zero at infinity.** Far from any mass → $U = 0$.
+:::
+
+. . .
+
+As you fall toward a mass:
+
+::: {.incremental}
+- Gravity speeds you up (gives kinetic energy)
+- You're dropping *below* zero in potential energy
+- **Negative U = you're in debt**—you "owe" energy to escape
+:::
+
+. . .
+
+The deeper in the well → the more negative $U$ → the more you need to climb out.
+
+::: {.notes}
+The debt metaphor really helps students. Relate to energy budget.
+:::
+
+---
+
+## Energy Determines Orbit Type
+
+{{< img orbit-types >}}
+
+::: {.fragment}
+| Total Energy | Orbit Type |
+|--------------|------------|
+| $E < 0$ | **Bound** (ellipse/circle) |
+| $E = 0$ | Parabolic (just escapes) |
+| $E > 0$ | Hyperbolic (escapes with speed to spare) |
+:::
+
+::: {.notes}
+Key insight: the sign of E tells you the orbital fate.
+:::
+
+---
+
+## Energy Conservation in Orbits
+
+{{< img conservation-energy-orbit >}}
+
+::: {.fragment}
+**At perihelion:** High $K$, low $U$ (fast, close)
+
+**At aphelion:** Low $K$, high $U$ (slow, far)
+
+**Total $E$:** Always constant!
+:::
+
+::: {.notes}
+K and U trade off, but E stays fixed.
+:::
+
+---
+
+## Angular Momentum Conservation
+
+For orbital motion:
+
+$$L = mvr = \text{constant}$$
+
+. . .
+
+**Why conserved?** Gravity is a *central force*—it exerts no *torque* (twisting force).
+
+. . .
+
+{{< img conservation-angular-momentum >}}
+
+::: {.notes}
+Torque = what makes things spin faster/slower. Central force → no torque → L conserved.
+:::
+
+---
+
+## Kepler II Explained!
+
+Areal velocity (rate of sweeping area):
+
+$$\frac{dA}{dt} = \frac{L}{2m} = \text{constant}$$
+
+. . .
+
+::: {.callout-tip appearance="minimal"}
+**Equal areas in equal times** isn't a separate law—it's angular momentum conservation!
+:::
+
+. . .
+
+When $r$ decreases, $v$ must increase to keep $L = mvr$ constant.
+
+::: {.notes}
+This is the deep connection Kepler couldn't see.
+:::
+
+---
+
+## Prediction Question
+
+A planet has perihelion at 1 AU and aphelion at 4 AU. Using $L = mvr = \text{const}$:
+
+**By what factor is the linear speed larger at perihelion?**
+
+:::: {.columns}
+::: {.column width="50%"}
+A. 2× (ratio of distances)
+
+B. 4× (ratio of distances)
+:::
+
+::: {.column width="50%"}
+C. 16× (ratio squared)
+
+D. 8× (ratio cubed)
+:::
+::::
+
+::: {.notes}
+30 seconds. Answer: **B**. From $v_p r_p = v_a r_a$: $v_p/v_a = r_a/r_p = 4/1 = 4$.
+:::
+
+---
+
+## The Virial Theorem
+
+For bound systems **in equilibrium** (or averaged over orbits):
+
+$$\langle K \rangle = -\frac{1}{2}\langle U \rangle$$
+
+. . .
+
+**Verify for circular orbit:**
+
+$$K = \frac{GMm}{2r}, \quad U = -\frac{GMm}{r}$$
+
+$$K = -\frac{1}{2}U \quad \checkmark$$
+
+::: {.notes}
+The virial theorem connects K and U in any equilibrium gravitational system.
+:::
+
+---
+
+## Virial Theorem: Why It Matters
+
+:::: {.columns}
+::: {.column width="50%"}
+**Where we use it:**
+
+- Stars (thermal vs. gravity)
+- Galaxies (dark matter!)
+- Gas clouds (collapse criteria)
+:::
+
+::: {.column width="50%"}
+::: {.callout-warning appearance="minimal"}
+**When it doesn't apply:**
+
+- Instant-by-instant in elliptical orbits
+- Rapid collapse/expansion
+- Unbound systems
+:::
+:::
+::::
+
+::: {.notes}
+The virial theorem is a workhorse for the rest of the course.
+:::
+
+---
+
+## {.center}
+
+::: {.r-fit-text}
+Part 6: The Big Picture
+:::
+
+*From Newton to Einstein*
+
+---
+
+## What Newton Achieved
+
+Before Newton: celestial physics ≠ terrestrial physics
+
+. . .
+
+After Newton: **One physics, everywhere**
+
+. . .
+
+| Kepler's Laws | Newton's Explanation |
+|---------------|---------------------|
+| Ellipses | Solution under inverse-square gravity |
+| Equal areas | Angular momentum conservation |
+| $P^2 \propto a^3$ | Requires inverse-square; constant = $G$ × mass |
+
+::: {.notes}
+This unification is one of the greatest achievements in physics history.
+:::
+
+---
+
+## Forward Connections
+
+The physics of gravity connects to everything this semester:
+
+| Topic | Connection |
+|-------|------------|
+| **Binary Stars** | Masses from orbits |
+| **Exoplanets** | Transit timing, radial velocity |
+| **Stellar Structure** | Virial theorem |
+| **Black Holes** | Escape velocity → event horizon |
+| **Galaxies** | Rotation curves → dark matter |
+
+::: {.notes}
+Every time we infer mass from motion, we're using Newton.
+:::
+
+---
+
+## Beyond Newton: A Glimpse of Einstein
+
+Newton's framework is excellent... but not the final word.
+
+. . .
+
+| Newton's View | Einstein's View |
+|---------------|-----------------|
+| Gravity is a **force** | Gravity is **curved spacetime** |
+| Space/time are fixed | Space/time are dynamic |
+| Objects feel a pull | Objects follow geodesics |
+
+::: {.notes}
+Tease General Relativity without going deep.
+:::
+
+---
+
+## Curved Spacetime
+
+{{< img gravity-curved-space >}}
+
+::: {.fragment}
+Einstein: *"Mass tells spacetime how to curve; spacetime tells mass how to move."*
+:::
+
+::: {.notes}
+Beautiful diagram. Don't belabor—this is a teaser.
+:::
+
+---
+
+## The Black Hole Teaser
+
+What if escape velocity reaches the speed of light?
+
+. . .
+
+Setting $v_{esc} = c$:
+
+$$r_s = \frac{2GM}{c^2}$$
+
+. . .
+
+This is the **Schwarzschild radius**—the event horizon of a black hole.
+
+::: {.fragment}
+We'll return to this when we study compact objects.
+:::
+
+::: {.notes}
+Connect escape velocity to black holes. Tease future content.
+:::
+
+---
+
+## Summary: The Machine
+
+::: {.incremental}
+1. **Inverse-square gravity** → conic-section orbits
+2. **Central force** → angular momentum conserved → Kepler II
+3. **Force balance** → $v_{orb} = \sqrt{GM/r}$
+4. **Energy conservation** → $v_{esc} = \sqrt{2GM/r}$; $E$ determines bound vs. unbound
+5. **Equilibrium** → virial theorem: $\langle K \rangle = -\frac{1}{2}\langle U \rangle$
+:::
+
+::: {.notes}
+This is the conceptual machinery for gravitational systems.
+:::
+
+---
+
+## The Takeaway {.center}
+
+If you forget everything else from today, remember this:
+
+::: {.fragment .fade-up}
+::: {.r-fit-text}
+**Patterns become physics**
+:::
+:::
+
+::: {.fragment .mt-2}
+Kepler found the *what*. Newton explained the *why*.
+
+This transition—from empirical to physical—is how science works.
+:::
+
+::: {.notes}
+Core message. Let this land.
+:::
+
+---
+
+## Key Equations
+
+| Quantity | Equation |
+|----------|----------|
+| Gravitational Force | $F_g = \dfrac{Gm_1m_2}{r^2}$ |
+| Orbital Velocity | $v_{orb} = \sqrt{\dfrac{GM}{r}}$ |
+| Escape Velocity | $v_{esc} = \sqrt{\dfrac{2GM}{r}}$ |
+| Newton's Kepler III | $P^2 = \dfrac{4\pi^2}{G(M+m)}a^3$ |
+| Total Energy | $E = \dfrac{1}{2}mv^2 - \dfrac{GMm}{r}$ |
+| Virial Theorem | $\langle K \rangle = -\frac{1}{2}\langle U \rangle$ |
+
+---
+
+## Questions?
+
+Common questions at this point:
+
+::: {.incremental}
+- "Why is potential energy negative?"
+- "What's the difference between orbital and escape velocity?"
+- "When does the virial theorem apply?"
+:::
+
+::: {.notes}
+Address these directly if time permits.
+:::
+
+---
+
+## Looking Ahead
+
+**Next time:** Stellar distances and the cosmic distance ladder
+
+**Before then:**
+
+- Read: Lecture 3 reading (gravity and orbits)
+- Review: Unit analysis and scaling methods
+
+::: {.notes}
+Connect to what's coming.
+:::

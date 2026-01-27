@@ -1,0 +1,3 @@
+$$
+F_c = \frac{mv^2}{r}
+$$ {#eq-centripetal-force}

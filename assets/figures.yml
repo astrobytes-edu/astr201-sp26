@@ -437,3 +437,115 @@ figures:
     alt: "All-sky map showing tiny temperature variations in the CMB"
     credit: "ESA/Planck"
     module: 4
+
+  # ==============================================================
+  # Lecture 03: Gravity and Orbits (cococubed diagrams)
+  # ==============================================================
+
+  # Kepler's Laws
+  kepler-first-law:
+    path: /assets/images/module-01/cococubed/first_law.svg
+    caption: "**Kepler's First Law:** Planets orbit in ellipses with the Sun at one focus. The semi-major axis $a$ defines the size; eccentricity $e$ measures the elongation."
+    alt: "Diagram of an elliptical orbit showing the Sun at one focus, with labels for semi-major axis a, perihelion, aphelion, and the geometric properties of the ellipse."
+    credit: "cococubed.com"
+    module: 1
+
+  kepler-second-law:
+    path: /assets/images/module-01/cococubed/second_law.svg
+    caption: "**Kepler's Second Law:** A line from planet to Sun sweeps equal areas in equal times. Planets move faster at perihelion (close) and slower at aphelion (far)."
+    alt: "Elliptical orbit with two shaded triangular sectors of equal area, demonstrating that a planet covers larger angular distance when closer to the Sun."
+    credit: "cococubed.com"
+    module: 1
+
+  # Newton's Gravitation
+  gravity-law:
+    path: /assets/images/module-01/cococubed/gravity_law.svg
+    caption: "**Newton's Law of Gravitation:** $F = Gm_1m_2/r^2$. Every mass attracts every other mass with a force proportional to both masses and inversely proportional to distance squared."
+    alt: "Two masses m1 and m2 separated by distance r, with arrows showing equal and opposite gravitational forces between them."
+    credit: "cococubed.com"
+    module: 1
+
+  # Circular Motion
+  newton-ball-on-string:
+    path: /assets/images/module-01/cococubed/newton_ball_on_string.svg
+    caption: "**Circular Motion Analogy:** A ball on a string demonstrates centripetal force. The tension pulls inward, continuously changing the velocity direction while maintaining constant speed."
+    alt: "Ball moving in a circle with radial lines to center showing the inward centripetal force, with velocity vectors tangent to the circular path at multiple positions."
+    credit: "cococubed.com"
+    module: 1
+
+  # Orbital Velocity and Escape Velocity
+  escape-velocity:
+    path: /assets/images/module-01/cococubed/escape_velocity.svg
+    caption: "**Escape Velocity:** Launch speed determines trajectory. Below $v_{esc}$: falls back. At $v_{esc}$: parabolic escape. Above $v_{esc}$: hyperbolic escape."
+    alt: "Earth with multiple trajectory curves showing different launch velocities: suborbital (falls back), orbital (circular/elliptical), and escape trajectories (parabolic and hyperbolic paths)."
+    credit: "cococubed.com"
+    module: 1
+
+  falling-to-orbit:
+    path: /assets/images/module-01/cococubed/falling_toward_earth_to_orbit.svg
+    caption: "**Newton's Cannon:** An object falls toward Earth, but with enough horizontal velocity, it 'misses' and enters orbit. Orbital motion is perpetual free-fall."
+    alt: "Earth with an object showing the transition from falling trajectory to orbital path, illustrating how sufficient tangential velocity converts falling into orbiting."
+    credit: "cococubed.com"
+    module: 1
+
+  # Orbit Types
+  orbit-types:
+    path: /assets/images/module-01/cococubed/orbit_types.svg
+    caption: "**Orbit Classification by Energy:** Negative total energy → bound orbits (ellipses). Zero energy → parabolic escape. Positive energy → hyperbolic escape."
+    alt: "Central body with multiple orbital paths showing bound elliptical orbits and unbound hyperbolic trajectories, labeled to distinguish orbit types by total energy."
+    credit: "cococubed.com"
+    module: 1
+
+  # Conservation Laws
+  conservation-angular-momentum:
+    path: /assets/images/module-01/cococubed/conservation_angular_momentum_01.svg
+    caption: "**Conservation of Angular Momentum:** $L = mvr$ remains constant. When $r$ decreases, $v$ must increase—explaining why planets speed up near the Sun."
+    alt: "Diagram showing angular momentum vectors and the relationship between orbital radius and velocity, demonstrating that smaller radius requires larger velocity to conserve L."
+    credit: "cococubed.com"
+    module: 1
+
+  conservation-energy-orbit:
+    path: /assets/images/module-01/cococubed/conservation_energy_orbit.svg
+    caption: "**Conservation of Energy in Orbits:** Total energy $E = K + U$ is constant. At perihelion: high $K$, low $U$. At aphelion: low $K$, high $U$."
+    alt: "Elliptical orbit with energy indicators showing kinetic and potential energy trading off around the orbit while total energy remains constant."
+    credit: "cococubed.com"
+    module: 1
+
+  # Center of Mass
+  center-of-mass:
+    path: /assets/images/module-01/cococubed/center_of_mass.svg
+    caption: "**Center of Mass:** Two bodies orbit their common center of mass (barycenter). The more massive body orbits closer to the barycenter."
+    alt: "Two masses orbiting their common center of mass, showing that both bodies move in response to their mutual gravitational attraction."
+    credit: "cococubed.com"
+    module: 1
+
+  # Moon orbital motion
+  moon-falling:
+    path: /assets/images/module-01/cococubed/moon_falling.svg
+    caption: "**The Moon is Falling:** The Moon continuously falls toward Earth but has enough tangential velocity to keep missing. Newton's first law in action."
+    alt: "Earth and Moon showing the Moon's orbital motion as continuous free-fall, with the Moon's inertia (tangential motion) preventing it from hitting Earth."
+    credit: "cococubed.com"
+    module: 1
+
+  # Planetary orbits overview
+  planet-orbits:
+    path: /assets/images/module-01/cococubed/planet_orbits2.svg
+    caption: "**Solar System Orbits:** The inner planets (Mercury through Mars) shown in their elliptical orbits around the Sun, demonstrating Kepler's laws at system scale."
+    alt: "Top-down view of inner solar system showing nested elliptical orbits of Mercury, Venus, Earth, and Mars around the Sun, with planets marked at various orbital positions."
+    credit: "cococubed.com"
+    module: 1
+
+  # Additional diagrams (may use in future)
+  gravity-curved-space:
+    path: /assets/images/module-01/cococubed/gravity_as_curved_space.svg
+    caption: "**Gravity as Curved Spacetime:** Einstein's view—mass curves spacetime, and objects follow the straightest possible paths (geodesics) through that curvature."
+    alt: "Grid representation of spacetime curved by a central mass, showing how the geometry of space itself is warped by the presence of matter."
+    credit: "cococubed.com"
+    module: 1
+
+  conservation-momentum:
+    path: /assets/images/module-01/cococubed/conservation_momentum_01.svg
+    caption: "**Conservation of Momentum:** In any isolated system, total momentum is conserved. When two objects interact, their momentum changes are equal and opposite."
+    alt: "Diagram illustrating momentum conservation with vectors showing how momentum transfers between interacting objects while total momentum remains constant."
+    credit: "cococubed.com"
+    module: 1

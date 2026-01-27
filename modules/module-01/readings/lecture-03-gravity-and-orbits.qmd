@@ -1,0 +1,1155 @@
+---
+title: "Lecture 3: Gravity and Orbits"
+subtitle: "From Patterns to Physics: Motion, Gravity, and the Birth of Mathematical Modeling"
+author: "Dr. Anna Rosen"
+date: "2026-01-27"
+description: "Kepler’s empirical laws become Newton’s gravity: circular motion, orbital and escape speed, and how energy, angular momentum, and the virial theorem predict orbital behavior."
+draft: false
+categories: [gravity, orbits, mechanics]
+course: ASTR 201
+module: "1 - Foundations"
+learning-objectives:
+  - Distinguish between empirical laws (patterns extracted from data) and physical laws (explanations from first principles)
+  - Describe how Newton's law of gravity can be derived from Kepler's empirical laws using circular motion physics
+  - Apply Newton's laws of motion to orbital problems using force balance
+  - Calculate orbital velocity and escape velocity, and explain what each represents physically
+  - Use energy and angular momentum conservation to predict orbital behavior
+  - Explain why the virial theorem connects kinetic and potential energy in bound systems at equilibrium
+Concept-Throughline:
+  - Kepler told us what planets do; Newton told us why
+  - Patterns become mechanisms when physics explains them
+math-level: symbolic_with_interpretation
+mode: Refine
+prerequisites: Comfort with basic algebra; familiarity with exponents and scientific notation
+---
+
+## Learning Objectives
+
+After completing this reading, you should be able to:
+
+1. Distinguish between **empirical laws** (patterns extracted from data) and **physical laws** (explanations from first principles)
+2. Describe how Newton's Law of Gravity can be *derived* from Kepler's empirical laws using circular motion physics
+3. Apply Newton's laws of motion to orbital problems using force balance
+4. Calculate orbital velocity and escape velocity, and explain what each represents physically
+5. Use energy and angular momentum conservation to predict orbital behavior
+6. Explain why the virial theorem connects kinetic and potential energy in bound systems *at equilibrium*
+
+## Concept Throughline
+
+> *Kepler told us **what** planets do. Newton told us **why**.*
+> This transition — from describing patterns to explaining mechanisms — marks the birth of physics as a predictive science.
+
+---
+
+::::{.callout-tip}
+## 🔧 Unit Analysis: Your Best Friend
+
+Throughout this reading, we'll show **explicit unit conversions** in calculations. This isn't busywork — it's how professional scientists catch errors and build physical intuition. 
+
+**The rule:** If the units don't work out, the physics is wrong.
+
+We use **CGS units** (centimeters, grams, seconds) as our primary system. Key CGS units:
+
+- **Force:** **dyne** = $\mathrm{g\,cm\,s^{-2}}$
+- **Energy:** **erg** = $\mathrm{g\,cm^2\,s^{-2}}$ = dyne·cm
+- $G = 6.67 \times 10^{-8}\ \mathrm{cm^3\,g^{-1}\,s^{-2}}$
+
+Always carry units through calculations and verify they cancel correctly!
+::::
+
+---
+
+## Part 1: The Scientific Revolution in Miniature
+
+### Why This Matters
+
+Imagine you've spent twenty years meticulously recording the positions of planets. You've filled notebooks with data, tracking Mars against the background stars night after night. Eventually, patterns emerge. You discover three remarkable regularities — but you have no idea *why* they're true. You can predict where Mars will be next year, but you can't explain what makes it move.
+
+This was Johannes Kepler's situation in the early 1600s. His three laws of planetary motion were extraordinary achievements: precise, quantitative rules extracted directly from observational data. But they raised as many questions as they answered. Why ellipses and not circles? Why do planets speed up near the Sun? What physical mechanism connects a planet's distance to its orbital period?
+
+These questions would haunt astronomy for nearly a century — until Isaac Newton showed that all three of Kepler's laws were *consequences* of a single, deeper truth: the law of universal gravitation.
+
+This story illustrates something profound about how science works. {{< term empirical_law >}} describe patterns in data; they tell us *what* happens. {{< term physical_law >}} explain mechanisms; they tell us *why* it happens. The transition from empirical to physical understanding is often the most important step in science — and Newton's explanation of Kepler's laws remains one of the most beautiful examples in all of physics.
+
+### Kepler's Empirical Laws: Patterns Without Explanation
+
+Before we can appreciate what Newton accomplished, we need to understand what Kepler discovered. His three laws of planetary motion, distilled from decades of observation by Tycho Brahe, are:
+
+**Kepler's First Law (Law of Orbits):**
+
+> Planets move in *ellipses*, with the Sun at one focus.
+
+This was revolutionary. The ancient Greeks — and nearly everyone since — had assumed celestial motion must be circular, because circles were "perfect." Kepler showed that nature doesn't care about geometric aesthetics. Real orbits are ellipses, which means a planet's distance from the Sun changes continuously throughout its orbit.
+
+The {{< term eccentricity >}} $e$ measures how "squashed" an ellipse is. When $e = 0$, the ellipse is a circle. As $e$ approaches 1, the ellipse becomes more elongated. Most planetary orbits have small eccentricities (Earth's is about 0.017), so they're nearly circular — but not quite.
+
+Key orbital terms:
+
+- {{< term semi_major_axis >}}: Half the longest diameter of the ellipse; the average distance from the orbiting body to its host. We reserve $a$ for this quantity throughout.
+- {{< term perihelion >}}: The closest approach to the Sun, where $r_p = a(1-e)$
+- {{< term aphelion >}}: The farthest point from the Sun, where $r_a = a(1+e)$
+- **Instantaneous separation** ($r$): The current distance between the two bodies at any moment (varies between $r_p$ and $r_a$)
+
+{{< fig kepler-first-law >}}
+
+**Kepler's Second Law (Law of Areas):**
+
+> A line connecting a planet to the Sun sweeps out equal areas in equal times.
+
+This law encodes a surprising fact: planets move *faster* when they're closer to the Sun and *slower* when they're farther away. The "equal areas" rule quantifies exactly how the speed changes — but it doesn't explain *why* speed and distance are connected this way.
+
+*Foreshadowing:* The equal-area law hints at something deep — it suggests the force on the planet points directly toward the Sun (a {{< term central_force >}}). Newton would later show that *any* central force conserves angular momentum, and Kepler II is a direct consequence. We'll return to this connection in Part 5.
+
+{{< fig kepler-second-law >}}
+
+**Kepler's Third Law (Law of Periods):**
+
+> For orbits around a given central mass, $P^2 / a^3 = \text{constant}$.
+
+This is a **scaling relation** — it tells us how one quantity changes when we change another. If you move a planet farther from the Sun, its orbital period increases. But not linearly: doubling the distance increases the period by a factor of $2^{3/2} \approx 2.83$.
+
+Written as a proportionality:
+
+$$P^2 \propto a^3$$
+
+where $P$ is the orbital period and $a$ is the semi-major axis. Notice this is a *proportionality*, not an equality—the constant of proportionality depends on the central mass, as Newton would later show.
+
+> **⚠️ Common Notation Trap: The "$P^2 = a^3$" Myth**
+> 
+> You may see "$P^2 = a^3$" in some textbooks or online. This is **not** a general law of nature! Here's what's actually true:
+> 
+> 1. **The physical law (empirical):** $P^2/a^3 = \text{constant}$ for orbits around a fixed central mass.
+> 
+> 2. **Newton's version:** The constant equals $4\pi^2/[G(M+m)]$, giving:
+>    $$P^2 = \frac{4\pi^2}{G(M+m)} a^3$$
+> 
+> 3. **The "Solar System shortcut":** When you measure $P$ in Earth years and $a$ in AU for orbits around a ~$1\,M_\odot$ star, and when $m \ll M$, the *numerical values* of $P^2$ and $a^3$ come out nearly the same. A more honest way to write this is:
+>    $$\left(\frac{P}{1\,\text{yr}}\right)^2 \approx \left(\frac{a}{1\,\text{AU}}\right)^3 \times \frac{M_\odot}{M + m}$$
+>    Note the $\approx$ (not $=$) and the explicit dependence on mass.
+> 
+> The bare "$P^2 = a^3$" hides units, hides the mass dependence, and misuses the equals sign. Avoid it. Use proportionalities or Newton's full form.
+
+---
+
+::::{.callout-note}
+## 🧠 Pause & Predict #1
+Before reading further, think about this:
+
+1. **Kepler III says** $P^2 \propto a^3$. If you move a planet to *twice* its current orbital distance, by what factor does its orbital period increase?
+
+2. **Kepler II says** planets move faster near the Sun. Does this mean planets are *accelerating* as they approach the Sun, or is something else going on?
+
+*(Answers at end of reading, in collapsible section)*
+::::
+
+---
+
+### The Limits of Empirical Laws
+
+Kepler's laws are powerful predictive tools. Given a planet's orbital parameters, you can calculate where it will be at any future time. But notice what they *don't* tell you:
+
+- Why are orbits ellipses and not some other shape?
+- What causes planets to speed up near the Sun?
+- Why does the period depend on distance with exactly this power law?
+- Do these rules apply beyond our solar system?
+
+Empirical laws are extracted from data — they summarize observations but don't explain the underlying physics. They can predict within the domain where data exists, but they can't tell us whether the same rules apply elsewhere.
+
+**This is precisely where Newton's contribution transformed astronomy into physics.**
+
+---
+
+## Part 2: The Physics of Motion
+
+::::{.callout-important}
+## 📐 A Note on Calculus Notation
+
+You'll see derivatives like $dr/dt$ and $dv/dt$ in this reading. **You will not be asked to perform calculus operations** on exams or homework—no taking derivatives, no computing integrals.
+
+So why include calculus notation at all? Because it provides *intuition* and shows you where physics is headed:
+
+| Calculus notation | What it means | Finite-difference version |
+|-------------------|---------------|---------------------------|
+| $v = dr/dt$ | velocity is "how fast position changes" | $v \approx \Delta r / \Delta t$ for small $\Delta t$ |
+| $a = dv/dt$ | acceleration is "how fast velocity changes" | $a \approx \Delta v / \Delta t$ for small $\Delta t$ |
+| $dA/dt$ | rate of sweeping area | $dA/dt \approx \Delta A / \Delta t$ |
+
+The calculus version is just the "infinitely small time step" limit of what you already understand. When you take calculus (most of you will!), you'll see why this notation is so powerful. For now, read $d(\text{something})/dt$ as "rate of change of something."
+::::
+
+### Vectors and Key Variables: The Language of Motion
+
+Before diving into Newton's laws, we need to establish our notation. Physics uses symbols as shorthand—but those symbols must be defined before we use them.
+
+::::{.callout-tip}
+## 🧭 Vectors: Direction Matters
+
+You'll notice arrows over some symbols throughout this reading. These are {{< term vector >}}s — quantities that have both a *magnitude* *(how much)* and a *direction* *(which way)*.
+
+**Why this matters:**
+
+- **Speed** tells you how fast: "30 km/s"
+- **Velocity** tells you how fast *and which way*: "30 km/s heading east"
+
+These are different! A car driving in a circle at constant speedometer reading has constant *speed* but changing *velocity* (because the direction keeps changing). And changing velocity means **acceleration** — even without speeding up or slowing down.
+
+This distinction is crucial for understanding orbits. A planet moving in a circle at constant speed is *accelerating* because its direction of motion continuously changes. That acceleration requires a force — and gravity provides it.
+::::
+
+**The key variables we'll use:**
+
+| Symbol | Name | What it measures | CGS units |
+|--------|------|------------------|-----------|
+| $\vec{r}$ | position | where an object is (relative to a reference point) | cm |
+| $\vec{v}$ | velocity | how fast and in what direction position changes | cm/s |
+| $\vec{a}$ | acceleration | how fast and in what direction velocity changes | cm/s² |
+| $m$ | mass | how much matter (and resistance to acceleration) | g (grams) |
+| $\vec{F}$ | force | a push or pull that causes acceleration | $\text{dyne} = \text{g} \cdot \text{cm}/\text{s}^2$ |
+
+The arrow notation ($\vec{v}$ vs. $v$) distinguishes vectors (with direction) from scalars (magnitude only). When we write $v$ without the arrow, we mean the *speed* — just the magnitude (always zero or positive), no direction. In contrast, velocity *components* like $v_x$ can be positive or negative: $v_x$ is the projection of velocity onto the x-axis, and its sign tells you whether that part of the motion points in the +x or −x direction.
+
+### Setting the Stage: Newton's Laws of Motion
+
+Before Newton could explain *why* planets move as they do, he needed to establish the fundamental rules of motion itself. His three laws of motion, independent of gravity, form the foundation of classical mechanics.
+
+**First Law (Inertia):**
+
+> An object remains at rest or in uniform motion unless acted upon by a net external force.
+
+Mathematically: if $\sum \vec{F} = 0$ (all forces cancel out), then $\vec{v} = \text{constant}$ (velocity doesn't change).
+
+This seems obvious now, but it was revolutionary. It means motion doesn't require continuous effort — only *changes* in motion require forces. A planet moving through empty space would travel in a straight line forever unless something deflected it.
+
+**Second Law (Force and Acceleration):**
+
+> The net force on an object equals its mass times its acceleration.
+
+$$\vec{F} = m\vec{a}$$
+
+This equation is the heart of Newtonian mechanics. It tells us that forces cause accelerations, and the connection is mediated by mass. For the same force, a more massive object accelerates less — this resistance to acceleration is what we call {{< term inertia >}}.
+
+**Unit check for $F = ma$:**
+
+$$[F] = [m][a] = \text{g} \times \frac{\text{cm}}{\text{s}^2} = \frac{\text{g} \cdot \text{cm}}{\text{s}^2} = \text{dyne} \checkmark$$
+
+**Physical interpretation:** 
+
+Force tells matter how to accelerate; mass tells matter how much to resist. If you increase the force, acceleration increases. If you increase the mass, acceleration decreases (for the same force).
+
+**Third Law (Action-Reaction):**
+
+> For every action, there is an equal and opposite reaction: $\vec{F}_{AB} = -\vec{F}_{BA}$.
+
+If the Sun pulls on Earth, Earth pulls back on the Sun with exactly the same force. This will become important when we discuss center of mass and binary systems.
+
+### Kinematics: Describing Motion Quantitatively
+
+To apply Newton's laws, we need precise language for describing motion. This is {{< term kinematics >}} — the mathematics of position, velocity, and acceleration.
+
+**Position** ($\vec{r}$): Where an object is, relative to some reference point. Units: cm (CGS).
+
+**Velocity** ($\vec{v}$): How position changes with time — both speed and direction.
+
+$$\vec{v} = \frac{d\vec{r}}{dt} \approx \frac{\Delta \vec{r}}{\Delta t} \quad \text{(for small } \Delta t \text{)}$$
+
+**Units:** $[v] = \dfrac{[\text{position}]}{[\text{time}]} = \dfrac{\text{cm}}{\text{s}}$
+
+**Interpretation:** Velocity tells you how fast something is moving and in what direction. A planet moving at $3 \times 10^6$ cm/s (30 km/s) tangent to its orbit has velocity pointing along the orbit, not toward the Sun.
+
+**Acceleration** ($\vec{a}$): How velocity changes with time.
+
+$$\vec{a} = \frac{d\vec{v}}{dt} \approx \frac{\Delta \vec{v}}{\Delta t} \quad \text{(for small } \Delta t \text{)}$$
+
+**Units:** $[a] = \dfrac{[\text{velocity}]}{[\text{time}]} = \dfrac{\text{cm/s}}{\text{s}} = \dfrac{\text{cm}}{\text{s}^2}$
+
+**Interpretation:** Acceleration doesn't just mean "speeding up." It means any change in velocity — including slowing down or changing direction. A planet in a circular orbit at constant speed is still accelerating because its *direction* is continuously changing.
+
+This feels wrong at first — aren't accelerating things speeding up? Not necessarily. Think about driving: your car's speedometer can stay at 60 mph while you round a curve, but you still have to turn the wheel. That steering effort *is* the acceleration — you're constantly changing direction, and changing direction requires force.
+
+---
+
+::::{.callout-note}
+## 🧠 Pause & Predict #2
+
+A car drives around a circular track at constant speedometer reading (constant speed).
+
+1. Is the car accelerating? Why or why not?
+2. What direction does the acceleration point?
+3. If the driver wants to go around a *tighter* circle at the same speed, does the required acceleration increase or decrease?
+::::
+
+---
+
+### Circular Motion and the Centripetal Force
+
+Here's a key insight that connects motion physics to orbits: **an object moving in a circle is constantly accelerating**, even if its speed is constant.
+
+Why? Because velocity is a vector—it has both magnitude (speed) and direction. For circular motion, the direction is always changing, which means velocity is changing, which means there's acceleration.
+
+**Intuition before the formula:** Faster motion means direction changes more rapidly (more acceleration). A tighter curve (smaller radius) means direction changes more sharply (also more acceleration). The derivation (which requires some geometry we'll skip) shows these combine as:
+
+For an object moving in a circle of radius $r$ with speed $v$, the {{< term centripetal_acceleration >}} points toward the center and has magnitude:
+
+$$a_c = \frac{v^2}{r}$$
+
+{{< fig newton-ball-on-string >}}
+
+**Detailed unit check:**
+$$[a_c] = \frac{[v]^2}{[r]} = \frac{(\text{cm/s})^2}{\text{cm}} = \frac{\text{cm}^2/\text{s}^2}{\text{cm}} = \frac{\text{cm}^{\cancel{2}}}{\text{s}^2 \cdot \cancel{\text{cm}}} = \frac{\text{cm}}{\text{s}^2} \checkmark$$
+
+**Physical interpretation:** 
+- Faster speed → tighter curve → larger acceleration (quadratic dependence!)
+- Larger radius → gentler curve → smaller acceleration
+
+By Newton's second law, if there's acceleration, there must be a force. The {{< term centripetal_force >}} required to maintain circular motion is:
+
+$$F_c = ma_c = \frac{mv^2}{r}$$
+
+**Unit check:**
+$$[F_c] = [m] \cdot [a_c] = \text{g} \cdot \frac{\text{cm}}{\text{s}^2} = \frac{\text{g} \cdot \text{cm}}{\text{s}^2} = \text{dyne} \checkmark$$
+
+**Key insight:** This isn't a new type of force—it's just whatever force happens to be pulling the object toward the center. For planets, that force is gravity. For a ball on a string, it's tension. For a car turning, it's friction. The centripetal force requirement tells us how strong the center-directed force must be to maintain circular motion.
+
+::::{.callout-warning}
+## ⚠️ Centripetal vs. Centrifugal: Don't Confuse Them
+
+**Centripetal force** is the real, inward net force required to keep an object moving in a circle. It's not a new kind of force—it's a *role* played by some real force (gravity, tension, friction, etc.).
+
+**Centrifugal force** is a "pseudo-force" or "fictitious force" that only appears when you analyze motion from a rotating (non-inertial) reference frame. In an inertial frame (the perspective we use in this course), centrifugal force does not exist.
+
+**Bottom line:** When doing force balance in an inertial frame, never include "centrifugal force." Identify the real forces (gravity, tension, friction, etc.) and set their inward component equal to $mv^2/r$.
+::::
+
+---
+
+## Part 3: Newton's Law of Gravitation
+
+### From Patterns to Mechanism
+
+Now we arrive at Newton's great insight. He proposed that gravity is a **universal** force between all masses, following a precise mathematical law:
+
+$$F_g = \frac{Gm_1m_2}{r^2}$$
+
+where:
+- $G = 6.67 \times 10^{-8}\ \mathrm{cm^3\,g^{-1}\,s^{-2}}$ is Newton's gravitational constant
+- $m_1$ and $m_2$ are the masses of the two objects (in grams)
+- $r$ is the distance between their centers (in cm)
+- $F_g$ is the gravitational force (in dynes)—attractive, directed along the line connecting the masses
+
+{{< fig gravity-law >}}
+
+**Detailed unit analysis for $G$:**
+
+We need $F_g$ to have units of force (dynes). Let's verify:
+
+$$[F_g] = [G] \cdot \frac{[m_1][m_2]}{[r]^2}$$
+
+$$\text{dyne} = [G] \cdot \frac{\text{g} \cdot \text{g}}{\text{cm}^2} = [G] \cdot \frac{\text{g}^2}{\text{cm}^2}$$
+
+Solving for $[G]$:
+
+$$[G] = \text{dyne} \cdot \frac{\text{cm}^2}{\text{g}^2} = \frac{\text{g} \cdot \text{cm}}{\text{s}^2} \cdot \frac{\text{cm}^2}{\text{g}^2} = \frac{\text{cm}^3}{\text{g} \cdot \text{s}^2} = \text{cm}^3 \, \text{g}^{-1} \, \text{s}^{-2}$$
+
+So $G$ can be written equivalently as:
+- $6.67 \times 10^{-8}\ \mathrm{cm^3\,g^{-1}\,s^{-2}}$ (compact form)
+- $6.67 \times 10^{-8}\ \mathrm{dyne\,cm^2\,g^{-2}}$ (shows connection to force)
+
+**Physical interpretation of each piece:**
+- **$Gm_1m_2$**: Gravity depends on *both* masses. More mass means more gravitational pull. The force is proportional to the *product* of masses (by Newton's third law—each mass must feel the same force).
+- **$r^2$ in the denominator**: Gravity weakens with distance, following an inverse-square law. Double the distance, and the force drops to one-quarter.
+- **$G$**: A universal constant that sets the "strength" of gravity. It's the same everywhere in the universe—on Earth, on Mars, in distant galaxies.
+
+**Limiting cases:**
+- As $r \to 0$: Force grows without bound (though this limit is physically unrealistic for extended objects)
+- As $r \to \infty$: Force approaches zero, but never quite vanishes
+- If either mass is zero: No gravitational force
+
+> **Note on light and gravity:** Newton's framework describes gravity as acting on mass. Since photons are massless, Newtonian gravity doesn't correctly predict how light behaves near massive objects. Einstein's General Relativity (1915) showed that gravity bends spacetime itself, which *does* affect light's trajectory—but that's beyond our scope here.
+
+---
+
+::::{.callout-note}
+## 🧠 Pause & Predict #3
+
+Using Newton's law of gravitation:
+
+1. If you double the distance between two masses, by what factor does the gravitational force change?
+
+2. If you double *both* masses while keeping the distance fixed, by what factor does the force change?
+
+3. The Moon is about 60 Earth radii away from Earth's center. Compared to gravity at Earth's surface, how strong is Earth's gravitational pull on the Moon? (Express as a fraction.)
+::::
+
+---
+
+### How Did Newton Know This?
+
+Here's where the story becomes remarkable. Newton didn't just propose the inverse-square law out of thin air—he *derived* it by requiring that his gravity law reproduce Kepler's empirical observations.
+
+The reasoning goes something like this (presented as a scaling argument, not a full rigorous proof):
+
+**Assumptions:**
+- Orbits are nearly circular (so we can use $r \approx a$)
+- The force is a power-law central force: $F \propto 1/r^n$ for some unknown $n$
+- The central mass $M$ dominates ($m \ll M$)
+
+The $m \ll M$ assumption simplifies the algebra; the inverse-square exponent comes from the *scaling* with $r$.
+
+**Step 1: Start with Kepler's Third Law as a Scaling Relation**
+
+Kepler III tells us: $P^2 \propto a^3$. This is a constraint any theory of gravity must satisfy.
+
+**Step 2: Postulate a General Form for Gravity**
+
+Let's assume gravity decreases with distance as some power law:
+
+$$F = k \frac{Mm}{r^n}$$
+
+where $n$ is unknown and $k$ is some constant whose value and units depend on $n$. We'll determine $n$ from Kepler's law.
+
+**Step 3: Apply Circular Motion Physics**
+
+For a planet in a roughly circular orbit, gravity provides the centripetal force:
+
+$$k\frac{Mm}{r^n} = \frac{mv^2}{r}$$
+
+where $v$ is the orbital speed. The planet's mass $m$ cancels — we'll explore why this is remarkable when we derive orbital velocity in Part 4:
+
+$$\frac{kM}{r^n} = \frac{v^2}{r}$$
+
+**Step 4: Connect Speed and Period**
+
+For circular motion, $v = \frac{2\pi r}{P}$ (circumference divided by period). Substituting:
+
+$$\frac{kM}{r^n} = \frac{(2\pi r/P)^2}{r} = \frac{4\pi^2 r^2}{P^2 \cdot r} = \frac{4\pi^2 r}{P^2}$$
+
+Rearranging for $P^2$:
+
+$$P^2 = \frac{4\pi^2}{kM} r^{n+1}$$
+
+**Step 5: Compare with Kepler III**
+
+Kepler's law says $P^2 \propto r^3$ (using $r \approx a$ for nearly circular orbits). Comparing powers of $r$:
+
+$$n + 1 = 3 \quad \Rightarrow \quad n = 2$$
+
+**The inverse-square law is not arbitrary—it's the only power law consistent with Kepler's Third Law.**
+
+**Step 6: Identify the Constant and Its Units**
+
+When $n = 2$, the constant $k$ is what we call Newton's gravitational constant $G$. Let's verify its units must be $\mathrm{cm^3\,g^{-1}\,s^{-2}}$:
+
+From $F = k \dfrac{Mm}{r^2}$, we need $[F] = \text{dyne}$:
+
+$$[k] = [F] \cdot \frac{[r]^2}{[M][m]} = \text{dyne} \cdot \frac{\text{cm}^2}{\text{g}^2} = \frac{\text{g} \cdot \text{cm}}{\text{s}^2} \cdot \frac{\text{cm}^2}{\text{g}^2} = \frac{\text{cm}^3}{\text{g} \cdot \text{s}^2} \checkmark$$
+
+The force law becomes:
+
+$$F = G\frac{Mm}{r^2}$$
+
+This is the power of physical laws over empirical ones. Newton didn't just say "here's a formula that works." He showed that the inverse-square law is *required* by the observed relationship between orbital period and distance.
+
+### Newton's Version of Kepler's Third Law
+
+Armed with the law of gravitation, Newton could derive a more complete version of Kepler III:
+
+$$P^2 = \frac{4\pi^2}{G(M + m)} a^3$$
+
+**Unit verification:** Let's confirm both sides have units of time$^2$:
+
+Left side: $[P^2] = \text{s}^2$
+
+Right side: 
+$$\left[\frac{4\pi^2}{G(M+m)} a^3\right] = \frac{1}{[G][M]} \cdot [a]^3 = \frac{1}{\text{cm}^3 \text{g}^{-1} \text{s}^{-2} \cdot \text{g}} \cdot \text{cm}^3$$
+
+$$= \frac{1}{\text{cm}^3 \cdot \text{s}^{-2}} \cdot \text{cm}^3 = \frac{\text{cm}^3}{\text{cm}^3} \cdot \text{s}^2 = \text{s}^2 \checkmark$$
+
+**What's different from Kepler's empirical version?**
+- The constant of proportionality is now determined: it depends on $G$ and the *total mass* of the system
+- Both masses appear: $(M + m)$, not just the central mass
+- This applies to *any* two-body gravitational system, not just our solar system
+
+**Physical interpretation:** 
+- Larger total mass → stronger gravity → faster orbit → shorter period
+- Larger orbital distance → weaker gravity → slower orbit → longer period
+
+**Important approximation:** When $M \gg m$ (Sun-planet systems), we can write:
+
+$$P^2 \approx \frac{4\pi^2}{GM} a^3$$
+
+This recovers Kepler's simpler form, explaining why it works so well for planets despite not including their masses.
+
+**Astronomical application:** By measuring $P$ and $a$, we can solve for the total mass:
+
+$$M + m = \frac{4\pi^2 a^3}{G P^2}$$
+
+This is how we "weigh" stars in binary systems, measure the mass of black holes from orbiting stars, and estimate galaxy masses from their rotation curves. The same physics that explains planetary motion gives us a cosmic scale.
+
+### Two-Body Reality: The Center of Mass
+
+But wait—where does that $(M + m)$ factor actually come from? To understand it, we need to confront a simplification we've been making.
+
+So far, we've imagined the Sun sitting motionless while planets orbit around it. This is a useful approximation, but it's not quite true. **Newton's Third Law** tells us that if the Sun pulls on Earth, Earth pulls back on the Sun with an equal and opposite force. The Sun must move too!
+
+In reality, both bodies orbit their common {{< term barycenter >}}. The center of mass is the "balance point" of the system—if you could place the system on a cosmic seesaw, it would balance at this point.
+
+{{< fig center-of-mass >}}
+
+**Where is the center of mass?** For two bodies separated by distance $r$, the center of mass lies along the line connecting them, at distances:
+
+$$r_1 = \frac{m_2}{m_1 + m_2} r \quad \text{and} \quad r_2 = \frac{m_1}{m_1 + m_2} r$$
+
+where $r_1$ is the distance from mass $m_1$ to the center of mass, and $r_2$ is the distance from mass $m_2$ to the center of mass. Notice that $r_1 + r_2 = r$.
+
+**Key insight:** The more massive body orbits *closer* to the center of mass. When $M \gg m$, the barycenter lies very close to $M$'s center—which is why Kepler's "Sun at one focus" works so well. The Sun does wobble, but only by a tiny amount.
+
+**How tiny?** For the Sun-Jupiter system:
+$$r_{Sun} = \frac{m_{Jupiter}}{M_{Sun} + m_{Jupiter}} \times r_{Jupiter} \approx \frac{1}{1000} \times 5\ \text{AU} \approx 0.005\ \text{AU}$$
+
+The Sun wobbles by about 750,000 km—roughly one solar radius—due to Jupiter's pull. This is measurable, and it's exactly how we detect **exoplanets via the radial velocity method**: the star's tiny wobble reveals the presence of an unseen companion.
+
+**Where does $(M + m)$ come from in Kepler III?**
+
+When we properly account for both bodies orbiting the center of mass, the gravitational force accelerates *both* objects. The math works out such that the orbital motion depends on the **total mass** of the system, not just the central mass. This is because:
+
+1. Both bodies contribute to the gravitational interaction
+2. The "reduced mass" of the system, $\mu = \frac{m_1 m_2}{m_1 + m_2}$, appears in the orbital dynamics
+3. When you work through the force balance for relative motion, the $(M + m)$ factor emerges naturally
+
+The full derivation requires working in the center-of-mass reference frame, which we'll encounter again when studying binary stars. For now, the key takeaway is: **Kepler's Third Law in its Newtonian form involves the total system mass because both bodies are moving.**
+
+---
+
+::::{.callout-note}
+## 🧠 Pause & Predict #3.5: Is Kepler's "Constant" Really Constant?
+
+Newton showed that $P^2/a^3 = 4\pi^2/[G(M+m)]$. This "Kepler constant" depends on the total mass of the system!
+
+1. Consider two exoplanetary systems: one around a $0.5\,M_\odot$ red dwarf, another around a $2\,M_\odot$ star. Is the value of $P^2/a^3$ the same in both systems?
+
+2. If a planet orbits the red dwarf at 1 AU, is its orbital period *longer* or *shorter* than Earth's? By approximately what factor?
+
+3. Why didn't Kepler—working only with Solar System data—notice this mass dependence?
+
+*(Answers at end of reading)*
+::::
+
+---
+
+## Part 4: Orbital Velocity and Escape Velocity
+
+### How Fast Must a Planet Move?
+
+For a stable circular orbit at radius $r$ around a mass $M$, there's a specific speed that satisfies force balance. Let's derive it.
+
+**Force balance condition:** Gravitational force = Centripetal force required
+
+$$\frac{GMm}{r^2} = \frac{mv_{orb}^2}{r}$$
+
+Notice something remarkable: the orbiting mass $m$ appears on *both* sides of this equation and cancels out. This means all objects orbit at the same speed at a given radius — a feather and a bowling ball, given the same initial velocity at the same distance, would orbit identically. This isn't obvious; it's a deep fact about gravity that puzzled physicists until Einstein explained it (the mass that resists acceleration equals the mass that gravity pulls on).
+
+$$\frac{GM}{r^2} = \frac{v_{orb}^2}{r}$$
+
+Multiply both sides by $r$:
+
+$$\frac{GM}{r} = v_{orb}^2$$
+
+Solving for {{< term orbital_velocity >}}:
+
+$$\boxed{v_{orb} = \sqrt{\frac{GM}{r}}}$$
+
+**Detailed unit check:**
+$$[v_{orb}] = \sqrt{\frac{[G][M]}{[r]}} = \sqrt{\frac{\text{cm}^3 \, \text{g}^{-1} \, \text{s}^{-2} \cdot \text{g}}{\text{cm}}}$$
+
+The grams cancel:
+$$= \sqrt{\frac{\text{cm}^3 \cdot \cancel{\text{g}^{-1}} \cdot \text{s}^{-2} \cdot \cancel{\text{g}}}{\text{cm}}} = \sqrt{\frac{\text{cm}^3 \cdot \text{s}^{-2}}{\text{cm}}}$$
+
+Simplify the cm:
+$$= \sqrt{\frac{\text{cm}^{\cancel{3}}}{\cancel{\text{cm}} \cdot \text{s}^2}} = \sqrt{\frac{\text{cm}^2}{\text{s}^2}} = \frac{\text{cm}}{\text{s}} \checkmark$$
+
+**Physical interpretation:**
+- Larger $M$ → stronger gravity → must orbit faster to avoid falling in
+- Larger $r$ → weaker gravity → can orbit more slowly
+- The orbiting object's mass *doesn't matter* (as we noted above when $m$ canceled)
+
+---
+
+### Worked Example: Earth's Orbital Velocity Around the Sun
+
+**Given:**
+- $M_\odot = 2 \times 10^{33}$ g
+- $r = 1$ AU $= 1.5 \times 10^{13}$ cm
+- $G = 6.67 \times 10^{-8}\ \mathrm{cm^3\,g^{-1}\,s^{-2}}$
+
+**Step 1: Write the formula and substitute values**
+
+$$v_{orb} = \sqrt{\frac{GM_\odot}{r}} = \sqrt{\frac{(6.67 \times 10^{-8} \text{ cm}^3 \text{ g}^{-1} \text{ s}^{-2})(2 \times 10^{33} \text{ g})}{1.5 \times 10^{13} \text{ cm}}}$$
+
+**Step 2: Handle the units explicitly**
+
+$$v_{orb} = \sqrt{\frac{6.67 \times 2}{1.5} \times 10^{-8+33-13} \times \frac{\text{cm}^3 \cdot \cancel{\text{g}^{-1}} \cdot \text{s}^{-2} \cdot \cancel{\text{g}}}{\text{cm}}}$$
+
+$$= \sqrt{\frac{13.34}{1.5} \times 10^{12} \times \frac{\text{cm}^2}{\text{s}^2}}$$
+
+**Step 3: Compute the numerical value**
+
+$$= \sqrt{8.9 \times 10^{12} \text{ cm}^2/\text{s}^2}$$
+
+$$= \sqrt{8.9} \times 10^6 \text{ cm/s}$$
+
+$$\approx 3.0 \times 10^6 \text{ cm/s}$$
+
+**Step 4: Convert to more intuitive units**
+
+$$v_{orb} = 3.0 \times 10^6 \text{ cm/s} \times \frac{1 \text{ km}}{10^5 \text{ cm}} = 30 \text{ km/s}$$
+
+**Result:** Earth travels at about **30 km/s** (or 108,000 km/hr) just to stay in orbit!
+
+**Sanity check:** This is about 0.01% of the speed of light, which seems reasonable for a planet—fast, but not relativistic.
+
+---
+
+::::{.callout-note}
+## 🧠 Pause & Predict #4
+
+Using $v_{orb} = \sqrt{GM/r}$:
+
+1. Jupiter orbits at about 5 AU from the Sun. Without calculating, is Jupiter's orbital velocity *greater than*, *less than*, or *equal to* Earth's? By what factor?
+
+2. A satellite orbits Earth at altitude 400 km (about $r = 6800$ km from Earth's center). A GPS satellite orbits at about $r = 26,000$ km. Which satellite moves faster, and by roughly what factor?
+::::
+
+---
+
+### Escape Velocity: Breaking Free of Gravity
+
+What if you want to leave a gravitational system entirely? You need to give an object enough kinetic energy to overcome the gravitational binding energy. The minimum speed required is the {{< term escape_velocity >}}.
+
+To find it, we use energy conservation (which we'll explore in detail shortly). The condition for escape is that total mechanical energy equals zero at infinity:
+
+$$E = K + U = \frac{1}{2}mv_{esc}^2 - \frac{GMm}{r} = 0$$
+
+Solving for $v_{esc}$:
+
+$$\frac{1}{2}mv_{esc}^2 = \frac{GMm}{r}$$
+
+$$v_{esc}^2 = \frac{2GM}{r}$$
+
+$$\boxed{v_{esc} = \sqrt{\frac{2GM}{r}}}$$
+
+**Unit check:** Same as for $v_{orb}$—the factor of 2 is dimensionless, so units are still cm/s. ✓
+
+**Key relationship:**
+$$v_{esc} = \sqrt{2} \cdot v_{orb} \approx 1.41 \cdot v_{orb}$$
+
+**Physical interpretation:**
+- Escape velocity is exactly $\sqrt{2}$ times the orbital velocity at the same radius
+- Larger $M$ → deeper gravitational well → harder to escape
+- Smaller $r$ → closer to mass → deeper in well → harder to escape
+- The escaping object's mass cancels—a rocket and a baseball need the same speed to escape
+
+{{< fig escape-velocity >}}
+
+---
+
+### Worked Example: Earth's Escape Velocity
+
+**Given:**
+- $M_\oplus = 6 \times 10^{27}$ g
+- $R_\oplus = 6.4 \times 10^{8}$ cm
+- $G = 6.67 \times 10^{-8}\ \mathrm{cm^3\,g^{-1}\,s^{-2}}$
+
+**Step 1: Write the formula**
+
+$$v_{esc} = \sqrt{\frac{2GM_\oplus}{R_\oplus}}$$
+
+**Step 2: Substitute with units**
+
+$$v_{esc} = \sqrt{\frac{2 \times (6.67 \times 10^{-8} \text{ cm}^3 \text{ g}^{-1} \text{ s}^{-2}) \times (6 \times 10^{27} \text{ g})}{6.4 \times 10^{8} \text{ cm}}}$$
+
+**Step 3: Combine powers of 10 and handle units**
+
+$$= \sqrt{\frac{2 \times 6.67 \times 6}{6.4} \times 10^{-8+27-8} \times \frac{\text{cm}^3 \cdot \cancel{\text{g}^{-1}} \cdot \text{s}^{-2} \cdot \cancel{\text{g}}}{\text{cm}}}$$
+
+$$= \sqrt{\frac{80}{6.4} \times 10^{11} \times \frac{\text{cm}^2}{\text{s}^2}}$$
+
+$$= \sqrt{12.5 \times 10^{11} \text{ cm}^2/\text{s}^2}$$
+
+$$= \sqrt{1.25 \times 10^{12}} \text{ cm/s}$$
+
+**Step 4: Evaluate**
+
+$$= 1.12 \times 10^6 \text{ cm/s} = 11.2 \text{ km/s}$$
+
+**Result:** Earth's escape velocity is about **11.2 km/s**.
+
+**Sanity check:** This is larger than orbital velocity at Earth's surface ($\sim 7.9$ km/s) by a factor of $\sqrt{2} \approx 1.41$. ✓
+
+---
+
+**Comparison of key velocities:**
+
+| Location | $v_{orb}$ (km/s) | $v_{esc}$ (km/s) |
+|----------|------------------|------------------|
+| Earth at $r = R_\oplus$ (hypothetical near-surface orbit; atmosphere ignored) | 7.9 | 11.2 |
+| Moon surface | 1.7 | 2.4 |
+| Sun surface | 434 | 618 |
+
+*Note: A physical orbit at Earth's surface is impossible due to atmospheric drag. The values listed are for the gravitational field strength at that radius.*
+
+Reminder: $1\ \mathrm{km/s} = 10^5\ \mathrm{cm/s}$.
+
+**Why Apollo astronauts needed a smaller rocket to leave the Moon:** The Moon's escape velocity (2.4 km/s) is only about one-fifth of Earth's (11.2 km/s). Less speed required means less fuel.
+
+---
+
+## Part 5: Conservation Laws in Orbital Mechanics
+
+### Energy Conservation: Predicting Orbital Fate
+
+An orbiting object has two forms of mechanical energy: kinetic energy from its motion and potential energy from its position in the gravitational field. A key feature — which surprises many students — is that gravitational potential energy is *negative*. We'll explain why shortly, but the basic idea is: we define zero potential energy at infinity (far from everything), and falling toward a mass means going *below* zero.
+
+The total mechanical energy of an orbiting object is:
+
+$$E = K + U = \frac{1}{2}mv^2 - \frac{GMm}{r}$$
+
+where:
+
+- $K = \frac{1}{2}mv^2$ is {{< term kinetic_energy >}} (always positive — motion)
+- $U = -\frac{GMm}{r}$ is {{< term gravitational_potential_energy >}} (always negative — see callout below)
+
+::::{.callout-tip}
+## 💡 Why Is Potential Energy Negative?
+
+This confuses many students! Here's the physical picture:
+
+**We choose zero energy at infinity.** Imagine being infinitely far from any mass—no gravitational influence at all. That's our reference point: $U = 0$ when $r \to \infty$.
+
+**Gravity pulls you into a "well."** As you fall toward a mass, gravity does work on you, speeding you up. You're trading potential energy for kinetic energy. Since you started at zero potential energy and gravity is *giving* you kinetic energy, your potential energy must be going *negative*—you're dropping below zero.
+
+**Think of it as debt.** Negative potential energy means you "owe" energy to escape. The more negative $U$ is (closer to the mass), the deeper you're in the gravitational hole, and the more kinetic energy you'd need to climb out.
+
+- At $r = \infty$: $U = 0$ (free, no debt)
+- At finite $r$: $U < 0$ (in debt, bound to the well)
+- Closer to mass (smaller $r$): $U$ more negative (deeper in debt)
+
+This is why the sign of *total* energy ($E = K + U$) tells you whether you can escape: if $E < 0$, you don't have enough kinetic "savings" to pay off your potential "debt."
+::::
+
+**Unit check for energy terms:**
+
+Kinetic energy:
+$$[K] = [m][v]^2 = \text{g} \cdot \left(\frac{\text{cm}}{\text{s}}\right)^2 = \frac{\text{g} \cdot \text{cm}^2}{\text{s}^2} = \text{erg} \checkmark$$
+
+Potential energy:
+
+$$[U] = \frac{[G][M][m]}{[r]} = \frac{\text{cm}^3 \text{ g}^{-1} \text{ s}^{-2} \cdot \text{g} \cdot \text{g}}{\text{cm}} = \frac{\text{cm}^3 \cdot \cancel{\text{g}^{-1}} \cdot \text{s}^{-2} \cdot \text{g}^{\cancel{2}}}{\text{cm}}$$
+
+$$= \frac{\text{cm}^{\cancel{3}} \cdot \text{g}}{\cancel{\text{cm}} \cdot \text{s}^2} = \frac{\text{g} \cdot \text{cm}^2}{\text{s}^2} = \text{erg} \checkmark$$
+
+Both terms have units of energy (ergs in CGS), so they can be added. ✓
+
+**Key insight:** Total energy is *conserved* in a gravitational system (assuming no other forces). As an object moves closer to the central mass, it speeds up, converting potential energy to kinetic—but $E$ stays constant.
+
+{{< fig conservation-energy-orbit >}}
+
+**What total energy tells us about the orbit:**
+
+{{< fig orbit-types >}}
+
+| Energy | Meaning | Orbit Type |
+|--------|---------|------------|
+| $E < 0$ | Bound | Closed (ellipse or circle) |
+| $E = 0$ | Marginally bound | Parabolic (just escapes) |
+| $E > 0$ | Unbound | Hyperbolic (escapes with speed to spare) |
+
+::::{.callout-note}
+## ✅ Quick Check: Energy Sign
+
+A spacecraft is in a stable circular orbit around Earth. Without calculating, what is the sign of its total mechanical energy?
+
+<details>
+<summary>Answer</summary>
+
+**Negative** ($E < 0$). A stable orbit is a *bound* orbit—the spacecraft keeps coming back. Bound orbits always have negative total energy. If the energy were positive, the spacecraft would escape to infinity.
+
+</details>
+::::
+
+**Physical interpretation:** Think of energy as a "budget." Negative total energy means you've borrowed more from the gravitational well than you have in kinetic "savings" — you're trapped. Positive energy means you have surplus kinetic energy even after paying off the gravitational debt.
+
+**General result for bound orbits:** For *any* bound orbit (circular or elliptical) with semi-major axis $a$:
+
+$$E = -\frac{GMm}{2a}$$
+
+For a circular orbit, $a = r$, so $E = -GMm/(2r)$. For an ellipse, use the semi-major axis $a$.
+
+---
+
+::::{.callout-note}
+## 🧠 Pause & Predict #5
+
+1. A comet approaches the Sun with total mechanical energy $E > 0$. Assuming its trajectory doesn't intersect the Sun, will this comet ever return, or will it escape to infinity?
+
+2. If a spacecraft in circular orbit fires its engines briefly to speed up (adding kinetic energy), what happens to its total energy? Does the orbit become more bound or less bound?
+::::
+
+---
+
+### Angular Momentum Conservation: Why Kepler's Second Law Works
+
+{{< term angular_momentum >}} measures "rotational inertia"—how hard it is to change an object's spinning or orbiting motion. For an object of mass $m$ moving in a circle of radius $r$, angular momentum has magnitude:
+
+$$L = mvr$$
+
+where $v$ is the speed perpendicular to the radius (tangent to the orbit). For orbital motion, this can also be written as:
+
+$$L = mr^2 \dot{\phi}$$
+
+where $\dot{\phi}$ is the {{< term angular_velocity >}} — how fast the angle $\phi$ changes, in radians per second. In finite-difference terms: $\dot{\phi} \approx \Delta\phi / \Delta t$.
+
+**These two forms are equivalent.** For circular motion, the tangential speed is $v = r\dot{\phi}$ (arc length per time). Substituting: $L = mvr = m(r\dot{\phi})r = mr^2\dot{\phi}$. Use whichever form matches your given information.
+
+<details>
+<summary><strong>Going Deeper: The Vector Definition</strong></summary>
+
+In full generality, angular momentum is defined using a **cross product**:
+
+$$\vec{L} = \vec{r} \times \vec{p} = \vec{r} \times m\vec{v}$$
+
+The cross product ($\times$) combines two vectors to produce a third vector perpendicular to both. For orbital motion in a plane, the angular momentum vector points perpendicular to that plane (following the "right-hand rule"). You won't need this vector notation for our calculations—the magnitude $L = mvr$ is sufficient.
+
+</details>
+
+**Unit check for angular momentum:**
+
+$$[L] = [m][r]^2[\dot{\phi}] = \text{g} \cdot \text{cm}^2 \cdot \frac{\text{rad}}{\text{s}} = \frac{\text{g} \cdot \text{cm}^2}{\text{s}}$$
+
+(Note: radians are dimensionless, so we often write this as $\mathrm{g\,cm^2\,s^{-1}}$.)
+
+Alternatively, from $L = mvr$ for circular motion:
+$$[L] = [m][v][r] = \text{g} \cdot \frac{\text{cm}}{\text{s}} \cdot \text{cm} = \frac{\text{g} \cdot \text{cm}^2}{\text{s}} \checkmark$$
+
+**Why is angular momentum conserved?** Because gravity is a *central force*—it acts along the line connecting the two masses. A central force exerts no {{< term torque >}} about the center (torque is a twisting force—what makes things spin faster or slower), so it cannot change angular momentum. (This is the deep connection we foreshadowed when discussing Kepler II!)
+
+{{< fig conservation-angular-momentum >}}
+
+This immediately explains **Kepler's Second Law**. Here's the chain of reasoning:
+
+1. Gravity is a **central force** — it points directly toward the Sun.
+2. A central force exerts no **torque** about the center (no twisting).
+3. No torque → angular momentum $L$ stays constant.
+4. The area swept in time $dt$ is a thin pie-slice with base $r$ and arc length $r\,d\phi$, giving $dA \approx \frac{1}{2} \cdot r \cdot (r\,d\phi) = \frac{1}{2}r^2\,d\phi$.
+5. Since $L = mr^2\dot{\phi}$ is constant, $dA/dt = \frac{1}{2}r^2\dot{\phi} = L/(2m)$ is also constant.
+6. Constant $dA/dt$ is exactly Kepler's Second Law: **equal areas in equal times**.
+
+The rate at which a planet sweeps out area is called the {{< term areal_velocity >}}:
+
+$$\frac{dA}{dt} = \frac{1}{2}r^2 \dot{\phi} = \frac{L}{2m} = \text{constant}$$
+
+**Unit check for areal velocity:**
+
+$$\left[\frac{dA}{dt}\right] = \frac{[\text{area}]}{[\text{time}]} = \frac{\text{cm}^2}{\text{s}}$$
+
+From the formula:
+$$\left[\frac{1}{2}r^2\dot{\phi}\right] = \text{cm}^2 \cdot \frac{1}{\text{s}} = \frac{\text{cm}^2}{\text{s}} \checkmark$$
+
+(In finite-difference terms: $\Delta A / \Delta t \approx \frac{1}{2}r^2 (\Delta\phi/\Delta t)$.)
+
+Equal areas in equal times isn't a separate law—it's a *consequence* of angular momentum conservation under central forces.
+
+**Physical interpretation of Kepler II:**
+- When a planet is closer to the Sun (smaller $r$), it must have larger $\dot{\phi}$ (move faster angularly) to keep $L = mr^2\dot{\phi}$ constant
+- This is like an ice skater spinning faster when they pull their arms in
+
+---
+
+::::{.callout-note}
+## 🧠 Pause & Predict #6
+
+A planet in an elliptical orbit has $r_p = 1$ AU at perihelion and $r_a = 4$ AU at aphelion.
+
+1. At which point is the planet moving faster: perihelion or aphelion?
+
+2. Using angular momentum conservation ($L = mr^2\dot{\phi} = \text{const}$), by what factor is the angular velocity $\dot{\phi}$ larger at perihelion compared to aphelion?
+
+3. Is the *linear* speed ratio the same as the angular velocity ratio? Why or why not?
+::::
+
+---
+
+### The Virial Theorem: A Deep Connection
+
+For gravitationally bound systems, there's a remarkable relationship between kinetic and potential energy — but it applies in two specific situations:
+
+1. **Truly static systems:** A star in hydrostatic equilibrium, where nothing is changing.
+2. **Periodic systems (like orbits):** The relationship holds for **time-averaged** values over a complete orbit.
+
+We write $\langle K \rangle$ to mean "the time-averaged kinetic energy" (averaging over one or more complete orbits). The {{< term virial_theorem >}} states:
+
+$$\langle K \rangle = -\frac{1}{2}\langle U \rangle \quad \text{or equivalently} \quad 2\langle K \rangle + \langle U \rangle = 0$$
+
+<!-- TODO: Create virial theorem schematic (bound-system "blob" with ⟨K⟩, ⟨U⟩, equilibrium/time-average labels) -->
+
+Let's verify it for a circular orbit (where quantities don't vary, so instantaneous = average):
+
+**For a circular orbit:**
+
+*Kinetic energy:*
+$$K = \frac{1}{2}mv_{orb}^2 = \frac{1}{2}m \cdot \frac{GM}{r} = \frac{GMm}{2r}$$
+
+*Potential energy:*
+$$U = -\frac{GMm}{r}$$
+
+*Check the virial relation:*
+$$K \stackrel{?}{=} -\frac{1}{2}U$$
+
+$$\frac{GMm}{2r} \stackrel{?}{=} -\frac{1}{2}\left(-\frac{GMm}{r}\right) = \frac{GMm}{2r} \checkmark$$
+
+**Total energy for a bound circular orbit:**
+
+$$E = K + U = \frac{GMm}{2r} + \left(-\frac{GMm}{r}\right) = \frac{GMm}{2r} - \frac{2GMm}{2r} = -\frac{GMm}{2r}$$
+
+Or equivalently: $E = -K$ (the object's kinetic energy equals the *magnitude* of its total energy).
+
+::::{.callout-warning}
+## ⚠️ Common Pitfall: When Virial Doesn't Apply
+
+The virial theorem requires **equilibrium** or **time-averaging over complete orbits**. It does NOT apply:
+
+- **Instant-by-instant in elliptical orbits:** $K$ and $U$ vary continuously as the planet moves between perihelion and aphelion. The virial relation holds for the *orbit-averaged* values, not at every instant.
+
+- **During rapid collapse or expansion:** A collapsing gas cloud or an exploding star is not in equilibrium. The virial theorem describes the *end state* after the system settles down, not the transient dynamics.
+
+- **For unbound systems:** If $E > 0$, the object escapes. There's no equilibrium to average over.
+
+When applying virial reasoning, always ask: "Is this system in (quasi-)equilibrium, or am I averaging over a complete period?"
+::::
+
+**Why the virial theorem matters:**
+1. **Stars:** Thermal kinetic energy balances gravitational binding. This determines stellar structure.
+2. **Galaxies:** The motions of stars tell us the total gravitational mass—including dark matter.
+3. **Gas clouds:** Collapse happens when gravity exceeds the "virial" kinetic energy threshold.
+
+The same relationship that governs planetary orbits applies to systems across all scales of the universe—when they're in equilibrium.
+
+---
+
+## Part 6: Synthesis—The Unity of Celestial and Terrestrial Physics
+
+### What Newton Achieved
+
+Before Newton, celestial physics and terrestrial physics were separate domains. The heavens, it was thought, operated by different rules than objects on Earth. Aristotle had taught that celestial bodies naturally move in circles while earthly objects naturally fall straight down.
+
+Newton demolished this distinction. The same force that pulls an apple from a tree—gravity following an inverse-square law—is what keeps the Moon in orbit around Earth and the planets around the Sun. There is one physics, applying everywhere.
+
+**The progression from empirical to physical law:**
+
+| Kepler's Laws | Newton's Explanation |
+|---------------|---------------------|
+| Orbits are ellipses | Solution to equations of motion under inverse-square gravity |
+| Equal areas in equal times | Conservation of angular momentum (central force → no torque) |
+| $P^2 / a^3 = \text{const}$ | Requires inverse-square law; constant determined by $G$ and masses |
+
+This is the template for all of physics: observe patterns, propose mechanisms, derive the patterns as consequences of the mechanisms, then use the mechanisms to predict *new* phenomena.
+
+### Forward Connections
+
+The physics of gravity and orbits connects to nearly everything we'll study this semester:
+
+| Topic | Connection |
+|-------|------------|
+| **Binary Stars** | Orbital measurements → stellar masses via Newton's Kepler III |
+| **Exoplanets** | Transit timing, radial velocity → masses and orbits |
+| **Stellar Structure** | Virial theorem (at equilibrium) → pressure-temperature balance |
+| **Compact Objects** | Escape velocity → black hole event horizons |
+| **Galaxy Dynamics** | Rotation curves → dark matter inference |
+
+Every time we infer mass from orbital motion, we're using Newton's framework. Every time we discuss binding energy or gravitational collapse, we're applying these conservation laws.
+
+---
+
+::::{.callout-tip}
+## 🗺️ Concept Map: "The Machine"
+
+Here's how the key ideas connect causally:
+
+1. **Inverse-square gravity** → conic-section orbits (circles, ellipses, parabolas, hyperbolas)
+
+2. **Central force (toward Sun)** → no torque → **angular momentum conserved** → equal areas in equal times (Kepler II)
+
+3. **Gravity provides centripetal force** → $v_{orb} = \sqrt{GM/r}$ (orbital velocity)
+
+4. **Energy conservation** → $v_{esc} = \sqrt{2GM/r}$; sign of $E$ determines bound vs. unbound
+
+5. **Equilibrium / time-averaging in bound systems** → virial theorem: $\langle K \rangle = -\frac{1}{2}\langle U \rangle$
+
+Master these five links, and you have the conceptual machinery to analyze any gravitational system.
+::::
+
+---
+
+### Beyond Newton: A Glimpse of Einstein
+
+Newton's framework is extraordinarily powerful. It explains planetary motion, predicts eclipses, lets us weigh distant stars, and guides spacecraft across the solar system. For nearly all astrophysical situations you'll encounter in this course, Newton's gravity is excellent.
+
+But it's not the final word.
+
+In 1915, Albert Einstein published his {{< term general_relativity >}}, which revealed that Newton's inverse-square law is actually an *approximation*—albeit an incredibly good one—to a deeper theory. The conceptual shift is profound:
+
+| Newton's View | Einstein's View |
+|---------------|-----------------|
+| Gravity is a **force** acting instantaneously across empty space | Gravity is the **curvature of spacetime** itself |
+| Space and time are fixed, absolute backdrops | Space and time are dynamic, shaped by mass and energy |
+| Objects feel a gravitational pull | Objects follow the straightest possible paths (geodesics) through curved spacetime |
+
+{{< fig gravity-curved-space >}}
+
+Einstein's famous summary: *"Mass tells spacetime how to curve; spacetime tells mass how to move."*
+
+**When does Newton break down?**
+
+Newton's framework fails (or requires corrections) in three regimes:
+
+1. **Near extremely dense objects:** Close to neutron stars and black holes, spacetime curvature becomes so extreme that Newtonian predictions deviate significantly from reality.
+
+2. **At very high speeds:** When velocities approach the speed of light, relativistic effects become important.
+
+3. **For precision measurements:** Even GPS satellites require General Relativistic corrections—without them, positioning errors would accumulate by about 10 km per day!
+
+**A teaser: Black holes and the cosmic speed limit**
+
+Remember escape velocity: $v_{esc} = \sqrt{2GM/r}$. What happens if you compress enough mass into a small enough region that escape velocity reaches the speed of light $c$?
+
+Setting $v_{esc} = c$ and solving for $r$:
+
+$$r_s = \frac{2GM}{c^2}$$
+
+This is the {{< term schwarzschild_radius >}}—the boundary of a black hole's {{< term event_horizon >}}. Inside this radius, not even light can escape. The event horizon isn't a physical surface; it's the point of no return, where spacetime itself falls inward faster than light can travel outward.
+
+We'll explore black holes in detail when we study compact objects later this semester. For now, appreciate this: the same $v_{esc}$ formula that describes rockets leaving Earth, pushed to its logical extreme, predicts the existence of the most exotic objects in the universe.
+
+Newton gave us the tools. Einstein showed us where they lead.
+
+---
+
+## Check Yourself: End-of-Reading Questions
+
+1. **Empirical vs. Physical:** Kepler observed that $P^2 \propto a^3$. Newton derived that the power of $r$ in the gravitational force law must be 2 (inverse-square) to reproduce this. If gravity instead followed $F \propto 1/r^3$, what relationship would we observe between $P$ and $a$? (Hint: follow Newton's derivation with $n = 3$.)
+
+2. **Orbital Velocity Scaling:** Jupiter orbits at about 5 AU from the Sun, while Earth orbits at 1 AU. Without calculating exact numbers, is Jupiter's orbital velocity greater than, less than, or equal to Earth's? By what factor? Explain your reasoning using the $v_{orb}$ formula.
+
+3. **Escape Velocity Intuition:** A neutron star has roughly the same mass as the Sun ($M \approx 2 \times 10^{33}$ g) but a radius of only 10 km = $10^6$ cm. Compared to the Sun's escape velocity (618 km/s), is the neutron star's escape velocity larger or smaller? Estimate the ratio without a calculator.
+
+4. **Energy and Orbit Type:** A comet approaches the Sun with total mechanical energy $E = +3 \times 10^{42}$ erg (and its trajectory does not intersect the Sun). Will this comet:
+
+   - (a) Remain bound to the Sun in an elliptical orbit
+   - (b) Pass by and escape to infinity
+   - (c) Enter a perfectly circular orbit
+   
+   Explain your reasoning.
+
+5. **Virial Theorem Application:** A star cluster has total kinetic energy $K = 10^{50}$ erg (from the motions of all its stars). Assuming the cluster is in equilibrium, what is its gravitational potential energy $U$? What is its total energy $E$? Is the cluster bound or unbound?
+
+---
+
+## Key Equations Summary
+
+| Quantity | Equation | CGS Units |
+|----------|----------|-----------|
+| Gravitational Force | $F_g = \dfrac{Gm_1m_2}{r^2}$ | dyne |
+| Centripetal Force | $F_c = \dfrac{mv^2}{r}$ | dyne |
+| Orbital Velocity | $v_{orb} = \sqrt{\dfrac{GM}{r}}$ | cm/s |
+| Escape Velocity | $v_{esc} = \sqrt{\dfrac{2GM}{r}} = \sqrt{2}\,v_{orb}$ | cm/s |
+| Kepler III (Newton) | $P^2 = \dfrac{4\pi^2}{G(M+m)}a^3$ | $\mathrm{s^2}$ |
+| Gravitational PE | $U = -\dfrac{GMm}{r}$ | erg |
+| Total Energy | $E = \dfrac{1}{2}mv^2 - \dfrac{GMm}{r}$ | erg |
+| Bound Orbit Energy | $E = -\dfrac{GMm}{2a}$ | erg |
+| Angular Momentum | $L = mr^2\dot{\phi}$ | $\mathrm{g\,cm^2\,s^{-1}}$ |
+| Areal Velocity | $\dfrac{dA}{dt} = \dfrac{L}{2m}$ | $\mathrm{cm^2\,s^{-1}}$ |
+| Virial Theorem | $\langle K \rangle = -\frac{1}{2}\langle U \rangle$ | (energy relation) |
+
+**CGS Constants:**
+- $G = 6.67 \times 10^{-8}\ \mathrm{cm^3\,g^{-1}\,s^{-2}}$ (equivalently, $\mathrm{dyne\,cm^2\,g^{-2}}$)
+- $M_\odot = 2 \times 10^{33}$ g
+- $R_\odot = 7 \times 10^{10}$ cm
+- $M_\oplus = 6 \times 10^{27}$ g
+- $R_\oplus = 6.4 \times 10^{8}$ cm
+- 1 AU $= 1.5 \times 10^{13}$ cm
+- 1 yr $= 3.16 \times 10^{7}$ s
+
+---
+
+## Pause & Predict Answers
+
+<details>
+<summary><strong>Click to reveal answers (try the questions first!)</strong></summary>
+
+**#1:** 
+1. If distance doubles, $P^2$ increases by $2^3 = 8$, so $P$ increases by $\sqrt{8} \approx 2.83$. 
+2. Yes, planets accelerate (change velocity direction) continuously. The "speeding up" near perihelion is about *linear* speed increasing; the acceleration always points toward the Sun.
+
+**#2:** 
+1. Yes—direction is changing, so velocity is changing, so there's acceleration. 
+2. Toward the center of the circle. 
+3. Increase—tighter circle at same speed means $a_c = v^2/r$ is larger.
+
+**#3:**
+1. Force drops by factor of 4 (inverse-square).
+2. Force increases by factor of 4 (proportional to product of masses).
+3. $1/60^2 = 1/3600$ of surface gravity.
+
+**#3.5 (Kepler's "Constant"):**
+1. No! The "constant" $P^2/a^3 = 4\pi^2/[G(M+m)]$ depends on total mass. The $2\,M_\odot$ system has a constant 4× smaller than the $0.5\,M_\odot$ system (since the constant is inversely proportional to mass).
+2. **Longer.** For the red dwarf ($0.5\,M_\odot$), the constant $4\pi^2/(GM)$ is twice as large as for the Sun. So $P^2$ is twice as large at the same $a$, meaning $P$ is $\sqrt{2} \approx 1.41$ times longer. A planet at 1 AU around the red dwarf takes about 1.4 years to orbit.
+3. All Solar System bodies orbit the same central mass ($\approx 1\,M_\odot$), so they all share the same "Kepler constant." Kepler had no way to compare with other star systems—exoplanet detection came 400 years later!
+
+**#4:** 
+1. Jupiter is slower than Earth. Since $v_{orb} \propto 1/\sqrt{r}$, and Jupiter is at 5 AU vs Earth at 1 AU: $v_J = v_\oplus / \sqrt{5} \approx 0.45\, v_\oplus$. Equivalently, Earth is $\sqrt{5} \approx 2.2$ times faster than Jupiter.
+2. Low-orbit satellite is faster by factor $\sqrt{26000/6800} \approx 2$.
+
+**#5:** 
+1. It escapes—positive energy means unbound (assuming it doesn't collide with the Sun). 
+2. Total energy increases (becomes less negative or more positive), so orbit becomes less bound (larger semi-major axis).
+
+**#6:** 
+1. Perihelion (closer = faster). 
+2. From $L = mr^2\dot{\phi} = \text{const}$, we have $r_p^2 \dot{\phi}_p = r_a^2 \dot{\phi}_a$, so:
+   $$\frac{\dot{\phi}_p}{\dot{\phi}_a} = \frac{r_a^2}{r_p^2} = \left(\frac{4}{1}\right)^2 = 16$$
+   Angular velocity is 16× larger at perihelion.
+3. No—linear speed $v = r\dot{\phi}$, so:
+   $$\frac{v_p}{v_a} = \frac{r_p \dot{\phi}_p}{r_a \dot{\phi}_a} = \frac{r_p}{r_a} \cdot \frac{\dot{\phi}_p}{\dot{\phi}_a} = \frac{1}{4} \times 16 = 4$$
+   The planet moves 4× faster (linear speed) at perihelion, not 16×.
+
+**End-of-Reading Answers:**
+
+1. With $n=3$: From $P^2 = \frac{4\pi^2}{kM} r^{n+1}$, we get $P^2 \propto r^{3+1} = r^4$, so $P \propto r^2$ or $P \propto a^2$.
+
+2. Jupiter is slower: $v_J = v_\oplus/\sqrt{5} \approx 0.45\,v_\oplus$. Earth moves $\sqrt{5} \approx 2.2$ times faster than Jupiter.
+
+3. Neutron star escape velocity calculation:
+   - $v_{esc} \propto \sqrt{M/R}$
+   - Same $M$, but $R_{NS} = 10^6$ cm vs $R_\odot = 7 \times 10^{10}$ cm
+   - Ratio: $R_\odot/R_{NS} = 7 \times 10^{10}/10^6 = 7 \times 10^4 = 70{,}000$
+   - So $v_{esc,NS}/v_{esc,\odot} = \sqrt{70{,}000} \approx 265$
+   - $v_{esc,NS} \approx 265 \times 618$ km/s $\approx 160{,}000$ km/s (about 0.5$c$!)
+
+4. Answer: **(b)**. Positive energy means unbound—the comet will escape to infinity. It cannot remain bound (that requires $E < 0$) and circular orbits are a special case of bound orbits.
+
+5. From virial theorem at equilibrium: $K = -\frac{1}{2}U$, so $U = -2K = -2 \times 10^{50}$ erg.
+   
+   Total energy: $E = K + U = 10^{50} + (-2 \times 10^{50}) = -10^{50}$ erg.
+   
+   Since $E < 0$, the cluster is **bound**.
+
+</details>
+
+---
+
+*This reading emphasizes the conceptual journey from empirical patterns to physical explanations—one of the most important transitions in the history of science. As you work through the mathematics, keep asking: What does this equation tell me? What happens if I change one variable? What physical insight does the math encode? And always, always check your units!*
+
+---
+
+## Glossary: Key Terms from This Lecture
+
+{{< glossary module=1 first_use="Lecture 3" >}}
