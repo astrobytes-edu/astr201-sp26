@@ -58,3 +58,42 @@
   padding: 0.25em 0.5em;
   border-radius: 0.25em;
 }
+
+// -----------------------------------------------------------------------------
+// Extended Text Colors (using additional palette)
+// -----------------------------------------------------------------------------
+// Info = informational callouts (mauve)
+.reveal .text-info { color: $info-color !important; }
+
+// Neutral = subtle emphasis (slate)
+.reveal .text-neutral { color: $neutral-accent-color !important; }
+
+// Code highlight = code emphasis (purple-dark, vibrant)
+.reveal .text-code-highlight { color: $code-emphasis-color !important; }
+
+// Accent dark = vibrant teal for strong emphasis
+.reveal .text-accent-dark { color: $accent-dark-color !important; }
+
+// Soft warning = gentler warning variant (rose-dark)
+.reveal .text-soft-warning { color: $soft-warning-color !important; }
+
+// -----------------------------------------------------------------------------
+// Extended Background Colors
+// -----------------------------------------------------------------------------
+.reveal .bg-info {
+  background-color: rgba($info-color, 0.15) !important;
+  padding: 0.25em 0.5em;
+  border-radius: 0.25em;
+}
+
+.reveal .bg-accent-dark {
+  background-color: rgba($accent-dark-color, 0.12) !important;
+  padding: 0.25em 0.5em;
+  border-radius: 0.25em;
+}
+
+.reveal .bg-code {
+  background-color: rgba($code-emphasis-color, 0.1) !important;
+  padding: 0.25em 0.5em;
+  border-radius: 0.25em;
+}

@@ -39,6 +39,15 @@ $warning-color: t.$rose-light !default;
 $code-color: t.$purple-light !default;
 
 // -----------------------------------------------------------------------------
+// EXTENDED SEMANTIC ROLES (previously unused palette colors)
+// -----------------------------------------------------------------------------
+$info-color: t.$mauve-light !default;           // Informational callouts
+$neutral-accent-color: t.$slate-light !default; // Subtle emphasis
+$code-emphasis-color: t.$purple-dark !default;  // Code highlights
+$accent-dark-color: t.$teal-dark !default;      // Vibrant teal for emphasis
+$soft-warning-color: t.$rose-dark !default;     // Softer warning variant
+
+// -----------------------------------------------------------------------------
 // NEUTRALS (from tokens)
 // -----------------------------------------------------------------------------
 $body-bg: t.$surface-light !default;

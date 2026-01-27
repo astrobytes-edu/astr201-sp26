@@ -37,8 +37,8 @@ $presentation-heading-font: $font-sans !default;
 $presentation-heading-color: $heading-color !default;
 $presentation-heading-font-weight: 650 !default;
 
-// Body text: projector-readable (default 40px)
-$presentation-font-size-root: 46px !default;
+// Body text: projector-readable (default 40px, increased for readability)
+$presentation-font-size-root: 50px !default;
 $presentation-line-height: 1.25 !default;
 
 // Titles: restrained, not shouty (smaller than Reveal defaults)
