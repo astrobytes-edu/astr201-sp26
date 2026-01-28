@@ -2,6 +2,7 @@
 title: "Homework Guidelines"
 subtitle: "Tools of the Trade + Required Format"
 course: ASTR 201
+draft: true
 format:
   html:
     toc: true
