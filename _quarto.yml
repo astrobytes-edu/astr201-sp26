@@ -124,6 +124,7 @@ website:
       - section: "Homework"
         contents:
           - homework/index.qmd
+          - homework/astr201-hw1.qmd
 
       - section: "Exams"
         contents:

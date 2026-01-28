@@ -5,14 +5,25 @@ draft: false
 
 ## Assignments
 
-Homework assignments will be posted here throughout the semester. Solutions will be made available after the due date.
+| Assignment | Posted | Due | Grade Memo Due | Solutions |
+|------------|--------|-----|----------------|-----------|
+| [Homework 1](astr201-hw1.qmd) | Jan 27 | Tues Feb 3 | Thurs Feb 5 | *After due date* |
 
-| Assignment | Posted | Due | Solutions |
-|------------|--------|-----|-----------|
-| *Coming soon* | | | |
+## Submission Workflow (Two-Stage)
 
-## Submission Guidelines
+**1. Homework Solutions — due Tuesday 11:59 pm (Canvas)**
 
-- Submit all homework on **Canvas** by 11:59 PM on the due date
-- Show your work: include steps, units, and assumptions
-- Late submissions: 10% penalty per day, up to 3 days maximum
+- Upload as **one single, readable PDF** (not a photo dump)
+- Organize clearly. Show your work. Label final answers.
+- **No late submissions:** Solutions are posted Wednesday morning.
+
+**2. Grade Memo — due Thursday 11:59 pm (Canvas)**
+
+- Self-assess your work using the posted solutions and rubric
+- Include: what you got right, what broke, what you learned, what you'll do differently
+- Per-problem self-rating (1–5) with brief justification
+- AI and collaboration disclosure (even if "none")
+
+**Lowest homework score is dropped** (to cover one off-week or emergency).
+
+See the [syllabus](../course-info/syllabus.qmd#sec-homework) for the full rubric and grading details.

@@ -6,9 +6,10 @@ course: ASTR 201
 module: "Module 1 — Spoiler Alerts + Foundations + Gravity & Orbits"
 lectures: "Lectures 1–3"
 math-level: symbolic_with_interpretation
-draft: true
+draft: false
 estimated-time: "3.5–5 hours"
-due: ""
+due: "Tuesday, February 3, 2026 at 11:59 pm"
+grade-memo-due: "Thursday, February 5, 2026 at 11:59 pm"
 submission: "Canvas; upload a single clearly scanned PDF or a legible PDF export"
 format:
   html:
@@ -53,6 +54,16 @@ Keep these in mind on every problem:
 
 ::: {.callout-tip}
 **HW1 only:** Each problem below includes a "Tool(s)" hint to help you practice identifying which method to use. Future assignments will not include these hints—you'll need to recognize which tools apply on your own. Use your lecture notes; that's the point.
+:::
+
+::: {.callout-important}
+**Timeline:**
+
+- **Solutions due:** Tuesday, Feb 3 at 11:59 pm (Canvas)
+- **Solutions posted:** Wednesday morning
+- **Grade Memo due:** Thursday, Feb 5 at 11:59 pm
+
+For HW1, we will go over how to write the Grade Memo in class on Thursday.
 :::
 
 ---
