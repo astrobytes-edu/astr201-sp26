@@ -1,0 +1,332 @@
+---
+title: "Homework 1"
+subtitle: "Tools of the Trade + Gravity & Orbits"
+author: "Dr. Anna Rosen"
+course: ASTR 201
+module: "Module 1 — Spoiler Alerts + Foundations + Gravity & Orbits"
+lectures: "Lectures 1–3"
+math-level: symbolic_with_interpretation
+draft: true
+estimated-time: "3.5–5 hours"
+due: ""
+submission: "Canvas; upload a single clearly scanned PDF or a legible PDF export"
+format:
+  html:
+    toc: true
+---
+
+## Learning Objectives
+
+- Distinguish what astronomers **directly measure** from what we **infer** using models.
+- Use **dimensional analysis** as a correctness filter (and as a tool for deriving scalings).
+- Use the **ratio method** to scale solutions without re-deriving everything from scratch.
+- Convert cleanly between **SI and CGS** and carry units through every step.
+- Apply **Kepler's Third Law** as a scaling law.
+- Compute and interpret **orbital velocity** from Newtonian gravity, including unit checks and physical trends.
+- Use **energy arguments** to determine whether an object is gravitationally bound or unbound.
+- Use pressure balance + dimensional reasoning to derive the qualitative **white dwarf mass–radius scaling**.
+
+## Concept Throughline
+
+Keep these in mind on every problem:
+
+- **Measurement → model → inference** (and where assumptions sneak in).
+- **Units are physics.** If the units don't work, the equation doesn't work.
+- **Scaling laws beat big numbers.** Ratios are your friend.
+- **Sanity checks are required.** Physics answers should make physical sense.
+
+## Prerequisites
+
+- Scientific notation; exponent rules
+- Basic algebra (solve for a variable; proportional reasoning)
+- Comfort with units and unit conversion (especially cm, m, km; g, kg; s)
+
+## Relevant Readings
+
+- [Lecture 1: Spoiler Alerts](https://astrobytes-edu.github.io/astr201-sp26/modules/module-01/readings/lecture-01-spoiler-alerts-reading.html)
+- [Lecture 2: Foundations](https://astrobytes-edu.github.io/astr201-sp26/modules/module-01/readings/lecture-02-foundations-reading.html)
+- [Lecture 3: Gravity and Orbits](https://astrobytes-edu.github.io/astr201-sp26/modules/module-01/readings/lecture-03-gravity-and-orbits.html)
+
+::: {.callout-note}
+**Before you start:** Review the [Homework Guidelines](hw-tips.qmd) for required format and tools.
+:::
+
+::: {.callout-tip}
+**HW1 only:** Each problem below includes a "Tool(s)" hint to help you practice identifying which method to use. Future assignments will not include these hints—you'll need to recognize which tools apply on your own. Use your lecture notes; that's the point.
+:::
+
+---
+
+## Problems (10 total)
+
+### Problem 1 — Observable vs. Model-Dependent
+
+<!-- Bloom: Analyze -->
+
+**Tool(s) you should use:** Conceptual/model reasoning (Measurement → model → inference)
+
+A news article claims "Astronomers measured the temperature of TRAPPIST-1e to be 255 K." Critique this statement. What was actually measured, and what model was used to arrive at the temperature?
+
+---
+
+### Problem 2 — Empirical vs. Physical
+
+<!-- Bloom: Understand → Analyze -->
+
+**Tool(s) you should use:** Conceptual/model reasoning
+
+Lecture 1 introduced the course thesis: *pretty pictures $\to$ measurements $\to$ models $\to$ inferences*.
+
+- (a) What is the difference between an empirical law and a physical law?
+
+- (b) Give one example from the lectures where an empirical pattern is explained by a physical mechanism.
+
+- (c) Why does this distinction matter for how we do science?
+
+---
+
+### Problem 3 — Dimensional Analysis Check
+
+<!-- Bloom: Analyze -->
+
+**Tool(s) you should use:** Dimensional analysis
+
+For each equation below, determine whether it is dimensionally valid. If not, identify what's wrong.
+
+- (a) Orbital velocity: $v = \sqrt{GM/r}$
+- (b) Kinetic energy: $E = mv$
+- (c) Gravitational potential energy: $U = GMm/r^2$
+- (d) Pressure: $P = \rho v^2$ (where $\rho$ is density)
+
+---
+
+### Problem 4 — The Dimensions of $\sigma$
+
+<!-- Bloom: Apply → Analyze -->
+
+**Tool(s) you should use:** Dimensional analysis + unit conversion
+
+The Stefan-Boltzmann law relates a star's luminosity to its radius and surface temperature:
+
+$$L = 4\pi R^2 \sigma T^4$$
+
+where $L$ is luminosity (energy per time), $R$ is radius, $T$ is temperature, and $\sigma$ is the Stefan-Boltzmann constant.
+
+- (a) Derive the dimensions of $\sigma$ in terms of $[M]$, $[L]$, $[T]$, and $[\Theta]$ (temperature).
+
+  *Hint:* Luminosity is the radiative energy emitted per unit time.
+
+- (b) Verify that the CGS unit of $\sigma$ ($\text{erg}\,\text{s}^{-1}\,\text{cm}^{-2}\,\text{K}^{-4}$) matches these dimensions.
+
+- (c) The SI value of $\sigma$ is $5.67 \times 10^{-8}\,\text{W}\,\text{m}^{-2}\,\text{K}^{-4}$. Convert this to CGS units.
+
+  *Hint:* $1\,\text{W} = 10^7\,\text{erg/s}$ and $1\,\text{m} = 100\,\text{cm}$.
+
+---
+
+### Problem 5 — Kepler Scaling
+
+<!-- Bloom: Apply -->
+
+**Tool(s) you should use:** Ratio method + sanity check
+
+Using Kepler's third law (with $P$ in years and $a$ in AU for objects orbiting the Sun):
+
+- (a) Neptune orbits at 30 AU. Estimate its orbital period.
+- (b) An asteroid has orbital period 8 years. Estimate its semi-major axis.
+- (c) A Kuiper Belt object at 40 AU has what orbital period?
+- (d) **Sanity check:** Pluto orbits at ~40 AU with period ~248 years. Does your answer to (c) agree?
+
+---
+
+### Problem 6 — Fermi Estimation: Light-Minutes
+
+<!-- Bloom: Apply -->
+
+**Tool(s) you should use:** Order-of-magnitude (Fermi) + unit conversion
+
+Estimate without a calculator:
+
+- (a) Light travels at $3 \times 10^{10}$ cm/s = $3 \times 10^5$ km/s. How far does light travel in 1 second? In 1 minute?
+- (b) The Earth-Sun distance is ~$1.5 \times 10^8$ km. How many light-minutes is this?
+- (c) Jupiter is ~5 AU from the Sun. How many light-minutes is this?
+
+---
+
+### Problem 7 — The Centripetal Force Misconception
+
+<!-- Bloom: Understand → Analyze -->
+
+**Tool(s) you should use:** Conceptual/model reasoning
+
+A student says: "A planet in orbit experiences two forces: gravity pulling it toward the Sun, and centripetal force keeping it in a circle."
+
+- (a) What is wrong with this statement?
+- (b) Rewrite the statement correctly.
+- (c) If someone mentions "centrifugal force," under what circumstances (if any) would that be valid?
+
+---
+
+### Problem 8 — Exoplanet Orbital Velocities
+
+<!-- Bloom: Apply -->
+
+**Tool(s) you should use:** Ratio method + sanity check
+
+Use the ratio method with Earth as your reference ($M = M_\odot$, $r = 1$ AU). Express answers in terms of $v_\oplus$.
+
+- (a) A "hot Jupiter" orbits a Sun-like star at $r = 0.05$ AU. Find $v/v_\oplus$.
+
+- (b) A planet orbits a red dwarf ($M = 0.25\,M_\odot$) at $r = 0.25$ AU. Find $v/v_\oplus$.
+
+- (c) **Sanity check:** Do your answers to (a) and (b) make physical sense? Explain.
+
+---
+
+### Problem 9 — Bound or Unbound?
+
+<!-- Bloom: Apply -->
+
+**Tool(s) you should use:** Energy reasoning + sanity check
+
+A comet passes through Earth's orbit (1 AU from the Sun) traveling at 50 km/s.
+
+- (a) Will the comet escape the Solar System, or is it gravitationally bound?
+
+- (b) **Sanity check:** How does your answer relate to Earth's orbital velocity?
+
+---
+
+### Problem 10 — Why White Dwarfs Get Smaller When They Gain Mass
+
+<!-- Bloom: Analyze → Synthesize -->
+
+**Tool(s) you should use:** Dimensional analysis + model reasoning + sanity checks
+
+This multi-part problem guides you through one of the most counter-intuitive results in astrophysics: **more massive white dwarfs are smaller**. You'll derive this using only dimensional analysis and pressure balance—the same toolkit from lecture.
+
+**Background:** A white dwarf is a stellar remnant supported not by thermal pressure (like the Sun), but by *electron degeneracy pressure*—a quantum mechanical effect. When matter is compressed to extreme densities, electrons resist being squeezed into the same quantum state (the Pauli exclusion principle). This creates pressure even at zero temperature.
+
+**The new ingredient:** Quantum mechanics introduces Planck's constant $\hbar$ (pronounced "h-bar"):
+$$[\hbar] = [ML^2T^{-1}]$$
+
+This has dimensions of angular momentum. When $\hbar$ appears in an equation, you know quantum mechanics is at play.
+
+---
+
+**Part A: Degeneracy Pressure from Dimensional Analysis**
+
+The degeneracy pressure $P_{deg}$ in a white dwarf depends on:
+
+- Planck's constant $\hbar$ with $[\hbar] = [ML^2T^{-1}]$
+- Electron mass $m_e$ with $[m_e] = [M]$
+- Number density of electrons $n$ with $[n] = [L^{-3}]$ (electrons per volume)
+
+*Note: Temperature does NOT appear—degeneracy pressure is independent of temperature!*
+
+(i) What are the dimensions of pressure? Express $[P]$ in terms of $[M]$, $[L]$, $[T]$.
+
+*Hint:* Pressure is force per unit area: $[P] = [F]/[A]$. You know the dimensions of force from $F = ma$.
+
+(ii) Assume $P_{deg} \propto \hbar^a m_e^b n^c$. Set up the dimensional equations by matching exponents.
+
+(iii) Solve for $a$, $b$, and $c$.
+
+(iv) You should find:
+$$P_{deg} \propto \frac{\hbar^2}{m_e} n^{5/3}$$
+
+Verify that your exponents from (iii) give this result.
+
+(v) **Interpretation:** Why does it make physical sense that pressure increases with electron number density? What does the exponent $5/3$ suggest (qualitatively) about how quickly the pressure rises?
+
+---
+
+**Part B: Linking Density to Mass and Radius**
+
+Assume a white dwarf is approximately a sphere of radius $R$ and total mass $M$.
+
+(i) The average mass density is $\rho \sim M/R^3$. Write this relation and check the dimensions.
+
+(ii) The electron number density $n$ is proportional to mass density: $n \propto \rho/m_p$ where $m_p$ is the proton mass (a constant). For scaling purposes, treat $m_p$ as a constant and write:
+$$n \propto \frac{M}{R^3}$$
+
+---
+
+**Part C: Gravitational Pressure**
+
+Gravity tries to compress the star. The inward "gravitational pressure" scale is:
+$$P_{grav} \sim \frac{GM^2}{R^4}$$
+
+(i) Use dimensional analysis to verify that $GM^2/R^4$ has units of pressure.
+
+(ii) **Physical interpretation:** Why does gravitational pressure scale like $M^2$? Why does it depend so strongly on $R$ (as $R^{-4}$)?
+
+---
+
+**Part D: Pressure Balance and the Mass–Radius Relation**
+
+A stable white dwarf exists when degeneracy pressure balances gravity:
+$$P_{deg} \sim P_{grav}$$
+
+(i) Substitute your scaling for $P_{deg}$ from Part A and your scaling for $n$ from Part B into the pressure balance condition.
+
+(ii) Solve for how radius $R$ scales with mass $M$. You should find:
+$$R \propto M^{-1/3}$$
+
+(iii) **Interpretation:** Explain in words why adding mass makes the radius smaller in this regime. (This is the main conceptual takeaway.)
+
+---
+
+**Part E: Numerical Scaling**
+
+We can turn the scaling into a rough numerical estimate.
+
+Suppose a typical white dwarf has:
+
+- Mass $M_0 = 0.6\,M_\odot$
+- Radius $R_0 = 1\,R_\oplus$ (about Earth-sized)
+
+(i) Use $R \propto M^{-1/3}$ to estimate the radius of a white dwarf with $M = 1.2\,M_\odot$ (twice as massive). Express your answer in Earth radii.
+
+(ii) The Chandrasekhar limit is about $1.4\,M_\odot$—the maximum mass a white dwarf can have before it collapses. As $M \to 1.4\,M_\odot$, what is happening to $R$ according to your scaling law?
+
+(iii) **Limitation:** Your derivation assumed *non-relativistic* electrons. Near the Chandrasekhar limit, electrons move at speeds approaching $c$, and relativistic effects change the pressure-density relation. What do you think happens to the $R \propto M^{-1/3}$ scaling when electrons become relativistic? (Qualitative answer only.)
+
+---
+
+**Part F: Synthesis and Reflection**
+
+(i) List all the physical ingredients that went into this derivation: which constants, which scaling laws, which physical principles?
+
+(ii) At no point did we solve a differential equation or use calculus. Yet we derived one of the most important results in stellar astrophysics. What does this tell you about the power of dimensional analysis?
+
+(iii) **Connection to the course thesis:** In this problem, what did we *measure* (or take as given), what *model* did we use, and what did we *infer*?
+
+---
+
+*Note: Solutions will be provided separately.*
+
+---
+
+## Grading
+
+Homework is graded on the **0–5 scale** described in the syllabus. The score reflects **visible reasoning and honest effort**, not just final answers.
+
+**What earns credit:**
+
+- Showing your steps (not just final numbers)
+- Carrying units through calculations
+- Using the indicated tool(s) explicitly
+- Including sanity checks
+- Clear, readable work
+
+**What loses credit:**
+
+- Missing reasoning ("I got 42" with no work shown)
+- Missing or inconsistent units
+- No sanity check on quantitative results
+- Submitting work that *looks* like effort but doesn't make physical sense
+
+**Bottom line:** A wrong answer with clear reasoning beats a right answer with no work. Nonsense dressed up as effort earns a low score.
+
+See the [syllabus](../course-info/syllabus.qmd#sec-homework) for the full rubric and grade memo requirements.

@@ -1,0 +1,49 @@
+---
+title: "Homework Guidelines"
+subtitle: "Tools of the Trade + Required Format"
+course: ASTR 201
+format:
+  html:
+    toc: true
+---
+
+## The "Tools of the Trade" Rules (Required)
+
+For **every** problem, your submission must include:
+
+1. **Tool label(s)** at the top of your solution.
+   - Choose from: **Dimensional analysis**, **Ratio method**, **Unit conversion**, **Order-of-magnitude (Fermi)**, **Conceptual/model reasoning**.
+
+2. **Show your work.**
+   - The *process* is most of the grade. Write enough that someone else could follow your reasoning.
+
+3. **Units everywhere.**
+   - Carry units through intermediate steps. Box final answers with units.
+
+4. **A sanity check sentence.**
+   - Examples: "This value is close to what we expect for Earth's orbital speed (~30 km/s), so the scale is reasonable."
+   - Or: "As distance increases, orbital speed should decrease, and my ratio result reflects that."
+
+5. **CGS default unless stated otherwise.**
+   - If you choose SI mid-problem, that's okay—just be consistent and *explicit*.
+
+## Recommended Solution Template
+
+For each problem, use this structure:
+
+- **Tool(s):** ...
+- **Plan (1–2 sentences):** ...
+- **Work:** ...
+- **Sanity check:** ...
+- **Final answer:** ...
+
+## If You Get Stuck
+
+The best first move is to write down:
+
+- what quantities you have,
+- what you're trying to find,
+- the *dimensions* of the target,
+- and one sanity-check expectation (bigger/smaller? faster/slower? should it be near a known reference value?).
+
+Then bring that "map of the problem" to office hours or discussion.
