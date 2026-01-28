@@ -8,13 +8,16 @@ draft: false
 format:
   revealjs:
     theme: [default, ../../../assets/theme/slides/theme.scss]
+    title-slide-attributes:
+      data-background-image: "/assets/images/common/cosmic-cliffs-jwst.png"
+      data-background-opacity: "0.20"
     smaller: true
     slide-number: true
     transition: fade
     transition-speed: fast
     background-transition: fade
     center: false
-    footer: "ASTR 201 • Lecture 3"
+    footer: "ASTR 201 • Dr. Anna Rosen • Lecture 3"
     chalkboard: true
     code-line-numbers: true
     fig-align: center
@@ -67,9 +70,9 @@ Timing: ~2 min.
 ## {background-image="/assets/images/common/noirlab-nightsky-mosaic.jpg" background-opacity="0.2"}
 
 ::: {.r-fit-text}
-Kepler told us **what**.
+Kepler told us ***what***.
 
-Newton told us **why**.
+Newton told us ***why***.
 :::
 
 ::: {.notes}
@@ -128,7 +131,7 @@ You discover three remarkable patterns:
 **Key terms:**
 
 - **Semi-major axis** $a$:<br> average distance
-- **Eccentricity** $e$:<br> how "squashed"<br> (0 = circle, 1 = line)
+- **Eccentricity** $0 \ge e < 1$:<br> how "squashed"<br> (0 = circle, 1 = line)
 :::
 :::
 
@@ -144,7 +147,7 @@ Point to the figure. Emphasize: nature doesn't care about "perfect" circles.
 
 > A line from planet to Sun sweeps **equal areas in equal times**.
 
-{{< img kepler-second-law width="75%" >}}
+{{< img kepler-second-law width="50%" >}}
 
 ::: {.fragment}
 **Translation:** Planets move [faster near the Sun]{.rn rn-type="underline" rn-color="#ff6b6b"}.
@@ -176,40 +179,42 @@ Emphasize: this is empirical—extracted from data. No explanation of *why*.
 
 ## Kepler III: Ratio Method {.smallest}
 
-**Start with Kepler III:**
-$P^2 \propto a^3$
+:::: {.columns}
+::: {.column width="48%"}
+::: {.text-sm .text-muted}
+1. Start with Kepler III, take square root
+:::
+$$P^2 \propto a^3 \;\Rightarrow\; P \propto a^{3/2}$$
 
-. . .
-
-**Take square root of both sides:**
-$P \propto a^{3/2}$
-
-. . .
-
-**Write as equality with constant $C$:** For any object orbiting the same central mass:
-$P = C \cdot a^{3/2}$
-
-. . .
-
-**For two objects (1 and 2) orbiting the same mass:**
-$P_1 = C \cdot a_1^{3/2} \quad \text{and} \quad P_2 = C \cdot a_2^{3/2}$
-
-. . .
-
-**Divide to eliminate $C$:**
-$$\frac{P_2}{P_1} = \frac{\cancel{C} \cdot a_2^{3/2}}{\cancel{C} \cdot a_1^{3/2}} = \left(\frac{a_2}{a_1}\right)^{3/2}$$
-
-::: {.text-xs .text-muted}
-**Why this works:** Proportionality ($\propto$) hides an unknown constant. When you divide two proportionalities *with the same constant*, it cancels—leaving a true equality ($=$).
+::: {.fragment}
+::: {.text-sm .text-muted}
+2. Write as equality (same central mass = same $C$)
+:::
+$$P = C \cdot a^{3/2}$$
+:::
 :::
 
+::: {.column width="52%"}
+::: {.fragment}
+::: {.text-sm .text-muted}
+3. For two objects, divide to cancel $C$
+:::
+$$\frac{P_2}{P_1} = \frac{\cancel{C} \cdot a_2^{3/2}}{\cancel{C} \cdot a_1^{3/2}} = \left(\frac{a_2}{a_1}\right)^{3/2}$$
+
+::: {.text-xs .text-muted .mt-1}
+**Key:** Proportionality hides an unknown constant. Dividing cancels it → true equality.
+:::
+:::
+:::
+::::
+
 ::: {.notes}
-Walk through every step. Students struggle with proportionality → equality → ratio. Emphasize: the ratio method turns "$\propto$" into "$=$" by canceling what we don't know.
+Walk through every step. Students struggle with proportionality → equality → ratio. The ratio method turns "$\propto$" into "$=$" by canceling what we don't know.
 :::
 
 ---
 
-## Kepler III: Ratio Formula
+## Kepler III: Ratio Formula {.smaller}
 
 **From the previous slide:**
 $$\frac{P_2}{P_1} = \left(\frac{a_2}{a_1}\right)^{3/2}$$
@@ -221,7 +226,8 @@ $$P_2 = P_1 \times \left(\frac{a_2}{a_1}\right)^{3/2}$$
 
 . . .
 
-This is the **ratio method**. If you know $P_1$, $a_1$, and $a_2$, you can find $P_2$ without knowing $G$ or the central mass.
+
+> This is the **ratio method**. If you know $P_1$, $a_1$, and $a_2$, you can find $P_2$ without knowing $G$ or the central mass.
 
 ::: {.notes}
 Box this formula. They'll use it repeatedly.
@@ -556,9 +562,8 @@ Double distance → 1/4 the force
 
 . . .
 
-::: {.callout-note appearance="minimal"}
-$G$ is the same everywhere in the universe—on Earth, on Mars, in distant galaxies.
-:::
+
+> $G$ is the same everywhere in the universe — on Earth, on Mars, in distant galaxies.
 
 ---
 
@@ -605,7 +610,7 @@ Inverse-square: $(2r)^2 = 4r^2$, so force is 1/4.
 
 ## How Did Newton *Know* It's Inverse-Square?
 
-He didn't guess—he **derived** it from Kepler III.
+He didn't guess — he **derived** it from Kepler III.
 
 . . .
 
@@ -656,9 +661,8 @@ $$n + 1 = 3 \quad \Rightarrow \quad \boxed{n = 2}$$
 
 . . .
 
-::: {.callout-tip appearance="minimal"}
-**The inverse-square law is required by Kepler's Third Law!**
-:::
+> **The inverse-square law is required by Kepler's Third Law!**
+
 
 ::: {.notes}
 This is the punchline. Newton didn't assume inverse-square—he proved it.
@@ -666,24 +670,22 @@ This is the punchline. Newton didn't assume inverse-square—he proved it.
 
 ---
 
-## Newton's Version of Kepler III
+## The Simplification We Made
 
-Armed with $F = GMm/r^2$, Newton derived:
-
-$$P^2 = \frac{4\pi^2}{G(M + m)} a^3$$
+Our derivation assumed the Sun stays fixed while the planet orbits.
 
 . . .
 
-**What's new?**
+**Is that true?**
 
-::: {.incremental}
-- The constant is now *determined*: depends on $G$ and total mass
-- Both masses appear: $(M + m)$
-- Applies to *any* gravitational system, not just our solar system
+::: {.fragment}
+Newton's Third Law says no. If the Sun pulls the planet, the planet pulls the Sun.
+
+**Both bodies must move.**
 :::
 
 ::: {.notes}
-This is how we "weigh" stars in binaries, black holes, galaxies.
+Pause here. Let them feel the tension. We derived n=2, but we cheated by ignoring the Sun's motion. Now we fix that.
 :::
 
 ---
@@ -692,29 +694,133 @@ This is how we "weigh" stars in binaries, black holes, galaxies.
 
 :::: {.columns}
 ::: {.column width="55%"}
-{{< img center-of-mass width="110%" >}}
-
-Both bodies orbit their common **center of mass** (barycenter).
+{{< img center-of-mass width="100%" >}}
 :::
 
 ::: {.column width="45%"}
-$$m_1 \, d_1 = m_2 \, d_2$$
-
-- $m_1, m_2$ — masses of the two bodies
-- $d_1, d_2$ — distances from the CM
+Both bodies orbit their common **center of mass** (barycenter).
 
 ::: {.fragment}
-When $M \gg m$: barycenter ≈ center of $M$ (Kepler's approximation works)
+**Balance condition:**
+$$m_1 \, r_1 = m_2 \, r_2$$
+
+The more massive body orbits *closer* to the center of mass.
 :::
 
 ::: {.fragment}
-This wobble is how we detect **exoplanets**!
+When $M \gg m$: barycenter ≈ center of $M$
+
+(Kepler's approximation)
 :::
 :::
 ::::
 
 ::: {.notes}
-Connect to radial velocity method. The Sun wobbles ~1 solar radius due to Jupiter.
+Point to figure. Emphasize: THIS is why Kepler's "Sun at one focus" works—the Sun barely moves because it's so massive. But it does move.
+:::
+
+---
+
+## Deriving $(M+m)$: Setup {.smaller}
+
+:::: {.columns}
+::: {.column width="50%"}
+**From center of mass:**
+
+$$m_1 r_1 = m_2 r_2$$
+
+**Total separation:**
+
+$$r = r_1 + r_2$$
+:::
+
+::: {.column width="50%"}
+::: {.fragment}
+**Solve for each distance:**
+
+$$r_1 = \frac{m_2}{m_1 + m_2}\, r$$
+
+$$r_2 = \frac{m_1}{m_1 + m_2}\, r$$
+:::
+:::
+::::
+
+::: {.fragment}
+
+> Each body's orbital radius depends on **both masses** through the total $(m_1 + m_2)$.
+
+:::
+
+::: {.notes}
+Walk through algebra: from $m_1 r_1 = m_2 r_2$ and $r = r_1 + r_2$, solve for $r_2$. Key: each body's distance from center of mass involves the sum.
+:::
+
+---
+
+## Deriving $(M+m)$: The Math {.smallest}
+
+:::: {.columns}
+::: {.column width="50%"}
+**Gravity on body 2:**
+$$F = \frac{Gm_1 m_2}{r^2}$$
+
+::: {.fragment}
+**Centripetal force for body 2:**
+$$F = \frac{4\pi^2 m_2 r_2}{P^2}$$
+:::
+:::
+
+::: {.column width="50%"}
+::: {.fragment}
+**Substitute** $r_2 = \dfrac{m_1 r}{m_1 + m_2}$:
+
+$$\frac{Gm_1 m_2}{r^2} = \frac{4\pi^2 m_2}{P^2} \cdot \frac{m_1 r}{m_1 + m_2}$$
+:::
+
+::: {.fragment}
+**Cancel $m_1 m_2$, solve for $P^2$:**
+
+$$\boxed{P^2 = \frac{4\pi^2}{G(m_1 + m_2)} r^3}$$
+:::
+:::
+::::
+
+::: {.fragment}
+::: {.text-sm .text-muted}
+$(m_1 + m_2)$ emerges because each body's orbital radius depends on how mass is distributed.
+:::
+:::
+
+::: {.notes}
+This is the punchline. The $(M+m)$ isn't arbitrary — it emerges from the geometry of two bodies orbiting their common center of mass. Connection: This is exactly how we detect exoplanets—we measure the *star's* wobble.
+:::
+
+---
+
+## Newton's Version of Kepler III
+
+Accounting for both bodies' motion, Newton derived:
+
+$$P^2 = \frac{4\pi^2}{G(M + m)} a^3$$
+
+. . .
+
+**What's new compared to Kepler?**
+
+::: {.incremental .text-sm}
+- The "constant" **varies by system** (depends on total mass $(M+m)^{-1}$)
+- A planet at 1 AU around a $2\,M_\odot$ star orbits *faster* than Earth (shorter $P$)
+- We can solve for mass: $M + m = \dfrac{4\pi^2 a^3}{G P^2}$
+:::
+
+. . .
+
+::: {.text-sm}
+> Kepler didn't notice because all his data came from **one system** — our Solar System.
+:::
+
+::: {.notes}
+This is how we "weigh" stars in binaries, black holes from orbiting stars, galaxies from rotation curves. Emphasize: the "constant" is only constant within a single system. Compare two stars of different mass to drive this home.
 :::
 
 ---
@@ -791,6 +897,68 @@ Show units FIRST, then numbers. Students need to see cancellation.
 
 ---
 
+## Energy in Mechanics
+
+**Mechanics** studies motion and the forces that cause it. Energy is the *capacity to do work* — to move things.
+
+. . .
+
+:::: {.columns}
+::: {.column width="50%"}
+**Kinetic Energy**: energy of motion
+
+$$K = \frac{1}{2}mv^2$$
+
+::: {.text-sm .text-muted}
+Faster or more massive → more kinetic energy
+:::
+:::
+
+::: {.column width="50%"}
+::: {.fragment}
+**Gravitational Potential Energy**: energy of position in a gravitational field
+
+$$U = -\frac{GMm}{r}$$
+
+::: {.text-sm .text-muted}
+Closer to mass → more negative (deeper in the "well")
+:::
+:::
+:::
+::::
+
+::: {.notes}
+Brief intro. Most students have seen KE before. PE being negative may be new—address next slide.
+:::
+
+---
+
+## Why Is Potential Energy Negative?
+
+::: {.callout-tip appearance="minimal"}
+**We define zero at infinity.** Far from any mass → $U = 0$.
+:::
+
+. . .
+
+As you fall toward a mass:
+
+::: {.incremental}
+- Gravity speeds you up (gives kinetic energy)
+- You're dropping *below* zero in potential energy
+- **Negative U = you're in debt** — you "owe" energy to escape
+:::
+
+. . .
+
+The deeper in the well (smaller $r$) → the more negative $U$ → the more you need to climb out.
+
+::: {.notes}
+The debt metaphor helps. Relate to escape: if your KE savings can't pay off your PE debt, you're trapped.
+:::
+
+---
+
 ## Escape Velocity
 
 To escape to infinity, you need enough kinetic energy to overcome gravity:
@@ -837,13 +1005,10 @@ Apollo needed smaller rockets to leave the Moon!
 
 Jupiter orbits at 5 AU from the Sun. Earth orbits at 1 AU. How does Jupiter's orbital velocity compare to Earth's?
 
-A. Jupiter is faster (farther out, longer path)
-
-B. Earth is faster by factor ~2.2 ($\sqrt{5}$)
-
-C. They're the same (same Sun)
-
-D. Jupiter is faster by factor 5
+- A. Jupiter is faster (farther out, longer path)
+- B. Earth is faster by factor ~2.2 ($\sqrt{5}$)
+- C. They're the same (same Sun)
+- D. Jupiter is faster by factor 5
 
 ::: {.notes}
 Give 30 seconds for think-pair-share. Then advance to reveal answer.
@@ -878,45 +1043,20 @@ Part 5: Conservation Laws
 
 ## Energy in Orbits
 
-Total mechanical energy:
+Recall: $K = \frac{1}{2}mv^2$ (positive) and $U = -\frac{GMm}{r}$ (negative).
+
+. . .
+
+**Total mechanical energy:**
 
 $$E = K + U = \frac{1}{2}mv^2 - \frac{GMm}{r}$$
 
 . . .
 
-::: {.incremental}
-- $K = \frac{1}{2}mv^2$ — kinetic energy (always positive)
-- $U = -\frac{GMm}{r}$ — potential energy (always negative)
-:::
+The sign of $E$ determines the orbit's fate — we'll see how next.
 
 ::: {.notes}
-Students often confused by negative PE. Address this next.
-:::
-
----
-
-## Why Is Potential Energy Negative?
-
-::: {.callout-tip appearance="minimal"}
-**We define zero at infinity.** Far from any mass → $U = 0$.
-:::
-
-. . .
-
-As you fall toward a mass:
-
-::: {.incremental}
-- Gravity speeds you up (gives kinetic energy)
-- You're dropping *below* zero in potential energy
-- **Negative U = you're in debt**—you "owe" energy to escape
-:::
-
-. . .
-
-The deeper in the well → the more negative $U$ → the more you need to climb out.
-
-::: {.notes}
-The debt metaphor really helps students. Relate to energy budget.
+Brief recall, then introduce total E as the key quantity. Sign of E determines bound vs. unbound.
 :::
 
 ---
@@ -977,8 +1117,14 @@ For orbital motion:
 
 $$L = mvr = mr^2\dot{\phi} = \text{constant}$$
 
+::: {.text-xs .text-muted}
+$\dot{\phi}$ ("phi-dot") = angular velocity = how fast the angle changes (rad/s). The dot means "per unit time."
+:::
+
 ::: {.fragment}
-**Two equivalent forms:** $v = r\dot{\phi}$ (arc length per time), so both give the same $L$.
+**Two equivalent forms:** 
+
+$v = r\dot{\phi}$ (arc length per time), so both give the same $L$.
 :::
 
 ::: {.fragment}
@@ -992,7 +1138,7 @@ $$L = mvr = mr^2\dot{\phi} = \text{constant}$$
 ::::
 
 ::: {.notes}
-Torque = what makes things spin faster/slower. Central force → no torque → L conserved. $\dot{\phi}$ = angular velocity (rad/s).
+Torque = what makes things spin faster/slower. Central force → no torque → L conserved. Explain dot notation: it's just shorthand for "rate of change" — no calculus needed to use it.
 :::
 
 ---
@@ -1006,7 +1152,7 @@ $$\frac{dA}{dt} = \frac{L}{2m} = \text{constant}$$
 . . .
 
 ::: {.callout-tip appearance="minimal"}
-**Equal areas in equal times** isn't a separate law—it's angular momentum conservation!
+**Equal areas in equal times** isn't a separate law — it's angular momentum conservation!
 :::
 
 . . .
@@ -1027,15 +1173,15 @@ A planet has perihelion at 1 AU and aphelion at 4 AU. Using $L = mvr = \text{con
 
 :::: {.columns}
 ::: {.column width="50%"}
-A. 2× (ratio of distances)
+- A. 2× (ratio of distances)
 
-B. 4× (ratio of distances)
+- B. 4× (ratio of distances)
 :::
 
 ::: {.column width="50%"}
-C. 16× (ratio squared)
+- C. 16× (ratio squared)
 
-D. 8× (ratio cubed)
+- D. 8× (ratio cubed)
 :::
 ::::
 
@@ -1075,7 +1221,9 @@ $$\langle K \rangle = -\frac{1}{2}\langle U \rangle$$
 
 . . .
 
-For circular orbit (instant = average): $K = \dfrac{GMm}{2r}$, $U = -\dfrac{GMm}{r}$ → $K = -\frac{1}{2}U$ ✓
+For circular orbit (instant = average): 
+
+$$K = \dfrac{GMm}{2r},~U = -\dfrac{GMm}{r} → K = -\frac{1}{2}U~✓$$
 
 ::: {.notes}
 Distinguish equilibrium vs. time-averaged. The angle brackets mean "average."
@@ -1195,7 +1343,7 @@ Beautiful diagram. Don't belabor—this is a teaser.
 
 ## The Black Hole Teaser
 
-What if escape velocity reaches the speed of light?
+> What if escape velocity reaches the speed of light?
 
 . . .
 
@@ -1205,7 +1353,7 @@ $$r_s = \frac{2GM}{c^2}$$
 
 . . .
 
-This is the **Schwarzschild radius**—the event horizon of a black hole.
+This is the **Schwarzschild radius** — the event horizon of a black hole.
 
 ::: {.fragment}
 We'll return to this when we study compact objects.
@@ -1222,8 +1370,8 @@ Connect escape velocity to black holes. Tease future content.
 ::: {.incremental}
 1. **Inverse-square gravity** → conic-section orbits
 2. **Central force** → angular momentum conserved → Kepler II
-3. **Force balance** → $v_{orb} = \sqrt{GM/r}$
-4. **Energy conservation** → $v_{esc} = \sqrt{2GM/r}$; $E$ determines bound vs. unbound
+3. **Force balance** → $v_{orb} = \sqrt{\frac{GM}{r}}$
+4. **Energy conservation** → $v_{esc} = \sqrt{\frac{2GM}{r}}$<br> $E$ determines bound vs. unbound
 5. **Equilibrium** → virial theorem: $\langle K \rangle = -\frac{1}{2}\langle U \rangle$
 :::
 
@@ -1246,7 +1394,7 @@ If you forget everything else from today, remember this:
 ::: {.fragment .mt-2}
 Kepler found the *what*. Newton explained the *why*.
 
-This transition—from empirical to physical—is how science works.
+This transition — from empirical to physical — is how science works.
 :::
 
 ::: {.notes}
@@ -1255,25 +1403,26 @@ Core message. Let this land.
 
 ---
 
-## Key Equations {.smaller}
+## Key Equations {.tiny}
 
 :::: {.columns}
 ::: {.column width="50%"}
 | Quantity | Equation |
 |----------|----------|
 | Grav. Force | $F_g = \dfrac{Gm_1m_2}{r^2}$ |
-| Orbital Vel. | $v_{orb} = \sqrt{\dfrac{GM}{r}}$ |
-| Escape Vel. | $v_{esc} = \sqrt{2}\,v_{orb}$ |
+| Orbital Velocity | $v_{orb} = \sqrt{\dfrac{GM}{r}}$ |
+| Escape Velocity | $v_{esc} = \sqrt{2}\,v_{orb}$ |
 | Kepler III | $P^2 = \dfrac{4\pi^2}{G(M+m)}a^3$ |
 :::
 
 ::: {.column width="50%"}
 | Quantity | Equation |
 |----------|----------|
+| Kinetic Energy | $K = \frac{1}{2}mv^2$ |
+| Potential Energy | $U = -\dfrac{GMm}{r}$ |
 | Total Energy | $E = K + U$ |
-| Bound Orbit | $E = -\dfrac{GMm}{2a}$ |
-| Ang. Mom. | $L = mvr$ |
-| Virial | $\langle K \rangle = -\frac{1}{2}\langle U \rangle$ |
+| Angular Momentum | $L = mvr$ |
+| Virial Equilibrium | $\langle K \rangle = -\frac{1}{2}\langle U \rangle$ |
 :::
 ::::
 
