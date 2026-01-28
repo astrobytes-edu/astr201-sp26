@@ -45,7 +45,7 @@ Keep these in mind on every problem:
 ## Relevant Readings
 
 - [Lecture 1: Spoiler Alerts](https://astrobytes-edu.github.io/astr201-sp26/modules/module-01/readings/lecture-01-spoiler-alerts-reading.html)
-- [Lecture 2: Foundations](https://astrobytes-edu.github.io/astr201-sp26/modules/module-01/readings/lecture-02-foundations-reading.html)
+- [Lecture 2: Tools of the Trade](https://astrobytes-edu.github.io/astr201-sp26/modules/module-01/readings/lecture-02-foundations-reading.html)
 - [Lecture 3: Gravity and Orbits](https://astrobytes-edu.github.io/astr201-sp26/modules/module-01/readings/lecture-03-gravity-and-orbits.html)
 
 ::: {.callout-note}
@@ -214,6 +214,10 @@ A comet passes through Earth's orbit (1 AU from the Sun) traveling at 50 km/s.
 
 **Tool(s) you should use:** Dimensional analysis + model reasoning + sanity checks
 
+::: {.callout-note}
+**Heads up:** This is the capstone problem for HW1—it integrates dimensional analysis, scaling, and model reasoning across multiple parts. Budget extra time compared to the other problems.
+:::
+
 This multi-part problem guides you through one of the most counter-intuitive results in astrophysics: **more massive white dwarfs are smaller**. You'll derive this using only dimensional analysis and pressure balance—the same toolkit from lecture.
 
 **Background:** A white dwarf is a stellar remnant supported not by thermal pressure (like the Sun), but by *electron degeneracy pressure*—a quantum mechanical effect. When matter is compressed to extreme densities, electrons resist being squeezed into the same quantum state (the Pauli exclusion principle). This creates pressure even at zero temperature.
@@ -235,20 +239,19 @@ The degeneracy pressure $P_{deg}$ in a white dwarf depends on:
 
 *Note: Temperature does NOT appear—degeneracy pressure is independent of temperature!*
 
-(i) What are the dimensions of pressure? Express $[P]$ in terms of $[M]$, $[L]$, $[T]$.
+1. What are the dimensions of pressure? Express $[P]$ in terms of $[M]$, $[L]$, $[T]$.
 
-*Hint:* Pressure is force per unit area: $[P] = [F]/[A]$. You know the dimensions of force from $F = ma$.
+   *Hint:* Pressure is force per unit area: $[P] = [F]/[A]$. You know the dimensions of force from $F = ma$.
 
-(ii) Assume $P_{deg} \propto \hbar^a m_e^b n^c$. Set up the dimensional equations by matching exponents.
+2. Assume $P_{deg} \propto \hbar^a m_e^b n^c$. Set up the dimensional equations by matching exponents.
 
-(iii) Solve for $a$, $b$, and $c$.
+3. Solve for $a$, $b$, and $c$.
 
-(iv) You should find:
-$$P_{deg} \propto \frac{\hbar^2}{m_e} n^{5/3}$$
+4. You should find:
+   $$P_{deg} \propto \frac{\hbar^2}{m_e} n^{5/3}$$
+   Verify that your exponents from step 3 give this result.
 
-Verify that your exponents from (iii) give this result.
-
-(v) **Interpretation:** Why does it make physical sense that pressure increases with electron number density? What does the exponent $5/3$ suggest (qualitatively) about how quickly the pressure rises?
+5. **Interpretation:** Why does it make physical sense that pressure increases with electron number density? What does the exponent $5/3$ suggest (qualitatively) about how quickly the pressure rises?
 
 ---
 
