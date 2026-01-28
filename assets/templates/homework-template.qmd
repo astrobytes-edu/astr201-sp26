@@ -1,0 +1,227 @@
+---
+# =============================================================================
+# ASTR 201 Homework Template
+# =============================================================================
+# Copy to: homework/astr201-hwN.qmd
+# Then: Find/replace all [PLACEHOLDERS] with actual content
+#
+# Usage:
+#   1. Copy this file to homework/astr201-hwN.qmd
+#   2. Replace all [BRACKETED] placeholders
+#   3. Add problems (use Problem N template below)
+#   4. Run: quarto render homework/astr201-hwN.qmd
+#   5. Set draft: false when ready to publish
+# =============================================================================
+
+title: "Homework [N]"
+subtitle: "[Topic 1] + [Topic 2]"
+author: "Dr. Anna Rosen"
+course: ASTR 201
+module: "Module [N] — [Module Title]"
+lectures: "Lectures [N–M]"
+math-level: symbolic_with_interpretation
+draft: true  # Set to false when ready to publish
+
+# Assignment metadata (rendered by {{< hwmeta >}} shortcode)
+estimated-time: "[X–Y] hours"
+due: "[Day], [Month] [DD], 2026 at 11:59 pm"
+grade-memo-due: "[Day], [Month] [DD], 2026 at 11:59 pm"
+submission: "Canvas; upload a single clearly scanned PDF or a legible PDF export"
+
+format:
+  html:
+    toc: true
+  pdf:
+    toc: false
+    geometry: margin=1in
+    fontsize: 11pt
+---
+
+{{< hwmeta >}}
+
+## Learning Objectives
+
+- [First objective — what students should be able to do after completing this assignment]
+- [Second objective — use action verbs: compute, derive, explain, apply, etc.]
+- [Third objective]
+- [Fourth objective if applicable]
+
+## Concept Throughline
+
+Keep these in mind on every problem:
+
+- **[Core principle 1]** (e.g., "Measurement → model → inference")
+- **[Core principle 2]** (e.g., "Units are physics.")
+- **[Core principle 3]** (e.g., "Scaling laws beat big numbers.")
+- **[Core principle 4]** (e.g., "Sanity checks are required.")
+
+## Prerequisites
+
+- [Prerequisite 1 — math skills, prior course content]
+- [Prerequisite 2]
+- [Prerequisite 3]
+
+## Relevant Readings
+
+- [Lecture N: Title](link-to-reading)
+- [Lecture N+1: Title](link-to-reading)
+- [Lecture N+2: Title](link-to-reading)
+
+::: {.callout-note}
+**Before you start:** Review the [Homework Guidelines](hw-tips.qmd) for required format and tools.
+:::
+
+<!-- Optional: Add HW-specific notes -->
+::: {.callout-tip}
+**HW[N] Note:** [Any special instructions for this assignment, e.g., "Solutions will be posted Wednesday morning."]
+:::
+
+---
+
+## Problems ([X] total)
+
+<!-- =============================================================================
+     PROBLEM TEMPLATE — Copy and modify for each problem
+
+     Tool hints (for HW1 only, remove for later assignments):
+     - Conceptual/model reasoning
+     - Dimensional analysis
+     - Ratio method
+     - Unit conversion
+     - Order-of-magnitude (Fermi)
+     - Energy reasoning
+     - Sanity check
+
+     Bloom levels (for your reference, use HTML comments):
+     - Remember, Understand, Apply, Analyze, Evaluate, Create
+============================================================================= -->
+
+### Problem 1 — [Descriptive Title]
+
+<!-- Bloom: [Level] -->
+
+**Tool(s) you should use:** [Tool hint — remove for HW2+]
+
+[Problem statement. Be specific about what students should do. Include any necessary context or setup.]
+
+- (a) [Part a of the problem]
+- (b) [Part b of the problem]
+- (c) **Sanity check:** [Include sanity checks where appropriate]
+
+---
+
+### Problem 2 — [Descriptive Title]
+
+<!-- Bloom: [Level] -->
+
+**Tool(s) you should use:** [Tool hint — remove for HW2+]
+
+[Problem statement.]
+
+---
+
+### Problem 3 — [Descriptive Title]
+
+<!-- Bloom: [Level] -->
+
+**Tool(s) you should use:** [Tool hint — remove for HW2+]
+
+[Problem statement.]
+
+For each equation below, [instruction]:
+
+- (a) [Equation or item 1]
+- (b) [Equation or item 2]
+- (c) [Equation or item 3]
+
+---
+
+<!-- =============================================================================
+     MULTI-PART CAPSTONE PROBLEM TEMPLATE
+     Use for synthesis/integration problems at the end of the assignment
+============================================================================= -->
+
+### Problem [N] — [Capstone Problem Title]
+
+<!-- Bloom: Analyze → Synthesize -->
+
+**Tool(s) you should use:** [Multiple tools — e.g., "Dimensional analysis + model reasoning + sanity checks"]
+
+::: {.callout-note}
+**Heads up:** This is the capstone problem for HW[N]—it integrates [list of skills/concepts]. Budget extra time compared to the other problems.
+:::
+
+[Opening statement explaining what students will derive/discover. Make it compelling!]
+
+**Background:** [Provide physical context. What system are we studying? Why is it interesting?]
+
+**The key insight:** [What's the core physics idea?]
+
+---
+
+**Part A: [Subtitle]**
+
+[Setup and context for Part A]
+
+1. [Step 1]
+
+2. [Step 2]
+
+3. [Step 3]
+
+4. **Interpretation:** [Ask students to explain the physical meaning]
+
+---
+
+**Part B: [Subtitle]**
+
+[Setup and context for Part B]
+
+(i) [Sub-step using roman numerals for variety]
+
+(ii) [Sub-step]
+
+---
+
+**Part C: [Subtitle]**
+
+[Continue pattern as needed...]
+
+---
+
+**Part F: Synthesis and Reflection**
+
+(i) [Ask students to list ingredients/assumptions]
+
+(ii) [Ask about methodology — "What does this tell you about the power of X?"]
+
+(iii) **Connection to the course thesis:** [Tie back to measurement → model → inference]
+
+---
+
+*Note: Solutions will be provided separately.*
+
+---
+
+## Grading
+
+Homework is graded on the **0–5 scale** described in the syllabus. The score reflects **visible reasoning and honest effort**, not just final answers.
+
+**What earns credit:**
+
+- Showing your steps (not just final numbers)
+- Carrying units through calculations
+- Using the indicated tool(s) explicitly
+- Including sanity checks
+- Clear, readable work
+
+**What loses credit:**
+
+- Missing reasoning ("I got 42" with no work shown)
+- Missing or inconsistent units
+- No sanity check on quantitative results
+- Submitting work that *looks* like effort but doesn't make physical sense
+
+**Bottom line:** A wrong answer with clear reasoning beats a right answer with no work. Nonsense dressed up as effort earns a low score.
+
+See the [syllabus](../course-info/syllabus.qmd#sec-homework) for the full rubric and grade memo requirements.
