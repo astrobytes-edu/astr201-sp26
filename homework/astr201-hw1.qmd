@@ -14,7 +14,13 @@ submission: "Canvas; upload a single clearly scanned PDF or a legible PDF export
 format:
   html:
     toc: true
+  pdf:
+    toc: false
+    geometry: margin=1in
+    fontsize: 11pt
 ---
+
+{{< hwmeta >}}
 
 ## Learning Objectives
 
@@ -56,14 +62,8 @@ Keep these in mind on every problem:
 **HW1 only:** Each problem below includes a "Tool(s)" hint to help you practice identifying which method to use. Future assignments will not include these hints—you'll need to recognize which tools apply on your own. Use your lecture notes; that's the point.
 :::
 
-::: {.callout-important}
-**Timeline:**
-
-- **Solutions due:** Tuesday, Feb 3 at 11:59 pm (Canvas)
-- **Solutions posted:** Wednesday morning
-- **Grade Memo due:** Thursday, Feb 5 at 11:59 pm
-
-For HW1, we will go over how to write the Grade Memo in class on Thursday.
+::: {.callout-tip}
+**HW1 Note:** Solutions will be posted Wednesday morning. We'll go over how to write the Grade Memo in class on Thursday.
 :::
 
 ---

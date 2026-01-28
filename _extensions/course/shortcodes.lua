@@ -8,6 +8,48 @@ function due(args)
   return pandoc.Strong({pandoc.Str("Due: " .. date_str)})
 end
 
+-- {{< hwmeta >}} - renders homework metadata banner from YAML frontmatter
+-- Reads: due, grade-memo-due, estimated-time, submission from document metadata
+-- Renders as a styled callout showing key dates and info
+function hwmeta(args, kwargs, meta)
+  local due_date = meta and meta["due"] and pandoc.utils.stringify(meta["due"]) or nil
+  local memo_due = meta and meta["grade-memo-due"] and pandoc.utils.stringify(meta["grade-memo-due"]) or nil
+  local est_time = meta and meta["estimated-time"] and pandoc.utils.stringify(meta["estimated-time"]) or nil
+  local submission = meta and meta["submission"] and pandoc.utils.stringify(meta["submission"]) or nil
+
+  if not due_date then
+    return pandoc.RawBlock("html", "<!-- hwmeta: no due date in frontmatter -->")
+  end
+
+  local html = '<div class="callout callout-important" data-callout="important">\n'
+  html = html .. '<div class="callout-header">\n<div class="callout-icon-container"><i class="callout-icon"></i></div>\n'
+  html = html .. '<div class="callout-title-container flex-fill"><p class="callout-title">Assignment Info</p></div>\n</div>\n'
+  html = html .. '<div class="callout-body-container callout-body">\n'
+  html = html .. '<table class="hw-meta-table" style="width:100%; border-collapse:collapse;">\n'
+
+  -- Due date (always shown)
+  html = html .. string.format('<tr><td style="padding:0.25rem 0.5rem 0.25rem 0; font-weight:600; white-space:nowrap;">Due</td><td style="padding:0.25rem 0;">%s</td></tr>\n', due_date)
+
+  -- Grade memo due (if present)
+  if memo_due then
+    html = html .. string.format('<tr><td style="padding:0.25rem 0.5rem 0.25rem 0; font-weight:600; white-space:nowrap;">Grade Memo</td><td style="padding:0.25rem 0;">%s</td></tr>\n', memo_due)
+  end
+
+  -- Estimated time (if present)
+  if est_time then
+    html = html .. string.format('<tr><td style="padding:0.25rem 0.5rem 0.25rem 0; font-weight:600; white-space:nowrap;">Est. Time</td><td style="padding:0.25rem 0;">%s</td></tr>\n', est_time)
+  end
+
+  -- Submission info (if present)
+  if submission then
+    html = html .. string.format('<tr><td style="padding:0.25rem 0.5rem 0.25rem 0; font-weight:600; white-space:nowrap;">Submit via</td><td style="padding:0.25rem 0;">%s</td></tr>\n', submission)
+  end
+
+  html = html .. '</table>\n</div>\n</div>'
+
+  return pandoc.RawBlock("html", html)
+end
+
 -- {{< points 10 >}} → "(10 points)"
 -- Shows point value for an assignment/question
 function points(args)
