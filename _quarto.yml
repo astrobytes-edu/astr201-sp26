@@ -64,7 +64,7 @@ website:
   announcement:
     icon: info-circle
     dismissable: true
-    content: "**Welcome to Spring 2026!** Check the [Syllabus](/course-info/syllabus.qmd) and [Schedule](/course-info/schedule.qmd) for important information and the first week's materials."
+    content: "**Welcome to Spring 2026!** Start with the [Syllabus](/course-info/syllabus.qmd) and [Schedule](/course-info/schedule.qmd). Try the [interactive demos](https://astrobytes-edu.github.io/astr101-sp26/demos/). **HW1:** [Homework 1](/homework/astr201-hw1.qmd) is due **Tuesday, February 3, 2026 at 11:59 pm**."
     type: primary
     position: below-navbar
   navbar:
