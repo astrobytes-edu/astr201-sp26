@@ -45,7 +45,7 @@ If PDF rendering fails due to missing LaTeX:
 | **Instructor** | Dr. Anna Rosen |
 | **Email** | <alrosen@sdsu.edu> |
 | **Office** | Physics 239 |
-| **Office Hours** | Fridays 11:00 am–12:00 pm (and by appointment) |
+| **Office Hours** | Fridays 11 am–1 pm (and by appointment) |
 | **Class meetings** | Tues/Thurs 12:30–1:45 pm |
 | **Location** | LH 249 |
 | **Course website** | <https://astrobytes-edu.github.io/astr201-sp26> |

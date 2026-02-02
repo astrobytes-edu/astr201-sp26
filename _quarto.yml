@@ -14,7 +14,7 @@ params:
   instructor: "Dr. Anna Rosen"
   email: "alrosen@sdsu.edu"
   office: "Physics 239"
-  office-hours: "Fridays 11:00 am–12:00 pm (and by appointment)"
+  office-hours: "Fridays 11 am–1 pm (and by appointment)"
 
   # Class logistics
   class-time: "Tues/Thurs 12:30–1:45 pm"
@@ -59,7 +59,7 @@ project:
   brand: _brand.yml
 
 website:
-  title: "ASTR 201: Astronomy for Science Majors (Spring 2026)"
+  title: "ASTR 201: Astronomy for Science Majors"
   favicon: assets/astr201-favicon.png
   announcement:
     icon: info-circle

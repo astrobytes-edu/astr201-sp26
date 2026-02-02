@@ -1,4 +1,4 @@
 $$
-\lambda_{\text{peak}} = \frac{b}{T}
+\lambda_{\text{peak}} = b T^{-1}
 $$ {#eq-wien-displacement}
 

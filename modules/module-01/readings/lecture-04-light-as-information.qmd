@@ -26,7 +26,7 @@ Concept-Throughline:
   - Limiting cases make complex equations tractable
   - This is the foundation for all light-based astronomical inference
 math-level: symbolic_with_interpretation
-mode: Draft
+mode: Final
 prerequisites: Basic algebra, scientific notation, familiarity with wavelength/frequency from physics
 ---
 
@@ -80,19 +80,28 @@ By the end of this reading, you'll be able to look at a star and estimate its su
 
 ### Light as a Wave
 
-Light is an electromagnetic wave — oscillating electric and magnetic fields that propagate through space at a constant speed. Three quantities characterize any wave:
+Light is an electromagnetic wave — oscillating electric and magnetic fields that propagate through space at a constant speed.
 
-{{< fig em-wave-diagram >}}
+{{< fig mechanical-vs-em-wave >}}
 
-**Frequency ($\nu$):** The number of oscillations per second, with units s$^{-1}$.
+Unlike mechanical waves (water ripples, sound, a vibrating string), electromagnetic waves don't need a medium. A water wave is the *water* moving up and down; a sound wave is *air molecules* compressing and expanding. But light travels perfectly well through the vacuum of space — no water, no air, no "stuff" required. What's oscillating are the electric and magnetic fields themselves.
 
-**Wavelength ($\lambda$):** The distance between successive wave crests, typically measured in centimeters (cm) or Ångströms (Å), where $1\ \text{Å} = 10^{-8}\ \text{cm}$.
+Both wave types share the same vocabulary:
+
+**Wavelength ($\lambda$):** The distance between successive wave crests. For a water wave, you could measure this with a ruler. For light, wavelengths range from kilometers (radio) down to smaller than an atomic nucleus (gamma rays). Optical and UV wavelengths are often written in Ångströms (Å), where $1\ \text{Å} = 10^{-8}\ \text{cm}$.
+
+::: {.callout-note title="Glossary: The Ångström"}
+The **Ångström** (Å) is a unit of length equal to $10^{-10}$ m = $10^{-8}$ cm. It's roughly the diameter of a hydrogen atom (~1 Å) and is convenient for atomic and molecular scales. Named after Swedish physicist Anders Jonas Ångström (1814–1874), who used it to measure spectral line wavelengths. Visible light spans about 4000–7000 Å.
+:::
+
+**Frequency ($\nu$):** The number of oscillations per second, with units s$^{-1}$ (also called Hertz, Hz). If you watch a fixed point and count how many wave crests pass per second, that's the frequency.
 
 **Speed ($c$):** In vacuum, all electromagnetic waves travel at $c = 2.998 \times 10^{10}\ \text{cm/s}$ — the speed of light.
 
 These three quantities are related by the fundamental wave equation:
 
-$$c = \lambda \nu$$
+{{< include ../../../_includes/equations/wave-relation.qmd >}}
+{{< eqrefcard wave-relation >}}
 
 Let's unpack this equation:
 
@@ -101,7 +110,40 @@ Let's unpack this equation:
 - **The story:** All EM waves travel at the same speed $c$ in vacuum; they differ only in how they trade off between wavelength and frequency
 - **Units check:** $[\text{cm/s}] = [\text{cm}][\text{s}^{-1}]$ ✓
 
-This means if you know any two, you can calculate the third. Since $c$ is constant, wavelength and frequency are inversely related: long wavelength means low frequency, short wavelength means high frequency.
+This means if you know any two, you can calculate the third. Since $c$ is constant, wavelength and frequency are inversely related: $\nu \propto \lambda^{-1}$. Long wavelength means low frequency, short wavelength means high frequency.
+
+::: {.callout-note title="Notation Convention: Negative Exponents" collapse="true"}
+Throughout this course, we write inverse relationships using **negative exponents**:
+
+| Fraction notation | Exponent notation | Both mean... |
+|-------------------|-------------------|--------------|
+| $\nu = c/\lambda$ | $\nu = c\lambda^{-1}$ | $\nu \propto \lambda^{-1}$ |
+| $E = hc/\lambda$ | $E = hc\lambda^{-1}$ | $E \propto \lambda^{-1}$ |
+| $\lambda_{\text{peak}} = b/T$ | $\lambda_{\text{peak}} = bT^{-1}$ | $\lambda_{\text{peak}} \propto T^{-1}$ |
+
+**Why bother?** The exponent notation makes proportional reasoning instant:
+
+- See $T^{-1}$? Temperature is in the denominator — they're inversely related.
+- See $D^{2}$? Diameter is squared — quadratic scaling.
+- See $\lambda^{-4}$? Wavelength to the fourth power in the denominator — very steep!
+
+This notation is standard in upper-division physics. Getting comfortable with it now will pay off later.
+:::
+
+::: {.callout-tip title="Quick Check: Proportional Reasoning" collapse="true"}
+**Wave equation:** $c = \lambda\nu$, so $\nu = c\lambda^{-1}$
+
+1. If wavelength doubles, frequency ___?
+2. If frequency triples, wavelength ___?
+3. Radio waves have $\lambda \sim 1$ cm; visible light has $\lambda \sim 5\times10^{-5}$ cm. How do their frequencies compare?
+
+::: {.callout-note collapse="true"}
+## Answers
+1. **Halves** ($\times \frac{1}{2}$) — frequency is inversely proportional to wavelength
+2. **Decreases to $\frac{1}{3}$** — same inverse relationship
+3. Visible light has $\sim 20{,}000\times$ higher frequency — because its wavelength is $\sim 20{,}000\times$ shorter
+:::
+:::
 
 ### The Spectrum: From Radio to Gamma
 
@@ -127,7 +169,8 @@ The electromagnetic spectrum spans an enormous range of wavelengths, from radio 
 
 Light also behaves as particles called **photons**. Each photon carries a discrete amount of energy given by:
 
-$$E = h\nu = \frac{hc}{\lambda}$$
+{{< include ../../../_includes/equations/photon-energy.qmd >}}
+{{< eqrefcard photon-energy >}}
 
 where $h = 6.626 \times 10^{-27}$ erg·s is **Planck's constant**.
 
@@ -135,7 +178,7 @@ Let's unpack this equation:
 
 - **What it predicts:** The energy carried by a single photon
 - **What it depends on:** Either frequency ($\nu$) or wavelength ($\lambda$) — your choice, since they're related by $c = \lambda\nu$
-- **The story:** Shorter wavelength = higher energy. This is why gamma rays can damage DNA while radio waves pass harmlessly through your body.
+- **The story:** $E \propto \lambda^{-1}$ — shorter wavelength means higher energy. This is why gamma rays can damage DNA while radio waves pass harmlessly through your body.
 - **Units check:** $[E] = [\text{erg·s}][\text{s}^{-1}] = \text{erg}$ ✓
 
 {{< fig wavelength-energy-relation >}}
@@ -148,23 +191,30 @@ $$[E] = \frac{[\text{erg·s}][\text{cm/s}]}{[\text{cm}]} = \frac{\text{erg·cm}}
 Units work out. This is always worth checking.
 :::
 
-::: {.callout-tip}
-## Check Yourself
+::: {.callout-tip title="Quick Check: Proportional Reasoning" collapse="true"}
+**Photon energy:** $E = hc\lambda^{-1}$
 
-A photon has wavelength 2000 Å. Another has wavelength 8000 Å. How do their energies compare?
+1. If wavelength doubles, photon energy ___?
+2. If wavelength is halved, photon energy ___?
+3. A photon has $\lambda = 2000$ Å. Another has $\lambda = 8000$ Å. How do their energies compare?
 
 ::: {.callout-note collapse="true"}
-## Solution
-
-Since $E \propto 1/\lambda$, the 2000 Å photon has 4× more energy than the 8000 Å photon.
-
-$$\frac{E_{2000}}{E_{8000}} = \frac{\lambda_{8000}}{\lambda_{2000}} = \frac{8000}{2000} = 4$$
-
-The shorter-wavelength (bluer) photon is more energetic. This is why UV light causes sunburns but red light doesn't.
+## Answers
+1. **Halves** ($\times \frac{1}{2}$) — energy is inversely proportional to wavelength
+2. **Doubles** ($\times 2$) — halving $\lambda$ doubles $E$
+3. The 2000 Å photon has $4\times$ more energy: $E_{2000}/E_{8000} = \lambda_{8000}/\lambda_{2000} = 8000/2000 = 4$. This is why UV causes sunburns but red light doesn't.
 :::
 :::
 
 ---
+
+::: {.callout-note}
+## 🧠 Pause & Predict
+
+Before reading further: Why do you think the sky looks blue during the day but red/orange at sunset?
+
+*(Hint: same atmosphere, same sunlight — what's different?)*
+:::
 
 ## Part 3: How Light Interacts with Matter {#part-how-light-interacts}
 
@@ -243,9 +293,24 @@ Twinkling (scintillation) is caused mainly by **turbulent refraction** in Earth�
 Dust between stars can also remove blue light more efficiently than red light. The result is that distant stars can appear redder than they truly are. Correcting for this effect is part of doing precision astronomy.
 :::
 
+::: {.callout-tip title="Quick Check: Proportional Reasoning" collapse="true"}
+**Rayleigh scattering:** $\sigma \propto \lambda^{-4}$
+
+1. If wavelength doubles, scattering cross-section ___?
+2. Blue light ($\lambda \approx 4500$ Å) vs. red light ($\lambda \approx 6500$ Å): which scatters more, and by what factor?
+3. If you could see in the infrared ($\lambda \approx 10{,}000$ Å), would the sky appear more blue or less blue than in visible light?
+
+::: {.callout-note collapse="true"}
+## Answers
+1. **Decreases by $2^4 = 16\times$** — the $\lambda^{-4}$ dependence is steep!
+2. Blue scatters $(6500/4500)^4 \approx 4\times$ more than red
+3. **Much less blue** — longer wavelengths scatter far less, so the sky would appear darker/grayer in the IR
+:::
+:::
+
 ---
 
-### Opacity and “How Far Light Gets” (Preview) {#sec-opacity-preview}
+### Opacity and "How Far Light Gets" (Preview) {#sec-opacity-preview}
 
 In astronomy, we often care less about “what is an object made of?” and more about “how far can photons travel before they get absorbed or scattered?”
 
@@ -255,7 +320,7 @@ In Module 2, we’ll use this to understand a key idea: **we only see to the dep
 
 ---
 
-## Check Yourself: Light and Matter
+## Quick Checks: Light and Matter
 
 ::: {.callout-tip title="Quick Check" collapse="true"}
 **Question:** Why is the daytime sky blue, but the setting Sun looks red?
@@ -312,6 +377,12 @@ The figure shows blackbody spectra (called **Planck curves**) at three different
 
 2. **The total energy emitted increases dramatically with temperature.** The area under the curve (total power radiated) grows as $T^4$ — we'll quantify this with the Stefan-Boltzmann law in Module 2.
 
+::: {.callout-tip title="Quick Check" collapse="true"}
+**Question:** A star's Planck curve peaks in the infrared at 9000 Å. Is this star hotter or cooler than the Sun (which peaks at $\sim 5000$ Å)?
+
+**Answer:** **Cooler.** Peak wavelength is inversely related to temperature ($\lambda_{\text{peak}} \propto T^{-1}$). Longer peak wavelength means lower temperature. This star is roughly $5000/9000 \approx 0.6\times$ the Sun's temperature, or about 3200 K.
+:::
+
 ---
 
 ::: {.callout-note}
@@ -332,7 +403,7 @@ Before reading further, think about this:
 
 Before 1900, physicists tried to derive the blackbody spectrum using classical physics. The result was the **Rayleigh-Jeans law**:
 
-$$B_\lambda \propto \frac{T}{\lambda^4}$$
+$$B_\lambda \propto T\lambda^{-4}$$
 
 This works well at long wavelengths. But notice the problem: as $\lambda \to 0$, the intensity goes to infinity! Classical physics predicted that any warm object should emit infinite energy in the ultraviolet and beyond.
 
@@ -361,8 +432,10 @@ This looks intimidating. **Don't panic.** Let's break it down piece by piece:
 ::: {.callout-note}
 ## Units Note (cgs)
 
-From here on I’m using cgs units (erg, cm), which are still common in astrophysics. The physics is identical; only the unit choices change.
+From here on I'm using cgs units (erg, cm), which are still common in astrophysics. The physics is identical; only the unit choices change.
 :::
+
+**What is spectral radiance?** The Planck function $B_\lambda(T)$ gives the **spectral radiance** — the power emitted per unit area, per unit solid angle, per unit wavelength interval. It tells you how much energy flows out of each square centimeter of surface, in each direction, at each wavelength. This is exactly what you need to describe how a glowing object distributes its light across the spectrum.
 
 | Symbol | Meaning | Value / Units |
 |---|---|---|
@@ -429,13 +502,27 @@ The exponential cuts off emission at short wavelengths — this is the quantum s
 
 | Regime | Condition | Behavior | Physical reason |
 |---|---|---|---|
-| Long $\lambda$ | $hc/\lambda \ll k_B T$ | $B_\lambda \propto T/\lambda^4$ | Classical physics works; photons are “cheap” |
-| Short $\lambda$ | $hc/\lambda \gg k_B T$ | $B_\lambda \to 0$ exponentially | Quantum suppression; photons are “expensive” |
+| Long $\lambda$ | $hc/\lambda \ll k_B T$ | $B_\lambda \propto T\lambda^{-4}$ | Classical physics works; photons are "cheap" |
+| Short $\lambda$ | $hc/\lambda \gg k_B T$ | $B_\lambda \to 0$ exponentially | Quantum suppression; photons are "expensive" |
 
-::: {.callout-tip}
-## Check Yourself
+::: {.callout-tip title="Quick Check: Proportional Reasoning" collapse="true"}
+**Rayleigh-Jeans limit:** $B_\lambda \propto T\lambda^{-4}$
 
-In the Rayleigh-Jeans limit ($B_\lambda \propto T/\lambda^4$), does intensity increase or decrease with:
+1. If temperature doubles (at fixed $\lambda$), the intensity ___?
+2. If wavelength doubles (at fixed $T$), the intensity ___?
+3. You observe two blackbodies at the same temperature, one at $\lambda = 1$ cm and one at $\lambda = 0.5$ cm. How do their Rayleigh-Jeans intensities compare?
+
+::: {.callout-note collapse="true"}
+## Answers
+1. **Doubles** ($\times 2$) — intensity is directly proportional to $T$
+2. **Decreases by $2^4 = 16\times$** — the $\lambda^{-4}$ dependence is steep
+3. The shorter wavelength is $(1/0.5)^4 = 16\times$ brighter — this is why the "ultraviolet catastrophe" predicted infinite UV emission!
+:::
+:::
+
+::: {.callout-tip title="Quick Check" collapse="true"}
+
+In the Rayleigh-Jeans limit ($B_\lambda \propto T\lambda^{-4}$), does intensity increase or decrease with:
 
 1. Temperature?
 2. Wavelength?
@@ -443,7 +530,7 @@ In the Rayleigh-Jeans limit ($B_\lambda \propto T/\lambda^4$), does intensity in
 ::: {.callout-note collapse="true"}
 ## Solution
 
-From $B_\lambda \propto T/\lambda^4$:
+From $B_\lambda \propto T\lambda^{-4}$:
 
 1. **Temperature:** Intensity increases linearly with $T$. Hotter = brighter (in this limit).
 
@@ -461,7 +548,8 @@ But remember: this limit only applies at long wavelengths where $hc/\lambda \ll 
 
 The Planck function has a peak — a wavelength where emission is maximum. This peak wavelength depends only on temperature:
 
-$$\lambda_{\text{peak}} = \frac{b}{T}$$
+{{< include ../../../_includes/equations/wien-displacement.qmd >}}
+{{< eqrefcard wien-displacement >}}
 
 where $b = 0.2898\ \text{cm·K} = 2.898\times10^{7}\ \text{Å·K}$ is **Wien's displacement constant**.
 
@@ -473,11 +561,26 @@ Let's unpack Wien's law:
 
 - **What it predicts:** The wavelength where a blackbody emits most intensely
 - **What it depends on:** Only temperature — nothing else!
-- **The story:** Hotter objects peak at shorter (bluer) wavelengths. Cooler objects peak at longer (redder) wavelengths.
+- **The story:** $\lambda_{\text{peak}} \propto T^{-1}$ — hotter objects peak at shorter (bluer) wavelengths. Cooler objects peak at longer (redder) wavelengths.
 - **Units check:** $[\lambda] = [\text{cm·K}]/[\text{K}] = \text{cm}$ ✓
 - **Assumptions:** Object is a perfect blackbody
 
 **This is why color encodes temperature.** Hot stars appear blue because their Planck curves peak in the blue/UV. Cool stars appear red because their peaks are in the red/infrared.
+
+::: {.callout-tip title="Quick Check: Proportional Reasoning" collapse="true"}
+**Wien's law:** $\lambda_{\text{peak}} = b T^{-1}$, so $\lambda_{\text{peak}} \propto T^{-1}$
+
+1. If temperature doubles, peak wavelength ___?
+2. If temperature is halved, peak wavelength ___?
+3. Star A has $T = 6000$ K; Star B has $T = 3000$ K. How do their peak wavelengths compare?
+
+::: {.callout-note collapse="true"}
+## Answers
+1. **Halves** ($\times \frac{1}{2}$) — peak wavelength is inversely proportional to temperature
+2. **Doubles** ($\times 2$) — cooler means longer peak wavelength
+3. Star B peaks at $2\times$ the wavelength of Star A. If Star A peaks at 5000 Å (green), Star B peaks at 10,000 Å (infrared). This is why hot stars are blue and cool stars are red!
+:::
+:::
 
 ### Where Does Wien's Law Come From? (Optional Deep Dive)
 
@@ -563,10 +666,8 @@ Similarly, Betelgeuse peaks in the near-infrared (8300 Å), but it still emits p
 The peak depends on how you plot the spectrum. If you plot “per unit wavelength” ($B_\lambda$), you get one peak wavelength. If you plot “per unit frequency” ($B_\nu$), the peak occurs at a different place. It’s the same physical spectrum — the difference is the binning.
 :::
 
-::: {.callout-tip}
-## Check Yourself
-
-An object has a peak wavelength of 10,000 Å. What is its temperature? Is this object hotter or cooler than the Sun?
+::: {.callout-tip title="Quick Check" collapse="true"}
+**Question:** An object has a peak wavelength of 10,000 Å. What is its temperature? Is this object hotter or cooler than the Sun?
 
 ::: {.callout-note collapse="true"}
 ## Solution
@@ -589,14 +690,44 @@ An object at 2900 K would glow deep red — think of a hot coal or a very cool s
 
 $$T_{\text{CMB}} = \frac{0.2898\ \text{cm·K}}{0.11\ \text{cm}} = 2.63\ \text{K} \approx 2.7\ \text{K}$$
 
-<!-- TODO: Add CMB map image from ESA/Planck to assets/images/module-04/cmb-map.png -->
-<!-- {{< fig cmb-map >}} -->
+{{< fig cmb-map >}}
 
 **Interpretation:** The CMB has a temperature of about 2.7 K — just 2.7 degrees above absolute zero. This is the temperature of the *universe itself*, left over from the hot early cosmos that has been cooling for 13.8 billion years as space expands.
 
-The CMB is the most perfect blackbody ever measured. COBE/FIRAS found the spectrum matches a Planck curve with RMS deviations $\lesssim 50$ ppm of the peak intensity — a stunning confirmation of Big Bang cosmology. We'll return to the CMB in Module 4 when we study cosmology.
+The CMB is the most perfect blackbody ever measured. NASA's COBE satellite (1989) confirmed the spectrum matches a Planck curve with deviations $\lesssim 50$ ppm — a stunning confirmation of Big Bang cosmology. ESA's Planck satellite (2009–2013) later mapped the tiny temperature fluctuations (±0.0002 K) with unprecedented precision; these variations are the seeds from which all galaxies and large-scale structure grew. We'll return to the CMB in Module 4 when we study cosmology.
+
+::: {.callout-note title="Learn more"}
+[ESA: Cosmic Microwave Background Radiation](https://www.esa.int/Science_Exploration/Space_Science/Cosmic_Microwave_Background_CMB_radiation) — Background on the CMB and Planck mission.
+:::
+
+::: {.callout-tip title="Quick Check: Mars in the Infrared" collapse="true"}
+**Problem:** Mars has an average surface temperature of about 210 K. At what wavelength does Mars emit most strongly?
+
+::: {.callout-note collapse="true"}
+## Solution
+
+Using Wien's law: $\lambda_{\text{peak}} = b T^{-1}$
+
+$$\lambda_{\text{peak}} = \frac{0.2898\ \text{cm·K}}{210\ \text{K}} = 1.4 \times 10^{-3}\ \text{cm} = 14\ \mu\text{m}$$
+
+Mars peaks in the **thermal infrared** — invisible to human eyes but detectable by infrared telescopes. This is why spacecraft studying Mars carry infrared instruments: they can "see" the planet's own thermal emission, not just reflected sunlight.
+
+**Proportional check:** Mars ($T \approx 210$ K) is about 28× cooler than the Sun ($T \approx 5800$ K), so its peak wavelength is 28× longer: $5000\ \text{Å} \times 28 \approx 14\ \mu\text{m}$. ✓
+:::
+:::
 
 ---
+
+::: {.callout-note}
+## 🧠 Pause & Predict
+
+Before reading further: You observe a nebula that glows with a bright red color, but only at one specific wavelength (6563 Å). Meanwhile, a nearby star shows a smooth rainbow with dark lines at specific wavelengths.
+
+1. Which object is producing an **emission** spectrum? Which is producing an **absorption** spectrum?
+2. What does this tell you about the physical conditions in each object?
+
+*(Hint: Think about what's needed to produce each spectrum type.)*
+:::
 
 ## Part 6: Atoms and Spectral Lines {#part-atoms-spectral-lines}
 
@@ -659,7 +790,7 @@ Spectral lines let us infer far more than composition. In Module 2 we’ll build
 
 ---
 
-## Check Yourself: Atoms and Spectra
+## Quick Checks: Atoms and Spectra
 
 ::: {.callout-tip title="Quick Check" collapse="true"}
 **Question:** Why do absorption lines occur at *specific* wavelengths instead of at all wavelengths?
@@ -705,6 +836,17 @@ Notice the difference between the Sun's spectrum (approximately continuous, like
 
 ---
 
+::: {.callout-note}
+## 🧠 Pause & Predict
+
+Before reading further: The James Webb Space Telescope has a 6.5-meter mirror, while the Hubble Space Telescope has a 2.4-meter mirror.
+
+1. How much more light-gathering power does JWST have compared to Hubble?
+2. Which telescope can see finer detail at the same wavelength?
+
+*(Hint: Think about how area and resolution scale with diameter.)*
+:::
+
 ## Part 8: Telescopes as Light Buckets {#part-telescopes}
 
 Astronomical objects are far away and often faint. Telescopes extend our reach in two distinct ways: they collect **more photons** and they can resolve **finer detail**.
@@ -718,6 +860,21 @@ The simplest telescope question is: how much light do you collect? For a circula
 
 {{< fig telescope-collecting-area >}}
 
+::: {.callout-tip title="Quick Check: Proportional Reasoning" collapse="true"}
+**Collecting area:** $A = \pi (D/2)^2 \propto D^2$
+
+1. If diameter doubles, collecting area ___?
+2. If diameter triples, collecting area ___?
+3. JWST ($D = 6.5$ m) vs. Hubble ($D = 2.4$ m): how do their collecting areas compare?
+
+::: {.callout-note collapse="true"}
+## Answers
+1. **Quadruples** ($\times 4$) — area scales as $D^2$
+2. **Increases by $3^2 = 9\times$** — same $D^2$ scaling
+3. JWST has $(6.5/2.4)^2 \approx 7.3\times$ more collecting area than Hubble — it can see much fainter objects in the same exposure time
+:::
+:::
+
 ### Angular Resolution: Why Bigger Is Sharper
 
 Even if you collect lots of light, you can’t see detail smaller than your telescope’s angular resolution. Diffraction sets a fundamental limit:
@@ -726,6 +883,21 @@ Even if you collect lots of light, you can’t see detail smaller than your tele
 {{< eqrefcard telescope-resolution >}}
 
 {{< fig telescope-resolution >}}
+
+::: {.callout-tip title="Quick Check: Proportional Reasoning" collapse="true"}
+**Angular resolution:** $\theta \approx \lambda D^{-1}$, so $\theta \propto \lambda D^{-1}$
+
+1. If diameter doubles (at fixed $\lambda$), resolution ___?
+2. If wavelength doubles (at fixed $D$), resolution ___?
+3. You observe at $\lambda = 2\ \mu$m instead of $\lambda = 0.5\ \mu$m with the same telescope. How does resolution change?
+
+::: {.callout-note collapse="true"}
+## Answers
+1. **Improves by $2\times$** (angle halves) — bigger mirrors resolve finer detail
+2. **Worsens by $2\times$** (angle doubles) — longer wavelengths give blurrier images
+3. Resolution worsens by $4\times$ — you can resolve $4\times$ less detail in the infrared than visible. This is why infrared astronomy often needs larger mirrors!
+:::
+:::
 
 ### The Atmosphere Limit (and How We Beat It)
 
@@ -737,7 +909,7 @@ Large modern telescopes are reflectors, not refractors. Mirrors can be supported
 
 ---
 
-## Check Yourself: Telescopes
+## Quick Checks: Telescopes
 
 ::: {.callout-tip title="Quick Check" collapse="true"}
 **Question:** A telescope with a 400 cm mirror is replaced by one with an 800 cm mirror. By what factor does the collecting area increase?
@@ -771,11 +943,11 @@ We’ve followed the photon’s story from start to finish: how it’s produced,
 
 | We measure | We use | We infer |
 |---|---|---|
-| Peak wavelength (color) | Wien’s law: $\lambda_{\text{peak}} = b/T$ | Surface temperature |
+| Peak wavelength (color) | Wien's law: $\lambda_{\text{peak}} = b T^{-1}$ | Surface temperature |
 | Spectrum shape | Planck function | Thermal emission mechanism |
 | Scattering behavior | Rayleigh: $\sigma \propto \lambda^{-4}$ | When/why reddening matters |
-| Line pattern and type | Kirchhoff’s laws + atomic transitions | Composition and physical conditions |
-| Aperture diameter | $A \propto D^2$, $\theta \propto \lambda/D$ | Faintness reach and sharpness |
+| Line pattern and type | Kirchhoff's laws + atomic transitions | Composition and physical conditions |
+| Aperture diameter | $A \propto D^2$, $\theta \propto \lambda D^{-1}$ | Faintness reach and sharpness |
 
 ### Preview: What's Coming
 
@@ -787,19 +959,65 @@ Each week, the inference chain grows longer. By the end of Module 2, you'll be a
 
 ---
 
+## Proportional Reasoning Practice
+
+The equations in this reading all involve **proportional relationships**. Mastering these relationships — without reaching for a calculator — is a crucial skill in physics and astronomy. Here's a summary of the key scalings you should internalize:
+
+| Equation | Key Scaling | In Words |
+|----------|-------------|----------|
+| Wave relation | $\nu \propto \lambda^{-1}$ | Frequency and wavelength are inversely related |
+| Photon energy | $E \propto \nu$ (or $E \propto \lambda^{-1}$) | Higher frequency = higher energy; shorter wavelength = higher energy |
+| Rayleigh scattering | $\sigma \propto \lambda^{-4}$ (or $\sigma \propto \nu^{4}$) | Scattering is *very* sensitive to wavelength/frequency |
+| Wien's law | $\lambda_{\text{peak}} \propto T^{-1}$ (or $\nu_{\text{peak}} \propto T$) | Hotter objects peak at shorter $\lambda$ / higher $\nu$ |
+| Rayleigh-Jeans limit | $B_\lambda \propto T\lambda^{-4}$ | Classical limit: linear in $T$, steep in $\lambda$ |
+| Collecting area | $A \propto D^2$ | Area scales as diameter squared |
+| Angular resolution | $\theta \propto \lambda D^{-1}$ | At fixed $D$: $\theta \propto \lambda$; at fixed $\lambda$: $\theta \propto D^{-1}$ |
+
+::: {.callout-tip title="Synthesis Practice: Multi-Step Reasoning" collapse="true"}
+**Problem:** You're comparing two telescopes observing the same star:
+
+- Telescope A: $D = 4$ m, observing at $\lambda = 500$ nm (visible)
+- Telescope B: $D = 8$ m, observing at $\lambda = 2000$ nm (infrared)
+
+1. Which telescope collects more light, and by what factor?
+2. Which telescope has better angular resolution?
+3. If both see the same blackbody star at $T = 5000$ K, which is observing closer to the star's peak emission?
+
+::: {.callout-note collapse="true"}
+## Answers
+
+1. **Telescope B collects $4\times$ more light.** Collecting area scales as $D^2$: $(8/4)^2 = 4$.
+
+2. **Telescope A has better resolution.** Resolution scales as $\theta \propto \lambda D^{-1}$:
+   - Telescope A: $\theta_A \propto 500/4 = 125$ (arbitrary units)
+   - Telescope B: $\theta_B \propto 2000/8 = 250$ (arbitrary units)
+
+   Smaller $\theta$ means finer resolution. The infrared telescope's larger mirror ($2\times$) doesn't compensate for the longer wavelength ($4\times$), so Telescope A resolves $2\times$ finer detail.
+
+3. **Telescope A is closer to the peak.** Using Wien's law with $T = 5000$ K:
+   $$\lambda_{\text{peak}} = \frac{2.898 \times 10^7\ \text{Å·K}}{5000\ \text{K}} = 5800\ \text{Å} = 580\ \text{nm}$$
+
+   Telescope A (500 nm) is close to the peak; Telescope B (2000 nm) is on the red tail of the Planck curve.
+
+**The lesson:** Proportional reasoning lets you compare options quickly. Larger diameter helps with both light collection ($D^2$) and resolution ($D^{-1}$ in the denominator), but longer wavelengths hurt resolution ($\lambda$ in the numerator). Real telescope design involves these trade-offs!
+:::
+:::
+
+---
+
 ## Reference Tables
 
 ### Key Equations
 
 | Quantity | Equation | What It Tells You |
 |----------|----------|-------------------|
-| Wave relation | $c = \lambda \nu$ | Wavelength and frequency are inversely related |
-| Photon energy | $E = h\nu = hc/\lambda$ | Short wavelength = high energy |
+| Wave relation | $c = \lambda \nu$ | Wavelength and frequency are inversely related ($\nu \propto \lambda^{-1}$) |
+| Photon energy | $E = h\nu = hc\lambda^{-1}$ | Short wavelength = high energy ($E \propto \lambda^{-1}$) |
 | Rayleigh scattering | $\sigma \propto \lambda^{-4}$ | Short wavelengths scatter much more strongly |
-| Wien's law | $\lambda_{\text{peak}} = b/T$ | Peak wavelength encodes temperature |
-| Bohr levels (H) | $E_n = -13.6\ \text{eV}/n^2$ | Atomic energies are quantized (line energies are differences) |
+| Wien's law | $\lambda_{\text{peak}} = b T^{-1}$ | Peak wavelength encodes temperature ($\lambda_{\text{peak}} \propto T^{-1}$) |
+| Bohr levels (H) | $E_n = -13.6\ \text{eV}\, n^{-2}$ | Atomic energies are quantized (line energies are differences) |
 | Collecting area | $A = \pi(D/2)^2$ | Light-gathering power scales as $D^2$ |
-| Diffraction limit | $\theta \approx \lambda/D$ | Angular resolution improves with larger $D$ and smaller $\lambda$ |
+| Diffraction limit | $\theta \approx \lambda D^{-1}$ | Angular resolution improves with larger $D$ and smaller $\lambda$ |
 | Wien's constant | $b = 0.2898$ cm·K | Memorize this (or know where to find it) |
 
 ### Physical Constants

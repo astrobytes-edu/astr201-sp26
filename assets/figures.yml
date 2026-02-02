@@ -432,11 +432,11 @@ figures:
     module: 4
 
   cmb-map:
-    path: /assets/images/module-04/cmb-map.png
-    caption: "Cosmic microwave background temperature fluctuations"
-    alt: "All-sky map showing tiny temperature variations in the CMB"
-    credit: "ESA/Planck"
-    module: 4
+    path: /assets/images/module-01/week-03/Plancks_view_of_the_CMB_ESO.jpg
+    caption: "**What to notice:** The CMB is the most perfect blackbody ever measured (T = 2.725 K). These color variations show temperature fluctuations of only ±0.0002 K — the seeds of all cosmic structure."
+    alt: "Planck satellite all-sky map of the Cosmic Microwave Background in Mollweide projection. Colors show tiny temperature fluctuations: blue regions are slightly cooler, red/orange regions slightly warmer than the 2.725 K average."
+    credit: "ESA/Planck Collaboration"
+    module: 1
 
   # ==============================================================
   # Lecture 03: Gravity and Orbits (cococubed diagrams)
@@ -685,17 +685,17 @@ figures:
 
   # Scattering and Telescopes (Lecture 04 expansion)
   rayleigh-scattering-sky:
-    path: /assets/images/module-01/week-03/rayleigh-scattering-sky.svg
+    path: /assets/images/module-01/week-03/rayleigh-scattering-gemini.png
     caption: "**What to notice:** Rayleigh scattering explains both the blue sky (scattered short wavelengths) and red sunsets (transmitted long wavelengths). Same physics, different viewing geometry."
     alt: "Diagram showing sunlight entering atmosphere. Blue light (short wavelength) scatters in all directions while red light (long wavelength) passes through more directly. Viewer looking up sees scattered blue; viewer at sunset sees transmitted red."
-    credit: "Illustration: A. Rosen (SVG)"
+    credit: "Gemini"
     module: 1
 
   atmospheric-transmission-windows:
-    path: /assets/images/module-01/week-03/atmospheric-transmission-windows.svg
-    caption: "**What to notice:** Earth’s atmosphere is transparent in the visible and parts of the radio, but blocks most ultraviolet, X-rays, and gamma rays. “What wavelength?” determines whether you need a space telescope."
-    alt: "Schematic spectrum strip showing wavelength bands (gamma, X-ray, UV, visible, IR, radio) with an overlaid transmission bar: visible mostly transmitted, radio mostly transmitted, IR partially transmitted, UV mostly blocked, X-ray and gamma blocked."
-    credit: "Illustration: A. Rosen (SVG)"
+    path: /assets/images/module-01/week-03/EMS_Diagram_NASA.jpg
+    caption: "**What to notice:** Earth's atmosphere has two main 'windows' — radio and optical — where it's transparent. Most UV, X-rays, and gamma rays are blocked, which is why we need space telescopes for those wavelengths."
+    alt: "Electromagnetic spectrum diagram showing wavelength (10² m to 10⁻¹² m) and frequency (10⁴ Hz to 10²² Hz) scales against a landscape backdrop. A gray transmission curve shows atmosphere is opaque at most wavelengths but transparent in the 'Radio Window' and 'Optical Window'. Familiar objects illustrate each band: AM/FM radio towers, cell phones, microwave ovens, human body (infrared), visible light through a prism, sunburn (UV), medical X-rays, and nuclear power (gamma rays)."
+    credit: "NASA"
     module: 1
 
   telescope-collecting-area:
