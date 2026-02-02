@@ -50,6 +50,30 @@ photon-energy:
   include: "_includes/equations/photon-energy.qmd"
   card: "photon_energy"
 
+bohr-energy:
+  title: "Hydrogen energy levels (Bohr model)"
+  anchor: "eq-bohr-energy"
+  include: "_includes/equations/bohr-energy.qmd"
+  card: "bohr_energy"
+
+rayleigh-scattering:
+  title: "Rayleigh scattering (wavelength dependence)"
+  anchor: "eq-rayleigh-scattering"
+  include: "_includes/equations/rayleigh-scattering.qmd"
+  card: "rayleigh_scattering"
+
+telescope-resolution:
+  title: "Diffraction-limited angular resolution"
+  anchor: "eq-telescope-resolution"
+  include: "_includes/equations/telescope-resolution.qmd"
+  card: "telescope_resolution"
+
+collecting-area:
+  title: "Telescope collecting area"
+  anchor: "eq-collecting-area"
+  include: "_includes/equations/collecting-area.qmd"
+  card: "collecting_area"
+
 wien-displacement:
   title: "Wien's displacement law"
   anchor: "eq-wien-displacement"

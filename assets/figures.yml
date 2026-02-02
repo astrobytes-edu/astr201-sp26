@@ -682,3 +682,22 @@ figures:
     alt: "Graph showing reflectance vs wavelength (400-2400 nm) for snow (high, flat), vegetation (red edge jump at 700 nm), dry soil (rising toward IR), and water (absorbs in IR). Each material has distinct spectral signature."
     credit: "JWST Education"
     module: 1
+
+  # Scattering and Telescopes (Lecture 04 expansion)
+  rayleigh-scattering-sky:
+    path: /assets/images/module-01/week-03/rayleigh-scattering-sky.png
+    caption: "**What to notice:** Rayleigh scattering explains both the blue sky (scattered short wavelengths) and red sunsets (transmitted long wavelengths). Same physics, different viewing geometry."
+    alt: "Diagram showing sunlight entering atmosphere. Blue light (short wavelength) scatters in all directions while red light (long wavelength) passes through more directly. Viewer looking up sees scattered blue; viewer at sunset sees transmitted red."
+    module: 1
+
+  telescope-collecting-area:
+    path: /assets/images/module-01/week-03/telescope-collecting-area.png
+    caption: "**What to notice:** Collecting area scales as diameter squared. A telescope twice as wide collects four times as much light."
+    alt: "Two telescopes: small diameter D collects few photons (shown as dots), large diameter 2D collects four times as many photons. Caption shows Area ∝ D²."
+    module: 1
+
+  telescope-resolution:
+    path: /assets/images/module-01/week-03/telescope-resolution.png
+    caption: "**What to notice:** Angular resolution improves with larger diameter. The diffraction limit θ ≈ λ/D sets the finest detail a telescope can distinguish."
+    alt: "Two images of binary star: small telescope shows blurry single blob, large telescope resolves two distinct stars. Equation θ ∝ λ/D shown."
+    module: 1

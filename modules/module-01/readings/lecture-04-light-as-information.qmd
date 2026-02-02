@@ -3,19 +3,26 @@ title: "Lecture 4: Light as Information"
 subtitle: "How Photons Encode the Universe"
 author: "Dr. Anna Rosen"
 date: "2026-02-03"
-description: "Everything we know about the cosmos comes from light. By understanding how light behaves — how it's emitted and what wavelengths dominate — we can infer temperature without ever touching a star."
+description: "Everything we know about the cosmos comes from light. By understanding how light is emitted, absorbed, scattered, and collected by telescopes, we can infer temperature, composition, and more without ever touching a star."
 draft: false
-categories: [light, blackbody, thermal-radiation, electromagnetic-spectrum]
+categories: [light, blackbody, thermal-radiation, electromagnetic-spectrum, scattering, spectroscopy, telescopes]
 course: ASTR 201
 module: "1 - Foundations"
 learning-objectives:
   - Describe the electromagnetic spectrum and relate wavelength, frequency, and photon energy
+  - Identify the five ways light can interact with matter and give astronomical examples
+  - Explain Rayleigh scattering qualitatively and why it favors short wavelengths
   - Explain what a blackbody is and interpret the Planck spectrum qualitatively
   - Identify limiting cases of the Planck function (Rayleigh-Jeans, Wien tail)
   - Use Wien's law to estimate temperature from peak wavelength
+  - Distinguish continuous, absorption, and emission spectra using Kirchhoff’s laws
+  - Apply telescope scaling relations for collecting area and angular resolution
 Concept-Throughline:
   - Light is a messenger that carries encoded physics
-  - Blackbody radiation connects temperature to observable color
+  - Light-matter interactions (absorption/emission/scattering) encode information
+  - Blackbody radiation connects temperature to observable color and spectrum shape
+  - Atomic energy levels create spectral lines — a quantitative “fingerprint”
+  - Telescopes extend inference by collecting more photons and resolving finer detail
   - Limiting cases make complex equations tractable
   - This is the foundation for all light-based astronomical inference
 math-level: symbolic_with_interpretation
@@ -28,9 +35,13 @@ prerequisites: Basic algebra, scientific notation, familiarity with wavelength/f
 After completing this reading, you should be able to:
 
 1. Describe the **electromagnetic spectrum** and relate wavelength, frequency, and photon energy
-2. Explain what a **blackbody** is and interpret the Planck spectrum qualitatively
-3. Identify **limiting cases** of the Planck function (Rayleigh-Jeans, Wien tail)
-4. Use **Wien's law** to estimate temperature from peak wavelength
+2. Identify the five ways light can interact with matter and give astronomical examples
+3. Explain **Rayleigh scattering** qualitatively (blue skies, red sunsets)
+4. Explain what a **blackbody** is and interpret the Planck spectrum qualitatively
+5. Identify **limiting cases** of the Planck function (Rayleigh-Jeans, Wien tail)
+6. Use **Wien's law** to estimate temperature from peak wavelength
+7. Distinguish **continuous, absorption, and emission spectra** (Kirchhoff’s laws)
+8. Apply telescope scaling relations for collecting area ($\\propto D^2$) and angular resolution ($\\propto \\lambda/D$)
 
 ## Concept Throughline
 
@@ -153,13 +164,118 @@ The shorter-wavelength (bluer) photon is more energetic. This is why UV light ca
 
 ---
 
-## Part 3: Blackbody Radiation
+## Part 3: How Light Interacts with Matter {#part-how-light-interacts}
+
+So far, we’ve treated light as something that simply travels through space. But the reason light carries *information* is that it doesn’t just travel — it interacts.
+
+When a photon encounters matter, it can do exactly five things: be **absorbed**, be **emitted**, be **transmitted** (pass through), be **reflected** (bounce), or be **refracted** (bend). Every spectrum you will ever interpret is some combination of these behaviors.
+
+### The Five Behaviors of Light
+
+#### Absorption
+
+When a photon is absorbed, it is destroyed and its energy goes into the material — often as heat, or by exciting an electron to a higher energy level.
+
+Absorption is selective: materials absorb some wavelengths more strongly than others. That selectivity is what turns a smooth spectrum into a spectrum with informative “missing” wavelengths.
+
+#### Emission
+
+Emission is absorption’s partner. When matter loses energy, it can create a new photon and send it out into space.
+
+The important point is not “hot things glow” (though they do), but **what sets the photon’s wavelength**: the photon energy must match the energy the material is losing. This is why atoms produce spectral lines at specific wavelengths.
+
+#### Transmission
+
+Transmission happens when light passes through material without being absorbed. Glass transmits visible light but absorbs much of the ultraviolet; Earth’s atmosphere transmits visible and parts of the radio, but absorbs most X-rays.
+
+Transmission windows determine what can reach your detector — and when you need a telescope in space.
+
+#### Reflection
+
+Reflection is light bouncing off a surface. Planets are visible in reflected starlight, and the fraction reflected (the **albedo**) encodes information about surface composition and texture.
+
+#### Refraction
+
+Refraction is bending when light moves from one medium to another (air → glass, for example). Lenses focus light by refraction. Earth’s atmosphere also refracts starlight, and turbulent refraction is part of why stars appear to “twinkle.”
+
+Refraction is wavelength-dependent: blue light bends slightly more than red. This is why prisms spread white light into a spectrum.
+
+{{< fig light-matter-behaviors >}}
+
+---
+
+### Scattering: Blue Skies and Red Sunsets {#sec-rayleigh}
+
+Scattering is what happens when light is redirected into new directions. When the particles doing the scattering are much smaller than the wavelength of the light (like air molecules), we get **Rayleigh scattering**.
+
+{{< include ../../../_includes/equations/rayleigh-scattering.qmd >}}
+{{< eqrefcard rayleigh-scattering >}}
+
+The $\lambda^{-4}$ dependence is steep. Blue light ($\\lambda \\approx 450\\ \\text{nm}$) scatters about $(650/450)^4 \\approx 4$ times more than red light ($\\lambda \\approx 650\\ \\text{nm}$).
+
+#### Why the Sky Is Blue
+
+Sunlight enters the atmosphere and encounters countless N$_2$ and O$_2$ molecules. Short wavelengths scatter strongly in all directions, so when you look up *away from the Sun*, much of what you’re seeing is scattered blue light coming toward you from all over the sky.
+
+#### Why Sunsets Are Red
+
+At sunset, sunlight travels through much more atmosphere before reaching your eyes. Along that long path, the blue light is preferentially scattered *out* of the direct beam. The light that continues forward is therefore redder.
+
+Same physics, different geometry: at noon the path is short and you see a white Sun plus a blue sky; at sunset the path is long and you see a red Sun plus enhanced reds/oranges in the transmitted light.
+
+{{< fig rayleigh-scattering-sky >}}
+
+::: {.callout-note title="Twinkling isn’t scattering"}
+Twinkling (scintillation) is caused mainly by **turbulent refraction** in Earth’s atmosphere, not Rayleigh scattering. Different pockets of air act like weak, shifting lenses that rapidly bend starlight.
+
+**Why don’t planets twinkle as much?** Planets are tiny disks, not perfect point sources. The random bending averages out across the disk.
+:::
+
+::: {.callout-note title="Interstellar reddening"}
+Dust between stars can also remove blue light more efficiently than red light. The result is that distant stars can appear redder than they truly are. Correcting for this effect is part of doing precision astronomy.
+:::
+
+---
+
+### Opacity and “How Far Light Gets” (Preview) {#sec-opacity-preview}
+
+In astronomy, we often care less about “what is an object made of?” and more about “how far can photons travel before they get absorbed or scattered?”
+
+That idea is captured by **opacity**: how strongly matter blocks light at a particular wavelength. Opacity is usually highly wavelength-dependent. A cloud of gas might be transparent in the optical but opaque in the ultraviolet; a dust cloud might block visible light but transmit infrared.
+
+In Module 2, we’ll use this to understand a key idea: **we only see to the depth where the material becomes optically thick.** For a star, that boundary is the photosphere — the place where photons last scattered before escaping to space.
+
+---
+
+## Check Yourself: Light and Matter
+
+::: {.callout-tip title="Quick Check" collapse="true"}
+**Question:** Why is the daytime sky blue, but the setting Sun looks red?
+
+**Answer:** Rayleigh scattering is stronger at short wavelengths. In the daytime sky you’re seeing scattered blue light from all directions. At sunset the sunlight travels through a longer path, so much of the blue is scattered out of the direct beam and the transmitted light that reaches you is redder.
+:::
+
+::: {.callout-tip title="Quick Check" collapse="true"}
+**Question:** If Earth’s atmosphere were twice as thick, would sunsets be redder or less red?
+
+**Answer:** Redder. A longer/denser path means more scattering removes more blue light from the direct beam.
+:::
+
+::: {.callout-tip title="Quick Check" collapse="true"}
+**Question:** You observe two identical stars — one nearby, one far away behind interstellar dust. Which appears redder?
+
+**Answer:** The distant star behind the dust. Dust removes/scatters short wavelengths more efficiently, so the transmitted light is redder.
+:::
+
+---
+
+## Part 4: Blackbody Radiation
 
 ### What Is a Blackbody?
 
 A **blackbody** is an idealized object that absorbs all electromagnetic radiation that falls on it — no reflection, no transmission. When heated, a blackbody re-emits radiation with a spectrum that depends *only* on its temperature.
 
-{{< fig light-matter-behaviors >}}
+In the language of Part 3, a blackbody is the “absorption extreme”: no reflection, no transmission — just absorption and thermal emission.
 
 The name "blackbody" is somewhat misleading. A cold blackbody would indeed appear black (it absorbs everything and emits very little). But a *hot* blackbody glows — the hotter it is, the brighter and bluer it glows.
 
@@ -325,7 +441,7 @@ But remember: this limit only applies at long wavelengths where $hc/\lambda \ll 
 
 ---
 
-## Part 4: Wien's Displacement Law
+## Part 5: Wien's Displacement Law
 
 ### The Peak Wavelength
 
@@ -462,7 +578,86 @@ The CMB is the most perfect blackbody ever measured. Deviations from a perfect P
 
 ---
 
-## Part 5: Real Stellar Spectra
+## Part 6: Atoms and Spectral Lines {#part-atoms-spectral-lines}
+
+The Sun’s spectrum isn’t a smooth rainbow — it’s crossed by hundreds of dark lines. Those **absorption lines** are not imperfections; they are information. Each line is a clue about the atoms the light passed through on its way out of the star.
+
+To understand why those lines appear at specific wavelengths, we need one key idea: **atoms have quantized energy levels.**
+
+### The Bohr Model (Hydrogen as a First Example)
+
+Modern quantum mechanics is deeper than the Bohr model, but the Bohr model gets the essential story right — and it gives correct energies for hydrogen.
+
+In this model, the electron in hydrogen can only occupy discrete energy levels labeled by an integer $n = 1, 2, 3, \\dots$.
+
+{{< fig hydrogen-absorption >}}
+
+For hydrogen, the approximate energy of level $n$ is:
+
+{{< include ../../../_includes/equations/bohr-energy.qmd >}}
+{{< eqrefcard bohr-energy >}}
+
+The ground state ($n=1$) is the most tightly bound. Higher $n$ levels have energies closer to zero, meaning the electron is less tightly bound and easier to ionize.
+
+### Photon Absorption and Emission
+
+When an electron changes energy levels, the atom must absorb or emit a photon whose energy matches the energy difference:
+
+$$\\Delta E = E_{\\text{upper}} - E_{\\text{lower}} = h\\nu = \\frac{hc}{\\lambda}.$$
+
+{{< include ../../../_includes/equations/photon-energy.qmd >}}
+{{< eqrefcard photon-energy >}}
+
+An **absorption line** happens when photons of a particular energy are removed from a beam because electrons jump *up* to higher levels. An **emission line** happens when a thin gas produces photons at specific energies because electrons fall *down* to lower levels.
+
+{{< fig hydrogen-emission >}}
+
+### Kirchhoff’s Laws: Three Types of Spectra
+
+Kirchhoff recognized that there are three basic spectrum “shapes,” and each corresponds to a different physical situation:
+
+{{< fig three-types-of-spectra >}}
+
+1. **Continuous spectrum:** hot, dense matter (a blackbody-like source).
+2. **Absorption spectrum:** cool gas in front of a hot continuous source.
+3. **Emission spectrum:** hot, thin gas with no bright background.
+
+The remarkable thing is that the same atoms are involved in both absorption and emission — what changes is the density/temperature structure and whether there is a bright continuum behind the gas.
+
+### What Spectral Lines Can Tell You (Preview)
+
+Spectral lines let us infer far more than composition. In Module 2 we’ll build on this to read additional information from spectra:
+
+- **Composition:** which elements are present (each has a unique pattern of lines)
+- **Temperature:** which transitions are populated (line strengths and ratios)
+- **Velocity:** Doppler shifts (lines move slightly blueward/redward)
+- **Density/pressure:** line widths and which lines can form
+
+---
+
+## Check Yourself: Atoms and Spectra
+
+::: {.callout-tip title="Quick Check" collapse="true"}
+**Question:** Why do absorption lines occur at *specific* wavelengths instead of at all wavelengths?
+
+**Answer:** Because electrons in atoms can only change energy by specific allowed amounts. A photon can only be absorbed if its energy matches one of those allowed energy differences.
+:::
+
+::: {.callout-tip title="Quick Check" collapse="true"}
+**Question:** You observe a nebula that glows strongly red. Which spectrum type is this likely to be?
+
+**Answer:** An **emission spectrum** from hot, thin gas. A common red emission line in many nebulae is hydrogen’s H$\\alpha$ (a Balmer-series transition).
+:::
+
+::: {.callout-tip title="Quick Check" collapse="true"}
+**Question:** In an absorption spectrum, where must the absorbing gas be located relative to the bright source?
+
+**Answer:** The absorbing gas must be **in front of** the bright continuous source (along the line of sight), so it can remove specific wavelengths from the light that reaches you.
+:::
+
+---
+
+## Part 7: Real Stellar Spectra
 
 ### Beyond the Ideal Blackbody
 
@@ -478,7 +673,7 @@ The figure shows the spectrum of Altair, a nearby A-type star. The smooth curve 
 **Two inference tools in one observation:**
 
 - The curve shape → temperature (Wien's law)
-- The line positions → composition (spectroscopy, coming in Week 5)
+- The line positions → composition (spectroscopy)
 
 {{< fig continuous-vs-line-spectrum >}}
 
@@ -486,23 +681,87 @@ Notice the difference between the Sun's spectrum (approximately continuous, like
 
 ---
 
-## Part 6: Synthesis — The Observable → Model → Inference Chain
+## Part 8: Telescopes as Light Buckets {#part-telescopes}
+
+Astronomical objects are far away and often faint. Telescopes extend our reach in two distinct ways: they collect **more photons** and they can resolve **finer detail**.
+
+### Collecting Area: Why Bigger Is Better
+
+The simplest telescope question is: how much light do you collect? For a circular aperture, the collecting area is
+
+{{< include ../../../_includes/equations/collecting-area.qmd >}}
+{{< eqrefcard collecting-area >}}
+
+::: {.callout-note title="Figure placeholder"}
+The next figure is currently a placeholder image. It should depict two apertures (diameter $D$ and $2D$) with photon dots showing that the $2D$ telescope collects 4× as many photons.
+:::
+
+{{< fig telescope-collecting-area >}}
+
+### Angular Resolution: Why Bigger Is Sharper
+
+Even if you collect lots of light, you can’t see detail smaller than your telescope’s angular resolution. Diffraction sets a fundamental limit:
+
+{{< include ../../../_includes/equations/telescope-resolution.qmd >}}
+{{< eqrefcard telescope-resolution >}}
+
+::: {.callout-note title="Figure placeholder"}
+The next figure is currently a placeholder image. It should compare a small-aperture blurry point-spread function to a larger-aperture sharper one (e.g., a binary star unresolved vs. resolved), labeled with $\\theta \\propto \\lambda/D$.
+:::
+
+{{< fig telescope-resolution >}}
+
+### The Atmosphere Limit (and How We Beat It)
+
+Ground-based optical telescopes often fail to reach the diffraction limit because atmospheric turbulence blurs images (this is called **seeing**). Adaptive optics can correct some of that blur in real time, and space telescopes avoid the atmosphere entirely.
+
+### Mirrors vs. Lenses (Brief)
+
+Large modern telescopes are reflectors, not refractors. Mirrors can be supported from behind (and even segmented), making very large apertures practical. Lenses must be supported at the edges and suffer from chromatic aberration, so extremely large refracting telescopes are not feasible.
+
+---
+
+## Check Yourself: Telescopes
+
+::: {.callout-tip title="Quick Check" collapse="true"}
+**Question:** A telescope with a 4 m mirror is replaced by one with an 8 m mirror. By what factor does the collecting area increase?
+
+**Answer:** Collecting area scales as $D^2$, so the ratio is $(8/4)^2 = 4$. The new telescope collects **4×** as many photons.
+:::
+
+::: {.callout-tip title="Quick Check" collapse="true"}
+**Question:** The Hubble Space Telescope has $D = 2.4$ m and observes at $\\lambda = 500$ nm. Estimate its diffraction-limited angular resolution.
+
+**Answer:** $\\theta \\approx \\lambda/D \\approx (500\\times10^{-9}\\ \\text{m})/(2.4\\ \\text{m}) \\approx 2\\times10^{-7}$ rad. Converting using $206{,}265$ arcsec per rad gives $\\theta \\approx 0.04$ arcsec (order of magnitude).
+:::
+
+::: {.callout-tip title="Quick Check" collapse="true"}
+**Question:** Why can’t we build a 50 m optical telescope using a single glass lens?
+
+**Answer:** A lens that large would be extremely heavy and must be supported only at its edge, so it would sag and distort. Large mirrors can be supported from behind and can be made thin or segmented, so large reflectors are practical while large refractors are not.
+:::
+
+---
+
+## Part 9: Synthesis — The Observable → Model → Inference Chain
 
 ### Putting It Together
 
-We've built the first tool in our astronomical inference toolkit: **using color to measure temperature**.
+We’ve followed the photon’s story from start to finish: how it’s produced, how it interacts, what it tells us, and how we catch it.
 
 | We Measure | We Use | We Infer |
 |------------|--------|----------|
 | Peak wavelength (color) | Wien's law: $\lambda_{\text{peak}} = b/T$ | Surface temperature |
 | Spectrum shape | Planck function | Confirmation of thermal emission |
-| Photon energy | $E = hc/\lambda$ | Energy per photon at each wavelength |
+| Scattering behavior | Rayleigh: $\sigma \propto \lambda^{-4}$ | Why short wavelengths scatter more (and when reddening matters) |
+| Line pattern and type | Kirchhoff’s laws + atomic transitions | Composition and physical conditions (gas vs. continuum) |
+| Aperture diameter | $A \propto D^2$ and $\theta \propto \lambda/D$ | How faint you can see and how sharp you can see |
 
 ### Preview: What's Coming
 
-**Week 4 (Distance):** We'll learn to measure *distance* — using parallax, standard candles, and the inverse square law. Once we know distance and apparent brightness, we can infer *luminosity* (intrinsic power output).
+**Week 4 (Distance):** We’ll learn to measure *distance* — using parallax, standard candles, and the inverse-square relation. Once we know distance and apparent brightness, we can infer *luminosity* (intrinsic power output).
 
-**Week 5 (Stefan-Boltzmann + Spectroscopy):** We'll return to blackbody physics to derive the Stefan-Boltzmann law: $L = 4\pi R^2 \sigma T^4$. Combined with Wien's law, this lets us calculate stellar *radii* from temperature and luminosity. We'll also introduce spectral lines — the "quantum barcode" that reveals composition.
+**Week 5 and beyond (Stars as inference problems):** We’ll return to blackbody physics to connect temperature, luminosity, and radius (Stefan–Boltzmann), and we’ll deepen spectroscopy: what line strengths and line shifts reveal about a star’s atmosphere and motion.
 
 Each week, the inference chain grows longer. By the end of Module 2, you'll be able to characterize a star — temperature, luminosity, radius, and eventually mass — all from the light it sends us.
 
@@ -516,7 +775,11 @@ Each week, the inference chain grows longer. By the end of Module 2, you'll be a
 |----------|----------|-------------------|
 | Wave relation | $c = \lambda \nu$ | Wavelength and frequency are inversely related |
 | Photon energy | $E = h\nu = hc/\lambda$ | Short wavelength = high energy |
+| Rayleigh scattering | $\sigma \propto \lambda^{-4}$ | Short wavelengths scatter much more strongly |
 | Wien's law | $\lambda_{\text{peak}} = b/T$ | Peak wavelength encodes temperature |
+| Bohr levels (H) | $E_n = -13.6\ \text{eV}/n^2$ | Atomic energies are quantized (line energies are differences) |
+| Collecting area | $A = \pi(D/2)^2$ | Light-gathering power scales as $D^2$ |
+| Diffraction limit | $\theta \approx \lambda/D$ | Angular resolution improves with larger $D$ and smaller $\lambda$ |
 | Wien's constant | $b = 2.898 \times 10^{-3}$ m·K | Memorize this (or know where to find it) |
 
 ### Physical Constants
@@ -540,30 +803,6 @@ Each week, the inference chain grows longer. By the end of Module 2, you'll be a
 | Sun (G dwarf) | 5800 K | 500 nm | Visible (green-yellow) |
 | A star (Sirius) | 10000 K | 290 nm | Near-UV |
 | O star | 40000 K | 72 nm | Far-UV |
-
----
-
-## Summary: Light as Information
-
-We've built the first tool in our astronomical inference toolkit: **using color to measure temperature**.
-
-1. **The electromagnetic spectrum** spans from radio to gamma rays, with each wavelength revealing different physics. Photon energy $E = hc/\lambda$ means short wavelengths carry more energy.
-
-2. **Blackbodies** are idealized thermal emitters whose spectrum depends only on temperature. Stars approximate blackbodies, making blackbody physics directly applicable to stellar astrophysics.
-
-3. **The Planck function** describes the blackbody spectrum. Complex as it looks, its limiting cases are simple: Rayleigh-Jeans ($B_\lambda \propto T/\lambda^4$) at long wavelengths, exponential cutoff at short wavelengths.
-
-4. **Wien's law** ($\lambda_{\text{peak}} = b/T$) lets us convert color to temperature. Hot stars are blue; cool stars are red. This works from 3000 K (red dwarfs) to 40000 K (O-type stars) to 2.7 K (the cosmic microwave background).
-
-::: {.callout-tip}
-## Looking Ahead
-
-We can now infer temperature from color. But that's only part of the picture. In **Week 4**, we'll learn to measure **distance** — and then combine distance with brightness to infer **luminosity** (intrinsic power output).
-
-In **Week 5**, we'll return to blackbody physics to derive the **Stefan-Boltzmann law**: $L = 4\pi R^2 \sigma T^4$. Combined with Wien's law, this lets us calculate stellar radii from temperature and luminosity.
-
-Each week, the inference chain grows longer. By the end of Module 2, you'll be able to characterize a star — temperature, luminosity, radius, and eventually mass — all from the light it sends us.
-:::
 
 ---
 

@@ -1,0 +1,3 @@
+$$
+\\theta_{\\min} \\approx \\frac{\\lambda}{D}
+$$ {#eq-telescope-resolution}

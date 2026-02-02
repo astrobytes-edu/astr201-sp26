@@ -1,0 +1,3 @@
+$$
+\\sigma_{\\mathrm{Rayleigh}} \\propto \\lambda^{-4}
+$$ {#eq-rayleigh-scattering}

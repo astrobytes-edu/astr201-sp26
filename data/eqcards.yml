@@ -71,6 +71,38 @@ photon_energy:
     - "Each photon carries energy proportional to its frequency"
     - "This is a quantum mechanical result—classical physics cannot predict it"
 
+bohr_energy:
+  predicts: "Given principal quantum number $n$, it predicts the (approximate) bound-state energy $E_n$ for hydrogen."
+  depends: "Scales as $E_n \\propto -1/n^2$."
+  says: "Hydrogen’s electron energies are quantized: only discrete levels are allowed. Higher $n$ means less tightly bound (energy closer to 0)."
+  assumptions:
+    - "Hydrogen atom (one electron, one proton)"
+    - "Bohr model approximation (non-relativistic; ignores fine structure/spin)"
+    - "Energies are commonly reported in eV (conversion: $1\\ \\text{eV} \\approx 1.6\\times10^{-12}\\ \\text{erg}$)"
+
+rayleigh_scattering:
+  predicts: "How the strength of scattering depends on wavelength for particles much smaller than the wavelength."
+  depends: "Scales as $\\sigma \\propto \\lambda^{-4}$."
+  says: "Short wavelengths scatter much more strongly than long wavelengths, which is why blue light is scattered more than red light."
+  assumptions:
+    - "Particle size $\\ll \\lambda$ (Rayleigh regime)"
+    - "Elastic scattering (photon energy unchanged)"
+
+telescope_resolution:
+  predicts: "The smallest angular separation $\\theta_{\\min}$ a telescope can resolve (diffraction limit)."
+  depends: "Depends on wavelength $\\lambda$ and aperture diameter $D$; scales as $\\theta_{\\min} \\propto \\lambda/D$."
+  says: "Bigger apertures resolve finer detail; shorter wavelengths resolve finer detail. Use radians when $\\lambda$ and $D$ use the same length units."
+  assumptions:
+    - "Diffraction-limited optics (no atmospheric seeing)"
+    - "Order-of-magnitude form for a circular aperture"
+
+collecting_area:
+  predicts: "How much light a telescope can gather via its geometric collecting area $A$."
+  depends: "Scales as $A \\propto D^2$ for a circular aperture."
+  says: "Doubling diameter gives 4× collecting area, which improves photon counts and signal-to-noise for faint objects."
+  assumptions:
+    - "Circular aperture; ignores central obstruction and throughput losses"
+
 wien_displacement:
   predicts: "Given temperature $T$, it predicts the peak wavelength $\\lambda_{\\text{peak}}$ of thermal emission."
   depends: "$\\lambda_{\\text{peak}} \\propto T^{-1}$."
