@@ -10,7 +10,7 @@ course: ASTR 201
 module: "1 - Foundations"
 learning-objectives:
   - Describe the electromagnetic spectrum and relate wavelength, frequency, and photon energy
-  - Identify the five ways light can interact with matter and give astronomical examples
+  - Identify the key ways light interacts with matter (absorption, emission, transmission, reflection, refraction, and scattering) and give astronomical examples
   - Explain Rayleigh scattering qualitatively and why it favors short wavelengths
   - Explain what a blackbody is and interpret the Planck spectrum qualitatively
   - Identify limiting cases of the Planck function (Rayleigh-Jeans, Wien tail)
@@ -35,7 +35,7 @@ prerequisites: Basic algebra, scientific notation, familiarity with wavelength/f
 After completing this reading, you should be able to:
 
 1. Describe the **electromagnetic spectrum** and relate wavelength, frequency, and photon energy
-2. Identify the five ways light can interact with matter and give astronomical examples
+2. Identify the key ways light interacts with matter (absorption, emission, transmission, reflection, refraction, and scattering) and give astronomical examples
 3. Explain **Rayleigh scattering** qualitatively (blue skies, red sunsets)
 4. Explain what a **blackbody** is and interpret the Planck spectrum qualitatively
 5. Identify **limiting cases** of the Planck function (Rayleigh-Jeans, Wien tail)
@@ -172,7 +172,9 @@ So far, we’ve treated light as something that simply travels through space. Bu
 
 When light meets matter, the **fundamental interactions** are absorption, emission, and scattering. When you zoom out to what happens to a *beam* at a boundary, we describe the outcomes as transmission (it gets through), reflection (it bounces), and refraction (it bends). Every spectrum you will ever interpret is some combination of these processes.
 
-### The Five Behaviors of Light
+### Five Macroscopic Outcomes (Plus Scattering)
+
+We’ll list five common outcomes (absorption, emission, transmission, reflection, refraction) and then treat scattering separately because it is a major astrophysical effect with a distinctive wavelength dependence.
 
 #### Absorption
 
@@ -362,12 +364,12 @@ This looks intimidating. **Don't panic.** Let's break it down piece by piece:
 From here on I’m using cgs units (erg, cm), which are still common in astrophysics. The physics is identical; only the unit choices change.
 :::
 
-| Symbol | Meaning | Value/Units |
-|--------|---------|-------------|
+| Symbol | Meaning | Value / Units |
+|---|---|---|
 | $B_\lambda(T)$ | Spectral radiance at wavelength $\lambda$ and temperature $T$ | erg s$^{-1}$ cm$^{-2}$ sr$^{-1}$ cm$^{-1}$ |
-| $h$ | Planck's constant | $6.626 \times 10^{-27}$ erg·s |
+| $h$ | Planck’s constant | $6.626 \times 10^{-27}$ erg·s |
 | $c$ | Speed of light | $2.998 \times 10^{10}$ cm/s |
-| $k_B$ | Boltzmann's constant | $1.38 \times 10^{-16}$ erg/K |
+| $k_B$ | Boltzmann’s constant | $1.38 \times 10^{-16}$ erg/K |
 | $\lambda$ | Wavelength | cm |
 | $T$ | Temperature | K |
 
@@ -426,9 +428,9 @@ $$B_\lambda \approx \frac{2hc^2}{\lambda^5} e^{-hc/\lambda k_B T}$$
 The exponential cuts off emission at short wavelengths — this is the quantum suppression that prevents the ultraviolet catastrophe. You can't emit photons whose energy exceeds the thermal energy available.
 
 | Regime | Condition | Behavior | Physical reason |
-|--------|-----------|----------|-----------------|
-| Long $\lambda$ | $hc/\lambda \ll k_B T$ | $B_\lambda \propto T/\lambda^4$ | Classical physics works; photons are "cheap" |
-| Short $\lambda$ | $hc/\lambda \gg k_B T$ | $B_\lambda \to 0$ exponentially | Quantum suppression; photons are "expensive" |
+|---|---|---|---|
+| Long $\lambda$ | $hc/\lambda \ll k_B T$ | $B_\lambda \propto T/\lambda^4$ | Classical physics works; photons are “cheap” |
+| Short $\lambda$ | $hc/\lambda \gg k_B T$ | $B_\lambda \to 0$ exponentially | Quantum suppression; photons are “expensive” |
 
 ::: {.callout-tip}
 ## Check Yourself
@@ -738,9 +740,9 @@ Large modern telescopes are reflectors, not refractors. Mirrors can be supported
 ## Check Yourself: Telescopes
 
 ::: {.callout-tip title="Quick Check" collapse="true"}
-**Question:** A telescope with a 4 m mirror (400 cm) is replaced by one with an 8 m mirror (800 cm). By what factor does the collecting area increase?
+**Question:** A telescope with a 400 cm mirror is replaced by one with an 800 cm mirror. By what factor does the collecting area increase?
 
-**Answer:** Collecting area scales as $D^2$, so the ratio is $(8/4)^2 = 4$ (the unit choice doesn’t matter; in cgs, $4$ m $= 400$ cm and $8$ m $= 800$ cm). The new telescope collects **4×** as many photons.
+**Answer:** Collecting area scales as $D^2$, so the ratio is $(800/400)^2 = 4$. The new telescope collects **4×** as many photons.
 :::
 
 ::: {.callout-tip title="Quick Check" collapse="true"}
@@ -754,7 +756,7 @@ Converting using $206{,}265$ arcsec per rad gives $\\theta \\approx 0.04$ arcsec
 :::
 
 ::: {.callout-tip title="Quick Check" collapse="true"}
-**Question:** Why can’t we build a 50 m (5000 cm) optical telescope using a single glass lens?
+**Question:** Why can’t we build a 5000 cm optical telescope using a single glass lens?
 
 **Answer:** A lens that large would be extremely heavy and must be supported only at its edge, so it would sag and distort. Large mirrors can be supported from behind and can be made thin or segmented, so large reflectors are practical while large refractors are not.
 :::
@@ -767,13 +769,13 @@ Converting using $206{,}265$ arcsec per rad gives $\\theta \\approx 0.04$ arcsec
 
 We’ve followed the photon’s story from start to finish: how it’s produced, how it interacts, what it tells us, and how we catch it.
 
-| We Measure | We Use | We Infer |
-|------------|--------|----------|
-| Peak wavelength (color) | Wien's law: $\lambda_{\text{peak}} = b/T$ | Surface temperature |
-| Spectrum shape | Planck function | Confirmation of thermal emission |
-| Scattering behavior | Rayleigh: $\sigma \propto \lambda^{-4}$ | Why short wavelengths scatter more (and when reddening matters) |
-| Line pattern and type | Kirchhoff’s laws + atomic transitions | Composition and physical conditions (gas vs. continuum) |
-| Aperture diameter | $A \propto D^2$ and $\theta \propto \lambda/D$ | How faint you can see and how sharp you can see |
+| We measure | We use | We infer |
+|---|---|---|
+| Peak wavelength (color) | Wien’s law: $\lambda_{\text{peak}} = b/T$ | Surface temperature |
+| Spectrum shape | Planck function | Thermal emission mechanism |
+| Scattering behavior | Rayleigh: $\sigma \propto \lambda^{-4}$ | When/why reddening matters |
+| Line pattern and type | Kirchhoff’s laws + atomic transitions | Composition and physical conditions |
+| Aperture diameter | $A \propto D^2$, $\theta \propto \lambda/D$ | Faintness reach and sharpness |
 
 ### Preview: What's Coming
 
