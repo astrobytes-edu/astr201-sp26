@@ -81,6 +81,13 @@ These three quantities are related by the fundamental wave equation:
 
 $$c = \lambda \nu$$
 
+Let's unpack this equation:
+
+- **What it predicts:** The speed of a wave given its wavelength and frequency
+- **What it depends on:** $\lambda$ (wavelength) and $\nu$ (frequency)
+- **The story:** All EM waves travel at the same speed $c$ in vacuum; they differ only in how they trade off between wavelength and frequency
+- **Units check:** $[\text{cm/s}] = [\text{cm}][\text{s}^{-1}]$ ✓
+
 This means if you know any two, you can calculate the third. Since $c$ is constant, wavelength and frequency are inversely related: long wavelength means low frequency, short wavelength means high frequency.
 
 ### The Spectrum: From Radio to Gamma
@@ -114,7 +121,7 @@ where $h = 6.626 \times 10^{-34}$ J·s is **Planck's constant**.
 Let's unpack this equation:
 
 - **What it predicts:** The energy carried by a single photon
-- **What it depends on:** Either frequency ($\nu$) or wavelength ($\lambda$)—your choice, since they're related by $c = \lambda\nu$
+- **What it depends on:** Either frequency ($\nu$) or wavelength ($\lambda$) — your choice, since they're related by $c = \lambda\nu$
 - **The story:** Shorter wavelength = higher energy. This is why gamma rays can damage DNA while radio waves pass harmlessly through your body.
 - **Units check:** $[E] = [\text{J·s}][\text{s}^{-1}] = \text{J}$ ✓
 
@@ -179,7 +186,7 @@ The figure shows blackbody spectra (called **Planck curves**) at three different
 
 1. **The peak shifts to shorter wavelengths as temperature increases.** Hot objects peak in the blue/UV; cool objects peak in the red/infrared.
 
-2. **The total energy emitted increases dramatically with temperature.** The area under the curve (total power radiated) grows as $T^4$—we'll quantify this with the Stefan-Boltzmann law in Module 2.
+2. **The total energy emitted increases dramatically with temperature.** The area under the curve (total power radiated) grows as $T^4$ — we'll quantify this with the Stefan-Boltzmann law in Module 2.
 
 ---
 
@@ -205,7 +212,7 @@ $$B_\lambda \propto \frac{T}{\lambda^4}$$
 
 This works well at long wavelengths. But notice the problem: as $\lambda \to 0$, the intensity goes to infinity! Classical physics predicted that any warm object should emit infinite energy in the ultraviolet and beyond.
 
-This was called the **ultraviolet catastrophe**—a fundamental failure of classical physics. Ovens don't emit infinite UV radiation. Something was deeply wrong with the classical picture of how light and matter interact.
+This was called the **ultraviolet catastrophe** — a fundamental failure of classical physics. Ovens don't emit infinite UV radiation. Something was deeply wrong with the classical picture of how light and matter interact.
 
 ### Planck's Quantum Solution
 
@@ -229,12 +236,20 @@ This looks intimidating. **Don't panic.** Let's break it down piece by piece:
 
 | Symbol | Meaning | Value/Units |
 |--------|---------|-------------|
-| $B_\lambda(T)$ | Spectral radiance at wavelength $\lambda$ and temperature $T$ | W m$^{-2}$ sr$^{-1}$ m$^{-1}$ |
-| $h$ | Planck's constant | $6.626 \times 10^{-34}$ J·s |
-| $c$ | Speed of light | $3 \times 10^8$ m/s |
-| $k_B$ | Boltzmann's constant | $1.38 \times 10^{-23}$ J/K |
-| $\lambda$ | Wavelength | m |
+| $B_\lambda(T)$ | Spectral radiance at wavelength $\lambda$ and temperature $T$ | erg s$^{-1}$ cm$^{-2}$ sr$^{-1}$ cm$^{-1}$ |
+| $h$ | Planck's constant | $6.626 \times 10^{-27}$ erg·s |
+| $c$ | Speed of light | $3 \times 10^{10}$ cm/s |
+| $k_B$ | Boltzmann's constant | $1.38 \times 10^{-16}$ erg/K |
+| $\lambda$ | Wavelength | cm |
 | $T$ | Temperature | K |
+
+::: {.callout-note}
+## Unit Check: Planck Function
+
+$$[B_\lambda] = \frac{[\text{erg·s}][\text{cm/s}]^2}{[\text{cm}]^5} \cdot \frac{1}{[\text{dimensionless}]} = \frac{\text{erg·cm}^2/\text{s}}{\text{cm}^5} = \frac{\text{erg}}{\text{s·cm}^2\text{·sr·cm}}\ \checkmark$$
+
+The units are power per area per solid angle per wavelength interval — exactly what "spectral radiance" should be.
+:::
 
 **The structure:**
 
@@ -246,7 +261,7 @@ This looks intimidating. **Don't panic.** Let's break it down piece by piece:
 
 ### Limiting Cases: The Key to Taming Complex Equations
 
-The key to not being intimidated by complex equations is understanding their **limiting cases**—what happens when one term dominates.
+The key to not being intimidated by complex equations is understanding their **limiting cases** — what happens when one term dominates.
 
 ::: {.callout-tip}
 ## The Pattern: Limiting Cases
@@ -272,7 +287,7 @@ Substituting into the Planck function:
 
 $$B_\lambda \approx \frac{2hc^2}{\lambda^5} \cdot \frac{\lambda k_B T}{hc} = \frac{2ck_B T}{\lambda^4}$$
 
-This is the **Rayleigh-Jeans law**—classical physics works at long wavelengths because quantum effects are negligible when $h\nu \ll k_B T$.
+This is the **Rayleigh-Jeans law** — classical physics works at long wavelengths because quantum effects are negligible when $h\nu \ll k_B T$.
 
 **Case 2: Short wavelengths (Wien limit)**
 
@@ -438,11 +453,12 @@ An object at 2900 K would glow deep red — think of a hot coal or a very cool s
 
 $$T_{\text{CMB}} = \frac{2.898 \times 10^{-3}\ \text{m·K}}{1.1 \times 10^{-3}\ \text{m}} = 2.63\ \text{K} \approx 2.7\ \text{K}$$
 
-{{< fig cmb-map >}}
+<!-- TODO: Add CMB map image from ESA/Planck to assets/images/module-04/cmb-map.png -->
+<!-- {{< fig cmb-map >}} -->
 
 **Interpretation:** The CMB has a temperature of about 2.7 K — just 2.7 degrees above absolute zero. This is the temperature of the *universe itself*, left over from the hot early cosmos that has been cooling for 13.8 billion years as space expands.
 
-The CMB is the most perfect blackbody ever measured. Deviations from a perfect Planck curve are less than 1 part in 100,000—a stunning confirmation of Big Bang cosmology. We'll return to the CMB in Module 4 when we study cosmology.
+The CMB is the most perfect blackbody ever measured. Deviations from a perfect Planck curve are less than 1 part in 100,000 — a stunning confirmation of Big Bang cosmology. We'll return to the CMB in Module 4 when we study cosmology.
 
 ---
 
@@ -466,7 +482,7 @@ The figure shows the spectrum of Altair, a nearby A-type star. The smooth curve 
 
 {{< fig continuous-vs-line-spectrum >}}
 
-Notice the difference between the Sun's spectrum (approximately continuous, like a blackbody) and a fluorescent bulb (discrete emission lines). The spectrum shape tells you about the *emission mechanism*—thermal vs. non-thermal.
+Notice the difference between the Sun's spectrum (approximately continuous, like a blackbody) and a fluorescent bulb (discrete emission lines). The spectrum shape tells you about the *emission mechanism* — thermal vs. non-thermal.
 
 ---
 
@@ -484,7 +500,7 @@ We've built the first tool in our astronomical inference toolkit: **using color 
 
 ### Preview: What's Coming
 
-**Week 4 (Distance):** We'll learn to measure *distance*—using parallax, standard candles, and the inverse square law. Once we know distance and apparent brightness, we can infer *luminosity* (intrinsic power output).
+**Week 4 (Distance):** We'll learn to measure *distance* — using parallax, standard candles, and the inverse square law. Once we know distance and apparent brightness, we can infer *luminosity* (intrinsic power output).
 
 **Week 5 (Stefan-Boltzmann + Spectroscopy):** We'll return to blackbody physics to derive the Stefan-Boltzmann law: $L = 4\pi R^2 \sigma T^4$. Combined with Wien's law, this lets us calculate stellar *radii* from temperature and luminosity. We'll also introduce spectral lines — the "quantum barcode" that reveals composition.
 
@@ -542,7 +558,7 @@ We've built the first tool in our astronomical inference toolkit: **using color 
 ::: {.callout-tip}
 ## Looking Ahead
 
-We can now infer temperature from color. But that's only part of the picture. In **Week 4**, we'll learn to measure **distance**—and then combine distance with brightness to infer **luminosity** (intrinsic power output).
+We can now infer temperature from color. But that's only part of the picture. In **Week 4**, we'll learn to measure **distance** — and then combine distance with brightness to infer **luminosity** (intrinsic power output).
 
 In **Week 5**, we'll return to blackbody physics to derive the **Stefan-Boltzmann law**: $L = 4\pi R^2 \sigma T^4$. Combined with Wien's law, this lets us calculate stellar radii from temperature and luminosity.
 

@@ -44,6 +44,14 @@ Adversarial reviewer and refactor analyst. STEM Pedagogy and Astrophysics expert
 3. **Identify root cause** - don't guess
 4. **Fix ONE thing at a time** - no multi-fixes
 
+## Units Convention (NON-NEGOTIABLE)
+
+- **ALWAYS use CGS units** (cm, g, s, erg) for physics calculations
+- **Solar units**: $M_\odot$, $R_\odot$, $L_\odot$ for stellar quantities
+- **Astronomical units**: AU, pc, kpc, Mpc for distances
+- **NEVER use SI units** (meters, kg, Joules, Watts) — use CGS instead
+- Spectral radiance: erg s$^{-1}$ cm$^{-2}$ sr$^{-1}$ cm$^{-1}$ (NOT W m$^{-2}$ sr$^{-1}$ m$^{-1}$)
+
 ## Typography Conventions
 
 - **Emdashes:** Use spaces around emdashes: `x — y` not `x—y`
