@@ -41,7 +41,7 @@ After completing this reading, you should be able to:
 5. Identify **limiting cases** of the Planck function (Rayleigh-Jeans, Wien tail)
 6. Use **Wien's law** to estimate temperature from peak wavelength
 7. Distinguish **continuous, absorption, and emission spectra** (Kirchhoff’s laws)
-8. Apply telescope scaling relations for collecting area ($\\propto D^2$) and angular resolution ($\\propto \\lambda/D$)
+8. Apply telescope scaling relations for collecting area ($\propto D^2$) and angular resolution ($\propto \lambda/D$)
 
 ## Concept Throughline
 
@@ -219,7 +219,7 @@ Scattering is what happens when light is redirected into new directions. When th
 {{< include ../../../_includes/equations/rayleigh-scattering.qmd >}}
 {{< eqrefcard rayleigh-scattering >}}
 
-The $\lambda^{-4}$ dependence is steep. Blue light ($\\lambda \\approx 4500$ Å $= 4.5\\times10^{-5}$ cm) scatters about $(6500/4500)^4 \\approx 4$ times more than red light ($\\lambda \\approx 6500$ Å $= 6.5\\times10^{-5}$ cm).
+The $\lambda^{-4}$ dependence is steep. Blue light ($\lambda \approx 4500\ \text{Å} = 4.5\times10^{-5}\ \text{cm}$) scatters about $(6500/4500)^4 \approx 4$ times more than red light ($\lambda \approx 6500\ \text{Å} = 6.5\times10^{-5}\ \text{cm}$).
 
 #### Why the Sky Is Blue
 
@@ -608,7 +608,7 @@ To understand why those lines appear at specific wavelengths, we need one key id
 
 Modern quantum mechanics is deeper than the Bohr model, but the Bohr model gets the essential story right — and it gives correct energies for hydrogen.
 
-In this model, the electron in hydrogen can only occupy discrete energy levels labeled by an integer $n = 1, 2, 3, \\dots$.
+In this model, the electron in hydrogen can only occupy discrete energy levels labeled by an integer $n = 1, 2, 3, \dots$.
 
 {{< fig hydrogen-absorption >}}
 
@@ -620,14 +620,14 @@ For hydrogen, the approximate energy of level $n$ is:
 The ground state ($n=1$) is the most tightly bound. Higher $n$ levels have energies closer to zero, meaning the electron is less tightly bound and easier to ionize.
 
 ::: {.callout-note title="Mini-bridge: 13.6 eV has a wavelength"}
-The hydrogen ionization energy is 13.6 eV. Converting to a photon wavelength with $E = hc/\\lambda$ gives $\\lambda \\approx 9.1\\times10^{-6}$ cm $\\approx 910$ Å — the **Lyman limit**, in the ultraviolet. This is one reason UV astronomy requires the atmosphere to be “out of the way.”
+The hydrogen ionization energy is 13.6 eV. Converting to a photon wavelength with $E = hc/\lambda$ gives $\lambda \approx 9.1\times10^{-6}\ \text{cm} \approx 910\ \text{Å}$ — the **Lyman limit**, in the ultraviolet. This is one reason UV astronomy requires the atmosphere to be “out of the way.”
 :::
 
 ### Photon Absorption and Emission
 
 When an electron changes energy levels, the atom must absorb or emit a photon whose energy matches the energy difference:
 
-$$\\Delta E = E_{\\text{upper}} - E_{\\text{lower}} = h\\nu = \\frac{hc}{\\lambda}.$$
+$$\Delta E = E_{\text{upper}} - E_{\text{lower}} = h\nu = \frac{hc}{\lambda}$$
 
 {{< include ../../../_includes/equations/photon-energy.qmd >}}
 {{< eqrefcard photon-energy >}}
@@ -670,7 +670,7 @@ Spectral lines let us infer far more than composition. In Module 2 we’ll build
 ::: {.callout-tip title="Quick Check" collapse="true"}
 **Question:** You observe a nebula that glows strongly red. Which spectrum type is this likely to be?
 
-**Answer:** An **emission spectrum** from hot, thin gas. A common red emission line in many nebulae is hydrogen’s H$\\alpha$ (a Balmer-series transition).
+**Answer:** An **emission spectrum** from hot, thin gas. A common red emission line in many nebulae is hydrogen’s H$\alpha$ (a Balmer-series transition).
 :::
 
 ::: {.callout-tip title="Quick Check" collapse="true"}
@@ -746,13 +746,13 @@ Large modern telescopes are reflectors, not refractors. Mirrors can be supported
 :::
 
 ::: {.callout-tip title="Quick Check" collapse="true"}
-**Question:** The Hubble Space Telescope has $D = 240$ cm and observes at $\\lambda = 5000$ Å. Estimate its diffraction-limited angular resolution.
+**Question:** The Hubble Space Telescope has $D = 240$ cm and observes at $\lambda = 5000\ \text{Å}$. Estimate its diffraction-limited angular resolution.
 
-**Answer:** Convert to cgs lengths: $\\lambda = 5000$ Å $= 5.0\\times10^{-5}$ cm.
+**Answer:** Convert to cgs lengths: $\lambda = 5000\ \text{Å} = 5.0\times10^{-5}\ \text{cm}$.
 
-$\\theta \\approx \\lambda/D \\approx (5.0\\times10^{-5}\\ \\text{cm})/(240\\ \\text{cm}) \\approx 2.1\\times10^{-7}$ rad.
+$\theta \approx \lambda/D \approx (5.0\times10^{-5}\ \text{cm})/(240\ \text{cm}) \approx 2.1\times10^{-7}\ \text{rad}$.
 
-Converting using $206{,}265$ arcsec per rad gives $\\theta \\approx 0.04$ arcsec (order of magnitude). For a circular aperture, a common Rayleigh-criterion form is $\\theta \\approx 1.22\\,\\lambda/D$, which gives a similar scale.
+Converting using $206{,}265$ arcsec per rad gives $\theta \approx 0.04$ arcsec (order of magnitude). For a circular aperture, a common Rayleigh-criterion form is $\theta \approx 1.22\,\lambda/D$, which gives a similar scale.
 :::
 
 ::: {.callout-tip title="Quick Check" collapse="true"}
