@@ -571,8 +571,8 @@ figures:
 
   em-spectrum-bands:
     path: /assets/images/module-01/week-03/em-spectrum-jwst.png
-    caption: "**What to notice:** The EM spectrum spans from gamma rays (0.000001 nm) to radio waves (10 m). Visible light is a tiny sliver—400 to 700 nm. Different wavelengths = different physics revealed."
-    alt: "Horizontal electromagnetic spectrum diagram showing wavelength scale from 0.000001 nm to 10 m, with bands labeled: gamma ray, X-ray, ultraviolet, visible light (expanded to show colors), infrared, microwave, and radio."
+    caption: "**What to notice:** The EM spectrum spans from gamma rays (≈ $10^{-13}$ cm) to radio waves (≈ $10^{3}$ cm). Visible light is a tiny sliver—4000 to 7000 Å. Different wavelengths = different physics revealed."
+    alt: "Horizontal electromagnetic spectrum diagram showing a wavelength scale from very short gamma rays (~1e-13 cm) through X-ray and ultraviolet to visible light (expanded as a rainbow, 4000–7000 Å), then infrared, microwave, and radio up to long wavelengths (~1e3 cm)."
     credit: "JWST Education"
     module: 1
 
@@ -586,7 +586,7 @@ figures:
   wavelength-energy-relation:
     path: /assets/images/module-01/week-03/wavelength-energy-jwst.png
     caption: "**What to notice:** Short wavelength = high energy = high frequency. The wave 'crests' are closer together for blue/UV light than for red/IR light. E = hc/λ quantifies this."
-    alt: "Visible spectrum from UV through infrared showing wave pattern with wavelength scale (400-700 nm). Left side labeled 'higher energy (shorter wavelength)' with compressed waves; right side labeled 'lower energy (longer wavelength)' with stretched waves."
+    alt: "Visible spectrum from UV through infrared showing a wave pattern with wavelength scale across visible light (4000–7000 Å). Left side labeled 'higher energy (shorter wavelength)' with compressed waves; right side labeled 'lower energy (longer wavelength)' with stretched waves."
     credit: "JWST Education"
     module: 1
 
@@ -601,8 +601,8 @@ figures:
   # Blackbody Radiation
   blackbody-stellar-spectra:
     path: /assets/images/module-01/week-03/blackbody-spectra-jwst.jpg
-    caption: "**What to notice:** Hotter stars peak at shorter wavelengths (bluer) AND emit more total light. A blue 8000 K star peaks in UV; a red 3000 K star peaks in infrared. Wien's law: λ_peak = 2.9 mm·K / T."
-    alt: "Graph showing three Planck curves for stars at 8000 K (blue, peaks in UV around 360 nm), 5000 K (yellow, peaks at 580 nm), and 3000 K (red, peaks in infrared around 970 nm). Visible spectrum shown as vertical band. Y-axis is brightness; X-axis is wavelength in nanometers."
+    caption: "**What to notice:** Hotter stars peak at shorter wavelengths (bluer) AND emit more total light. A blue 8000 K star peaks near $\\lambda_{\\mathrm{peak}}\\approx 3600$ Å; a red 3000 K star peaks near $9700$ Å. Wien’s law: $\\lambda_{\\mathrm{peak}} = b/T$ with $b = 0.2898$ cm·K."
+    alt: "Graph showing three Planck curves for stars at 8000 K (blue, peaks in the near-UV around 3600 Å), 5000 K (yellow, peaks near 5800 Å), and 3000 K (red, peaks in the near-IR around 9700 Å). The visible band (about 4000–7000 Å) is marked. Y-axis is brightness; X-axis is wavelength."
     credit: "JWST Education"
     module: 1
 
@@ -655,7 +655,7 @@ figures:
   altair-spectrum-annotated:
     path: /assets/images/module-01/week-03/altair-spectrum-jwst.png
     caption: "**What to notice:** A real stellar spectrum combines continuous (blackbody) shape with absorption lines. The overall curve gives temperature (Wien); the lines give composition (spectroscopy). Two inference tools in one observation."
-    alt: "Top: rainbow spectrum image of star Altair showing dark absorption lines. Bottom: graph of brightness vs wavelength (400-700 nm) showing smooth blackbody-like curve with sharp dips at absorption line wavelengths. Hydrogen Balmer lines labeled."
+    alt: "Top: rainbow spectrum image of star Altair showing dark absorption lines. Bottom: graph of brightness vs wavelength (about 4000–7000 Å) showing a smooth blackbody-like curve with sharp dips at absorption line wavelengths. Hydrogen Balmer lines labeled."
     credit: "JWST Education"
     module: 1
 

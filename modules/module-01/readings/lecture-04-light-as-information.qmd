@@ -76,17 +76,19 @@ By the end of this reading, you'll be able to look at a star and estimate its su
 
 ## Part 2: The Electromagnetic Spectrum
 
+**Unit convention:** We’ll use cgs units throughout (cm, s, erg, K). For convenience, optical/UV wavelengths will often be written in Å, where $1\ \text{Å} = 10^{-8}\ \text{cm}$.
+
 ### Light as a Wave
 
 Light is an electromagnetic wave — oscillating electric and magnetic fields that propagate through space at a constant speed. Three quantities characterize any wave:
 
 {{< fig em-wave-diagram >}}
 
-**Frequency ($\nu$):** The number of oscillations per second, measured in Hertz (Hz = s$^{-1}$).
+**Frequency ($\nu$):** The number of oscillations per second, with units s$^{-1}$.
 
-**Wavelength ($\lambda$):** The distance between successive wave crests, typically measured in centimeters (cm), nanometers (nm = $10^{-7}$ cm), or Ångströms (Å = $10^{-8}$ cm).
+**Wavelength ($\lambda$):** The distance between successive wave crests, typically measured in centimeters (cm) or Ångströms (Å), where $1\ \text{Å} = 10^{-8}\ \text{cm}$.
 
-**Speed ($c$):** In vacuum, all electromagnetic waves travel at $c = 3 \times 10^{10}$ cm/s — the speed of light.
+**Speed ($c$):** In vacuum, all electromagnetic waves travel at $c = 2.998 \times 10^{10}\ \text{cm/s}$ — the speed of light.
 
 These three quantities are related by the fundamental wave equation:
 
@@ -103,19 +105,19 @@ This means if you know any two, you can calculate the third. Since $c$ is consta
 
 ### The Spectrum: From Radio to Gamma
 
-The electromagnetic spectrum spans an enormous range of wavelengths, from radio waves kilometers long to gamma rays smaller than atomic nuclei. We divide this spectrum into named bands:
+The electromagnetic spectrum spans an enormous range of wavelengths, from radio waves with wavelengths of centimeters and longer to gamma rays smaller than atomic nuclei. We divide this spectrum into named bands:
 
 {{< fig em-spectrum-bands >}}
 
 | Band | Wavelength Range | What It Reveals |
 |------|------------------|-----------------|
-| Radio | $\gtrsim 0.1$ cm ( $\gtrsim 1$ mm ) | Cold gas, magnetic fields, pulsars |
-| Microwave | $0.1$ cm – $1$ cm (1 mm – 1 cm) | CMB, molecular clouds |
-| Infrared | $7\times10^{-5}$ cm – $0.1$ cm (700 nm – 1 mm) | Warm dust, cool stars, exoplanets |
-| Visible | $4\times10^{-5}$ cm – $7\times10^{-5}$ cm (400–700 nm) | Stellar surfaces, nebulae |
-| Ultraviolet | $10^{-6}$ cm – $4\times10^{-5}$ cm (10–400 nm) | Hot stars, active galactic nuclei |
-| X-ray | $10^{-9}$ cm – $10^{-6}$ cm (0.01–10 nm) | Million-degree plasma, accretion disks |
-| Gamma | $\lesssim 10^{-9}$ cm ( $\lesssim 0.01$ nm ) | Extreme events: supernovae, GRBs |
+| Radio | $> 1$ cm | Cold gas, magnetic fields, pulsars |
+| Microwave | $0.1$ – $1$ cm | CMB, molecular clouds |
+| Infrared | $7000$ Å – $0.1$ cm | Warm dust, cool stars, exoplanets |
+| Visible | $4000$ – $7000$ Å | Stellar surfaces, nebulae |
+| Ultraviolet | $100$ – $4000$ Å | Hot stars, active galactic nuclei |
+| X-ray | $0.1$ – $100$ Å | Million-degree plasma, accretion disks |
+| Gamma | $< 0.1$ Å | Extreme events: supernovae, GRBs |
 
 **Key insight:** Different wavelengths reveal different physics. A galaxy looks completely different in radio vs. X-rays because you're seeing different physical components — cold gas vs. hot plasma. This is why astronomers build telescopes for every part of the spectrum.
 
@@ -127,7 +129,7 @@ Light also behaves as particles called **photons**. Each photon carries a discre
 
 $$E = h\nu = \frac{hc}{\lambda}$$
 
-where $h = 6.626 \times 10^{-27}$ erg·s is **Planck's constant**. *(Conversion note: $1$ erg $= 10^{-7}$ J.)*
+where $h = 6.626 \times 10^{-27}$ erg·s is **Planck's constant**.
 
 Let's unpack this equation:
 
@@ -149,14 +151,14 @@ Units work out. This is always worth checking.
 ::: {.callout-tip}
 ## Check Yourself
 
-A photon has wavelength 200 nm. Another has wavelength 800 nm. How do their energies compare?
+A photon has wavelength 2000 Å. Another has wavelength 8000 Å. How do their energies compare?
 
 ::: {.callout-note collapse="true"}
 ## Solution
 
-Since $E \propto 1/\lambda$, the 200 nm photon has 4× more energy than the 800 nm photon.
+Since $E \propto 1/\lambda$, the 2000 Å photon has 4× more energy than the 8000 Å photon.
 
-$$\frac{E_{200}}{E_{800}} = \frac{\lambda_{800}}{\lambda_{200}} = \frac{800}{200} = 4$$
+$$\frac{E_{2000}}{E_{8000}} = \frac{\lambda_{8000}}{\lambda_{2000}} = \frac{8000}{2000} = 4$$
 
 The shorter-wavelength (bluer) photon is more energetic. This is why UV light causes sunburns but red light doesn't.
 :::
@@ -215,7 +217,7 @@ Scattering is what happens when light is redirected into new directions. When th
 {{< include ../../../_includes/equations/rayleigh-scattering.qmd >}}
 {{< eqrefcard rayleigh-scattering >}}
 
-The $\lambda^{-4}$ dependence is steep. Blue light ($\\lambda \\approx 4.5\\times10^{-5}$ cm, 450 nm) scatters about $(650/450)^4 \\approx 4$ times more than red light ($\\lambda \\approx 6.5\\times10^{-5}$ cm, 650 nm).
+The $\lambda^{-4}$ dependence is steep. Blue light ($\\lambda \\approx 4500$ Å $= 4.5\\times10^{-5}$ cm) scatters about $(6500/4500)^4 \\approx 4$ times more than red light ($\\lambda \\approx 6500$ Å $= 6.5\\times10^{-5}$ cm).
 
 #### Why the Sky Is Blue
 
@@ -364,7 +366,7 @@ From here on I’m using cgs units (erg, cm), which are still common in astrophy
 |--------|---------|-------------|
 | $B_\lambda(T)$ | Spectral radiance at wavelength $\lambda$ and temperature $T$ | erg s$^{-1}$ cm$^{-2}$ sr$^{-1}$ cm$^{-1}$ |
 | $h$ | Planck's constant | $6.626 \times 10^{-27}$ erg·s |
-| $c$ | Speed of light | $3 \times 10^{10}$ cm/s |
+| $c$ | Speed of light | $2.998 \times 10^{10}$ cm/s |
 | $k_B$ | Boltzmann's constant | $1.38 \times 10^{-16}$ erg/K |
 | $\lambda$ | Wavelength | cm |
 | $T$ | Temperature | K |
@@ -459,11 +461,11 @@ The Planck function has a peak — a wavelength where emission is maximum. This 
 
 $$\lambda_{\text{peak}} = \frac{b}{T}$$
 
-where $b = 0.2898$ cm·K is **Wien's displacement constant**.
+where $b = 0.2898\ \text{cm·K} = 2.898\times10^{7}\ \text{Å·K}$ is **Wien's displacement constant**.
 
 This can be rewritten as:
 
-$$\lambda_{\text{peak}} \cdot T = 0.2898\ \text{cm·K} = 2898\ \mu\text{m·K}$$
+$$\lambda_{\text{peak}} \cdot T = 0.2898\ \text{cm·K} = 2.898\times10^{7}\ \text{Å·K}$$
 
 Let's unpack Wien's law:
 
@@ -490,7 +492,7 @@ Rearranging gives:
 
 $$\lambda_{\text{peak}} = \frac{hc}{4.965\, k_B T} = \frac{b}{T}$$
 
-where $b = hc/(4.965\, k_B) = 0.2898$ cm·K.
+where $b = hc/(4.965\, k_B) = 0.2898\ \text{cm·K}$.
 
 **Why this matters:** Wien's law isn't arbitrary — it follows directly from the physics of the Planck function. This is why calculus matters: it lets you extract simple, powerful results from complex equations.
 :::
@@ -499,7 +501,7 @@ where $b = hc/(4.965\, k_B) = 0.2898$ cm·K.
 
 ### Worked Example: The Sun
 
-**Problem:** The Sun's spectrum peaks at approximately 500 nm (green-yellow light). What is the Sun's surface temperature?
+**Problem:** The Sun's spectrum peaks at approximately 5000 Å (green-yellow light). What is the Sun's surface temperature?
 
 **Solution:**
 
@@ -509,11 +511,11 @@ $$T = \frac{b}{\lambda_{\text{peak}}}$$
 
 Substituting values:
 
-$$T = \frac{0.2898\ \text{cm·K}}{5.00 \times 10^{-5}\ \text{cm}}$$
+$$T = \frac{2.898 \times 10^{7}\ \text{Å·K}}{5000\ \text{Å}}$$
 
 $$T = 5796\ \text{K} \approx 5800\ \text{K}$$
 
-*(Conversion used: $1\ \text{nm} = 10^{-7}\ \text{cm}$, so $500\ \text{nm} = 5.00\times10^{-5}\ \text{cm}$.)*
+*(Conversion used: $1\ \text{Å} = 10^{-8}\ \text{cm}$.)*
 
 **Interpretation:** The Sun's surface temperature is about 5800 K. We determined this using only the color of sunlight — no thermometer required, no spacecraft needed. This is astronomical inference in action.
 
@@ -527,15 +529,15 @@ $$[T] = \frac{[\text{cm·K}]}{[\text{cm}]} = \text{K}\ \checkmark$$
 
 ### Worked Example: Comparing Stars
 
-**Problem:** Betelgeuse (a red supergiant in Orion) has a peak wavelength around 830 nm. Rigel (a blue supergiant, also in Orion) peaks around 240 nm. Calculate their surface temperatures.
+**Problem:** Betelgeuse (a red supergiant in Orion) has a peak wavelength around 8300 Å. Rigel (a blue supergiant, also in Orion) peaks around 2400 Å. Calculate their surface temperatures.
 
 **Solution:**
 
 **For Betelgeuse:**
-$$T_{\text{Betelgeuse}} = \frac{0.2898\ \text{cm·K}}{8.30 \times 10^{-5}\ \text{cm}} = 3490\ \text{K} \approx 3500\ \text{K}$$
+$$T_{\text{Betelgeuse}} = \frac{2.898 \times 10^{7}\ \text{Å·K}}{8300\ \text{Å}} = 3490\ \text{K} \approx 3500\ \text{K}$$
 
 **For Rigel:**
-$$T_{\text{Rigel}} = \frac{0.2898\ \text{cm·K}}{2.40 \times 10^{-5}\ \text{cm}} = 12075\ \text{K} \approx 12000\ \text{K}$$
+$$T_{\text{Rigel}} = \frac{2.898 \times 10^{7}\ \text{Å·K}}{2400\ \text{Å}} = 12075\ \text{K} \approx 12000\ \text{K}$$
 
 {{< fig betelgeuse-size >}}
 
@@ -545,11 +547,11 @@ $$T_{\text{Rigel}} = \frac{0.2898\ \text{cm·K}}{2.40 \times 10^{-5}\ \text{cm}}
 
 ### A Common Misconception: Peak ≠ Only
 
-**Question:** Rigel's peak wavelength (240 nm) is in the ultraviolet. Why does Rigel appear blue-white to our eyes, not invisible?
+**Question:** Rigel's peak wavelength (2400 Å) is in the ultraviolet. Why does Rigel appear blue-white to our eyes, not invisible?
 
 **Answer:** The Planck curve is *broad*. Rigel emits strongly across a wide range of wavelengths, including the entire visible spectrum. But it emits *more* blue light than red light (because the visible band is on the blue side of its peak). Our eyes perceive this imbalance as blue-white.
 
-Similarly, Betelgeuse peaks in the near-infrared (830 nm), but it still emits plenty of visible light — just more red than blue. Hence its red color.
+Similarly, Betelgeuse peaks in the near-infrared (8300 Å), but it still emits plenty of visible light — just more red than blue. Hence its red color.
 
 **The lesson:** Peak wavelength ≠ only wavelength. Blackbodies emit at all wavelengths; the peak just tells you where emission is *strongest*.
 
@@ -562,12 +564,12 @@ The peak depends on how you plot the spectrum. If you plot “per unit wavelengt
 ::: {.callout-tip}
 ## Check Yourself
 
-An object has a peak wavelength of 1 μm (1000 nm). What is its temperature? Is this object hotter or cooler than the Sun?
+An object has a peak wavelength of 10,000 Å. What is its temperature? Is this object hotter or cooler than the Sun?
 
 ::: {.callout-note collapse="true"}
 ## Solution
 
-$$T = \frac{0.2898\ \text{cm·K}}{1.00 \times 10^{-4}\ \text{cm}} = 2898\ \text{K} \approx 2900\ \text{K}$$
+$$T = \frac{2.898 \times 10^{7}\ \text{Å·K}}{10{,}000\ \text{Å}} = 2898\ \text{K} \approx 2900\ \text{K}$$
 
 This is about half the Sun's temperature (5800 K), so the object is **cooler** than the Sun.
 
@@ -579,7 +581,7 @@ An object at 2900 K would glow deep red — think of a hot coal or a very cool s
 
 ### Worked Example: The Cosmic Microwave Background
 
-**Problem:** The Cosmic Microwave Background (CMB) — the afterglow of the Big Bang — peaks at a wavelength of about 1.1 mm. What is the temperature of the CMB?
+**Problem:** The Cosmic Microwave Background (CMB) — the afterglow of the Big Bang — peaks at a wavelength of about $0.11$ cm. What is the temperature of the CMB?
 
 **Solution:**
 
@@ -616,7 +618,7 @@ For hydrogen, the approximate energy of level $n$ is:
 The ground state ($n=1$) is the most tightly bound. Higher $n$ levels have energies closer to zero, meaning the electron is less tightly bound and easier to ionize.
 
 ::: {.callout-note title="Mini-bridge: 13.6 eV has a wavelength"}
-The hydrogen ionization energy is 13.6 eV. Converting to a photon wavelength with $E = hc/\\lambda$ gives $\\lambda \\approx 9.1\\times10^{-6}$ cm $\\approx 91$ nm — the **Lyman limit**, in the ultraviolet. This is one reason UV astronomy requires the atmosphere to be “out of the way.”
+The hydrogen ionization energy is 13.6 eV. Converting to a photon wavelength with $E = hc/\\lambda$ gives $\\lambda \\approx 9.1\\times10^{-6}$ cm $\\approx 910$ Å — the **Lyman limit**, in the ultraviolet. This is one reason UV astronomy requires the atmosphere to be “out of the way.”
 :::
 
 ### Photon Absorption and Emission
@@ -742,9 +744,9 @@ Large modern telescopes are reflectors, not refractors. Mirrors can be supported
 :::
 
 ::: {.callout-tip title="Quick Check" collapse="true"}
-**Question:** The Hubble Space Telescope has $D = 2.4$ m and observes at $\\lambda = 500$ nm. Estimate its diffraction-limited angular resolution.
+**Question:** The Hubble Space Telescope has $D = 240$ cm and observes at $\\lambda = 5000$ Å. Estimate its diffraction-limited angular resolution.
 
-**Answer:** Convert to cgs lengths: $D = 2.4$ m $= 240$ cm and $\\lambda = 500$ nm $= 5.0\\times10^{-5}$ cm.
+**Answer:** Convert to cgs lengths: $\\lambda = 5000$ Å $= 5.0\\times10^{-5}$ cm.
 
 $\\theta \\approx \\lambda/D \\approx (5.0\\times10^{-5}\\ \\text{cm})/(240\\ \\text{cm}) \\approx 2.1\\times10^{-7}$ rad.
 
@@ -802,7 +804,7 @@ Each week, the inference chain grows longer. By the end of Module 2, you'll be a
 
 | Constant | Symbol | Value | What It Means |
 |----------|--------|-------|---------------|
-| Speed of light | $c$ | $3 \times 10^{10}$ cm/s | Universal speed limit |
+| Speed of light | $c$ | $2.998 \times 10^{10}$ cm/s | Universal speed limit |
 | Planck's constant | $h$ | $6.626 \times 10^{-27}$ erg·s | Quantum of action |
 | Boltzmann's constant | $k_B$ | $1.38 \times 10^{-16}$ erg/K | Energy per degree of temperature |
 | Wien's constant | $b$ | $0.2898$ cm·K | Peak wavelength × temperature |
@@ -811,14 +813,14 @@ Each week, the inference chain grows longer. By the end of Module 2, you'll be a
 
 | Object | Temperature | Peak Wavelength | Spectral Band |
 |--------|-------------|-----------------|---------------|
-| CMB | 2.7 K | $0.11$ cm (1.1 mm) | Microwave |
-| Cool dust | 30 K | $10^{-2}$ cm (100 μm) | Far-IR |
-| Brown dwarf | 1000 K | $2.9\times10^{-4}$ cm (2.9 μm) | Near-IR |
-| M dwarf (Proxima Cen) | 3000 K | $9.7\times10^{-5}$ cm (970 nm) | Near-IR |
-| K dwarf | 4500 K | $6.4\times10^{-5}$ cm (640 nm) | Visible (orange) |
-| Sun (G dwarf) | 5800 K | $5.0\times10^{-5}$ cm (500 nm) | Visible (green-yellow) |
-| A star (Sirius) | 10000 K | $2.9\times10^{-5}$ cm (290 nm) | Near-UV |
-| O star | 40000 K | $7.2\times10^{-6}$ cm (72 nm) | Far-UV |
+| CMB | 2.7 K | $0.11$ cm | Microwave |
+| Cool dust | 30 K | $10^{-2}$ cm | Far-IR |
+| Brown dwarf | 1000 K | $2.9\times10^{-4}$ cm | Near-IR |
+| M dwarf (Proxima Cen) | 3000 K | $9700$ Å | Near-IR |
+| K dwarf | 4500 K | $6400$ Å | Visible (orange) |
+| Sun (G dwarf) | 5800 K | $5000$ Å | Visible (green-yellow) |
+| A star (Sirius) | 10000 K | $2900$ Å | Near-UV |
+| O star | 40000 K | $720$ Å | Far-UV |
 
 ---
 
