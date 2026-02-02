@@ -1,0 +1,566 @@
+---
+title: "Lecture 4: Light as Information"
+subtitle: "How Photons Encode the Universe"
+author: "Dr. Anna Rosen"
+date: "2026-02-03"
+description: "Everything we know about the cosmos comes from light. By understanding how light behaves — how it's emitted and what wavelengths dominate — we can infer temperature without ever touching a star."
+draft: false
+categories: [light, blackbody, thermal-radiation, electromagnetic-spectrum]
+course: ASTR 201
+module: "1 - Foundations"
+learning-objectives:
+  - Describe the electromagnetic spectrum and relate wavelength, frequency, and photon energy
+  - Explain what a blackbody is and interpret the Planck spectrum qualitatively
+  - Identify limiting cases of the Planck function (Rayleigh-Jeans, Wien tail)
+  - Use Wien's law to estimate temperature from peak wavelength
+Concept-Throughline:
+  - Light is a messenger that carries encoded physics
+  - Blackbody radiation connects temperature to observable color
+  - Limiting cases make complex equations tractable
+  - This is the foundation for all light-based astronomical inference
+math-level: symbolic_with_interpretation
+mode: Draft
+prerequisites: Basic algebra, scientific notation, familiarity with wavelength/frequency from physics
+---
+
+## Learning Objectives
+
+After completing this reading, you should be able to:
+
+1. Describe the **electromagnetic spectrum** and relate wavelength, frequency, and photon energy
+2. Explain what a **blackbody** is and interpret the Planck spectrum qualitatively
+3. Identify **limiting cases** of the Planck function (Rayleigh-Jeans, Wien tail)
+4. Use **Wien's law** to estimate temperature from peak wavelength
+
+## Concept Throughline
+
+> *Light is a messenger that carries encoded physics.*
+> By understanding how objects emit and absorb light, we can infer their properties — starting with temperature — without ever visiting them.
+
+---
+
+::: {.callout-important}
+## The Big Idea
+
+**Color encodes temperature.** A star's color tells you its surface temperature through Wien's displacement law: hotter objects peak at shorter (bluer) wavelengths, cooler objects at longer (redder) wavelengths. This simple relationship — derived from quantum mechanics — lets us measure the temperature of objects billions of light-years away.
+:::
+
+---
+
+## Part 1: Why Light Matters
+
+### The Astronomer's Dilemma
+
+Look up on a clear night. Every point of light you see is a message from across space and time. But what does that message contain?
+
+In Lecture 1, we learned that astronomers can directly measure only four things: **brightness, position, wavelength, and timing**. Everything else — temperature, mass, radius, age, composition — must be *inferred*. Today we begin building the inference toolkit, starting with the question: **what can we learn from a star's color?**
+
+The answer turns out to involve one of the most important developments in physics: the birth of quantum mechanics. Max Planck's attempt to explain how hot objects glow led to a revolution that reshaped our understanding of the universe. And the equation he derived — the Planck function — remains the foundation of stellar astrophysics.
+
+### What You'll Gain
+
+By the end of this reading, you'll be able to look at a star and estimate its surface temperature from its color. You'll understand why hot stars are blue and cool stars are red. And you'll have your first encounter with a professional-grade physics equation — the Planck function — along with strategies for making such equations less intimidating.
+
+---
+
+## Part 2: The Electromagnetic Spectrum
+
+### Light as a Wave
+
+Light is an electromagnetic wave — oscillating electric and magnetic fields that propagate through space at a constant speed. Three quantities characterize any wave:
+
+{{< fig em-wave-diagram >}}
+
+**Wavelength ($\lambda$):** The distance between successive wave crests, typically measured in meters, nanometers (nm = $10^{-9}$ m), or Ångströms (Å = $10^{-10}$ m).
+
+**Frequency ($\nu$):** The number of oscillations per second, measured in Hertz (Hz = s$^{-1}$).
+
+**Speed ($c$):** In vacuum, all electromagnetic waves travel at $c = 3 \times 10^8$ m/s — the speed of light.
+
+These three quantities are related by the fundamental wave equation:
+
+$$c = \lambda \nu$$
+
+This means if you know any two, you can calculate the third. Since $c$ is constant, wavelength and frequency are inversely related: long wavelength means low frequency, short wavelength means high frequency.
+
+### The Spectrum: From Radio to Gamma
+
+The electromagnetic spectrum spans an enormous range of wavelengths, from radio waves kilometers long to gamma rays smaller than atomic nuclei. We divide this spectrum into named bands:
+
+{{< fig em-spectrum-bands >}}
+
+| Band | Wavelength Range | What It Reveals |
+|------|------------------|-----------------|
+| Radio | > 1 mm | Cold gas, magnetic fields, pulsars |
+| Microwave | 1 mm – 1 cm | CMB, molecular clouds |
+| Infrared | 700 nm – 1 mm | Warm dust, cool stars, exoplanets |
+| Visible | 400 – 700 nm | Stellar surfaces, nebulae |
+| Ultraviolet | 10 – 400 nm | Hot stars, active galactic nuclei |
+| X-ray | 0.01 – 10 nm | Million-degree plasma, accretion disks |
+| Gamma | < 0.01 nm | Extreme events: supernovae, GRBs |
+
+**Key insight:** Different wavelengths reveal different physics. A galaxy looks completely different in radio vs. X-rays because you're seeing different physical components — cold gas vs. hot plasma. This is why astronomers build telescopes for every part of the spectrum.
+
+{{< fig em-spectrum-astro-objects >}}
+
+### Light as Particles: Photon Energy
+
+Light also behaves as particles called **photons**. Each photon carries a discrete amount of energy given by:
+
+$$E = h\nu = \frac{hc}{\lambda}$$
+
+where $h = 6.626 \times 10^{-34}$ J·s is **Planck's constant**.
+
+Let's unpack this equation:
+
+- **What it predicts:** The energy carried by a single photon
+- **What it depends on:** Either frequency ($\nu$) or wavelength ($\lambda$)—your choice, since they're related by $c = \lambda\nu$
+- **The story:** Shorter wavelength = higher energy. This is why gamma rays can damage DNA while radio waves pass harmlessly through your body.
+- **Units check:** $[E] = [\text{J·s}][\text{s}^{-1}] = \text{J}$ ✓
+
+{{< fig wavelength-energy-relation >}}
+
+::: {.callout-note}
+## Unit Check: $E = hc/\lambda$
+
+$$[E] = \frac{[\text{J·s}][\text{m/s}]}{[\text{m}]} = \frac{\text{J·m}}{\text{m}} = \text{J}\ \checkmark$$
+
+Units work out. This is always worth checking.
+:::
+
+::: {.callout-tip}
+## Check Yourself
+
+A photon has wavelength 200 nm. Another has wavelength 800 nm. How do their energies compare?
+
+::: {.callout-note collapse="true"}
+## Solution
+
+Since $E \propto 1/\lambda$, the 200 nm photon has 4× more energy than the 800 nm photon.
+
+$$\frac{E_{200}}{E_{800}} = \frac{\lambda_{800}}{\lambda_{200}} = \frac{800}{200} = 4$$
+
+The shorter-wavelength (bluer) photon is more energetic. This is why UV light causes sunburns but red light doesn't.
+:::
+:::
+
+---
+
+## Part 3: Blackbody Radiation
+
+### What Is a Blackbody?
+
+A **blackbody** is an idealized object that absorbs all electromagnetic radiation that falls on it — no reflection, no transmission. When heated, a blackbody re-emits radiation with a spectrum that depends *only* on its temperature.
+
+{{< fig light-matter-behaviors >}}
+
+The name "blackbody" is somewhat misleading. A cold blackbody would indeed appear black (it absorbs everything and emits very little). But a *hot* blackbody glows — the hotter it is, the brighter and bluer it glows.
+
+**Why blackbodies matter for astronomy:** Stars are approximate blackbodies. Their spectra deviate due to absorption lines (which we'll study in Module 2), but the overall shape follows the blackbody curve. Understanding blackbody radiation is therefore fundamental to stellar astrophysics.
+
+Other astronomical blackbodies include:
+
+- **Planets:** Earth emits thermal radiation approximately as a blackbody at ~255 K (infrared)
+- **The Cosmic Microwave Background:** The most perfect blackbody ever measured, at 2.725 K
+- **Accretion disks:** Hot gas falling into black holes radiates thermally
+
+### The Planck Spectrum: Qualitative Picture
+
+When you heat an object, it glows. The color of that glow depends on temperature:
+
+- A stovetop burner glows dull red (~700 K)
+- An incandescent bulb filament glows yellow-white (~2700 K)
+- The Sun's surface glows yellow (~5800 K)
+- A welding arc glows blue-white (~6000+ K)
+
+{{< fig blackbody-stellar-spectra >}}
+
+The figure shows blackbody spectra (called **Planck curves**) at three different temperatures. Notice two patterns:
+
+1. **The peak shifts to shorter wavelengths as temperature increases.** Hot objects peak in the blue/UV; cool objects peak in the red/infrared.
+
+2. **The total energy emitted increases dramatically with temperature.** The area under the curve (total power radiated) grows as $T^4$—we'll quantify this with the Stefan-Boltzmann law in Module 2.
+
+---
+
+::: {.callout-note}
+## 🧠 Pause & Predict #1
+
+Before reading further, think about this:
+
+1. Look at the blackbody curves in the figure. The blue star (8000 K) peaks in the ultraviolet. Why does it still appear *blue* to our eyes, rather than invisible?
+
+2. The red star (3000 K) peaks in the infrared. Why does it still glow visibly red?
+
+*(Think about the shape of the Planck curve, not just the peak location.)*
+:::
+
+---
+
+### The Ultraviolet Catastrophe: When Classical Physics Failed
+
+Before 1900, physicists tried to derive the blackbody spectrum using classical physics. The result was the **Rayleigh-Jeans law**:
+
+$$B_\lambda \propto \frac{T}{\lambda^4}$$
+
+This works well at long wavelengths. But notice the problem: as $\lambda \to 0$, the intensity goes to infinity! Classical physics predicted that any warm object should emit infinite energy in the ultraviolet and beyond.
+
+This was called the **ultraviolet catastrophe**—a fundamental failure of classical physics. Ovens don't emit infinite UV radiation. Something was deeply wrong with the classical picture of how light and matter interact.
+
+### Planck's Quantum Solution
+
+In 1900, Max Planck found the solution — though he called it "an act of desperation." He proposed that energy is emitted in discrete packets called **quanta**, with energy:
+
+$$E = h\nu$$
+
+This changes everything at short wavelengths. To emit a high-frequency (short-wavelength) photon, an oscillator needs energy $h\nu$. If the thermal energy available ($\sim k_B T$) is less than $h\nu$, emission is suppressed. You can't emit a fraction of a photon.
+
+This quantum suppression cuts off the ultraviolet catastrophe and produces the correct blackbody spectrum.
+
+**Historical note:** Planck didn't fully believe his own solution — he hoped someone would find a classical explanation. It took Einstein (1905) to take quanta seriously, showing that light *itself* comes in discrete packets (photons) when explaining the photoelectric effect. This quantum revolution, born from trying to understand hot glowing objects, reshaped all of physics.
+
+### The Planck Function: Meeting a Real Equation
+
+The complete blackbody spectrum is given by the **Planck function**:
+
+$$B_\lambda(T) = \frac{2hc^2}{\lambda^5} \frac{1}{e^{hc/\lambda k_B T} - 1}$$
+
+This looks intimidating. **Don't panic.** Let's break it down piece by piece:
+
+| Symbol | Meaning | Value/Units |
+|--------|---------|-------------|
+| $B_\lambda(T)$ | Spectral radiance at wavelength $\lambda$ and temperature $T$ | W m$^{-2}$ sr$^{-1}$ m$^{-1}$ |
+| $h$ | Planck's constant | $6.626 \times 10^{-34}$ J·s |
+| $c$ | Speed of light | $3 \times 10^8$ m/s |
+| $k_B$ | Boltzmann's constant | $1.38 \times 10^{-23}$ J/K |
+| $\lambda$ | Wavelength | m |
+| $T$ | Temperature | K |
+
+**The structure:**
+
+- The $\lambda^{-5}$ factor in front would make short wavelengths dominate...
+- But the exponential term $e^{hc/\lambda k_B T}$ in the denominator suppresses short wavelengths
+- The competition between these terms creates the peak
+
+**You don't need to memorize this equation.** But you should recognize it and understand its structure. Equations like this will appear throughout your astronomy career. The key skill is knowing how to *read* them.
+
+### Limiting Cases: The Key to Taming Complex Equations
+
+The key to not being intimidated by complex equations is understanding their **limiting cases**—what happens when one term dominates.
+
+::: {.callout-tip}
+## The Pattern: Limiting Cases
+
+Complex equations often have simple limiting behavior. When you encounter a scary equation:
+
+1. Identify the variables that can be "large" or "small"
+2. Take limits to see what terms dominate
+3. The limiting behavior is usually much simpler
+
+This is a professional skill. Practice it.
+:::
+
+**Case 1: Long wavelengths (Rayleigh-Jeans limit)**
+
+When $\lambda$ is large (compared to $hc/k_B T$), the argument of the exponential is small: $hc/\lambda k_B T \ll 1$.
+
+For small $x$, we can approximate $e^x \approx 1 + x$, so:
+
+$$e^{hc/\lambda k_B T} - 1 \approx \frac{hc}{\lambda k_B T}$$
+
+Substituting into the Planck function:
+
+$$B_\lambda \approx \frac{2hc^2}{\lambda^5} \cdot \frac{\lambda k_B T}{hc} = \frac{2ck_B T}{\lambda^4}$$
+
+This is the **Rayleigh-Jeans law**—classical physics works at long wavelengths because quantum effects are negligible when $h\nu \ll k_B T$.
+
+**Case 2: Short wavelengths (Wien limit)**
+
+When $\lambda$ is small, $hc/\lambda k_B T \gg 1$. The exponential dominates, and the "-1" in the denominator becomes negligible:
+
+$$B_\lambda \approx \frac{2hc^2}{\lambda^5} e^{-hc/\lambda k_B T}$$
+
+The exponential cuts off emission at short wavelengths — this is the quantum suppression that prevents the ultraviolet catastrophe. You can't emit photons whose energy exceeds the thermal energy available.
+
+| Regime | Condition | Behavior | Physical reason |
+|--------|-----------|----------|-----------------|
+| Long $\lambda$ | $hc/\lambda \ll k_B T$ | $B_\lambda \propto T/\lambda^4$ | Classical physics works; photons are "cheap" |
+| Short $\lambda$ | $hc/\lambda \gg k_B T$ | $B_\lambda \to 0$ exponentially | Quantum suppression; photons are "expensive" |
+
+::: {.callout-tip}
+## Check Yourself
+
+In the Rayleigh-Jeans limit ($B_\lambda \propto T/\lambda^4$), does intensity increase or decrease with:
+
+1. Temperature?
+2. Wavelength?
+
+::: {.callout-note collapse="true"}
+## Solution
+
+From $B_\lambda \propto T/\lambda^4$:
+
+1. **Temperature:** Intensity increases linearly with $T$. Hotter = brighter (in this limit).
+
+2. **Wavelength:** Intensity decreases as $\lambda^{-4}$. Shorter wavelengths are brighter (in this limit).
+
+But remember: this limit only applies at long wavelengths where $hc/\lambda \ll k_B T$. At short wavelengths, the Wien limit takes over and intensity drops exponentially.
+:::
+:::
+
+---
+
+## Part 4: Wien's Displacement Law
+
+### The Peak Wavelength
+
+The Planck function has a peak — a wavelength where emission is maximum. This peak wavelength depends only on temperature:
+
+$$\lambda_{\text{peak}} = \frac{b}{T}$$
+
+where $b = 2.898 \times 10^{-3}$ m·K is **Wien's displacement constant**.
+
+This can be rewritten as:
+
+$$\lambda_{\text{peak}} \cdot T = 2.898 \times 10^{-3}\ \text{m·K} = 2898\ \mu\text{m·K}$$
+
+Let's unpack Wien's law:
+
+- **What it predicts:** The wavelength where a blackbody emits most intensely
+- **What it depends on:** Only temperature — nothing else!
+- **The story:** Hotter objects peak at shorter (bluer) wavelengths. Cooler objects peak at longer (redder) wavelengths.
+- **Units check:** $[\lambda] = [\text{m·K}]/[\text{K}] = \text{m}$ ✓
+- **Assumptions:** Object is a perfect blackbody
+
+**This is why color encodes temperature.** Hot stars appear blue because their Planck curves peak in the blue/UV. Cool stars appear red because their peaks are in the red/infrared.
+
+### Where Does Wien's Law Come From? (Optional Deep Dive)
+
+::: {.callout-note collapse="true"}
+## Derivation Preview (Calculus Required)
+
+Wien's law comes from finding the maximum of the Planck function — setting $dB_\lambda/d\lambda = 0$ and solving for $\lambda$.
+
+This requires calculus (product rule and chain rule applied to the Planck function). The calculation is involved, but the result is elegant:
+
+$$\frac{hc}{\lambda_{\text{peak}} k_B T} \approx 4.965$$
+
+Rearranging gives:
+
+$$\lambda_{\text{peak}} = \frac{hc}{4.965\, k_B T} = \frac{b}{T}$$
+
+where $b = hc/(4.965\, k_B) = 2.898 \times 10^{-3}$ m·K.
+
+**Why this matters:** Wien's law isn't arbitrary — it follows directly from the physics of the Planck function. This is why calculus matters: it lets you extract simple, powerful results from complex equations.
+:::
+
+---
+
+### Worked Example: The Sun
+
+**Problem:** The Sun's spectrum peaks at approximately 500 nm (green-yellow light). What is the Sun's surface temperature?
+
+**Solution:**
+
+Using Wien's law:
+
+$$T = \frac{b}{\lambda_{\text{peak}}}$$
+
+Substituting values:
+
+$$T = \frac{2.898 \times 10^{-3}\ \text{m·K}}{500 \times 10^{-9}\ \text{m}}$$
+
+$$T = \frac{2.898 \times 10^{-3}}{5 \times 10^{-7}}\ \text{K}$$
+
+$$T = 5796\ \text{K} \approx 5800\ \text{K}$$
+
+**Interpretation:** The Sun's surface temperature is about 5800 K. We determined this using only the color of sunlight — no thermometer required, no spacecraft needed. This is astronomical inference in action.
+
+::: {.callout-note}
+## Unit Check
+
+$$[T] = \frac{[\text{m·K}]}{[\text{m}]} = \text{K}\ \checkmark$$
+:::
+
+---
+
+### Worked Example: Comparing Stars
+
+**Problem:** Betelgeuse (a red supergiant in Orion) has a peak wavelength around 830 nm. Rigel (a blue supergiant, also in Orion) peaks around 240 nm. Calculate their surface temperatures.
+
+**Solution:**
+
+**For Betelgeuse:**
+$$T_{\text{Betelgeuse}} = \frac{2.898 \times 10^{-3}\ \text{m·K}}{830 \times 10^{-9}\ \text{m}} = 3490\ \text{K} \approx 3500\ \text{K}$$
+
+**For Rigel:**
+$$T_{\text{Rigel}} = \frac{2.898 \times 10^{-3}\ \text{m·K}}{240 \times 10^{-9}\ \text{m}} = 12075\ \text{K} \approx 12000\ \text{K}$$
+
+{{< fig betelgeuse-size >}}
+
+**Interpretation:** Rigel is about 3.5× hotter than Betelgeuse. The color difference — blue vs. red — directly reflects this temperature difference. When you look at the constellation Orion, you're literally seeing temperature encoded as color: Betelgeuse (the red shoulder) is cool; Rigel (the blue foot) is hot.
+
+---
+
+### A Common Misconception: Peak ≠ Only
+
+**Question:** Rigel's peak wavelength (240 nm) is in the ultraviolet. Why does Rigel appear blue-white to our eyes, not invisible?
+
+**Answer:** The Planck curve is *broad*. Rigel emits strongly across a wide range of wavelengths, including the entire visible spectrum. But it emits *more* blue light than red light (because the visible band is on the blue side of its peak). Our eyes perceive this imbalance as blue-white.
+
+Similarly, Betelgeuse peaks in the near-infrared (830 nm), but it still emits plenty of visible light — just more red than blue. Hence its red color.
+
+**The lesson:** Peak wavelength ≠ only wavelength. Blackbodies emit at all wavelengths; the peak just tells you where emission is *strongest*.
+
+::: {.callout-tip}
+## Check Yourself
+
+An object has a peak wavelength of 1 μm (1000 nm). What is its temperature? Is this object hotter or cooler than the Sun?
+
+::: {.callout-note collapse="true"}
+## Solution
+
+$$T = \frac{2.898 \times 10^{-3}\ \text{m·K}}{1 \times 10^{-6}\ \text{m}} = 2898\ \text{K} \approx 2900\ \text{K}$$
+
+This is about half the Sun's temperature (5800 K), so the object is **cooler** than the Sun.
+
+An object at 2900 K would glow deep red — think of a hot coal or a very cool star like Proxima Centauri (our nearest stellar neighbor, an M dwarf at ~3000 K).
+:::
+:::
+
+---
+
+### Worked Example: The Cosmic Microwave Background
+
+**Problem:** The Cosmic Microwave Background (CMB) — the afterglow of the Big Bang — peaks at a wavelength of about 1.1 mm. What is the temperature of the CMB?
+
+**Solution:**
+
+$$T_{\text{CMB}} = \frac{2.898 \times 10^{-3}\ \text{m·K}}{1.1 \times 10^{-3}\ \text{m}} = 2.63\ \text{K} \approx 2.7\ \text{K}$$
+
+{{< fig cmb-map >}}
+
+**Interpretation:** The CMB has a temperature of about 2.7 K — just 2.7 degrees above absolute zero. This is the temperature of the *universe itself*, left over from the hot early cosmos that has been cooling for 13.8 billion years as space expands.
+
+The CMB is the most perfect blackbody ever measured. Deviations from a perfect Planck curve are less than 1 part in 100,000—a stunning confirmation of Big Bang cosmology. We'll return to the CMB in Module 4 when we study cosmology.
+
+---
+
+## Part 5: Real Stellar Spectra
+
+### Beyond the Ideal Blackbody
+
+Stars are *approximately* blackbodies, but not perfectly. Real stellar spectra show two features:
+
+1. **The overall shape** follows a Planck curve (giving us temperature via Wien's law)
+2. **Absorption lines** appear as dark notches at specific wavelengths (giving us composition via spectroscopy)
+
+{{< fig altair-spectrum-annotated >}}
+
+The figure shows the spectrum of Altair, a nearby A-type star. The smooth curve is the blackbody shape; the sharp dips are absorption lines from hydrogen and other elements in the star's atmosphere.
+
+**Two inference tools in one observation:**
+
+- The curve shape → temperature (Wien's law)
+- The line positions → composition (spectroscopy, coming in Week 5)
+
+{{< fig continuous-vs-line-spectrum >}}
+
+Notice the difference between the Sun's spectrum (approximately continuous, like a blackbody) and a fluorescent bulb (discrete emission lines). The spectrum shape tells you about the *emission mechanism*—thermal vs. non-thermal.
+
+---
+
+## Part 6: Synthesis — The Observable → Model → Inference Chain
+
+### Putting It Together
+
+We've built the first tool in our astronomical inference toolkit: **using color to measure temperature**.
+
+| We Measure | We Use | We Infer |
+|------------|--------|----------|
+| Peak wavelength (color) | Wien's law: $\lambda_{\text{peak}} = b/T$ | Surface temperature |
+| Spectrum shape | Planck function | Confirmation of thermal emission |
+| Photon energy | $E = hc/\lambda$ | Energy per photon at each wavelength |
+
+### Preview: What's Coming
+
+**Week 4 (Distance):** We'll learn to measure *distance*—using parallax, standard candles, and the inverse square law. Once we know distance and apparent brightness, we can infer *luminosity* (intrinsic power output).
+
+**Week 5 (Stefan-Boltzmann + Spectroscopy):** We'll return to blackbody physics to derive the Stefan-Boltzmann law: $L = 4\pi R^2 \sigma T^4$. Combined with Wien's law, this lets us calculate stellar *radii* from temperature and luminosity. We'll also introduce spectral lines — the "quantum barcode" that reveals composition.
+
+Each week, the inference chain grows longer. By the end of Module 2, you'll be able to characterize a star — temperature, luminosity, radius, and eventually mass — all from the light it sends us.
+
+---
+
+## Reference Tables
+
+### Key Equations
+
+| Quantity | Equation | What It Tells You |
+|----------|----------|-------------------|
+| Wave relation | $c = \lambda \nu$ | Wavelength and frequency are inversely related |
+| Photon energy | $E = h\nu = hc/\lambda$ | Short wavelength = high energy |
+| Wien's law | $\lambda_{\text{peak}} = b/T$ | Peak wavelength encodes temperature |
+| Wien's constant | $b = 2.898 \times 10^{-3}$ m·K | Memorize this (or know where to find it) |
+
+### Physical Constants
+
+| Constant | Symbol | Value | What It Means |
+|----------|--------|-------|---------------|
+| Speed of light | $c$ | $3 \times 10^8$ m/s | Universal speed limit |
+| Planck's constant | $h$ | $6.626 \times 10^{-34}$ J·s | Quantum of action |
+| Boltzmann's constant | $k_B$ | $1.38 \times 10^{-23}$ J/K | Energy per degree of temperature |
+| Wien's constant | $b$ | $2.898 \times 10^{-3}$ m·K | Peak wavelength × temperature |
+
+### Temperature and Color
+
+| Object | Temperature | Peak Wavelength | Spectral Band |
+|--------|-------------|-----------------|---------------|
+| CMB | 2.7 K | 1.1 mm | Microwave |
+| Cool dust | 30 K | 100 μm | Far-IR |
+| Brown dwarf | 1000 K | 2.9 μm | Near-IR |
+| M dwarf (Proxima Cen) | 3000 K | 970 nm | Near-IR |
+| K dwarf | 4500 K | 640 nm | Visible (orange) |
+| Sun (G dwarf) | 5800 K | 500 nm | Visible (green-yellow) |
+| A star (Sirius) | 10000 K | 290 nm | Near-UV |
+| O star | 40000 K | 72 nm | Far-UV |
+
+---
+
+## Summary: Light as Information
+
+We've built the first tool in our astronomical inference toolkit: **using color to measure temperature**.
+
+1. **The electromagnetic spectrum** spans from radio to gamma rays, with each wavelength revealing different physics. Photon energy $E = hc/\lambda$ means short wavelengths carry more energy.
+
+2. **Blackbodies** are idealized thermal emitters whose spectrum depends only on temperature. Stars approximate blackbodies, making blackbody physics directly applicable to stellar astrophysics.
+
+3. **The Planck function** describes the blackbody spectrum. Complex as it looks, its limiting cases are simple: Rayleigh-Jeans ($B_\lambda \propto T/\lambda^4$) at long wavelengths, exponential cutoff at short wavelengths.
+
+4. **Wien's law** ($\lambda_{\text{peak}} = b/T$) lets us convert color to temperature. Hot stars are blue; cool stars are red. This works from 3000 K (red dwarfs) to 40000 K (O-type stars) to 2.7 K (the cosmic microwave background).
+
+::: {.callout-tip}
+## Looking Ahead
+
+We can now infer temperature from color. But that's only part of the picture. In **Week 4**, we'll learn to measure **distance**—and then combine distance with brightness to infer **luminosity** (intrinsic power output).
+
+In **Week 5**, we'll return to blackbody physics to derive the **Stefan-Boltzmann law**: $L = 4\pi R^2 \sigma T^4$. Combined with Wien's law, this lets us calculate stellar radii from temperature and luminosity.
+
+Each week, the inference chain grows longer. By the end of Module 2, you'll be able to characterize a star — temperature, luminosity, radius, and eventually mass — all from the light it sends us.
+:::
+
+---
+
+::: {.callout-note collapse="true"}
+## Answers to Pause & Predict #1
+
+**Question 1:** Why does the blue star (8000 K) appear blue even though it peaks in the UV?
+
+**Answer:** The Planck curve is broad, not a spike. Even though the peak is in the UV, the star emits plenty of visible light. But it emits *more* blue visible light than red visible light (since blue is closer to the UV peak). Our eyes integrate this imbalance and perceive blue.
+
+**Question 2:** Why does the red star (3000 K) appear red even though it peaks in the infrared?
+
+**Answer:** Same reason in reverse. The star emits across a broad range including visible light, but more red than blue (since red is closer to the IR peak). We see the imbalance as red.
+
+**The key insight:** Blackbodies emit at *all* wavelengths. The peak tells you where emission is strongest, but plenty of light comes out at other wavelengths too. Color perception depends on the *ratio* of blue to red light, not just the peak location.
+:::

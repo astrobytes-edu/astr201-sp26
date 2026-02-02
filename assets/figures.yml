@@ -549,3 +549,136 @@ figures:
     alt: "Diagram illustrating momentum conservation with vectors showing how momentum transfers between interacting objects while total momentum remains constant."
     credit: "cococubed.com"
     module: 1
+
+  # ==============================================================
+  # Lecture 04: Light as Information (Week 3)
+  # ==============================================================
+
+  # EM Waves and Spectrum
+  em-wave-diagram:
+    path: /assets/images/module-01/week-03/em-wave-only-jwst.png
+    caption: "**What to notice:** Light is oscillating electric and magnetic fields perpendicular to each other and to the direction of travel. The wavelength λ is the distance between crests."
+    alt: "3D diagram of an electromagnetic wave showing perpendicular electric field (cyan, oscillating in z-y plane) and magnetic field (yellow, oscillating in x-y plane) propagating along the x-axis."
+    credit: "JWST Education"
+    module: 1
+
+  mechanical-vs-em-wave:
+    path: /assets/images/module-01/week-03/mechanical-vs-em-wave-jwst.png
+    caption: "**What to notice:** Mechanical waves need a medium (water, air); EM waves don't. Light travels through the vacuum of space—no medium required."
+    alt: "Side-by-side comparison: left shows a simple sine wave labeled 'Mechanical Wave' with wavelength marked; right shows an EM wave with perpendicular electric and magnetic field components."
+    credit: "JWST Education"
+    module: 1
+
+  em-spectrum-bands:
+    path: /assets/images/module-01/week-03/em-spectrum-jwst.png
+    caption: "**What to notice:** The EM spectrum spans from gamma rays (0.000001 nm) to radio waves (10 m). Visible light is a tiny sliver—400 to 700 nm. Different wavelengths = different physics revealed."
+    alt: "Horizontal electromagnetic spectrum diagram showing wavelength scale from 0.000001 nm to 10 m, with bands labeled: gamma ray, X-ray, ultraviolet, visible light (expanded to show colors), infrared, microwave, and radio."
+    credit: "JWST Education"
+    module: 1
+
+  em-spectrum-astro-objects:
+    path: /assets/images/module-01/week-03/em-spectrum-astro-objects-jwst.png
+    caption: "**What to notice:** Different wavelengths reveal different cosmic phenomena. Gamma rays see black holes; X-rays see hot plasma; visible shows stars; infrared penetrates dust; radio maps cold gas."
+    alt: "EM spectrum with astronomical objects shown at each band: gamma rays from black holes and supernovae, X-rays from hot stellar coronae, UV from hot stars, visible from stellar surfaces, infrared from dust and cool stars, microwave from CMB, radio from cold gas and pulsars."
+    credit: "JWST Education"
+    module: 1
+
+  wavelength-energy-relation:
+    path: /assets/images/module-01/week-03/wavelength-energy-jwst.png
+    caption: "**What to notice:** Short wavelength = high energy = high frequency. The wave 'crests' are closer together for blue/UV light than for red/IR light. E = hc/λ quantifies this."
+    alt: "Visible spectrum from UV through infrared showing wave pattern with wavelength scale (400-700 nm). Left side labeled 'higher energy (shorter wavelength)' with compressed waves; right side labeled 'lower energy (longer wavelength)' with stretched waves."
+    credit: "JWST Education"
+    module: 1
+
+  # Prism and Spectra
+  prism-dispersion:
+    path: /assets/images/module-01/week-03/prism-spectrum-jwst.png
+    caption: "**What to notice:** A prism separates 'white' sunlight into its component wavelengths. Blue bends more than red because shorter wavelengths interact more strongly with glass."
+    alt: "Sunlight beam entering a triangular prism and dispersing into a rainbow spectrum, with ultraviolet beyond blue and infrared beyond red labeled."
+    credit: "JWST Education"
+    module: 1
+
+  # Blackbody Radiation
+  blackbody-stellar-spectra:
+    path: /assets/images/module-01/week-03/blackbody-spectra-jwst.jpg
+    caption: "**What to notice:** Hotter stars peak at shorter wavelengths (bluer) AND emit more total light. A blue 8000 K star peaks in UV; a red 3000 K star peaks in infrared. Wien's law: λ_peak = 2.9 mm·K / T."
+    alt: "Graph showing three Planck curves for stars at 8000 K (blue, peaks in UV around 360 nm), 5000 K (yellow, peaks at 580 nm), and 3000 K (red, peaks in infrared around 970 nm). Visible spectrum shown as vertical band. Y-axis is brightness; X-axis is wavelength in nanometers."
+    credit: "JWST Education"
+    module: 1
+
+  continuous-vs-line-spectrum:
+    path: /assets/images/module-01/week-03/lightbulb-vs-sun-spectrum-jwst.png
+    caption: "**What to notice:** The Sun's spectrum is nearly a smooth blackbody curve (continuous). A fluorescent bulb shows discrete spikes—it's NOT a thermal emitter. Spectrum shape tells you about the emission mechanism."
+    alt: "Top: Sun image with smooth continuous spectrum graph (brightness vs wavelength, rainbow bar below). Bottom: Fluorescent bulb with spiky discrete emission spectrum showing peaks at specific wavelengths."
+    credit: "JWST Education"
+    module: 1
+
+  # Types of Spectra (preview for spectroscopy)
+  three-types-of-spectra:
+    path: /assets/images/module-01/week-03/types-of-spectra-jwst.png
+    caption: "**What to notice:** Three spectrum types encode different physics. Continuous = hot dense source. Absorption = cool gas in front of hot source. Emission = hot thin gas. Same atoms, different conditions, different spectra."
+    alt: "Diagram showing three scenarios: (1) continuous spectrum from hot dense object producing rainbow, (2) absorption spectrum with dark lines when cool gas absorbs from continuous source, (3) emission spectrum with bright lines from hot thin gas cloud."
+    credit: "JWST Education"
+    module: 1
+
+  # Light-Matter Interactions
+  light-matter-behaviors:
+    path: /assets/images/module-01/week-03/light-matter-interactions-jwst.png
+    caption: "**What to notice:** Light can be absorbed, emitted, transmitted, reflected, or refracted. Each interaction encodes information about the material. Blackbodies absorb all wavelengths (no reflection)."
+    alt: "Five panels showing light behaviors: Absorption (rays entering and stopping), Emission (rays leaving), Transmission (rays passing through), Reflection (rays bouncing off surface), Refraction (rays bending at interface)."
+    credit: "JWST Education"
+    module: 1
+
+  # Atomic Spectra (preview for Module 2)
+  absorption-emission-elements:
+    path: /assets/images/module-01/week-03/absorption-emission-spectra-jwst.png
+    caption: "**What to notice:** Each element has a unique spectral fingerprint. The dark lines in absorption exactly match the bright lines in emission—same energy transitions, opposite directions."
+    alt: "Absorption and emission spectra for sodium, nitrogen, hydrogen, and oxygen showing matching line patterns. Absorption spectra show dark lines on continuous rainbow; emission spectra show same-position bright lines on black background."
+    credit: "JWST Education"
+    module: 1
+
+  hydrogen-absorption:
+    path: /assets/images/module-01/week-03/absorption-of-light-hydrogen-jwst.png
+    caption: "**What to notice:** Hydrogen absorbs specific wavelengths because electrons jump UP between quantized energy levels. Each dark line = one electron transition. E = hν determines which wavelengths."
+    alt: "Left: Bohr model of hydrogen with electron energy levels 1-6. Right top: energy level diagram showing electron absorbing photons and jumping up. Right bottom: absorption spectrum with dark lines at specific wavelengths corresponding to transitions."
+    credit: "JWST Education"
+    module: 1
+
+  hydrogen-emission:
+    path: /assets/images/module-01/week-03/emission-of-light-hydrogen-jwst.png
+    caption: "**What to notice:** Hydrogen emits specific wavelengths because electrons fall DOWN between energy levels. Each bright line = one electron transition. The Balmer series (visible) comes from transitions to level 2."
+    alt: "Left: Bohr model of hydrogen with electron falling between levels. Right top: energy level diagram showing electron emitting photons while dropping down. Right bottom: emission spectrum with bright lines at specific wavelengths."
+    credit: "JWST Education"
+    module: 1
+
+  # Real Stellar Spectrum
+  altair-spectrum-annotated:
+    path: /assets/images/module-01/week-03/altair-spectrum-jwst.png
+    caption: "**What to notice:** A real stellar spectrum combines continuous (blackbody) shape with absorption lines. The overall curve gives temperature (Wien); the lines give composition (spectroscopy). Two inference tools in one observation."
+    alt: "Top: rainbow spectrum image of star Altair showing dark absorption lines. Bottom: graph of brightness vs wavelength (400-700 nm) showing smooth blackbody-like curve with sharp dips at absorption line wavelengths. Hydrogen Balmer lines labeled."
+    credit: "JWST Education"
+    module: 1
+
+  # Doppler Shift (preview for Week 6)
+  doppler-shift-exoplanet:
+    path: /assets/images/module-01/week-03/doppler-shift-star-jwst.png
+    caption: "**What to notice:** Motion toward us compresses wavelengths (blueshift); motion away stretches them (redshift). This lets us measure stellar velocities—and detect exoplanets via the star's wobble."
+    alt: "Star with orbiting exoplanet showing how spectral lines shift: blueshifted when star moves toward viewer, neutral when perpendicular, redshifted when moving away. Three spectra shown for comparison."
+    credit: "JWST Education"
+    module: 1
+
+  # Betelgeuse Size Comparison
+  betelgeuse-size:
+    path: /assets/images/module-01/week-03/betelgeuse-size-eso.jpg
+    caption: "**What to notice:** Betelgeuse is HUGE—it would engulf Mercury, Venus, Earth, Mars, and extend past Jupiter's orbit. Red supergiants are cool (~3500 K) but luminous because of their enormous surface area."
+    alt: "ESO image of Betelgeuse with solar system orbits overlaid for scale. The star's disk extends beyond Jupiter's orbit. Inner planets (Mercury, Venus, Earth, Mars) would be inside the star. Angular scale bar shows 0.015 arcseconds."
+    credit: "ESO/L. Calçada"
+    module: 1
+
+  # Earth Reflectance Spectra (biosignatures preview)
+  earth-reflectance-spectra:
+    path: /assets/images/module-01/week-03/reflectance-spectra-earth-jwst.png
+    caption: "**What to notice:** Different materials reflect different wavelengths. Snow reflects broadly; water absorbs IR; vegetation has a sharp 'red edge' at 700 nm. Spectra can identify surface composition—even on exoplanets."
+    alt: "Graph showing reflectance vs wavelength (400-2400 nm) for snow (high, flat), vegetation (red edge jump at 700 nm), dry soil (rising toward IR), and water (absorbs in IR). Each material has distinct spectral signature."
+    credit: "JWST Education"
+    module: 1

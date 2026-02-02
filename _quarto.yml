@@ -108,6 +108,10 @@ website:
                 href: modules/module-01/slides/lecture-03-gravity-and-orbits.qmd
               - text: "Reading"
                 href: modules/module-01/readings/lecture-03-gravity-and-orbits.qmd
+          - section: "Lecture 4: Light as Information"
+            contents:
+              - text: "Reading"
+                href: modules/module-01/readings/lecture-04-light-as-information.qmd
 
       - section: "Module 2: Inferring Star Properties"
         href: modules/module-02/index.qmd

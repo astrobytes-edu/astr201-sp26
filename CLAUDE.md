@@ -44,6 +44,10 @@ Adversarial reviewer and refactor analyst. STEM Pedagogy and Astrophysics expert
 3. **Identify root cause** - don't guess
 4. **Fix ONE thing at a time** - no multi-fixes
 
+## Typography Conventions
+
+- **Emdashes:** Use spaces around emdashes: `x — y` not `x—y`
+
 ## Anti-Patterns (FORBIDDEN)
 - ❌ Making changes without reading the file first
 - ❌ Assuming paths/filenames without verifying

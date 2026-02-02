@@ -9,6 +9,10 @@ This repo is a Quarto website + RevealJS slide system for **ASTR 201: Astronomy 
 - Do not invent facts, citations, URLs, dates, policies, or numerical values.
 - If something is unknown, stop and ask or mark it clearly as `VERIFY`/`[TBD]`.
 
+## Typography Conventions
+
+- **Emdashes:** Use spaces around emdashes: `x — y` not `x—y`
+
 ## Non‑Negotiables (Session Discipline)
 
 - Activate the course conda environment before running repo commands: `conda activate astro`. If `conda`/`astro` isn’t available in this shell, stop and ask (don’t guess paths).
