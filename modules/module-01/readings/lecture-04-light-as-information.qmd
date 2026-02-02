@@ -53,7 +53,7 @@ After completing this reading, you should be able to:
 ::: {.callout-important}
 ## The Big Idea
 
-**Color encodes temperature.** A star's color tells you its surface temperature through Wien's displacement law: hotter objects peak at shorter (bluer) wavelengths, cooler objects at longer (redder) wavelengths. This simple relationship — derived from quantum mechanics — lets us measure the temperature of objects billions of light-years away.
+**Color encodes temperature.** A star's color tells you its surface temperature through Wien's displacement law: hotter objects peak at shorter (bluer) wavelengths, cooler objects at longer (redder) wavelengths. In practice we correct for dust reddening and remember stellar atmospheres add spectral lines — but the blackbody shape is still the starting model.
 :::
 
 ---
@@ -82,11 +82,11 @@ Light is an electromagnetic wave — oscillating electric and magnetic fields th
 
 {{< fig em-wave-diagram >}}
 
-**Wavelength ($\lambda$):** The distance between successive wave crests, typically measured in meters, nanometers (nm = $10^{-9}$ m), or Ångströms (Å = $10^{-10}$ m).
-
 **Frequency ($\nu$):** The number of oscillations per second, measured in Hertz (Hz = s$^{-1}$).
 
-**Speed ($c$):** In vacuum, all electromagnetic waves travel at $c = 3 \times 10^8$ m/s — the speed of light.
+**Wavelength ($\lambda$):** The distance between successive wave crests, typically measured in centimeters (cm), nanometers (nm = $10^{-7}$ cm), or Ångströms (Å = $10^{-8}$ cm).
+
+**Speed ($c$):** In vacuum, all electromagnetic waves travel at $c = 3 \times 10^{10}$ cm/s — the speed of light.
 
 These three quantities are related by the fundamental wave equation:
 
@@ -109,13 +109,13 @@ The electromagnetic spectrum spans an enormous range of wavelengths, from radio 
 
 | Band | Wavelength Range | What It Reveals |
 |------|------------------|-----------------|
-| Radio | > 1 mm | Cold gas, magnetic fields, pulsars |
-| Microwave | 1 mm – 1 cm | CMB, molecular clouds |
-| Infrared | 700 nm – 1 mm | Warm dust, cool stars, exoplanets |
-| Visible | 400 – 700 nm | Stellar surfaces, nebulae |
-| Ultraviolet | 10 – 400 nm | Hot stars, active galactic nuclei |
-| X-ray | 0.01 – 10 nm | Million-degree plasma, accretion disks |
-| Gamma | < 0.01 nm | Extreme events: supernovae, GRBs |
+| Radio | $\gtrsim 0.1$ cm ( $\gtrsim 1$ mm ) | Cold gas, magnetic fields, pulsars |
+| Microwave | $0.1$ cm – $1$ cm (1 mm – 1 cm) | CMB, molecular clouds |
+| Infrared | $7\times10^{-5}$ cm – $0.1$ cm (700 nm – 1 mm) | Warm dust, cool stars, exoplanets |
+| Visible | $4\times10^{-5}$ cm – $7\times10^{-5}$ cm (400–700 nm) | Stellar surfaces, nebulae |
+| Ultraviolet | $10^{-6}$ cm – $4\times10^{-5}$ cm (10–400 nm) | Hot stars, active galactic nuclei |
+| X-ray | $10^{-9}$ cm – $10^{-6}$ cm (0.01–10 nm) | Million-degree plasma, accretion disks |
+| Gamma | $\lesssim 10^{-9}$ cm ( $\lesssim 0.01$ nm ) | Extreme events: supernovae, GRBs |
 
 **Key insight:** Different wavelengths reveal different physics. A galaxy looks completely different in radio vs. X-rays because you're seeing different physical components — cold gas vs. hot plasma. This is why astronomers build telescopes for every part of the spectrum.
 
@@ -127,21 +127,21 @@ Light also behaves as particles called **photons**. Each photon carries a discre
 
 $$E = h\nu = \frac{hc}{\lambda}$$
 
-where $h = 6.626 \times 10^{-34}$ J·s is **Planck's constant**.
+where $h = 6.626 \times 10^{-27}$ erg·s is **Planck's constant**. *(Conversion note: $1$ erg $= 10^{-7}$ J.)*
 
 Let's unpack this equation:
 
 - **What it predicts:** The energy carried by a single photon
 - **What it depends on:** Either frequency ($\nu$) or wavelength ($\lambda$) — your choice, since they're related by $c = \lambda\nu$
 - **The story:** Shorter wavelength = higher energy. This is why gamma rays can damage DNA while radio waves pass harmlessly through your body.
-- **Units check:** $[E] = [\text{J·s}][\text{s}^{-1}] = \text{J}$ ✓
+- **Units check:** $[E] = [\text{erg·s}][\text{s}^{-1}] = \text{erg}$ ✓
 
 {{< fig wavelength-energy-relation >}}
 
 ::: {.callout-note}
 ## Unit Check: $E = hc/\lambda$
 
-$$[E] = \frac{[\text{J·s}][\text{m/s}]}{[\text{m}]} = \frac{\text{J·m}}{\text{m}} = \text{J}\ \checkmark$$
+$$[E] = \frac{[\text{erg·s}][\text{cm/s}]}{[\text{cm}]} = \frac{\text{erg·cm}}{\text{cm}} = \text{erg}\ \checkmark$$
 
 Units work out. This is always worth checking.
 :::
@@ -168,7 +168,7 @@ The shorter-wavelength (bluer) photon is more energetic. This is why UV light ca
 
 So far, we’ve treated light as something that simply travels through space. But the reason light carries *information* is that it doesn’t just travel — it interacts.
 
-When a photon encounters matter, it can do exactly five things: be **absorbed**, be **emitted**, be **transmitted** (pass through), be **reflected** (bounce), or be **refracted** (bend). Every spectrum you will ever interpret is some combination of these behaviors.
+When light meets matter, the **fundamental interactions** are absorption, emission, and scattering. When you zoom out to what happens to a *beam* at a boundary, we describe the outcomes as transmission (it gets through), reflection (it bounces), and refraction (it bends). Every spectrum you will ever interpret is some combination of these processes.
 
 ### The Five Behaviors of Light
 
@@ -187,6 +187,10 @@ The important point is not “hot things glow” (though they do), but **what se
 #### Transmission
 
 Transmission happens when light passes through material without being absorbed. Glass transmits visible light but absorbs much of the ultraviolet; Earth’s atmosphere transmits visible and parts of the radio, but absorbs most X-rays.
+
+{{< fig atmospheric-transmission-windows >}}
+
+This is why “what wavelength?” is never an abstract question in astronomy — it determines what can be observed from the ground and what requires a space telescope.
 
 Transmission windows determine what can reach your detector — and when you need a telescope in space.
 
@@ -211,7 +215,7 @@ Scattering is what happens when light is redirected into new directions. When th
 {{< include ../../../_includes/equations/rayleigh-scattering.qmd >}}
 {{< eqrefcard rayleigh-scattering >}}
 
-The $\lambda^{-4}$ dependence is steep. Blue light ($\\lambda \\approx 450\\ \\text{nm}$) scatters about $(650/450)^4 \\approx 4$ times more than red light ($\\lambda \\approx 650\\ \\text{nm}$).
+The $\lambda^{-4}$ dependence is steep. Blue light ($\\lambda \\approx 4.5\\times10^{-5}$ cm, 450 nm) scatters about $(650/450)^4 \\approx 4$ times more than red light ($\\lambda \\approx 6.5\\times10^{-5}$ cm, 650 nm).
 
 #### Why the Sky Is Blue
 
@@ -350,6 +354,12 @@ $$B_\lambda(T) = \frac{2hc^2}{\lambda^5} \frac{1}{e^{hc/\lambda k_B T} - 1}$$
 
 This looks intimidating. **Don't panic.** Let's break it down piece by piece:
 
+::: {.callout-note}
+## Units Note (cgs)
+
+From here on I’m using cgs units (erg, cm), which are still common in astrophysics. The physics is identical; only the unit choices change.
+:::
+
 | Symbol | Meaning | Value/Units |
 |--------|---------|-------------|
 | $B_\lambda(T)$ | Spectral radiance at wavelength $\lambda$ and temperature $T$ | erg s$^{-1}$ cm$^{-2}$ sr$^{-1}$ cm$^{-1}$ |
@@ -449,18 +459,18 @@ The Planck function has a peak — a wavelength where emission is maximum. This 
 
 $$\lambda_{\text{peak}} = \frac{b}{T}$$
 
-where $b = 2.898 \times 10^{-3}$ m·K is **Wien's displacement constant**.
+where $b = 0.2898$ cm·K is **Wien's displacement constant**.
 
 This can be rewritten as:
 
-$$\lambda_{\text{peak}} \cdot T = 2.898 \times 10^{-3}\ \text{m·K} = 2898\ \mu\text{m·K}$$
+$$\lambda_{\text{peak}} \cdot T = 0.2898\ \text{cm·K} = 2898\ \mu\text{m·K}$$
 
 Let's unpack Wien's law:
 
 - **What it predicts:** The wavelength where a blackbody emits most intensely
 - **What it depends on:** Only temperature — nothing else!
 - **The story:** Hotter objects peak at shorter (bluer) wavelengths. Cooler objects peak at longer (redder) wavelengths.
-- **Units check:** $[\lambda] = [\text{m·K}]/[\text{K}] = \text{m}$ ✓
+- **Units check:** $[\lambda] = [\text{cm·K}]/[\text{K}] = \text{cm}$ ✓
 - **Assumptions:** Object is a perfect blackbody
 
 **This is why color encodes temperature.** Hot stars appear blue because their Planck curves peak in the blue/UV. Cool stars appear red because their peaks are in the red/infrared.
@@ -480,7 +490,7 @@ Rearranging gives:
 
 $$\lambda_{\text{peak}} = \frac{hc}{4.965\, k_B T} = \frac{b}{T}$$
 
-where $b = hc/(4.965\, k_B) = 2.898 \times 10^{-3}$ m·K.
+where $b = hc/(4.965\, k_B) = 0.2898$ cm·K.
 
 **Why this matters:** Wien's law isn't arbitrary — it follows directly from the physics of the Planck function. This is why calculus matters: it lets you extract simple, powerful results from complex equations.
 :::
@@ -499,18 +509,18 @@ $$T = \frac{b}{\lambda_{\text{peak}}}$$
 
 Substituting values:
 
-$$T = \frac{2.898 \times 10^{-3}\ \text{m·K}}{500 \times 10^{-9}\ \text{m}}$$
-
-$$T = \frac{2.898 \times 10^{-3}}{5 \times 10^{-7}}\ \text{K}$$
+$$T = \frac{0.2898\ \text{cm·K}}{5.00 \times 10^{-5}\ \text{cm}}$$
 
 $$T = 5796\ \text{K} \approx 5800\ \text{K}$$
+
+*(Conversion used: $1\ \text{nm} = 10^{-7}\ \text{cm}$, so $500\ \text{nm} = 5.00\times10^{-5}\ \text{cm}$.)*
 
 **Interpretation:** The Sun's surface temperature is about 5800 K. We determined this using only the color of sunlight — no thermometer required, no spacecraft needed. This is astronomical inference in action.
 
 ::: {.callout-note}
 ## Unit Check
 
-$$[T] = \frac{[\text{m·K}]}{[\text{m}]} = \text{K}\ \checkmark$$
+$$[T] = \frac{[\text{cm·K}]}{[\text{cm}]} = \text{K}\ \checkmark$$
 :::
 
 ---
@@ -522,10 +532,10 @@ $$[T] = \frac{[\text{m·K}]}{[\text{m}]} = \text{K}\ \checkmark$$
 **Solution:**
 
 **For Betelgeuse:**
-$$T_{\text{Betelgeuse}} = \frac{2.898 \times 10^{-3}\ \text{m·K}}{830 \times 10^{-9}\ \text{m}} = 3490\ \text{K} \approx 3500\ \text{K}$$
+$$T_{\text{Betelgeuse}} = \frac{0.2898\ \text{cm·K}}{8.30 \times 10^{-5}\ \text{cm}} = 3490\ \text{K} \approx 3500\ \text{K}$$
 
 **For Rigel:**
-$$T_{\text{Rigel}} = \frac{2.898 \times 10^{-3}\ \text{m·K}}{240 \times 10^{-9}\ \text{m}} = 12075\ \text{K} \approx 12000\ \text{K}$$
+$$T_{\text{Rigel}} = \frac{0.2898\ \text{cm·K}}{2.40 \times 10^{-5}\ \text{cm}} = 12075\ \text{K} \approx 12000\ \text{K}$$
 
 {{< fig betelgeuse-size >}}
 
@@ -543,6 +553,12 @@ Similarly, Betelgeuse peaks in the near-infrared (830 nm), but it still emits pl
 
 **The lesson:** Peak wavelength ≠ only wavelength. Blackbodies emit at all wavelengths; the peak just tells you where emission is *strongest*.
 
+::: {.callout-note}
+## Representation Warning: $B_\lambda$ vs. $B_\nu$
+
+The peak depends on how you plot the spectrum. If you plot “per unit wavelength” ($B_\lambda$), you get one peak wavelength. If you plot “per unit frequency” ($B_\nu$), the peak occurs at a different place. It’s the same physical spectrum — the difference is the binning.
+:::
+
 ::: {.callout-tip}
 ## Check Yourself
 
@@ -551,7 +567,7 @@ An object has a peak wavelength of 1 μm (1000 nm). What is its temperature? Is 
 ::: {.callout-note collapse="true"}
 ## Solution
 
-$$T = \frac{2.898 \times 10^{-3}\ \text{m·K}}{1 \times 10^{-6}\ \text{m}} = 2898\ \text{K} \approx 2900\ \text{K}$$
+$$T = \frac{0.2898\ \text{cm·K}}{1.00 \times 10^{-4}\ \text{cm}} = 2898\ \text{K} \approx 2900\ \text{K}$$
 
 This is about half the Sun's temperature (5800 K), so the object is **cooler** than the Sun.
 
@@ -567,14 +583,14 @@ An object at 2900 K would glow deep red — think of a hot coal or a very cool s
 
 **Solution:**
 
-$$T_{\text{CMB}} = \frac{2.898 \times 10^{-3}\ \text{m·K}}{1.1 \times 10^{-3}\ \text{m}} = 2.63\ \text{K} \approx 2.7\ \text{K}$$
+$$T_{\text{CMB}} = \frac{0.2898\ \text{cm·K}}{0.11\ \text{cm}} = 2.63\ \text{K} \approx 2.7\ \text{K}$$
 
 <!-- TODO: Add CMB map image from ESA/Planck to assets/images/module-04/cmb-map.png -->
 <!-- {{< fig cmb-map >}} -->
 
 **Interpretation:** The CMB has a temperature of about 2.7 K — just 2.7 degrees above absolute zero. This is the temperature of the *universe itself*, left over from the hot early cosmos that has been cooling for 13.8 billion years as space expands.
 
-The CMB is the most perfect blackbody ever measured. Deviations from a perfect Planck curve are less than 1 part in 100,000 — a stunning confirmation of Big Bang cosmology. We'll return to the CMB in Module 4 when we study cosmology.
+The CMB is the most perfect blackbody ever measured. COBE/FIRAS found the spectrum matches a Planck curve with RMS deviations $\lesssim 50$ ppm of the peak intensity — a stunning confirmation of Big Bang cosmology. We'll return to the CMB in Module 4 when we study cosmology.
 
 ---
 
@@ -598,6 +614,10 @@ For hydrogen, the approximate energy of level $n$ is:
 {{< eqrefcard bohr-energy >}}
 
 The ground state ($n=1$) is the most tightly bound. Higher $n$ levels have energies closer to zero, meaning the electron is less tightly bound and easier to ionize.
+
+::: {.callout-note title="Mini-bridge: 13.6 eV has a wavelength"}
+The hydrogen ionization energy is 13.6 eV. Converting to a photon wavelength with $E = hc/\\lambda$ gives $\\lambda \\approx 9.1\\times10^{-6}$ cm $\\approx 91$ nm — the **Lyman limit**, in the ultraviolet. This is one reason UV astronomy requires the atmosphere to be “out of the way.”
+:::
 
 ### Photon Absorption and Emission
 
@@ -692,10 +712,6 @@ The simplest telescope question is: how much light do you collect? For a circula
 {{< include ../../../_includes/equations/collecting-area.qmd >}}
 {{< eqrefcard collecting-area >}}
 
-::: {.callout-note title="Figure placeholder"}
-The next figure is currently a placeholder image. It should depict two apertures (diameter $D$ and $2D$) with photon dots showing that the $2D$ telescope collects 4× as many photons.
-:::
-
 {{< fig telescope-collecting-area >}}
 
 ### Angular Resolution: Why Bigger Is Sharper
@@ -704,10 +720,6 @@ Even if you collect lots of light, you can’t see detail smaller than your tele
 
 {{< include ../../../_includes/equations/telescope-resolution.qmd >}}
 {{< eqrefcard telescope-resolution >}}
-
-::: {.callout-note title="Figure placeholder"}
-The next figure is currently a placeholder image. It should compare a small-aperture blurry point-spread function to a larger-aperture sharper one (e.g., a binary star unresolved vs. resolved), labeled with $\\theta \\propto \\lambda/D$.
-:::
 
 {{< fig telescope-resolution >}}
 
@@ -724,19 +736,23 @@ Large modern telescopes are reflectors, not refractors. Mirrors can be supported
 ## Check Yourself: Telescopes
 
 ::: {.callout-tip title="Quick Check" collapse="true"}
-**Question:** A telescope with a 4 m mirror is replaced by one with an 8 m mirror. By what factor does the collecting area increase?
+**Question:** A telescope with a 4 m mirror (400 cm) is replaced by one with an 8 m mirror (800 cm). By what factor does the collecting area increase?
 
-**Answer:** Collecting area scales as $D^2$, so the ratio is $(8/4)^2 = 4$. The new telescope collects **4×** as many photons.
+**Answer:** Collecting area scales as $D^2$, so the ratio is $(8/4)^2 = 4$ (the unit choice doesn’t matter; in cgs, $4$ m $= 400$ cm and $8$ m $= 800$ cm). The new telescope collects **4×** as many photons.
 :::
 
 ::: {.callout-tip title="Quick Check" collapse="true"}
 **Question:** The Hubble Space Telescope has $D = 2.4$ m and observes at $\\lambda = 500$ nm. Estimate its diffraction-limited angular resolution.
 
-**Answer:** $\\theta \\approx \\lambda/D \\approx (500\\times10^{-9}\\ \\text{m})/(2.4\\ \\text{m}) \\approx 2\\times10^{-7}$ rad. Converting using $206{,}265$ arcsec per rad gives $\\theta \\approx 0.04$ arcsec (order of magnitude).
+**Answer:** Convert to cgs lengths: $D = 2.4$ m $= 240$ cm and $\\lambda = 500$ nm $= 5.0\\times10^{-5}$ cm.
+
+$\\theta \\approx \\lambda/D \\approx (5.0\\times10^{-5}\\ \\text{cm})/(240\\ \\text{cm}) \\approx 2.1\\times10^{-7}$ rad.
+
+Converting using $206{,}265$ arcsec per rad gives $\\theta \\approx 0.04$ arcsec (order of magnitude). For a circular aperture, a common Rayleigh-criterion form is $\\theta \\approx 1.22\\,\\lambda/D$, which gives a similar scale.
 :::
 
 ::: {.callout-tip title="Quick Check" collapse="true"}
-**Question:** Why can’t we build a 50 m optical telescope using a single glass lens?
+**Question:** Why can’t we build a 50 m (5000 cm) optical telescope using a single glass lens?
 
 **Answer:** A lens that large would be extremely heavy and must be supported only at its edge, so it would sag and distort. Large mirrors can be supported from behind and can be made thin or segmented, so large reflectors are practical while large refractors are not.
 :::
@@ -780,29 +796,29 @@ Each week, the inference chain grows longer. By the end of Module 2, you'll be a
 | Bohr levels (H) | $E_n = -13.6\ \text{eV}/n^2$ | Atomic energies are quantized (line energies are differences) |
 | Collecting area | $A = \pi(D/2)^2$ | Light-gathering power scales as $D^2$ |
 | Diffraction limit | $\theta \approx \lambda/D$ | Angular resolution improves with larger $D$ and smaller $\lambda$ |
-| Wien's constant | $b = 2.898 \times 10^{-3}$ m·K | Memorize this (or know where to find it) |
+| Wien's constant | $b = 0.2898$ cm·K | Memorize this (or know where to find it) |
 
 ### Physical Constants
 
 | Constant | Symbol | Value | What It Means |
 |----------|--------|-------|---------------|
-| Speed of light | $c$ | $3 \times 10^8$ m/s | Universal speed limit |
-| Planck's constant | $h$ | $6.626 \times 10^{-34}$ J·s | Quantum of action |
-| Boltzmann's constant | $k_B$ | $1.38 \times 10^{-23}$ J/K | Energy per degree of temperature |
-| Wien's constant | $b$ | $2.898 \times 10^{-3}$ m·K | Peak wavelength × temperature |
+| Speed of light | $c$ | $3 \times 10^{10}$ cm/s | Universal speed limit |
+| Planck's constant | $h$ | $6.626 \times 10^{-27}$ erg·s | Quantum of action |
+| Boltzmann's constant | $k_B$ | $1.38 \times 10^{-16}$ erg/K | Energy per degree of temperature |
+| Wien's constant | $b$ | $0.2898$ cm·K | Peak wavelength × temperature |
 
 ### Temperature and Color
 
 | Object | Temperature | Peak Wavelength | Spectral Band |
 |--------|-------------|-----------------|---------------|
-| CMB | 2.7 K | 1.1 mm | Microwave |
-| Cool dust | 30 K | 100 μm | Far-IR |
-| Brown dwarf | 1000 K | 2.9 μm | Near-IR |
-| M dwarf (Proxima Cen) | 3000 K | 970 nm | Near-IR |
-| K dwarf | 4500 K | 640 nm | Visible (orange) |
-| Sun (G dwarf) | 5800 K | 500 nm | Visible (green-yellow) |
-| A star (Sirius) | 10000 K | 290 nm | Near-UV |
-| O star | 40000 K | 72 nm | Far-UV |
+| CMB | 2.7 K | $0.11$ cm (1.1 mm) | Microwave |
+| Cool dust | 30 K | $10^{-2}$ cm (100 μm) | Far-IR |
+| Brown dwarf | 1000 K | $2.9\times10^{-4}$ cm (2.9 μm) | Near-IR |
+| M dwarf (Proxima Cen) | 3000 K | $9.7\times10^{-5}$ cm (970 nm) | Near-IR |
+| K dwarf | 4500 K | $6.4\times10^{-5}$ cm (640 nm) | Visible (orange) |
+| Sun (G dwarf) | 5800 K | $5.0\times10^{-5}$ cm (500 nm) | Visible (green-yellow) |
+| A star (Sirius) | 10000 K | $2.9\times10^{-5}$ cm (290 nm) | Near-UV |
+| O star | 40000 K | $7.2\times10^{-6}$ cm (72 nm) | Far-UV |
 
 ---
 

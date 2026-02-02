@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">Diffraction-limited resolution: larger D resolves finer detail</title>
+  <desc id="desc">Two side-by-side telescope images of a close binary star. With a small aperture, the two stars blur into one unresolved blob. With a larger aperture, two peaks are resolved. Text shows the scaling theta approximately lambda over D, and notes the Rayleigh criterion factor 1.22 for a circular aperture.</desc>
+  <defs>
+    <style>
+      .bg { fill: #ffffff; }
+      .panel { fill: #f2f3fb; stroke: #7077A1; stroke-width: 2; }
+      .label { font: 18px system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; fill: #111218; }
+      .small { font-size: 15px; fill: #3a3d52; }
+      .title { font-size: 24px; font-weight: 700; }
+      .frame { fill: #0b0b0f; stroke: #7077A1; stroke-width: 2; }
+      .teal { fill: #028391; }
+      .pink { fill: #BE5A83; }
+      .violet { fill: #7077A1; }
+    </style>
+    <radialGradient id="psfWide" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="1"/>
+      <stop offset="45%" stop-color="#ffffff" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="psfNarrow" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="1"/>
+      <stop offset="30%" stop-color="#ffffff" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="960" height="540"/>
+  <text class="label title" x="40" y="52">Angular resolution — why bigger telescopes are sharper</text>
+  <text class="label small" x="40" y="78">Diffraction sets a minimum angular scale: θ ≈ λ/D (Rayleigh: θ ≈ 1.22 λ/D for a circular aperture).</text>
+
+  <!-- Left: small D (unresolved) -->
+  <rect class="frame" x="90" y="130" width="340" height="260" rx="18"/>
+  <text class="label" x="165" y="420">Small D — unresolved</text>
+
+  <!-- Two stars blurred into one -->
+  <g>
+    <circle cx="250" cy="260" r="95" fill="url(#psfWide)"/>
+    <circle cx="290" cy="260" r="95" fill="url(#psfWide)" opacity="0.85"/>
+  </g>
+
+  <!-- Right: large D (resolved) -->
+  <rect class="frame" x="530" y="130" width="340" height="260" rx="18"/>
+  <text class="label" x="610" y="420">Large D — resolved</text>
+
+  <g>
+    <circle cx="670" cy="260" r="65" fill="url(#psfNarrow)"/>
+    <circle cx="730" cy="260" r="65" fill="url(#psfNarrow)"/>
+  </g>
+
+  <!-- Theta annotation -->
+  <path d="M 670 335 L 730 335" stroke="#BE5A83" stroke-width="5" stroke-linecap="round"/>
+  <path d="M 670 325 L 670 345" stroke="#BE5A83" stroke-width="5" stroke-linecap="round"/>
+  <path d="M 730 325 L 730 345" stroke="#BE5A83" stroke-width="5" stroke-linecap="round"/>
+  <text class="label" x="683" y="370" fill="#BE5A83">θ</text>
+
+  <!-- Footer panel -->
+  <rect class="panel" x="40" y="430" width="880" height="80" rx="16"/>
+  <text class="label" x="60" y="463"><tspan font-weight="700">What to notice:</tspan> Larger D → smaller θ, so close objects separate instead of blending.</text>
+  <text class="label small" x="60" y="490">At fixed D, shorter wavelengths (smaller λ) also improve resolution.</text>
+</svg>

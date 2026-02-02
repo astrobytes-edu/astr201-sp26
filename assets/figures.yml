@@ -685,19 +685,29 @@ figures:
 
   # Scattering and Telescopes (Lecture 04 expansion)
   rayleigh-scattering-sky:
-    path: /assets/images/module-01/week-03/rayleigh-scattering-sky.png
+    path: /assets/images/module-01/week-03/rayleigh-scattering-sky.svg
     caption: "**What to notice:** Rayleigh scattering explains both the blue sky (scattered short wavelengths) and red sunsets (transmitted long wavelengths). Same physics, different viewing geometry."
     alt: "Diagram showing sunlight entering atmosphere. Blue light (short wavelength) scatters in all directions while red light (long wavelength) passes through more directly. Viewer looking up sees scattered blue; viewer at sunset sees transmitted red."
+    credit: "Illustration: A. Rosen (SVG)"
+    module: 1
+
+  atmospheric-transmission-windows:
+    path: /assets/images/module-01/week-03/atmospheric-transmission-windows.svg
+    caption: "**What to notice:** Earth’s atmosphere is transparent in the visible and parts of the radio, but blocks most ultraviolet, X-rays, and gamma rays. “What wavelength?” determines whether you need a space telescope."
+    alt: "Schematic spectrum strip showing wavelength bands (gamma, X-ray, UV, visible, IR, radio) with an overlaid transmission bar: visible mostly transmitted, radio mostly transmitted, IR partially transmitted, UV mostly blocked, X-ray and gamma blocked."
+    credit: "Illustration: A. Rosen (SVG)"
     module: 1
 
   telescope-collecting-area:
-    path: /assets/images/module-01/week-03/telescope-collecting-area.png
+    path: /assets/images/module-01/week-03/telescope-collecting-area.svg
     caption: "**What to notice:** Collecting area scales as diameter squared. A telescope twice as wide collects four times as much light."
     alt: "Two telescopes: small diameter D collects few photons (shown as dots), large diameter 2D collects four times as many photons. Caption shows Area ∝ D²."
+    credit: "Illustration: A. Rosen (SVG)"
     module: 1
 
   telescope-resolution:
-    path: /assets/images/module-01/week-03/telescope-resolution.png
+    path: /assets/images/module-01/week-03/telescope-resolution.svg
     caption: "**What to notice:** Angular resolution improves with larger diameter. The diffraction limit θ ≈ λ/D sets the finest detail a telescope can distinguish."
     alt: "Two images of binary star: small telescope shows blurry single blob, large telescope resolves two distinct stars. Equation θ ∝ λ/D shown."
+    credit: "Illustration: A. Rosen (SVG)"
     module: 1

@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">Telescope collecting area scales as D squared</title>
+  <desc id="desc">Two circular telescope apertures are compared: one with diameter D and one with diameter 2D. The larger aperture contains four times as many photon dots, illustrating that collecting area scales as D squared.</desc>
+  <defs>
+    <style>
+      .bg { fill: #ffffff; }
+      .panel { fill: #f2f3fb; stroke: #7077A1; stroke-width: 2; }
+      .label { font: 18px system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; fill: #111218; }
+      .small { font-size: 15px; fill: #3a3d52; }
+      .title { font-size: 24px; font-weight: 700; }
+      .teal { stroke: #028391; fill: rgba(2,131,145,0.08); }
+      .dot { fill: #BE5A83; opacity: 0.9; }
+      .arrow { stroke: #7077A1; stroke-width: 3; fill: none; marker-end: url(#arrow); }
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#7077A1"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="960" height="540"/>
+
+  <text class="label title" x="40" y="52">Collecting area — why bigger telescopes see fainter things</text>
+  <text class="label small" x="40" y="78">For a circular aperture: A = π(D/2)², so A ∝ D².</text>
+
+  <!-- Left aperture (D) -->
+  <circle class="teal" cx="240" cy="250" r="90" stroke-width="6"/>
+  <text class="label" x="205" y="370">Diameter D</text>
+
+  <!-- Photon dots inside left -->
+  <g>
+    <circle class="dot" cx="210" cy="220" r="4"/>
+    <circle class="dot" cx="260" cy="210" r="4"/>
+    <circle class="dot" cx="235" cy="255" r="4"/>
+    <circle class="dot" cx="190" cy="255" r="4"/>
+    <circle class="dot" cx="260" cy="270" r="4"/>
+    <circle class="dot" cx="225" cy="300" r="4"/>
+    <circle class="dot" cx="280" cy="250" r="4"/>
+    <circle class="dot" cx="205" cy="280" r="4"/>
+    <circle class="dot" cx="250" cy="240" r="4"/>
+    <circle class="dot" cx="235" cy="195" r="4"/>
+    <circle class="dot" cx="185" cy="220" r="4"/>
+    <circle class="dot" cx="275" cy="290" r="4"/>
+    <circle class="dot" cx="210" cy="320" r="4"/>
+    <circle class="dot" cx="290" cy="230" r="4"/>
+    <circle class="dot" cx="190" cy="300" r="4"/>
+    <circle class="dot" cx="250" cy="320" r="4"/>
+    <circle class="dot" cx="265" cy="250" r="4"/>
+    <circle class="dot" cx="220" cy="250" r="4"/>
+    <circle class="dot" cx="240" cy="285" r="4"/>
+    <circle class="dot" cx="240" cy="230" r="4"/>
+  </g>
+
+  <!-- Right aperture (2D) -->
+  <circle class="teal" cx="700" cy="250" r="180" stroke-width="6"/>
+  <text class="label" x="650" y="452">Diameter 2D</text>
+
+  <!-- Photon dots inside right (≈4× density) -->
+  <g>
+    <!-- Row 1 -->
+    <circle class="dot" cx="620" cy="140" r="4"/><circle class="dot" cx="660" cy="140" r="4"/><circle class="dot" cx="700" cy="140" r="4"/><circle class="dot" cx="740" cy="140" r="4"/><circle class="dot" cx="780" cy="140" r="4"/>
+    <!-- Row 2 -->
+    <circle class="dot" cx="600" cy="180" r="4"/><circle class="dot" cx="640" cy="180" r="4"/><circle class="dot" cx="680" cy="180" r="4"/><circle class="dot" cx="720" cy="180" r="4"/><circle class="dot" cx="760" cy="180" r="4"/><circle class="dot" cx="800" cy="180" r="4"/>
+    <!-- Row 3 -->
+    <circle class="dot" cx="580" cy="220" r="4"/><circle class="dot" cx="620" cy="220" r="4"/><circle class="dot" cx="660" cy="220" r="4"/><circle class="dot" cx="700" cy="220" r="4"/><circle class="dot" cx="740" cy="220" r="4"/><circle class="dot" cx="780" cy="220" r="4"/><circle class="dot" cx="820" cy="220" r="4"/>
+    <!-- Row 4 -->
+    <circle class="dot" cx="580" cy="260" r="4"/><circle class="dot" cx="620" cy="260" r="4"/><circle class="dot" cx="660" cy="260" r="4"/><circle class="dot" cx="700" cy="260" r="4"/><circle class="dot" cx="740" cy="260" r="4"/><circle class="dot" cx="780" cy="260" r="4"/><circle class="dot" cx="820" cy="260" r="4"/>
+    <!-- Row 5 -->
+    <circle class="dot" cx="580" cy="300" r="4"/><circle class="dot" cx="620" cy="300" r="4"/><circle class="dot" cx="660" cy="300" r="4"/><circle class="dot" cx="700" cy="300" r="4"/><circle class="dot" cx="740" cy="300" r="4"/><circle class="dot" cx="780" cy="300" r="4"/><circle class="dot" cx="820" cy="300" r="4"/>
+    <!-- Row 6 -->
+    <circle class="dot" cx="600" cy="340" r="4"/><circle class="dot" cx="640" cy="340" r="4"/><circle class="dot" cx="680" cy="340" r="4"/><circle class="dot" cx="720" cy="340" r="4"/><circle class="dot" cx="760" cy="340" r="4"/><circle class="dot" cx="800" cy="340" r="4"/>
+    <!-- Row 7 -->
+    <circle class="dot" cx="620" cy="380" r="4"/><circle class="dot" cx="660" cy="380" r="4"/><circle class="dot" cx="700" cy="380" r="4"/><circle class="dot" cx="740" cy="380" r="4"/><circle class="dot" cx="780" cy="380" r="4"/>
+  </g>
+
+  <!-- Arrow and annotation -->
+  <path class="arrow" d="M 350 250 L 480 250"/>
+  <text class="label" x="398" y="228" fill="#7077A1">2× D</text>
+  <text class="label" x="390" y="280" fill="#7077A1">4× A</text>
+
+  <!-- Footer panel -->
+  <rect class="panel" x="40" y="410" width="880" height="100" rx="16"/>
+  <text class="label" x="60" y="445"><tspan font-weight="700">What to notice:</tspan> Doubling the diameter increases collecting area by 4×.</text>
+  <text class="label small" x="60" y="472">More area means more photons — crucial for faint objects and for improving signal-to-noise.</text>
+</svg>

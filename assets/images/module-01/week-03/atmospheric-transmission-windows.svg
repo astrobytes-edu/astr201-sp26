@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">Atmospheric transmission windows</title>
+  <desc id="desc">A schematic wavelength band strip from gamma rays through radio. A transmission bar indicates that Earth’s atmosphere is mostly opaque to gamma rays, X-rays, and most UV, mostly transparent in the visible, partially transparent in parts of the infrared, and largely transparent in much of the radio.</desc>
+  <defs>
+    <style>
+      .bg { fill: #ffffff; }
+      .panel { fill: #f2f3fb; stroke: #7077A1; stroke-width: 2; }
+      .label { font: 18px system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; fill: #111218; }
+      .small { font-size: 15px; fill: #3a3d52; }
+      .title { font-size: 24px; font-weight: 700; }
+      .band { stroke: #7077A1; stroke-width: 2; }
+      .ok { fill: rgba(2,131,145,0.25); stroke: rgba(2,131,145,0.9); stroke-width: 2; }
+      .maybe { fill: rgba(190,90,131,0.18); stroke: rgba(190,90,131,0.85); stroke-width: 2; }
+      .no { fill: rgba(107,114,128,0.18); stroke: rgba(107,114,128,0.8); stroke-width: 2; }
+    </style>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="960" height="540"/>
+  <text class="label title" x="40" y="52">Earth’s atmosphere is a filter</text>
+  <text class="label small" x="40" y="78">This is a schematic: the key idea is which wavelength bands reach the ground.</text>
+
+  <!-- Wavelength strip -->
+  <rect x="60" y="140" width="840" height="90" rx="16" fill="#ffffff" stroke="#7077A1" stroke-width="2"/>
+  <text class="label small" x="60" y="130">Short λ / high energy</text>
+  <text class="label small" x="742" y="130">Long λ / low energy</text>
+
+  <!-- Bands -->
+  <g>
+    <rect class="band" x="60" y="140" width="120" height="90" fill="#f7f7fb"/>
+    <text class="label small" x="86" y="192">Gamma</text>
+
+    <rect class="band" x="180" y="140" width="120" height="90" fill="#f7f7fb"/>
+    <text class="label small" x="212" y="192">X-ray</text>
+
+    <rect class="band" x="300" y="140" width="120" height="90" fill="#f7f7fb"/>
+    <text class="label small" x="338" y="192">UV</text>
+
+    <rect class="band" x="420" y="140" width="120" height="90" fill="#f7f7fb"/>
+    <text class="label small" x="446" y="192">Visible</text>
+
+    <rect class="band" x="540" y="140" width="160" height="90" fill="#f7f7fb"/>
+    <text class="label small" x="610" y="192">IR</text>
+
+    <rect class="band" x="700" y="140" width="200" height="90" fill="#f7f7fb"/>
+    <text class="label small" x="780" y="192">Radio</text>
+  </g>
+
+  <!-- Transmission bar -->
+  <text class="label" x="60" y="270">Atmospheric transmission (qualitative)</text>
+  <rect x="60" y="290" width="840" height="70" rx="14" fill="#ffffff" stroke="#7077A1" stroke-width="2"/>
+
+  <!-- Opaque to gamma and X -->
+  <rect class="no" x="70" y="300" width="220" height="50" rx="10"/>
+  <text class="label small" x="120" y="332">blocked</text>
+
+  <!-- Mostly blocked UV -->
+  <rect class="no" x="300" y="300" width="95" height="50" rx="10"/>
+  <rect class="maybe" x="395" y="300" width="25" height="50" rx="10"/>
+  <text class="label small" x="308" y="332">mostly blocked</text>
+
+  <!-- Visible window -->
+  <rect class="ok" x="430" y="300" width="100" height="50" rx="10"/>
+  <text class="label small" x="447" y="332">window</text>
+
+  <!-- IR partial -->
+  <rect class="maybe" x="540" y="300" width="160" height="50" rx="10"/>
+  <text class="label small" x="585" y="332">partial</text>
+
+  <!-- Radio mostly open -->
+  <rect class="ok" x="710" y="300" width="180" height="50" rx="10"/>
+  <text class="label small" x="760" y="332">mostly open</text>
+
+  <!-- Footer panel -->
+  <rect class="panel" x="40" y="410" width="880" height="100" rx="16"/>
+  <text class="label" x="60" y="445"><tspan font-weight="700">What to notice:</tspan> Visible and radio observations are often possible from the ground.</text>
+  <text class="label small" x="60" y="472">Most UV, X-ray, and gamma-ray astronomy requires space telescopes because the atmosphere protects us by blocking those bands.</text>
+</svg>

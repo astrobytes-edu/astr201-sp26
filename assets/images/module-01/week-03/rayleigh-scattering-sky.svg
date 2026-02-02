@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">Rayleigh scattering: blue sky and red sunsets</title>
+  <desc id="desc">Schematic showing sunlight entering Earth’s atmosphere. Short-wavelength blue light scatters in many directions, making the sky blue when viewed away from the Sun. Along a long sunset path, much of the blue is scattered out of the direct beam, leaving redder transmitted light.</desc>
+  <defs>
+    <style>
+      .bg { fill: #ffffff; }
+      .panel { fill: #f2f3fb; stroke: #7077A1; stroke-width: 2; }
+      .label { font: 18px system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; fill: #111218; }
+      .small { font-size: 15px; fill: #3a3d52; }
+      .title { font-size: 24px; font-weight: 700; }
+      .sun { fill: #f7c948; stroke: #d9a10f; stroke-width: 2; }
+      .atm { fill: rgba(2,131,145,0.12); stroke: rgba(2,131,145,0.45); stroke-width: 2; }
+      .ray { stroke-width: 6; stroke-linecap: round; fill: none; }
+      .blue { stroke: #2b6cb0; }
+      .red { stroke: #c53030; }
+      .gray { stroke: #6b7280; }
+      .arrow { marker-end: url(#arrow); }
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor"/>
+    </marker>
+    <marker id="arrowBlue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2b6cb0"/>
+    </marker>
+    <marker id="arrowRed" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#c53030"/>
+    </marker>
+    <marker id="arrowGray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#6b7280"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="960" height="540"/>
+
+  <text class="label title" x="40" y="52">Rayleigh scattering — same physics, different geometry</text>
+  <text class="label small" x="40" y="78">Short wavelengths scatter strongly; long wavelengths transmit more directly.</text>
+
+  <!-- Atmosphere block -->
+  <rect class="atm" x="190" y="110" width="720" height="270" rx="18"/>
+  <text class="label small" x="210" y="138">Earth’s atmosphere</text>
+
+  <!-- Sun -->
+  <circle class="sun" cx="110" cy="190" r="46"/>
+  <text class="label" x="70" y="262">Sun</text>
+
+  <!-- Incoming sunlight ray (white/gray) -->
+  <path class="ray gray" d="M 156 190 L 240 190" stroke="#6b7280" marker-end="url(#arrowGray)"/>
+
+  <!-- Scattering point -->
+  <circle cx="280" cy="190" r="6" fill="#111218"/>
+
+  <!-- Scattered blue rays -->
+  <path class="ray blue" d="M 280 190 L 380 140" stroke="#2b6cb0" marker-end="url(#arrowBlue)"/>
+  <path class="ray blue" d="M 280 190 L 400 190" stroke="#2b6cb0" marker-end="url(#arrowBlue)"/>
+  <path class="ray blue" d="M 280 190 L 380 240" stroke="#2b6cb0" marker-end="url(#arrowBlue)"/>
+  <path class="ray blue" d="M 280 190 L 320 310" stroke="#2b6cb0" marker-end="url(#arrowBlue)"/>
+  <path class="ray blue" d="M 280 190 L 250 320" stroke="#2b6cb0" marker-end="url(#arrowBlue)"/>
+
+  <text class="label small" x="415" y="176" fill="#2b6cb0">scattered short λ (blue)</text>
+
+  <!-- Long-path sunset beam (redder transmitted light) -->
+  <path class="ray red" d="M 240 300 C 380 300, 520 312, 700 336" stroke="#c53030" marker-end="url(#arrowRed)"/>
+  <text class="label small" x="510" y="320" fill="#c53030">transmitted light after blue is scattered out</text>
+
+  <!-- Observers -->
+  <g>
+    <circle cx="820" cy="170" r="10" fill="#111218"/>
+    <path d="M 820 180 L 820 215" stroke="#111218" stroke-width="3" stroke-linecap="round"/>
+    <path d="M 805 195 L 835 195" stroke="#111218" stroke-width="3" stroke-linecap="round"/>
+    <path d="M 810 235 L 820 215 L 830 235" stroke="#111218" stroke-width="3" stroke-linecap="round" fill="none"/>
+    <text class="label small" x="745" y="150">looking up</text>
+    <text class="label small" x="735" y="168">sees scattered blue</text>
+  </g>
+
+  <g>
+    <circle cx="820" cy="360" r="10" fill="#111218"/>
+    <path d="M 820 370 L 820 405" stroke="#111218" stroke-width="3" stroke-linecap="round"/>
+    <path d="M 805 385 L 835 385" stroke="#111218" stroke-width="3" stroke-linecap="round"/>
+    <path d="M 810 425 L 820 405 L 830 425" stroke="#111218" stroke-width="3" stroke-linecap="round" fill="none"/>
+    <text class="label small" x="740" y="340">toward horizon</text>
+    <text class="label small" x="728" y="358">sees redder Sun</text>
+  </g>
+
+  <!-- Footer panel -->
+  <rect class="panel" x="40" y="410" width="880" height="100" rx="16"/>
+  <text class="label" x="60" y="445"><tspan font-weight="700">What to notice:</tspan> Rayleigh scattering scales roughly as λ<tspan baseline-shift="20%" font-size="70%">−4</tspan>.</text>
+  <text class="label small" x="60" y="472">Short wavelengths are redirected into many directions (blue sky). Along long paths, blue is scattered out of the direct beam (red sunsets).</text>
+</svg>
