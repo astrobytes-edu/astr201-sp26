@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-label="Placeholder diagram for wave-particle duality: a wave pattern on the left and discrete dots on the right, connected by a double arrow.">
+  <defs>
+    <style>
+      .bg { fill: #0b0f14; }
+      .fg { stroke: #e9eef5; fill: none; stroke-width: 6; stroke-linecap: round; stroke-linejoin: round; }
+      .muted { stroke: #94a3b8; fill: none; stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; }
+      .dot { fill: #e9eef5; }
+      .label { fill: #e9eef5; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; font-size: 44px; font-weight: 650; }
+      .sublabel { fill: #94a3b8; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; font-size: 28px; font-weight: 520; }
+    </style>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1200" height="700"/>
+
+  <!-- Left: wave -->
+  <text class="label" x="130" y="120">Wave model</text>
+  <text class="sublabel" x="130" y="160">useful for interference/diffraction</text>
+  <path class="fg" d="M120 420 C 180 300, 240 540, 300 420 S 420 300, 480 420 S 600 540, 660 420 S 780 300, 840 420" />
+  <path class="muted" d="M120 520 L 840 520" />
+
+  <!-- Middle: double arrow -->
+  <path class="muted" d="M520 330 L 680 330" />
+  <path class="muted" d="M520 330 L 545 308" />
+  <path class="muted" d="M520 330 L 545 352" />
+  <path class="muted" d="M680 330 L 655 308" />
+  <path class="muted" d="M680 330 L 655 352" />
+  <text class="sublabel" x="520" y="290">depends on what you measure</text>
+
+  <!-- Right: particles -->
+  <text class="label" x="780" y="120">Photon model</text>
+  <text class="sublabel" x="780" y="160">useful for energy in chunks</text>
+  <circle class="dot" cx="820" cy="360" r="16"/>
+  <circle class="dot" cx="900" cy="420" r="16"/>
+  <circle class="dot" cx="980" cy="340" r="16"/>
+  <circle class="dot" cx="1060" cy="400" r="16"/>
+  <circle class="dot" cx="880" cy="520" r="16"/>
+  <circle class="dot" cx="1040" cy="520" r="16"/>
+  <path class="muted" d="M780 560 L 1120 560" />
+
+  <!-- Footer -->
+  <text class="sublabel" x="120" y="650">PLACEHOLDER FIGURE — replace with a course-approved duality graphic.</text>
+</svg>

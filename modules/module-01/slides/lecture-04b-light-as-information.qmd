@@ -1,0 +1,817 @@
+---
+title: "Lecture 4 (Day 2):<br> Light as Information"
+subtitle: "Models • Spectral Fingerprints • Telescopes"
+author: "Dr. Anna Rosen"
+date: "2026-02-05"
+description: "We finish the radiation foundation: why the Planck curve has limiting cases, how spectral lines encode composition, and how telescopes turn photons into inference."
+draft: false
+format:
+  revealjs:
+    theme: [default, ../../../assets/theme/slides/theme.scss]
+    title-slide-attributes:
+      data-background-image: "/assets/images/common/cosmic-cliffs-jwst.png"
+      data-background-opacity: "0.20"
+    smaller: true
+    slide-number: true
+    transition: fade
+    transition-speed: fast
+    background-transition: fade
+    center: false
+    footer: "ASTR 201 • Dr. Anna Rosen • Lecture 4 (Day 2)"
+    chalkboard: true
+    code-line-numbers: true
+    fig-align: center
+    html-math-method: mathjax
+    pointer:
+      color: "#dc2626"
+      pointerSize: 18
+    spotlight:
+      size: 80
+      fadeInAndOut: 150
+      toggleSpotlightOnMouseDown: true
+      initialPresentationMode: false
+    quiz:
+      shuffleOptions: true
+      defaultCorrect: "✓ Correct!"
+      defaultIncorrect: "✗ Not quite — let's discuss."
+revealjs-plugins:
+  - pointer
+  - spotlight
+  - attribution
+  - quiz
+filters:
+  - roughnotation
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+## Learning Objectives
+
+By the end of today, you will be able to:
+
+::: {.incremental .text-md}
+- Use **limiting-case reasoning** to interpret the shape of a blackbody spectrum (Rayleigh–Jeans vs Wien tail)
+- Explain why atoms produce **absorption and emission lines** and identify the three spectrum types (Kirchhoff)
+:::
+
+---
+
+## Learning Objectives (continued)
+
+::: {.incremental .text-md}
+- Describe how a real stellar spectrum combines **continuum + lines**
+- Apply the two key telescope scalings: **collecting area** $\propto D^2$ and **resolution** $\propto \lambda D^{-1}$
+:::
+
+::: {.notes}
+Today is “how we read spectra” + “why instruments matter”.
+Plan: shorter lecture block + HW/self-grading + (if time) one demo.
+:::
+
+---
+
+## {background-image="/assets/images/module-01/pillars-hubble-jwst.png" background-opacity="0.18"}
+
+::: {.r-fit-text}
+Same object.
+
+Different wavelength.
+
+Different story.
+:::
+
+::: {.notes}
+This is the motivation for “spectrum + instruments”.
+:::
+
+---
+
+## Today’s Game Plan
+
+We finish the “radiation foundation” in three moves:
+
+::: {.incremental}
+1) Why the blackbody curve has simple limits (so we can *use* it)
+2) How atoms add **spectral lines** (so we can infer composition)
+3) How telescopes change what we can measure (photons + resolution)
+:::
+
+::: {.notes}
+Make this explicit: today is not “more facts” — it’s “how to read spectra like an astronomer”.
+:::
+
+---
+
+## Quick Recall (Day 1)
+
+Fill in the blanks:
+
+::: {.incremental}
+- **Waves:** $c = \lambda\nu$
+- **Photons:** $E = hc\lambda^{-1}$
+- **Thermal peak:** $\lambda_{\mathrm{peak}} \propto T^{-1}$
+:::
+
+::: {.notes}
+Let students say them out loud. Remind: we are building an inference toolkit.
+:::
+
+---
+
+## 🧠 Quiz: Temperature from Color
+
+A thermal spectrum peaks at a shorter wavelength. The object is…
+
+::: {.quiz}
+
+- [x] hotter
+- [ ] cooler
+- [ ] the same temperature
+- [ ] necessarily younger
+
+:::
+
+---
+
+## {.center}
+
+::: {.r-fit-text}
+Part 1: The Planck Curve Has “Handlebars”
+:::
+
+*Limiting cases make scary equations usable.*
+
+---
+
+## The Story Behind the Curve
+
+Classically, you might expect short wavelengths to dominate because:
+
+::: {.incremental}
+- shorter $\lambda$ often means higher energy per photon
+- power laws like $\lambda^{-4}$ rise fast as $\lambda$ shrinks
+:::
+
+::: {.notes}
+Set up the “failure mode” before naming it.
+:::
+
+---
+
+## The Ultraviolet Catastrophe (What Went Wrong)
+
+Classical physics predicts a spectrum that blows up at short wavelength.
+
+. . .
+
+That would mean **infinite** energy in the ultraviolet.
+
+::: {.fragment}
+Reality: the spectrum peaks and then *drops*.
+:::
+
+::: {.notes}
+No numbers. Just the conceptual mismatch: classical → divergence; reality → peak + cutoff.
+:::
+
+---
+
+## Planck’s Quantum Move
+
+Energy is emitted/absorbed in chunks:
+
+$$E = h\nu$$
+
+::: {.incremental .text-sm}
+- high frequency (short $\lambda$) photons cost more energy per photon
+- at a given $T$, very high-energy photons are rare
+:::
+
+::: {.notes}
+Tie to Day 1: this is why “very high-energy photons are expensive.”
+:::
+
+---
+
+## The Planck Function (Recognize It)
+
+You don’t memorize it — you recognize it and read its structure:
+
+$$B_\lambda(T)=\frac{2hc^2}{\lambda^5}\cdot\frac{1}{e^{hc/\lambda k_B T}-1}$$
+
+::: {.incremental .text-sm}
+- $B_\lambda$: spectral radiance (brightness per wavelength interval)
+- $\lambda$: wavelength, $T$: temperature
+:::
+
+::: {.notes}
+One sentence: this is the quantitative model behind the curves.
+Do not dwell on constants; we’re here for interpretation.
+:::
+
+---
+
+## How to Read $B_\lambda(T)$ (Study Version)
+
+::: {.incremental}
+- **Predicts:** spectrum shape (brightness vs $\lambda$)
+- **Depends on:** temperature $T$
+- **Assumes:** ideal blackbody (thermal equilibrium)
+- **Sanity check:** long $\lambda$ → power law; short $\lambda$ → exponential cutoff
+- **Units:** erg·s$^{-1}$·cm$^{-2}$·sr$^{-1}$·cm$^{-1}$
+:::
+
+::: {.notes}
+This is the “equation contract” slide without the full derivation.
+:::
+
+---
+
+## You Don’t Memorize Planck — You Read It
+
+:::: {.columns}
+::: {.column width="52%"}
+The blackbody curve has two key regimes:
+
+::: {.incremental}
+- **Long-wavelength tail** (Rayleigh–Jeans)
+- **Short-wavelength tail** (Wien)
+:::
+
+Those regimes let you predict behavior without re-deriving the whole function.
+:::
+
+::: {.column width="48%"}
+{{< img blackbody-stellar-spectra width="100%" >}}
+:::
+::::
+
+---
+
+## What the Planck Function *Does* (One Slide)
+
+Even without memorizing it, recognize the structure:
+
+::: {.incremental}
+- a steep power-law factor that wants short wavelengths to win
+- an exponential factor that suppresses short wavelengths
+- competition → a peak
+:::
+
+::: {.notes}
+This mirrors the reading’s “structure” section: power-law vs exponential.
+:::
+
+---
+
+## Long Wavelengths (Rayleigh–Jeans Limit)
+
+At long wavelengths, the spectrum behaves like:
+
+$$B_\lambda \propto T\lambda^{-4}$$
+
+::: {.incremental .text-sm}
+- at fixed $\lambda$: hotter → brighter (linear in $T$)
+- at fixed $T$: shorter $\lambda$ → much brighter ($\lambda^{-4}$ is steep)
+:::
+
+::: {.notes}
+Connect to Rayleigh scattering’s “steep power law” vibe — steep exponents matter.
+:::
+
+---
+
+## Where Does Rayleigh–Jeans Apply?
+
+Rayleigh–Jeans is a **long-wavelength** approximation.
+
+::: {.fragment}
+It works best on the “right side” of the peak — not near/left of the peak.
+:::
+
+::: {.notes}
+This prevents over-applying power laws where the exponential cutoff matters.
+:::
+
+---
+
+## 🧠 Predict (Rayleigh–Jeans)
+
+In the Rayleigh–Jeans limit, if wavelength doubles (fixed $T$), intensity changes by…
+
+::: {.quiz}
+
+- [ ] $\times 2$
+- [ ] $\times 4$
+- [ ] $\times 8$
+- [x] $\div 16$
+
+:::
+
+---
+
+## Short Wavelengths (Wien Tail)
+
+At short wavelengths, the spectrum drops off **exponentially**:
+
+$$B_\lambda \approx \left(\text{power law}\right)\times e^{-hc/\lambda k_B T}$$
+
+::: {.fragment}
+Interpretation: very high-energy photons are “expensive” thermally.
+:::
+
+::: {.notes}
+No derivation. Just the story: exponential suppression at short wavelength.
+:::
+
+---
+
+## Where Does the Wien Tail Apply?
+
+The Wien tail is the **short-wavelength** side of the curve.
+
+::: {.fragment}
+That’s why hot objects can emit UV, but not “infinite UV.”
+:::
+
+---
+
+## What Limiting Cases Buy Us
+
+Instead of memorizing a complicated formula, we can answer questions like:
+
+::: {.incremental}
+- “Which side of the peak am I on?”
+- “Does intensity fall as a power law or exponentially?”
+- “What changes faster: with $T$ or with $\lambda$?”
+:::
+
+---
+
+## Example: The Cosmic Microwave Background
+
+:::: {.columns}
+::: {.column width="52%"}
+The CMB is an almost perfect blackbody:
+
+::: {.incremental}
+- temperature $\approx 2.725\ \mathrm{K}$
+- peak is in the **microwave**
+:::
+
+::: {.fragment}
+It’s “thermal radiation from the early universe,” stretched by cosmic expansion.
+:::
+:::
+
+::: {.column width="48%"}
+{{< img cmb-map width="100%" >}}
+:::
+::::
+
+::: {.notes}
+Do not go deep into cosmology here. Use it as: “blackbodies aren’t only stars.”
+:::
+
+---
+
+## CMB: Quick Peak Estimate (Fast Math)
+
+Using Wien’s law with $T\approx 2.7\ \mathrm{K}$:
+
+$$\lambda_{\mathrm{peak}} \approx 0.29\cdot(2.7)^{-1}\ \mathrm{cm}\approx 0.11\ \mathrm{cm}\approx 1.1\ \mathrm{mm}$$
+
+::: {.fragment}
+That’s about a **millimeter** → microwave.
+:::
+
+---
+
+## A Subtle Plotting Warning (Optional)
+
+The “peak wavelength” depends on whether you plot:
+
+::: {.incremental}
+- $B_\lambda$ (per wavelength interval), or
+- $B_\nu$ (per frequency interval)
+:::
+
+::: {.fragment .text-sm}
+Same physics; different axis choice can shift where the peak appears.
+:::
+
+::: {.notes}
+This matches the reading’s “Representation Warning.” Tell them: you’ll always specify which is being used.
+:::
+
+---
+
+## {.center}
+
+::: {.r-fit-text}
+Part 2: Spectral Lines = Atomic Fingerprints
+:::
+
+*Continuum tells temperature; lines tell composition.*
+
+---
+
+## Why Lines Exist (One Sentence)
+
+Atoms have **quantized energy levels** — they absorb or emit photons with specific energies.
+
+::: {.notes}
+Name the misconception: “atoms can absorb any wavelength”. No: only what matches energy gaps.
+:::
+
+---
+
+## The Bohr Model (A First Mental Picture)
+
+Electrons live on “allowed steps” (energy levels).
+
+::: {.incremental}
+- jump up → absorb a photon
+- fall down → emit a photon
+:::
+
+::: {.notes}
+Goal: quantization as a model. Don’t pretend it’s the full modern picture; it’s the simplest useful scaffold.
+:::
+
+---
+
+## Absorption: Photon In, Electron Up
+
+:::: {.columns}
+::: {.column width="52%"}
+You see **dark lines** when:
+
+::: {.incremental}
+- light passes through cooler gas
+- specific photon energies are removed
+:::
+:::
+
+::: {.column width="48%"}
+{{< img hydrogen-absorption width="100%" >}}
+:::
+::::
+
+---
+
+## Emission: Electron Down, Photon Out
+
+:::: {.columns}
+::: {.column width="52%"}
+You see **bright lines** when:
+
+::: {.incremental}
+- excited gas emits
+- photons come out at specific energies
+:::
+:::
+
+::: {.column width="48%"}
+{{< img hydrogen-emission width="100%" >}}
+:::
+::::
+
+---
+
+## Kirchhoff’s Laws (The Three Spectrum Types)
+
+{{< img three-types-of-spectra width="95%" >}}
+
+::: {.notes}
+Anchor the three cases:
+1) hot dense → continuous
+2) continuous + cooler gas in front → absorption
+3) hot thin gas → emission
+:::
+
+---
+
+## Kirchhoff Summary (For Studying)
+
+::: {.incremental}
+- hot, dense → **continuous**
+- continuous + cooler gas → **absorption**
+- hot, thin gas → **emission**
+:::
+
+---
+
+## 🧠 Quiz: Which Spectrum?
+
+A hot dense source shines through a cooler gas cloud in front of it. You observe…
+
+::: {.quiz}
+
+- [ ] an emission-line spectrum
+- [x] an absorption-line spectrum
+- [ ] a continuous spectrum with no lines
+- [ ] a spectrum that depends only on distance
+
+:::
+
+---
+
+## Quick Check: Name the Scenario
+
+Which situation gives an **emission-line** spectrum?
+
+::: {.quiz}
+
+- [ ] a hot dense object by itself
+- [ ] a hot dense object seen through cooler gas
+- [x] a hot, low-density gas cloud
+- [ ] a spectrum with no wavelength information
+
+:::
+
+---
+
+## Element Fingerprints
+
+{{< img absorption-emission-elements width="95%" >}}
+
+::: {.notes}
+Key line: line patterns are not random — they are a fingerprint of atomic structure.
+:::
+
+---
+
+## What Spectral Lines Can Tell You (Preview)
+
+From lines alone, astronomers can infer:
+
+::: {.incremental}
+- **composition** (which elements are present)
+- **temperature** (which transitions are populated)
+- **density/pressure** (line widths and ratios)
+- **motion** (Doppler shifts — coming soon)
+:::
+
+---
+
+## Real Stellar Spectra Combine Tools
+
+:::: {.columns}
+::: {.column width="52%"}
+In one observation, you can infer:
+
+::: {.incremental}
+- **temperature** from the continuum shape
+- **composition** from which lines appear
+- (later) **velocity** from line shifts
+:::
+:::
+
+::: {.column width="48%"}
+{{< img altair-spectrum-annotated width="100%" >}}
+:::
+::::
+
+---
+
+## Thermal vs Non-Thermal Emitters
+
+{{< img continuous-vs-line-spectrum width="95%" >}}
+
+::: {.notes}
+Short prompt: “Which one looks blackbody-like?” Tie back: different physics → different spectrum shapes.
+:::
+
+---
+
+## Motion Preview (Doppler Shifts)
+
+{{< img doppler-shift-exoplanet width="80%" >}}
+
+::: {.fragment .text-sm}
+Preview — we’ll quantify this later.
+:::
+
+::: {.notes}
+Keep this as a “next tool” teaser. Mention: the Doppler demo/lab is still being finalized, so we’ll treat this as conceptual for now.
+:::
+
+---
+
+## {.center}
+
+::: {.r-fit-text}
+Part 3: Telescopes Turn Light Into Inference
+:::
+
+*More photons and finer detail.*
+
+---
+
+## Collecting Area: Why Bigger Is Better
+
+:::: {.columns}
+::: {.column width="52%"}
+The number of photons you collect scales like:
+
+$$A \propto D^2$$
+
+::: {.fragment}
+Double $D$ → 4× photons.
+:::
+:::
+
+::: {.column width="48%"}
+{{< img telescope-collecting-area width="100%" >}}
+:::
+::::
+
+---
+
+## Collecting Area: Quick Example
+
+If one telescope has diameter $D$ and another has $2D$:
+
+$$\frac{A_2}{A_1} = \left(\frac{2D}{D}\right)^2 = 4$$
+
+::: {.notes}
+Say: “This is why big telescopes are photon machines.”
+:::
+
+---
+
+## 🧠 Predict (Collecting Area)
+
+A telescope with 3× the diameter collects how much more light?
+
+::: {.quiz}
+
+- [ ] 3×
+- [ ] 6×
+- [x] 9×
+- [ ] 27×
+
+:::
+
+---
+
+## Angular Resolution: Why Bigger Is Sharper
+
+:::: {.columns}
+::: {.column width="52%"}
+Diffraction sets a fundamental limit:
+
+$$\theta \propto \lambda D^{-1}$$
+
+::: {.incremental .text-sm}
+- bigger $D$ → smaller $\theta$ (sharper)
+- longer $\lambda$ → larger $\theta$ (blurrier)
+:::
+:::
+
+::: {.column width="48%"}
+{{< img telescope-resolution width="100%" >}}
+:::
+::::
+
+---
+
+## Misconception Check: Magnification vs Resolution
+
+More magnification does **not** create more detail if the image is already blurred.
+
+::: {.fragment}
+Resolution is set by $D$ and $\lambda$ (and the atmosphere), not the zoom knob.
+:::
+
+::: {.notes}
+Quick live example: “Zooming a blurry photo doesn’t add pixels.”
+:::
+
+---
+
+## The Rayleigh Criterion (Name the Rule)
+
+For a circular aperture, the diffraction limit is approximately:
+
+$$\theta \approx 1.22\,\lambda D^{-1}$$
+
+::: {.notes}
+You can mention “1.22 is geometry” and the scaling is the important part.
+:::
+
+---
+
+## 🧠 Predict (Resolution)
+
+Same telescope, same target. Switching from visible to infrared (longer $\lambda$) makes resolution…
+
+::: {.quiz}
+
+- [ ] better
+- [x] worse
+- [ ] unchanged
+- [ ] dependent only on magnification
+
+:::
+
+---
+
+## Instruments + Atmosphere
+
+:::: {.columns}
+::: {.column width="52%"}
+Two reasons we build space telescopes:
+
+::: {.incremental}
+- **blocked wavelengths** (no ground X-ray astronomy)
+- **atmospheric blurring** (seeing)
+:::
+:::
+
+::: {.column width="48%"}
+{{< img atmospheric-transmission-windows width="100%" >}}
+:::
+::::
+
+---
+
+## Mirrors vs Lenses (Brief)
+
+Why big telescopes are mirrors:
+
+::: {.incremental}
+- lenses absorb/warp light when they get large
+- mirrors can be supported from behind
+- reflective coatings can work across many wavelengths
+:::
+
+::: {.notes}
+Keep it short. This is “engineering constraints shape what we can measure.”
+:::
+
+---
+
+## Synthesis (Day 2)
+
+We now have a powerful inference chain:
+
+::: {.incremental}
+- **continuum** → temperature (blackbody + Wien)
+- **lines** → composition (and later motion)
+- **telescopes** → more photons + better detail
+:::
+
+::: {.fragment}
+Everything we do next semester-wide is built on this.
+:::
+
+---
+
+## Demo Time (If Time): Telescope Resolution
+
+::: {.text-sm .text-muted}
+Demo: [telescope-resolution](https://astrobytes-edu.github.io/astr101-sp26/demos/telescope-resolution/)
+:::
+
+**Prompt:** What matters more for resolution — aperture or magnification? What does wavelength do?
+
+::: {.notes}
+Local path (instructor): /Users/anna/Teaching/astr101-sp26/demos/telescope-resolution/
+Suggested flow (5–8 min):
+1) Start with “binary star” view; ask students to predict resolved/unresolved.
+2) Increase D at fixed λ: show the Airy disk shrinking.
+3) Increase λ at fixed D: show resolution getting worse.
+If you’re short on time: do only step (1) + one slider move.
+:::
+
+---
+
+## Exit Ticket (30 seconds)
+
+Pick one:
+
+1) “One new inference we can make from spectra is…”
+2) “One reason we build big telescopes is…”
+
+::: {.notes}
+Collect 2–3 aloud. Listen for continuum vs lines distinction.
+:::
+
+---
+
+## Study Snapshot (Write This Down)
+
+::: {.incremental}
+- continuum → $T$ (blackbody + Wien)
+- lines → composition
+- $A\propto D^2$ (photons)
+- $\theta\propto \lambda D^{-1}$ (detail)
+:::
+
+::: {.notes}
+This is the “what to memorize” compression slide.
+:::

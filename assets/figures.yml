@@ -590,6 +590,13 @@ figures:
     credit: "JWST Education"
     module: 1
 
+  double-slit-interference-openstax:
+    path: /assets/images/module-01/week-03/double-slit-experiment-openstax.webp
+    caption: "**What to notice:** Waves emerging from two slits overlap and interfere. Where they arrive in phase, the intensity is maximized (bright fringes). Where they arrive out of phase, the intensity is minimized (dark fringes)."
+    alt: "Diagram of Young’s double-slit setup. Incoming plane waves hit a barrier with two narrow slits. Circular waves spread from each slit and overlap on a screen, producing alternating regions labeled Max and Min that represent constructive and destructive interference."
+    credit: "OpenStax"
+    module: 1
+
   # Prism and Spectra
   prism-dispersion:
     path: /assets/images/module-01/week-03/prism-spectrum-jwst.png
