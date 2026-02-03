@@ -697,8 +697,7 @@ $$T_{\text{CMB}} = \frac{0.2898\ \text{cm·K}}{0.11\ \text{cm}} = 2.63\ \text{K}
 The CMB is the most perfect blackbody ever measured. NASA's COBE satellite (1989) confirmed the spectrum matches a Planck curve with deviations $\lesssim 50$ ppm — a stunning confirmation of Big Bang cosmology. ESA's Planck satellite (2009–2013) later mapped the tiny temperature fluctuations (±0.0002 K) with unprecedented precision; these variations are the seeds from which all galaxies and large-scale structure grew. We'll return to the CMB in Module 4 when we study cosmology.
 
 ::: {.callout-note title="Learn more"}
-ESA background on the CMB and Planck mission.
-<!-- [ESA: Cosmic Microwave Background Radiation](https://www.esa.int/Science_Exploration/Space_Science/Cosmic_Microwave_Background_CMB_radiation) -->
+[ESA: Cosmic Microwave Background Radiation](https://www.esa.int/Science_Exploration/Space_Science/Cosmic_Microwave_Background_CMB_radiation) — Background on the CMB and Planck mission.
 :::
 
 ::: {.callout-tip title="Quick Check: Mars in the Infrared" collapse="true"}
