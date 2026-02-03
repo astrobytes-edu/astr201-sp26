@@ -51,16 +51,9 @@ execute:
 
 By the end of today, you will be able to:
 
-::: {.incremental .text-md}
+::: {.incremental .text-sm}
 - Relate **wavelength** ($\lambda$), **frequency** ($\nu$), and **photon energy** ($E$)
 - Explain why the **visible band** is a tiny slice of the EM spectrum
-:::
-
----
-
-## Learning Objectives (continued)
-
-::: {.incremental .text-md}
 - Describe the main ways light interacts with matter (absorb, emit, transmit, reflect/refract, scatter)
 - Use **Wien’s law** to estimate temperature from a thermal spectrum’s peak
 :::
@@ -85,18 +78,24 @@ Today’s arc: what we measure (light) → what we infer (temperature) using a m
 
 ---
 
-## The Course Throughline (Today’s Piece)
+## The Course Throughline
+
+### Today’s Piece
+
+::: {.text-md .text-muted}
+Measure → Infer → Balance → Evolve
+:::
 
 :::: {.columns}
-::: {.column width="56%"}
-**Measure → Infer → Balance → Evolve**
-
+::: {.column width="40%"}
 - **Measure:** intensity vs wavelength (a spectrum)
 - **Infer:** temperature (soon: composition)
 :::
 
-::: {.column width="44%"}
-{{< img four-observables width="100%" >}}
+::: {.column width="60%"}
+::: {style="text-align: center;"}
+{{< img four-observables width="90%" >}}
+:::
 :::
 ::::
 
@@ -106,12 +105,10 @@ Point to Wavelength. Tie to Lecture 1: “we only measure four things”.
 
 ---
 
-## A “Pretty Picture” Is Still Data
+## <span style="color: #f8fafc;">A “Pretty Picture” Is Still Data</span> {background-image="/assets/images/common/cosmic-cliffs-jwst.png" background-opacity="0.90"}
 
-{{< img milky-way-panoramic width="95%" >}}
-
-::: {.fragment .text-sm .text-muted}
-Brightness patterns + color patterns = physics patterns.
+::: {.fragment .text-sm .opacity-75}
+<span style="color: #f8fafc;">Brightness patterns + color patterns = physics patterns.</span>
 :::
 
 ::: {.notes}
@@ -153,7 +150,9 @@ Part 1: The Electromagnetic Spectrum
 
 ---
 
-## What Is Light? (Wave Picture)
+## What Is Light?
+
+### Wave Picture
 
 :::: {.columns}
 ::: {.column width="52%"}
@@ -179,33 +178,27 @@ Keep it visual. Point out: E and B are perpendicular; propagation direction is p
 
 ## Mechanical Waves vs EM Waves
 
-:::: {.columns}
-::: {.column width="52%"}
+{{< img mechanical-vs-em-wave width="90%" >}}
+
 Mechanical waves need a **medium**.
 
-. . .
-
-EM waves don’t.
-
 ::: {.fragment}
-That’s why light crosses the vacuum of space.
+EM waves don’t — that’s why light crosses the vacuum of space.
 :::
-:::
-
-::: {.column width="48%"}
-{{< img mechanical-vs-em-wave width="100%" >}}
-:::
-::::
 
 ---
 
 ## The Wave Relation
 
+The symbol $c$ is the speed of light in vacuum.
+
 {{< include ../../../_includes/equations/wave-relation.qmd >}}
 
 ::: {.incremental .text-sm}
-- $c$ is the speed of light in vacuum ($\approx 3\times10^{10}\ \mathrm{cm/s}$)
-- If $\lambda$ goes up, $\nu$ must go down (they trade off)
+- In vacuum, $c \approx 3\times10^{10}\ \mathrm{cm/s}$
+- Solve for wavelength: $\lambda = c/\nu \;\Rightarrow\; \lambda \propto \nu^{-1}$
+- Solve for frequency: $\nu = c/\lambda \;\Rightarrow\; \nu \propto \lambda^{-1}$
+- Negative exponents are a compact way to show “inverse” relationships; you can also write $\lambda \propto 1/\nu$ or $\nu \propto 1/\lambda$
 :::
 
 ::: {.notes}
@@ -215,7 +208,9 @@ Micro-prompt: “If wavelength doubles, what happens to frequency?”
 
 ---
 
-## Units Sanity Check (Fast)
+## Units Sanity Check
+
+### Fast
 
 If $c = \lambda\nu$, then the units must satisfy:
 
@@ -231,17 +226,18 @@ Tie back to Lecture 2: units are a “smoke detector.”
 
 ---
 
-## Wavelength Units (So We Speak the Same Language)
+## Wavelength Units
+
+### So We Speak the Same Language
 
 Visible light is roughly:
 
 ::: {.incremental}
-- $400$–$700\ \mathrm{nm}$, or
-- $4000$–$7000\ \mathrm{\AA}$
+- $400$–$700\ \mathrm{nm}$
 :::
 
 ::: {.fragment .text-sm}
-Conversions: $1\ \mathrm{nm}=10\ \mathrm{\AA}$; $1\ \mathrm{\AA}=10^{-8}\ \mathrm{cm}$.
+Conversion: $1\ \mathrm{nm}=10^{-7}\ \mathrm{cm}$.
 :::
 
 ::: {.fragment .text-sm}
@@ -254,14 +250,14 @@ Keep this fast. Students often get lost in unit switches; give them one anchor c
 
 ---
 
-## 🧠 Predict (No Calculator)
+## 🧠 Predict: No Calculator
 
 If the wavelength doubles, the frequency…
 
 ::: {.quiz}
 
 - [ ] doubles
-- [x] halves
+- [ ] halves
 - [ ] stays the same
 - [ ] becomes zero
 
@@ -269,6 +265,7 @@ If the wavelength doubles, the frequency…
 
 ::: {.notes}
 Press C to reveal. Use it to reinforce inverse proportionality.
+Answer: halves.
 :::
 
 ---
@@ -334,7 +331,9 @@ Key line: the object didn’t change — the information channel did.
 
 ---
 
-## 🧠 Think–Pair–Share (30–60 s)
+## 🧠 Think–Pair–Share
+
+### 30–60 s
 
 Which wavelength band is best for seeing **into dusty star-forming regions**?
 
@@ -369,24 +368,28 @@ Part 2: Photons and Energy
 
 {{< include ../../../_includes/equations/photon-energy.qmd >}}
 
-:::: {.columns}
-::: {.column width="55%"}
+{{< img wavelength-energy-relation width="92%" >}}
+
 **What this equation is saying:**
 
+:::: {.columns .text-sm}
+::: {.column width="50%"}
+::: {.incremental}
+- Direct: $E \propto \nu$
+- Inverse: $E \propto \lambda^{-1}$ (same as $E \propto 1/\lambda$)
+:::
+:::
+::: {.column width="50%"}
 ::: {.incremental}
 - shorter $\lambda$ → larger $E$
 - longer $\lambda$ → smaller $E$
 :::
+:::
+::::
 
 ::: {.fragment .text-sm}
 Units check: (erg·s)·(s$^{-1}$) = erg.
 :::
-:::
-
-::: {.column width="45%"}
-{{< img wavelength-energy-relation width="100%" >}}
-:::
-::::
 
 ::: {.notes}
 Do not linger on constants. The point is scaling: $E \propto \lambda^{-1}$.
@@ -394,7 +397,9 @@ Do not linger on constants. The point is scaling: $E \propto \lambda^{-1}$.
 
 ---
 
-## Wave–Particle Duality (Optional but Helpful)
+## Wave–Particle Duality
+
+### Optional but Helpful
 
 :::: {.columns}
 ::: {.column width="52%"}
@@ -419,17 +424,21 @@ Goal: prevent “so the wave stuff was wrong?” No — different models, differ
 
 ---
 
-## Spoiler Alert (For Later): Matter Waves
+## Spoiler Alert
+
+### For Later: Matter Waves
 
 It’s not just light.
 
 ::: {.incremental}
 - particles also have wave behavior
 - the “matter wavelength” gets shorter when momentum gets bigger
+- $p$ is momentum (in CGS: $\mathrm{g\cdot cm/s}$)
 :::
 
 ::: {.fragment .text-sm}
-Teaser: $\lambda = h/p$ (we’ll use this when we talk about stars in Module 2).
+Teaser: $\lambda = \frac{h}{p}$ (we’ll use this when we talk about stars in Module 2).
+This is a quantum-mechanics result linked to the Heisenberg uncertainty principle.
 :::
 
 ::: {.notes}
@@ -438,36 +447,41 @@ Do not explain quantum mechanics today. This is a trailer, not the movie.
 
 ---
 
-## 🧠 Predict (Which Photon Is More Energetic?)
+## 🧠 Predict: Which Photon Is More Energetic?
 
 Which photon has higher energy?
 
 ::: {.quiz}
 
-- [x] 400 nm (blue)
-- [ ] 800 nm (red / near-IR)
-- [ ] same energy
-- [ ] can’t tell without the telescope diameter
+ - [ ] 400 nm (blue)
+ - [ ] 800 nm (red / near-IR)
+ - [ ] same energy
+ - [ ] can’t tell without the telescope diameter
 
 :::
 
 ::: {.notes}
 Quick reinforcement: shorter wavelength → higher energy.
+Answer: 400 nm (blue).
 :::
 
 ---
 
-## 🧠 Predict (Scaling)
+## 🧠 Predict: Scaling
 
 If wavelength is cut in half, photon energy…
 
 ::: {.quiz}
 
 - [ ] is cut in half
-- [x] doubles
-- [ ] quadruples
-- [ ] stays the same
+ - [ ] doubles
+ - [ ] quadruples
+ - [ ] stays the same
 
+:::
+
+::: {.notes}
+Answer: doubles.
 :::
 
 ---
@@ -505,23 +519,25 @@ Part 3: How Light Interacts with Matter
 
 ---
 
-## Five Outcomes (Plus Scattering)
+## Five Outcomes Plus Scattering
 
-:::: {.columns}
-::: {.column width="52%"}
+{{< img light-matter-behaviors width="100%" >}}
+
 When light hits matter, it can be:
 
+:::: {.columns}
+::: {.column width="50%"}
 ::: {.incremental}
 - transmitted
 - absorbed
 - emitted
+:::
+:::
+::: {.column width="50%"}
+::: {.incremental}
 - reflected / refracted
 - scattered
 :::
-:::
-
-::: {.column width="48%"}
-{{< img light-matter-behaviors width="100%" >}}
 :::
 ::::
 
@@ -531,7 +547,9 @@ Key move: these are not vocabulary words — they are “information pathways.�
 
 ---
 
-## Absorption and Emission (Tiny Preview)
+## Absorption and Emission
+
+### Tiny Preview
 
 Absorption/emission are how light becomes a **chemical fingerprint**.
 
@@ -545,7 +563,9 @@ Keep this as a 20-second bridge so Day 2 feels inevitable.
 
 ---
 
-## Refraction and Dispersion (Preview)
+## Refraction and Dispersion
+
+### Preview
 
 :::: {.columns}
 ::: {.column width="52%"}
@@ -595,7 +615,7 @@ Don’t derive. Emphasize steep power: halve λ → 16× more scattering.
 
 ---
 
-## 🧠 Predict (How Steep Is $\lambda^{-4}$?)
+## 🧠 Predict: How Steep Is $\lambda^{-4}$?
 
 If wavelength is cut in half, Rayleigh scattering becomes…
 
@@ -603,28 +623,33 @@ If wavelength is cut in half, Rayleigh scattering becomes…
 
 - [ ] 2× stronger
 - [ ] 4× stronger
-- [x] 16× stronger
-- [ ] 1/16 as strong
+ - [ ] 16× stronger
+ - [ ] 1/16 as strong
 
 :::
 
 ::: {.notes}
 This is the “power-law intuition” skill: small wavelength changes can matter a lot.
+Answer: 16× stronger.
 :::
 
 ---
 
-## 🧠 Predict (Rayleigh)
+## 🧠 Predict: Rayleigh
 
 On a planet with a similar atmosphere, which light scatters more?
 
 ::: {.quiz}
 
-- [x] Blue (shorter wavelength)
-- [ ] Red (longer wavelength)
-- [ ] They scatter equally
-- [ ] Only infrared scatters
+ - [ ] Blue (shorter wavelength)
+ - [ ] Red (longer wavelength)
+ - [ ] They scatter equally
+ - [ ] Only infrared scatters
 
+:::
+
+::: {.notes}
+Answer: Blue (shorter wavelength).
 :::
 
 ---
@@ -638,6 +663,7 @@ Earth’s atmosphere is not transparent everywhere.
 ::: {.incremental}
 - Optical window (good)
 - Radio window (good)
+- Some infrared gets through in atmospheric windows, but many bands are absorbed by molecules (H$_2$O, CO$_2$, CH$_4$, O$_3$).
 - Most UV/X-ray/gamma blocked
 :::
 :::
@@ -710,9 +736,11 @@ One sentence: good absorber ↔ good emitter (Kirchhoff’s law, qualitative).
 
 ## Why Stars Are *Approximately* Blackbodies
 
+{{< img blackbody-stellar-spectra width="85%" >}}
+
 Stars have a dense “surface” (the photosphere) where:
 
-::: {.incremental}
+::: {.incremental .text-sm}
 - photons interact many times with matter
 - the radiation field becomes close to thermal
 :::
@@ -730,9 +758,11 @@ Module 2 (stellar structure + opacity) will make the approximation feel natural.
 
 ## Two Things Change When $T$ Changes
 
+{{< img blackbody-stellar-spectra width="85%" >}}
+
 When temperature increases:
 
-::: {.incremental}
+::: {.incremental .text-sm}
 1) the **peak shifts** to shorter wavelength (Wien)
 2) the **total emitted light increases** (area under the curve)
 :::
@@ -743,17 +773,26 @@ Preview for later: Stefan–Boltzmann. Don’t drop the equation yet — keep it
 
 ---
 
-## The Key Pattern (Look, Don’t Memorize)
+## The Key Pattern
 
-{{< img blackbody-stellar-spectra width="95%" >}}
+### Look, Don’t Memorize
 
+:::: {.columns}
+::: {.column width="42%"}
 ::: {.fragment .text-sm}
 Hotter → peak shifts left (bluer) and the whole curve gets taller.
 :::
+:::
+::: {.column width="58%"}
+{{< img blackbody-stellar-spectra width="100%" >}}
+:::
+::::
 
 ---
 
-## Wien’s Law (Inference Tool #1)
+## Wien’s Law
+
+### Inference Tool #1
 
 The peak wavelength of a thermal spectrum tells temperature:
 
@@ -774,7 +813,9 @@ Emphasize: inverse relationship ($T^{-1}$).
 
 ---
 
-## Units Check (Wien’s Law)
+## Units Check
+
+### Wien’s Law
 
 If $\lambda_{\mathrm{peak}} = bT^{-1}$, then $b$ must have units of:
 
@@ -786,39 +827,49 @@ Quick “units as logic” reinforcement.
 
 ---
 
-## 🧠 Predict (Scaling)
+## 🧠 Predict: Scaling
 
 If temperature doubles, the peak wavelength becomes…
 
 ::: {.quiz}
 
-- [x] half as large
-- [ ] twice as large
-- [ ] unchanged
-- [ ] four times larger
+ - [ ] half as large
+ - [ ] twice as large
+ - [ ] unchanged
+ - [ ] four times larger
 
+:::
+
+::: {.notes}
+Answer: half as large.
 :::
 
 ---
 
-## 🧠 Predict (No Numbers)
+## 🧠 Predict: No Numbers
 
 A star with a *shorter* peak wavelength is…
 
 ::: {.quiz}
 
-- [x] hotter
-- [ ] cooler
-- [ ] the same temperature
-- [ ] older
+ - [ ] hotter
+ - [ ] cooler
+ - [ ] the same temperature
+ - [ ] older
 
+:::
+
+::: {.notes}
+Answer: hotter.
 :::
 
 ---
 
-## Worked Example: The Sun (Fast)
+## Worked Example: The Sun
 
-Take $\lambda_{\mathrm{peak}} \approx 5000\ \mathrm{\AA} = 5\times10^{-5}\ \mathrm{cm}$.
+### Fast
+
+Take $\lambda_{\mathrm{peak}} \approx 500\ \mathrm{nm} = 5\times10^{-5}\ \mathrm{cm}$.
 
 . . .
 
@@ -834,9 +885,9 @@ Round aggressively. This is “order-of-magnitude plus one digit”, not a preci
 
 ## Stop & Solve: Compare Two Peaks
 
-Star A peaks at $5000\ \mathrm{\AA}$.
+Star A peaks at $500\ \mathrm{nm}$.
 
-Star B peaks at $10000\ \mathrm{\AA}$.
+Star B peaks at $1000\ \mathrm{nm}$.
 
 . . .
 
@@ -852,7 +903,11 @@ Give 30–45 s. Expect “inverse” reasoning.
 
 Because $\lambda_{\mathrm{peak}} \propto T^{-1}$:
 
-$$\frac{T_B}{T_A} = \frac{\lambda_A}{\lambda_B} = \frac{500}{1000} = \frac{1}{2}$$
+$$\frac{T_B}{T_A} = \frac{\lambda_A}{\lambda_B} = \frac{500\ \mathrm{nm}}{1000\ \mathrm{nm}} = \frac{1}{2}$$
+
+::: {.fragment .text-sm}
+Units cancel in the ratio, so the temperature ratio is dimensionless.
+:::
 
 ::: {.fragment}
 Star B is **half** the temperature of Star A.
@@ -860,16 +915,19 @@ Star B is **half** the temperature of Star A.
 
 ---
 
-## Worked Example: A Cool Star (Fast)
+## Worked Example: A Cool Star
+
+### Fast
 
 Suppose $T \approx 3500\ \mathrm{K}$ (a cool red supergiant).
 
-. . .
+::: {.fragment}
 
-$$\lambda_{\mathrm{peak}} \approx 0.29\cdot(3500)^{-1}\ \mathrm{cm}\approx 8.3\times10^{-5}\ \mathrm{cm}\approx 8300\ \mathrm{\AA}$$
+$$\lambda_{\mathrm{peak}} \approx 0.29\cdot(3500)^{-1}\ \mathrm{cm}\approx 8.3\times10^{-5}\ \mathrm{cm}\approx 830\ \mathrm{nm}$$
 
 ::: {.fragment .text-sm}
 That’s just beyond visible red → **near infrared**.
+:::
 :::
 
 ::: {.notes}
@@ -878,9 +936,13 @@ This is intentionally “fast math.” The point is: cooler objects peak in IR, 
 
 ---
 
-## “Big Star” Context (Optional Wow)
+## “Big Star” Context
 
-{{< img betelgeuse-size width="95%" >}}
+### Optional Wow
+
+Betelgeuse is an example.
+
+{{< img betelgeuse-size width="80%" >}}
 
 ::: {.notes}
 One-sentence tie-in: cool objects can still be luminous if they have huge surface area (preview: Stefan–Boltzmann + radius).
@@ -904,7 +966,9 @@ Use the blackbody figure: hot curve is above cool curve even in the red.
 
 ---
 
-## Next Class (Day 2): Continuum + Lines
+## Next Class
+
+### Day 2: Continuum + Lines
 
 :::: {.columns}
 ::: {.column width="52%"}
@@ -925,7 +989,9 @@ Next class we add:
 
 ---
 
-## Synthesis (Day 1)
+## Synthesis
+
+### Day 1
 
 Today we built the chain:
 
@@ -941,7 +1007,9 @@ Next class: the *fine structure* (spectral lines) → composition.
 
 ---
 
-## Demo Time (If Time): EM Spectrum
+## Demo Time
+
+### If Time: EM Spectrum
 
 ::: {.text-sm .text-muted}
 Demo: [em-spectrum](https://astrobytes-edu.github.io/astr101-sp26/demos/em-spectrum/)
@@ -960,7 +1028,9 @@ If short on time: skip and remind students demos are posted.
 
 ---
 
-## Demo Time (If Time): Blackbody Radiation
+## Demo Time
+
+### If Time: Blackbody Radiation
 
 ::: {.text-sm .text-muted}
 Demo: [blackbody-radiation](https://astrobytes-edu.github.io/astr101-sp26/demos/blackbody-radiation/)
@@ -979,7 +1049,9 @@ If short on time: do 60 seconds — just show the peak shifting.
 
 ---
 
-## Exit Ticket (30 seconds)
+## Exit Ticket
+
+### 30 seconds
 
 Write one sentence:
 
@@ -991,12 +1063,16 @@ Collect 2–3 aloud. Listen for “we can infer temperature/composition from wav
 
 ---
 
-## Study Snapshot (Write This Down)
+## Study Snapshot
+
+### Write This Down
 
 ::: {.incremental}
 - $c=\lambda\nu$ (wave relation)
 - $E=hc\lambda^{-1}$ (shorter $\lambda$ → higher energy)
 - $\lambda_{\rm peak}=bT^{-1}$ (shorter peak → hotter)
+- $E \propto \nu$ and $E \propto \lambda^{-1}$
+- $\lambda_{\rm peak} \propto T^{-1}$
 :::
 
 ::: {.notes}

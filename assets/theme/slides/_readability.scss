@@ -28,6 +28,12 @@
     margin-bottom: 0.45rem;
   }
 
+  // Subtitles (h3): smaller and slate-gray for hierarchy.
+  h3 {
+    color: $muted-color;
+    font-weight: $font-medium;
+  }
+
   // Avoid "mystery whitespace" at slide edges.
   > :first-child { margin-top: 0; }
   > :last-child { margin-bottom: 0; }
