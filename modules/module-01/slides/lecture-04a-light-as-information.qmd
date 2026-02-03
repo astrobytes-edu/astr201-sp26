@@ -388,6 +388,10 @@ Part 2: Photons and Energy
 ::::
 
 ::: {.fragment .text-sm}
+Here $h$ is Planck’s constant ($6.63\times10^{-27}\ \mathrm{erg\cdot s}$).
+:::
+
+::: {.fragment .text-sm}
 Units check: (erg·s)·(s$^{-1}$) = erg.
 :::
 
@@ -434,6 +438,7 @@ It’s not just light.
 - particles also have wave behavior
 - the “matter wavelength” gets shorter when momentum gets bigger
 - $p$ is momentum (in CGS: $\mathrm{g\cdot cm/s}$)
+- $h$ is Planck’s constant ($6.63\times10^{-27}\ \mathrm{erg\cdot s}$)
 :::
 
 ::: {.fragment .text-sm}
@@ -453,10 +458,10 @@ Which photon has higher energy?
 
 ::: {.quiz}
 
- - [ ] 400 nm (blue)
- - [ ] 800 nm (red / near-IR)
- - [ ] same energy
- - [ ] can’t tell without the telescope diameter
+- [ ] 400 nm (blue)
+- [ ] 800 nm (red / near-IR)
+- [ ] same energy
+- [ ] can’t tell without the telescope diameter
 
 :::
 
@@ -474,9 +479,9 @@ If wavelength is cut in half, photon energy…
 ::: {.quiz}
 
 - [ ] is cut in half
- - [ ] doubles
- - [ ] quadruples
- - [ ] stays the same
+- [ ] doubles
+- [ ] quadruples
+- [ ] stays the same
 
 :::
 
@@ -623,8 +628,8 @@ If wavelength is cut in half, Rayleigh scattering becomes…
 
 - [ ] 2× stronger
 - [ ] 4× stronger
- - [ ] 16× stronger
- - [ ] 1/16 as strong
+- [ ] 16× stronger
+- [ ] 1/16 as strong
 
 :::
 
@@ -641,10 +646,10 @@ On a planet with a similar atmosphere, which light scatters more?
 
 ::: {.quiz}
 
- - [ ] Blue (shorter wavelength)
- - [ ] Red (longer wavelength)
- - [ ] They scatter equally
- - [ ] Only infrared scatters
+- [ ] Blue (shorter wavelength)
+- [ ] Red (longer wavelength)
+- [ ] They scatter equally
+- [ ] Only infrared scatters
 
 :::
 
@@ -833,10 +838,10 @@ If temperature doubles, the peak wavelength becomes…
 
 ::: {.quiz}
 
- - [ ] half as large
- - [ ] twice as large
- - [ ] unchanged
- - [ ] four times larger
+- [ ] half as large
+- [ ] twice as large
+- [ ] unchanged
+- [ ] four times larger
 
 :::
 
@@ -852,10 +857,10 @@ A star with a *shorter* peak wavelength is…
 
 ::: {.quiz}
 
- - [ ] hotter
- - [ ] cooler
- - [ ] the same temperature
- - [ ] older
+- [ ] hotter
+- [ ] cooler
+- [ ] the same temperature
+- [ ] older
 
 :::
 
