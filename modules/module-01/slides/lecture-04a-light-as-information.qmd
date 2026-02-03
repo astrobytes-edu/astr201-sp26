@@ -244,6 +244,10 @@ Conversion: $1\ \mathrm{nm}=10^{-7}\ \mathrm{cm}$.
 Course convention: CGS (cm, s, erg, K).
 :::
 
+::: {.fragment .text-sm}
+Energy unit: $1\ \mathrm{erg} = 1\ \mathrm{g\cdot cm^2/s^2}$.
+:::
+
 ::: {.notes}
 Keep this fast. Students often get lost in unit switches; give them one anchor conversion.
 :::
