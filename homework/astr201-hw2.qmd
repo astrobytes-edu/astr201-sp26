@@ -6,7 +6,7 @@ course: ASTR 201
 module: "Module 1 — Gravity & Orbits + Light as Information"
 lectures: "Lectures 3–4"
 math-level: symbolic_with_interpretation
-draft: true
+draft: false
 estimated-time: "4–6 hours"
 due: "Tuesday, February 10, 2026 at 11:59 pm"
 grade-memo-due: "Thursday, February 12, 2026 at 11:59 pm"
