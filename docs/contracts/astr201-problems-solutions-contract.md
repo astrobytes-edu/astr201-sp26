@@ -167,10 +167,10 @@ Solutions must follow the math-grammar rules in the ASTR 201 Pedagogical Contrac
 
 | Requirement | Minimum |
 | --- | --- |
-| Total problems | 6–8 |
-| Conceptual | 2–3 |
-| Calculation | 2–3 |
-| Synthesis | 1–2 |
+| Total problems | 8–10 |
+| Conceptual | 3–4 |
+| Calculation | 3–4 |
+| Synthesis | 2–3 |
 | O→M→I tagged | 2+ |
 
 ### 6.3 Exams (Recommended)

@@ -1,0 +1,177 @@
+---
+title: "Homework 2"
+subtitle: "Gravity & Orbits II + Light as Information"
+author: "Dr. Anna Rosen"
+course: ASTR 201
+module: "Module 1 — Gravity & Orbits + Light as Information"
+lectures: "Lectures 3–4"
+math-level: symbolic_with_interpretation
+draft: true
+estimated-time: "4–6 hours"
+due: "[TBD]"
+grade-memo-due: "[TBD]"
+submission: "Canvas; upload a single clearly scanned PDF or a legible PDF export"
+format:
+  html:
+    toc: true
+  pdf:
+    toc: false
+    geometry: margin=1in
+    fontsize: 11pt
+---
+
+{{< hwmeta >}}
+
+## Learning Objectives
+
+- Interpret the **sign of orbital energy** and connect it to bound vs. unbound motion.
+- Use **Newton + Kepler** to move between periods, masses, and orbital sizes.
+- Apply **escape velocity** and **orbital velocity** as scaling tools with unit checks.
+- Use the **virial theorem** to connect motions to binding energy.
+- Use **spectra and Doppler shifts** to infer velocities and physical properties.
+- Treat equations as **stories with units**, not just recipes.
+
+## Concept Throughline
+
+- **Measurement → model → inference** remains the core chain.
+- **Energy sets orbit type** (bound, parabolic, unbound).
+- **Light is information**: spectra and Doppler shifts let us infer motion and composition.
+- **Scaling beats big numbers** when the physics is clear.
+
+## Prerequisites
+
+- Scientific notation and exponent rules
+- Basic algebra and proportional reasoning
+- Unit conversion (cm, km, s; g, kg; Å, nm)
+
+## Relevant Readings
+
+- [Lecture 3: Gravity and Orbits](https://astrobytes-edu.github.io/astr201-sp26/modules/module-01/readings/lecture-03-gravity-and-orbits.html)
+- [Lecture 4: Light as Information](https://astrobytes-edu.github.io/astr201-sp26/modules/module-01/readings/lecture-04-light-as-information.html)
+
+::: {.callout-note}
+**Before you start:** Review the [Homework Guidelines](hw-tips.qmd) for required format and tools.
+:::
+
+::: {.callout-tip}
+**HW2 note:** Tool hints are not shown. Part of the goal is recognizing which tools apply.
+:::
+
+---
+
+## Problems (10 total)
+
+### Part A — Gravity & Orbits
+
+<!-- Problem: Conceptual / Connection / O→M→I / Tools: Energy, Uncertainty/Assumptions / ⭐⭐ -->
+### Problem 1 — Energy Signs and Orbital Fate
+
+The total mechanical energy is $E = \tfrac{1}{2}mv^2 - GMm/r$.
+
+- (a) Why is gravitational potential energy negative (with zero at infinity)?
+- (b) What does $E < 0$, $E = 0$, and $E > 0$ mean physically?
+- (c) A comet approaches the Sun with $E > 0$. A student says, "It has positive energy, so it's gaining energy as it approaches." Correct this.
+
+---
+
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Force/Balance, Unit-Conversion, Scaling/Ratio / ⭐⭐ -->
+### Problem 2 — Orbital Velocity Practice
+
+Using $v_{orb} = \sqrt{GM/r}$:
+
+- (a) Calculate Earth's orbital velocity around the Sun using $M_\odot = 2 \times 10^{33}$ g and $r = 1$ AU $= 1.5 \times 10^{13}$ cm. Express in cm/s and km/s.
+- (b) Show explicitly that $\sqrt{GM/r}$ has units of velocity.
+- (c) Mars orbits at 1.52 AU. Using ratios, find Mars's orbital velocity.
+- (d) Sanity check: should Mars move faster or slower than Earth?
+
+---
+
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Force/Balance, Unit-Conversion, Scaling/Ratio / ⭐⭐ -->
+### Problem 3 — Escape Velocity Comparison
+
+Using $v_{esc} = \sqrt{2GM/R}$:
+
+- (a) Calculate Earth's escape velocity. Use $M_\oplus = 6 \times 10^{27}$ g and $R_\oplus = 6.4 \times 10^8$ cm.
+- (b) The Moon has $M_{Moon} = 7.3 \times 10^{25}$ g and $R_{Moon} = 1.7 \times 10^8$ cm. Calculate its escape velocity.
+- (c) By what factor is Earth's escape velocity larger than the Moon's?
+- (d) Interpret: why did Apollo astronauts need a smaller rocket to leave the Moon?
+
+---
+
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Dimensional, Unit-Conversion / ⭐⭐ -->
+### Problem 4 — Kepler III with Newton
+
+Newton's version is $P^2 = \dfrac{4\pi^2}{G(M+m)}a^3$.
+
+- (a) For Earth, $m \ll M_\odot$. Show the simplified form.
+- (b) Verify it gives $P \approx 1$ year for $a = 1$ AU.
+- (c) Confirm both sides have units of s$^2$.
+- (d) A binary star has two equal $1\,M_\odot$ stars. How does its Kepler constant compare to the Sun-Earth system?
+
+---
+
+<!-- Problem: Synthesis / Connection / O→M→I / Tools: Model-Inversion, Unit-Conversion / ⭐⭐ -->
+<!-- Challenge: yes -->
+### Problem 5 — Complete Workflow: Weighing Jupiter
+
+Io orbits Jupiter with period $P = 1.77$ days and semi-major axis $a = 4.22 \times 10^{10}$ cm.
+
+- (a) Use Newton's Kepler III to solve for Jupiter's mass.
+- (b) Unit check: verify $\frac{a^3}{GP^2}$ has units of mass.
+- (c) Express your answer in grams and in solar masses.
+- (d) What observable quantities did you need?
+
+---
+
+<!-- Problem: Synthesis / Connection / O→M→I / Tools: Energy, Force/Balance / ⭐⭐ -->
+### Problem 6 — The $\sqrt{2}$ Factor
+
+Escape velocity is $v_{esc} = \sqrt{2}\,v_{orb}$ at any radius.
+
+- (a) Derive this relationship from $v_{orb} = \sqrt{GM/r}$ and $v_{esc} = \sqrt{2GM/r}$.
+- (b) A spacecraft in circular orbit wants to escape. By what factor must it increase its speed?
+- (c) Explain the energy interpretation: why does escape require adding kinetic energy equal to the orbital kinetic energy?
+
+---
+
+<!-- Problem: Synthesis / Connection / O→M→I / Tools: Energy, Model-Inversion, Uncertainty/Assumptions / ⭐⭐ -->
+### Problem 7 — Virial Theorem Capstone
+
+A star cluster has total kinetic energy $K = 1.0 \times 10^{50}$ erg in stellar motions and is in virial equilibrium ($2K + U = 0$).
+
+- (a) Use the virial theorem to find its gravitational potential energy $U$.
+- (b) Compute the total energy $E = K + U$ and state whether the cluster is bound.
+- (c) A tidal interaction injects an additional $0.6 \times 10^{50}$ erg of kinetic energy without changing the cluster size. What happens to the sign of $E$? Does the cluster remain bound?
+
+---
+
+### Part B — Light as Information
+
+<!-- Problem: Conceptual / Connection / O→M→I / Tools: Model-Inversion, Uncertainty/Assumptions / ⭐⭐ -->
+### Problem 8 — Kirchhoff’s Laws in Action
+
+You see three spectra from three different sources:
+
+- (a) A smooth rainbow with dark lines
+- (b) A smooth rainbow with no lines
+- (c) A dark background with bright lines
+
+For each, identify the physical source (hot dense object, hot thin gas, or cool gas in front of a hot source). Explain your reasoning.
+
+---
+
+<!-- Problem: Conceptual / Connection / O→M→I / Tools: Limiting-Cases, Model-Inversion / ⭐⭐ -->
+### Problem 9 — Why Skies Are Red at Sunset
+
+Use Rayleigh scattering to explain why the Sun looks red near the horizon but not at noon. What changes about the path through the atmosphere, and how does $\lambda^{-4}$ make the effect strong?
+
+---
+
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Unit-Conversion, Dimensional / ⭐⭐ -->
+### Problem 10 — Photon Energy from Wavelength
+
+A green photon has $\lambda = 600$ nm.
+
+- (a) Convert this wavelength to cm.
+- (b) Compute its frequency.
+- (c) Compute its energy in erg using $E = hc/\lambda$ with $h = 6.626 \times 10^{-27}$ erg·s.

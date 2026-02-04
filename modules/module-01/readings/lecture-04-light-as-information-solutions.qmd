@@ -150,7 +150,7 @@ module: "1 - Foundations"
 **Key elements:** Wien’s law for temperature; absorption lines for composition; dust reddening shifts peaks to longer $\lambda$.
 
 **Sample response:**
-- (a) $\lambda_{\text{peak}} = 1.0\,\\mu\\text{m} = 10{,}000$ Å gives $T \\approx 2.898 \\times 10^7/10{,}000 \\approx 2.9 \\times 10^3$ K.
+- (a) $\lambda_{\text{peak}} = 1.0\,\mu\text{m} = 10{,}000$ Å gives $T \approx 2.898 \times 10^7/10{,}000 \approx 2.9 \times 10^3$ K.
 - (b) Deep absorption lines imply a **cooler gas** in the star’s atmosphere absorbing specific wavelengths, revealing **composition**.
 - (c) Dust reddening makes the spectrum appear redder (peak at longer $\lambda$), so the **true temperature is higher** than the naive Wien estimate.
 
@@ -164,5 +164,24 @@ module: "1 - Foundations"
 
 **Sample response:**
 - (a) $\theta_A \propto 500/3$, $\theta_B \propto 2000/6$. Since $500/3$ is smaller than $2000/6$, **Telescope A** has better resolution (about $2\times$ finer).
-- (b) Light collection: $(6/3)^2 = 4$, so **Telescope B** collects $4\\times$ more light.
+- (b) Light collection: $(6/3)^2 = 4$, so **Telescope B** collects $4\times$ more light.
 - (c) If the source peaks near 500 nm, **Telescope A** observes near the peak while Telescope B is on the red tail. The source is much fainter at 2000 nm, so A likely has better SNR despite the smaller diameter (unless the spectrum is unusually flat).
+
+---
+
+### Problem 11: Doppler → Virial Mass (HW3 option)
+
+**Restatement:** Use Doppler broadening to estimate velocity dispersion, then apply a virial mass estimate and state assumptions.
+
+**Key elements:**
+- Non‑relativistic Doppler shift: $v/c = \Delta \lambda/\lambda_0$
+- Convert to CGS
+- Virial estimate: $M \sim Rv^2/G$
+- Assumptions: equilibrium, isotropic velocities, mass follows light, etc.
+
+**Sample response:**
+- (a) $\Delta \lambda/\lambda_0 = 0.2/5000 = 4 \times 10^{-5}$. Thus $v \approx (4 \times 10^{-5})c \approx 1.2 \times 10^6$ cm/s $= 12$ km/s.
+- (b) $R = 3\,\text{pc} \approx 9.3 \times 10^{18}$ cm. Then $M \sim Rv^2/G \approx (9.3 \times 10^{18})(1.2 \times 10^6)^2/(6.67 \times 10^{-8}) \approx 2.0 \times 10^{38}$ g. In solar masses: $M \approx 1.0 \times 10^5\,M_\odot$.
+- (c) Assumptions include virial equilibrium, isotropic velocities, and that the measured $v$ traces the full 3‑D dispersion. If the cluster is not in equilibrium or if velocities are anisotropic, the mass could be biased high or low.
+
+**Grading guidance:** Full credit requires a correct Doppler‑based velocity estimate, a consistent virial mass scaling, and at least two explicit assumptions.

@@ -139,6 +139,7 @@ website:
         contents:
           - homework/index.qmd
           - homework/astr201-hw1.qmd
+          - homework/astr201-hw2.qmd
 
       - section: "Exams"
         contents:

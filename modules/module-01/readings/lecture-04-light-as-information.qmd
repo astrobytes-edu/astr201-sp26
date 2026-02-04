@@ -1113,6 +1113,14 @@ Answer these without a calculator. Then check your reasoning.
    (b) Which collects more light?  
    (c) If the target’s emission peaks near 500 nm, which telescope is better for signal‑to‑noise, and why?
 
+<!-- Problem: Synthesis / Connection / O→M→I / Tools: Model-Inversion, Scaling/Ratio, Unit-Conversion, Uncertainty/Assumptions / ⭐⭐ -->
+11. **Doppler → virial mass (HW3 option).** A globular cluster shows a typical Doppler broadening of $\Delta \lambda \approx 0.2$ Å around a line at $\lambda_0 = 5000$ Å. Assume the non‑relativistic Doppler relation $\Delta \lambda/\lambda_0 = v/c$. The cluster’s half‑light radius is $R \approx 3$ pc.
+   - (a) Estimate the line‑of‑sight velocity dispersion $v$.
+   - (b) Use the virial estimate $M \sim Rv^2/G$ to estimate the cluster mass. Express your answer in grams and in solar masses.
+   - (c) State two assumptions behind this estimate and one way they could bias the mass.
+
+   Use $c = 3.0 \times 10^{10}$ cm/s, $G = 6.67 \times 10^{-8}$, and $1$ pc $= 3.09 \times 10^{18}$ cm.
+
 ---
 
 ## Reference Tables

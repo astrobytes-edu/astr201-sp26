@@ -1049,14 +1049,11 @@ Newton gave us the tools. Einstein showed us where they lead.
    
    Explain your reasoning.
 
-5. **Virial Theorem Application:** A star cluster has total kinetic energy $K = 10^{50}$ erg (from the motions of all its stars). Assuming the cluster is in equilibrium, what is its gravitational potential energy $U$? What is its total energy $E$? Is the cluster bound or unbound?
-
 ::: {.callout-tip title="Quick Solutions" collapse="true"}
 1. With $F \propto 1/r^3$, you would infer a steeper dependence than $P^2 \propto a^3$; the exact scaling changes so $P$ grows faster with $a$. The inverse-square law is uniquely consistent with $P^2 \propto a^3$.
 2. Jupiter is slower. Since $v_{orb} \propto 1/\sqrt{r}$, at 5 AU it moves by a factor $\sim 1/\sqrt{5}$ compared to Earth.
 3. Much larger. The neutron star has a similar mass but vastly smaller radius, so $v_{esc} \propto \sqrt{M/R}$ is much larger.
 4. Positive total energy means unbound (escape). Negative means bound (elliptical). Zero is parabolic, the boundary case.
-5. Virial equilibrium gives $K = -\tfrac{1}{2}U$, so $U = -2K$ and $E = K + U = -K$. The cluster is bound.
 :::
 
 ## Practice Problems
@@ -1130,6 +1127,12 @@ Newton gave us the tools. Einstein showed us where they lead.
    - (a) Derive this relationship from $v_{orb} = \sqrt{GM/r}$ and $v_{esc} = \sqrt{2GM/r}$.
    - (b) A spacecraft in circular orbit wants to escape. By what factor must it increase its speed?
    - (c) Explain the energy interpretation: why does escape require adding kinetic energy equal to the orbital kinetic energy?
+
+<!-- Problem: Synthesis / Connection / O→M→I / Tools: Energy, Model-Inversion, Uncertainty/Assumptions / ⭐⭐ -->
+11. **Virial theorem capstone.** A star cluster has total kinetic energy $K = 1.0 \times 10^{50}$ erg in stellar motions and is in virial equilibrium ($2K + U = 0$).
+   - (a) Use the virial theorem to find its gravitational potential energy $U$.
+   - (b) Compute the total energy $E = K + U$ and state whether the cluster is bound.
+   - (c) A tidal interaction injects an additional $0.6 \times 10^{50}$ erg of kinetic energy without changing the cluster size. What happens to the sign of $E$? Does the cluster remain bound?
 
 ---
 

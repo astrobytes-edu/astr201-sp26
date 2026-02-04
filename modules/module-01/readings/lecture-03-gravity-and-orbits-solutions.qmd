@@ -110,16 +110,16 @@ module: "1 - Foundations"
 
 ### Problem 6: Kepler III with Newton
 
-**Given:** $P^2 = \\dfrac{4\\pi^2}{G(M+m)}a^3$.
+**Given:** $P^2 = \dfrac{4\pi^2}{G(M+m)}a^3$.
 
 **Find:** Simplified form, unit check, and the binary-star scaling.
 
-**Equation:** $P^2 = \\dfrac{4\\pi^2}{G(M+m)}a^3$.
+**Equation:** $P^2 = \dfrac{4\pi^2}{G(M+m)}a^3$.
 
 **Steps:**
-- (a) For $m \\ll M_\\odot$, $P^2 \\approx \\dfrac{4\\pi^2}{GM_\\odot}a^3$.
-- (b) With $a = 1$ AU, this gives $P \\approx 1$ year.
-- (c) For two $1\\,M_\\odot$ stars, total mass is $2M_\\odot$, so $P^2/a^3$ is half the Sun–Earth value.
+- (a) For $m \ll M_\odot$, $P^2 \approx \dfrac{4\pi^2}{GM_\odot}a^3$.
+- (b) With $a = 1$ AU, this gives $P \approx 1$ year.
+- (c) For two $1\,M_\odot$ stars, total mass is $2M_\odot$, so $P^2/a^3$ is half the Sun–Earth value.
 
 **Unit check:** $[a^3/(GM)] = [L^3]/([L^3M^{-1}T^{-2}]M) = [T^2]$.
 
@@ -135,7 +135,7 @@ module: "1 - Foundations"
 
 **Find:** Bound or unbound.
 
-**Equation:** $v_{esc} = \\sqrt{2GM/r}$; at 1 AU, $v_{esc} \\approx 42$ km/s.
+**Equation:** $v_{esc} = \sqrt{2GM/r}$; at 1 AU, $v_{esc} \approx 42$ km/s.
 
 **Steps:** Since $50$ km/s $> 42$ km/s, the comet exceeds escape speed.
 
@@ -180,7 +180,7 @@ module: "1 - Foundations"
 
 **Unit check:** $[a^3/(GP^2)] = [L^3]/([L^3M^{-1}T^{-2}]T^2) = [M]$.
 
-**Sanity check:** $\\sim 10^{-3} M_\\odot$ is the known order of magnitude for Jupiter.
+**Sanity check:** $\sim 10^{-3} M_\odot$ is the known order of magnitude for Jupiter.
 
 **Grading guidance:** Must show the structure of the inference and the unit check.
 
@@ -198,3 +198,22 @@ module: "1 - Foundations"
 - Energy view: a circular orbit has $E = -GMm/(2r)$. To reach $E = 0$, you must add $GMm/(2r)$, which equals the orbital kinetic energy $K$. That is why the speed increase is a factor of $\sqrt{2}$.
 
 **Grading guidance:** Full credit requires both the algebra and the energy interpretation.
+
+---
+
+### Problem 11: Virial Theorem Capstone
+
+**Restatement:** Use virial equilibrium to infer $U$, compute total energy $E$, and interpret how added kinetic energy changes the bound state.
+
+**Key elements:**
+- Virial theorem: $2K + U = 0 \Rightarrow U = -2K$
+- Total energy: $E = K + U$
+- Bound if $E < 0$
+- Extra kinetic energy shifts $E$ upward; sign tells bound vs unbound
+
+**Sample response:**
+- (a) $U = -2K = -2.0 \times 10^{50}$ erg.
+- (b) $E = K + U = 1.0 \times 10^{50} - 2.0 \times 10^{50} = -1.0 \times 10^{50}$ erg, so the cluster is **bound**.
+- (c) Added kinetic energy gives $K' = 1.6 \times 10^{50}$ erg. If the size is unchanged so $U$ stays about $-2.0 \times 10^{50}$ erg, then $E' = 1.6 \times 10^{50} - 2.0 \times 10^{50} = -0.4 \times 10^{50}$ erg. The cluster is **still bound**, but less tightly. In reality it would expand until it re‑virializes; enough added energy could eventually unbind it.
+
+**Grading guidance:** Full credit requires correct use of the virial theorem, correct signs, and a clear bound/unbound interpretation before and after the energy injection.
