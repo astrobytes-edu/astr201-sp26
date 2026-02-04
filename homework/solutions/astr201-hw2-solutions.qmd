@@ -177,7 +177,13 @@ $$= \frac{80.04}{6.4} \times 10^{11}\,\text{cm}^2\,\text{s}^{-2}$$
 
 $$\approx 1.25 \times 10^{12}\,\text{cm}^2\,\text{s}^{-2}$$
 
-$$v_{\text{esc},\oplus} = \sqrt{1.25 \times 10^{12}} \approx 1.12 \times 10^6\,\text{cm/s} = 11.2\,\text{km/s}$$
+$$v_{\text{esc},\oplus} = \sqrt{1.25 \times 10^{12}\,\text{cm}^2\,\text{s}^{-2}} \approx 1.12 \times 10^6\,\text{cm/s}$$
+
+Convert to km/s using the identity trick:
+
+$$v_{\text{esc},\oplus} = 1.12 \times 10^6\,\text{cm/s} \times \frac{1\,\text{m}}{10^2\,\text{cm}} \times \frac{1\,\text{km}}{10^3\,\text{m}}$$
+
+$$= 1.12 \times 10^{6-2-3}\,\text{km/s} = 1.12 \times 10^1\,\text{km/s} = 11.2\,\text{km/s}$$
 
 **Answer (a):** $\boxed{v_{\text{esc},\oplus} \approx 11.2\,\text{km/s}}$
 
@@ -191,7 +197,13 @@ $$= \frac{97.4}{1.7} \times 10^{9}\,\text{cm}^2\,\text{s}^{-2}$$
 
 $$\approx 5.7 \times 10^{10}\,\text{cm}^2\,\text{s}^{-2}$$
 
-$$v_{\text{esc,Moon}} = \sqrt{5.7 \times 10^{10}} \approx 2.4 \times 10^5\,\text{cm/s} = 2.4\,\text{km/s}$$
+$$v_{\text{esc,Moon}} = \sqrt{5.7 \times 10^{10}\,\text{cm}^2\,\text{s}^{-2}} \approx 2.4 \times 10^5\,\text{cm/s}$$
+
+Convert to km/s using the identity trick:
+
+$$v_{\text{esc,Moon}} = 2.4 \times 10^5\,\text{cm/s} \times \frac{1\,\text{m}}{10^2\,\text{cm}} \times \frac{1\,\text{km}}{10^3\,\text{m}}$$
+
+$$= 2.4 \times 10^{5-2-3}\,\text{km/s} = 2.4 \times 10^0\,\text{km/s} = 2.4\,\text{km/s}$$
 
 **Answer (b):** $\boxed{v_{\text{esc,Moon}} \approx 2.4\,\text{km/s}}$
 
@@ -301,11 +313,13 @@ $$M = \frac{4\pi^2 a^3}{GP^2}$$
 
 **Steps:**
 
-**(a) Convert period to seconds:**
+**(a) Convert period to seconds using the identity trick:**
 
-$$P = 1.77\,\text{days} \times \frac{24\,\text{hr}}{1\,\text{day}} \times \frac{3600\,\text{s}}{1\,\text{hr}}$$
+$$P = 1.77\,\cancel{\text{days}} \times \frac{24\,\cancel{\text{hr}}}{1\,\cancel{\text{day}}} \times \frac{3600\,\text{s}}{1\,\cancel{\text{hr}}}$$
 
-$$= 1.77 \times 24 \times 3600\,\text{s} = 1.77 \times 86400\,\text{s} \approx 1.53 \times 10^5\,\text{s}$$
+$$= 1.77 \times 24 \times 3600\,\text{s}$$
+
+$$= 1.77 \times 86400\,\text{s} \approx 1.53 \times 10^5\,\text{s}$$
 
 **(b) Calculate each component:**
 

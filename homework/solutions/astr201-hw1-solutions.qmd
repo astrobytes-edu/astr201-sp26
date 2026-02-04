@@ -226,7 +226,7 @@ $$P \approx 40 \times 6.32 \approx 253\,\text{yr}$$
 
 <!-- Problem: Calculation:Full / Application / — / Tools: Order-of-Magnitude, Unit-Conversion / ⭐⭐ -->
 
-**Given:** Speed of light $c = 3 \times 10^{10}$ cm/s $= 3 \times 10^5$ km/s
+**Given:** Speed of light $c = 3 \times 10^{10}$ cm/s
 
 **Find:** Light-travel distances in practical terms.
 
@@ -234,19 +234,31 @@ $$P \approx 40 \times 6.32 \approx 253\,\text{yr}$$
 
 **Steps:**
 
+First, convert $c$ to km/s using the identity trick:
+
+$$c = 3 \times 10^{10}\,\text{cm/s} \times \frac{1\,\text{m}}{10^2\,\text{cm}} \times \frac{1\,\text{km}}{10^3\,\text{m}}$$
+
+$$= 3 \times 10^{10-2-3}\,\text{km/s} = 3 \times 10^5\,\text{km/s}$$
+
 **(a) Distance traveled in 1 s and 1 min:**
 
 In 1 second:
-$$d = c \times 1\,\text{s} = 3 \times 10^5\,\text{km}$$
+
+$$d = c \times 1\,\text{s} = 3 \times 10^5\,\frac{\text{km}}{\cancel{\text{s}}} \times 1\,\cancel{\text{s}} = 3 \times 10^5\,\text{km}$$
 
 In 1 minute ($= 60$ s):
-$$d = 3 \times 10^5\,\text{km/s} \times 60\,\text{s} = 1.8 \times 10^7\,\text{km}$$
+
+$$d = 3 \times 10^5\,\frac{\text{km}}{\text{s}} \times 60\,\text{s} = 3 \times 60 \times 10^5\,\text{km} = 1.8 \times 10^7\,\text{km}$$
 
 **Answer (a):** Light travels $\boxed{3 \times 10^5\,\text{km}}$ in 1 s and $\boxed{1.8 \times 10^7\,\text{km}}$ in 1 min.
 
 **(b) Earth-Sun distance in light-minutes:**
 
-$$t = \frac{d}{c} = \frac{1.5 \times 10^8\,\text{km}}{1.8 \times 10^7\,\text{km/min}} = \frac{1.5}{1.8} \times 10^{8-7}\,\text{min} \approx 8.3\,\text{min}$$
+From part (a), light travels $1.8 \times 10^7$ km in 1 minute. The Earth-Sun distance is $1.5 \times 10^8$ km.
+
+$$t = \frac{d}{c} = \frac{1.5 \times 10^8\,\text{km}}{1.8 \times 10^7\,\text{km/min}}$$
+
+$$= \frac{1.5}{1.8} \times 10^{8-7}\,\text{min} = 0.83 \times 10^1\,\text{min} \approx 8.3\,\text{min}$$
 
 **Answer (b):** $\boxed{1\,\text{AU} \approx 8.3\,\text{light-minutes}}$
 
