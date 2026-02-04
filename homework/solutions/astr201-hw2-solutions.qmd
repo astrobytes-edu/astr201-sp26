@@ -43,11 +43,34 @@ module: "Module 1 — Gravity & Orbits + Light as Information"
 
 **Equation:**
 
-$$v_{orb} = \sqrt{GM/r}$$
+$$v_{orb} = \sqrt{\frac{GM}{r}}$$
+
+Let’s unpack each piece:
+
+- $G$: gravitational constant (sets strength of gravity)
+- $M$: central mass (g)
+- $r$: orbital radius (cm)
+- $v_{orb}$: orbital speed (cm/s)
+
+**What this equation says:** faster orbits come from larger central mass and smaller orbital radius; speed scales as $M^{1/2} r^{-1/2}$.
 
 **Steps:**
 
-- $GM/r = (6.67 \times 10^{-8})(2 \times 10^{33})/(1.5 \times 10^{13}) \approx 8.9 \times 10^{12}$.
+- Compute the scale first, then carry units explicitly:
+
+$$
+\frac{GM}{r}
+=
+\frac{(6.67 \times 10^{-8}\ \mathrm{cm^3\,g^{-1}\,s^{-2}})(2 \times 10^{33}\ \mathrm{g})}{1.5 \times 10^{13}\ \mathrm{cm}}
+=
+\frac{6.67 \times 2}{1.5}\times 10^{-8+33-13}
+\frac{\mathrm{cm^3}\,\cancel{\mathrm{g^{-1}}}\,\mathrm{s^{-2}}\,\cancel{\mathrm{g}}}{\mathrm{cm}}
+$$
+
+$$
+\approx 8.9 \times 10^{12}\ \mathrm{cm^2\,s^{-2}}.
+$$
+
 - $v_{orb} \approx \sqrt{8.9 \times 10^{12}} \approx 3.0 \times 10^6$ cm/s $\approx 30$ km/s.
 - Mars: $v \propto 1/\sqrt{r}$, so $v_M = v_E/\sqrt{1.52} \approx 0.81 v_E \approx 24$ km/s.
 
@@ -67,7 +90,16 @@ $$v_{orb} = \sqrt{GM/r}$$
 
 **Equation:**
 
-$$v_{esc} = \sqrt{2GM/R}$$
+$$v_{esc} = \sqrt{\frac{2GM}{R}}$$
+
+Let’s unpack each piece:
+
+- $G$: gravitational constant
+- $M$: mass of the body (g)
+- $R$: radius of the body (cm)
+- $v_{esc}$: escape speed (cm/s)
+
+**What this equation says:** escape speed rises if mass grows or radius shrinks; you need more speed to climb out of a deeper gravitational well.
 
 **Steps:**
 
@@ -87,17 +119,25 @@ $$v_{esc} = \sqrt{2GM/R}$$
 
 ## Problem 4 — Kepler III with Newton
 
-**Given:** $P^2 = \dfrac{4\pi^2}{G(M+m)}a^3$.
+**Given:** $P^2 = \frac{4\pi^2}{G(M+m)}a^3$.
 
 **Find:** Simplified form, unit check, and the binary-star scaling.
 
 **Equation:**
 
-$$P^2 = \dfrac{4\pi^2}{G(M+m)}a^3$$
+$$P^2 = \frac{4\pi^2}{G(M+m)}a^3$$
+
+Let’s unpack each piece:
+
+- $P$: orbital period (s)
+- $a$: semi-major axis (cm)
+- $M+m$: total mass (g)
+
+**What this equation says:** larger orbits take longer, and more total mass shortens the period at fixed size.
 
 **Steps:**
 
-- (a) For $m \ll M_\odot$, $P^2 \approx \dfrac{4\pi^2}{GM_\odot}a^3$.
+- (a) For $m \ll M_\odot$, $P^2 \approx \frac{4\pi^2}{GM_\odot}a^3$.
 - (b) With $a = 1$ AU, this gives $P \approx 1$ year.
 - (c) For two $1\,M_\odot$ stars, total mass is $2M_\odot$, so $P^2/a^3$ is half the Sun–Earth value.
 
@@ -139,7 +179,7 @@ $$P^2 = \dfrac{4\pi^2}{G(M+m)}a^3$$
 
 **Sample response:**
 
-- $v_{esc} = \sqrt{2GM/r}$ and $v_{orb} = \sqrt{GM/r}$, so $v_{esc} = \sqrt{2}\,v_{orb}$.
+- $v_{esc} = \sqrt{\frac{2GM}{r}}$ and $v_{orb} = \sqrt{\frac{GM}{r}}$, so $v_{esc} = \sqrt{2}\,v_{orb}$.
 - A spacecraft must increase speed by a factor of $\sqrt{2}$.
 - Energy view: a circular orbit has $E = -GMm/(2r)$. To reach $E = 0$, you must add $GMm/(2r)$, which equals the orbital kinetic energy $K$. That is why the speed increase is a factor of $\sqrt{2}$.
 
