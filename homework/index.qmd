@@ -6,13 +6,13 @@ draft: false
 ## Assignments
 
 ::: {.callout-tip}
-**Current assignment:** [Homework 2](/homework/astr201-hw2.qmd) — due **Tuesday, February 10, 2026 at 11:59 pm** (grade memo due **Thursday, February 12, 2026 at 11:59 pm**).
+**Current assignment:** [Homework 2](astr201-hw2.qmd) — due **Tuesday, February 10, 2026 at 11:59 pm** (grade memo due **Thursday, February 12, 2026 at 11:59 pm**).
 :::
 
 | Assignment | Posted | Due | Grade Memo Due | Solutions |
 |------------|--------|-----|----------------|-----------|
-| [Homework 2](/homework/astr201-hw2.qmd) | Tues Feb 3 | Tues Feb 10 | Thurs Feb 12 | *After due date* |
-| [Homework 1](astr201-hw1.qmd) | Jan 27 | Tues Feb 3 | Thurs Feb 5 | *After due date* |
+| [Homework 2](astr201-hw2.qmd) | Tues Feb 3 | Tues Feb 10 | Thurs Feb 12 | *After due date* |
+| [Homework 1](astr201-hw1.qmd) | Jan 27 | Tues Feb 3 | Thurs Feb 5 | [Solutions](solutions/astr201-hw1-solutions.qmd) |
 
 ## Submission Workflow (Two-Stage)
 

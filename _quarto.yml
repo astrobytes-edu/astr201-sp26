@@ -54,6 +54,7 @@ project:
     - modules/module-*/slides/*.qmd
     - modules/module-*/readings/*.qmd
     - homework/*.qmd
+    - homework/solutions/*.qmd
     - exams/*.qmd
     - explore/*.qmd
   brand: _brand.yml
@@ -140,6 +141,7 @@ website:
           - homework/index.qmd
           - homework/astr201-hw1.qmd
           - homework/astr201-hw2.qmd
+          - homework/solutions/astr201-hw1-solutions.qmd
 
       - section: "Exams"
         contents:
