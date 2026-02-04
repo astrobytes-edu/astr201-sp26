@@ -8,8 +8,8 @@ lectures: "Lectures 3–4"
 math-level: symbolic_with_interpretation
 draft: true
 estimated-time: "4–6 hours"
-due: "[TBD]"
-grade-memo-due: "[TBD]"
+due: "Tuesday, February 10, 2026 at 11:59 pm"
+grade-memo-due: "Thursday, February 12, 2026 at 11:59 pm"
 submission: "Canvas; upload a single clearly scanned PDF or a legible PDF export"
 format:
   html:
