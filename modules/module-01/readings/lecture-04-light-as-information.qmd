@@ -1058,7 +1058,7 @@ Answer these without a calculator. Then check your reasoning.
 <!-- Problem: Calculation:Full / Application / O→M→I / Tools: Scaling/Ratio, Order-of-Magnitude / ⭐⭐ -->
 7. **Rayleigh scattering ratio.** Compare the scattering strength at 4500 Å and 9000 Å. Which is scattered more, and by what factor?
 
-<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Scaling/Ratio / ⭐⭐ -->
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Scaling/Ratio, Model-Inversion / ⭐⭐ -->
 8. **Telescope scaling.** Compare two telescopes observing at the same wavelength:
    - Telescope A: $D = 2$ m
    - Telescope B: $D = 8$ m

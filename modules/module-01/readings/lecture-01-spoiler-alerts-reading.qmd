@@ -1132,7 +1132,7 @@ Use these as a fast warm-up. Keep answers short but explicit about **what was me
 <!-- Problem: Conceptual / Connection / O→M→I / Tools: Uncertainty/Assumptions, Data/Graph / ⭐⭐ -->
 2. **Standard candle logic.** Explain why a standard candle must be both *intrinsically luminous enough* and *reliably calibrated*. What goes wrong if either condition fails?
 
-<!-- Problem: Conceptual / Connection / O→M→I / Tools: Model-Inversion / ⭐⭐ -->
+<!-- Problem: Conceptual / Connection / O→M→I / Tools: Model-Inversion, Uncertainty/Assumptions / ⭐⭐ -->
 3. **Observable vs. model-dependent (HW1).** A news article claims “Astronomers measured the temperature of TRAPPIST-1e to be 255 K.” Critique this statement. What was actually measured, and what model was used to arrive at the temperature?
 
 <!-- Problem: Conceptual / Connection / O→M→I / Tools: Uncertainty/Assumptions, Data/Graph / ⭐⭐ -->
@@ -1147,7 +1147,7 @@ Use these as a fast warm-up. Keep answers short but explicit about **what was me
    - (c) Show a unit check that gives s$^{-1}$.
    - (d) **Limiting case:** X-rays have $\lambda \sim 10^{-8}$ cm. Without calculating, predict whether their frequency is higher or lower than 21-cm radiation, and by roughly how many orders of magnitude.
 
-<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Scaling/Ratio / ⭐⭐ -->
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Scaling/Ratio, Unit-Conversion / ⭐⭐ -->
 6. **Inverse-square distance.** Two identical Cepheid variables are observed. Star A has flux 25 times greater than Star B.
    - (a) Derive the distance ratio $d_B/d_A$.
    - (b) If Star A is at 1 kpc, what is Star B’s distance in kpc?

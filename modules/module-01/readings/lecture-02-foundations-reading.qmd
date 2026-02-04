@@ -796,14 +796,14 @@ Use this as a fast check of the full workflow. Keep your reasoning explicit.
 
 ### Conceptual
 
-<!-- Problem: Conceptual / Application / O→M→I / Tools: Dimensional / ⭐⭐ -->
+<!-- Problem: Conceptual / Application / O→M→I / Tools: Dimensional, Uncertainty/Assumptions / ⭐⭐ -->
 1. **Dimensional analysis check (HW1).** For each equation, decide whether it is dimensionally valid. If not, identify what is wrong.
    - (a) Orbital velocity: $v = \sqrt{GM/r}$
    - (b) Kinetic energy: $E = mv$
    - (c) Gravitational potential energy: $U = GMm/r^2$
    - (d) Pressure: $P = \rho v^2$ (where $\rho$ is density)
 
-<!-- Problem: Conceptual / Application / O→M→I / Tools: Scaling/Ratio / ⭐⭐ -->
+<!-- Problem: Conceptual / Application / O→M→I / Tools: Scaling/Ratio, Order-of-Magnitude / ⭐⭐ -->
 2. **Stefan-Boltzmann scaling.** The luminosity of a star scales as $L \propto R^2 T^4$.
    - (a) Star A has twice the radius and twice the temperature of Star B. What is $L_A/L_B$?
    - (b) A red giant has $100\times$ the Sun's radius but $0.5\times$ the Sun's temperature. What is its luminosity in $L_\odot$?
@@ -830,7 +830,7 @@ Use this as a fast check of the full workflow. Keep your reasoning explicit.
    - (b) Verify the CGS unit (erg s$^{-1}$ cm$^{-2}$ K$^{-4}$).
    - (c) Convert $\sigma = 5.67 \times 10^{-8}$ W m$^{-2}$ K$^{-4}$ to CGS.
 
-<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Scaling/Ratio / ⭐⭐ -->
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Scaling/Ratio, Order-of-Magnitude / ⭐⭐ -->
 6. **Kepler scaling (HW1).** Using $P^2 \propto a^3$ (years, AU):
    - (a) Neptune orbits at 30 AU. Estimate its orbital period.
    - (b) An asteroid has $P = 8$ years. Estimate its semi-major axis.
