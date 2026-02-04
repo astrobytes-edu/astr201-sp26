@@ -588,16 +588,72 @@ Short prompt: “Which one looks blackbody-like?” Tie back: different physics 
 
 ---
 
-## Motion Preview (Doppler Shifts)
+## Preview: Doppler Shift = Motion from Light
 
-{{< img doppler-shift-exoplanet width="80%" >}}
+Spectral lines are **fixed fingerprints** in the lab.  
+When those lines shift, we are seeing **motion**.
 
-::: {.fragment .text-sm}
-Preview — we’ll quantify this later.
+{{< img doppler-shift-exoplanet width="85%" >}}
+
+::: {.notes}
+This is a 5–10 minute teaser. The goal is motivation: motion is encoded in light.
+:::
+
+---
+
+## The Doppler Equation (Small‑Velocity Limit)
+
+$$\frac{\Delta\lambda}{\lambda_0} = \frac{v_r}{c}$$
+
+::: {.incremental .text-sm}
+- $\Delta\lambda = \lambda_{\text{obs}} - \lambda_0$ (shift from rest wavelength)
+- $v_r$ is **line‑of‑sight** velocity (positive = moving away)
+- Assumes $v_r \ll c$; if $v_r = 0$, then $\Delta\lambda = 0$
+:::
+
+---
+
+## Misconception Check: “Red” and “Blue”
+
+**Redshift** does **not** mean “only red light.”  
+**Blueshift** does **not** mean “only blue light.”
+
+::: {.incremental}
+- The **entire spectrum shifts**: every wavelength stretches or compresses.
+- The names come from **direction** (toward red = longer $\lambda$, toward blue = shorter $\lambda$), not from the color of the source.
 :::
 
 ::: {.notes}
-Keep this as a “next tool” teaser. Mention: the Doppler demo/lab is still being finalized, so we’ll treat this as conceptual for now.
+Example: a spectral line at 5000 Å shifts to 5005 Å — still visible, just slightly longer.
+This is why we can measure velocities from *line positions* even when the object looks white.
+:::
+
+---
+
+## Why This Is Powerful
+
+Because of tiny line shifts, we can measure things we can’t touch:
+
+::: {.incremental}
+- **Exoplanets** via stellar wobble
+- **Binary star masses** from orbital speeds
+- **Galaxy rotation curves** (dark matter)
+- **Cosmic expansion** (redshift)
+:::
+
+---
+
+## 🧠 Quick Check: Direction
+
+A spectral line appears at a **longer** wavelength than its lab value. The source is…
+
+::: {.quiz}
+
+- [x] moving away (redshift)
+- [ ] moving toward (blueshift)
+- [ ] motionless
+- [ ] moving sideways only
+
 :::
 
 ---
@@ -768,59 +824,6 @@ We now have a powerful inference chain:
 
 ::: {.fragment}
 Everything we do next semester-wide is built on this.
-:::
-
----
-
-## Preview: Doppler Shift = Motion from Light
-
-Spectral lines are **fixed fingerprints** in the lab.  
-When those lines shift, we are seeing **motion**.
-
-{{< img doppler-shift-exoplanet width="85%" >}}
-
-::: {.notes}
-This is a 5–10 minute teaser. The goal is motivation: motion is encoded in light.
-:::
-
----
-
-## The Doppler Equation (Small‑Velocity Limit)
-
-$$\\frac{\\Delta\\lambda}{\\lambda_0} = \\frac{v_r}{c}$$
-
-::: {.incremental .text-sm}
-- $\\Delta\\lambda = \\lambda_{\\text{obs}} - \\lambda_0$ (shift from rest wavelength)
-- $v_r$ is **line‑of‑sight** velocity (positive = moving away)
-- Assumes $v_r \\ll c$; if $v_r = 0$, then $\\Delta\\lambda = 0$
-:::
-
----
-
-## Why This Is Powerful
-
-Because of tiny line shifts, we can measure things we can’t touch:
-
-::: {.incremental}
-- **Exoplanets** via stellar wobble
-- **Binary star masses** from orbital speeds
-- **Galaxy rotation curves** (dark matter)
-- **Cosmic expansion** (redshift)
-:::
-
----
-
-## 🧠 Quick Check: Direction
-
-A spectral line appears at a **longer** wavelength than its lab value. The source is…
-
-::: {.quiz}
-
-- [x] moving away (redshift)
-- [ ] moving toward (blueshift)
-- [ ] motionless
-- [ ] moving sideways only
-
 :::
 
 ---
