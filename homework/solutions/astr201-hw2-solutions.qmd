@@ -100,11 +100,45 @@ Let’s unpack each piece:
 
 **Steps:**
 
-- Earth: $\frac{GM}{R} \approx (6.67 \times 10^{-8})(6 \times 10^{27})/(6.4 \times 10^8) \approx 6.25 \times 10^{11}$.
-  $v_{esc} \approx \sqrt{1.25 \times 10^{12}} \approx 1.12 \times 10^6$ cm/s $= 11.2$ km/s.
-- Moon: $\frac{GM}{R} \approx (6.67 \times 10^{-8})(7.3 \times 10^{25})/(1.7 \times 10^8) \approx 2.86 \times 10^{10}$.
-  $v_{esc} \approx \sqrt{5.7 \times 10^{10}} \approx 2.4 \times 10^5$ cm/s $= 2.4$ km/s.
-- Ratio: $11.2/2.4 \approx 4.7$.
+- Earth:
+
+$$
+\begin{aligned}
+\frac{GM_\oplus}{R_\oplus}
+&= \frac{(6.67 \times 10^{-8})(6 \times 10^{27})}{6.4 \times 10^{8}}
+\\approx 6.25 \times 10^{11}\ \mathrm{cm^2\,s^{-2}}
+\end{aligned}
+$$
+
+$$
+v_{esc,\oplus} = \sqrt{2\frac{GM_\oplus}{R_\oplus}}
+\\approx \sqrt{1.25 \times 10^{12}}
+\\approx 1.12 \times 10^6\ \mathrm{cm/s}
+= 11.2\ \mathrm{km/s}.
+$$
+
+- Moon:
+
+$$
+\begin{aligned}
+\frac{GM_{Moon}}{R_{Moon}}
+&= \frac{(6.67 \times 10^{-8})(7.3 \times 10^{25})}{1.7 \times 10^{8}}
+\\approx 2.86 \times 10^{10}\ \mathrm{cm^2\,s^{-2}}
+\end{aligned}
+$$
+
+$$
+v_{esc,Moon} = \sqrt{2\frac{GM_{Moon}}{R_{Moon}}}
+\\approx \sqrt{5.7 \times 10^{10}}
+\\approx 2.4 \times 10^5\ \mathrm{cm/s}
+= 2.4\ \mathrm{km/s}.
+$$
+
+- Ratio:
+
+$$
+\frac{v_{esc,\oplus}}{v_{esc,Moon}} = \frac{11.2}{2.4} \\approx 4.7.
+$$
 
 **Unit check:** $[\frac{2GM}{R}] = [L^2T^{-2}]$, so $v_{esc}$ has units of $[LT^{-1}]$.
 
