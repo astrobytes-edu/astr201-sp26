@@ -1,0 +1,165 @@
+---
+title: "Lecture 1 Solutions: Spoiler Alerts"
+subtitle: "Practice Problem Solutions"
+author: "Dr. Anna Rosen"
+date: "2026-01-20"
+description: "Solutions to the Lecture 1 practice problems."
+draft: true
+course: ASTR 201
+module: "1 - Foundations"
+---
+
+::: {.callout-note}
+**Student note:** These are model solutions written to show reasoning, units, and checks. Your solutions can be shorter if your setup and logic are correct.
+
+**HW note:** Homework uses a subset of these problems. Solutions are posted separately for HW grading and reflection.
+:::
+
+## Conceptual
+
+### Problem 1: The Measurement Ceiling
+
+**Restatement:** Correct the claim that luminosity, temperature, mass, and distance are directly measured.
+
+**Key insight:** The four direct observables are brightness, position, wavelength, and timing. Most physical properties are inferred from these plus physics.
+
+**Answer:** Astronomers directly measure **brightness**, **position**, **wavelength**, and **timing**. The student's list are *inferred* quantities: luminosity from brightness + distance (inverse-square law), temperature from spectrum or color (blackbody/Wien), mass from orbital dynamics (gravity), and distance from parallax or standard candles. The difference is measurement vs model-based inference.
+
+**Common misconception:** Treating catalog values (temperature, mass) as direct measurements.
+
+---
+
+### Problem 2: Standard Candle Logic
+
+**Restatement:** Explain why a standard candle must be luminous and calibrated.
+
+**Key insight:** Distance comes from comparing intrinsic luminosity to observed flux. If you do not know true luminosity, the distance is unconstrained.
+
+**Answer:** A standard candle must be **bright enough** to be detected at the distances of interest, and its **intrinsic luminosity must be known reliably**. If it is too faint, you cannot measure flux with good signal-to-noise. If the calibration is wrong, every inferred distance is biased. Either failure breaks the distance ladder.
+
+**Common misconception:** Assuming any bright object is a standard candle.
+
+---
+
+### Problem 3: Observable vs. Model-Dependent (HW1)
+
+**Restatement:** Critique the claim that TRAPPIST-1e's temperature was measured directly.
+
+**Key insight:** Temperature is inferred from measured spectra/flux and a physical model (blackbody or energy balance).
+
+**Answer:** Astronomers do **not** measure temperature directly. They measure **fluxes and spectra** (wavelength-dependent brightness). A model (blackbody fit, or energy-balance with albedo and stellar flux) converts those measurements into an inferred temperature. The statement should read: "We measured the planet's spectrum/flux and inferred a temperature using a model."
+
+**Common misconception:** Treating a model output as a direct measurement.
+
+---
+
+### Problem 4: Empirical vs. Physical (HW1)
+
+**Restatement:** Distinguish empirical vs physical laws and give an example.
+
+**Key insight:** Empirical laws describe patterns in data; physical laws explain the mechanisms producing those patterns.
+
+**Answer:** An **empirical law** summarizes what data show (e.g., Kepler's $P^2 \propto a^3$). A **physical law** explains why (Newton's gravity and circular motion). The distinction matters because physical laws predict new situations beyond the original data, while empirical laws do not guarantee correct extrapolation.
+
+**Common misconception:** Assuming empirical patterns are explanations.
+
+---
+
+## Calculation
+
+### Problem 5: 21-cm Hydrogen Line
+
+**Given:** $\lambda = 21$ cm, $c = 3 \times 10^{10}$ cm/s.
+
+**Find:** Frequency and unit checks.
+
+**Equation:** $c = \lambda \nu$.
+
+**Steps:**
+- (a) $21$ cm $= 0.21$ m; $21$ cm $= 2.1 \times 10^8$ nm.
+- (b) $\nu = c/\lambda = (3 \times 10^{10}\,\mathrm{cm/s})/(21\,\mathrm{cm}) \approx 1.43 \times 10^9\,\mathrm{s^{-1}}$.
+- (d) For $\lambda \sim 10^{-8}$ cm, the frequency is higher by roughly $21/10^{-8} \sim 2 \times 10^9$, about 9 orders of magnitude.
+
+**Unit check:** (cm/s)/cm $=$ s$^{-1}$.
+
+**Sanity check:** Longer wavelengths correspond to lower frequencies.
+
+**Answer:** $\nu \approx 1.4 \times 10^9$ Hz; X-ray frequencies are ~9 orders of magnitude higher.
+
+---
+
+### Problem 6: Inverse-Square Distance
+
+**Given:** $F_A/F_B = 25$ for identical stars.
+
+**Find:** $d_B/d_A$ and distance for Star B.
+
+**Equation:** $F \propto 1/d^2$.
+
+**Steps:**
+- $F_A/F_B = d_B^2/d_A^2 = 25 \Rightarrow d_B/d_A = 5$.
+- If $d_A = 1$ kpc, then $d_B = 5$ kpc.
+- $5$ kpc $= 5000$ pc $\approx 5000 \times 3.26$ ly $\approx 1.63 \times 10^4$ ly.
+
+**Unit check:** The distance ratio is dimensionless.
+
+**Sanity check:** The fainter star must be farther away.
+
+**Answer:** $d_B/d_A = 5$, so $d_B = 5$ kpc $\approx 1.6 \times 10^4$ ly.
+
+---
+
+### Problem 7: Light-Travel Across the Galaxy
+
+**Given:** Milky Way diameter $\approx 10^5$ light-years; $1\,\mathrm{yr} \approx 3.15 \times 10^7$ s.
+
+**Find:** Light-crossing time in years and seconds; compare to galactic orbit period.
+
+**Equation:** $t = d/c$ and 1 light-year corresponds to 1 year of light-travel time.
+
+**Steps:**
+- (a) $t \approx 10^5$ years.
+- (b) $t \approx 10^5 \times 3.15 \times 10^7 \approx 3.15 \times 10^{12}$ s.
+- (c) Number of galactic orbits during crossing: $10^5\,\mathrm{yr} / (2.3 \times 10^8\,\mathrm{yr}) \approx 4 \times 10^{-4}$, far less than one orbit.
+
+**Unit check:** years $\times$ (s/yr) $=$ seconds.
+
+**Sanity check:** The Milky Way is huge; light-crossing time is long but still shorter than one galactic year.
+
+**Answer:** $\sim 10^5$ years; $\sim 3 \times 10^{12}$ s; much less than one galactic orbit.
+
+---
+
+## Synthesis
+
+### Problem 8: The Inference Chain
+
+**Restatement:** Identify measurement, model, and inference for each case.
+
+**Key elements:** Observable measured; model used; inferred quantity.
+
+**Sample response:**
+- (i) **Composition of the Sun:** Measure the spectrum (wavelengths of absorption lines). Model: atomic transition fingerprints. Infer composition (hydrogen, helium, etc.).
+- (ii) **Mass of an exoplanet:** Measure stellar Doppler wobble or transit timing. Model: gravitational two-body dynamics. Infer planet mass (often a minimum mass).
+- (iii) **Age of a star cluster:** Measure color-magnitude distribution (photometry). Model: stellar evolution tracks. Infer age from the turnoff point.
+
+**Grading guidance:** Full credit requires all three parts (measure/model/infer) for each scenario.
+
+---
+
+<!-- Challenge: yes -->
+### Problem 9: The Measurement-Inference Web
+
+**Restatement:** Map observables to inferred properties and track dependence on distance.
+
+**Key elements:** Observables (brightness, position, wavelength, timing), inference chain, and sensitivity to distance.
+
+**Sample response:**
+- **Distance:** inferred from parallax (position) or standard candles (brightness + model).
+- **Luminosity:** inferred from flux (brightness) and distance via inverse-square law.
+- **Radius:** inferred from luminosity and temperature using Stefan-Boltzmann: $L \propto R^2 T^4$.
+- **Mass:** inferred from orbital dynamics (timing/position/wavelength) or from stellar models tied to luminosity and temperature.
+
+If distance increases by 20%, luminosity increases by $1.2^2 \approx 1.44$ (44%). Radius scales as $R \propto \sqrt{L}$ at fixed $T$, so $R$ increases by $\sqrt{1.44} = 1.2$ (20%). Mass estimates that depend on luminosity or radius also shift upward accordingly.
+
+**Grading guidance:** Full credit requires correct observable mapping and a correct qualitative (or quantitative) distance-dependence statement.

@@ -1,0 +1,200 @@
+---
+title: "Lecture 3 Solutions: Gravity and Orbits"
+subtitle: "Practice Problem Solutions"
+author: "Dr. Anna Rosen"
+date: "2026-01-27"
+description: "Solutions to the Lecture 3 practice problems."
+draft: true
+course: ASTR 201
+module: "1 - Foundations"
+---
+
+::: {.callout-note}
+**Student note:** These are model solutions written to show reasoning, units, and checks. Your solutions can be shorter if your setup and logic are correct.
+
+**HW note:** Homework uses a subset of these problems. Solutions are posted separately for HW grading and reflection.
+:::
+
+## Conceptual
+
+### Problem 1: Empirical vs. Physical Laws
+
+**Restatement:** Distinguish empirical vs physical laws and interpret a different scaling.
+
+**Key insight:** Empirical laws describe patterns in data; physical laws explain the mechanisms that produce those patterns.
+
+**Answer:**
+- (a) Kepler's Third Law is empirical because it summarizes observed planetary motions without explaining why. Newton's law provides the mechanism.
+- (b) If $P^2 \propto a^4$, gravity would not be inverse-square; the force law would need a different radial dependence to produce that scaling.
+- (c) A universal law allows predictions for any system (binary stars, exoplanets) without re-deriving a new empirical rule each time.
+
+**Common misconception:** Thinking empirical fits automatically explain the physics.
+
+---
+
+### Problem 2: The Centripetal Force Misconception (HW1)
+
+**Restatement:** Correct the "two forces" statement.
+
+**Key insight:** "Centripetal force" is not an extra force; it is the net inward force required for circular motion.
+
+**Answer:**
+- (a) The statement double-counts forces. Gravity provides the inward (centripetal) acceleration.
+- (b) Correct version: The planet experiences **one** force (gravity), which provides the centripetal acceleration.
+- (c) "Centrifugal force" is a fictitious force that appears only in a rotating reference frame.
+
+**Common misconception:** Treating centripetal force as a separate physical interaction.
+
+---
+
+### Problem 3: Energy Signs and Orbital Fate
+
+**Restatement:** Interpret $E < 0$, $E = 0$, and $E > 0$.
+
+**Key insight:** Zero potential energy is defined at infinity, so bound orbits have negative total energy.
+
+**Answer:**
+- (a) $U$ is negative because work must be done to separate masses to infinity.
+- (b) $E < 0$ means bound (elliptical); $E = 0$ means parabolic; $E > 0$ means unbound (hyperbolic escape).
+- (c) Positive total energy does **not** mean it is gaining energy; it means its total energy is above the escape threshold.
+
+**Common misconception:** Confusing the sign of energy with energy gain or loss.
+
+---
+
+## Calculation
+
+### Problem 4: Orbital Velocity Practice
+
+**Given:** $G = 6.67 \times 10^{-8}$, $M_\odot = 2 \times 10^{33}$ g, $r = 1$ AU $= 1.5 \times 10^{13}$ cm.
+
+**Find:** $v_{orb}$ for Earth and Mars.
+
+**Equation:** $v_{orb} = \sqrt{GM/r}$.
+
+**Steps:**
+- $GM/r = (6.67 \times 10^{-8})(2 \times 10^{33})/(1.5 \times 10^{13}) \approx 8.9 \times 10^{12}$.
+- $v_{orb} \approx \sqrt{8.9 \times 10^{12}} \approx 3.0 \times 10^6$ cm/s $\approx 30$ km/s.
+- Mars: $v \propto 1/\sqrt{r}$, so $v_M = v_E/\sqrt{1.52} \approx 0.81 v_E \approx 24$ km/s.
+
+**Unit check:** $[GM/r] = [L^2T^{-2}]$ so $v$ has $[LT^{-1}]$.
+
+**Sanity check:** Earth’s orbital speed is known to be about 30 km/s; Mars should be slower.
+
+**Answer:** Earth $\approx 30$ km/s; Mars $\approx 24$ km/s.
+
+---
+
+### Problem 5: Escape Velocity Comparison
+
+**Given:** $M_\oplus = 6 \times 10^{27}$ g, $R_\oplus = 6.4 \times 10^8$ cm; $M_{Moon} = 7.3 \times 10^{25}$ g, $R_{Moon} = 1.7 \times 10^8$ cm.
+
+**Find:** $v_{esc}$ for Earth and Moon.
+
+**Equation:** $v_{esc} = \sqrt{2GM/R}$.
+
+**Steps:**
+- Earth: $GM/R \approx (6.67 \times 10^{-8})(6 \times 10^{27})/(6.4 \times 10^8) \approx 6.25 \times 10^{11}$.
+  $v_{esc} \approx \sqrt{1.25 \times 10^{12}} \approx 1.12 \times 10^6$ cm/s $= 11.2$ km/s.
+- Moon: $GM/R \approx (6.67 \times 10^{-8})(7.3 \times 10^{25})/(1.7 \times 10^8) \approx 2.86 \times 10^{10}$.
+  $v_{esc} \approx \sqrt{5.7 \times 10^{10}} \approx 2.4 \times 10^5$ cm/s $= 2.4$ km/s.
+- Ratio: $11.2/2.4 \approx 4.7$.
+
+**Unit check:** $[2GM/R] = [L^2T^{-2}]$, so $v_{esc}$ has units of $[LT^{-1}]$.
+
+**Sanity check:** A smaller, lower-mass body should have a lower escape speed; $2.4$ km/s is reasonable for the Moon.
+
+**Answer:** Earth $\approx 11.2$ km/s; Moon $\approx 2.4$ km/s; Earth is about 4.7 times larger.
+
+---
+
+### Problem 6: Kepler III with Newton
+
+**Given:** $P^2 = \\dfrac{4\\pi^2}{G(M+m)}a^3$.
+
+**Find:** Simplified form, unit check, and the binary-star scaling.
+
+**Equation:** $P^2 = \\dfrac{4\\pi^2}{G(M+m)}a^3$.
+
+**Steps:**
+- (a) For $m \\ll M_\\odot$, $P^2 \\approx \\dfrac{4\\pi^2}{GM_\\odot}a^3$.
+- (b) With $a = 1$ AU, this gives $P \\approx 1$ year.
+- (c) For two $1\\,M_\\odot$ stars, total mass is $2M_\\odot$, so $P^2/a^3$ is half the Sun–Earth value.
+
+**Unit check:** $[a^3/(GM)] = [L^3]/([L^3M^{-1}T^{-2}]M) = [T^2]$.
+
+**Sanity check:** A more massive system should have a shorter period at fixed $a$.
+
+**Answer:** The equal-mass binary has a Kepler constant smaller by a factor of 2.
+
+---
+
+### Problem 7: Bound or Unbound? (HW1)
+
+**Given:** Comet speed $v = 50$ km/s at 1 AU.
+
+**Find:** Bound or unbound.
+
+**Equation:** $v_{esc} = \\sqrt{2GM/r}$; at 1 AU, $v_{esc} \\approx 42$ km/s.
+
+**Steps:** Since $50$ km/s $> 42$ km/s, the comet exceeds escape speed.
+
+**Unit check:** Both speeds are in km/s.
+
+**Sanity check:** 50 km/s is also well above Earth's 30 km/s orbital speed.
+
+**Answer:** The comet is unbound and will escape.
+
+---
+
+## Synthesis
+
+### Problem 8: Exoplanet Orbital Velocities (HW1)
+
+**Restatement:** Use ratios with Earth as a reference.
+
+**Key elements:** $v \propto \sqrt{M/r}$.
+
+**Sample response:**
+- (a) $v/v_\oplus = \sqrt{1/0.05} = \sqrt{20} \approx 4.47$.
+- (b) $v/v_\oplus = \sqrt{0.25/0.25} = 1$.
+- (c) Hot Jupiter is much faster; the red dwarf case is comparable to Earth because mass and radius scale equally.
+
+**Grading guidance:** Full credit requires correct scaling and a physical sanity check.
+
+---
+
+<!-- Challenge: yes -->
+### Problem 9: Complete Workflow: Weighing Jupiter
+
+**Restatement:** Use Kepler III to infer Jupiter's mass from Io's orbit.
+
+**Key elements:** Convert $P$ to seconds, use $M = 4\pi^2 a^3/(GP^2)$, and unit check.
+
+**Sample response:**
+- $P = 1.77$ days $\approx 1.53 \times 10^5$ s.
+- $a^3 \approx (4.22 \times 10^{10})^3 \approx 7.5 \times 10^{31}$ cm$^3$.
+- $M \approx 4\pi^2 a^3/(GP^2) \approx 1.9 \times 10^{30}$ g.
+- In solar masses: $M \approx 9.5 \times 10^{-4} M_\odot$, consistent with Jupiter.
+- Observables: orbital period and orbital size.
+
+**Unit check:** $[a^3/(GP^2)] = [L^3]/([L^3M^{-1}T^{-2}]T^2) = [M]$.
+
+**Sanity check:** $\\sim 10^{-3} M_\\odot$ is the known order of magnitude for Jupiter.
+
+**Grading guidance:** Must show the structure of the inference and the unit check.
+
+---
+
+### Problem 10: The $\sqrt{2}$ Factor
+
+**Restatement:** Show $v_{esc} = \sqrt{2}\,v_{orb}$ and interpret energetically.
+
+**Key elements:** Compare formulas and relate to orbital energy.
+
+**Sample response:**
+- $v_{esc} = \sqrt{2GM/r}$ and $v_{orb} = \sqrt{GM/r}$, so $v_{esc} = \sqrt{2}\,v_{orb}$.
+- A spacecraft must increase speed by a factor of $\sqrt{2}$.
+- Energy view: a circular orbit has $E = -GMm/(2r)$. To reach $E = 0$, you must add $GMm/(2r)$, which equals the orbital kinetic energy $K$. That is why the speed increase is a factor of $\sqrt{2}$.
+
+**Grading guidance:** Full credit requires both the algebra and the energy interpretation.

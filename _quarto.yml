@@ -94,12 +94,16 @@ website:
                 href: modules/module-01/slides/lecture-01-spoiler-alerts-slides.qmd
               - text: "Reading"
                 href: modules/module-01/readings/lecture-01-spoiler-alerts-reading.qmd
+              - text: "Solutions"
+                href: modules/module-01/readings/lecture-01-spoiler-alerts-solutions.qmd
           - section: "Lecture 2: Tools of the Trade"
             contents:
               - text: "Slides"
                 href: modules/module-01/slides/lecture-02-foundations.qmd
               - text: "Reading"
                 href: modules/module-01/readings/lecture-02-foundations-reading.qmd
+              - text: "Solutions"
+                href: modules/module-01/readings/lecture-02-foundations-solutions.qmd
               - text: "Reference Tables"
                 href: handouts/lecture-02-reference-tables.qmd
           - section: "Lecture 3: Gravity and Orbits"
@@ -108,6 +112,8 @@ website:
                 href: modules/module-01/slides/lecture-03-gravity-and-orbits.qmd
               - text: "Reading"
                 href: modules/module-01/readings/lecture-03-gravity-and-orbits.qmd
+              - text: "Solutions"
+                href: modules/module-01/readings/lecture-03-gravity-and-orbits-solutions.qmd
           - section: "Lecture 4: Light as Information"
             contents:
               - text: "Slides (Day 1)"

@@ -1072,15 +1072,6 @@ You'll spend far more time with equations, graphs, and reasoning than with eyepi
 
 ---
 
-::: {.callout-check-yourself title="Final Check"}
-1. An Astro 101 student says "astronomy is about looking at pretty space pictures." How would you correct them using the framework from this lecture?
-2. A news headline reads "Scientists measure the mass of a distant black hole." What did they actually measure, and what model connected that measurement to mass?
-3. If you double a photon's wavelength, what happens to its energy? Explain using $E = hc/\lambda$.
-4. The Andromeda Galaxy is 2.5 million light-years away. When you observe it tonight, are you seeing it as it is *now*? Explain.
-
-If you can answer all four with reasoning (not just recall): you're ready.
-:::
-
 ---
 
 ## Self-Assessment Checklist
@@ -1115,92 +1106,70 @@ If you can answer all four with reasoning (not just recall): you're ready.
 
 ---
 
+## Quick Practice
+
+Use these as a fast warm-up. Keep answers short but explicit about **what was measured** vs **what was inferred**.
+
+1. An Astro 101 student says "astronomy is about looking at pretty space pictures." How would you correct them using the framework from this lecture?
+2. A news headline reads "Scientists measure the mass of a distant black hole." What did they actually measure, and what model connected that measurement to mass?
+3. If you double a photon's wavelength, what happens to its energy? Explain using $E = hc/\lambda$.
+4. The Andromeda Galaxy is 2.5 million light-years away. When you observe it tonight, are you seeing it as it is *now*? Explain.
+
+::: {.callout-tip title="Quick Solutions" collapse="true"}
+1. We measure photons (brightness, position, wavelength, timing) and infer physical properties using models; pictures are data, not answers.  
+2. They measured motion (e.g., Doppler shifts or orbital periods). The gravity/orbit model converts motion into mass.  
+3. Energy is inversely proportional to wavelength, so doubling $\lambda$ halves $E$.  
+4. You see Andromeda as it was 2.5 million years ago; lookback time equals distance in light-years.
+:::
+
 ## Practice Problems
 
-### Conceptual Questions
+### Conceptual
 
-1. **Observable vs. Inferred.** For each quantity, state whether it is *directly measured* or *inferred*:
-   - (a) The brightness of a star
-   - (b) The temperature of a star
-   - (c) The position of a star on the sky
-   - (d) The distance to a star
-   - (e) The wavelength of light from a star
+<!-- Problem: Conceptual / Recognition / O→M→I / Tools: Model-Inversion, Uncertainty/Assumptions / ⭐ -->
+1. **The measurement ceiling.** A student lists luminosity, temperature, mass, and distance as the four things astronomers directly measure. Correct this statement. What *can* astronomers directly measure, and how do we actually determine each item on the student's list?
 
-2. **The Inference Pipeline.** A student claims: "We know the Sun is made of hydrogen because we can see it." What's wrong with this statement? Explain what we actually measure and how we infer the Sun's composition.
+<!-- Problem: Conceptual / Connection / O→M→I / Tools: Uncertainty/Assumptions, Data/Graph / ⭐⭐ -->
+2. **Standard candle logic.** Explain why a standard candle must be both *intrinsically luminous enough* and *reliably calibrated*. What goes wrong if either condition fails?
 
-3. **Standard Candles.** Why do astronomers need "standard candles" to measure distances? What problem do they solve?
+<!-- Problem: Conceptual / Connection / O→M→I / Tools: Model-Inversion / ⭐⭐ -->
+3. **Observable vs. model-dependent (HW1).** A news article claims “Astronomers measured the temperature of TRAPPIST-1e to be 255 K.” Critique this statement. What was actually measured, and what model was used to arrive at the temperature?
 
-4. **Lookback Time.** The Andromeda Galaxy is about 2.5 million light-years away. If an astronomer observes a supernova in Andromeda tonight, when did that explosion actually occur? Explain your reasoning.
+<!-- Problem: Conceptual / Connection / O→M→I / Tools: Uncertainty/Assumptions, Data/Graph / ⭐⭐ -->
+4. **Empirical vs. physical (HW1).** What is the difference between an empirical law and a physical law? Give one example from Lecture 1 where an empirical pattern is explained by a physical mechanism, and explain why that distinction matters.
 
-### Quick Calculations
+### Calculation
 
-5. **Wavelength and Frequency.** The hydrogen-alpha emission line has a wavelength of $\lambda = 656$ nm ($6.56 \times 10^{-5}$ cm).
-   - (a) **Calculate:** Find its frequency $\nu$ using $c = \lambda \nu$ with $c = 3 \times 10^{10}$ cm/s.
-   - (b) **Unit check:** Show that your units cancel correctly to give Hz (s⁻¹).
-   - (c) **Limiting case:** Radio waves have $\lambda \sim 1$ m. Without calculating, predict: should their frequency be higher or lower than Hα? By roughly what factor? Then verify with a quick estimate.
-   - (d) **Classification:** Is Hα visible light, infrared, or ultraviolet? (Visible spans ~400–700 nm.)
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Dimensional, Unit-Conversion / ⭐⭐ -->
+5. **21-cm hydrogen line.** The 21-cm line traces cold neutral hydrogen.
+   - (a) Convert 21 cm to meters and to nanometers.
+   - (b) Compute the frequency using $c = \lambda \nu$ with $c = 3 \times 10^{10}$ cm/s.
+   - (c) Show a unit check that gives s$^{-1}$.
+   - (d) **Limiting case:** X-rays have $\lambda \sim 10^{-8}$ cm. Without calculating, predict whether their frequency is higher or lower than 21-cm radiation, and by roughly how many orders of magnitude.
 
-6. **Photon Energy.** Compare the energy of an X-ray photon ($\lambda = 1$ nm = $10^{-7}$ cm) to a radio photon ($\lambda = 1$ m = $10^2$ cm).
-   - (a) **Calculate:** Find the ratio of X-ray to radio photon energy using $E = hc/\lambda$.
-   - (b) **Unit check:** Show that $hc/\lambda$ gives energy in ergs.
-   - (c) **Limiting case:** If you halved the X-ray wavelength, what would happen to its energy? Explain without calculating.
-   - (d) **Interpretation:** Why do X-ray telescopes observe different objects than radio telescopes? (One sentence connecting photon energy to source temperature.)
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Scaling/Ratio / ⭐⭐ -->
+6. **Inverse-square distance.** Two identical Cepheid variables are observed. Star A has flux 25 times greater than Star B.
+   - (a) Derive the distance ratio $d_B/d_A$.
+   - (b) If Star A is at 1 kpc, what is Star B’s distance in kpc?
+   - (c) Convert Star B’s distance to light‑years (1 pc $\approx 3.26$ ly).
 
-7. **Lookback Calculation.** Light travels at $c = 3 \times 10^{10}$ cm/s. The nearest star (Proxima Centauri) is about $4 \times 10^{18}$ cm away.
-   - (a) **Calculate:** How long does light take to travel from Proxima Centauri to Earth? Give your answer in seconds, then convert to years. (1 year ≈ $3 \times 10^7$ s)
-   - (b) **Unit check:** Show that distance/speed gives time in seconds.
-   - (c) **Sanity check:** Is your answer in the right ballpark? (Hint: Proxima Centauri is often quoted as "about 4 light-years away.")
-   - (d) **Interpretation:** If you observe Proxima Centauri tonight, are you seeing it as it is *now* or as it *was*? Explain.
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Unit-Conversion, Order-of-Magnitude / ⭐⭐ -->
+7. **Light-travel across the galaxy.** The Milky Way is about 100,000 light-years across.
+   - (a) How long does light take to cross it? Express in years.
+   - (b) Convert this to seconds using 1 year $\approx 3.15 \times 10^7$ s.
+   - (c) **Sanity check:** The Sun orbits the Galactic center in ~230 million years. Roughly how many galactic orbits occur during one light‑crossing time?
 
 ### Synthesis
 
-8. **Putting It Together.** Imagine you observe two stars that appear equally bright in your telescope, but one is blue and one is red.
-   - (a) Based on Wien's law (hotter → bluer), which star has the higher surface temperature?
-   - (b) If you later determine that the blue star is twice as far away as the red star, what can you conclude about their intrinsic luminosities? (Hint: think about the inverse-square law.)
-   - (c) What additional measurement would help you confirm the temperature difference?
+<!-- Problem: Synthesis / Connection / O→M→I / Tools: Model-Inversion, Uncertainty/Assumptions / ⭐⭐ -->
+8. **The inference chain.** For each scenario, identify (a) what is directly measured, (b) what model connects measurement to inference, and (c) what is inferred:
+   - (i) Determining the composition of the Sun
+   - (ii) Determining the mass of a planet orbiting another star
+   - (iii) Determining the age of a star cluster
 
-9. **Connecting Observables to Quantities.** For each quantity below, state which observable(s) you would need to measure and what physical model connects them:
-   - (a) Distance to a nearby star
-   - (b) Temperature of a star
-   - (c) Mass of a binary star system
-
-10. **Dark Matter Evidence.** A student says, "If we can't see dark matter, how do we know it exists?" Describe one piece of observational evidence for dark matter and explain how measurement → model → inference applies.
-
-11. **Cosmic Acceleration.** The 1998 discovery that the universe's expansion is accelerating earned the 2011 Nobel Prize. What did the astronomers actually *measure*, and what did they *infer* from it?
-
-12. **Connecting the Spoilers.** The cosmic distance ladder (Spoiler 2) is essential for measuring dark energy (Spoiler 10). Explain why. What would happen to our estimate of cosmic acceleration if the Type Ia supernova luminosity calibration were wrong by 20%?
-
-::: {.callout-note title="Answers" collapse="true"}
-**1.** (a) measured, (b) inferred, (c) measured, (d) inferred, (e) measured
-
-**2.** We don't "see" hydrogen—we measure the *spectrum* (brightness vs. wavelength) and observe absorption lines at specific wavelengths. We *infer* composition by matching those wavelengths to known atomic transitions.
-
-**3.** Standard candles have known intrinsic luminosity $L$. By measuring apparent brightness $F$ and using $F = L/(4\pi d^2)$, we can solve for distance $d$. Without knowing $L$, brightness alone can't distinguish "intrinsically faint and nearby" from "intrinsically luminous and far away."
-
-**4.** The explosion occurred 2.5 million years ago. The light has been traveling toward us for 2.5 million years—we're seeing the past.
-
-**5.** (a) $\nu = c/\lambda = (3 \times 10^{10} \text{ cm/s})/(6.56 \times 10^{-5} \text{ cm}) \approx 4.6 \times 10^{14}$ Hz. (b) Units: (cm/s)/(cm) = 1/s = Hz ✓. (c) Radio has *lower* frequency. Since $\nu = c/\lambda$ and radio λ is ~$10^7$ times larger than Hα, radio ν is ~$10^7$ times smaller: $\nu_\text{radio} \sim 3 \times 10^8$ Hz. (d) 656 nm is visible (red light).
-
-**6.** (a) $E \propto 1/\lambda$, so $E_\text{X-ray}/E_\text{radio} = \lambda_\text{radio}/\lambda_\text{X-ray} = 10^2 / 10^{-7} = 10^9$. X-ray photons carry a billion times more energy. (b) $[h][c]/[\lambda] = (\text{erg·s})(\text{cm/s})/(\text{cm}) = \text{erg}$ ✓. (c) Halving wavelength doubles energy (inverse relationship). (d) X-ray photons require high-energy processes (hot plasma at millions of K); radio photons come from cold gas and magnetic fields.
-
-**7.** (a) $t = d/c = (4 \times 10^{18} \text{ cm})/(3 \times 10^{10} \text{ cm/s}) \approx 1.3 \times 10^8$ s. Converting: $(1.3 \times 10^8 \text{ s})/(3 \times 10^7 \text{ s/yr}) \approx 4.3$ years. (b) (cm)/(cm/s) = s ✓. (c) Yes—Proxima Centauri is ~4.2 light-years away, matching our calculation. (d) You're seeing it as it *was* 4.3 years ago. The light left the star then; you're looking into the past.
-
-**8.** (a) Blue star is hotter. (b) If they appear equally bright but the blue star is 2× farther, it must be 4× more luminous (inverse-square law: $4\times$ distance at same flux requires $4\times$ luminosity). (c) A spectrum would reveal absorption lines whose patterns depend on temperature.
-
-**9.** (a) **Position** (measured over time as Earth orbits) + parallax geometry → distance. (b) **Wavelength** (spectrum or color) + Wien's law or blackbody fitting → temperature. (c) **Position** + **Timing** (orbital motion over time) + Kepler's laws/Newton's gravity → mass.
-
-**10.** Evidence includes galaxy rotation curves (stars orbit too fast), galaxy cluster dynamics (galaxies move too fast to be gravitationally bound by visible matter), gravitational lensing (light bends more than visible mass predicts), and CMB patterns. For rotation curves: we *measure* stellar velocities via Doppler shifts; the *model* is Newtonian gravity relating orbital speed to enclosed mass; the *inference* is that there's ~5× more mass than we see.
-
-**11.** They measured the *brightness* of Type Ia supernovae at large redshifts and compared to expectations from the distance-redshift relation. The supernovae appeared fainter than expected—meaning more distant—implying space has been expanding *faster* than a decelerating universe would predict. The inference: expansion is accelerating, driven by something we call "dark energy."
-
-**12.** Measuring dark energy requires knowing the *true luminosity* of Type Ia supernovae (to convert flux to distance) and comparing distances across cosmic time. If the luminosity calibration were wrong by 20%, all inferred distances would shift, changing the apparent expansion history. We might over- or underestimate the acceleration rate, potentially even questioning whether acceleration is real. This is why cross-checking the distance ladder with independent methods (like gravitational wave "standard sirens") is critical.
-:::
-
----
-
-## Glossary
-
-The terms below are the foundational vocabulary for this lecture. Each includes a short definition and context for how the term is used in astronomy.
-
-{{< glossary module=1 >}}
-
+<!-- Problem: Synthesis / Connection / O→M→I / Tools: Model-Inversion, Data/Graph / ⭐⭐ -->
+<!-- Challenge: yes -->
+9. **The measurement-inference web.** A star is reported to have mass $\sim 15\,M_\odot$, radius $\sim 900\,R_\odot$, luminosity $\sim 10^5\,L_\odot$, and distance $\sim 650$ light-years.
+   - (a) For each property, identify which observable(s) are needed to infer it.
+   - (b) Which properties depend on knowing the others first?
+   - (c) If the distance were revised upward by 20%, which inferences would change and how?

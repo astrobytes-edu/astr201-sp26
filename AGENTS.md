@@ -31,6 +31,7 @@ At the start of any session in this repo, load the ASTR201 teaching skills; keep
   - `lecture-audit`
   - `astr201-equations`
   - `astr201-figures`
+  - `astr201-problems-solutions`
   - `voice-and-tone`
   - `math-grammar-rules`
 
@@ -89,6 +90,19 @@ Implementation is in `_extensions/course/shortcodes.lua`; align registry fields 
   - `{{< include _includes/equations/<name>.qmd >}}`
   - `{{< eqrefcard <equation-id> >}}`
 
+### Assessments (Problems + Solutions)
+
+- Required pipeline: **reading bank → homework subset → exam subset** (exams easier than HW).
+- Use the problems contract: `docs/contracts/astr201-problems-solutions-contract.md`.
+- Every problem must include a **hidden label** with type, depth, O→M→I tag, tools, and ⭐ rating.
+- Tool tags are **instructor-only** and must remain hidden from students.
+- Solutions live in separate `*-solutions.qmd` files (ASTR 101 pattern), typically `draft: true` while in development.
+
+### Units Convention (ASTR 201)
+
+- Default unit system: **CGS**.
+- SI is allowed only if explicitly stated.
+
 ### Brand → SCSS tokens (CI enforced)
 
 - `_brand.yml` is the source of truth.
@@ -108,6 +122,14 @@ CI fails if `_tokens_generated.scss` is out of date.
 - `make render` (generates tokens, runs `quarto render`)
 - `make tokens` (regen SCSS tokens)
 - `python scripts/schedule_generator.py` (schedule tooling, if used)
+
+## Assessment Artifacts
+
+- Formula sheets and math support live in `handouts/formula-sheets/`:
+  - `handouts/formula-sheets/astr201-formula-sheet-exam.qmd`
+  - `handouts/formula-sheets/astr201-formula-sheet-study.qmd`
+  - `handouts/formula-sheets/astr201-math-cheatsheet.qmd`
+  - `handouts/formula-sheets/astr201-constants-sheet.qmd`
 
 ## CI Reality
 

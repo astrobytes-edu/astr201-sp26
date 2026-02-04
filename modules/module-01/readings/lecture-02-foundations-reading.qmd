@@ -725,12 +725,6 @@ Light crosses 1 ly in 1 year. The Milky Way is $10^5$ ly across. So ~$10^5$ year
 
 $10^5$ years = $10^5 \times 3 \times 10^7$ s ≈ $3 \times 10^{12}$ s
 
-::: {.callout-check-yourself}
-Light from the Sun takes 8.3 minutes to reach Earth. How far away is the Sun in AU? (This is essentially the definition of 1 AU, so use it as a sanity check.)
-
-*(Think first... then check: Distance = speed × time = $c \times 8.3$ min = $3 \times 10^{10}$ cm/s × 500 s ≈ $1.5 \times 10^{13}$ cm. That's exactly 1 AU. ✓)*
-:::
-
 ---
 
 ## Summary: Your New Superpowers
@@ -788,59 +782,86 @@ Using just these tools:
 
 ---
 
+## Quick Practice
+
+Use this as a fast check of the full workflow. Keep your reasoning explicit.
+
+::: {.callout-tip title="Quick Check" collapse="true"}
+**Question:** Light from the Sun takes 8.3 minutes to reach Earth. How far away is the Sun in AU? (This is essentially the definition of 1 AU, so use it as a sanity check.)
+
+**Answer:** Distance = speed × time = $c \times 8.3$ min $\approx 3 \times 10^{10}$ cm/s × 500 s $\approx 1.5 \times 10^{13}$ cm, which is 1 AU.
+:::
+
 ## Practice Problems
 
-### Conceptual Questions
+### Conceptual
 
-1. **Dimensional analysis.** A student proposes that gravitational potential energy is $U = GMmr$. Use dimensional analysis to determine if this could be correct. What should the dimensions of energy be? What does this formula give?
+<!-- Problem: Conceptual / Application / O→M→I / Tools: Dimensional / ⭐⭐ -->
+1. **Dimensional analysis check (HW1).** For each equation, decide whether it is dimensionally valid. If not, identify what is wrong.
+   - (a) Orbital velocity: $v = \sqrt{GM/r}$
+   - (b) Kinetic energy: $E = mv$
+   - (c) Gravitational potential energy: $U = GMm/r^2$
+   - (d) Pressure: $P = \rho v^2$ (where $\rho$ is density)
 
-2. **Scaling interpretation.** The Stefan-Boltzmann law says a star's luminosity scales as $L \propto R^2 T^4$. If you double the temperature while keeping the radius constant, by what factor does the luminosity change? What if you double the radius while keeping temperature constant?
+<!-- Problem: Conceptual / Application / O→M→I / Tools: Scaling/Ratio / ⭐⭐ -->
+2. **Stefan-Boltzmann scaling.** The luminosity of a star scales as $L \propto R^2 T^4$.
+   - (a) Star A has twice the radius and twice the temperature of Star B. What is $L_A/L_B$?
+   - (b) A red giant has $100\times$ the Sun's radius but $0.5\times$ the Sun's temperature. What is its luminosity in $L_\odot$?
+   - (c) A white dwarf has $0.01\times$ the Sun's radius and $4\times$ the Sun's temperature. What is its luminosity in $L_\odot$?
 
-3. **Ratio reasoning.** Two stars have the same surface temperature but Star A is 4 times as luminous as Star B. What can you conclude about their relative radii?
+<!-- Problem: Conceptual / Connection / O→M→I / Tools: Scaling/Ratio, Order-of-Magnitude / ⭐ -->
+3. **Building physical intuition.** Without calculating, predict which way each quantity changes and by roughly what factor:
+   - (a) Orbital period if you double orbital radius (same central mass)
+   - (b) Escape velocity if you double a planet's mass (same radius)
+   - (c) Luminosity if you double a star's temperature (same radius)
+   - (d) Dynamical timescale if you double a cloud's density
 
-### Quick Calculations
+### Calculation
 
-4. **Kepler scaling.** Saturn orbits at 9.5 AU. Estimate its orbital period in years.
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Dimensional, Unit-Conversion / ⭐⭐ -->
+4. **The dimensions of $G$.** Starting from $F = GMm/r^2$:
+   - (a) Derive the dimensions of $G$ in terms of $[L]$, $[M]$, and $[T]$.
+   - (b) Verify that the CGS unit of $G$ (cm$^3$ g$^{-1}$ s$^{-2}$) matches.
+   - (c) Convert $G = 6.67 \times 10^{-11}$ m$^3$ kg$^{-1}$ s$^{-2}$ to CGS.
 
-5. **Black hole size.** A stellar-mass black hole has $M = 10\,M_\odot$. Estimate its Schwarzschild radius in km.
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Dimensional, Unit-Conversion / ⭐⭐ -->
+5. **The dimensions of $\sigma$ (HW1).** For $L = 4\pi R^2 \sigma T^4$:
+   - (a) Derive the dimensions of $\sigma$ in $[M]$, $[L]$, $[T]$, $[\Theta]$.
+   - (b) Verify the CGS unit (erg s$^{-1}$ cm$^{-2}$ K$^{-4}$).
+   - (c) Convert $\sigma = 5.67 \times 10^{-8}$ W m$^{-2}$ K$^{-4}$ to CGS.
 
-6. **Unit conversion.** Convert Earth's orbital speed of 30 km/s to AU/year. (Hint: 1 AU = $1.5 \times 10^8$ km and 1 year = $3.15 \times 10^7$ s)
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Scaling/Ratio / ⭐⭐ -->
+6. **Kepler scaling (HW1).** Using $P^2 \propto a^3$ (years, AU):
+   - (a) Neptune orbits at 30 AU. Estimate its orbital period.
+   - (b) An asteroid has $P = 8$ years. Estimate its semi-major axis.
+   - (c) A Kuiper Belt object at 40 AU has what orbital period?
+   - (d) **Sanity check:** Pluto orbits at ~40 AU with period ~248 years. Does your answer agree?
 
-7. **OOM estimation.** The Milky Way contains about $10^{11}$ stars. If the average stellar mass is $\sim 0.5\,M_\odot$, estimate the total mass of stars in the galaxy in grams.
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Order-of-Magnitude, Unit-Conversion / ⭐⭐ -->
+7. **Fermi estimation: light-minutes (HW1).** Estimate without a calculator:
+   - (a) How far does light travel in 1 second? In 1 minute?
+   - (b) The Earth-Sun distance is $\sim 1.5 \times 10^8$ km. How many light-minutes is this?
+   - (c) Jupiter is ~5 AU from the Sun. How many light-minutes is this?
 
 ### Synthesis
 
-8. **Deriving a new relationship.** Use dimensional analysis to find how the escape velocity $v_\text{esc}$ from a planet scales with the planet's mass $M$ and radius $R$. (Ingredients: $G$, $M$, $R$. Target: velocity $[LT^{-1}]$.)
+<!-- Problem: Synthesis / Connection / O→M→I / Tools: Scaling/Ratio, Model-Inversion / ⭐⭐ -->
+8. **Inverse-square law applications.**
+   - (a) The Sun is ~150 million km from Earth. How much fainter would it appear from Saturn (10 AU away)?
+   - (b) Two identical stars have apparent brightnesses in ratio 1:81. What is the ratio of their distances?
+   - (c) A supernova is visible to the naked eye from 10 kpc away. How far away could it be observed with a telescope that collects 10,000x more light?
+   - (d) **Limiting case:** As distance $\to \infty$, what happens to observed flux? What does this imply about detecting objects at arbitrarily large distances?
 
-9. **Applying the toolkit.** You observe two stars of the same spectral type (same temperature). Star A appears 16 times brighter than Star B.
-   - (a) What is the ratio of their distances?
-   - (b) If Star A is at 10 pc, how far away is Star B?
+<!-- Problem: Synthesis / Connection / O→M→I / Tools: Dimensional, Scaling/Ratio, Unit-Conversion / ⭐⭐ -->
+9. **Complete workflow: escape velocity.** The escape velocity is $v_{esc} = \sqrt{2GM/R}$.
+   - (a) **Dimensional check:** Verify this has dimensions of velocity.
+   - (b) **Ratio method:** Earth's escape velocity is 11.2 km/s. Using ratios, estimate the escape velocity from the Moon ($M_{Moon} = 0.012 M_{Earth}$, $R_{Moon} = 0.27 R_{Earth}$).
+   - (c) **Unit conversion:** Convert Earth's escape velocity to cm/s.
+   - (d) **OOM check:** The Sun's escape velocity is ~618 km/s. Does this make sense given $M_\odot \approx 3 \times 10^5 M_{Earth}$ and $R_\odot \approx 109 R_{Earth}$?
 
-10. **Black hole comparison.** The black hole at the center of M87 has mass $\approx 6.5 \times 10^9\,M_\odot$.
-    - (a) Estimate its Schwarzschild radius in km.
-    - (b) Compare this to the size of our solar system (Pluto's orbit ≈ 40 AU).
-
-::: {.callout-note title="Answers" collapse="true"}
-**1.** Energy has dimensions $[ML^2T^{-2}]$. The formula gives $[GM][m][r] = [M^{-1}L^3T^{-2}][M][M][L] = [ML^4T^{-2}]$. Wrong! (The correct formula is $U = -GMm/r$.)
-
-**2.** Doubling $T$: $L$ increases by $2^4 = 16$. Doubling $R$: $L$ increases by $2^2 = 4$.
-
-**3.** Since $L \propto R^2$ (at constant $T$), if $L_A = 4L_B$, then $R_A = 2R_B$. Star A has twice the radius.
-
-**4.** $P^2 = 9.5^3 \approx 857$, so $P \approx 29$ years. (Actual: 29.5 years)
-
-**5.** $R_s \approx 3\,\text{km} \times 10 = 30$ km.
-
-**6.** $30\,\text{km/s} = 30 \times (3.15 \times 10^7\,\text{s/yr}) / (1.5 \times 10^8\,\text{km/AU}) \approx 6.3$ AU/yr. (Exact: $2\pi$ AU/yr ≈ 6.28)
-
-**7.** $10^{11} \times 0.5 \times 2 \times 10^{33}\,\text{g} = 10^{44}$ g.
-
-**8.** $v_\text{esc} \propto G^a M^b R^c$ with target $[LT^{-1}]$. Solving: $v_\text{esc} \propto \sqrt{GM/R}$.
-
-**9.** (a) Flux $\propto 1/d^2$, so $d_B/d_A = \sqrt{16} = 4$. (b) $d_B = 4 \times 10 = 40$ pc.
-
-**10.** (a) $R_s \approx 3\,\text{km} \times 6.5 \times 10^9 \approx 2 \times 10^{10}$ km ≈ $1.3 \times 10^{11}$ km = 130 AU. (b) That's about 3× Pluto's orbital radius—the event horizon would swallow much of our solar system!
-:::
+<!-- Problem: Synthesis / Connection / O→M→I / Tools: Dimensional, Force/Balance, Uncertainty/Assumptions / ⭐⭐ -->
+<!-- Challenge: yes -->
+10. **White dwarf mass-radius relation (HW1 capstone).** Derive why more massive white dwarfs are smaller using dimensional analysis and pressure balance. Use the full multi-part problem from HW1 (degeneracy pressure scaling, $\rho$-$n$ relation, and gravitational pressure). Show the final scaling and interpret the physics.
 
 ---
 

@@ -1,0 +1,210 @@
+---
+title: "Lecture 2 Solutions: Tools of the Trade"
+subtitle: "Practice Problem Solutions"
+author: "Dr. Anna Rosen"
+date: "2026-01-22"
+description: "Solutions to the Lecture 2 practice problems."
+draft: true
+course: ASTR 201
+module: "1 - Foundations"
+---
+
+::: {.callout-note}
+**Student note:** These are model solutions written to show reasoning, units, and checks. Your solutions can be shorter if your setup and logic are correct.
+
+**HW note:** Homework uses a subset of these problems. Solutions are posted separately for HW grading and reflection.
+:::
+
+## Conceptual
+
+### Problem 1: Dimensional Analysis Check (HW1)
+
+**Restatement:** Decide whether each proposed equation has the correct dimensions.
+
+**Key insight:** Dimensions must match on both sides; energy has dimensions $[ML^2T^{-2}]$.
+
+**Answer:**
+- (a) $v = \sqrt{GM/r}$ is valid: $[GM/r] = [L^2T^{-2}]$.
+- (b) $E = mv$ is invalid: $[mv] = [MLT^{-1}]$, not energy.
+- (c) $U = GMm/r^2$ is invalid: $[GMm/r^2] = [ML^2T^{-2}]/L = [MLT^{-2}]$.
+- (d) $P = \rho v^2$ is valid: $[\rho v^2] = [ML^{-3}][L^2T^{-2}] = [ML^{-1}T^{-2}]$.
+
+**Common misconception:** Assuming any formula with the "right" symbols is correct.
+
+---
+
+### Problem 2: Stefan-Boltzmann Scaling
+
+**Restatement:** Use $L \propto R^2 T^4$ to compare luminosities.
+
+**Key insight:** Temperature changes dominate because of the $T^4$ dependence.
+
+**Answer:**
+- (a) $L_A/L_B = (2^2)(2^4) = 4 \times 16 = 64$.
+- (b) $L/L_\odot = (100^2)(0.5^4) = 10^4 \times 1/16 = 625$.
+- (c) $L/L_\odot = (0.01^2)(4^4) = 10^{-4} \times 256 = 2.56 \times 10^{-2}$.
+
+**Common misconception:** Assuming radius changes matter more than temperature.
+
+---
+
+### Problem 3: Building Physical Intuition
+
+**Restatement:** Predict qualitative changes without calculating exact numbers.
+
+**Key insight:** Use scaling laws.
+
+**Answer:**
+- (a) $P \propto a^{3/2}$, so doubling $a$ increases $P$ by $2^{3/2} \approx 2.8$.
+- (b) $v_{esc} \propto \sqrt{M}$, so doubling $M$ increases $v_{esc}$ by $\sqrt{2}$.
+- (c) $L \propto T^4$, so doubling $T$ increases $L$ by $16$.
+- (d) $t_{dyn} \propto \rho^{-1/2}$, so doubling $\rho$ decreases $t_{dyn}$ by $\sqrt{2}$.
+
+**Common misconception:** Assuming linear changes when the law is power-law.
+
+---
+
+## Calculation
+
+### Problem 4: The Dimensions of $G$
+
+**Given:** $F = GMm/r^2$.
+
+**Find:** Dimensions and CGS conversion for $G$.
+
+**Equation:** $[G] = [F r^2/(Mm)]$.
+
+**Steps:**
+- $[F] = [MLT^{-2}]$, so $[G] = [MLT^{-2}] [L^2]/[M^2] = [M^{-1}L^3T^{-2}]$.
+- Convert SI to CGS: $6.67 \times 10^{-11}$ m$^3$ kg$^{-1}$ s$^{-2}$.
+  - $1$ m$^3 = 10^6$ cm$^3$.
+  - $1$ kg$^{-1} = 10^{-3}$ g$^{-1}$.
+  - Multiply by $10^6 \times 10^{-3} = 10^3$.
+
+**Unit check:** $[G] = [M^{-1}L^3T^{-2}]$ and CGS units cm$^3$ g$^{-1}$ s$^{-2}$ match.
+
+**Sanity check:** Converting SI to CGS multiplies by $10^3$, so $6.67 \times 10^{-11} \to 6.67 \times 10^{-8}$.
+
+**Answer:** $G = 6.67 \times 10^{-8}$ cm$^3$ g$^{-1}$ s$^{-2}$.
+
+---
+
+### Problem 5: The Dimensions of $\sigma$ (HW1)
+
+**Given:** $L = 4\pi R^2 \sigma T^4$.
+
+**Find:** Dimensions and CGS conversion for $\sigma$.
+
+**Equation:** $\sigma = L/(4\pi R^2 T^4)$.
+
+**Steps:**
+- $[L] = [ML^2T^{-3}]$, so $[\sigma] = [ML^2T^{-3}]/[L^2\Theta^4] = [MT^{-3}\Theta^{-4}]$.
+- CGS unit: erg s$^{-1}$ cm$^{-2}$ K$^{-4}$.
+- Convert SI to CGS: $5.67 \times 10^{-8}$ W m$^{-2}$ K$^{-4}$.
+  - $1$ W = $10^7$ erg/s, $1$ m$^{-2} = 10^{-4}$ cm$^{-2}$.
+  - Multiply by $10^7 \times 10^{-4} = 10^3$.
+
+**Unit check:** $[\sigma] = [MT^{-3}\Theta^{-4}]$ and CGS units erg s$^{-1}$ cm$^{-2}$ K$^{-4}$ match.
+
+**Sanity check:** The CGS value is $10^3$ times the SI value, as expected.
+
+**Answer:** $\sigma = 5.67 \times 10^{-5}$ erg s$^{-1}$ cm$^{-2}$ K$^{-4}$.
+
+---
+
+### Problem 6: Kepler Scaling (HW1)
+
+**Given:** $P^2 \propto a^3$ (years, AU).
+
+**Find:** $P$ or $a$ by scaling.
+
+**Equation:** $P \propto a^{3/2}$.
+
+**Steps:**
+- (a) $P = a^{3/2} = 30^{3/2} \approx 30\sqrt{30} \approx 30 \times 5.48 \approx 1.6 \times 10^2$ yr.
+- (b) $a = P^{2/3} = 8^{2/3} = (2^3)^{2/3} = 4$ AU.
+- (c) $P = 40^{3/2} \approx 40\sqrt{40} \approx 40 \times 6.32 \approx 2.5 \times 10^2$ yr.
+- (d) Pluto's period is ~248 yr at 40 AU, consistent.
+
+**Unit check:** Using AU and years keeps the Kepler scaling dimensionless.
+
+**Sanity check:** Pluto at 40 AU has $P \\approx 248$ yr, matching the estimate.
+
+**Answer:** Neptune ~$1.6 \times 10^2$ yr; $a \approx 4$ AU for $P=8$ yr; $P \approx 2.5 \times 10^2$ yr at 40 AU.
+
+---
+
+### Problem 7: Fermi Estimation (HW1)
+
+**Given:** $c \approx 3 \times 10^5$ km/s.
+
+**Find:** Light-minutes for AU and 5 AU.
+
+**Equation:** $d = vt$ or $t = d/v$.
+
+**Steps:**
+- (a) In 1 s: $3 \times 10^5$ km. In 1 min: $3 \times 10^5 \times 60 = 1.8 \times 10^7$ km.
+- (b) $1.5 \times 10^8$ km / $1.8 \times 10^7$ km/min $\approx 8.3$ min.
+- (c) $5$ AU $\approx 5 \times 8.3 \approx 41.5$ min.
+
+**Unit check:** km divided by (km/min) gives minutes.
+
+**Sanity check:** 1 AU should be a few minutes of light-travel time; 8–9 minutes is expected.
+
+**Answer:** 1 AU is ~8.3 light-minutes; 5 AU is ~42 light-minutes.
+
+---
+
+## Synthesis
+
+### Problem 8: Inverse-Square Law Applications
+
+**Restatement:** Use $F \propto 1/d^2$ to scale brightness and detection distance.
+
+**Key elements:** Flux scales as $1/d^2$; distance scales as $\sqrt{\text{light gain}}$.
+
+**Sample response:**
+- (a) From 1 AU to 10 AU: flux decreases by $(1/10)^2 = 1/100$.
+- (b) Brightness ratio 1:81 implies distance ratio 9.
+- (c) 10,000x more light means 100x farther, so 10 kpc becomes 1000 kpc (1 Mpc).
+- (d) As $d \to \infty$, flux $\to 0$; detectability is finite.
+
+**Grading guidance:** Must show the square-root distance scaling for part (c).
+
+---
+
+### Problem 9: Complete Workflow: Escape Velocity
+
+**Restatement:** Combine dimensional analysis, ratios, unit conversions, and OOM checks.
+
+**Key elements:** $v_{esc} \propto \sqrt{M/R}$, correct ratio application, unit conversion, and sanity check.
+
+**Sample response:**
+- (a) $[GM/R] = [L^2T^{-2}]$, so $v_{esc}$ has $[LT^{-1}]$.
+- (b) $v_{esc,Moon}/v_{esc,Earth} = \sqrt{0.012/0.27} \approx 0.21$. Thus $v_{esc,Moon} \approx 0.21 \times 11.2$ km/s $\approx 2.3$ km/s.
+- (c) $11.2$ km/s = $1.12 \times 10^6$ cm/s.
+- (d) $v_{esc,Sun}/v_{esc,Earth} \approx \sqrt{(3 \times 10^5)/109} \approx 52$, so $v_{esc,Sun} \approx 580$ km/s, close to 618 km/s.
+
+**Grading guidance:** Full credit requires correct ratio use and a plausible OOM check.
+
+---
+
+<!-- Challenge: yes -->
+### Problem 10: White Dwarf Mass-Radius Relation (HW1 Capstone)
+
+**Restatement:** Show why $R$ decreases as $M$ increases for white dwarfs.
+
+**Key elements:**
+- Degeneracy pressure scaling: $P_{deg} \propto \hbar^2 n^{5/3}/m_e$.
+- Electron density $n \propto \rho$ (via $n = \rho/(\mu_e m_p)$).
+- Gravitational pressure scaling: $P_{grav} \sim GM^2/R^4$.
+- Use $\rho \sim M/R^3$ to relate $P_{deg}$ to $M$ and $R$.
+
+**Sample response:**
+From dimensional analysis, $P_{deg} \propto \hbar^2 n^{5/3}/m_e$. With $n \propto \rho$, we get $P_{deg} \propto \rho^{5/3}$. For a sphere, $\rho \propto M/R^3$, so $P_{deg} \propto M^{5/3}/R^5$. Gravitational pressure scales as $P_{grav} \propto GM^2/R^4$. Setting $P_{deg} \sim P_{grav}$ yields
+
+$$\frac{M^{5/3}}{R^5} \propto \frac{M^2}{R^4} \Rightarrow R \propto M^{-1/3}.$$
+
+Thus more massive white dwarfs are smaller. This result assumes non-relativistic degeneracy pressure and ignores composition-dependent constants.
+
+**Grading guidance:** Full credit requires the scaling $R \propto M^{-1/3}$ and a correct explanation of why degeneracy pressure increases faster than gravity as density rises.

@@ -1033,7 +1033,7 @@ Newton gave us the tools. Einstein showed us where they lead.
 
 ---
 
-## Check Yourself: End-of-Reading Questions
+## Quick Practice
 
 1. **Empirical vs. Physical:** Kepler observed that $P^2 \propto a^3$. Newton derived that the power of $r$ in the gravitational force law must be 2 (inverse-square) to reproduce this. If gravity instead followed $F \propto 1/r^3$, what relationship would we observe between $P$ and $a$? (Hint: follow Newton's derivation with $n = 3$.)
 
@@ -1050,6 +1050,86 @@ Newton gave us the tools. Einstein showed us where they lead.
    Explain your reasoning.
 
 5. **Virial Theorem Application:** A star cluster has total kinetic energy $K = 10^{50}$ erg (from the motions of all its stars). Assuming the cluster is in equilibrium, what is its gravitational potential energy $U$? What is its total energy $E$? Is the cluster bound or unbound?
+
+::: {.callout-tip title="Quick Solutions" collapse="true"}
+1. With $F \propto 1/r^3$, you would infer a steeper dependence than $P^2 \propto a^3$; the exact scaling changes so $P$ grows faster with $a$. The inverse-square law is uniquely consistent with $P^2 \propto a^3$.
+2. Jupiter is slower. Since $v_{orb} \propto 1/\sqrt{r}$, at 5 AU it moves by a factor $\sim 1/\sqrt{5}$ compared to Earth.
+3. Much larger. The neutron star has a similar mass but vastly smaller radius, so $v_{esc} \propto \sqrt{M/R}$ is much larger.
+4. Positive total energy means unbound (escape). Negative means bound (elliptical). Zero is parabolic, the boundary case.
+5. Virial equilibrium gives $K = -\tfrac{1}{2}U$, so $U = -2K$ and $E = K + U = -K$. The cluster is bound.
+:::
+
+## Practice Problems
+
+### Conceptual
+
+<!-- Problem: Conceptual / Connection / O→M→I / Tools: Uncertainty/Assumptions, Model-Inversion / ⭐⭐ -->
+1. **Empirical vs. physical laws.** Kepler discovered $P^2 \propto a^3$; Newton explained why this must be true.
+   - (a) What makes Kepler's Third Law an empirical law rather than a physical law?
+   - (b) If you observed $P^2 \propto a^4$ in another system, what would that imply about gravity in that universe?
+   - (c) Newton's law is universal. What predictive power does that universality add?
+
+<!-- Problem: Conceptual / Connection / O→M→I / Tools: Force/Balance, Uncertainty/Assumptions / ⭐⭐ -->
+2. **The centripetal force misconception (HW1).** A student says, "A planet in orbit experiences two forces: gravity pulling it toward the Sun, and centripetal force keeping it in a circle."
+   - (a) What is wrong with this statement?
+   - (b) Rewrite the statement correctly.
+   - (c) If someone mentions “centrifugal force,” under what circumstances (if any) would that be valid?
+
+<!-- Problem: Conceptual / Connection / O→M→I / Tools: Energy, Uncertainty/Assumptions / ⭐⭐ -->
+3. **Energy signs and orbital fate.** The total mechanical energy is $E = \tfrac{1}{2}mv^2 - GMm/r$.
+   - (a) Why is gravitational potential energy negative (with zero at infinity)?
+   - (b) What does $E < 0$, $E = 0$, and $E > 0$ mean physically?
+   - (c) A comet approaches the Sun with $E > 0$. A student says, "It has positive energy, so it's gaining energy as it approaches." Correct this.
+
+### Calculation
+
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Force/Balance, Unit-Conversion, Scaling/Ratio / ⭐⭐ -->
+4. **Orbital velocity practice.** Using $v_{orb} = \sqrt{GM/r}$:
+   - (a) Calculate Earth's orbital velocity around the Sun using $M_\odot = 2 \times 10^{33}$ g and $r = 1$ AU $= 1.5 \times 10^{13}$ cm. Express in cm/s and km/s.
+   - (b) Show explicitly that $\sqrt{GM/r}$ has units of velocity.
+   - (c) Mars orbits at 1.52 AU. Using ratios, find Mars's orbital velocity.
+   - (d) Sanity check: should Mars move faster or slower than Earth?
+
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Force/Balance, Unit-Conversion, Scaling/Ratio / ⭐⭐ -->
+5. **Escape velocity comparison.** Using $v_{esc} = \sqrt{2GM/R}$:
+   - (a) Calculate Earth's escape velocity. Use $M_\oplus = 6 \times 10^{27}$ g and $R_\oplus = 6.4 \times 10^8$ cm.
+   - (b) The Moon has $M_{Moon} = 7.3 \times 10^{25}$ g and $R_{Moon} = 1.7 \times 10^8$ cm. Calculate its escape velocity.
+   - (c) By what factor is Earth's escape velocity larger than the Moon's?
+   - (d) Interpret: why did Apollo astronauts need a smaller rocket to leave the Moon?
+
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Dimensional, Unit-Conversion / ⭐⭐ -->
+6. **Kepler III with Newton.** Newton's version is $P^2 = \frac{4\pi^2}{G(M+m)}a^3$.
+   - (a) For Earth, $m \ll M_\odot$. Show the simplified form.
+   - (b) Verify it gives $P \approx 1$ year for $a = 1$ AU.
+   - (c) Confirm both sides have units of s$^2$.
+   - (d) A binary star has two equal $1\,M_\odot$ stars. How does its Kepler constant compare to the Sun-Earth system?
+
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Energy, Scaling/Ratio / ⭐⭐ -->
+7. **Bound or unbound? (HW1).** A comet passes through Earth's orbit at 50 km/s.
+   - (a) Will it escape the Solar System or remain bound?
+   - (b) Sanity check: compare to Earth's orbital velocity.
+
+### Synthesis
+
+<!-- Problem: Synthesis / Connection / O→M→I / Tools: Scaling/Ratio, Model-Inversion / ⭐⭐ -->
+8. **Exoplanet orbital velocities (HW1).** Use Earth as reference ($M = M_\odot$, $r = 1$ AU). Express answers in terms of $v_\oplus$.
+   - (a) A hot Jupiter orbits at $r = 0.05$ AU around a Sun-like star. Find $v/v_\oplus$.
+   - (b) A planet orbits a red dwarf ($M = 0.25\,M_\odot$) at $r = 0.25$ AU. Find $v/v_\oplus$.
+   - (c) Sanity check: do your answers make physical sense?
+
+<!-- Problem: Synthesis / Connection / O→M→I / Tools: Model-Inversion, Unit-Conversion / ⭐⭐ -->
+<!-- Challenge: yes -->
+9. **Complete workflow: weighing Jupiter.** Io orbits Jupiter with period $P = 1.77$ days and semi-major axis $a = 4.22 \times 10^{10}$ cm.
+   - (a) Use Newton's Kepler III to solve for Jupiter's mass.
+   - (b) Unit check: verify $\frac{a^3}{GP^2}$ has units of mass.
+   - (c) Express your answer in grams and in solar masses.
+   - (d) What observable quantities did you need?
+
+<!-- Problem: Synthesis / Connection / O→M→I / Tools: Energy, Force/Balance / ⭐⭐ -->
+10. **The $\sqrt{2}$ factor.** Escape velocity is $v_{esc} = \sqrt{2}\,v_{orb}$ at any radius.
+   - (a) Derive this relationship from $v_{orb} = \sqrt{GM/r}$ and $v_{esc} = \sqrt{2GM/r}$.
+   - (b) A spacecraft in circular orbit wants to escape. By what factor must it increase its speed?
+   - (c) Explain the energy interpretation: why does escape require adding kinetic energy equal to the orbital kinetic energy?
 
 ---
 

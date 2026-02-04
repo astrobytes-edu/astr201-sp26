@@ -18,7 +18,7 @@ Adversarial reviewer and refactor analyst. STEM Pedagogy and Astrophysics expert
 2. **List all assumptions** you are making about the context
 3. **Propose multiple approaches** to the problem, discussing pros/cons
 4. **Only implement after full analysis** and agreement on approach.
-5. **Read and strictly adhere to:** @docs/llm-lab-protocol.md and @docs/oftware-engineering-playbook.md. (MANDATORY)
+5. **Read and strictly adhere to:** @docs/llm-lab-protocol.md and @docs/software-engineering-playbook.md. (MANDATORY)
 
 ### Before ANY Change
 1. **Read existing files first** - never modify blind
@@ -46,10 +46,10 @@ Adversarial reviewer and refactor analyst. STEM Pedagogy and Astrophysics expert
 
 ## Units Convention (NON-NEGOTIABLE)
 
-- **ALWAYS use CGS units** (cm, g, s, erg) for physics calculations
+- **Default to CGS units** (cm, g, s, erg) for physics calculations
 - **Solar units**: $M_\odot$, $R_\odot$, $L_\odot$ for stellar quantities
 - **Astronomical units**: AU, pc, kpc, Mpc for distances
-- **NEVER use SI units** (meters, kg, Joules, Watts) — use CGS instead
+- **SI units are allowed only if explicitly stated**
 - Spectral radiance: erg s$^{-1}$ cm$^{-2}$ sr$^{-1}$ cm$^{-1}$ (NOT W m$^{-2}$ sr$^{-1}$ m$^{-1}$)
 
 ## Typography Conventions
@@ -155,12 +155,29 @@ Primary failure mode to avoid: aesthetic coherence overriding correctness.
 
 | Directory | Purpose | Naming Convention |
 |-----------|---------|-------------------|
-| `docs/contracts/` | Authoritative specifications | `<topic>-playbook.md` |
+| `docs/contracts/` | Authoritative specifications | `<topic>-contract.md` or `<topic>-playbook.md` |
 | `docs/audits/` | Compliance audits against contracts | `YYYY-MM-DD-<contract>-audit.md` |
 | `docs/decisions/` | Architecture Decision Records | `NNNN-<decision-title>.md` |
 | `docs/plans/` | Implementation plans | `YYYY-MM-DD-<feature>-plan.md` |
 
 **Implementation plans:** Use the `superpowers:writing-plans` skill to generate detailed, bite-sized implementation plans saved to `docs/plans/`.
+
+## Assessment Pipeline (ASTR 201)
+
+- Required flow: **reading bank → homework subset → exam subset** (exams easier than HW; no ⭐⭐⭐ on exams).
+- Use `docs/contracts/astr201-problems-solutions-contract.md` for labels, tool tags, and solution format.
+- Tool tags are instructor-only and must remain hidden from students.
+- Solutions live in separate `*-solutions.qmd` files (ASTR 101 pattern); mark `draft: true` while developing.
+
+## Contracts to Read for Content/Assessments
+
+- `docs/contracts/astr201-problems-solutions-contract.md`
+- `docs/contracts/astr201-activities-contract.md`
+- `docs/contracts/astr201-course-playbook.md`
+
+## Skills
+
+- For assessment work (problems, HW, exams, solutions), use the `astr201-problems-solutions` skill.
 
 ## When in Doubt
 **STOP. ASK. VERIFY.**

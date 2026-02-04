@@ -12,6 +12,10 @@ listing:
     contents: "readings/*.qmd"
     template: ../../assets/templates/reading-card.ejs
     sort: "date"
+  - id: module-solutions
+    contents: "readings/*-solutions.qmd"
+    template: ../../assets/templates/solution-card.ejs
+    sort: "date"
 ---
 
 ## Why this module matters
@@ -45,6 +49,15 @@ By the end of this module, you will be able to:
 
 ::: {.lecture-grid}
 ::: {#module-readings}
+:::
+:::
+
+## Solutions
+
+Solutions are posted for practice problems after homework deadlines. Use them to study and to check your reasoning.
+
+::: {.lecture-grid}
+::: {#module-solutions}
 :::
 :::
 
