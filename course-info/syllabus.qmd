@@ -14,29 +14,6 @@ format:
 execute:
   echo: false
 ---
-<!--
-TODO (high priority):
-- Confirm Midterm 1 and Midterm 2 dates (and whether in-class vs evening)
-- Confirm grading weights for Spring 2026 (table below may need adjustment)
-- Finalize/replace the AI policy section with your official ASTR201 version (if desired)
-
-Compilation/Rendering (from the folder containing this file):
-
-Render both HTML + PDF (recommended):
-  quarto render syllabus.qmd
-
-Render only HTML:
-  quarto render syllabus.qmd --to html
-
-Render only PDF:
-  quarto render syllabus.qmd --to pdf
-
-Live preview while editing:
-  quarto preview syllabus.qmd
-
-If PDF rendering fails due to missing LaTeX:
-  quarto install tinytex
--->
 
 ## Course Information {#sec-course-info}
 
