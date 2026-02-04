@@ -191,3 +191,12 @@ bound_orbit_energy:
   assumptions:
     - "Bound orbit ($E<0$)"
     - "Two-body gravitational system"
+
+doppler_shift:
+  predicts: "Given rest wavelength $\\lambda_0$ and observed wavelength $\\lambda_{\\text{obs}}$, it predicts the radial velocity $v_r$ (or vice versa)."
+  depends: "The fractional shift scales as $\\Delta\\lambda/\\lambda_0 \\propto v_r$ and inversely with $c$."
+  says: "Motion along the line of sight stretches or compresses wavelengths: away → redshift, toward → blueshift."
+  assumptions:
+    - "Speeds are much less than the speed of light (non-relativistic)"
+    - "Only the line-of-sight component matters"
+    - "Rest wavelength is known from lab measurements"

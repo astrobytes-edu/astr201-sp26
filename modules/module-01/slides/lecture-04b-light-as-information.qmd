@@ -63,6 +63,7 @@ By the end of today, you will be able to:
 ::: {.incremental .text-md}
 - Describe how a real stellar spectrum combines **continuum + lines**
 - Apply the two key telescope scalings: **collecting area** $\propto D^2$ and **resolution** $\propto \lambda D^{-1}$
+- Recognize **Doppler shift** as a motion tool (preview)
 :::
 
 ::: {.notes}
@@ -761,12 +762,65 @@ We now have a powerful inference chain:
 
 ::: {.incremental}
 - **continuum** → temperature (blackbody + Wien)
-- **lines** → composition (and later motion)
+- **lines** → composition (and motion)
 - **telescopes** → more photons + better detail
 :::
 
 ::: {.fragment}
 Everything we do next semester-wide is built on this.
+:::
+
+---
+
+## Preview: Doppler Shift = Motion from Light
+
+Spectral lines are **fixed fingerprints** in the lab.  
+When those lines shift, we are seeing **motion**.
+
+{{< img doppler-shift-exoplanet width="85%" >}}
+
+::: {.notes}
+This is a 5–10 minute teaser. The goal is motivation: motion is encoded in light.
+:::
+
+---
+
+## The Doppler Equation (Small‑Velocity Limit)
+
+$$\\frac{\\Delta\\lambda}{\\lambda_0} = \\frac{v_r}{c}$$
+
+::: {.incremental .text-sm}
+- $\\Delta\\lambda = \\lambda_{\\text{obs}} - \\lambda_0$ (shift from rest wavelength)
+- $v_r$ is **line‑of‑sight** velocity (positive = moving away)
+- Assumes $v_r \\ll c$; if $v_r = 0$, then $\\Delta\\lambda = 0$
+:::
+
+---
+
+## Why This Is Powerful
+
+Because of tiny line shifts, we can measure things we can’t touch:
+
+::: {.incremental}
+- **Exoplanets** via stellar wobble
+- **Binary star masses** from orbital speeds
+- **Galaxy rotation curves** (dark matter)
+- **Cosmic expansion** (redshift)
+:::
+
+---
+
+## 🧠 Quick Check: Direction
+
+A spectral line appears at a **longer** wavelength than its lab value. The source is…
+
+::: {.quiz}
+
+- [x] moving away (redshift)
+- [ ] moving toward (blueshift)
+- [ ] motionless
+- [ ] moving sideways only
+
 :::
 
 ---

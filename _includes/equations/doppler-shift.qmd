@@ -1,0 +1,3 @@
+$$
+\frac{\Delta \lambda}{\lambda_0} = \frac{v_r}{c}
+$$ {#eq-doppler-shift}

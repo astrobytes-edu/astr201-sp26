@@ -16,6 +16,7 @@ learning-objectives:
   - Identify limiting cases of the Planck function (Rayleigh-Jeans, Wien tail)
   - Use Wien's law to estimate temperature from peak wavelength
   - Distinguish continuous, absorption, and emission spectra using Kirchhoff’s laws
+  - Explain Doppler shift qualitatively and connect line shifts to radial motion (preview)
   - Apply telescope scaling relations for collecting area and angular resolution
 Concept-Throughline:
   - Light is a messenger that carries encoded physics
@@ -41,7 +42,8 @@ After completing this reading, you should be able to:
 5. Identify **limiting cases** of the Planck function (Rayleigh-Jeans, Wien tail)
 6. Use **Wien's law** to estimate temperature from peak wavelength
 7. Distinguish **continuous, absorption, and emission spectra** (Kirchhoff’s laws)
-8. Apply telescope scaling relations for collecting area ($\propto D^2$) and angular resolution ($\propto \lambda/D$)
+8. Explain **Doppler shift** qualitatively and connect line shifts to radial motion (preview)
+9. Apply telescope scaling relations for collecting area ($\propto D^2$) and angular resolution ($\propto \lambda/D$)
 
 ## Concept Throughline
 
@@ -833,6 +835,34 @@ The figure shows the spectrum of Altair, a nearby A-type star. The smooth curve 
 {{< fig continuous-vs-line-spectrum >}}
 
 Notice the difference between the Sun's spectrum (approximately continuous, like a blackbody) and a fluorescent bulb (discrete emission lines). The spectrum shape tells you about the *emission mechanism* — thermal vs. non-thermal.
+
+---
+
+### Doppler Shift: Motion in Spectral Lines (Preview)
+
+Spectral lines are not just composition fingerprints — they are **speedometers**. If a source moves toward or away from us, its spectral lines shift slightly. That shift encodes the **line‑of‑sight velocity**, which means we can measure motion using nothing but light.
+
+{{< fig doppler-shift-exoplanet >}}
+
+For speeds much smaller than the speed of light, the non‑relativistic Doppler shift is:
+
+{{< include ../../../_includes/equations/doppler-shift.qmd >}}
+{{< eqrefcard doppler-shift >}}
+
+Here $\Delta\lambda = \lambda_{\text{obs}} - \lambda_0$, $\lambda_0$ is the rest wavelength measured in the lab, and $v_r$ is the **radial** (line‑of‑sight) velocity. If $v_r > 0$ the lines shift to longer wavelengths (redshift); if $v_r < 0$ they shift to shorter wavelengths (blueshift).
+
+Why it matters: this tiny shift lets us infer some of the biggest stories in astronomy:
+
+- **Exoplanets:** a star’s tiny wobble reveals an orbiting planet.
+- **Binary stars:** Doppler shifts give orbital speeds and masses.
+- **Galaxy rotation curves:** line shifts map rotation and point to dark matter.
+- **Cosmic expansion:** redshift shows the universe is expanding.
+
+::: {.callout-tip title="Quick Check: Doppler Direction" collapse="true"}
+**Question:** A spectral line is observed at a slightly longer wavelength than its lab value. Is the source moving toward us or away from us?
+
+**Answer:** **Away from us** (redshift).
+:::
 
 ---
 

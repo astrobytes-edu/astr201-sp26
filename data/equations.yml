@@ -139,3 +139,9 @@ bound-orbit-energy:
   anchor: "eq-bound-orbit-energy"
   include: "_includes/equations/bound-orbit-energy.qmd"
   card: "bound_orbit_energy"
+
+doppler-shift:
+  title: "Doppler shift (non-relativistic)"
+  anchor: "eq-doppler-shift"
+  include: "_includes/equations/doppler-shift.qmd"
+  card: "doppler_shift"
