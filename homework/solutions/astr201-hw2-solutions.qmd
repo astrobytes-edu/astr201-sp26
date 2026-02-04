@@ -4,7 +4,7 @@ subtitle: "Gravity & Orbits II + Light as Information"
 author: "Dr. Anna Rosen"
 date: "2026-02-11"
 description: "Solutions to Homework 2."
-draft: false
+draft: true
 course: ASTR 201
 module: "Module 1 — Gravity & Orbits + Light as Information"
 ---
