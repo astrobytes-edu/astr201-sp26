@@ -1005,6 +1005,86 @@ The equations in this reading all involve **proportional relationships**. Master
 
 ---
 
+## Quick Practice
+
+Answer these without a calculator. Then check your reasoning.
+
+1. If wavelength decreases by a factor of 3, what happens to frequency?
+2. Two photons have wavelengths 5000 Å and 10,000 Å. Which has higher energy, and by what factor?
+3. Rayleigh scattering scales as $\lambda^{-4}$. Compare scattering at 400 nm and 800 nm.
+4. If a blackbody’s peak wavelength is cut in half, what happens to its temperature?
+
+::: {.callout-note collapse="true"}
+## Answers
+
+1. Frequency increases by a factor of 3.
+2. The 5000 Å photon has **2×** higher energy (energy $\propto \lambda^{-1}$).
+3. Scattering at 400 nm is **16×** stronger: $(800/400)^4 = 2^4 = 16$.
+4. Temperature doubles (Wien’s law: $\lambda_{\text{peak}} \propto T^{-1}$).
+:::
+
+## Practice Problems
+
+### Conceptual
+
+<!-- Problem: Conceptual / Connection / O→M→I / Tools: Model-Inversion, Uncertainty/Assumptions / ⭐⭐ -->
+1. **Kirchhoff’s laws in action.** You see three spectra from three different sources:
+   - (a) A smooth rainbow with dark lines
+   - (b) A smooth rainbow with no lines
+   - (c) A dark background with bright lines
+
+   For each, identify the physical source (hot dense object, hot thin gas, or cool gas in front of a hot source). Explain your reasoning.
+
+<!-- Problem: Conceptual / Connection / O→M→I / Tools: Data/Graph, Model-Inversion / ⭐⭐ -->
+2. **Blackbody or not?** You observe two sources. Source A has a smooth spectrum with a single broad peak. Source B has a jagged spectrum with sharp spikes. Which is better described as a blackbody, and what does the non‑blackbody spectrum imply about the source?
+
+<!-- Problem: Conceptual / Connection / O→M→I / Tools: Limiting-Cases, Model-Inversion / ⭐⭐ -->
+3. **Why skies are red at sunset.** Use Rayleigh scattering to explain why the Sun looks red near the horizon but not at noon. What changes about the path through the atmosphere, and how does $\lambda^{-4}$ make the effect strong?
+
+<!-- Problem: Conceptual / Application / O→M→I / Tools: Scaling/Ratio, Model-Inversion / ⭐ -->
+4. **Two telescope goals.** If your goal is to (i) detect the faintest possible objects and (ii) resolve the smallest angular details, which telescope property matters most for each? Justify using the $D^2$ and $\lambda/D$ scalings.
+
+### Calculation
+
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Unit-Conversion, Dimensional / ⭐⭐ -->
+5. **Photon energy from wavelength.** A green photon has $\lambda = 600$ nm.
+   - (a) Convert this wavelength to cm.
+   - (b) Compute its frequency.
+   - (c) Compute its energy in erg using $E = hc/\lambda$ with $h = 6.626 \times 10^{-27}$ erg·s.
+
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Scaling/Ratio, Unit-Conversion / ⭐⭐ -->
+6. **Wien’s law temperature.** A star’s spectrum peaks at $\lambda_{\text{peak}} = 7000$ Å. Use $b = 2.898 \times 10^7$ Å·K to estimate the temperature.
+
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Scaling/Ratio, Order-of-Magnitude / ⭐⭐ -->
+7. **Rayleigh scattering ratio.** Compare the scattering strength at 4500 Å and 9000 Å. Which is scattered more, and by what factor?
+
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Scaling/Ratio / ⭐⭐ -->
+8. **Telescope scaling.** Compare two telescopes observing at the same wavelength:
+   - Telescope A: $D = 2$ m
+   - Telescope B: $D = 8$ m
+
+   (a) How much more light does Telescope B collect?  
+   (b) How does its diffraction-limited resolution compare to Telescope A?
+
+### Synthesis
+
+<!-- Problem: Synthesis / Connection / O→M→I / Tools: Model-Inversion, Scaling/Ratio, Uncertainty/Assumptions / ⭐⭐ -->
+9. **Temperature plus absorption.** A star’s spectrum peaks near 1.0 μm and shows deep absorption lines.
+   - (a) Use Wien’s law to estimate the temperature.
+   - (b) What do the absorption lines imply about the star’s atmosphere?
+   - (c) If dust reddening is present, how would your temperature estimate change qualitatively?
+
+<!-- Problem: Synthesis / Connection / O→M→I / Tools: Scaling/Ratio, Model-Inversion, Limiting-Cases / ⭐⭐ -->
+10. **Design trade-off.** Two telescopes observe the same target:
+   - Telescope A: $D = 3$ m at $\lambda = 500$ nm
+   - Telescope B: $D = 6$ m at $\lambda = 2000$ nm
+
+   (a) Which telescope has better angular resolution?  
+   (b) Which collects more light?  
+   (c) If the target’s emission peaks near 500 nm, which telescope is better for signal‑to‑noise, and why?
+
+---
+
 ## Reference Tables
 
 ### Key Equations
