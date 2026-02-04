@@ -51,7 +51,7 @@ module: "Module 1 — Spoiler Alerts + Foundations + Gravity & Orbits"
 
 **Answer:**
 
-- (a) $v = \sqrt{GM/r}$ is valid: $[GM/r] = [L^2T^{-2}]$.
+- (a) $v = \sqrt{\frac{GM}{r}}$ is valid: $[\frac{GM}{r}] = [L^2T^{-2}]$.
 - (b) $E = mv$ is invalid: $[mv] = [MLT^{-1}]$, not energy.
 - (c) $U = GMm/r^2$ is invalid: $[GMm/r^2] = [ML^2T^{-2}]/L = [MLT^{-2}]$.
 - (d) $P = \rho v^2$ is valid: $[\rho v^2] = [ML^{-3}][L^2T^{-2}] = [ML^{-1}T^{-2}]$.
@@ -95,6 +95,12 @@ $$\sigma = L/(4\pi R^2 T^4)$$
 **Equation:**
 
 $$P \propto a^{3/2}$$
+
+Let’s unpack each piece:
+- $P$: orbital period (years)
+- $a$: semi-major axis (AU)
+
+**What this equation says:** doubling orbital size makes the period grow by $2^{3/2}$, not linearly.
 
 **Steps:**
 
@@ -183,7 +189,9 @@ $$d = vt$$ or $t = d/v$.
 
 **Equation:**
 
-$$v_{esc} = \sqrt{2GM/r}$$; at 1 AU, $v_{esc} \approx 42$ km/s.
+$$v_{esc} = \sqrt{\frac{2GM}{r}}$$
+
+at 1 AU, $v_{esc} \approx 42$ km/s.
 
 **Steps:** Since $50$ km/s $> 42$ km/s, the comet exceeds escape speed.
 

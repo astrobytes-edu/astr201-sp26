@@ -56,25 +56,22 @@ Let’s unpack each piece:
 
 **Steps:**
 
-- Compute the scale first, then carry units explicitly:
+- Compute the scale first, then carry units explicitly (with cancellations shown):
 
 $$
+\begin{aligned}
 \frac{GM}{r}
-=
-\frac{(6.67 \times 10^{-8}\ \mathrm{cm^3\,g^{-1}\,s^{-2}})(2 \times 10^{33}\ \mathrm{g})}{1.5 \times 10^{13}\ \mathrm{cm}}
-=
-\frac{6.67 \times 2}{1.5}\times 10^{-8+33-13}
-\frac{\mathrm{cm^3}\,\cancel{\mathrm{g^{-1}}}\,\mathrm{s^{-2}}\,\cancel{\mathrm{g}}}{\mathrm{cm}}
-$$
-
-$$
-\approx 8.9 \times 10^{12}\ \mathrm{cm^2\,s^{-2}}.
+&= \frac{(6.67 \times 10^{-8}\ \mathrm{cm^3\,g^{-1}\,s^{-2}})(2 \times 10^{33}\ \mathrm{g})}{1.5 \times 10^{13}\ \mathrm{cm}} \\
+&= \frac{6.67 \times 2}{1.5}\times 10^{-8+33-13}
+\times \frac{\mathrm{cm^3}\,\cancel{\mathrm{g^{-1}}}\,\mathrm{s^{-2}}\,\cancel{\mathrm{g}}}{\mathrm{cm}} \\
+&\approx 8.9 \times 10^{12}\ \mathrm{cm^2\,s^{-2}}.
+\end{aligned}
 $$
 
 - $v_{orb} \approx \sqrt{8.9 \times 10^{12}} \approx 3.0 \times 10^6$ cm/s $\approx 30$ km/s.
 - Mars: $v \propto 1/\sqrt{r}$, so $v_M = v_E/\sqrt{1.52} \approx 0.81 v_E \approx 24$ km/s.
 
-**Unit check:** $[GM/r] = [L^2T^{-2}]$ so $v$ has $[LT^{-1}]$.
+**Unit check:** $[\frac{GM}{r}] = [L^2T^{-2}]$ so $v$ has $[LT^{-1}]$.
 
 **Sanity check:** Earth’s orbital speed is known to be about 30 km/s; Mars should be slower.
 
@@ -103,13 +100,13 @@ Let’s unpack each piece:
 
 **Steps:**
 
-- Earth: $GM/R \approx (6.67 \times 10^{-8})(6 \times 10^{27})/(6.4 \times 10^8) \approx 6.25 \times 10^{11}$.
+- Earth: $\frac{GM}{R} \approx (6.67 \times 10^{-8})(6 \times 10^{27})/(6.4 \times 10^8) \approx 6.25 \times 10^{11}$.
   $v_{esc} \approx \sqrt{1.25 \times 10^{12}} \approx 1.12 \times 10^6$ cm/s $= 11.2$ km/s.
-- Moon: $GM/R \approx (6.67 \times 10^{-8})(7.3 \times 10^{25})/(1.7 \times 10^8) \approx 2.86 \times 10^{10}$.
+- Moon: $\frac{GM}{R} \approx (6.67 \times 10^{-8})(7.3 \times 10^{25})/(1.7 \times 10^8) \approx 2.86 \times 10^{10}$.
   $v_{esc} \approx \sqrt{5.7 \times 10^{10}} \approx 2.4 \times 10^5$ cm/s $= 2.4$ km/s.
 - Ratio: $11.2/2.4 \approx 4.7$.
 
-**Unit check:** $[2GM/R] = [L^2T^{-2}]$, so $v_{esc}$ has units of $[LT^{-1}]$.
+**Unit check:** $[\frac{2GM}{R}] = [L^2T^{-2}]$, so $v_{esc}$ has units of $[LT^{-1}]$.
 
 **Sanity check:** A smaller, lower-mass body should have a lower escape speed; $2.4$ km/s is reasonable for the Moon.
 
