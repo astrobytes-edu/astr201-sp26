@@ -22,6 +22,7 @@ module: "Module 1 — Gravity & Orbits + Light as Information"
 **Key insight:** Zero potential energy is defined at infinity, so bound orbits have negative total energy.
 
 **Answer:**
+
 - (a) $U$ is negative because work must be done to separate masses to infinity.
 - (b) $E < 0$ means bound (elliptical); $E = 0$ means parabolic; $E > 0$ means unbound (hyperbolic escape).
 - (c) Positive total energy does **not** mean it is gaining energy; it means its total energy is above the escape threshold.
@@ -40,9 +41,12 @@ module: "Module 1 — Gravity & Orbits + Light as Information"
 
 **Find:** $v_{orb}$ for Earth and Mars.
 
-**Equation:** $v_{orb} = \sqrt{GM/r}$.
+**Equation:**
+
+$$v_{orb} = \sqrt{GM/r}$$
 
 **Steps:**
+
 - $GM/r = (6.67 \times 10^{-8})(2 \times 10^{33})/(1.5 \times 10^{13}) \approx 8.9 \times 10^{12}$.
 - $v_{orb} \approx \sqrt{8.9 \times 10^{12}} \approx 3.0 \times 10^6$ cm/s $\approx 30$ km/s.
 - Mars: $v \propto 1/\sqrt{r}$, so $v_M = v_E/\sqrt{1.52} \approx 0.81 v_E \approx 24$ km/s.
@@ -55,17 +59,18 @@ module: "Module 1 — Gravity & Orbits + Light as Information"
 
 ---
 
----
-
 ## Problem 3 — Escape Velocity Comparison
 
 **Given:** $M_\oplus = 6 \times 10^{27}$ g, $R_\oplus = 6.4 \times 10^8$ cm; $M_{Moon} = 7.3 \times 10^{25}$ g, $R_{Moon} = 1.7 \times 10^8$ cm.
 
 **Find:** $v_{esc}$ for Earth and Moon.
 
-**Equation:** $v_{esc} = \sqrt{2GM/R}$.
+**Equation:**
+
+$$v_{esc} = \sqrt{2GM/R}$$
 
 **Steps:**
+
 - Earth: $GM/R \approx (6.67 \times 10^{-8})(6 \times 10^{27})/(6.4 \times 10^8) \approx 6.25 \times 10^{11}$.
   $v_{esc} \approx \sqrt{1.25 \times 10^{12}} \approx 1.12 \times 10^6$ cm/s $= 11.2$ km/s.
 - Moon: $GM/R \approx (6.67 \times 10^{-8})(7.3 \times 10^{25})/(1.7 \times 10^8) \approx 2.86 \times 10^{10}$.
@@ -80,17 +85,18 @@ module: "Module 1 — Gravity & Orbits + Light as Information"
 
 ---
 
----
-
 ## Problem 4 — Kepler III with Newton
 
 **Given:** $P^2 = \dfrac{4\pi^2}{G(M+m)}a^3$.
 
 **Find:** Simplified form, unit check, and the binary-star scaling.
 
-**Equation:** $P^2 = \dfrac{4\pi^2}{G(M+m)}a^3$.
+**Equation:**
+
+$$P^2 = \dfrac{4\pi^2}{G(M+m)}a^3$$
 
 **Steps:**
+
 - (a) For $m \ll M_\odot$, $P^2 \approx \dfrac{4\pi^2}{GM_\odot}a^3$.
 - (b) With $a = 1$ AU, this gives $P \approx 1$ year.
 - (c) For two $1\,M_\odot$ stars, total mass is $2M_\odot$, so $P^2/a^3$ is half the Sun–Earth value.
@@ -103,8 +109,6 @@ module: "Module 1 — Gravity & Orbits + Light as Information"
 
 ---
 
----
-
 ## Problem 5 — Complete Workflow: Weighing Jupiter
 
 **Restatement:** Use Kepler III to infer Jupiter's mass from Io's orbit.
@@ -112,6 +116,7 @@ module: "Module 1 — Gravity & Orbits + Light as Information"
 **Key elements:** Convert $P$ to seconds, use $M = 4\pi^2 a^3/(GP^2)$, and unit check.
 
 **Sample response:**
+
 - $P = 1.77$ days $\approx 1.53 \times 10^5$ s.
 - $a^3 \approx (4.22 \times 10^{10})^3 \approx 7.5 \times 10^{31}$ cm$^3$.
 - $M \approx 4\pi^2 a^3/(GP^2) \approx 1.9 \times 10^{30}$ g.
@@ -126,8 +131,6 @@ module: "Module 1 — Gravity & Orbits + Light as Information"
 
 ---
 
----
-
 ## Problem 6 — The $\sqrt{2}$ Factor
 
 **Restatement:** Show $v_{esc} = \sqrt{2}\,v_{orb}$ and interpret energetically.
@@ -135,6 +138,7 @@ module: "Module 1 — Gravity & Orbits + Light as Information"
 **Key elements:** Compare formulas and relate to orbital energy.
 
 **Sample response:**
+
 - $v_{esc} = \sqrt{2GM/r}$ and $v_{orb} = \sqrt{GM/r}$, so $v_{esc} = \sqrt{2}\,v_{orb}$.
 - A spacecraft must increase speed by a factor of $\sqrt{2}$.
 - Energy view: a circular orbit has $E = -GMm/(2r)$. To reach $E = 0$, you must add $GMm/(2r)$, which equals the orbital kinetic energy $K$. That is why the speed increase is a factor of $\sqrt{2}$.
@@ -143,19 +147,19 @@ module: "Module 1 — Gravity & Orbits + Light as Information"
 
 ---
 
----
-
 ## Problem 7 — Virial Theorem Capstone
 
 **Restatement:** Use virial equilibrium to infer $U$, compute total energy $E$, and interpret how added kinetic energy changes the bound state.
 
 **Key elements:**
+
 - Virial theorem: $2K + U = 0 \Rightarrow U = -2K$
 - Total energy: $E = K + U$
 - Bound if $E < 0$
 - Extra kinetic energy shifts $E$ upward; sign tells bound vs unbound
 
 **Sample response:**
+
 - (a) $U = -2K = -2.0 \times 10^{50}$ erg.
 - (b) $E = K + U = 1.0 \times 10^{50} - 2.0 \times 10^{50} = -1.0 \times 10^{50}$ erg, so the cluster is **bound**.
 - (c) Added kinetic energy gives $K' = 1.6 \times 10^{50}$ erg. If the size is unchanged so $U$ stays about $-2.0 \times 10^{50}$ erg, then $E' = 1.6 \times 10^{50} - 2.0 \times 10^{50} = -0.4 \times 10^{50}$ erg. The cluster is **still bound**, but less tightly. In reality it would expand until it re‑virializes; enough added energy could eventually unbind it.
@@ -171,13 +175,12 @@ module: "Module 1 — Gravity & Orbits + Light as Information"
 **Key insight:** Absorption lines require a cooler gas in front of a hot continuum; emission lines require a hot, low‑density gas.
 
 **Answer:**
+
 - (a) Smooth rainbow with dark lines: **hot dense object** with a **cooler gas** in front (absorption spectrum).
 - (b) Smooth rainbow with no lines: **hot dense object** with no intervening cool gas (continuous spectrum).
 - (c) Dark background with bright lines: **hot thin gas** emitting discrete lines (emission spectrum).
 
 **Common misconception:** Thinking absorption lines mean the source is “missing” energy rather than being selectively absorbed by a cooler gas.
-
----
 
 ---
 
@@ -191,17 +194,18 @@ module: "Module 1 — Gravity & Orbits + Light as Information"
 
 ---
 
----
-
 ## Problem 10 — Photon Energy from Wavelength
 
 **Given:** $\lambda = 600$ nm; $c = 3.00 \times 10^{10}$ cm/s; $h = 6.626 \times 10^{-27}$ erg·s.
 
 **Find:** Frequency and photon energy.
 
-**Equation:** $\nu = c/\lambda$, $E = h\nu$.
+**Equation:**
+
+$$\nu = c/\lambda$$, $E = h\nu$.
 
 **Steps:**
+
 - (a) $600$ nm $= 6000$ Å $= 6.0 \times 10^{-5}$ cm.
 - (b) $\nu = (3.00 \times 10^{10}\,\mathrm{cm/s})/(6.0 \times 10^{-5}\,\mathrm{cm}) = 5.0 \times 10^{14}\,\mathrm{s^{-1}}$.
 - (c) $E = h\nu = (6.626 \times 10^{-27})(5.0 \times 10^{14}) \approx 3.31 \times 10^{-12}$ erg.

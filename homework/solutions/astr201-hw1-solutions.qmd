@@ -27,8 +27,6 @@ module: "Module 1 — Spoiler Alerts + Foundations + Gravity & Orbits"
 
 ---
 
----
-
 ## Problem 2 — Empirical vs. Physical
 
 **Restatement:** Distinguish empirical vs physical laws and give an example.
@@ -52,6 +50,7 @@ module: "Module 1 — Spoiler Alerts + Foundations + Gravity & Orbits"
 **Key insight:** Dimensions must match on both sides; energy has dimensions $[ML^2T^{-2}]$.
 
 **Answer:**
+
 - (a) $v = \sqrt{GM/r}$ is valid: $[GM/r] = [L^2T^{-2}]$.
 - (b) $E = mv$ is invalid: $[mv] = [MLT^{-1}]$, not energy.
 - (c) $U = GMm/r^2$ is invalid: $[GMm/r^2] = [ML^2T^{-2}]/L = [MLT^{-2}]$.
@@ -61,17 +60,18 @@ module: "Module 1 — Spoiler Alerts + Foundations + Gravity & Orbits"
 
 ---
 
----
-
 ## Problem 4 — The Dimensions of $\sigma$
 
 **Given:** $L = 4\pi R^2 \sigma T^4$.
 
 **Find:** Dimensions and CGS conversion for $\sigma$.
 
-**Equation:** $\sigma = L/(4\pi R^2 T^4)$.
+**Equation:**
+
+$$\sigma = L/(4\pi R^2 T^4)$$
 
 **Steps:**
+
 - $[L] = [ML^2T^{-3}]$, so $[\sigma] = [ML^2T^{-3}]/[L^2\Theta^4] = [MT^{-3}\Theta^{-4}]$.
 - CGS unit: erg s$^{-1}$ cm$^{-2}$ K$^{-4}$.
 - Convert SI to CGS: $5.67 \times 10^{-8}$ W m$^{-2}$ K$^{-4}$.
@@ -86,17 +86,18 @@ module: "Module 1 — Spoiler Alerts + Foundations + Gravity & Orbits"
 
 ---
 
----
-
 ## Problem 5 — Kepler Scaling
 
 **Given:** $P^2 \propto a^3$ (years, AU).
 
 **Find:** $P$ or $a$ by scaling.
 
-**Equation:** $P \propto a^{3/2}$.
+**Equation:**
+
+$$P \propto a^{3/2}$$
 
 **Steps:**
+
 - (a) $P = a^{3/2} = 30^{3/2} \approx 30\sqrt{30} \approx 30 \times 5.48 \approx 1.6 \times 10^2$ yr.
 - (b) $a = P^{2/3} = 8^{2/3} = (2^3)^{2/3} = 4$ AU.
 - (c) $P = 40^{3/2} \approx 40\sqrt{40} \approx 40 \times 6.32 \approx 2.5 \times 10^2$ yr.
@@ -110,17 +111,18 @@ module: "Module 1 — Spoiler Alerts + Foundations + Gravity & Orbits"
 
 ---
 
----
-
 ## Problem 6 — Fermi Estimation: Light-Minutes
 
 **Given:** $c \approx 3 \times 10^5$ km/s.
 
 **Find:** Light-minutes for AU and 5 AU.
 
-**Equation:** $d = vt$ or $t = d/v$.
+**Equation:**
+
+$$d = vt$$ or $t = d/v$.
 
 **Steps:**
+
 - (a) In 1 s: $3 \times 10^5$ km. In 1 min: $3 \times 10^5 \times 60 = 1.8 \times 10^7$ km.
 - (b) $1.5 \times 10^8$ km / $1.8 \times 10^7$ km/min $\approx 8.3$ min.
 - (c) $5$ AU $\approx 5 \times 8.3 \approx 41.5$ min.
@@ -144,13 +146,12 @@ module: "Module 1 — Spoiler Alerts + Foundations + Gravity & Orbits"
 **Key insight:** "Centripetal force" is not an extra force; it is the net inward force required for circular motion.
 
 **Answer:**
+
 - (a) The statement double-counts forces. Gravity provides the inward (centripetal) acceleration.
 - (b) Correct version: The planet experiences **one** force (gravity), which provides the centripetal acceleration.
 - (c) "Centrifugal force" is a fictitious force that appears only in a rotating reference frame.
 
 **Common misconception:** Treating centripetal force as a separate physical interaction.
-
----
 
 ---
 
@@ -161,6 +162,7 @@ module: "Module 1 — Spoiler Alerts + Foundations + Gravity & Orbits"
 **Key elements:** $v \propto \sqrt{M/r}$.
 
 **Sample response:**
+
 - (a) $v/v_\oplus = \sqrt{1/0.05} = \sqrt{20} \approx 4.47$.
 - (b) $v/v_\oplus = \sqrt{0.25/0.25} = 1$.
 - (c) Hot Jupiter is much faster; the red dwarf case is comparable to Earth because mass and radius scale equally.
@@ -179,7 +181,9 @@ module: "Module 1 — Spoiler Alerts + Foundations + Gravity & Orbits"
 
 **Find:** Bound or unbound.
 
-**Equation:** $v_{esc} = \sqrt{2GM/r}$; at 1 AU, $v_{esc} \approx 42$ km/s.
+**Equation:**
+
+$$v_{esc} = \sqrt{2GM/r}$$; at 1 AU, $v_{esc} \approx 42$ km/s.
 
 **Steps:** Since $50$ km/s $> 42$ km/s, the comet exceeds escape speed.
 
@@ -200,6 +204,7 @@ module: "Module 1 — Spoiler Alerts + Foundations + Gravity & Orbits"
 **Restatement:** Show why $R$ decreases as $M$ increases for white dwarfs.
 
 **Key elements:**
+
 - Degeneracy pressure scaling: $P_{deg} \propto \hbar^2 n^{5/3}/m_e$.
 - Electron density $n \propto \rho$ (via $n = \rho/(\mu_e m_p)$).
 - Gravitational pressure scaling: $P_{grav} \sim GM^2/R^4$.
