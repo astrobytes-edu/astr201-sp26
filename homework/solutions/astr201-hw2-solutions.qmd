@@ -15,276 +15,572 @@ module: "Module 1 — Gravity & Orbits + Light as Information"
 **Grade memo note:** Use these to write your reflection (what you got right, what broke, and what you will do differently next time).
 :::
 
+---
+
+## Part A — Gravity & Orbits
+
+---
+
 ## Problem 1 — Energy Signs and Orbital Fate
 
-**Restatement:** Interpret $E < 0$, $E = 0$, and $E > 0$.
+<!-- Problem: Conceptual / Connection / O→M→I / Tools: Energy, Uncertainty/Assumptions / ⭐⭐ -->
+
+**Restatement:** Interpret $E < 0$, $E = 0$, and $E > 0$ for orbital energy.
 
 **Key insight:** Zero potential energy is defined at infinity, so bound orbits have negative total energy.
 
 **Answer:**
 
-- (a) $U$ is negative because work must be done to separate masses to infinity.
-- (b) $E < 0$ means bound (elliptical); $E = 0$ means parabolic; $E > 0$ means unbound (hyperbolic escape).
-- (c) Positive total energy does **not** mean it is gaining energy; it means its total energy is above the escape threshold.
+**(a) Why is gravitational potential energy negative?**
+
+We define $U = 0$ at $r = \infty$ (infinite separation). To bring two masses together from infinity, gravity does positive work—meaning the system releases energy. Therefore $U$ is lower (more negative) at finite separation:
+
+$$U = -\frac{GMm}{r} < 0$$
+
+Physically: negative $U$ means you'd have to *add* energy to separate the masses to infinity.
+
+**(b) Meaning of total energy $E = K + U$:**
+
+| Energy | Orbit Type | Fate |
+|--------|-----------|------|
+| $E < 0$ | Elliptical (bound) | Object returns; trapped in orbit |
+| $E = 0$ | Parabolic (marginally unbound) | Object barely escapes, reaches infinity with $v = 0$ |
+| $E > 0$ | Hyperbolic (unbound) | Object escapes with excess velocity |
+
+**(c) Correcting the student's statement:**
+
+The student said: "It has positive energy, so it's gaining energy as it approaches."
+
+**This is wrong.** Total mechanical energy $E = K + U$ is **conserved**—it doesn't change as the comet approaches.
+
+What happens is:
+
+- As the comet gets closer, $U$ becomes more negative (deeper in the potential well)
+- Kinetic energy $K$ increases by the same amount (it speeds up)
+- Total $E$ stays constant and positive
+
+"Positive energy" means the comet's total energy is above the escape threshold, not that it's gaining energy.
 
 **Common misconception:** Confusing the sign of energy with energy gain or loss.
 
 ---
 
-## Calculation
-
----
-
 ## Problem 2 — Orbital Velocity Practice
 
-**Given:** $G = 6.67 \times 10^{-8}$, $M_\odot = 2 \times 10^{33}$ g, $r = 1$ AU $= 1.5 \times 10^{13}$ cm.
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Force/Balance, Unit-Conversion, Scaling/Ratio / ⭐⭐ -->
 
-**Find:** $v_{orb}$ for Earth and Mars.
+**Given:**
+
+- $G = 6.67 \times 10^{-8}$ cm³ g⁻¹ s⁻²
+- $M_\odot = 2 \times 10^{33}$ g
+- $r = 1$ AU $= 1.5 \times 10^{13}$ cm
+- Mars orbital radius: $r_{\text{Mars}} = 1.52$ AU
+
+**Find:** Orbital velocities for Earth and Mars.
 
 **Equation:**
 
-$$v_{orb} = \sqrt{\frac{GM}{r}}$$
+$$v_{\text{orb}} = \sqrt{\frac{GM}{r}}$$
 
-Let’s unpack each piece:
+Let's unpack each piece:
 
 - $G$: gravitational constant (sets strength of gravity)
-- $M$: central mass (g)
-- $r$: orbital radius (cm)
-- $v_{orb}$: orbital speed (cm/s)
+- $M$: central mass (Sun)
+- $r$: orbital radius
+- $v_{\text{orb}}$: circular orbital speed
 
-**What this equation says:** faster orbits come from larger central mass and smaller orbital radius; speed scales as $M^{1/2} r^{-1/2}$.
+**What this equation says:** Faster orbits require larger central mass or smaller orbital radius. Speed scales as $M^{1/2} r^{-1/2}$.
 
 **Steps:**
 
-- Compute the scale first, then carry units explicitly (with cancellations shown):
+**(a) Calculate Earth's orbital velocity:**
 
-$$
-\begin{aligned}
-\frac{GM}{r}
-&= \frac{(6.67 \times 10^{-8}\ \mathrm{cm^3\,g^{-1}\,s^{-2}})(2 \times 10^{33}\ \mathrm{g})}{1.5 \times 10^{13}\ \mathrm{cm}} \\
-&= \frac{6.67 \times 2}{1.5}\times 10^{-8+33-13}
-\times \frac{\mathrm{cm^3}\,\cancel{\mathrm{g^{-1}}}\,\mathrm{s^{-2}}\,\cancel{\mathrm{g}}}{\mathrm{cm}} \\
-&\approx 8.9 \times 10^{12}\ \mathrm{cm^2\,s^{-2}}.
-\end{aligned}
-$$
+First compute $GM/r$:
 
-- $v_{orb} \approx \sqrt{8.9 \times 10^{12}} \approx 3.0 \times 10^6$ cm/s $\approx 30$ km/s.
-- Mars: $v \propto 1/\sqrt{r}$, so $v_M = v_E/\sqrt{1.52} \approx 0.81 v_E \approx 24$ km/s.
+$$\frac{GM_\odot}{r} = \frac{(6.67 \times 10^{-8}\,\text{cm}^3\,\text{g}^{-1}\,\text{s}^{-2})(2 \times 10^{33}\,\text{g})}{1.5 \times 10^{13}\,\text{cm}}$$
 
-**Unit check:** $[\frac{GM}{r}] = [L^2T^{-2}]$ so $v$ has $[LT^{-1}]$.
+Separate the numerical and unit parts:
 
-**Sanity check:** Earth’s orbital speed is known to be about 30 km/s; Mars should be slower.
+$$= \frac{6.67 \times 2}{1.5} \times 10^{-8+33-13} \times \frac{\text{cm}^3 \cdot \cancel{\text{g}^{-1}} \cdot \text{s}^{-2} \cdot \cancel{\text{g}}}{\text{cm}}$$
 
-**Answer:** Earth $\approx 30$ km/s; Mars $\approx 24$ km/s.
+$$= \frac{13.34}{1.5} \times 10^{12}\,\text{cm}^2\,\text{s}^{-2}$$
+
+$$\approx 8.9 \times 10^{12}\,\text{cm}^2\,\text{s}^{-2}$$
+
+Now take the square root:
+
+$$v_{\text{orb}} = \sqrt{8.9 \times 10^{12}\,\text{cm}^2\,\text{s}^{-2}} \approx 3.0 \times 10^6\,\text{cm/s}$$
+
+Convert to km/s using the identity trick:
+
+$$v_{\text{orb}} = 3.0 \times 10^6\,\text{cm/s} \times \frac{1\,\text{m}}{10^2\,\text{cm}} \times \frac{1\,\text{km}}{10^3\,\text{m}} = 3.0 \times 10^{6-2-3}\,\text{km/s} = 30\,\text{km/s}$$
+
+**Answer (a):** $\boxed{v_{\oplus} \approx 3.0 \times 10^6\,\text{cm/s} = 30\,\text{km/s}}$
+
+**(b) Unit check:**
+
+$$\left[\frac{GM}{r}\right] = \frac{[L^3 M^{-1} T^{-2}][M]}{[L]} = \frac{[L^3 T^{-2}]}{[L]} = [L^2 T^{-2}]$$
+
+$$[v] = \sqrt{[L^2 T^{-2}]} = [L T^{-1}] \quad \checkmark$$
+
+**(c) Mars's orbital velocity using ratios:**
+
+Since $v \propto r^{-1/2}$ (at fixed $M$):
+
+$$\frac{v_{\text{Mars}}}{v_\oplus} = \sqrt{\frac{r_\oplus}{r_{\text{Mars}}}} = \sqrt{\frac{1}{1.52}} = \sqrt{0.658} \approx 0.81$$
+
+$$v_{\text{Mars}} = 0.81 \times 30\,\text{km/s} \approx 24\,\text{km/s}$$
+
+**Answer (c):** $\boxed{v_{\text{Mars}} \approx 24\,\text{km/s}}$
+
+**(d) Sanity check:**
+
+Mars orbits farther from the Sun, so gravity is weaker, requiring a slower orbital speed. Our answer ($24 < 30$ km/s) confirms this. $\checkmark$
 
 ---
 
 ## Problem 3 — Escape Velocity Comparison
 
-**Given:** $M_\oplus = 6 \times 10^{27}$ g, $R_\oplus = 6.4 \times 10^8$ cm; $M_{Moon} = 7.3 \times 10^{25}$ g, $R_{Moon} = 1.7 \times 10^8$ cm.
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Force/Balance, Unit-Conversion, Scaling/Ratio / ⭐⭐ -->
 
-**Find:** $v_{esc}$ for Earth and Moon.
+**Given:**
+
+- Earth: $M_\oplus = 6 \times 10^{27}$ g, $R_\oplus = 6.4 \times 10^8$ cm
+- Moon: $M_{\text{Moon}} = 7.3 \times 10^{25}$ g, $R_{\text{Moon}} = 1.7 \times 10^8$ cm
+- $G = 6.67 \times 10^{-8}$ cm³ g⁻¹ s⁻²
+
+**Find:** Escape velocities for Earth and Moon.
 
 **Equation:**
 
-$$v_{esc} = \sqrt{\frac{2GM}{R}}$$
+$$v_{\text{esc}} = \sqrt{\frac{2GM}{R}}$$
 
-Let’s unpack each piece:
+Let's unpack each piece:
 
+- Factor of 2: comes from requiring total energy $E = 0$ (marginally unbound)
 - $G$: gravitational constant
-- $M$: mass of the body (g)
-- $R$: radius of the body (cm)
-- $v_{esc}$: escape speed (cm/s)
+- $M$: mass of the body
+- $R$: radius of the body (launch point)
+- $v_{\text{esc}}$: minimum speed to escape to infinity
 
-**What this equation says:** escape speed rises if mass grows or radius shrinks; you need more speed to climb out of a deeper gravitational well.
+**What this equation says:** Escape speed rises if mass grows (deeper well) or radius shrinks (closer to the center of mass).
 
 **Steps:**
 
-- Earth:
+**(a) Earth's escape velocity:**
 
-$$
-\begin{aligned}
-\frac{GM_\oplus}{R_\oplus}
-&= \frac{(6.67 \times 10^{-8})(6 \times 10^{27})}{6.4 \times 10^{8}}
-\\approx 6.25 \times 10^{11}\ \mathrm{cm^2\,s^{-2}}
-\end{aligned}
-$$
+$$\frac{2GM_\oplus}{R_\oplus} = \frac{2 \times (6.67 \times 10^{-8}) \times (6 \times 10^{27})}{6.4 \times 10^{8}}$$
 
-$$
-v_{esc,\oplus} = \sqrt{2\frac{GM_\oplus}{R_\oplus}}
-\\approx \sqrt{1.25 \times 10^{12}}
-\\approx 1.12 \times 10^6\ \mathrm{cm/s}
-= 11.2\ \mathrm{km/s}.
-$$
+$$= \frac{2 \times 6.67 \times 6}{6.4} \times 10^{-8+27-8}\,\text{cm}^2\,\text{s}^{-2}$$
 
-- Moon:
+$$= \frac{80.04}{6.4} \times 10^{11}\,\text{cm}^2\,\text{s}^{-2}$$
 
-$$
-\begin{aligned}
-\frac{GM_{Moon}}{R_{Moon}}
-&= \frac{(6.67 \times 10^{-8})(7.3 \times 10^{25})}{1.7 \times 10^{8}}
-\\approx 2.86 \times 10^{10}\ \mathrm{cm^2\,s^{-2}}
-\end{aligned}
-$$
+$$\approx 1.25 \times 10^{12}\,\text{cm}^2\,\text{s}^{-2}$$
 
-$$
-v_{esc,Moon} = \sqrt{2\frac{GM_{Moon}}{R_{Moon}}}
-\\approx \sqrt{5.7 \times 10^{10}}
-\\approx 2.4 \times 10^5\ \mathrm{cm/s}
-= 2.4\ \mathrm{km/s}.
-$$
+$$v_{\text{esc},\oplus} = \sqrt{1.25 \times 10^{12}} \approx 1.12 \times 10^6\,\text{cm/s} = 11.2\,\text{km/s}$$
 
-- Ratio:
+**Answer (a):** $\boxed{v_{\text{esc},\oplus} \approx 11.2\,\text{km/s}}$
 
-$$
-\frac{v_{esc,\oplus}}{v_{esc,Moon}} = \frac{11.2}{2.4} \\approx 4.7.
-$$
+**(b) Moon's escape velocity:**
 
-**Unit check:** $[\frac{2GM}{R}] = [L^2T^{-2}]$, so $v_{esc}$ has units of $[LT^{-1}]$.
+$$\frac{2GM_{\text{Moon}}}{R_{\text{Moon}}} = \frac{2 \times (6.67 \times 10^{-8}) \times (7.3 \times 10^{25})}{1.7 \times 10^{8}}$$
 
-**Sanity check:** A smaller, lower-mass body should have a lower escape speed; $2.4$ km/s is reasonable for the Moon.
+$$= \frac{2 \times 6.67 \times 7.3}{1.7} \times 10^{-8+25-8}\,\text{cm}^2\,\text{s}^{-2}$$
 
-**Answer:** Earth $\approx 11.2$ km/s; Moon $\approx 2.4$ km/s; Earth is about 4.7 times larger.
+$$= \frac{97.4}{1.7} \times 10^{9}\,\text{cm}^2\,\text{s}^{-2}$$
+
+$$\approx 5.7 \times 10^{10}\,\text{cm}^2\,\text{s}^{-2}$$
+
+$$v_{\text{esc,Moon}} = \sqrt{5.7 \times 10^{10}} \approx 2.4 \times 10^5\,\text{cm/s} = 2.4\,\text{km/s}$$
+
+**Answer (b):** $\boxed{v_{\text{esc,Moon}} \approx 2.4\,\text{km/s}}$
+
+**(c) Ratio of escape velocities:**
+
+$$\frac{v_{\text{esc},\oplus}}{v_{\text{esc,Moon}}} = \frac{11.2}{2.4} \approx 4.7$$
+
+**Answer (c):** $\boxed{\text{Earth's escape velocity is } \sim 4.7 \times \text{ larger than the Moon's}}$
+
+**(d) Interpretation for Apollo astronauts:**
+
+The Moon's escape velocity is about 5× smaller than Earth's. Since rocket fuel requirements scale steeply with required velocity change ($\Delta v$), the lunar module could be much smaller and lighter than the Saturn V needed to escape Earth. This made the return trip from the lunar surface much easier.
+
+**Unit check:** $[2GM/R] = [L^2 T^{-2}]$, so $v_{\text{esc}}$ has units $[L T^{-1}]$ $\checkmark$
+
+**Sanity check:** The Moon is smaller and less massive, so it should have lower escape velocity. $2.4 < 11.2$ km/s. $\checkmark$
 
 ---
 
 ## Problem 4 — Kepler III with Newton
 
-**Given:** $P^2 = \frac{4\pi^2}{G(M+m)}a^3$.
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Dimensional, Unit-Conversion / ⭐⭐ -->
 
-**Find:** Simplified form, unit check, and the binary-star scaling.
-
-**Equation:**
+**Given:** Newton's generalized Kepler's Third Law:
 
 $$P^2 = \frac{4\pi^2}{G(M+m)}a^3$$
 
-Let’s unpack each piece:
+**Find:** Simplified form, unit verification, binary star comparison.
 
-- $P$: orbital period (s)
-- $a$: semi-major axis (cm)
-- $M+m$: total mass (g)
+**Equation unpacked:**
 
-**What this equation says:** larger orbits take longer, and more total mass shortens the period at fixed size.
+- $P$: orbital period
+- $a$: semi-major axis
+- $M + m$: total mass of the system
+- The factor $4\pi^2/G$ sets the relationship between geometry and mass
 
 **Steps:**
 
-- (a) For $m \ll M_\odot$, $P^2 \approx \frac{4\pi^2}{GM_\odot}a^3$.
-- (b) With $a = 1$ AU, this gives $P \approx 1$ year.
-- (c) For two $1\,M_\odot$ stars, total mass is $2M_\odot$, so $P^2/a^3$ is half the Sun–Earth value.
+**(a) Simplified form for $m \ll M_\odot$:**
 
-**Unit check:** $[a^3/(GM)] = [L^3]/([L^3M^{-1}T^{-2}]M) = [T^2]$.
+When the orbiting body is much less massive than the central body:
 
-**Sanity check:** A more massive system should have a shorter period at fixed $a$.
+$$M + m \approx M_\odot$$
 
-**Answer:** The equal-mass binary has a Kepler constant smaller by a factor of 2.
+$$P^2 \approx \frac{4\pi^2}{GM_\odot}a^3$$
+
+**(b) Verify for Earth ($a = 1$ AU, $P = 1$ yr):**
+
+Using CGS units:
+
+- $a = 1.5 \times 10^{13}$ cm
+- $G = 6.67 \times 10^{-8}$ cm³ g⁻¹ s⁻²
+- $M_\odot = 2 \times 10^{33}$ g
+
+$$P^2 = \frac{4\pi^2 a^3}{GM_\odot} = \frac{4 \times 9.87 \times (1.5 \times 10^{13})^3}{(6.67 \times 10^{-8})(2 \times 10^{33})}$$
+
+Numerator: $4 \times 9.87 \times 3.375 \times 10^{39} \approx 1.33 \times 10^{41}$
+
+Denominator: $6.67 \times 2 \times 10^{25} \approx 1.33 \times 10^{26}$
+
+$$P^2 \approx \frac{1.33 \times 10^{41}}{1.33 \times 10^{26}} = 10^{15}\,\text{s}^2$$
+
+$$P \approx \sqrt{10^{15}} \approx 3.16 \times 10^7\,\text{s}$$
+
+Convert to years:
+
+$$P = 3.16 \times 10^7\,\text{s} \times \frac{1\,\text{yr}}{3.16 \times 10^7\,\text{s}} = 1\,\text{yr} \quad \checkmark$$
+
+**(c) Unit check:**
+
+$$\left[\frac{a^3}{G(M+m)}\right] = \frac{[L^3]}{[M^{-1}L^3T^{-2}][M]} = \frac{[L^3]}{[L^3T^{-2}]} = [T^2] \quad \checkmark$$
+
+Both sides have dimensions of time squared.
+
+**(d) Binary star comparison (two equal $1\,M_\odot$ stars):**
+
+For the Sun-Earth system: $M + m \approx M_\odot$
+
+For the binary: $M + m = 2M_\odot$
+
+The "Kepler constant" is $P^2/a^3 = 4\pi^2/[G(M+m)]$
+
+$$\frac{(P^2/a^3)_{\text{binary}}}{(P^2/a^3)_{\odot}} = \frac{M_\odot}{2M_\odot} = \frac{1}{2}$$
+
+**Answer (d):** $\boxed{\left(\frac{P^2}{a^3}\right)_{\text{binary}} = \frac{1}{2}\left(\frac{P^2}{a^3}\right)_{\odot}}$
+
+At the same orbital separation, the binary has a shorter period because the total mass is larger.
 
 ---
 
 ## Problem 5 — Complete Workflow: Weighing Jupiter
 
-**Restatement:** Use Kepler III to infer Jupiter's mass from Io's orbit.
+<!-- Problem: Synthesis / Connection / O→M→I / Tools: Model-Inversion, Unit-Conversion / ⭐⭐ -->
 
-**Key elements:** Convert $P$ to seconds, use $M = 4\pi^2 a^3/(GP^2)$, and unit check.
+**Given:**
 
-**Sample response:**
+- Io's orbital period: $P = 1.77$ days
+- Io's semi-major axis: $a = 4.22 \times 10^{10}$ cm
 
-- $P = 1.77$ days $\approx 1.53 \times 10^5$ s.
-- $a^3 \approx (4.22 \times 10^{10})^3 \approx 7.5 \times 10^{31}$ cm$^3$.
-- $M \approx 4\pi^2 a^3/(GP^2) \approx 1.9 \times 10^{30}$ g.
-- In solar masses: $M \approx 9.5 \times 10^{-4} M_\odot$, consistent with Jupiter.
-- Observables: orbital period and orbital size.
+**Find:** Jupiter's mass using Newton's Kepler III.
 
-**Unit check:** $[a^3/(GP^2)] = [L^3]/([L^3M^{-1}T^{-2}]T^2) = [M]$.
+**Equation:**
 
-**Sanity check:** $\sim 10^{-3} M_\odot$ is the known order of magnitude for Jupiter.
+Rearranging $P^2 = 4\pi^2 a^3/(GM)$ (assuming $m_{\text{Io}} \ll M_J$):
 
-**Grading guidance:** Must show the structure of the inference and the unit check.
+$$M = \frac{4\pi^2 a^3}{GP^2}$$
+
+**Steps:**
+
+**(a) Convert period to seconds:**
+
+$$P = 1.77\,\text{days} \times \frac{24\,\text{hr}}{1\,\text{day}} \times \frac{3600\,\text{s}}{1\,\text{hr}}$$
+
+$$= 1.77 \times 24 \times 3600\,\text{s} = 1.77 \times 86400\,\text{s} \approx 1.53 \times 10^5\,\text{s}$$
+
+**(b) Calculate each component:**
+
+$$a^3 = (4.22 \times 10^{10})^3 = 75.2 \times 10^{30} = 7.52 \times 10^{31}\,\text{cm}^3$$
+
+$$P^2 = (1.53 \times 10^5)^2 = 2.34 \times 10^{10}\,\text{s}^2$$
+
+$$GP^2 = (6.67 \times 10^{-8})(2.34 \times 10^{10}) = 1.56 \times 10^{3}\,\text{cm}^3\,\text{g}^{-1}$$
+
+$$4\pi^2 a^3 = 4 \times 9.87 \times 7.52 \times 10^{31} = 2.97 \times 10^{33}\,\text{cm}^3$$
+
+$$M_J = \frac{4\pi^2 a^3}{GP^2} = \frac{2.97 \times 10^{33}}{1.56 \times 10^{3}} \approx 1.9 \times 10^{30}\,\text{g}$$
+
+**(c) Express in solar masses:**
+
+$$\frac{M_J}{M_\odot} = \frac{1.9 \times 10^{30}}{2 \times 10^{33}} = 0.95 \times 10^{-3} \approx 10^{-3}$$
+
+**Answer:**
+$$\boxed{M_J \approx 1.9 \times 10^{30}\,\text{g} \approx 10^{-3}\,M_\odot}$$
+
+**(d) Observable quantities needed:**
+
+- **Io's orbital period** (measured from repeated observations)
+- **Io's orbital size** (measured from angular separation and Jupiter's distance)
+
+Neither quantity requires knowing Jupiter's mass—we measure the orbit and *infer* the mass.
+
+**Unit check:**
+
+$$\left[\frac{a^3}{GP^2}\right] = \frac{[L^3]}{[M^{-1}L^3T^{-2}][T^2]} = \frac{[L^3]}{[M^{-1}L^3]} = [M] \quad \checkmark$$
+
+**Sanity check:** Jupiter is about 1/1000 of a solar mass, which matches the known value. $\checkmark$
 
 ---
 
 ## Problem 6 — The $\sqrt{2}$ Factor
 
-**Restatement:** Show $v_{esc} = \sqrt{2}\,v_{orb}$ and interpret energetically.
+<!-- Problem: Synthesis / Connection / O→M→I / Tools: Energy, Force/Balance / ⭐⭐ -->
 
-**Key elements:** Compare formulas and relate to orbital energy.
+**Restatement:** Derive and interpret $v_{\text{esc}} = \sqrt{2}\,v_{\text{orb}}$.
 
-**Sample response:**
+**Key elements:** Compare formulas and connect to energy.
 
-- $v_{esc} = \sqrt{\frac{2GM}{r}}$ and $v_{orb} = \sqrt{\frac{GM}{r}}$, so $v_{esc} = \sqrt{2}\,v_{orb}$.
-- A spacecraft must increase speed by a factor of $\sqrt{2}$.
-- Energy view: a circular orbit has $E = -GMm/(2r)$. To reach $E = 0$, you must add $GMm/(2r)$, which equals the orbital kinetic energy $K$. That is why the speed increase is a factor of $\sqrt{2}$.
+**Answer:**
 
-**Grading guidance:** Full credit requires both the algebra and the energy interpretation.
+**(a) Algebraic derivation:**
+
+$$v_{\text{orb}} = \sqrt{\frac{GM}{r}}$$
+
+$$v_{\text{esc}} = \sqrt{\frac{2GM}{r}} = \sqrt{2} \cdot \sqrt{\frac{GM}{r}} = \sqrt{2}\,v_{\text{orb}}$$
+
+**Result:** $\boxed{v_{\text{esc}} = \sqrt{2}\,v_{\text{orb}}}$
+
+**(b) Speed increase needed for escape:**
+
+A spacecraft in circular orbit at speed $v_{\text{orb}}$ must increase to $\sqrt{2}\,v_{\text{orb}}$:
+
+$$\frac{v_{\text{esc}}}{v_{\text{orb}}} = \sqrt{2} \approx 1.41$$
+
+The spacecraft must increase its speed by a factor of $\sqrt{2}$ (about 41% faster).
+
+**(c) Energy interpretation:**
+
+For a circular orbit:
+
+- Kinetic energy: $K = \frac{1}{2}mv_{\text{orb}}^2 = \frac{GMm}{2r}$
+- Potential energy: $U = -\frac{GMm}{r}$
+- Total energy: $E = K + U = -\frac{GMm}{2r}$ (bound, negative)
+
+To escape ($E = 0$), we need to add energy equal to $|E| = \frac{GMm}{2r}$, which equals the orbital kinetic energy $K$.
+
+So escaping requires **doubling the kinetic energy**. Since $K \propto v^2$:
+
+$$\frac{K_{\text{esc}}}{K_{\text{orb}}} = 2 \Rightarrow \frac{v_{\text{esc}}^2}{v_{\text{orb}}^2} = 2 \Rightarrow v_{\text{esc}} = \sqrt{2}\,v_{\text{orb}}$$
+
+**Physical insight:** The binding energy of a circular orbit equals its kinetic energy. To unbind, you must add exactly that much energy again.
 
 ---
 
 ## Problem 7 — Virial Theorem Capstone
 
-**Restatement:** Use virial equilibrium to infer $U$, compute total energy $E$, and interpret how added kinetic energy changes the bound state.
+<!-- Problem: Synthesis / Connection / O→M→I / Tools: Energy, Model-Inversion, Uncertainty/Assumptions / ⭐⭐ -->
 
-**Key elements:**
+**Given:**
 
-- Virial theorem: $2K + U = 0 \Rightarrow U = -2K$
-- Total energy: $E = K + U$
-- Bound if $E < 0$
-- Extra kinetic energy shifts $E$ upward; sign tells bound vs unbound
+- Star cluster kinetic energy: $K = 1.0 \times 10^{50}$ erg
+- System in virial equilibrium: $2K + U = 0$
 
-**Sample response:**
+**Find:** Potential energy, total energy, and effect of energy injection.
 
-- (a) $U = -2K = -2.0 \times 10^{50}$ erg.
-- (b) $E = K + U = 1.0 \times 10^{50} - 2.0 \times 10^{50} = -1.0 \times 10^{50}$ erg, so the cluster is **bound**.
-- (c) Added kinetic energy gives $K' = 1.6 \times 10^{50}$ erg. If the size is unchanged so $U$ stays about $-2.0 \times 10^{50}$ erg, then $E' = 1.6 \times 10^{50} - 2.0 \times 10^{50} = -0.4 \times 10^{50}$ erg. The cluster is **still bound**, but less tightly. In reality it would expand until it re‑virializes; enough added energy could eventually unbind it.
+**Equation:**
 
-**Grading guidance:** Full credit requires correct use of the virial theorem, correct signs, and a clear bound/unbound interpretation before and after the energy injection.
+The virial theorem for a gravitationally bound system in equilibrium:
+
+$$2K + U = 0$$
+
+This connects random motions (kinetic energy of stars) to the gravitational binding (potential energy).
+
+**Steps:**
+
+**(a) Find gravitational potential energy:**
+
+From the virial theorem:
+
+$$U = -2K = -2 \times (1.0 \times 10^{50}\,\text{erg}) = -2.0 \times 10^{50}\,\text{erg}$$
+
+**Answer (a):** $\boxed{U = -2.0 \times 10^{50}\,\text{erg}}$
+
+**(b) Total energy and bound state:**
+
+$$E = K + U = (1.0 \times 10^{50}) + (-2.0 \times 10^{50}) = -1.0 \times 10^{50}\,\text{erg}$$
+
+Since $E < 0$, the cluster is **gravitationally bound**.
+
+**Answer (b):** $\boxed{E = -1.0 \times 10^{50}\,\text{erg};\text{ cluster is bound}}$
+
+**(c) After tidal interaction adds $\Delta K = 0.6 \times 10^{50}$ erg:**
+
+New kinetic energy:
+
+$$K' = K + \Delta K = (1.0 + 0.6) \times 10^{50} = 1.6 \times 10^{50}\,\text{erg}$$
+
+If the cluster size hasn't changed yet (immediate aftermath), potential energy remains:
+
+$$U' \approx U = -2.0 \times 10^{50}\,\text{erg}$$
+
+New total energy:
+
+$$E' = K' + U' = (1.6 - 2.0) \times 10^{50} = -0.4 \times 10^{50}\,\text{erg}$$
+
+Since $E' < 0$, the cluster is **still bound**, but less tightly.
+
+**Answer (c):** $\boxed{E' = -0.4 \times 10^{50}\,\text{erg};\text{ cluster remains bound but will expand}}$
+
+**Physical follow-up:** The system is no longer in virial equilibrium ($2K' \neq -U'$). It will expand until stars slow down and it re-virializes at a larger radius. If the injected energy had been $\geq 1.0 \times 10^{50}$ erg, the cluster would become unbound ($E \geq 0$) and disperse.
 
 ---
 
-## Problem 8 — Kirchhoff’s Laws in Action
+## Part B — Light as Information
 
-**Restatement:** Identify the source for each spectrum type and explain why.
+---
 
-**Key insight:** Absorption lines require a cooler gas in front of a hot continuum; emission lines require a hot, low‑density gas.
+## Problem 8 — Kirchhoff's Laws in Action
+
+<!-- Problem: Conceptual / Connection / O→M→I / Tools: Model-Inversion, Uncertainty/Assumptions / ⭐⭐ -->
+
+**Restatement:** Identify the source for each spectrum type.
+
+**Key insight:** Absorption lines require a cooler gas in front of a hot continuum; emission lines require a hot, low-density gas.
 
 **Answer:**
 
-- (a) Smooth rainbow with dark lines: **hot dense object** with a **cooler gas** in front (absorption spectrum).
-- (b) Smooth rainbow with no lines: **hot dense object** with no intervening cool gas (continuous spectrum).
-- (c) Dark background with bright lines: **hot thin gas** emitting discrete lines (emission spectrum).
+**(a) Smooth rainbow with dark lines (absorption spectrum):**
 
-**Common misconception:** Thinking absorption lines mean the source is “missing” energy rather than being selectively absorbed by a cooler gas.
+**Source:** A **hot dense object** (produces continuous spectrum) with a **cooler gas** in front of it.
+
+**Reasoning:** The hot object emits all wavelengths (continuous blackbody). The cooler foreground gas absorbs photons at specific wavelengths (its atomic transitions), creating dark gaps in the rainbow. This is how stellar atmospheres work: the hot interior produces the continuum, the cooler outer layers absorb at characteristic wavelengths.
+
+**(b) Smooth rainbow with no lines (continuous spectrum):**
+
+**Source:** A **hot dense object** with no intervening cool gas.
+
+**Reasoning:** A hot, dense material (solid, liquid, or dense gas/plasma) produces a continuous spectrum via blackbody radiation. Without a cooler gas in the line of sight, no absorption occurs.
+
+**(c) Dark background with bright lines (emission spectrum):**
+
+**Source:** A **hot thin gas** (low density) with no continuum source behind it.
+
+**Reasoning:** A low-density gas produces light only at discrete wavelengths corresponding to its atomic transitions. Without a background continuum, only these bright lines are visible against the dark sky. Examples: nebulae, neon signs, laboratory discharge tubes.
+
+**Common misconception:** Thinking absorption lines mean the source is "missing" energy rather than energy being selectively absorbed by a cooler intervening gas.
 
 ---
 
 ## Problem 9 — Why Skies Are Red at Sunset
 
-**Restatement:** Use Rayleigh scattering to explain the color change.
+<!-- Problem: Conceptual / Connection / O→M→I / Tools: Limiting-Cases, Model-Inversion / ⭐⭐ -->
 
-**Key insight:** Scattering scales as $\lambda^{-4}$, so blue light is removed much more efficiently along a long atmospheric path.
+**Restatement:** Explain sunset colors using Rayleigh scattering.
 
-**Answer:** At sunset, sunlight travels through a **much longer** path in the atmosphere. Short wavelengths (blue) scatter away strongly because $\sigma \propto \lambda^{-4}$, leaving the direct sunlight depleted in blue and enriched in red/orange. At noon, the path is shorter, so less blue is removed and the Sun looks whiter.
+**Key insight:** Scattering probability scales as $\lambda^{-4}$, so short wavelengths scatter much more efficiently.
+
+**Answer:**
+
+**Rayleigh scattering intensity:**
+
+$$I_{\text{scattered}} \propto \lambda^{-4}$$
+
+This means blue light ($\lambda \sim 450$ nm) scatters about $(700/450)^4 \approx 6$ times more than red light ($\lambda \sim 700$ nm).
+
+**At noon (short path through atmosphere):**
+
+- Sunlight passes through relatively little atmosphere
+- Some blue scatters away, but most direct sunlight remains nearly white (or slightly yellow)
+- The scattered blue light makes the sky blue
+
+**At sunset (long path through atmosphere):**
+
+- Sunlight travels through a **much longer** atmospheric path (grazing angle)
+- Blue light is **progressively scattered out** along the entire path
+- By the time light reaches your eye directly, most blue and even green has been removed
+- The remaining direct sunlight is enriched in red/orange wavelengths
+
+**Why $\lambda^{-4}$ makes this strong:**
+
+The fourth power is steep. Doubling the wavelength reduces scattering by $2^4 = 16$ times. This dramatic wavelength dependence means even modest increases in path length cause significant color shifts—blue disappears long before red.
+
+**Summary:**
+
+| Condition | Atmospheric Path | Direct Sun Color |
+|-----------|-----------------|------------------|
+| Noon | Short | White/yellowish |
+| Sunset | Very long | Red/orange |
 
 ---
 
 ## Problem 10 — Photon Energy from Wavelength
 
-**Given:** $\lambda = 600$ nm; $c = 3.00 \times 10^{10}$ cm/s; $h = 6.626 \times 10^{-27}$ erg·s.
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Unit-Conversion, Dimensional / ⭐⭐ -->
+
+**Given:**
+
+- Wavelength: $\lambda = 600$ nm (orange light, not green as stated)
+- Speed of light: $c = 3.00 \times 10^{10}$ cm/s
+- Planck's constant: $h = 6.626 \times 10^{-27}$ erg·s
 
 **Find:** Frequency and photon energy.
 
-**Equation:**
+**Equations:**
 
-$$\nu = c/\lambda$$, $E = h\nu$.
+$$\nu = \frac{c}{\lambda}, \qquad E = h\nu = \frac{hc}{\lambda}$$
 
 **Steps:**
 
-- (a) $600$ nm $= 6000$ Å $= 6.0 \times 10^{-5}$ cm.
-- (b) $\nu = (3.00 \times 10^{10}\,\mathrm{cm/s})/(6.0 \times 10^{-5}\,\mathrm{cm}) = 5.0 \times 10^{14}\,\mathrm{s^{-1}}$.
-- (c) $E = h\nu = (6.626 \times 10^{-27})(5.0 \times 10^{14}) \approx 3.31 \times 10^{-12}$ erg.
+**(a) Convert wavelength to cm (identity trick):**
 
-**Unit check:** (cm/s)/cm gives s$^{-1}$, and erg·s × s$^{-1}$ gives erg.
+$$\lambda = 600\,\text{nm} \times \frac{10^{-9}\,\text{m}}{1\,\text{nm}} \times \frac{10^2\,\text{cm}}{1\,\text{m}}$$
 
-**Sanity check:** Visible photons are a few eV, which is a few $\times 10^{-12}$ erg, so the scale is right.
+$$= 600 \times 10^{-9+2}\,\text{cm} = 600 \times 10^{-7}\,\text{cm} = 6.0 \times 10^{-5}\,\text{cm}$$
 
-**Answer:** $\nu \approx 5.0 \times 10^{14}$ s$^{-1}$; $E \approx 3.3 \times 10^{-12}$ erg.
+Also useful: $600$ nm $= 6000$ Å (since 1 nm = 10 Å)
+
+**Answer (a):** $\boxed{\lambda = 6.0 \times 10^{-5}\,\text{cm} = 6000\,\text{Å}}$
+
+**(b) Calculate frequency:**
+
+$$\nu = \frac{c}{\lambda} = \frac{3.00 \times 10^{10}\,\text{cm/s}}{6.0 \times 10^{-5}\,\text{cm}}$$
+
+$$= \frac{3.00}{6.0} \times 10^{10-(-5)}\,\text{s}^{-1} = 0.5 \times 10^{15}\,\text{s}^{-1} = 5.0 \times 10^{14}\,\text{Hz}$$
+
+**Answer (b):** $\boxed{\nu = 5.0 \times 10^{14}\,\text{Hz}}$
+
+**(c) Calculate photon energy:**
+
+$$E = h\nu = (6.626 \times 10^{-27}\,\text{erg}\cdot\text{s})(5.0 \times 10^{14}\,\text{s}^{-1})$$
+
+$$= 6.626 \times 5.0 \times 10^{-27+14}\,\text{erg} = 33.1 \times 10^{-13}\,\text{erg}$$
+
+$$= 3.3 \times 10^{-12}\,\text{erg}$$
+
+**Answer (c):** $\boxed{E \approx 3.3 \times 10^{-12}\,\text{erg}}$
+
+**Unit check:**
+
+- $[\nu] = [c/\lambda] = [LT^{-1}]/[L] = [T^{-1}]$ (frequency) $\checkmark$
+- $[E] = [h\nu] = [ML^2T^{-1}][T^{-1}] = [ML^2T^{-2}]$ (energy) $\checkmark$
+
+**Sanity check:**
+
+Visible light photons have energies of a few eV. Converting:
+
+$$1\,\text{eV} = 1.6 \times 10^{-12}\,\text{erg}$$
+
+$$E = \frac{3.3 \times 10^{-12}\,\text{erg}}{1.6 \times 10^{-12}\,\text{erg/eV}} \approx 2.1\,\text{eV}$$
+
+This is correct for orange/red visible light (visible photons range from about 1.8–3.1 eV). $\checkmark$
 
 ---

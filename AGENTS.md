@@ -13,6 +13,17 @@ This repo is a Quarto website + RevealJS slide system for **ASTR 201: Astronomy 
 
 - **Emdashes:** Use spaces around emdashes: `x — y` not `x—y`
 
+## Math Typesetting (Non‑Negotiable)
+
+- Never use `\\` inside inline math (`$...$`) in Quarto body text.
+- `\\` is allowed only when required in **YAML strings** (e.g., to preserve LaTeX line breaks in YAML metadata) or in **display math** environments.
+- Long or multi-step equations must be in display math, split across multiple lines with `aligned`.
+- Use `\frac{...}{...}` for fractions (no slash forms like `GM/r` in final work).
+- Use `\text{...}` for **text subscripts** (e.g., `v_{\text{esc}}`, `T_{\text{eff}}`).
+- Final numeric answers must be boxed with units, e.g. `\boxed{x = y\ \text{units}}`.
+- Show unit cancellation explicitly in display math, not inline.
+- Add a blank line between `Answer:` and any list so Quarto renders bullets correctly.
+
 ## Non‑Negotiables (Session Discipline)
 
 - Activate the course conda environment before running repo commands: `conda activate astro`. If `conda`/`astro` isn’t available in this shell, stop and ask (don’t guess paths).

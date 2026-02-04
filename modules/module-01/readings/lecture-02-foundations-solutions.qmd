@@ -118,19 +118,59 @@ module: "1 - Foundations"
 
 **Find:** $P$ or $a$ by scaling.
 
-**Equation:** $P \propto a^{3/2}$.
+**Equation (scaling form):**
+
+$$
+\frac{P}{1\ \text{yr}} = \left(\frac{a}{1\ \text{AU}}\right)^{3/2}
+$$
 
 **Steps:**
-- (a) $P = a^{3/2} = 30^{3/2} \approx 30\sqrt{30} \approx 30 \times 5.48 \approx 1.6 \times 10^2$ yr.
-- (b) $a = P^{2/3} = 8^{2/3} = (2^3)^{2/3} = 4$ AU.
-- (c) $P = 40^{3/2} \approx 40\sqrt{40} \approx 40 \times 6.32 \approx 2.5 \times 10^2$ yr.
-- (d) Pluto's period is ~248 yr at 40 AU, consistent.
+
+**(a)** For $a = 30\ \text{AU}$:
+
+$$
+\frac{P}{1\ \text{yr}} = \left(30\right)^{3/2}
+= 30\sqrt{30}
+\approx 30 \times 5.48
+\approx 1.6 \times 10^2
+$$
+
+$$
+P \approx 1.6 \times 10^2\ \text{yr}
+$$
+
+**(b)** For $P = 8\ \text{yr}$:
+
+$$
+\left(\frac{a}{1\ \text{AU}}\right)^{3/2} = \frac{P}{1\ \text{yr}} = 8
+$$
+
+$$
+\frac{a}{1\ \text{AU}} = 8^{2/3} = (2^3)^{2/3} = 4
+\quad \Rightarrow \quad
+a \approx 4\ \text{AU}
+$$
+
+**(c)** For $a = 40\ \text{AU}$:
+
+$$
+\frac{P}{1\ \text{yr}} = 40^{3/2}
+= 40\sqrt{40}
+\approx 40 \times 6.32
+\approx 2.5 \times 10^2
+$$
+
+$$
+P \approx 2.5 \times 10^2\ \text{yr}
+$$
+
+**(d)** Pluto: $a \approx 40\ \text{AU}$ gives $P \approx 2.5 \times 10^2\ \text{yr}$, consistent with $\sim 248\ \text{yr}$.
 
 **Unit check:** Using AU and years keeps the Kepler scaling dimensionless.
 
-**Sanity check:** Pluto at 40 AU has $P \\approx 248$ yr, matching the estimate.
+**Sanity check:** Pluto at 40 AU has $P \approx 248$ yr, matching the estimate.
 
-**Answer:** Neptune ~$1.6 \times 10^2$ yr; $a \approx 4$ AU for $P=8$ yr; $P \approx 2.5 \times 10^2$ yr at 40 AU.
+**Answer:** $\boxed{P \approx 1.6 \times 10^2\ \text{yr}}$; $\boxed{a \approx 4\ \text{AU}}$ for $P=8\ \text{yr}$; $\boxed{P \approx 2.5 \times 10^2\ \text{yr}}$ at $a=40\ \text{AU}$.
 
 ---
 

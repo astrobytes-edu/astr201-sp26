@@ -15,35 +15,53 @@ module: "Module 1 — Spoiler Alerts + Foundations + Gravity & Orbits"
 **Grade memo note:** Use these to write your reflection (what you got right, what broke, and what you will do differently next time).
 :::
 
+---
+
 ## Problem 1 — Observable vs. Model-Dependent
+
+<!-- Problem: Conceptual / Connection / O→M→I / Tools: Model-Inversion, Uncertainty/Assumptions / ⭐⭐ -->
 
 **Restatement:** Critique the claim that TRAPPIST-1e's temperature was measured directly.
 
 **Key insight:** Temperature is inferred from measured spectra/flux and a physical model (blackbody or energy balance).
 
-**Answer:** Astronomers do **not** measure temperature directly. They measure **fluxes and spectra** (wavelength-dependent brightness). A model (blackbody fit, or energy-balance with albedo and stellar flux) converts those measurements into an inferred temperature. The statement should read: "We measured the planet's spectrum/flux and inferred a temperature using a model."
+**Answer:**
 
-**Common misconception:** Treating a model output as a direct measurement.
+Astronomers do **not** measure temperature directly. They measure **fluxes and spectra** (wavelength-dependent brightness). A model (blackbody fit, or energy-balance with albedo and stellar flux) converts those measurements into an inferred temperature.
+
+The statement should read: "We measured the planet's spectrum/flux and inferred a temperature of 255 K using a model."
+
+**Common misconception:** Treating a model output (temperature) as a direct measurement.
 
 ---
 
 ## Problem 2 — Empirical vs. Physical
 
+<!-- Problem: Conceptual / Connection / O→M→I / Tools: Model-Inversion / ⭐⭐ -->
+
 **Restatement:** Distinguish empirical vs physical laws and give an example.
 
 **Key insight:** Empirical laws describe patterns in data; physical laws explain the mechanisms producing those patterns.
 
-**Answer:** An **empirical law** summarizes what data show (e.g., Kepler's $P^2 \propto a^3$). A **physical law** explains why (Newton's gravity and circular motion). The distinction matters because physical laws predict new situations beyond the original data, while empirical laws do not guarantee correct extrapolation.
+**Answer:**
+
+**(a)** An **empirical law** summarizes what data show without explaining why. A **physical law** explains the underlying mechanism.
+
+**(b)** Example from lecture: **Kepler's Third Law** ($P^2 \propto a^3$) is empirical—it describes orbital patterns. **Newton's gravity** ($F = GMm/r^2$ combined with circular motion) is physical—it explains *why* $P^2 \propto a^3$.
+
+**(c)** The distinction matters because:
+
+- Empirical laws may fail outside the original data range
+- Physical laws predict new situations and connect to deeper principles
+- Knowing the physical mechanism lets us extrapolate with confidence
 
 **Common misconception:** Assuming empirical patterns are explanations.
 
 ---
 
-## Calculation
-
----
-
 ## Problem 3 — Dimensional Analysis Check
+
+<!-- Problem: Calculation / Application / — / Tools: Dimensional / ⭐⭐ -->
 
 **Restatement:** Decide whether each proposed equation has the correct dimensions.
 
@@ -51,10 +69,35 @@ module: "Module 1 — Spoiler Alerts + Foundations + Gravity & Orbits"
 
 **Answer:**
 
-- (a) $v = \sqrt{\frac{GM}{r}}$ is valid: $[\frac{GM}{r}] = [L^2T^{-2}]$.
-- (b) $E = mv$ is invalid: $[mv] = [MLT^{-1}]$, not energy.
-- (c) $U = GMm/r^2$ is invalid: $[GMm/r^2] = [ML^2T^{-2}]/L = [MLT^{-2}]$.
-- (d) $P = \rho v^2$ is valid: $[\rho v^2] = [ML^{-3}][L^2T^{-2}] = [ML^{-1}T^{-2}]$.
+**(a)** $v = \sqrt{GM/r}$
+
+First, we need $[G]$. From $F = GMm/r^2$:
+$$[G] = \frac{[F][r^2]}{[M][m]} = \frac{[MLT^{-2}][L^2]}{[M^2]} = [M^{-1}L^3T^{-2}]$$
+
+Now check the equation:
+$$\left[\frac{GM}{r}\right] = \frac{[M^{-1}L^3T^{-2}][M]}{[L]} = \frac{[L^3T^{-2}]}{[L]} = [L^2T^{-2}]$$
+
+$$[v] = \sqrt{[L^2T^{-2}]} = [LT^{-1}] \quad \checkmark$$
+
+**Valid:** the dimensions match velocity.
+
+**(b)** $E = mv$
+
+$$[mv] = [M][LT^{-1}] = [MLT^{-1}]$$
+
+**Invalid:** Energy must have dimensions $[ML^2T^{-2}]$, not $[MLT^{-1}]$. This expression has dimensions of momentum, not energy. The correct kinetic energy formula is $E = \frac{1}{2}mv^2$.
+
+**(c)** $U = GMm/r^2$
+
+$$\left[\frac{GMm}{r^2}\right] = \frac{[M^{-1}L^3T^{-2}][M][M]}{[L^2]} = \frac{[ML^3T^{-2}]}{[L^2]} = [MLT^{-2}]$$
+
+**Invalid:** Energy must have dimensions $[ML^2T^{-2}]$, not $[MLT^{-2}]$. This expression has dimensions of force, not energy. The correct gravitational potential energy is $U = -GMm/r$ (with one power of $r$ in the denominator, not two).
+
+**(d)** $P = \rho v^2$
+
+$$[\rho v^2] = [ML^{-3}][L^2T^{-2}] = [ML^{-1}T^{-2}]$$
+
+**Valid:** Pressure has dimensions $[ML^{-1}T^{-2}]$ (force per area = $[MLT^{-2}]/[L^2]$). This is the form of ram pressure or dynamic pressure.
 
 **Common misconception:** Assuming any formula with the "right" symbols is correct.
 
@@ -62,167 +105,455 @@ module: "Module 1 — Spoiler Alerts + Foundations + Gravity & Orbits"
 
 ## Problem 4 — The Dimensions of $\sigma$
 
-**Given:** $L = 4\pi R^2 \sigma T^4$.
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Dimensional, Unit-Conversion / ⭐⭐ -->
 
-**Find:** Dimensions and CGS conversion for $\sigma$.
+**Given:** The Stefan-Boltzmann Law: $L = 4\pi R^2 \sigma T^4$
+
+**Find:** (a) Dimensions of $\sigma$; (b) verify CGS unit; (c) convert SI to CGS
 
 **Equation:**
 
-$$\sigma = L/(4\pi R^2 T^4)$$
+Rearranging for $\sigma$:
+$$\sigma = \frac{L}{4\pi R^2 T^4}$$
 
 **Steps:**
 
-- $[L] = [ML^2T^{-3}]$, so $[\sigma] = [ML^2T^{-3}]/[L^2\Theta^4] = [MT^{-3}\Theta^{-4}]$.
-- CGS unit: erg s$^{-1}$ cm$^{-2}$ K$^{-4}$.
-- Convert SI to CGS: $5.67 \times 10^{-8}$ W m$^{-2}$ K$^{-4}$.
-  - $1$ W = $10^7$ erg/s, $1$ m$^{-2} = 10^{-4}$ cm$^{-2}$.
-  - Multiply by $10^7 \times 10^{-4} = 10^3$.
+**(a) Derive the dimensions of $\sigma$:**
 
-**Unit check:** $[\sigma] = [MT^{-3}\Theta^{-4}]$ and CGS units erg s$^{-1}$ cm$^{-2}$ K$^{-4}$ match.
+Luminosity is energy per time (power):
+$$[L] = \frac{[E]}{[T]} = \frac{[ML^2T^{-2}]}{[T]} = [ML^2T^{-3}]$$
 
-**Sanity check:** The CGS value is $10^3$ times the SI value, as expected.
+Now find $[\sigma]$:
+$$[\sigma] = \frac{[L]}{[R^2][T^4]} = \frac{[ML^2T^{-3}]}{[L^2][\Theta^4]} = [MT^{-3}\Theta^{-4}]$$
 
-**Answer:** $\sigma = 5.67 \times 10^{-5}$ erg s$^{-1}$ cm$^{-2}$ K$^{-4}$.
+**Answer (a):** $[\sigma] = [MT^{-3}\Theta^{-4}]$
+
+**(b) Verify the CGS unit:**
+
+The CGS unit is $\text{erg}\,\text{s}^{-1}\,\text{cm}^{-2}\,\text{K}^{-4}$.
+
+Let's check: $\text{erg} = \text{g}\,\text{cm}^2\,\text{s}^{-2}$, so:
+$$\text{erg}\,\text{s}^{-1}\,\text{cm}^{-2}\,\text{K}^{-4} = \frac{\text{g}\,\text{cm}^2\,\text{s}^{-2}}{\text{s}\,\text{cm}^2\,\text{K}^4} = \text{g}\,\text{s}^{-3}\,\text{K}^{-4}$$
+
+This matches $[MT^{-3}\Theta^{-4}]$. $\checkmark$
+
+**(c) Convert SI to CGS using the identity trick:**
+
+$$\sigma_{\text{SI}} = 5.67 \times 10^{-8}\,\text{W}\,\text{m}^{-2}\,\text{K}^{-4}$$
+
+**Step 1:** Convert W to erg/s.
+
+Since $1\,\text{J} = 10^7\,\text{erg}$ and $1\,\text{W} = 1\,\text{J/s}$:
+$$1\,\text{W} = 10^7\,\text{erg/s}$$
+
+**Step 2:** Convert $\text{m}^{-2}$ to $\text{cm}^{-2}$.
+
+Since $1\,\text{m} = 100\,\text{cm}$, we have $1\,\text{m}^2 = 10^4\,\text{cm}^2$, so:
+$$1\,\text{m}^{-2} = \frac{1}{1\,\text{m}^2} = \frac{1}{10^4\,\text{cm}^2} = 10^{-4}\,\text{cm}^{-2}$$
+
+**Step 3:** Chain the conversions (identity trick):
+
+$$\sigma = 5.67 \times 10^{-8}\,\text{W}\,\text{m}^{-2}\,\text{K}^{-4} \times \frac{10^7\,\text{erg/s}}{1\,\text{W}} \times \frac{10^{-4}\,\text{cm}^{-2}}{1\,\text{m}^{-2}}$$
+
+$$= 5.67 \times 10^{-8} \times 10^{7} \times 10^{-4}\,\text{erg}\,\text{s}^{-1}\,\text{cm}^{-2}\,\text{K}^{-4}$$
+
+$$= 5.67 \times 10^{-8+7-4}\,\text{erg}\,\text{s}^{-1}\,\text{cm}^{-2}\,\text{K}^{-4}$$
+
+$$= 5.67 \times 10^{-5}\,\text{erg}\,\text{s}^{-1}\,\text{cm}^{-2}\,\text{K}^{-4}$$
+
+**Unit check:** Starting with $[MT^{-3}\Theta^{-4}]$ in SI, we converted each unit properly with factors that multiply to give the CGS result.
+
+**Sanity check:** The exponent went from $-8$ (SI) to $-5$ (CGS), a factor of $10^3$. Since we multiplied by $10^7$ (W→erg/s) and $10^{-4}$ (m$^{-2}$→cm$^{-2}$), we get $10^{7-4} = 10^3$. $\checkmark$
+
+**Answer (c):** $\boxed{\sigma = 5.67 \times 10^{-5}\,\text{erg}\,\text{s}^{-1}\,\text{cm}^{-2}\,\text{K}^{-4}}$
 
 ---
 
 ## Problem 5 — Kepler Scaling
 
-**Given:** $P^2 \propto a^3$ (years, AU).
+<!-- Problem: Calculation:Full / Application / — / Tools: Scaling/Ratio / ⭐⭐ -->
 
-**Find:** $P$ or $a$ by scaling.
+**Given:** Kepler's Third Law in scaling form: $P^2 \propto a^3$ (with $P$ in years and $a$ in AU for Sun-orbiting objects).
+
+**Find:** Orbital periods and semi-major axes by scaling.
 
 **Equation:**
 
-$$P \propto a^{3/2}$$
+Using Earth as the reference ($P_\oplus = 1$ yr, $a_\oplus = 1$ AU):
+$$\frac{P}{1\,\text{yr}} = \left(\frac{a}{1\,\text{AU}}\right)^{3/2}$$
 
-Let’s unpack each piece:
+Let's unpack each piece:
+
 - $P$: orbital period (years)
 - $a$: semi-major axis (AU)
-
-**What this equation says:** doubling orbital size makes the period grow by $2^{3/2}$, not linearly.
+- Exponent $3/2$: period grows *faster* than distance because farther objects also move slower
 
 **Steps:**
 
-- (a) $P = a^{3/2} = 30^{3/2} \approx 30\sqrt{30} \approx 30 \times 5.48 \approx 1.6 \times 10^2$ yr.
-- (b) $a = P^{2/3} = 8^{2/3} = (2^3)^{2/3} = 4$ AU.
-- (c) $P = 40^{3/2} \approx 40\sqrt{40} \approx 40 \times 6.32 \approx 2.5 \times 10^2$ yr.
-- (d) Pluto's period is ~248 yr at 40 AU, consistent.
+**(a) Neptune at $a = 30$ AU:**
 
-**Unit check:** Using AU and years keeps the Kepler scaling dimensionless.
+$$\frac{P}{1\,\text{yr}} = (30)^{3/2} = 30 \times \sqrt{30}$$
 
-**Sanity check:** Pluto at 40 AU has $P \approx 248$ yr, matching the estimate.
+Estimate $\sqrt{30} \approx 5.48$:
+$$P \approx 30 \times 5.48 \approx 164\,\text{yr}$$
 
-**Answer:** Neptune ~$1.6 \times 10^2$ yr; $a \approx 4$ AU for $P=8$ yr; $P \approx 2.5 \times 10^2$ yr at 40 AU.
+**Answer (a):** $\boxed{P_{\text{Neptune}} \approx 1.6 \times 10^2\,\text{yr}}$ (actual: 165 yr)
+
+**(b) Asteroid with $P = 8$ yr:**
+
+$$\left(\frac{a}{1\,\text{AU}}\right)^{3/2} = 8$$
+
+$$\frac{a}{1\,\text{AU}} = 8^{2/3} = (2^3)^{2/3} = 2^2 = 4$$
+
+**Answer (b):** $\boxed{a \approx 4\,\text{AU}}$
+
+**(c) Kuiper Belt object at $a = 40$ AU:**
+
+$$\frac{P}{1\,\text{yr}} = (40)^{3/2} = 40 \times \sqrt{40}$$
+
+Estimate $\sqrt{40} \approx 6.32$:
+$$P \approx 40 \times 6.32 \approx 253\,\text{yr}$$
+
+**Answer (c):** $\boxed{P \approx 2.5 \times 10^2\,\text{yr}}$
+
+**(d) Sanity check:** Pluto orbits at $\sim 40$ AU with $P \approx 248$ yr. Our estimate of $\sim 253$ yr agrees within a few percent. $\checkmark$
+
+**Unit check:** Using AU and years keeps the Kepler scaling dimensionless (the ratio form cancels units).
 
 ---
 
 ## Problem 6 — Fermi Estimation: Light-Minutes
 
-**Given:** $c \approx 3 \times 10^5$ km/s.
+<!-- Problem: Calculation:Full / Application / — / Tools: Order-of-Magnitude, Unit-Conversion / ⭐⭐ -->
 
-**Find:** Light-minutes for AU and 5 AU.
+**Given:** Speed of light $c = 3 \times 10^{10}$ cm/s $= 3 \times 10^5$ km/s
 
-**Equation:**
+**Find:** Light-travel distances in practical terms.
 
-$$d = vt$$ or $t = d/v$.
+**Equation:** $d = ct$ (distance = speed × time)
 
 **Steps:**
 
-- (a) In 1 s: $3 \times 10^5$ km. In 1 min: $3 \times 10^5 \times 60 = 1.8 \times 10^7$ km.
-- (b) $1.5 \times 10^8$ km / $1.8 \times 10^7$ km/min $\approx 8.3$ min.
-- (c) $5$ AU $\approx 5 \times 8.3 \approx 41.5$ min.
+**(a) Distance traveled in 1 s and 1 min:**
 
-**Unit check:** km divided by (km/min) gives minutes.
+In 1 second:
+$$d = c \times 1\,\text{s} = 3 \times 10^5\,\text{km}$$
 
-**Sanity check:** 1 AU should be a few minutes of light-travel time; 8–9 minutes is expected.
+In 1 minute ($= 60$ s):
+$$d = 3 \times 10^5\,\text{km/s} \times 60\,\text{s} = 1.8 \times 10^7\,\text{km}$$
 
-**Answer:** 1 AU is ~8.3 light-minutes; 5 AU is ~42 light-minutes.
+**Answer (a):** Light travels $\boxed{3 \times 10^5\,\text{km}}$ in 1 s and $\boxed{1.8 \times 10^7\,\text{km}}$ in 1 min.
 
----
+**(b) Earth-Sun distance in light-minutes:**
 
-## Synthesis
+$$t = \frac{d}{c} = \frac{1.5 \times 10^8\,\text{km}}{1.8 \times 10^7\,\text{km/min}} = \frac{1.5}{1.8} \times 10^{8-7}\,\text{min} \approx 8.3\,\text{min}$$
+
+**Answer (b):** $\boxed{1\,\text{AU} \approx 8.3\,\text{light-minutes}}$
+
+**(c) Jupiter at 5 AU in light-minutes:**
+
+Since 1 AU $\approx 8.3$ light-minutes:
+$$5\,\text{AU} = 5 \times 8.3 \approx 42\,\text{light-minutes}$$
+
+**Answer (c):** $\boxed{5\,\text{AU} \approx 42\,\text{light-minutes}}$
+
+**Unit check:** (km)/(km/min) = min $\checkmark$
+
+**Sanity check:** The Sun is "about 8 light-minutes away" is a well-known fact—our answer matches. $\checkmark$
 
 ---
 
 ## Problem 7 — The Centripetal Force Misconception
 
-**Restatement:** Correct the "two forces" statement.
+<!-- Problem: Conceptual / Connection / O→M→I / Tools: Force/Balance / ⭐⭐ -->
 
-**Key insight:** "Centripetal force" is not an extra force; it is the net inward force required for circular motion.
+**Restatement:** Correct the "two forces" statement about orbits.
+
+**Key insight:** "Centripetal force" is not an extra force; it is the *role* played by the net inward force required for circular motion.
 
 **Answer:**
 
-- (a) The statement double-counts forces. Gravity provides the inward (centripetal) acceleration.
-- (b) Correct version: The planet experiences **one** force (gravity), which provides the centripetal acceleration.
-- (c) "Centrifugal force" is a fictitious force that appears only in a rotating reference frame.
+**(a) What's wrong:**
 
-**Common misconception:** Treating centripetal force as a separate physical interaction.
+The statement double-counts forces. Gravity **is** the centripetal force—it's the force that causes the inward acceleration. There are not two separate forces.
+
+**(b) Correct version:**
+
+"A planet in orbit experiences **one** force: gravity pulling it toward the Sun. This gravitational force provides the centripetal acceleration needed for circular motion."
+
+**(c) When "centrifugal force" is valid:**
+
+"Centrifugal force" is a **fictitious force** that appears only in a **rotating (non-inertial) reference frame**. If you sit on the planet and use the planet as your reference frame, you feel like you're being pushed outward—but this is an artifact of using an accelerating reference frame, not a real force.
+
+In an inertial (non-rotating) frame, only gravity acts.
+
+**Common misconception:** Treating "centripetal force" as a separate physical interaction rather than a description of the net force's role.
 
 ---
 
 ## Problem 8 — Exoplanet Orbital Velocities
 
-**Restatement:** Use ratios with Earth as a reference.
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Scaling/Ratio / ⭐⭐ -->
 
-**Key elements:** $v \propto \sqrt{M/r}$.
+**Given:** Orbital velocity formula $v = \sqrt{GM/r}$; Earth as reference with $v_\oplus = 30$ km/s.
 
-**Sample response:**
+**Find:** Orbital velocities using the ratio method.
 
-- (a) $v/v_\oplus = \sqrt{1/0.05} = \sqrt{20} \approx 4.47$.
-- (b) $v/v_\oplus = \sqrt{0.25/0.25} = 1$.
-- (c) Hot Jupiter is much faster; the red dwarf case is comparable to Earth because mass and radius scale equally.
+**Equation:**
 
-**Grading guidance:** Full credit requires correct scaling and a physical sanity check.
+$$v = \sqrt{\frac{GM}{r}}$$
 
----
+For ratios with Earth as reference:
+$$\frac{v}{v_\oplus} = \sqrt{\frac{M/M_\odot}{r/1\,\text{AU}}}$$
 
-<!-- Challenge: yes -->
+**Steps:**
+
+**(a) Hot Jupiter at $r = 0.05$ AU around a Sun-like star ($M = M_\odot$):**
+
+$$\frac{v}{v_\oplus} = \sqrt{\frac{1}{0.05}} = \sqrt{20} \approx 4.47$$
+
+**Answer (a):** $\boxed{v \approx 4.5\,v_\oplus}$ (about 135 km/s)
+
+**(b) Planet at $r = 0.25$ AU around a red dwarf ($M = 0.25\,M_\odot$):**
+
+$$\frac{v}{v_\oplus} = \sqrt{\frac{0.25}{0.25}} = \sqrt{1} = 1$$
+
+**Answer (b):** $\boxed{v \approx 1\,v_\oplus}$ (about 30 km/s)
+
+**(c) Sanity check:**
+
+- **Hot Jupiter:** Much faster makes sense—it's very close to the star, so gravity is much stronger, requiring higher speed for circular orbit. $\checkmark$
+- **Red dwarf planet:** The mass and radius both decreased by the same factor (4×), so their effects on orbital velocity cancel. The planet orbits at Earth-like speed despite the very different system. $\checkmark$
+
+**Unit check:** The ratios are dimensionless; multiplying by $v_\oplus$ gives velocity. $\checkmark$
 
 ---
 
 ## Problem 9 — Bound or Unbound?
 
-**Given:** Comet speed $v = 50$ km/s at 1 AU.
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Energy / ⭐⭐ -->
 
-**Find:** Bound or unbound.
+**Given:** Comet at 1 AU from the Sun traveling at 50 km/s.
+
+**Find:** Whether the comet is gravitationally bound (will it escape?).
 
 **Equation:**
 
-$$v_{esc} = \sqrt{\frac{2GM}{r}}$$
+Escape velocity at distance $r$:
+$$v_{\text{esc}} = \sqrt{\frac{2GM_\odot}{r}}$$
 
-at 1 AU, $v_{esc} \approx 42$ km/s.
+At 1 AU: $v_{\text{esc}} = \sqrt{2}\,v_{\text{orb}} = \sqrt{2} \times 30\,\text{km/s} \approx 42\,\text{km/s}$
 
-**Steps:** Since $50$ km/s $> 42$ km/s, the comet exceeds escape speed.
+**Steps:**
 
-**Unit check:** Both speeds are in km/s.
+**(a) Compare comet speed to escape speed:**
 
-**Sanity check:** 50 km/s is also well above Earth's 30 km/s orbital speed.
+- Comet speed: $v = 50$ km/s
+- Escape speed at 1 AU: $v_{\text{esc}} \approx 42$ km/s
 
-**Answer:** The comet is unbound and will escape.
+Since $v = 50$ km/s $> v_{\text{esc}} = 42$ km/s, the comet has positive total energy.
 
----
+**Answer (a):** $\boxed{\text{The comet is unbound and will escape the Solar System.}}$
 
-## Synthesis
+**(b) Sanity check:**
+
+Earth's orbital velocity is 30 km/s. The escape velocity is $\sqrt{2} \times 30 \approx 42$ km/s. The comet at 50 km/s exceeds this by about 20%, confirming it's unbound.
+
+Another check: 50 km/s is well above typical planetary velocities, which makes sense for an escaping object. $\checkmark$
+
+**Unit check:** Both speeds are in km/s. $\checkmark$
 
 ---
 
 ## Problem 10 — Why White Dwarfs Get Smaller When They Gain Mass
 
-**Restatement:** Show why $R$ decreases as $M$ increases for white dwarfs.
+<!-- Problem: Synthesis / Connection / O→M→I / Tools: Dimensional, Force/Balance, Uncertainty/Assumptions / ⭐⭐⭐ -->
 
-**Key elements:**
+**Restatement:** Derive the white dwarf mass-radius relation $R \propto M^{-1/3}$ using dimensional analysis and pressure balance.
 
-- Degeneracy pressure scaling: $P_{deg} \propto \hbar^2 n^{5/3}/m_e$.
-- Electron density $n \propto \rho$ (via $n = \rho/(\mu_e m_p)$).
-- Gravitational pressure scaling: $P_{grav} \sim GM^2/R^4$.
-- Use $\rho \sim M/R^3$ to relate $P_{deg}$ to $M$ and $R$.
+---
 
-**Sample response:**
-From dimensional analysis, $P_{deg} \propto \hbar^2 n^{5/3}/m_e$. With $n \propto \rho$, we get $P_{deg} \propto \rho^{5/3}$. For a sphere, $\rho \propto M/R^3$, so $P_{deg} \propto M^{5/3}/R^5$. Gravitational pressure scales as $P_{grav} \propto GM^2/R^4$. Setting $P_{deg} \sim P_{grav}$ yields
+### Part A: Degeneracy Pressure from Dimensional Analysis
 
-$$\frac{M^{5/3}}{R^5} \propto \frac{M^2}{R^4} \Rightarrow R \propto M^{-1/3}.$$
+**Given:** Degeneracy pressure $P_{\text{deg}}$ depends on:
 
-Thus more massive white dwarfs are smaller. This result assumes non-relativistic degeneracy pressure and ignores composition-dependent constants.
+- Planck's constant $\hbar$ with $[\hbar] = [ML^2T^{-1}]$
+- Electron mass $m_e$ with $[m_e] = [M]$
+- Electron number density $n$ with $[n] = [L^{-3}]$
 
-**Grading guidance:** Full credit requires the scaling $R \propto M^{-1/3}$ and a correct explanation of why degeneracy pressure increases faster than gravity as density rises.
+**Step A1: Dimensions of pressure**
+
+Pressure is force per area:
+$$[P] = \frac{[F]}{[A]} = \frac{[MLT^{-2}]}{[L^2]} = [ML^{-1}T^{-2}]$$
+
+**Step A2: Set up the dimensional equation**
+
+Assume $P_{\text{deg}} \propto \hbar^a m_e^b n^c$:
+$$[ML^{-1}T^{-2}] = [ML^2T^{-1}]^a [M]^b [L^{-3}]^c$$
+
+Expand the right side:
+$$[ML^{-1}T^{-2}] = [M]^{a+b} [L]^{2a-3c} [T]^{-a}$$
+
+**Step A3: Match exponents**
+
+- **Mass:** $1 = a + b$
+- **Length:** $-1 = 2a - 3c$
+- **Time:** $-2 = -a \Rightarrow a = 2$
+
+From $a = 2$:
+
+- $b = 1 - a = 1 - 2 = -1$
+- $-1 = 2(2) - 3c = 4 - 3c \Rightarrow c = 5/3$
+
+**Step A4: Result**
+
+$$P_{\text{deg}} \propto \frac{\hbar^2}{m_e} n^{5/3}$$
+
+**Step A5: Interpretation**
+
+- Pressure increases with electron density—more electrons squeezed together resist compression more strongly.
+- The exponent $5/3 > 1$ means pressure rises *faster* than linearly with density—a small increase in density causes a large increase in degeneracy pressure. This is what makes white dwarfs stable.
+
+---
+
+### Part B: Linking Density to Mass and Radius
+
+**(i) Average mass density:**
+
+For a sphere of mass $M$ and radius $R$:
+$$\rho \sim \frac{M}{R^3}$$
+
+**Dimensional check:** $[M]/[L^3] = [ML^{-3}]$ $\checkmark$ (density)
+
+**(ii) Electron number density:**
+
+Electrons per volume is proportional to mass density divided by proton mass:
+$$n \propto \frac{\rho}{m_p} \propto \rho$$
+
+Since $m_p$ is a constant, for scaling purposes:
+$$n \propto \frac{M}{R^3}$$
+
+---
+
+### Part C: Gravitational Pressure
+
+The inward gravitational "pressure" scale is:
+$$P_{\text{grav}} \sim \frac{GM^2}{R^4}$$
+
+**(i) Dimensional verification:**
+
+$$\left[\frac{GM^2}{R^4}\right] = \frac{[M^{-1}L^3T^{-2}][M^2]}{[L^4]} = \frac{[ML^3T^{-2}]}{[L^4]} = [ML^{-1}T^{-2}] \quad \checkmark$$
+
+This has dimensions of pressure.
+
+**(ii) Physical interpretation:**
+
+- **$M^2$ scaling:** Gravitational pressure goes as $M^2$ because gravity is an interaction between the mass and itself—both the "weight" of material and the "source" of gravity scale with $M$.
+- **$R^{-4}$ scaling:** This comes from gravitational force ($\propto 1/R^2$) divided by area ($\propto R^2$), giving $1/R^4$. Smaller stars have enormously stronger gravitational compression.
+
+---
+
+### Part D: Pressure Balance and the Mass–Radius Relation
+
+**(i) Substitute the scalings:**
+
+From Part A: $P_{\text{deg}} \propto n^{5/3}$
+
+From Part B: $n \propto M/R^3$
+
+So:
+$$P_{\text{deg}} \propto \left(\frac{M}{R^3}\right)^{5/3} = \frac{M^{5/3}}{R^5}$$
+
+**(ii) Set up pressure balance:**
+
+For a stable white dwarf: $P_{\text{deg}} \sim P_{\text{grav}}$
+
+$$\frac{M^{5/3}}{R^5} \propto \frac{M^2}{R^4}$$
+
+Rearrange:
+$$\frac{M^{5/3}}{M^2} \propto \frac{R^5}{R^4}$$
+
+$$M^{5/3 - 2} \propto R^{5-4}$$
+
+$$M^{-1/3} \propto R$$
+
+Therefore:
+$$\boxed{R \propto M^{-1/3}}$$
+
+**(iii) Interpretation:**
+
+Adding mass to a white dwarf makes it **smaller**, not larger! This happens because:
+
+1. More mass means stronger gravity ($P_{\text{grav}} \propto M^2$)
+2. To balance this, the star must compress until degeneracy pressure catches up
+3. But degeneracy pressure depends on density ($\propto M/R^3$), not mass alone
+4. The only way to increase density enough to balance stronger gravity is to shrink the radius
+
+This is fundamentally different from normal matter, where adding mass makes objects larger.
+
+---
+
+### Part E: Numerical Scaling
+
+**Given reference values:**
+
+- $M_0 = 0.6\,M_\odot$ with $R_0 = 1\,R_\oplus$
+
+**(i) Radius of a $1.2\,M_\odot$ white dwarf:**
+
+Using $R \propto M^{-1/3}$:
+$$\frac{R}{R_0} = \left(\frac{M}{M_0}\right)^{-1/3} = \left(\frac{1.2}{0.6}\right)^{-1/3} = 2^{-1/3}$$
+
+$$2^{-1/3} = \frac{1}{2^{1/3}} = \frac{1}{1.26} \approx 0.79$$
+
+**Answer:** $\boxed{R \approx 0.8\,R_\oplus}$ — doubling the mass shrinks the radius by about 20%.
+
+**(ii) Approaching the Chandrasekhar limit ($1.4\,M_\odot$):**
+
+$$\frac{R}{R_0} = \left(\frac{1.4}{0.6}\right)^{-1/3} = (2.33)^{-1/3} \approx 0.75$$
+
+As mass approaches the Chandrasekhar limit, the radius shrinks toward zero according to this scaling. The white dwarf becomes increasingly compressed.
+
+**(iii) Relativistic limitation:**
+
+Our derivation assumed **non-relativistic** electrons. Near the Chandrasekhar limit:
+
+- Electrons are squeezed so tightly they move at speeds approaching $c$
+- Relativistic effects change the pressure-density relation
+- The pressure can no longer rise fast enough to balance gravity
+- The $R \propto M^{-1/3}$ scaling breaks down
+- At $M \approx 1.4\,M_\odot$, no stable equilibrium exists—the star must collapse (to a neutron star or undergo a Type Ia supernova)
+
+---
+
+### Part F: Synthesis and Reflection
+
+**(i) Physical ingredients:**
+
+- **Constants:** $\hbar$ (quantum mechanics), $m_e$ (electron mass), $G$ (gravity), $m_p$ (proton mass)
+- **Scaling laws:** $\rho \propto M/R^3$, pressure-density relations
+- **Physical principles:** Hydrostatic equilibrium (pressure balance), dimensional analysis, Pauli exclusion principle (source of degeneracy pressure)
+
+**(ii) The power of dimensional analysis:**
+
+Without solving any differential equations or using calculus, we derived one of the most important results in stellar astrophysics. Dimensional analysis reveals the underlying physics:
+
+- It identifies which quantities matter
+- It determines how they combine
+- It predicts scaling relationships
+
+The actual numerical coefficient requires detailed physics, but the **scaling** ($R \propto M^{-1/3}$) comes purely from dimensional consistency and pressure balance.
+
+**(iii) Connection to the course thesis (O→M→I):**
+
+| Stage | Content |
+|-------|---------|
+| **Measured (Given)** | White dwarf masses and radii from observations (binary orbits, gravitational redshifts) |
+| **Model** | Pressure balance between degeneracy pressure and gravity; dimensional analysis |
+| **Inferred** | The mass-radius relation $R \propto M^{-1/3}$; existence of a maximum mass (Chandrasekhar limit) |
+
+This illustrates the course thesis: we cannot directly "see" inside a white dwarf, but by combining observations with physical models, we infer its internal structure and fundamental limits.
+
+---
+
+*Note: The numerical coefficient in the exact mass-radius relation depends on composition and detailed physics, but our dimensional analysis captured the essential scaling.*
