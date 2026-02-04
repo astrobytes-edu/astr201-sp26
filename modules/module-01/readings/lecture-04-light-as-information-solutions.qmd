@@ -73,7 +73,7 @@ module: "1 - Foundations"
 **Equation:** $\nu = c/\lambda$, $E = h\nu$.
 
 **Steps:**
-- (a) $600$ nm $= 6000$ Å $= 6.0 \times 10^{-5}$ cm.
+- (a) $600$ nm $= 6.0 \times 10^{-5}$ cm.
 - (b) $\nu = (3.00 \times 10^{10}\,\mathrm{cm/s})/(6.0 \times 10^{-5}\,\mathrm{cm}) = 5.0 \times 10^{14}\,\mathrm{s^{-1}}$.
 - (c) $E = h\nu = (6.626 \times 10^{-27})(5.0 \times 10^{14}) \approx 3.31 \times 10^{-12}$ erg.
 
@@ -85,19 +85,19 @@ module: "1 - Foundations"
 
 ---
 
-### Problem 6: Wien’s Law Temperature
+### Problem 6: Wien's Law Temperature
 
-**Given:** $\lambda_{\text{peak}} = 7000$ Å; $b = 2.898 \times 10^7$ Å·K.
+**Given:** $\lambda_{\text{peak}} = 700$ nm; $b = 2.898 \times 10^6$ nm·K.
 
 **Find:** Temperature $T$.
 
 **Equation:** $\lambda_{\text{peak}} = bT^{-1}$.
 
-**Steps:** $T = b/\lambda_{\text{peak}} = (2.898 \times 10^7)/(7000) \approx 4.14 \times 10^3$ K.
+**Steps:** $T = b/\lambda_{\text{peak}} = (2.898 \times 10^6\ \text{nm·K})/(700\ \text{nm}) \approx 4.14 \times 10^3$ K.
 
-**Unit check:** Å·K / Å = K.
+**Unit check:** nm·K / nm = K.
 
-**Sanity check:** A 7000 Å peak is redder than the Sun, so $T$ should be lower than 5800 K.
+**Sanity check:** A 700 nm peak is redder than the Sun, so $T$ should be lower than 5800 K.
 
 **Answer:** $T \approx 4.1 \times 10^3$ K.
 
@@ -105,19 +105,19 @@ module: "1 - Foundations"
 
 ### Problem 7: Rayleigh Scattering Ratio
 
-**Given:** $\lambda_1 = 4500$ Å, $\lambda_2 = 9000$ Å, $\sigma \propto \lambda^{-4}$.
+**Given:** $\lambda_1 = 450$ nm, $\lambda_2 = 900$ nm, $\sigma \propto \lambda^{-4}$.
 
 **Find:** Scattering ratio.
 
 **Equation:** $\sigma_1/\sigma_2 = (\lambda_2/\lambda_1)^4$.
 
-**Steps:** $(9000/4500)^4 = 2^4 = 16$.
+**Steps:** $(900\ \text{nm}/450\ \text{nm})^4 = 2^4 = 16$.
 
 **Unit check:** Ratio is dimensionless.
 
 **Sanity check:** Shorter wavelengths should scatter much more strongly.
 
-**Answer:** 4500 Å light scatters **16×** more than 9000 Å light.
+**Answer:** 450 nm light scatters **16×** more than 900 nm light.
 
 ---
 
@@ -150,7 +150,7 @@ module: "1 - Foundations"
 **Key elements:** Wien’s law for temperature; absorption lines for composition; dust reddening shifts peaks to longer $\lambda$.
 
 **Sample response:**
-- (a) $\lambda_{\text{peak}} = 1.0\,\mu\text{m} = 10{,}000$ Å gives $T \approx 2.898 \times 10^7/10{,}000 \approx 2.9 \times 10^3$ K.
+- (a) $\lambda_{\text{peak}} = 1.0\,\mu\text{m} = 1000$ nm gives $T \approx (2.898 \times 10^6\ \text{nm·K})/(1000\ \text{nm}) \approx 2.9 \times 10^3$ K.
 - (b) Deep absorption lines imply a **cooler gas** in the star’s atmosphere absorbing specific wavelengths, revealing **composition**.
 - (c) Dust reddening makes the spectrum appear redder (peak at longer $\lambda$), so the **true temperature is higher** than the naive Wien estimate.
 
@@ -169,7 +169,7 @@ module: "1 - Foundations"
 
 ---
 
-### Problem 11: Doppler → Virial Mass (HW3 option)
+### Problem 11 (Challenge): Doppler → Virial Mass
 
 **Restatement:** Use Doppler broadening to estimate velocity dispersion, then apply a virial mass estimate and state assumptions.
 

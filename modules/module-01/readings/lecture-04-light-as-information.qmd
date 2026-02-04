@@ -16,7 +16,7 @@ learning-objectives:
   - Identify limiting cases of the Planck function (Rayleigh-Jeans, Wien tail)
   - Use Wien's law to estimate temperature from peak wavelength
   - Distinguish continuous, absorption, and emission spectra using Kirchhoff’s laws
-  - Explain Doppler shift qualitatively and connect line shifts to radial motion (preview)
+  - Explain Doppler shift qualitatively and connect line shifts to radial motion
   - Apply telescope scaling relations for collecting area and angular resolution
 Concept-Throughline:
   - Light is a messenger that carries encoded physics
@@ -42,7 +42,7 @@ After completing this reading, you should be able to:
 5. Identify **limiting cases** of the Planck function (Rayleigh-Jeans, Wien tail)
 6. Use **Wien's law** to estimate temperature from peak wavelength
 7. Distinguish **continuous, absorption, and emission spectra** (Kirchhoff’s laws)
-8. Explain **Doppler shift** qualitatively and connect line shifts to radial motion (preview)
+8. Explain **Doppler shift** qualitatively and connect line shifts to radial motion
 9. Apply telescope scaling relations for collecting area ($\propto D^2$) and angular resolution ($\propto \lambda/D$)
 
 ## Concept Throughline
@@ -78,7 +78,7 @@ By the end of this reading, you'll be able to look at a star and estimate its su
 
 ## Part 2: The Electromagnetic Spectrum
 
-**Unit convention:** We’ll use cgs units throughout (cm, s, erg, K). For convenience, optical/UV wavelengths will often be written in Å, where $1\ \text{Å} = 10^{-8}\ \text{cm}$.
+**Unit convention:** We'll use cgs units throughout (cm, s, erg, K). For convenience, optical/UV wavelengths will often be written in nm, where $1\ \text{nm} = 10^{-7}\ \text{cm}$.
 
 ### Light as a Wave
 
@@ -90,10 +90,10 @@ Unlike mechanical waves (water ripples, sound, a vibrating string), electromagne
 
 Both wave types share the same vocabulary:
 
-**Wavelength ($\lambda$):** The distance between successive wave crests. For a water wave, you could measure this with a ruler. For light, wavelengths range from kilometers (radio) down to smaller than an atomic nucleus (gamma rays). Optical and UV wavelengths are often written in Ångströms (Å), where $1\ \text{Å} = 10^{-8}\ \text{cm}$.
+**Wavelength ($\lambda$):** The distance between successive wave crests. For a water wave, you could measure this with a ruler. For light, wavelengths range from kilometers (radio) down to smaller than an atomic nucleus (gamma rays). Optical and UV wavelengths are often written in nanometers (nm), where $1\ \text{nm} = 10^{-7}\ \text{cm} = 10^{-9}\ \text{m}$.
 
-::: {.callout-note title="Glossary: The Ångström"}
-The **Ångström** (Å) is a unit of length equal to $10^{-10}$ m = $10^{-8}$ cm. It's roughly the diameter of a hydrogen atom (~1 Å) and is convenient for atomic and molecular scales. Named after Swedish physicist Anders Jonas Ångström (1814–1874), who used it to measure spectral line wavelengths. Visible light spans about 4000–7000 Å.
+::: {.callout-note title="Glossary: The Nanometer"}
+The **nanometer** (nm) is a unit of length equal to $10^{-9}$ m = $10^{-7}$ cm. It's roughly 10 times the diameter of a hydrogen atom and is convenient for optical and UV wavelengths. Visible light spans about 400–700 nm.
 :::
 
 **Frequency ($\nu$):** The number of oscillations per second, with units s$^{-1}$ (also called Hertz, Hz). If you watch a fixed point and count how many wave crests pass per second, that's the frequency.
@@ -157,11 +157,11 @@ The electromagnetic spectrum spans an enormous range of wavelengths, from radio 
 |------|------------------|-----------------|
 | Radio | $> 1$ cm | Cold gas, magnetic fields, pulsars |
 | Microwave | $0.1$ – $1$ cm | CMB, molecular clouds |
-| Infrared | $7000$ Å – $0.1$ cm | Warm dust, cool stars, exoplanets |
-| Visible | $4000$ – $7000$ Å | Stellar surfaces, nebulae |
-| Ultraviolet | $100$ – $4000$ Å | Hot stars, active galactic nuclei |
-| X-ray | $0.1$ – $100$ Å | Million-degree plasma, accretion disks |
-| Gamma | $< 0.1$ Å | Extreme events: supernovae, GRBs |
+| Infrared | $700$ nm – $0.1$ cm | Warm dust, cool stars, exoplanets |
+| Visible | $400$ – $700$ nm | Stellar surfaces, nebulae |
+| Ultraviolet | $10$ – $400$ nm | Hot stars, active galactic nuclei |
+| X-ray | $0.01$ – $10$ nm | Million-degree plasma, accretion disks |
+| Gamma | $< 0.01$ nm | Extreme events: supernovae, GRBs |
 
 **Key insight:** Different wavelengths reveal different physics. A galaxy looks completely different in radio vs. X-rays because you're seeing different physical components — cold gas vs. hot plasma. This is why astronomers build telescopes for every part of the spectrum.
 
@@ -198,14 +198,18 @@ Units work out. This is always worth checking.
 
 1. If wavelength doubles, photon energy ___?
 2. If wavelength is halved, photon energy ___?
-3. A photon has $\lambda = 2000$ Å. Another has $\lambda = 8000$ Å. How do their energies compare?
+3. A photon has $\lambda = 200$ nm. Another has $\lambda = 800$ nm. How do their energies compare?
 
 ::: {.callout-note collapse="true"}
 ## Answers
 1. **Halves** ($\times \frac{1}{2}$) — energy is inversely proportional to wavelength
 2. **Doubles** ($\times 2$) — halving $\lambda$ doubles $E$
-3. The 2000 Å photon has $4\times$ more energy: $E_{2000}/E_{8000} = \lambda_{8000}/\lambda_{2000} = 8000/2000 = 4$. This is why UV causes sunburns but red light doesn't.
+3. The 200 nm photon has $4\times$ more energy: $E_{200}/E_{800} = \lambda_{800}/\lambda_{200} = 800/200 = 4$. This is why UV causes sunburns but red light doesn't.
 :::
+:::
+
+::: {.callout-important title="Connection: Photon Energy and Atomic Transitions"}
+The fact that photon energy depends on wavelength ($E \propto \lambda^{-1}$) explains why atoms absorb and emit at *specific* wavelengths. An atom can only absorb a photon if its energy matches the gap between two allowed energy levels. This connects Part 2 (photons) directly to Part 6 (spectral lines) — and it's why Planck's quantum hypothesis was revolutionary.
 :::
 
 ---
@@ -271,7 +275,7 @@ Scattering is what happens when light is redirected into new directions. When th
 {{< include ../../../_includes/equations/rayleigh-scattering.qmd >}}
 {{< eqrefcard rayleigh-scattering >}}
 
-The $\lambda^{-4}$ dependence is steep. Blue light ($\lambda \approx 4500\ \text{Å} = 4.5\times10^{-5}\ \text{cm}$) scatters about $(6500/4500)^4 \approx 4$ times more than red light ($\lambda \approx 6500\ \text{Å} = 6.5\times10^{-5}\ \text{cm}$).
+The $\lambda^{-4}$ dependence is steep. Blue light ($\lambda \approx 450\ \text{nm} = 4.5\times10^{-5}\ \text{cm}$) scatters about $(650/450)^4 \approx 4$ times more than red light ($\lambda \approx 650\ \text{nm} = 6.5\times10^{-5}\ \text{cm}$).
 
 #### Why the Sky Is Blue
 
@@ -299,8 +303,8 @@ Dust between stars can also remove blue light more efficiently than red light. T
 **Rayleigh scattering:** $\sigma \propto \lambda^{-4}$
 
 1. If wavelength doubles, scattering cross-section ___?
-2. Blue light ($\lambda \approx 4500$ Å) vs. red light ($\lambda \approx 6500$ Å): which scatters more, and by what factor?
-3. If you could see in the infrared ($\lambda \approx 10{,}000$ Å), would the sky appear more blue or less blue than in visible light?
+2. Blue light ($\lambda \approx 450$ nm) vs. red light ($\lambda \approx 650$ nm): which scatters more, and by what factor?
+3. If you could see in the infrared ($\lambda \approx 1000$ nm), would the sky appear more blue or less blue than in visible light?
 
 ::: {.callout-note collapse="true"}
 ## Answers
@@ -310,9 +314,13 @@ Dust between stars can also remove blue light more efficiently than red light. T
 :::
 :::
 
+::: {.callout-important title="Connection: Why Infrared Astronomy Exists"}
+The $\lambda^{-4}$ dependence of scattering explains why astronomers build infrared telescopes. Dust grains in star-forming regions scatter and absorb visible light, hiding newborn stars. But infrared light ($\lambda \sim 1$–$10\ \mu$m) passes through with far less attenuation — at 2 μm, scattering is $(0.5/2)^4 = 1/256$ as strong as at visible wavelengths. JWST's infrared capability isn't just a technical choice; it's dictated by the physics of light-matter interaction.
+:::
+
 ---
 
-### Opacity and "How Far Light Gets" (Preview) {#sec-opacity-preview}
+### Opacity and "How Far Light Gets" {#sec-opacity-preview}
 
 In astronomy, we often care less about “what is an object made of?” and more about “how far can photons travel before they get absorbed or scattered?”
 
@@ -380,9 +388,9 @@ The figure shows blackbody spectra (called **Planck curves**) at three different
 2. **The total energy emitted increases dramatically with temperature.** The area under the curve (total power radiated) grows as $T^4$ — we'll quantify this with the Stefan-Boltzmann law in Module 2.
 
 ::: {.callout-tip title="Quick Check" collapse="true"}
-**Question:** A star's Planck curve peaks in the infrared at 9000 Å. Is this star hotter or cooler than the Sun (which peaks at $\sim 5000$ Å)?
+**Question:** A star's Planck curve peaks in the infrared at 900 nm. Is this star hotter or cooler than the Sun (which peaks at $\sim 500$ nm)?
 
-**Answer:** **Cooler.** Peak wavelength is inversely related to temperature ($\lambda_{\text{peak}} \propto T^{-1}$). Longer peak wavelength means lower temperature. This star is roughly $5000/9000 \approx 0.6\times$ the Sun's temperature, or about 3200 K.
+**Answer:** **Cooler.** Peak wavelength is inversely related to temperature ($\lambda_{\text{peak}} \propto T^{-1}$). Longer peak wavelength means lower temperature. This star is roughly $500/900 \approx 0.6\times$ the Sun's temperature, or about 3200 K.
 :::
 
 ---
@@ -422,6 +430,10 @@ This changes everything at short wavelengths. To emit a high-frequency (short-wa
 This quantum suppression cuts off the ultraviolet catastrophe and produces the correct blackbody spectrum.
 
 **Historical note:** Planck didn't fully believe his own solution — he hoped someone would find a classical explanation. It took Einstein (1905) to take quanta seriously, showing that light *itself* comes in discrete packets (photons) when explaining the photoelectric effect. This quantum revolution, born from trying to understand hot glowing objects, reshaped all of physics.
+
+::: {.callout-important title="Connection: Quantization Runs Through Everything"}
+Planck's quantum hypothesis doesn't just fix the UV catastrophe — it's the foundation for understanding *why atoms have discrete energy levels* (Part 6), *why spectral lines exist*, and ultimately *why stars don't collapse* (electron degeneracy pressure in Module 2). The same constant $h$ that appears here will reappear when we discuss stellar structure, white dwarfs, and neutron stars. Quantum mechanics isn't an add-on to astrophysics; it's woven into the fabric.
+:::
 
 ### The Planck Function: Meeting a Real Equation
 
@@ -553,11 +565,11 @@ The Planck function has a peak — a wavelength where emission is maximum. This 
 {{< include ../../../_includes/equations/wien-displacement.qmd >}}
 {{< eqrefcard wien-displacement >}}
 
-where $b = 0.2898\ \text{cm·K} = 2.898\times10^{7}\ \text{Å·K}$ is **Wien's displacement constant**.
+where $b = 0.2898\ \text{cm·K} = 2.898\times10^{6}\ \text{nm·K}$ is **Wien's displacement constant**.
 
 This can be rewritten as:
 
-$$\lambda_{\text{peak}} \cdot T = 0.2898\ \text{cm·K} = 2.898\times10^{7}\ \text{Å·K}$$
+$$\lambda_{\text{peak}} \cdot T = 0.2898\ \text{cm·K} = 2.898\times10^{6}\ \text{nm·K}$$
 
 Let's unpack Wien's law:
 
@@ -580,7 +592,7 @@ Let's unpack Wien's law:
 ## Answers
 1. **Halves** ($\times \frac{1}{2}$) — peak wavelength is inversely proportional to temperature
 2. **Doubles** ($\times 2$) — cooler means longer peak wavelength
-3. Star B peaks at $2\times$ the wavelength of Star A. If Star A peaks at 5000 Å (green), Star B peaks at 10,000 Å (infrared). This is why hot stars are blue and cool stars are red!
+3. Star B peaks at $2\times$ the wavelength of Star A. If Star A peaks at 500 nm (green), Star B peaks at 1000 nm (infrared). This is why hot stars are blue and cool stars are red!
 :::
 :::
 
@@ -604,11 +616,15 @@ where $b = hc/(4.965\, k_B) = 0.2898\ \text{cm·K}$.
 **Why this matters:** Wien's law isn't arbitrary — it follows directly from the physics of the Planck function. This is why calculus matters: it lets you extract simple, powerful results from complex equations.
 :::
 
+::: {.callout-important title="Connection: Wien's Law and Stellar Classification"}
+The OBAFGKM spectral sequence you'll learn in Module 2 is fundamentally a *temperature sequence*. O stars ($T \sim 40{,}000$ K) peak in the far UV; M stars ($T \sim 3000$ K) peak in the near-infrared. Wien's law is the physics behind the classification — color is temperature. When we add spectral lines to the picture, we refine this into a complete stellar taxonomy.
+:::
+
 ---
 
 ### Worked Example: The Sun
 
-**Problem:** The Sun's spectrum peaks at approximately 5000 Å (green-yellow light). What is the Sun's surface temperature?
+**Problem:** The Sun's spectrum peaks at approximately 500 nm (green-yellow light). What is the Sun's surface temperature?
 
 **Solution:**
 
@@ -618,11 +634,9 @@ $$T = \frac{b}{\lambda_{\text{peak}}}$$
 
 Substituting values:
 
-$$T = \frac{2.898 \times 10^{7}\ \text{Å·K}}{5000\ \text{Å}}$$
+$$T = \frac{2.898 \times 10^{6}\ \text{nm·K}}{500\ \text{nm}}$$
 
 $$T = 5796\ \text{K} \approx 5800\ \text{K}$$
-
-*(Conversion used: $1\ \text{Å} = 10^{-8}\ \text{cm}$.)*
 
 **Interpretation:** The Sun's surface temperature is about 5800 K. We determined this using only the color of sunlight — no thermometer required, no spacecraft needed. This is astronomical inference in action.
 
@@ -636,15 +650,15 @@ $$[T] = \frac{[\text{cm·K}]}{[\text{cm}]} = \text{K}\ \checkmark$$
 
 ### Worked Example: Comparing Stars
 
-**Problem:** Betelgeuse (a red supergiant in Orion) has a peak wavelength around 8300 Å. Rigel (a blue supergiant, also in Orion) peaks around 2400 Å. Calculate their surface temperatures.
+**Problem:** Betelgeuse (a red supergiant in Orion) has a peak wavelength around 830 nm. Rigel (a blue supergiant, also in Orion) peaks around 240 nm. Calculate their surface temperatures.
 
 **Solution:**
 
 **For Betelgeuse:**
-$$T_{\text{Betelgeuse}} = \frac{2.898 \times 10^{7}\ \text{Å·K}}{8300\ \text{Å}} = 3490\ \text{K} \approx 3500\ \text{K}$$
+$$T_{\text{Betelgeuse}} = \frac{2.898 \times 10^{6}\ \text{nm·K}}{830\ \text{nm}} = 3490\ \text{K} \approx 3500\ \text{K}$$
 
 **For Rigel:**
-$$T_{\text{Rigel}} = \frac{2.898 \times 10^{7}\ \text{Å·K}}{2400\ \text{Å}} = 12075\ \text{K} \approx 12000\ \text{K}$$
+$$T_{\text{Rigel}} = \frac{2.898 \times 10^{6}\ \text{nm·K}}{240\ \text{nm}} = 12075\ \text{K} \approx 12000\ \text{K}$$
 
 {{< fig betelgeuse-size >}}
 
@@ -654,11 +668,11 @@ $$T_{\text{Rigel}} = \frac{2.898 \times 10^{7}\ \text{Å·K}}{2400\ \text{Å}} =
 
 ### A Common Misconception: Peak ≠ Only
 
-**Question:** Rigel's peak wavelength (2400 Å) is in the ultraviolet. Why does Rigel appear blue-white to our eyes, not invisible?
+**Question:** Rigel's peak wavelength (240 nm) is in the ultraviolet. Why does Rigel appear blue-white to our eyes, not invisible?
 
 **Answer:** The Planck curve is *broad*. Rigel emits strongly across a wide range of wavelengths, including the entire visible spectrum. But it emits *more* blue light than red light (because the visible band is on the blue side of its peak). Our eyes perceive this imbalance as blue-white.
 
-Similarly, Betelgeuse peaks in the near-infrared (8300 Å), but it still emits plenty of visible light — just more red than blue. Hence its red color.
+Similarly, Betelgeuse peaks in the near-infrared (830 nm), but it still emits plenty of visible light — just more red than blue. Hence its red color.
 
 **The lesson:** Peak wavelength ≠ only wavelength. Blackbodies emit at all wavelengths; the peak just tells you where emission is *strongest*.
 
@@ -669,12 +683,12 @@ The peak depends on how you plot the spectrum. If you plot “per unit wavelengt
 :::
 
 ::: {.callout-tip title="Quick Check" collapse="true"}
-**Question:** An object has a peak wavelength of 10,000 Å. What is its temperature? Is this object hotter or cooler than the Sun?
+**Question:** An object has a peak wavelength of 1000 nm. What is its temperature? Is this object hotter or cooler than the Sun?
 
 ::: {.callout-note collapse="true"}
 ## Solution
 
-$$T = \frac{2.898 \times 10^{7}\ \text{Å·K}}{10{,}000\ \text{Å}} = 2898\ \text{K} \approx 2900\ \text{K}$$
+$$T = \frac{2.898 \times 10^{6}\ \text{nm·K}}{1000\ \text{nm}} = 2898\ \text{K} \approx 2900\ \text{K}$$
 
 This is about half the Sun's temperature (5800 K), so the object is **cooler** than the Sun.
 
@@ -714,7 +728,7 @@ $$\lambda_{\text{peak}} = \frac{0.2898\ \text{cm·K}}{210\ \text{K}} = 1.4 \time
 
 Mars peaks in the **thermal infrared** — invisible to human eyes but detectable by infrared telescopes. This is why spacecraft studying Mars carry infrared instruments: they can "see" the planet's own thermal emission, not just reflected sunlight.
 
-**Proportional check:** Mars ($T \approx 210$ K) is about 28× cooler than the Sun ($T \approx 5800$ K), so its peak wavelength is 28× longer: $5000\ \text{Å} \times 28 \approx 14\ \mu\text{m}$. ✓
+**Proportional check:** Mars ($T \approx 210$ K) is about 28× cooler than the Sun ($T \approx 5800$ K), so its peak wavelength is 28× longer: $500\ \text{nm} \times 28 \approx 14\ \mu\text{m}$. ✓
 :::
 :::
 
@@ -723,7 +737,7 @@ Mars peaks in the **thermal infrared** — invisible to human eyes but detectabl
 ::: {.callout-note}
 ## 🧠 Pause & Predict
 
-Before reading further: You observe a nebula that glows with a bright red color, but only at one specific wavelength (6563 Å). Meanwhile, a nearby star shows a smooth rainbow with dark lines at specific wavelengths.
+Before reading further: You observe a nebula that glows with a bright red color, but only at one specific wavelength (656.3 nm). Meanwhile, a nearby star shows a smooth rainbow with dark lines at specific wavelengths.
 
 1. Which object is producing an **emission** spectrum? Which is producing an **absorption** spectrum?
 2. What does this tell you about the physical conditions in each object?
@@ -753,7 +767,7 @@ For hydrogen, the approximate energy of level $n$ is:
 The ground state ($n=1$) is the most tightly bound. Higher $n$ levels have energies closer to zero, meaning the electron is less tightly bound and easier to ionize.
 
 ::: {.callout-note title="Mini-bridge: 13.6 eV has a wavelength"}
-The hydrogen ionization energy is 13.6 eV. Converting to a photon wavelength with $E = hc/\lambda$ gives $\lambda \approx 9.1\times10^{-6}\ \text{cm} \approx 910\ \text{Å}$ — the **Lyman limit**, in the ultraviolet. This is one reason UV astronomy requires the atmosphere to be “out of the way.”
+The hydrogen ionization energy is 13.6 eV. Converting to a photon wavelength with $E = hc/\lambda$ gives $\lambda \approx 9.1\times10^{-6}\ \text{cm} \approx 91\ \text{nm}$ — the **Lyman limit**, in the ultraviolet. This is one reason UV astronomy requires the atmosphere to be "out of the way."
 :::
 
 ### Photon Absorption and Emission
@@ -781,7 +795,11 @@ Kirchhoff recognized that there are three basic spectrum “shapes,” and each 
 
 The remarkable thing is that the same atoms are involved in both absorption and emission — what changes is the density/temperature structure and whether there is a bright continuum behind the gas.
 
-### What Spectral Lines Can Tell You (Preview)
+::: {.callout-important title="Connection: Geometry Determines Spectrum Type"}
+Kirchhoff's laws reveal that the *same atoms* can produce absorption or emission depending on the viewing geometry and physical conditions. A nebula viewed against empty space shows emission lines; the same gas viewed against a background star shows absorption. In stellar atmospheres, we see absorption lines because the cooler outer layers lie in front of the hotter interior. Understanding *where* light originates and *what it passes through* is essential for interpreting any astronomical spectrum.
+:::
+
+### What Spectral Lines Can Tell You
 
 Spectral lines let us infer far more than composition. In Module 2 we’ll build on this to read additional information from spectra:
 
@@ -838,7 +856,7 @@ Notice the difference between the Sun's spectrum (approximately continuous, like
 
 ---
 
-### Doppler Shift: Motion in Spectral Lines (Preview)
+### Doppler Shift: Motion in Spectral Lines
 
 Spectral lines are not just composition fingerprints — they are **speedometers**. If a source moves toward or away from us, its spectral lines shift slightly. That shift encodes the **line‑of‑sight velocity**, which means we can measure motion using nothing but light.
 
@@ -853,10 +871,16 @@ Here $\Delta\lambda = \lambda_{\text{obs}} - \lambda_0$, $\lambda_0$ is the rest
 
 Why it matters: this tiny shift lets us infer some of the biggest stories in astronomy:
 
-- **Exoplanets:** a star’s tiny wobble reveals an orbiting planet.
+- **Exoplanets:** a star's tiny wobble reveals an orbiting planet.
 - **Binary stars:** Doppler shifts give orbital speeds and masses.
 - **Galaxy rotation curves:** line shifts map rotation and point to dark matter.
 - **Cosmic expansion:** redshift shows the universe is expanding.
+
+We will revisit Doppler shifts in greater depth in Module 2, where we use them to measure stellar masses and detect exoplanets.
+
+::: {.callout-important title="Connection: Doppler + Kepler = Masses"}
+Doppler shifts connect directly to Lecture 3 (gravity and orbits). For a binary star, the observed velocity amplitude plus the orbital period gives you the orbit size via Kepler's laws. Combined with Newton's version of Kepler's third law ($P^2 \propto a^3/M$), you can solve for stellar masses — the most fundamental property of a star. Light (Doppler) + gravity (Kepler) together unlock what we cannot measure directly.
+:::
 
 ::: {.callout-tip title="Quick Check: Doppler Direction" collapse="true"}
 **Question:** A spectral line is observed at a slightly longer wavelength than its lab value. Is the source moving toward us or away from us?
@@ -937,6 +961,10 @@ Ground-based optical telescopes often fail to reach the diffraction limit becaus
 
 Large modern telescopes are reflectors, not refractors. Mirrors can be supported from behind (and even segmented), making very large apertures practical. Lenses must be supported at the edges and suffer from chromatic aberration, so extremely large refracting telescopes are not feasible.
 
+::: {.callout-important title="Connection: Why Radio Telescopes Are Enormous"}
+The resolution relation $\theta \propto \lambda/D$ explains why radio astronomers need dishes tens to hundreds of meters across. At $\lambda = 21$ cm (the hydrogen line), a 10-meter dish has resolution $\theta \sim 21/1000 \sim 0.02$ rad $\sim 1°$ — worse than your naked eye! To match Hubble's 0.05″ resolution at radio wavelengths requires continent-scale interferometry (the VLBA, Event Horizon Telescope). The physics of diffraction forces the engineering.
+:::
+
 ---
 
 ## Quick Checks: Telescopes
@@ -948,9 +976,9 @@ Large modern telescopes are reflectors, not refractors. Mirrors can be supported
 :::
 
 ::: {.callout-tip title="Quick Check" collapse="true"}
-**Question:** The Hubble Space Telescope has $D = 240$ cm and observes at $\lambda = 5000\ \text{Å}$. Estimate its diffraction-limited angular resolution.
+**Question:** The Hubble Space Telescope has $D = 240$ cm and observes at $\lambda = 500\ \text{nm}$. Estimate its diffraction-limited angular resolution.
 
-**Answer:** Convert to cgs lengths: $\lambda = 5000\ \text{Å} = 5.0\times10^{-5}\ \text{cm}$.
+**Answer:** Convert to cgs lengths: $\lambda = 500\ \text{nm} = 5.0\times10^{-5}\ \text{cm}$.
 
 $\theta \approx \lambda/D \approx (5.0\times10^{-5}\ \text{cm})/(240\ \text{cm}) \approx 2.1\times10^{-7}\ \text{rad}$.
 
@@ -1025,7 +1053,7 @@ The equations in this reading all involve **proportional relationships**. Master
    Smaller $\theta$ means finer resolution. The infrared telescope's larger mirror ($2\times$) doesn't compensate for the longer wavelength ($4\times$), so Telescope A resolves $2\times$ finer detail.
 
 3. **Telescope A is closer to the peak.** Using Wien's law with $T = 5000$ K:
-   $$\lambda_{\text{peak}} = \frac{2.898 \times 10^7\ \text{Å·K}}{5000\ \text{K}} = 5800\ \text{Å} = 580\ \text{nm}$$
+   $$\lambda_{\text{peak}} = \frac{2.898 \times 10^6\ \text{nm·K}}{5000\ \text{K}} = 580\ \text{nm}$$
 
    Telescope A (500 nm) is close to the peak; Telescope B (2000 nm) is on the red tail of the Planck curve.
 
@@ -1040,7 +1068,7 @@ The equations in this reading all involve **proportional relationships**. Master
 Answer these without a calculator. Then check your reasoning.
 
 1. If wavelength decreases by a factor of 3, what happens to frequency?
-2. Two photons have wavelengths 5000 Å and 10,000 Å. Which has higher energy, and by what factor?
+2. Two photons have wavelengths 500 nm and 1000 nm. Which has higher energy, and by what factor?
 3. Rayleigh scattering scales as $\lambda^{-4}$. Compare scattering at 400 nm and 800 nm.
 4. If a blackbody’s peak wavelength is cut in half, what happens to its temperature?
 
@@ -1048,7 +1076,7 @@ Answer these without a calculator. Then check your reasoning.
 ## Answers
 
 1. Frequency increases by a factor of 3.
-2. The 5000 Å photon has **2×** higher energy (energy $\propto \lambda^{-1}$).
+2. The 500 nm photon has **2×** higher energy (energy $\propto \lambda^{-1}$).
 3. Scattering at 400 nm is **16×** stronger: $(800/400)^4 = 2^4 = 16$.
 4. Temperature doubles (Wien’s law: $\lambda_{\text{peak}} \propto T^{-1}$).
 :::
@@ -1083,10 +1111,10 @@ Answer these without a calculator. Then check your reasoning.
    - (c) Compute its energy in erg using $E = hc/\lambda$ with $h = 6.626 \times 10^{-27}$ erg·s.
 
 <!-- Problem: Calculation:Full / Application / O→M→I / Tools: Scaling/Ratio, Unit-Conversion / ⭐⭐ -->
-6. **Wien’s law temperature.** A star’s spectrum peaks at $\lambda_{\text{peak}} = 7000$ Å. Use $b = 2.898 \times 10^7$ Å·K to estimate the temperature.
+6. **Wien's law temperature.** A star's spectrum peaks at $\lambda_{\text{peak}} = 700$ nm. Use $b = 2.898 \times 10^6$ nm·K to estimate the temperature.
 
 <!-- Problem: Calculation:Full / Application / O→M→I / Tools: Scaling/Ratio, Order-of-Magnitude / ⭐⭐ -->
-7. **Rayleigh scattering ratio.** Compare the scattering strength at 4500 Å and 9000 Å. Which is scattered more, and by what factor?
+7. **Rayleigh scattering ratio.** Compare the scattering strength at 450 nm and 900 nm. Which is scattered more, and by what factor?
 
 <!-- Problem: Calculation:Full / Application / O→M→I / Tools: Scaling/Ratio, Model-Inversion / ⭐⭐ -->
 8. **Telescope scaling.** Compare two telescopes observing at the same wavelength:
@@ -1113,13 +1141,13 @@ Answer these without a calculator. Then check your reasoning.
    (b) Which collects more light?  
    (c) If the target’s emission peaks near 500 nm, which telescope is better for signal‑to‑noise, and why?
 
-<!-- Problem: Synthesis / Connection / O→M→I / Tools: Model-Inversion, Scaling/Ratio, Unit-Conversion, Uncertainty/Assumptions / ⭐⭐ -->
-11. **Doppler → virial mass (HW3 option).** A globular cluster shows a typical Doppler broadening of $\Delta \lambda \approx 0.2$ Å around a line at $\lambda_0 = 5000$ Å. Assume the non‑relativistic Doppler relation $\Delta \lambda/\lambda_0 = v/c$. The cluster’s half‑light radius is $R \approx 3$ pc.
+<!-- Problem: Synthesis / Connection / O→M→I / Tools: Model-Inversion, Scaling/Ratio, Unit-Conversion, Uncertainty/Assumptions / ⭐⭐⭐ -->
+11. **Challenge: Doppler → virial mass.** A globular cluster shows a typical Doppler broadening of $\Delta \lambda \approx 0.02$ nm around a line at $\lambda_0 = 500$ nm. Assume the non‑relativistic Doppler relation $\Delta \lambda/\lambda_0 = v/c$. The cluster's half‑light radius is $R \approx 3$ pc.
    - (a) Estimate the line‑of‑sight velocity dispersion $v$.
    - (b) Use the virial estimate $M \sim Rv^2/G$ to estimate the cluster mass. Express your answer in grams and in solar masses.
    - (c) State two assumptions behind this estimate and one way they could bias the mass.
 
-   Use $c = 3.0 \times 10^{10}$ cm/s, $G = 6.67 \times 10^{-8}$, and $1$ pc $= 3.09 \times 10^{18}$ cm.
+   Use $c = 3.0 \times 10^{10}$ cm/s, $G = 6.67 \times 10^{-8}\ \text{cm}^3\ \text{g}^{-1}\ \text{s}^{-2}$, and $1$ pc $= 3.09 \times 10^{18}$ cm.
 
 ---
 
@@ -1154,11 +1182,11 @@ Answer these without a calculator. Then check your reasoning.
 | CMB | 2.7 K | $0.11$ cm | Microwave |
 | Cool dust | 30 K | $10^{-2}$ cm | Far-IR |
 | Brown dwarf | 1000 K | $2.9\times10^{-4}$ cm | Near-IR |
-| M dwarf (Proxima Cen) | 3000 K | $9700$ Å | Near-IR |
-| K dwarf | 4500 K | $6400$ Å | Visible (orange) |
-| Sun (G dwarf) | 5800 K | $5000$ Å | Visible (green-yellow) |
-| A star (Sirius) | 10000 K | $2900$ Å | Near-UV |
-| O star | 40000 K | $720$ Å | Far-UV |
+| M dwarf (Proxima Cen) | 3000 K | $970$ nm | Near-IR |
+| K dwarf | 4500 K | $640$ nm | Visible (orange) |
+| Sun (G dwarf) | 5800 K | $500$ nm | Visible (green-yellow) |
+| A star (Sirius) | 10000 K | $290$ nm | Near-UV |
+| O star | 40000 K | $72$ nm | Far-UV |
 
 ---
 
