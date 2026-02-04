@@ -1,0 +1,83 @@
+---
+title: "Math Cheatsheet"
+subtitle: "ASTR 201 - Exponents, Logs, Units"
+author: "Dr. Anna Rosen"
+date: "2026-02-04"
+description: "Quick reference for the math identities used in ASTR 201."
+draft: false
+format:
+  html:
+    toc: true
+    toc-depth: 2
+  pdf:
+    toc: false
+    geometry: margin=0.5in
+    fontsize: 10pt
+---
+
+This sheet is **exam-allowed** and is separate from the formula sheet. Use it to avoid algebra mistakes, not to replace reasoning.
+
+## Scientific Notation
+
+- $a \times 10^n$ means **a** times **10** to the **n**.
+- Multiply: $(a\times 10^m)(b\times 10^n) = (ab)\times 10^{m+n}$
+- Divide: $\dfrac{a\times 10^m}{b\times 10^n} = \dfrac{a}{b}\times 10^{m-n}$
+- Order of magnitude (OOM): round to the nearest power of ten.
+
+## Exponent Rules
+
+- $x^a x^b = x^{a+b}$
+- $\dfrac{x^a}{x^b} = x^{a-b}$
+- $(x^a)^b = x^{ab}$
+- $x^{-a} = 1/x^a$
+- $x^0 = 1$
+- $\sqrt{x} = x^{1/2}$
+
+## Logarithm Rules
+
+Unless stated otherwise, $\log$ means $\log_{10}$.
+
+- $\log(ab) = \log a + \log b$
+- $\log(a/b) = \log a - \log b$
+- $\log(a^b) = b\log a$
+- $\log_{10}(10^a) = a$
+- $\ln(e^a) = a$
+
+## Unit Conversion: The Identity Trick
+
+Multiply by 1 in a smart form:
+
+$1\,\rm km = 10^5\,cm$ so
+
+$3\,\rm km = 3\,km \times \dfrac{10^5\,cm}{1\,km} = 3\times 10^5\,cm$
+
+**Area and volume:**
+- $1\,\rm m^2 = (100\,cm)^2 = 10^4\,cm^2$
+- $1\,\rm m^3 = (100\,cm)^3 = 10^6\,cm^3$
+
+**Energy and power:**
+- $1\,\rm J = 10^7\,erg$
+- $1\,\rm W = 10^7\,erg/s$
+
+## Powers-of-Ten Prefixes
+
+| Prefix | Value |
+| --- | --- |
+| giga (G) | $10^9$ |
+| mega (M) | $10^6$ |
+| kilo (k) | $10^3$ |
+| centi (c) | $10^{-2}$ |
+| milli (m) | $10^{-3}$ |
+| micro ($\mu$) | $10^{-6}$ |
+| nano (n) | $10^{-9}$ |
+
+## Quick Geometry
+
+| Shape | Formula |
+| --- | --- |
+| Circle circumference | $C = 2\pi R$ |
+| Circle area | $A = \pi R^2$ |
+| Sphere surface area | $A = 4\pi R^2$ |
+| Sphere volume | $V = \dfrac{4}{3}\pi R^3$ |
+| Cylinder volume | $V = \pi R^2 h$ |
+

@@ -1,0 +1,129 @@
+---
+title: "Formula Sheet (Study + HW)"
+subtitle: "ASTR 201 - CGS"
+author: "Dr. Anna Rosen"
+date: "2026-02-04"
+description: "Annotated CGS-only formula sheet for study and homework."
+draft: false
+format:
+  html:
+    toc: true
+    toc-depth: 2
+  pdf:
+    toc: false
+    geometry: margin=0.5in
+    fontsize: 10pt
+---
+
+**Unit system:** CGS by default. Constants are provided in the separate CGS constants sheet.
+
+## Mechanics & Gravity
+
+| Equation | Notes | Tools |
+| --- | --- | --- |
+| $F = ma$ | Force (dynes) | Force/Balance |
+| $F_{\rm grav} = G\,\dfrac{m_1 m_2}{r^2}$ | Inverse-square | Force/Balance, Scaling/Ratio |
+| $v_{\rm orb} = \sqrt{\dfrac{GM}{r}}$ | Circular orbit | Scaling/Ratio |
+| $v_{\rm esc} = \sqrt{\dfrac{2GM}{R}}$ | Bound vs unbound | Energy, Scaling/Ratio |
+| $P^2 = \dfrac{4\pi^2}{G(M+m)} a^3$ | Kepler (general) | Scaling/Ratio |
+| $P^2 \approx \dfrac{4\pi^2}{GM} a^3$ | $M \gg m$ | Scaling/Ratio |
+| $L = m v r$ | Circular orbit | Force/Balance |
+| $E_K = \dfrac{1}{2} m v^2$ | Kinetic energy | Energy |
+| $U_G = -\dfrac{GMm}{r}$ | Potential energy | Energy |
+| $E = E_K + U_G$ | Total energy | Energy |
+| $E_K \sim \dfrac{1}{2}|U_G|$ | Virial | Energy, Scaling/Ratio |
+
+## Thermodynamics, Radiation & Light
+
+| Equation | Notes | Tools |
+| --- | --- | --- |
+| $P = n k_B T = \dfrac{\rho k_B T}{\mu m_H}$ | Ideal gas | Force/Balance |
+| $E_{\rm th} = \dfrac{3}{2} k_B T$ | Thermal energy | Energy |
+| $c = \lambda \nu$ | Wave relation | Dimensional |
+| $E_{\gamma} = h\nu = \dfrac{hc}{\lambda}$ | Photon energy | Dimensional |
+| $F = \dfrac{L}{4\pi d^2}$ | Flux-luminosity | Scaling/Ratio, Model-Inversion |
+| $F = \sigma T_{\rm eff}^4$ | Surface flux | Scaling/Ratio |
+| $L = 4\pi R^2 \sigma T_{\rm eff}^4$ | Luminosity | Scaling/Ratio, Model-Inversion |
+| $\lambda_{\rm peak} T_{\rm eff} = b$ | Wien's law | Scaling/Ratio, Model-Inversion |
+| $\dfrac{\Delta\lambda}{\lambda_0} = \dfrac{v_r}{c}$ | Doppler shift | Model-Inversion |
+| $E = 13.6\,\rm eV\left(\dfrac{1}{n_f^2} - \dfrac{1}{n_i^2}\right)$ | Hydrogen spectral lines | Model-Inversion |
+| $P_{\rm rad} = \dfrac{1}{3} a T^4$ | Radiation pressure | Scaling/Ratio |
+
+## Magnitudes & Angular Size
+
+| Equation | Notes | Tools |
+| --- | --- | --- |
+| $m_1 - m_2 = -2.5\log_{10}\!\left(\dfrac{F_1}{F_2}\right)$ | Brightness ratios | Model-Inversion, Log rules |
+| $\mu = m - M = 5\log_{10}\!\left(\dfrac{d}{10\,\rm pc}\right)$ | Distance modulus | Model-Inversion |
+| $\alpha = \dfrac{s}{d}$ | Small angle | Scaling/Ratio |
+| $\Omega \approx \pi\alpha^2$ | Solid angle | Dimensional |
+| $d(\rm pc) = \dfrac{1}{p(\rm arcsec)}$ | Parallax | Model-Inversion |
+
+## Stellar Structure & Scaling
+
+| Equation | Notes | Tools |
+| --- | --- | --- |
+| $\dfrac{dM}{dr} = 4\pi r^2 \rho$ | Structure eqn | Dimensional |
+| $\dfrac{dP}{dr} = -\rho\,\dfrac{GM(r)}{r^2}$ | HE | Force/Balance |
+| $\dfrac{dL}{dr} = 4\pi r^2 \rho\,\epsilon$ | Energy gen | Dimensional |
+| $\dfrac{dT}{dr} = -\dfrac{3\kappa\rho L}{16\pi a c T^3 r^2}$ | Radiative transport | Dimensional |
+| $P_c \sim \dfrac{GM^2}{R^4}$ | Central pressure | Dimensional, Scaling/Ratio |
+| $\rho_c \sim \dfrac{M}{R^3}$ | Central density | Dimensional, Scaling/Ratio |
+| $T_c \sim \dfrac{\mu m_p G M}{k_B R}$ | Central temperature | Dimensional, Scaling/Ratio |
+| $L \sim M^{3.5}$ | Mass-luminosity | Scaling/Ratio |
+| $g \sim \dfrac{GM}{R^2}$ | Surface gravity | Scaling/Ratio |
+| $E_g \sim -\dfrac{GM^2}{R}$ | Binding energy | Energy |
+| $\mu = \dfrac{1}{2X + \tfrac{3}{4}Y + \tfrac{1}{2}Z}$ | Mean molecular weight | Model-Inversion |
+| $P_{\rm deg} \propto \dfrac{\rho^{5/3}}{m}$ | Degeneracy | Dimensional |
+| $P_{\rm tot} = P_{\rm gas} + P_{\rm rad}(+P_{\rm deg})$ | Total pressure | Force/Balance |
+
+## Nuclear Fusion
+
+| Equation | Notes | Tools |
+| --- | --- | --- |
+| $E_{\rm nuc} \approx \Delta m c^2$ | Mass defect | Energy |
+| $\epsilon_{pp} \propto \rho T^4$ | PP chain | Scaling/Ratio |
+| $\epsilon_{CNO} \propto \rho T^{17}$ | CNO | Scaling/Ratio |
+| $\epsilon_{3\alpha} \propto \rho^2 T^{40}$ | Triple-alpha | Scaling/Ratio |
+| $\epsilon_{ix} = \epsilon'_0 X_i X_x \rho^{\alpha} T^{\beta}$ | General rate | Scaling/Ratio |
+| $\lambda_{\rm dB} = \dfrac{h}{p}$ | de Broglie | Dimensional |
+
+## Compact Objects & Remnants
+
+| Equation | Notes | Tools |
+| --- | --- | --- |
+| $R_{\rm WD} \approx (0.01 R_\odot) \left(\dfrac{M_{\rm WD}}{0.7 M_\odot}\right)^{-1/3}$ | WD scaling | Scaling/Ratio |
+| $R_{\rm NS} \approx (10^6\,\rm cm) \left(\dfrac{M_{\rm NS}}{1.4 M_\odot}\right)^{-1/3}$ | NS scaling | Scaling/Ratio |
+| $M_{\rm Ch} \approx 1.4 M_\odot$ | Chandrasekhar limit | Scaling/Ratio |
+| $R_S = \dfrac{2GM}{c^2}$ | Event horizon | Scaling/Ratio |
+
+## Timescales
+
+| Equation | Notes | Tools |
+| --- | --- | --- |
+| $t_{\rm nuc} \approx \dfrac{\epsilon_{\rm nuc} f M c^2}{L}$ | Nuclear timescale | Scaling/Ratio |
+| $t_{\rm KH} \approx \dfrac{|E_g|}{L} \sim \dfrac{GM^2}{RL}$ | Kelvin-Helmholtz | Energy |
+| $t_{\rm dyn} \approx \sqrt{\dfrac{R^3}{GM}}$ | Dynamical | Scaling/Ratio |
+| $t_{\rm ff} \approx \sqrt{\dfrac{3\pi}{32G\rho_{\rm avg}}}$ | Free-fall | Scaling/Ratio |
+
+## Relativity & Quantum
+
+| Equation | Notes | Tools |
+| --- | --- | --- |
+| $\gamma = \dfrac{1}{\sqrt{1 - v^2/c^2}}$ | Lorentz factor | Dimensional |
+| $\Delta t = \gamma \Delta t_0$ | Time dilation | Scaling/Ratio |
+| $E_0 = m_0 c^2$ | Rest energy | Energy |
+| $E^2 = (pc)^2 + (m_0 c^2)^2$ | Energy-momentum | Energy |
+| $\Delta p\,\Delta x \gtrsim \hbar/2$ | Uncertainty | Dimensional |
+
+## Galaxies & Cosmology
+
+| Equation | Notes | Tools |
+| --- | --- | --- |
+| $v = H_0 d$ | Hubble law | Scaling/Ratio |
+| $v^2 = \dfrac{GM(<r)}{r}$ | Rotation curve | Model-Inversion |
+| $1+z = \dfrac{\lambda_{\rm obs}}{\lambda_0}$ | Redshift | Model-Inversion |
+| $a = (1+z)^{-1}$ | Scale factor | Scaling/Ratio |
+| $\rho_r \propto (1+z)^4$ | Radiation density | Scaling/Ratio |
+| $\rho_m \propto (1+z)^3$ | Matter density | Scaling/Ratio |
+| $T(z) = T_0 (1+z)$ | CMB scaling | Scaling/Ratio |

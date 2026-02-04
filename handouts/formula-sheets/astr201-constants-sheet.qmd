@@ -1,0 +1,66 @@
+---
+title: "Constants Sheet"
+subtitle: "ASTR 201 - CGS"
+author: "Dr. Anna Rosen"
+date: "2026-02-04"
+description: "Fundamental and astronomical constants in CGS units."
+draft: false
+format:
+  html:
+    toc: true
+    toc-depth: 2
+  pdf:
+    toc: false
+    geometry: margin=0.5in
+    fontsize: 10pt
+---
+
+All values are **approximate** and given in **CGS** unless noted.
+
+## Fundamental Constants (CGS)
+
+| Constant | Value | Notes |
+| --- | --- | --- |
+| $G$ | $6.67\times 10^{-8}$ | cm$^3$ g$^{-1}$ s$^{-2}$ |
+| $c$ | $3.00\times 10^{10}$ | cm/s |
+| $h$ | $6.63\times 10^{-27}$ | erg s |
+| $\hbar$ | $1.05\times 10^{-27}$ | erg s |
+| $k_B$ | $1.38\times 10^{-16}$ | erg/K |
+| $\sigma$ | $5.67\times 10^{-5}$ | erg s$^{-1}$ cm$^{-2}$ K$^{-4}$ |
+| $m_p$ | $1.67\times 10^{-24}$ | g |
+| $m_n$ | $1.68\times 10^{-24}$ | g |
+| $m_e$ | $9.11\times 10^{-28}$ | g |
+| $1\,\rm eV$ | $1.60\times 10^{-12}$ | erg |
+| $e$ | $4.80\times 10^{-10}$ | statC (esu) |
+
+## Solar & Planetary Reference Values (CGS)
+
+| Quantity | Value |
+| --- | --- |
+| $M_\odot$ | $1.99\times 10^{33}$ g |
+| $R_\odot$ | $6.96\times 10^{10}$ cm |
+| $L_\odot$ | $3.84\times 10^{33}$ erg/s |
+| $T_{\rm eff,\odot}$ | $5800$ K |
+| $M_\oplus$ | $5.97\times 10^{27}$ g |
+| $R_\oplus$ | $6.38\times 10^{8}$ cm |
+| $M_J$ | $1.90\times 10^{30}$ g |
+| $R_J$ | $7.14\times 10^{9}$ cm |
+
+## Astronomical Distances & Time
+
+| Quantity | Value |
+| --- | --- |
+| 1 AU | $1.50\times 10^{13}$ cm |
+| 1 pc | $3.09\times 10^{18}$ cm |
+| 1 ly | $9.46\times 10^{17}$ cm |
+| 1 yr | $3.15\times 10^{7}$ s |
+
+## Angle Conversions
+
+| Quantity | Value |
+| --- | --- |
+| $1$ full circle | $360^{\circ} = 2\pi$ rad |
+| $1^{\circ}$ | $60'$ (arcmin) |
+| $1'$ | $60''$ (arcsec) |
+| $1''$ | $4.85\times 10^{-6}$ rad |
+

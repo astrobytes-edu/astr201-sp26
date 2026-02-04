@@ -1,0 +1,138 @@
+---
+title: "Formula Sheet (Exam)"
+subtitle: "ASTR 201 - CGS"
+author: "Dr. Anna Rosen"
+date: "2026-02-04"
+description: "Neutral CGS-only formula sheet for exams."
+draft: false
+format:
+  html:
+    toc: true
+    toc-depth: 2
+  pdf:
+    toc: false
+    geometry: margin=0.5in
+    fontsize: 10pt
+---
+
+**Unit system:** CGS by default. Constants are provided in the separate CGS constants sheet.
+
+## Mechanics & Gravity
+
+| Equation | Description (CGS) |
+| --- | --- |
+| $F = ma$ | Force (dynes), mass (g), acceleration (cm/s$^2$) |
+| $F_{\rm grav} = G\,\dfrac{m_1 m_2}{r^2}$ | Newtonian gravity |
+| $v_{\rm orb} = \sqrt{\dfrac{GM}{r}}$ | Circular orbital speed |
+| $v_{\rm esc} = \sqrt{\dfrac{2GM}{R}}$ | Escape speed |
+| $P^2 = \dfrac{4\pi^2}{G(M+m)} a^3$ | Kepler's 3rd Law (general) |
+| $P^2 \approx \dfrac{4\pi^2}{GM} a^3$ | Kepler's 3rd Law ($M \gg m$) |
+| $L = m v r$ | Angular momentum (circular orbit) |
+| $E_K = \dfrac{1}{2} m v^2$ | Kinetic energy |
+| $U_G = -\dfrac{GMm}{r}$ | Gravitational potential energy |
+| $E = E_K + U_G$ | Total mechanical energy |
+| $E_K \sim \dfrac{1}{2}|U_G|$ | Virial theorem (bound system) |
+
+## Thermodynamics, Radiation & Light
+
+| Equation | Description (CGS) |
+| --- | --- |
+| $P = n k_B T = \dfrac{\rho k_B T}{\mu m_H}$ | Ideal gas law |
+| $E_{\rm th} = \dfrac{3}{2} k_B T$ | Thermal energy per particle |
+| $c = \lambda \nu$ | Speed of light |
+| $E_{\gamma} = h\nu = \dfrac{hc}{\lambda}$ | Photon energy |
+| $F = \dfrac{L}{4\pi d^2}$ | Observed flux |
+| $F = \sigma T_{\rm eff}^4$ | Stefan-Boltzmann (surface flux) |
+| $L = 4\pi R^2 \sigma T_{\rm eff}^4$ | Luminosity |
+| $\lambda_{\rm peak} T_{\rm eff} = b$ | Wien's law |
+| $\dfrac{\Delta\lambda}{\lambda_0} = \dfrac{v_r}{c}$ | Doppler shift (non-rel.) |
+| $E = 13.6\,\rm eV\left(\dfrac{1}{n_f^2} - \dfrac{1}{n_i^2}\right)$ | Hydrogen spectral lines |
+| $P_{\rm rad} = \dfrac{1}{3} a T^4$ | Radiation pressure ($a=4\sigma/c$) |
+
+## Magnitudes & Angular Size
+
+| Equation | Description |
+| --- | --- |
+| $m_1 - m_2 = -2.5\log_{10}\!\left(\dfrac{F_1}{F_2}\right)$ | Apparent magnitude difference |
+| $\mu = m - M = 5\log_{10}\!\left(\dfrac{d}{10\,\rm pc}\right)$ | Distance modulus |
+| $\alpha = \dfrac{s}{d}$ | Angular size (radians) |
+| $\Omega \approx \pi\alpha^2$ | Solid angle (small $\alpha$) |
+| $d(\rm pc) = \dfrac{1}{p(\rm arcsec)}$ | Parallax distance |
+
+## Stellar Structure & Scaling
+
+| Equation | Description |
+| --- | --- |
+| $\dfrac{dM}{dr} = 4\pi r^2 \rho$ | Mass continuity |
+| $\dfrac{dP}{dr} = -\rho\,\dfrac{GM(r)}{r^2}$ | Hydrostatic equilibrium |
+| $\dfrac{dL}{dr} = 4\pi r^2 \rho\,\epsilon$ | Energy generation |
+| $\dfrac{dT}{dr} = -\dfrac{3\kappa\rho L}{16\pi a c T^3 r^2}$ | Radiative transport |
+| $P_c \sim \dfrac{GM^2}{R^4}$ | Central pressure scaling |
+| $\rho_c \sim \dfrac{M}{R^3}$ | Central density scaling |
+| $T_c \sim \dfrac{\mu m_p G M}{k_B R}$ | Central temperature scaling |
+| $L \sim M^{3.5}$ | Luminosity scaling |
+| $g \sim \dfrac{GM}{R^2}$ | Surface gravity scaling |
+| $E_g \sim -\dfrac{GM^2}{R}$ | Gravitational binding energy |
+| $\mu = \dfrac{1}{2X + \tfrac{3}{4}Y + \tfrac{1}{2}Z}$ | Mean molecular weight |
+| $P_{\rm deg} \propto \dfrac{\rho^{5/3}}{m}$ | Degeneracy pressure (non-rel.) |
+| $P_{\rm tot} = P_{\rm gas} + P_{\rm rad}(+P_{\rm deg})$ | Total pressure |
+
+## Nuclear Fusion
+
+| Equation | Description |
+| --- | --- |
+| $E_{\rm nuc} \approx \Delta m c^2$ | Mass-energy conversion |
+| $\epsilon_{pp} \propto \rho T^4$ | PP chain rate (scaling) |
+| $\epsilon_{CNO} \propto \rho T^{17}$ | CNO cycle rate (scaling) |
+| $\epsilon_{3\alpha} \propto \rho^2 T^{40}$ | Triple-alpha rate (scaling) |
+| $\epsilon_{ix} = \epsilon'_0 X_i X_x \rho^{\alpha} T^{\beta}$ | General fusion rate |
+| $\lambda_{\rm dB} = \dfrac{h}{p}$ | de Broglie wavelength |
+
+## Compact Objects & Remnants
+
+| Equation | Description |
+| --- | --- |
+| $R_{\rm WD} \approx (0.01 R_\odot) \left(\dfrac{M_{\rm WD}}{0.7 M_\odot}\right)^{-1/3}$ | White dwarf radius (approx.) |
+| $R_{\rm NS} \approx (10^6\,\rm cm) \left(\dfrac{M_{\rm NS}}{1.4 M_\odot}\right)^{-1/3}$ | Neutron star radius (approx.) |
+| $M_{\rm Ch} \approx 1.4 M_\odot$ | Chandrasekhar limit |
+| $R_S = \dfrac{2GM}{c^2}$ | Schwarzschild radius |
+
+## Timescales
+
+| Equation | Description |
+| --- | --- |
+| $t_{\rm nuc} \approx \dfrac{\epsilon_{\rm nuc} f M c^2}{L}$ | Nuclear timescale |
+| $t_{\rm KH} \approx \dfrac{|E_g|}{L} \sim \dfrac{GM^2}{RL}$ | Kelvin-Helmholtz timescale |
+| $t_{\rm dyn} \approx \sqrt{\dfrac{R^3}{GM}} \sim \dfrac{1}{\sqrt{G\rho_{\rm avg}}}$ | Dynamical timescale |
+| $t_{\rm ff} \approx \sqrt{\dfrac{3\pi}{32G\rho_{\rm avg}}}$ | Free-fall timescale |
+
+## Relativity & Quantum
+
+| Equation | Description |
+| --- | --- |
+| $\gamma = \dfrac{1}{\sqrt{1 - v^2/c^2}}$ | Lorentz factor |
+| $\Delta t = \gamma \Delta t_0$ | Time dilation |
+| $L = L_0 / \gamma$ | Length contraction |
+| $p = \gamma m_0 v$ | Relativistic momentum |
+| $E_0 = m_0 c^2$ | Rest energy |
+| $E^2 = (pc)^2 + (m_0 c^2)^2$ | Energy-momentum relation |
+| $\Delta t = \dfrac{\Delta t_0}{\sqrt{1 - 2GM/rc^2}}$ | Gravitational time dilation |
+| $1+z = \dfrac{1}{\sqrt{1 - 2GM/rc^2}}$ | Gravitational redshift |
+| $\Delta p\,\Delta x \gtrsim \hbar/2$ | Uncertainty principle |
+
+## Galaxies & Cosmology
+
+| Equation | Description |
+| --- | --- |
+| $v = H_0 d$ | Hubble's law |
+| $v^2 = \dfrac{GM(<r)}{r}$ | Flat rotation curve |
+| $1+z = \dfrac{\lambda_{\rm obs}}{\lambda_0}$ | Cosmological redshift |
+| $a = (1+z)^{-1}$ | Scale factor |
+| $H^2 = \dfrac{8\pi G}{3}\rho - \dfrac{k}{a^2}$ | Friedmann equation |
+| $\rho_c = \dfrac{3H^2}{8\pi G}$ | Critical density |
+| $\Omega_i = \dfrac{\rho_i}{\rho_c}$ | Density parameter |
+| $\Omega_{\rm tot} = \Omega_m + \Omega_r + \Omega_\Lambda$ | Total density |
+| $\rho_r \propto (1+z)^4$ | Radiation density scaling |
+| $\rho_m \propto (1+z)^3$ | Matter density scaling |
+| $\rho_\Lambda = \rm constant$ | Dark energy density |
+| $T(z) = T_0 (1+z)$ | CMB temperature scaling |
