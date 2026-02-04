@@ -99,7 +99,6 @@ By the end of this course, students will be able to:
 | Midterm Exam 2 | 15% |
 | Final Exam (cumulative) | 35% |
 
-<!-- TODO: Fill in all dates once the Spring 2026 calendar + your exam plan are finalized. -->
 ### Important Dates and Course Schedule{#sec-important-dates}
 
 - **Midterm Exam 1:** Thursday, March 5  
