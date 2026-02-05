@@ -140,6 +140,26 @@ Pacing target (flexible): Part 1 (~15 min), Part 2 (~10 min), Part 3 (~15 min), 
 
 ---
 
+## The Wave Relation
+
+The symbol $c$ is the speed of light in vacuum.
+
+{{< include ../../../_includes/equations/wave-relation.qmd >}}
+
+::: {.incremental .text-sm}
+- In vacuum, $c \approx 3\times10^{10}\ \mathrm{cm/s}$
+- Solve for wavelength: $\lambda = c/\nu \;\Rightarrow\; \lambda \propto \nu^{-1}$
+- Solve for frequency: $\nu = c/\lambda \;\Rightarrow\; \nu \propto \lambda^{-1}$
+- Negative exponents are a compact way to show “inverse” relationships; you can also write $\lambda \propto 1/\nu$ or $\nu \propto 1/\lambda$
+:::
+
+::: {.notes}
+Units check quickly: [cm/s] = [cm][1/s].
+Micro-prompt: “If wavelength doubles, what happens to frequency?”
+:::
+
+---
+
 ## {.center}
 
 ::: {.r-fit-text}

@@ -80,6 +80,12 @@ wien-displacement:
   include: "_includes/equations/wien-displacement.qmd"
   card: "wien_displacement"
 
+planck-function:
+  title: "Planck function (blackbody spectrum)"
+  anchor: "eq-planck-function"
+  include: "_includes/equations/planck-function.qmd"
+  card: "planck_function"
+
 centripetal-acceleration:
   title: "Centripetal acceleration"
   anchor: "eq-centripetal-acceleration"

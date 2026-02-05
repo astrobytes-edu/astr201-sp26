@@ -40,6 +40,8 @@ By the end of this module, you will be able to:
 
 ## Lectures
 
+Lecture 4 is split across two slide decks: [Day 1](slides/lecture-04a-light-as-information.qmd) and [Day 2](slides/lecture-04b-light-as-information.qmd).
+
 ::: {.lecture-grid}
 ::: {#module-lectures}
 :::

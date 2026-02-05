@@ -1,0 +1,3 @@
+$$
+B_\lambda(T)=\frac{2hc^2}{\lambda^5}\cdot\frac{1}{e^{hc/(\lambda k_B T)}-1}
+$$ {#eq-planck-function}

@@ -122,21 +122,33 @@ Let students say them out loud. Remind: we are building an inference toolkit.
 
 ---
 
-## 🧠 Quiz: Temperature from Color
+## 🧠 Quiz: Temperature from Color {.quiz-question}
 
 A thermal spectrum peaks at a shorter wavelength. The object is…
 
-::: {.quiz}
-
-- [x] hotter
-- [ ] cooler
-- [ ] the same temperature
-- [ ] necessarily younger
-
-:::
+- [hotter]{.correct}
+- cooler
+- the same temperature
+- necessarily younger
 
 ::: {.notes}
 **Answer: hotter.** This is Wien's law in action: $\lambda_{\text{peak}} \propto T^{-1}$. Shorter peak wavelength means higher temperature. "Necessarily younger" is a distractor — age and temperature are not directly related (old stars can be hot, young stars can be cool depending on mass).
+:::
+
+---
+
+## Planck + Wien (Thermal Equilibrium)
+
+Thermal equilibrium means energy absorbed equals energy emitted, so the temperature is stable and the spectrum depends only on $T$.
+
+{{< eqrefcard planck-function >}}
+
+Wien’s law anchors the peak wavelength:
+
+{{< include ../../../_includes/equations/wien-displacement.qmd >}}
+
+::: {.notes}
+Use this to name what “thermal equilibrium” buys us: a single-parameter spectrum.
 :::
 
 ---
@@ -203,14 +215,23 @@ Tie to Day 1: this is why “very high-energy photons are expensive.”
 
 ## The Planck Function (Recognize It)
 
+:::: {.columns}
+::: {.column width="52%"}
 You don’t memorize it — you recognize it and read its structure:
 
-$$B_\lambda(T)=\frac{2hc^2}{\lambda^5}\cdot\frac{1}{e^{hc/\lambda k_B T}-1}$$
+{{< include ../../../_includes/equations/planck-function.qmd >}}
 
 ::: {.incremental .text-sm}
 - $B_\lambda$: spectral radiance (brightness per wavelength interval)
 - $\lambda$: wavelength, $T$: temperature
+- Units: erg·s$^{-1}$·cm$^{-2}$·sr$^{-1}$·cm$^{-1}$
 :::
+:::
+
+::: {.column width="48%"}
+{{< img blackbody-stellar-spectra width="100%" >}}
+:::
+::::
 
 ::: {.notes}
 One sentence: this is the quantitative model behind the curves.
@@ -221,13 +242,9 @@ Do not dwell on constants; we’re here for interpretation.
 
 ## How to Read $B_\lambda(T)$ (Study Version)
 
-::: {.incremental}
-- **Predicts:** spectrum shape (brightness vs $\lambda$)
-- **Depends on:** temperature $T$
-- **Assumes:** ideal blackbody (thermal equilibrium)
-- **Sanity check:** long $\lambda$ → power law; short $\lambda$ → exponential cutoff
-- **Units:** erg·s$^{-1}$·cm$^{-2}$·sr$^{-1}$·cm$^{-1}$
-:::
+Read it like a sentence:
+
+{{< eqrefcard planck-function >}}
 
 ::: {.notes}
 This is the “equation contract” slide without the full derivation.
@@ -235,10 +252,33 @@ This is the “equation contract” slide without the full derivation.
 
 ---
 
-## You Don’t Memorize Planck — You Read It
+## How to Read the Curve (Where the Limits Live)
 
 :::: {.columns}
 ::: {.column width="52%"}
+Use the curve as your map:
+
+::: {.incremental}
+- **Right side** (long $\lambda$): $h\nu \ll k_B T$ → Rayleigh–Jeans power law
+- **Left side** (short $\lambda$): $h\nu \gg k_B T$ → Wien exponential drop
+:::
+:::
+
+::: {.column width="48%"}
+{{< img blackbody-stellar-spectra width="100%" >}}
+:::
+::::
+
+::: {.notes}
+Point to the curve: right side is the “low-energy photons” regime; left side is the “high-energy photons are rare” regime.
+:::
+
+---
+
+## You Don’t Memorize Planck — You Read It
+
+:::: {.columns}
+::: {.column width="35%"}
 The blackbody curve has two key regimes:
 
 ::: {.incremental}
@@ -249,22 +289,32 @@ The blackbody curve has two key regimes:
 Those regimes let you predict behavior without re-deriving the whole function.
 :::
 
-::: {.column width="48%"}
+::: {.column width="65%"}
 {{< img blackbody-stellar-spectra width="100%" >}}
 :::
 ::::
 
 ---
 
-## What the Planck Function *Does* (One Slide)
+## What the Planck Function *Does*
 
+:::: {.columns}
+::: {.column width="56%"}
 Even without memorizing it, recognize the structure:
 
-::: {.incremental}
-- a steep power-law factor that wants short wavelengths to win
-- an exponential factor that suppresses short wavelengths
-- competition → a peak
+{{< include ../../../_includes/equations/planck-function.qmd >}}
+
+::: {.incremental .text-sm}
+- power‑law prefactor ($2hc^2/\lambda^5$) rises steeply toward short $\lambda$
+- exponential term ($e^{hc/\lambda k_B T}$) suppresses short $\lambda$
+- because $h\nu$ and $k_B T$ are both energies, $h\nu/k_B T$ is the dimensionless “regime knob”
 :::
+:::
+
+::: {.column width="44%"}
+{{< img blackbody-stellar-spectra width="100%" >}}
+:::
+::::
 
 ::: {.notes}
 This mirrors the reading’s “structure” section: power-law vs exponential.
@@ -291,11 +341,20 @@ Connect to Rayleigh scattering’s “steep power law” vibe — steep exponent
 
 ## Where Does Rayleigh–Jeans Apply?
 
+:::: {.columns}
+::: {.column width="56%"}
 Rayleigh–Jeans is a **long-wavelength** approximation.
 
 ::: {.fragment}
-It works best on the “right side” of the peak — not near/left of the peak.
+- Condition: $h\nu \ll k_B T$
+- On the curve, it’s the **right side** of the peak (long $\lambda$).
 :::
+:::
+
+::: {.column width="44%"}
+{{< img blackbody-stellar-spectra width="100%" >}}
+:::
+::::
 
 ::: {.notes}
 This prevents over-applying power laws where the exponential cutoff matters.
@@ -303,18 +362,16 @@ This prevents over-applying power laws where the exponential cutoff matters.
 
 ---
 
-## 🧠 Predict (Rayleigh–Jeans)
+## 🧠 Predict (Rayleigh–Jeans) {.quiz-question}
 
-In the Rayleigh–Jeans limit, if wavelength doubles (fixed $T$), intensity changes by…
+Rayleigh–Jeans: $B_\lambda \propto T\lambda^{-4}$ (long $\lambda$, $h\nu \ll k_B T$).
 
-::: {.quiz}
+At fixed temperature, if wavelength doubles, $B_\lambda$ changes by…
 
-- [ ] $\times 2$
-- [ ] $\times 4$
-- [ ] $\times 8$
-- [x] $\div 16$
-
-:::
+- $\times 2$
+- $\times 4$
+- $\times 8$
+- [$\div 16$]{.correct}
 
 ---
 
@@ -336,11 +393,24 @@ No derivation. Just the story: exponential suppression at short wavelength.
 
 ## Where Does the Wien Tail Apply?
 
+:::: {.columns}
+::: {.column width="56%"}
 The Wien tail is the **short-wavelength** side of the curve.
+
+::: {.fragment}
+- Condition: $h\nu \gg k_B T$
+- On the curve, it’s the **left side** of the peak (short $\lambda$).
+:::
 
 ::: {.fragment}
 That’s why hot objects can emit UV, but not “infinite UV.”
 :::
+:::
+
+::: {.column width="44%"}
+{{< img blackbody-stellar-spectra width="100%" >}}
+:::
+::::
 
 ---
 
@@ -359,7 +429,7 @@ Instead of memorizing a complicated formula, we can answer questions like:
 ## Example: The Cosmic Microwave Background
 
 :::: {.columns}
-::: {.column width="52%"}
+::: {.column width="40%"}
 The CMB is an almost perfect blackbody:
 
 ::: {.incremental}
@@ -368,11 +438,15 @@ The CMB is an almost perfect blackbody:
 :::
 
 ::: {.fragment}
-It’s “thermal radiation from the early universe,” stretched by cosmic expansion.
+It’s “thermal radiation from the early universe,” stretched *and cooled* by cosmic expansion.
+:::
+
+::: {.fragment}
+A tiny part of old analog TV “snow” was this same microwave background — a faint hiss from the early universe.
 :::
 :::
 
-::: {.column width="48%"}
+::: {.column width="60%"}
 {{< img cmb-map width="100%" >}}
 :::
 ::::
@@ -387,7 +461,14 @@ Do not go deep into cosmology here. Use it as: “blackbodies aren’t only star
 
 Using Wien’s law with $T\approx 2.7\ \mathrm{K}$:
 
-$$\lambda_{\mathrm{peak}} \approx 0.29\cdot(2.7)^{-1}\ \mathrm{cm}\approx 0.11\ \mathrm{cm}\approx 1.1\ \mathrm{mm}$$
+$$
+\begin{aligned}
+\lambda_{\mathrm{peak}} &\approx \frac{0.29\ \text{cm}\cdot\text{K}}{2.7\ \text{K}} \\
+&= \left(\frac{0.29}{2.7}\right)\ \text{cm} \\
+&\approx 0.11\ \text{cm} \\
+&= 1.1\ \text{mm}
+\end{aligned}
+$$
 
 ::: {.fragment}
 That’s about a **millimeter** → microwave.
@@ -510,33 +591,25 @@ Anchor the three cases:
 
 ---
 
-## 🧠 Quiz: Which Spectrum?
+## 🧠 Quiz: Which Spectrum? {.quiz-question}
 
 A hot dense source shines through a cooler gas cloud in front of it. You observe…
 
-::: {.quiz}
-
-- [ ] an emission-line spectrum
-- [x] an absorption-line spectrum
-- [ ] a continuous spectrum with no lines
-- [ ] a spectrum that depends only on distance
-
-:::
+- an emission-line spectrum
+- [an absorption-line spectrum]{.correct}
+- a continuous spectrum with no lines
+- a spectrum that depends only on distance
 
 ---
 
-## Quick Check: Name the Scenario
+## Quick Check: Name the Scenario {.quiz-question}
 
 Which situation gives an **emission-line** spectrum?
 
-::: {.quiz}
-
-- [ ] a hot dense object by itself
-- [ ] a hot dense object seen through cooler gas
-- [x] a hot, low-density gas cloud
-- [ ] a spectrum with no wavelength information
-
-:::
+- a hot dense object by itself
+- a hot dense object seen through cooler gas
+- [a hot, low-density gas cloud]{.correct}
+- a spectrum with no wavelength information
 
 ---
 
@@ -648,18 +721,14 @@ Because of tiny line shifts, we can measure things we can’t touch:
 
 ---
 
-## 🧠 Quick Check: Direction
+## 🧠 Quick Check: Direction {.quiz-question}
 
 A spectral line appears at a **longer** wavelength than its lab value. The source is…
 
-::: {.quiz}
-
-- [x] moving away (redshift)
-- [ ] moving toward (blueshift)
-- [ ] motionless
-- [ ] moving sideways only
-
-:::
+- [moving away (redshift)]{.correct}
+- moving toward (blueshift)
+- motionless
+- moving sideways only
 
 ---
 
@@ -705,18 +774,14 @@ Say: “This is why big telescopes are photon machines.”
 
 ---
 
-## 🧠 Predict (Collecting Area)
+## 🧠 Predict (Collecting Area) {.quiz-question}
 
 A telescope with 3× the diameter collects how much more light?
 
-::: {.quiz}
-
-- [ ] 3×
-- [ ] 6×
-- [x] 9×
-- [ ] 27×
-
-:::
+- 3×
+- 6×
+- [9×]{.correct}
+- 27×
 
 ---
 
@@ -767,18 +832,14 @@ You can mention “1.22 is geometry” and the scaling is the important part.
 
 ---
 
-## 🧠 Predict (Resolution)
+## 🧠 Predict (Resolution) {.quiz-question}
 
 Same telescope, same target. Switching from visible to infrared (longer $\lambda$) makes resolution…
 
-::: {.quiz}
-
-- [ ] better
-- [x] worse
-- [ ] unchanged
-- [ ] dependent only on magnification
-
-:::
+- better
+- [worse]{.correct}
+- unchanged
+- dependent only on magnification
 
 ---
 

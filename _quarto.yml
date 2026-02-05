@@ -119,6 +119,8 @@ website:
             contents:
               - text: "Slides (Day 1)"
                 href: modules/module-01/slides/lecture-04a-light-as-information.qmd
+              - text: "Slides (Day 2)"
+                href: modules/module-01/slides/lecture-04b-light-as-information.qmd
               - text: "Reading"
                 href: modules/module-01/readings/lecture-04-light-as-information.qmd
               - text: "Solutions"

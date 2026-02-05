@@ -111,6 +111,14 @@ wien_displacement:
     - "Object radiates as a blackbody (or approximately so)"
     - "Applies to thermal (temperature-driven) radiation"
 
+planck_function:
+  predicts: "Spectral radiance $B_\\lambda$ of a blackbody as a function of wavelength."
+  depends: "Wavelength $\\lambda$ and temperature $T$, with constants $h$, $c$, and $k_B$."
+  says: "Two factors compete: the $\\lambda^{-5}$ term pushes short wavelengths up, while the exponential term suppresses them. Because $h\\nu$ and $k_B T$ are both energies, the ratio $h\\nu/k_B T$ (or $hc/\\lambda k_B T$) is dimensionless and sets the regime: $h\\nu \\ll k_B T$ → Rayleigh–Jeans power law; $h\\nu \\gg k_B T$ → Wien tail."
+  assumptions:
+    - "Object radiates as an ideal blackbody in thermal equilibrium"
+    - "Spectrum expressed per unit wavelength interval"
+
 centripetal_acceleration:
   predicts: "How much acceleration is needed to maintain circular motion at speed $v$ and radius $r$"
   depends: "Speed ($v$), radius ($r$)"
