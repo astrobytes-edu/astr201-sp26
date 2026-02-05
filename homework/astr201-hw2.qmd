@@ -42,7 +42,7 @@ format:
 
 - Scientific notation and exponent rules
 - Basic algebra and proportional reasoning
-- Unit conversion (cm, km, s; g, kg; Å, nm)
+- Unit conversion (cm, km, s; g, kg; nm)
 
 ## Relevant Readings
 

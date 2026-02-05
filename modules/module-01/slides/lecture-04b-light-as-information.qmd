@@ -63,12 +63,13 @@ By the end of today, you will be able to:
 ::: {.incremental .text-md}
 - Describe how a real stellar spectrum combines **continuum + lines**
 - Apply the two key telescope scalings: **collecting area** $\propto D^2$ and **resolution** $\propto \lambda D^{-1}$
-- Recognize **Doppler shift** as a motion tool (preview)
+- Apply the **Doppler equation** to connect line shifts to radial velocity
 :::
 
 ::: {.notes}
-Today is “how we read spectra” + “why instruments matter”.
-Plan: shorter lecture block + HW/self-grading + (if time) one demo.
+**Day 2 cohesion:** Day 1 gave us the foundation — light is waves + particles, and temperature sets color via Wien. Today we *read* that color (limiting cases make Planck tractable) AND add fine structure: spectral lines encode composition, Doppler encodes motion. This completes the "light as information" toolkit.
+
+Today is "how we read spectra" + "why instruments matter".
 :::
 
 ---
@@ -132,6 +133,10 @@ A thermal spectrum peaks at a shorter wavelength. The object is…
 - [ ] the same temperature
 - [ ] necessarily younger
 
+:::
+
+::: {.notes}
+**Answer: hotter.** This is Wien's law in action: $\lambda_{\text{peak}} \propto T^{-1}$. Shorter peak wavelength means higher temperature. "Necessarily younger" is a distractor — age and temperature are not directly related (old stars can be hot, young stars can be cool depending on mass).
 :::
 
 ---
@@ -588,7 +593,7 @@ Short prompt: “Which one looks blackbody-like?” Tie back: different physics 
 
 ---
 
-## Preview: Doppler Shift = Motion from Light
+## Doppler Shift = Motion from Light
 
 Spectral lines are **fixed fingerprints** in the lab.  
 When those lines shift, we are seeing **motion**.
@@ -596,7 +601,7 @@ When those lines shift, we are seeing **motion**.
 {{< img doppler-shift-exoplanet width="85%" >}}
 
 ::: {.notes}
-This is a 5–10 minute teaser. The goal is motivation: motion is encoded in light.
+Doppler is a core tool, not just a teaser. Students should leave able to compute $v_r$ from a line shift. Emphasize: spectral lines are the ruler; the shift is the measurement.
 :::
 
 ---
@@ -624,7 +629,7 @@ $$\frac{\Delta\lambda}{\lambda_0} = \frac{v_r}{c}$$
 :::
 
 ::: {.notes}
-Example: a spectral line at 5000 Å shifts to 5005 Å — still visible, just slightly longer.
+Example: a spectral line at 500 nm shifts to 500.5 nm — still visible, just slightly longer.
 This is why we can measure velocities from *line positions* even when the object looks white.
 :::
 

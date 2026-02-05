@@ -179,6 +179,33 @@ Primary failure mode to avoid: aesthetic coherence overriding correctness.
 
 - For assessment work (problems, HW, exams, solutions), use the `astr201-problems-solutions` skill.
 
+## Instructor Teaching Philosophy (CRITICAL)
+
+**Do NOT suggest any of the following:**
+- Shortening readings or reducing content depth
+- Adding time estimates ("this should take 15 minutes")
+- Warning that material is "too long" or "too rigorous"
+- Telling students what will/won't be on exams
+- Reducing cognitive load through hand-holding
+- Assumptions that students won't read
+
+**The instructor's standards:**
+- **Rigor is expected.** Upper-division physics/astrophysics standards apply. Students are science majors; treat them accordingly.
+- **Students must read.** Readings are comprehensive by design. No apologies for length.
+- **Everything is fair game.** All material in readings, slides, and problems can appear on assessments. Never imply otherwise.
+- **Formula sheets provided.** Memorization is not the bottleneck; understanding and application are.
+- **Connections matter.** Link concepts across lectures and modules. Show how ideas build on each other.
+- **No spoon-feeding.** Do not tell students exactly what to study or what's "most important" — that's their job to figure out.
+
+**Pedagogical approach:**
+- Observable → Model → Inference (O→M→I) framework throughout
+- Proportional reasoning and limiting cases as core skills
+- CGS units as professional standard
+- Connection callouts that link physics across topics
+- Challenge problems that push beyond routine application
+
+**If you catch yourself about to suggest making things "easier" or "shorter" — stop. That impulse is wrong here.**
+
 ## When in Doubt
 **STOP. ASK. VERIFY.**
 

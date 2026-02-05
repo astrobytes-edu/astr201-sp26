@@ -970,7 +970,7 @@ No — a hot blackbody emits across many wavelengths.
 :::
 
 ::: {.notes}
-Use the blackbody figure: hot curve is above cool curve even in the red.
+**Misconception alert:** Students often think "peak wavelength" = "only wavelength emitted." Use the blackbody figure: hot curve is above cool curve even in the red. Emphasize the *breadth* of the Planck curve — color is about the *ratio* of blue to red light, not just where the peak sits.
 :::
 
 ---

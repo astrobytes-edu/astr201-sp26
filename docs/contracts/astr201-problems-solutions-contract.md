@@ -129,6 +129,17 @@ Calculation:Full / Application / O→M→I / Tools: Scaling/Ratio / ⭐⭐
 
 Solutions must follow the math-grammar rules in the ASTR 201 Pedagogical Contract.
 
+### 5.0 Formatting and Presentation (Non‑Negotiable)
+
+- **Display math for multi‑step work.** Any derivation or multi‑line calculation must use display math (`$$ ... $$`) with line breaks and clear step separation.
+- **No inline line breaks.** Never use `\\` inside inline math (`$...$`). Line breaks belong only in display math.
+- **Blank line before lists.** If a label ends with a colon (e.g., `Answer:` or `Steps:`), add a blank line before the list so Quarto renders bullets correctly.
+- **Use fraction form.** Use `\frac{...}{...}` (no slash forms like `GM/r` in final work).
+- **Text subscripts.** Use `\text{...}` for text subscripts (e.g., `v_{\text{esc}}`, `T_{\text{eff}}`).
+- **Box final answers.** Final numeric answers must be boxed with units, e.g. `\boxed{x = y\ \text{units}}`.
+- **Show unit cancellation.** Unit cancellations must be shown explicitly in display math (not compressed into inline text).
+- **Prefer ratio forms for scaling.** Use ratio/reference forms (e.g., $P/1\,\text{yr} = (a/1\,\text{AU})^{3/2}$) to avoid misleading “$P=a$” shortcuts.
+
 ### 5.1 Conceptual Problems
 1) **Restatement** (1 sentence)
 2) **Key insight** (core idea being tested)
@@ -142,6 +153,8 @@ Solutions must follow the math-grammar rules in the ASTR 201 Pedagogical Contrac
 4) **Unit check** (dimensional consistency)
 5) **Sanity check** (order of magnitude or physical reasonableness)
 6) **Answer summary** (boxed or bold, with units)
+
+**Step-by-step standard:** show each algebraic transformation on its own display line (or aligned block) so the reasoning is visible and readable.
 
 ### 5.3 Synthesis Problems
 1) **Restatement**

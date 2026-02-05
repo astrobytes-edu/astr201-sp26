@@ -560,9 +560,7 @@ $$\lambda = 600\,\text{nm} \times \frac{10^{-9}\,\text{m}}{1\,\text{nm}} \times 
 
 $$= 600 \times 10^{-9+2}\,\text{cm} = 600 \times 10^{-7}\,\text{cm} = 6.0 \times 10^{-5}\,\text{cm}$$
 
-Also useful: $600$ nm $= 6000$ Å (since 1 nm = 10 Å)
-
-**Answer (a):** $\boxed{\lambda = 6.0 \times 10^{-5}\,\text{cm} = 6000\,\text{Å}}$
+**Answer (a):** $\boxed{\lambda = 6.0 \times 10^{-5}\,\text{cm} = 600\,\text{nm}}$
 
 **(b) Calculate frequency:**
 
