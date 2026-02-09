@@ -1,0 +1,1004 @@
+---
+title: "Lecture 1: Distance & Parallax"
+subtitle: "How far? The foundation of stellar astrophysics"
+author: "Dr. Anna Rosen"
+date: "2026-02-12"
+description: "Measuring distance is the fundamental problem in astronomy. This lecture introduces parallax, derives the inverse-square law, and shows how distance unlocks luminosity — the vertical axis of the HR diagram."
+draft: true
+categories: [distance, parallax, luminosity, inverse-square-law]
+course: ASTR 201
+module: "2 - Discovering the HR Diagram"
+learning-objectives:
+  - Understand angular measure in degrees, arcminutes, arcseconds, and radians
+  - Derive and apply the small-angle approximation for stellar distances
+  - Define parallax angle and the parsec; calculate distances from parallax measurements
+  - Explain the geometric and dimensional-analysis derivations of the inverse-square law
+  - Apply $F = L/(4\pi d^2)$ to infer stellar luminosity from measured flux and parallax distance
+  - Compare distance determination methods and discuss the impact of Gaia observations
+  - Recognize the Observable → Model → Inference framework in distance and luminosity measurements
+Concept-Throughline:
+  - "Distance is the master key: it unlocks everything else"
+  - "Geometry + a baseline = distance without traveling"
+  - "Energy spreads isotropically; that spreading follows the inverse-square law"
+  - "Measured brightness + known distance = intrinsic luminosity"
+math-level: symbolic_with_interpretation
+mode: Introduce
+prerequisites: Small-angle approximation and dimensional analysis from Module 1; comfort with geometric scaling
+---
+
+## Learning Objectives
+
+By the end of this reading, you will be able to:
+
+1. **Define** angular measure in all its forms (degrees, arcminutes, arcseconds, radians) and convert between them
+2. **Derive** the small-angle approximation from geometry and explain its physical meaning
+3. **Define** parallax angle, the parsec, and the relationship $d(\text{pc}) = 1/p(\text{arcsec})$
+4. **Calculate** stellar distances from parallax measurements using worked examples
+5. **Explain** why distance is the "master key" to measuring all other stellar properties
+6. **Derive** the inverse-square law using both geometric and dimensional-analysis approaches
+7. **Apply** the flux-luminosity-distance equation to infer stellar luminosity and discuss the Observable → Model → Inference sequence
+
+::: {.callout-tip title="The Big Idea"}
+**You can't touch a star, but you can measure its distance from Earth.**
+
+Parallax — the apparent shift in a star's position as Earth orbits — gives us a baseline ruler. The inverse-square law tells us that light spreads equally in all directions. Together, they transform observations of brightness and position shifts into precise knowledge of stellar distances and intrinsic luminosities.
+
+This lecture is the gateway to the HR diagram: measure distance, then luminosity becomes knowable.
+:::
+
+---
+
+## Part 1: The Distance Problem — Why It Matters
+
+### 1.1 The Fundamental Challenge
+
+**Why is distance so hard to measure?**
+
+- Stars are points of light with no measurable angular size
+- Parallax (shift in position) is tiny — even the nearest star shifts by less than 1 arcsecond as Earth orbits the Sun
+- Without knowing how far away a star is, we cannot determine its true brightness (luminosity)
+- Without luminosity, we cannot build the Hertzsprung-Russell diagram
+- **The distance problem IS the starting point for stellar astrophysics**
+
+**Observable → Model → Inference:**
+- **Observable:** Position shifts, brightness (flux)
+- **Model:** Geometry (small-angle formula, parallax definition), energy conservation (inverse-square law)
+- **Inference:** Distance → luminosity
+
+### 1.2 Roadmap for This Lecture
+
+**Section 2: Angular measure**
+- Degrees, arcminutes, and arcseconds
+- Radians and why they matter
+- Conversion between systems
+
+**Section 3: Geometric foundations**
+- Small-angle approximation (review + geometric derivation)
+- Angular size and why it matters
+
+**Section 4: Parallax — the method**
+- The parallax angle and Earth's orbit as a baseline
+- Definition and origin of the parsec
+- Gaia: from parallax to stellar surveys
+
+**Section 5: The inverse-square law**
+- Geometric derivation (concentric spheres)
+- Dimensional analysis derivation
+- Flux, luminosity, distance relationship
+
+**Section 6: From distance to luminosity**
+- Rearranging the equation: $L = 4\pi d^2 F$
+- Worked example: the solar constant → solar luminosity
+- Preview of standard candles
+
+---
+
+## Part 2: Angular Measure — The Language of the Sky
+
+### 2.1 Degrees, Arcminutes, and Arcseconds
+
+Astronomers measure angles in the sky using a system derived from ancient Babylonian mathematics. A full circle is divided into 360 **degrees** (°), but we rarely work with such large angles for stellar distances. Instead, we use smaller units.
+
+**Degrees (°):**
+- 1 full circle = 360°
+- Angular size of the Sun or Moon = ~0.5°
+- Typical naked-eye star separation = few degrees
+
+**Arcminutes (′ or arcmin):**
+- 1° = 60 arcminutes
+- 1 arcminute = 1/60 of a degree
+- Angular size of a crater on the Moon ≈ few arcminutes
+- Typical telescope resolution ≈ 1 arcsecond
+
+**Arcseconds (″ or arcsec):**
+- 1 arcminute = 60 arcseconds
+- 1 arcsecond = 1/3600 of a degree
+- This is the scale of stellar parallax
+
+::: {.callout-check-yourself}
+Convert the following to arcseconds:
+- (a) 1 degree
+- (b) 5 arcminutes
+- (c) 0.5 degrees
+
+*(Think first... then check: (a) $1° \times 3600 = 3600$ arcsec, (b) $5 \times 60 = 300$ arcsec, (c) $0.5 \times 3600 = 1800$ arcsec)*
+:::
+
+### 2.2 Radians — The Natural Unit for Angles
+
+When you're doing geometry or calculus, degrees are awkward. Instead, physicists and astronomers use **radians**, the natural unit for angles.
+
+**Definition:** 1 radian is the angle subtended by an arc whose length equals the radius of the circle.
+
+In other words, if you draw a circle of radius $r$ and mark off an arc of length $r$ along the circumference, the angle from the center to that arc is 1 radian.
+
+**Key fact:** The circumference of a circle is $2\pi r$, so:
+- 1 full circle = $2\pi$ radians ≈ 6.28 radians
+- 1 radian ≈ 57.3°
+
+**Why radians are important:** In a radian, the angle is dimensionless — it's defined as the ratio of arc length to radius (both are lengths). This makes many formulas simpler, especially in calculus and when using the small-angle approximation.
+
+**Conversion:**
+$$1 \text{ radian} = \frac{360°}{2\pi} \approx 57.3°$$
+
+::: {.callout-important title="Radians are a Ratio of Lengths"}
+
+This is crucial: **a radian is dimensionless** because it's defined as:
+
+$$\text{angle (radians)} = \frac{\text{arc length}}{\text{radius}} = \frac{\text{length}}{\text{length}}$$
+
+No units! This is why radians show up naturally in physics — the math treats angles like pure numbers. When you see $\sin(\theta) \approx \theta$ for small $\theta$, that formula only works if $\theta$ is in radians.
+:::
+
+::: {.callout-check-yourself}
+Convert the following to radians:
+- (a) 90°
+- (b) 180°
+- (c) 1°
+
+*(Think first... then check: (a) $90° \times \frac{2\pi}{360°} = \frac{\pi}{2} \approx 1.57$ rad, (b) $\pi$ rad, (c) $\frac{2\pi}{360} \approx 0.0175$ rad)*
+:::
+
+### 2.3 The Critical Conversion: Arcseconds to Radians
+
+Since stellar parallax is measured in arcseconds, we need to convert between arcseconds and radians. This is the **most important conversion in this lecture**.
+
+**Derivation:**
+
+$$1 \text{ radian} = \frac{360°}{2\pi} = \frac{360 \times 3600 \text{ arcsec}}{2\pi}$$
+
+$$1 \text{ radian} = \frac{1{,}296{,}000 \text{ arcsec}}{2\pi} = \frac{1{,}296{,}000}{6.283} \approx 206{,}265 \text{ arcsec}$$
+
+**The key result:**
+$$\boxed{1 \text{ radian} = 206{,}265 \text{ arcsec}}$$
+
+Or inverted (which you'll use most often):
+$$\boxed{1 \text{ arcsec} = \frac{1}{206{,}265} \text{ radians} \approx 4.85 \times 10^{-6} \text{ radians}}$$
+
+**Why 206,265?** This large number arises because:
+- A full circle is 360° = 1,296,000 arcsec
+- A full circle is also $2\pi$ radians ≈ 6.283 radians
+- The ratio is $1{,}296{,}000 / 6.283 \approx 206{,}265$
+
+::: {.callout-tip title="Memorize or Recognize 206,265"}
+
+This number is fundamental. You'll see it in every parallax calculation. Some textbooks write it as $206{,}265 \approx 2 \times 10^5$ for quick estimates, but keep the precise value handy for calculations.
+:::
+
+::: {.callout-check-yourself}
+Convert 1 arcsecond to radians and verify that the result, when multiplied by 206,265, gives 1.
+
+*(Think first... then check: $1 \text{ arcsec} \times \frac{1 \text{ rad}}{206{,}265 \text{ arcsec}} = 4.85 \times 10^{-6}$ rad. Multiply back: $4.85 \times 10^{-6} \times 206{,}265 \approx 1$ rad)*
+:::
+
+### 2.4 Why Astronomers Use Arcseconds for Stellar Properties
+
+**Parallax angles for nearby stars are tiny.**
+
+- Nearest star (Proxima Centauri): $p \approx 0.77$ arcsec
+- Sirius: $p \approx 0.38$ arcsec
+- Most nearby stars: $p$ is a fraction of an arcsecond
+- Distant stars we can measure: $p$ in milliarcseconds or microarcseconds
+
+If we tried to work in radians, we'd be dealing with numbers like $1 \times 10^{-6}$ rad. Arcseconds keep the numbers in a manageable range (usually between 0.001 and 1 arcsec).
+
+**Connection to the small-angle approximation:** The small-angle approximation (which you'll derive next) naturally produces angles in the range where arcseconds are perfect. This isn't a coincidence — the universe has been kind to astronomers!
+
+---
+
+## Part 3: Geometric Foundations — Angular Size & Distance
+
+### 3.1 Coordinate Freedom and the Small-Angle Approximation
+
+**Key insight from dimensional analysis:** The *only* quantities that relate angular size, true size, and distance are:
+- $\alpha$ = angular size (radians)
+- $s$ = true size of object
+- $d$ = distance to object
+
+By dimensional analysis (checking that both sides have the same dimensions):
+
+$$\alpha \propto \frac{s}{d}$$
+
+where $\alpha$ is dimensionless (radians) and $s/d$ is dimensionless.
+
+**Geometric derivation:**
+
+<!-- FIGURE: Small-angle triangle showing observer at distance d, object of true size s subtending angle α -->
+
+For a small angle ($ \alpha \ll 1$ radian), the triangle formed by the observer, the object's edge, and the line of sight is nearly a right triangle. The arc length equals $s$, and the radius is $d$:
+
+$$\alpha \approx \frac{s}{d} \quad \text{(radians, } \alpha \ll 1\text{)}$$
+
+::: {.callout-important title="Units Matter: Radians vs. Arcseconds"}
+- **Radians:** $\alpha_{\text{rad}} \approx s/d$
+- **Arcseconds:** Convert using $1 \text{ radian} = 206{,}265 \text{ arcsec}$
+
+$$\alpha_{\text{arcsec}} = \frac{s}{d} \times 206{,}265$$
+
+In astronomy, we always measure angles in arcseconds. Always convert at the end of a dimensional derivation.
+:::
+
+**Meaning card for the small-angle formula:**
+- **What it predicts:** If you measure the angular size and know the distance, you can infer the true size; or if you know the size and measure the angle, you get distance
+- **What it depends on:** Angular size (observable), true size (model assumption), distance (what we're solving for)
+- **Key assumption:** Angle must be small (< 0.1 radian ≈ 5°)
+- **Units check:** Left side (arcsec) must match right side after conversion factor
+
+::: {.callout-check-yourself}
+The Moon subtends about 0.5° in our sky (about the same as the Sun). Its distance is $d \approx 3.84 \times 10^{10}$ cm. Estimate its true size using the small-angle formula.
+
+*(Think first... then check: Convert $0.5° = 0.5 \times 60 = 30$ arcmin $= 30 \times 60 = 1800$ arcsec. Use $s = \alpha d / 206{,}265 = (1800)(3.84 \times 10^{10})/206{,}265 \approx 3.3 \times 10^8$ cm = 3300 km. (Actual: 3474 km.) )*
+:::
+
+---
+
+## Part 4: Parallax — Distance from Geometry
+
+### 4.1 The Parallax Angle
+
+**Analogy:** Hold your finger up and close one eye, then the other. Your finger appears to shift against the background. The further your finger is, the smaller the shift.
+
+**Extended to astronomy:** Earth orbits the Sun with a baseline of 2 AU. From opposite sides of Earth's orbit, a nearby star appears to shift against distant background stars.
+
+**Definition:**
+- **Parallax angle ($p$):** Half the total angular shift; measured from the star to Earth from the Sun as seen from Earth's orbit at maximum baseline (1 AU)
+- Unit: arcseconds
+
+<!-- FIGURE: Sun at center, Earth's orbit as a circle (radius 1 AU), star at distance d above the ecliptic plane; draw the triangle Sun–Star–Earth and mark angle p at the star as half the total baseline -->
+
+### 4.2 The Parsec — A Natural Unit
+
+**Derivation:** Apply the small-angle formula with a 1 AU baseline:
+
+$$p_{\text{arcsec}} = \frac{1\text{ AU}}{d} \times 206{,}265 \text{ arcsec/radian}$$
+
+**Rearrange for distance:**
+
+$$d = \frac{1\text{ AU} \times 206{,}265}{p_{\text{arcsec}}} = \frac{206{,}265\text{ AU}}{p_{\text{arcsec}}}$$
+
+**Define 1 parsec (pc):** The distance at which a star has parallax angle $p = 1$ arcsecond:
+
+$$1\text{ pc} = 206{,}265\text{ AU}$$
+
+**The most useful form:**
+
+$$\boxed{d(\text{pc}) = \frac{1}{p(\text{arcsec})}}$$
+
+This relationship is simple and elegant: a smaller parallax angle means a more distant star.
+
+::: {.callout-tip title="Why the Parsec?"}
+The name "parsec" = "parallax arcsecond." It's not arbitrary: it emerges naturally from choosing 1 AU as the baseline and 1 arcsecond as the measurement unit.
+
+This makes parallax measurement incredibly convenient: if you measure $p = 0.5$ arcsec, you immediately know $d = 2$ pc without any calculation.
+:::
+
+**Key conversions:**
+- 1 pc = $3.09 \times 10^{18}$ cm
+- 1 pc = $3.26$ light-years
+- 1 kpc = 1000 pc
+
+::: {.callout-check-yourself}
+Sirius, the brightest star in the night sky, has $p = 0.379$ arcsec. How far away is it?
+
+*(Think first... then check: $d = 1/0.379 = 2.64$ pc. In light-years: $2.64 \times 3.26 = 8.6$ ly. (This is correct — Sirius is indeed one of the nearest stars.))*
+:::
+
+### 4.3 Worked Example: Proxima Centauri
+
+**Given:** Parallax angle $p = 0.768$ arcsec (the most precisely measured stellar parallax for decades)
+
+**Find:** Distance in parsecs and centimeters
+
+**Step 1: Convert parallax to distance**
+
+$$d = \frac{1}{p} = \frac{1}{0.768\text{ arcsec}} = 1.30\text{ pc}$$
+
+**Step 2: Convert to centimeters**
+
+$$d = 1.30\text{ pc} \times 3.09 \times 10^{18}\text{ cm/pc} = 4.02 \times 10^{18}\text{ cm}$$
+
+**Step 3: Sanity check (OOM)**
+
+Nearest stars should be ~1–5 pc away. Our answer is right in that range. ✓
+
+::: {.callout-key-insight title="Why Proxima Centauri Is Special"}
+Proxima Centauri is the nearest known star to the Sun (after the Sun itself). Its parallax is measurable from Earth but still small — even at this "nearby" distance of 1.3 pc, it appears to shift by less than 1 arcsecond.
+
+This illustrates why distance measurement was historically so difficult and why parallax-based surveys only recently became precise enough to map the Milky Way.
+:::
+
+### 4.4 From Hipparcos to Gaia: The Parallax Revolution
+
+**Historical context:**
+
+- **Pre-1600s:** No parallax detected; astronomers debated whether stars moved at all
+- **Hipparcos (1989–1993):** Space telescope achieving ~1 milliarcsecond precision
+  - Measured ~100,000 stars reliably
+  - Extended parallax measurements to ~100 pc
+- **Gaia (2013–present):** Astrometry space mission with ~10 microarcsecond precision
+  - Parallaxes for ~2 billion stars
+  - Distances mapped to the edge of the Milky Way and beyond
+  - Revolutionized our understanding of stellar populations, structure, and motion
+
+**Observable → Model → Inference in the Gaia era:**
+- **Observable:** Star's position on the sky (measured photometrically to incredible precision)
+- **Model:** Geometry (parallax formula), orbital mechanics (Earth's annual motion)
+- **Inference:** Distance → velocity → orbital element → stellar population properties
+
+::: {.callout-note title="Why Parallax Precision Matters"}
+Distance determines everything else. A 10% error in parallax becomes:
+- 20% error in distance (since $d = 1/p$)
+- 44% error in luminosity (since $L \propto d^2$)
+- Even larger errors in stellar radius (from spectroscopy + radius-magnitude relations)
+
+Gaia's unprecedented precision has been transformative because it reduced these cascading errors to manageable levels for billions of stars.
+:::
+
+::: {.callout-check-yourself}
+Estimate the parallax angle for a star at 1 kpc distance.
+
+*(Think first... then check: $p = 1/d = 1/1000\text{ pc} = 0.001$ arcsec = 1 milliarcsecond. This is right at the limit of Hipparcos precision and well within Gaia's range.)*
+:::
+
+---
+
+## Part 5: The Inverse-Square Law — Two Derivations
+
+### 5.1 Geometric Derivation: Concentric Spheres
+
+**Setup:** A star emits total luminosity $L$ (energy per unit time) isotropically — equally in all directions.
+
+<!-- FIGURE: Star at center with two concentric spheres of radius d₁ and d₂ (d₂ > d₁); show that the same total energy spreads over the larger sphere's surface area -->
+
+At distance $d$ from the star, this energy is spread over a sphere of surface area:
+
+$$A(d) = 4\pi d^2$$
+
+**Flux received** at distance $d$ is the energy per unit time per unit area:
+
+$$F(d) = \frac{L}{4\pi d^2}$$
+
+**Physical meaning:**
+- Same total energy ($L$) spread over a larger sphere → less energy per unit area
+- Area grows as $d^2$ → flux falls off as $1/d^2$
+
+**Meaning card:**
+- **What it predicts:** Given a star's luminosity and distance, you can calculate the flux you observe
+- **What it depends on:** Star's total luminosity ($L$), distance ($d$)
+- **Key assumption:** Isotropic emission (no "beaming" in one direction), no absorption between star and observer
+- **Units check:** Flux has dimensions of energy/(time × area); $L$ has dimensions of energy/time; dividing by $4\pi d^2$ (an area) gives the right dimensions
+
+### 5.2 Dimensional Analysis Derivation
+
+**Start:** We want to relate flux to luminosity and distance.
+
+| Quantity | Dimensions |
+|----------|------------|
+| $F$ (flux) | $[M L^0 T^{-3}]$ (energy per time per area) |
+| $L$ (luminosity) | $[M L^2 T^{-3}]$ (energy per time) |
+| $d$ (distance) | $[L]$ |
+
+**Assume:** $F \propto L^a d^b$
+
+**Match dimensions:**
+
+$$[M L^0 T^{-3}] = [M L^2 T^{-3}]^a [L]^b = [M^a L^{2a+b} T^{-3a}]$$
+
+Exponents:
+- Mass: $1 = a \Rightarrow a = 1$
+- Time: $-3 = -3a$ ✓ (consistent with $a = 1$)
+- Length: $0 = 2a + b = 2 + b \Rightarrow b = -2$
+
+**Result:** $F \propto L d^{-2} \Rightarrow F \propto L/d^2$
+
+The proportionality constant is $1/(4\pi)$, which dimensional analysis cannot determine (it depends on the full solid angle of a sphere). The complete formula is:
+
+$$\boxed{F = \frac{L}{4\pi d^2}}$$
+
+::: {.callout-key-insight title="Why Both Derivations?"}
+- **Geometric derivation** gives physical intuition: you can visualize the sphere and see why area (and thus flux) scales as $d^2$
+- **Dimensional analysis derivation** is faster and works when geometry isn't obvious
+- **Together** they build confidence: two completely different approaches give the same answer
+
+This is the power of having multiple tools in your toolkit.
+:::
+
+### 5.3 Including the Equation Include
+
+[Your outline calls for the EXISTING EQUATION INCLUDE: `{{< include ../../../_includes/equations/flux-luminosity-distance.qmd >}}`]
+
+This equation is central to all stellar luminosity measurements. The full meaning:
+
+$$F = \frac{L}{4\pi d^2}$$
+
+- **Observable:** Flux $F$ (measured from photometry)
+- **Model:** Spherical energy spreading (assumption: isotropic emission, no absorption)
+- **Inference:** If we know $d$ (from parallax), we can solve for $L$
+
+::: {.callout-tip title="Worked Example: Energy Flow from Sirius"}
+Sirius is the brightest star in Earth's sky, with measured flux $F_{\text{Sirius}} = 2.6 \times 10^{-8}$ erg cm$^{-2}$ s$^{-1}$.
+
+From our earlier parallax calculation: $d = 2.64$ pc $= 2.64 \times 3.09 \times 10^{18}$ cm $= 8.16 \times 10^{18}$ cm.
+
+**Find the luminosity:**
+
+$$L = 4\pi d^2 F = 4\pi (8.16 \times 10^{18})^2 (2.6 \times 10^{-8})$$
+
+$$= 4\pi \times 6.66 \times 10^{37} \times 2.6 \times 10^{-8}$$
+
+$$= 4\pi \times 1.73 \times 10^{30} \approx 2.2 \times 10^{31}\text{ erg/s}$$
+
+**Convert to solar luminosities** ($L_\odot = 3.8 \times 10^{33}$ erg/s):
+
+$$\frac{L}{L_\odot} = \frac{2.2 \times 10^{31}}{3.8 \times 10^{33}} \approx 0.026 L_\odot$$
+
+Sirius is actually brighter than the Sun intrinsically, but this calculation shows a fainter luminosity because we've used an older flux value. With modern photometry, Sirius is found to be $\approx 26 L_\odot$.
+
+**What this teaches:** Small errors in flux measurement or distance lead to larger errors in inferred luminosity. This is why precise parallax (from Gaia) is essential.
+:::
+
+::: {.callout-check-yourself}
+A star has parallax $p = 0.1$ arcsec and observed flux $F = 10^{-11}$ erg cm$^{-2}$ s$^{-1}$.
+
+(a) What is its distance in parsecs and centimeters?
+(b) What is its luminosity in solar luminosities?
+
+*(Think first... then check the solution below.)*
+
+**Solution:**
+(a) $d = 1/0.1 = 10$ pc $= 10 \times 3.09 \times 10^{18}$ cm $= 3.09 \times 10^{19}$ cm
+
+(b) $L = 4\pi d^2 F = 4\pi (3.09 \times 10^{19})^2 (10^{-11}) = 4\pi \times 9.5 \times 10^{38} \times 10^{-11}$
+$= 4\pi \times 9.5 \times 10^{27} \approx 1.2 \times 10^{29}$ erg/s
+
+$L/L_\odot = 1.2 \times 10^{29} / 3.8 \times 10^{33} \approx 0.0003 L_\odot$
+
+This is a faint, distant red dwarf — typical for the catalog of known stars.
+:::
+
+---
+
+## Part 6: From Distance to Luminosity — Building the HR Diagram Axis
+
+### 6.1 Inverting the Problem: $L = 4\pi d^2 F$
+
+The flux-luminosity-distance equation can be rearranged:
+
+$$L = 4\pi d^2 F$$
+
+This is the formula you'll use most often in this course:
+- **Inputs:** Distance $d$ (from parallax) and flux $F$ (from photometry)
+- **Output:** Intrinsic luminosity $L$ (plotted on the vertical axis of the HR diagram)
+
+**Observable → Model → Inference sequence:**
+1. **Observable:** Star's position shift ($\Delta \alpha$, from Gaia-like astrometry)
+2. **Model:** Apply parallax formula to get distance
+3. **Observable:** Star's brightness measured in different filters (photometry)
+4. **Model:** Sum photometry across all wavelengths to get total flux $F$
+5. **Inference:** Apply $L = 4\pi d^2 F$ to compute luminosity
+6. **Assumption check:** Assume isotropic emission, no extinction
+
+### 6.2 Worked Example: From Solar Constant to Solar Luminosity
+
+**Given:**
+- Solar constant (flux from Sun at Earth): $F_\odot = 1.4 \times 10^{6}$ erg cm$^{-2}$ s$^{-1}$
+- Earth-Sun distance (1 AU): $d = 1.5 \times 10^{13}$ cm
+
+**Find:** Solar luminosity $L_\odot$
+
+**Step 1: Apply the rearranged formula**
+
+$$L_\odot = 4\pi d^2 F_\odot$$
+
+**Step 2: Calculate**
+
+$$L_\odot = 4\pi (1.5 \times 10^{13})^2 (1.4 \times 10^{6})$$
+
+$$= 4\pi \times 2.25 \times 10^{26} \times 1.4 \times 10^{6}$$
+
+$$= 4\pi \times 3.15 \times 10^{32}$$
+
+$$\approx 3.96 \times 10^{33}\text{ erg/s} \approx 4 \times 10^{33}\text{ erg/s}$$
+
+**Step 3: Compare to accepted value**
+
+Accepted: $L_\odot = 3.828 \times 10^{33}$ erg/s
+
+Our estimate is within 4% — excellent agreement!
+
+::: {.callout-important title="What This Calculation Shows"}
+This is not a coincidence that it matches. This IS how we know the Sun's luminosity:
+1. Measure the solar constant (flux at Earth)
+2. Measure Earth's distance (from parallax, radar, or orbital dynamics)
+3. Apply the inverse-square law
+
+This method can be applied to *any* star:
+1. Measure its flux (photometry)
+2. Measure its distance (parallax)
+3. Calculate its luminosity
+
+Every star on the HR diagram was placed there using this method.
+:::
+
+### 6.3 Why Distance Is the Master Key
+
+**The dependency chain:**
+
+$$\text{Parallax} \xrightarrow{p = 1/d} \text{Distance} \xrightarrow{d} \text{Luminosity} \xrightarrow{L, T} \text{HR Diagram}$$
+
+Errors propagate:
+- 10% error in parallax → 20% error in distance (inverse relationship)
+- 20% error in distance → 44% error in luminosity ($L \propto d^2$)
+- Large errors in luminosity → misplacement on HR diagram
+
+This is why Gaia was so transformative: improving parallax precision from ~1 milliarcsecond (Hipparcos) to ~10 microarcseconds (Gaia) reduces distance errors by 100×, and luminosity errors by 10,000×.
+
+::: {.callout-check-yourself}
+If Gaia measures parallax with 10 times better precision than Hipparcos, by what factor do distances become more accurate? By what factor do luminosity measurements improve?
+
+*(Think first... then check: Distance improves by 10× (linear). Luminosity improves by $10^2 = 100\times$ (quadratic). This compounds, making Gaia's data revolutionary for HR diagram studies.)*
+:::
+
+---
+
+## Part 7: Standard Candles — A Preview
+
+### 7.1 Inverting Again: $d = \sqrt{L/(4\pi F)}$
+
+If we *know* the intrinsic luminosity $L$ of a star (from theory or calibration), we can measure its flux $F$ and infer distance:
+
+$$d = \sqrt{\frac{L}{4\pi F}}$$
+
+**This is the principle of "standard candles":** stars or objects with known luminosity.
+
+**Examples (to be explored fully in Lecture 5):**
+- **Cepheid variables:** Pulsating stars with a period-luminosity relation
+  - Measure period → infer luminosity
+  - Measure flux → infer distance
+  - Applied to determine distances to galaxies
+- **Type Ia supernovae:** Thermonuclear explosions with roughly constant peak luminosity
+  - All Type Ia ≈ same intrinsic brightness
+  - Measure flux → infer distance
+  - Used to discover accelerating cosmic expansion (Nobel Prize, 1998)
+
+::: {.callout-note title="Why Standard Candles Matter for Cosmology"}
+Standard candles let us measure distances to objects too far for parallax:
+- Parallax: ~100 pc (Gaia), ~1000 pc (future surveys)
+- Cepheids: ~30 Mpc (nearby galaxies)
+- Type Ia supernovae: ~10 Gpc (edge of observable universe)
+
+These methods are *calibrated* using nearby Cepheids measured with parallax, which is why getting nearby distances right matters for all of cosmology.
+:::
+
+---
+
+## Summary: Observable → Model → Inference for This Lecture
+
+| Step | Observable | Model | Inference |
+|------|-----------|-------|-----------|
+| **Distance** | Star's position shift across sky (arcsec) | Parallax formula: $d = 1/p$ | Distance (pc or cm) |
+| **Distance** | Angular separation, known baseline (Earth's orbit) | Small-angle geometry | Same as above |
+| **Luminosity** | Measured flux (erg cm$^{-2}$ s$^{-1}$) | Inverse-square law: $F = L/(4\pi d^2)$ | Rearrange to $L = 4\pi d^2 F$ |
+| **Distance (reversed)** | Flux + known intrinsic luminosity | Standard candle relation | Infer distance |
+
+---
+
+## Part 8: Checking Your Understanding — Retrieval Practice
+
+::: {.callout-check-yourself}
+**Question 1:** Why is parallax measurement so much harder than, say, measuring the apparent brightness of a star?
+
+*Think about angular scales and detector precision. How much does a star at 10 pc shift as Earth orbits?*
+:::
+
+::: {.callout-check-yourself}
+**Question 2:** Suppose we could measure stellar parallaxes 1000 times more precisely than Gaia. By what factor would we extend the reliable parallax distance range? By what factor would luminosity measurements improve?
+
+*Remember: $d = 1/p$ (inverse), $L = 4\pi d^2 F$ (quadratic).*
+:::
+
+::: {.callout-check-yourself}
+**Question 3:** A student looks up two stars in a catalog and finds:
+- Star A: flux = $10^{-10}$ erg cm$^{-2}$ s$^{-1}$, distance = 10 pc
+- Star B: flux = $10^{-11}$ erg cm$^{-2}$ s$^{-1}$, distance = 1 pc
+
+Which is intrinsically more luminous? By what factor?
+
+*Compute $L = 4\pi d^2 F$ for each.*
+:::
+
+---
+
+## Part 9: Detail Breakdowns by Section (Outline for Full Reading)
+
+### Section 2.1: Small-Angle Approximation
+
+**Content outline (~500 words)**
+- Review of what "angular size" means (apparent size as seen from Earth)
+- Geometric derivation: observer-object-center triangle for small angles
+- Sketch showing arc ≈ $s$ when $\alpha$ is small
+- Dimensional check: $\alpha$ (dimensionless) ∝ $s/d$ (dimensionless)
+- Contrast with exact formula (trigonometric): $\tan(\alpha/2) = (s/2)/d$ (reduced to small angle: $\alpha ≈ s/d$)
+- Limits of validity: small-angle approximation breaks down for $\alpha > 0.1$ radian ≈ 5.7°
+- Rule of thumb: "Keep angles in arcseconds if they're arc- or milli-arcseconds"
+- **Worked example:** Moon's angular size → true radius
+- **Meaning card:** Recap of what the formula does and doesn't assume
+- **Callout-warning:** Common student error: forgetting the conversion factor between radians and arcseconds
+- **Check Yourself (1):** Estimate the angular size of the Sun (0.5°) as a sanity check
+
+### Section 2.2: Parallax Basics
+
+**Content outline (~600 words)**
+- Physical analogy: holding finger at arm's length, closing one eye, then the other
+- Extend to astronomy: Earth's orbit provides 2 AU baseline
+- Definition of parallax angle $p$: half the maximum shift (measured from the *star* looking back at Earth's position)
+- Diagram: Sun (center) ↔ Earth (two positions, 1 AU apart on opposite sides) ↔ star (distance $d$); angle at star is $p$
+- Why half? Historical convention (easier to work with) and symmetry (planet and star positions swap)
+- Small-angle formula applied: $p(\text{rad}) ≈ (1\text{ AU})/d$
+- Conversion to arcseconds: multiply by 206,265
+- **Rearrange to distance:** $d = 206{,}265\text{ AU} / p(\text{arcsec})$
+- **Define the parsec:** $d(\text{pc}) = 1/p(\text{arcsec})$ — clean, memorable, the "natural unit"
+- Intuition: $p = 1$ arcsec → $d = 1$ pc ≈ 3.26 light-years (roughly the nearest-star distance)
+- **Worked example 1:** Proxima Centauri ($p = 0.768$ arcsec → $d = 1.30$ pc)
+- **Worked example 2:** A hypothetical star at 10 arcsec parallax (impossible — too close to Sun, but good for practice) → 0.1 pc
+- **Callout-important:** Unit conversions (pc ↔ cm, pc ↔ light-year)
+- **Check Yourself (2):** Estimate parallax of a star at 1 kpc
+
+### Section 2.3: Historical Context and Gaia
+
+**Content outline (~400 words)**
+- Brief history: Why parallax was so hard to measure (limits of human eye, telescope precision)
+- Pre-1600: Tycho Brahe, others looked for parallax; couldn't find it even for brightest stars (actually ~1 arcsec for nearest star — impossible to measure without telescopes)
+- 1838: Bessel, Henderson, Struve independently measured parallaxes of nearby stars; proof that Earth orbits Sun and stellar distances are enormous
+- 20th century: parallax measurements only ~10% of nearest stars (bright, nearby only)
+- Hipparcos (1989–1993): First space-based parallax mission; ~1 milliarcsecond precision; ~100,000 stars
+- Gaia (2013–present): ~10 microarcsecond precision; ~2 billion stars; maps Milky Way structure
+- **Cascade of implications:** Better distances → better luminosities → revised HR diagram → understanding stellar populations
+- **Callout-tip:** Why parallax is immune to systematic errors (pure geometry; no physics assumptions needed)
+- **Check Yourself (3):** What parallax does Gaia achieve, and what distance range does this enable?
+
+### Section 2.4: Geometric Derivation of the Inverse-Square Law
+
+**Content outline (~500 words)**
+- Setup: Star emits total power/luminosity $L$ (erg/s) in all directions isotropically
+- At distance $d$, energy is spread over a sphere of surface area $A = 4\pi d^2$
+- **Large figure:** Concentric spheres of different radii, showing same total energy flux through each, but diluted
+- Flux = power / area: $F = L / (4\pi d^2)$
+- Intuition: "Energy spreads isotropically over ever-larger surfaces; flux falls as $1/d^2$"
+- Why $4\pi$? Full solid angle of a sphere (total steradians = $4\pi$ sr)
+- **Contrast with 2D analogy:** Energy spreading along a line gives $F \propto 1/d$; spreading into 3D space (sphere) gives $1/d^2$
+- **Meaning card:** Inputs, outputs, assumptions (isotropic, no extinction)
+- **Callout-note:** Extinction in the interstellar medium breaks the ideal $1/d^2$ relationship (dust absorbs light); corrections needed for distant stars
+- **Check Yourself (4):** If a star's distance doubles, by what factor does the observed flux change?
+
+### Section 2.5: Dimensional Analysis Derivation of the Inverse-Square Law
+
+**Content outline (~400 words)**
+- Recap the three quantities: $F$, $L$, $d$
+- State dimensions: $[F] = \text{erg/(cm}^2\text{ s)}$, $[L] = \text{erg/s}$, $[d] = \text{cm}$
+- Assume power-law form: $F \propto L^a d^b$
+- Dimensional equation: match $[L^0 M^1 T^{-3}]$ (flux units)
+- Exponent matching: $a = 1$, $b = -2$
+- Result: $F \propto L/d^2$
+- **Mention:** Dimensional analysis gives scaling but not the $4\pi$; that comes from geometry
+- **Callout-key-insight:** Both methods (geometry and DA) give the same scaling; this builds confidence
+- **Check Yourself (5):** Dimension-check the rearranged form $L = 4\pi d^2 F$
+
+### Section 2.6: The Flux-Luminosity-Distance Equation and Its Uses
+
+**Content outline (~700 words)**
+- State equation: $F = L/(4\pi d^2)$; include equation reference
+- **Three forms and their uses:**
+  1. $F = L/(4\pi d^2)$ — given $L$ and $d$, predict flux
+  2. $L = 4\pi d^2 F$ — given $d$ and measured flux, infer luminosity (used in HR diagram construction)
+  3. $d = \sqrt{L/(4\pi F)}$ — given known $L$, measure flux to infer distance (standard candles)
+- **Observable → Model → Inference for HR diagrams:**
+  - Observable: Star's parallax (from astrometry) and photometric flux (from brightness measurement in bands)
+  - Model: Parallax formula for distance; inverse-square law for energy spreading
+  - Inference: Plug into $L = 4\pi d^2 F$; place on HR diagram at coordinates $(T, L)$
+- **Worked example 1:** Solar constant → solar luminosity
+  - Numbers: $F_\odot ≈ 1.4 \times 10^6$ erg/(cm² s), $d = 1$ AU $= 1.5 \times 10^{13}$ cm
+  - Calculation: $L_\odot = 4\pi (1.5 \times 10^{13})^2 (1.4 \times 10^{6}) ≈ 4 \times 10^{33}$ erg/s
+  - Check: matches literature value to ~4%
+- **Worked example 2:** A distant star (synthetic)
+  - Parallax $p = 0.05$ arcsec (d = 20 pc)
+  - Measured flux $F = 10^{-12}$ erg/(cm² s)
+  - Luminosity $L = 4\pi (20 \times 3.09 \times 10^{18})^2 (10^{-12}) ≈ ...$
+  - Express as fraction of $L_\odot$
+- **Callout-important:** Error propagation
+  - 10% parallax error → 20% distance error → 44% luminosity error
+  - This is why precision parallax is critical
+- **Callout-warning:** Extinction in the interstellar medium
+  - Dust absorbs starlight; observed flux appears fainter than it should be
+  - Leads to underestimated luminosity if extinction not corrected
+  - Extinction is wavelength-dependent (more in UV/blue)
+- **Check Yourself (6):** Given three stars with parallaxes and fluxes, rank by intrinsic luminosity
+
+### Section 2.7: Preview of Standard Candles
+
+**Content outline (~300 words)**
+- **Concept:** If a class of objects has a known or determinable luminosity, measuring flux → distance
+- **Cepheid variables:**
+  - Periodic pulsators (P ~ 1–100 days)
+  - Period-luminosity relation discovered by Leavitt (1912)
+  - Nearby Cepheids calibrated by parallax → extended to distant galaxies
+  - Historical role: Hubble used Cepheids in Andromeda to prove galaxies exist beyond Milky Way
+- **Type Ia supernovae:**
+  - Thermonuclear explosions of white dwarfs; roughly constant peak luminosity
+  - Measure time to peak (light curve), flux → distance
+  - Used to discover cosmic acceleration (accelerated expansion); Nobel Prize 1998
+- **RR Lyrae variables:** Older, less luminous periodic stars; distance ladder extension
+- **Inverse-square law is the *key*:** All distance determination in astronomy rests on this law
+- **Callout-tip:** Why this matters
+  - Parallax → nearby distances (< 1 kpc with current ground-based; > 100 kpc with Gaia)
+  - Standard candles → cosmological distances (Gpc range)
+  - Combined, they build the "cosmic distance ladder"
+- **Check Yourself (7):** If a Cepheid's luminosity and flux are measured, what is the formula for its distance?
+
+### Section 2.8: Summary Table and Next Steps
+
+**Content outline (~300 words)**
+- **Observable → Model → Inference summary table for the full lecture**
+- **Key takeaways:**
+  1. Distance is the master key; luminosity cannot be determined without it
+  2. Parallax (small-angle geometry) is the most direct, assumption-free method
+  3. The inverse-square law is universal; it governs how light, gravity, electromagnetism spread
+  4. Measuring $d$ and $F$ allows us to compute $L$, the vertical axis of the HR diagram
+  5. Future: temperature (next lecture) + luminosity = full HR diagram
+- **Foreshadowing:**
+  - Lecture 2 will apply Stefan-Boltzmann and Wien's law to connect color, temperature, and radius
+  - Lecture 3 will classify stars by spectral type and measure radial velocities
+  - Lecture 4 will use orbital mechanics to measure stellar masses
+  - Lecture 5 will introduce the logarithmic magnitude scale and the distance modulus
+  - Lecture 6 will synthesize all these measurements into the HR diagram
+- **Callout-note:** The HR diagram is not a scatter plot; it's a *Hertzsprung-Russell diagram*, an empirical map of stellar properties that reveals stellar evolution
+
+---
+
+## Self-Assessment Checklist
+
+### ✅ Angular Measure
+- [ ] I can convert between degrees, arcminutes, and arcseconds
+- [ ] I understand why radians are "dimensionless" (they're a ratio of lengths)
+- [ ] I can convert between arcseconds and radians using 206,265 arcsec/radian
+- [ ] I know why stellar parallaxes are measured in arcseconds
+
+### ✅ Small-Angle Approximation
+- [ ] I can derive the small-angle formula $\alpha ≈ s/d$ from a geometric triangle
+- [ ] I understand why the approximation breaks down for large angles
+- [ ] I can convert between radians and arcseconds
+- [ ] I can apply the formula to estimate true sizes or distances of astronomical objects
+
+### ✅ Parallax and Distance
+- [ ] I can define the parallax angle $p$ and explain why it's measured from the star
+- [ ] I can derive the relationship $d = 1/p$ (in parsecs and arcseconds)
+- [ ] I understand the origin of the parsec as a natural unit
+- [ ] I can calculate stellar distances from measured parallax angles
+- [ ] I know the historical importance of Gaia and its precision (microarcseconds)
+
+### ✅ The Inverse-Square Law
+- [ ] I can derive the inverse-square law using concentric spheres (geometric approach)
+- [ ] I can derive the inverse-square law using dimensional analysis
+- [ ] I understand why both approaches give $F = L/(4\pi d^2)$
+- [ ] I can explain the physical meaning of the $4\pi$ (full solid angle of a sphere)
+- [ ] I recognize that extinction breaks this ideal relationship for dust-obscured stars
+
+### ✅ Flux, Luminosity, Distance
+- [ ] I can rearrange $F = L/(4\pi d^2)$ to solve for $L$ or $d$
+- [ ] I can apply $L = 4\pi d^2 F$ to infer stellar luminosity from parallax and photometry
+- [ ] I understand the cascade of errors: parallax error → distance error → luminosity error
+- [ ] I can work through a complete calculation from parallax to luminosity (solar constant example)
+
+### ✅ Observable → Model → Inference
+- [ ] I can identify the observables (position shift, brightness)
+- [ ] I can state the models (parallax geometry, inverse-square spreading)
+- [ ] I can explain the inferences (distance, luminosity)
+
+### ✅ Preview of Standard Candles
+- [ ] I understand the concept of a standard candle
+- [ ] I know that Cepheids and Type Ia supernovae are used as distance indicators
+- [ ] I can apply $d = \sqrt{L/(4\pi F)}$ if the intrinsic luminosity is known
+
+---
+
+## Practice Problems
+
+### Conceptual Problems
+
+<!-- Problem 1: Parallax reasoning, Observable → Model → Inference framework, Bloom's: Understand/Explain -->
+**1. Why Is Distance Measurement Hard?**
+
+Explain why parallax angles for stars are so tiny. Use the small-angle formula to estimate the parallax angle of a star at 100 light-years distance (about 30 pc).
+
+- (a) Show that $p ≈ 1/d$ (in parsecs and arcseconds), so a star at 30 pc has $p ≈ 0.03$ arcsec
+- (b) Convert 0.03 arcsec to microarcseconds; compare to Gaia's precision (~10 microarcsec)
+- (c) Explain why measuring such tiny angles requires space telescopes (no atmospheric distortion)
+
+*Bloom's: Understand; Theme: Observable → Model; Tools: Small-angle formula, dimensional reasoning*
+
+<!-- Problem 2: Inverse-square law reasoning, Scaling, Bloom's: Understand/Apply -->
+**2. Inverse-Square Law and Stellar Brightness**
+
+Two identical stars have the same intrinsic luminosity $L$. Star A is twice as far from Earth as Star B.
+
+- (a) By what factor is Star A fainter (in observed flux) than Star B?
+- (b) If Star B is observed to have flux $F_B$, what is the flux of Star A?
+- (c) **Conceptual challenge:** Explain why this relationship is "universal" — it applies to any kind of radiation (light, radio, X-rays) spreading isotropically from any source
+
+*Bloom's: Apply; Theme: Scaling relationships; Tools: Inverse-square law, ratio method*
+
+### Calculation Problems
+
+<!-- Problem 3: Parallax calculation, Bloom's: Apply/Analyze -->
+**3. Parallax-Distance Conversion**
+
+Convert each of the following parallax angles to distances in parsecs, then to centimeters:
+
+- (a) Sirius: $p = 0.379$ arcsec
+- (b) Vega: $p = 0.129$ arcsec
+- (c) Altair: $p = 0.198$ arcsec
+
+For each, also convert to light-years using 1 pc = 3.26 ly.
+
+*Bloom's: Apply; Tools: Parallax formula, unit conversion*
+
+<!-- Problem 4: Luminosity from flux and distance, Bloom's: Apply/Analyze -->
+**4. Computing Stellar Luminosity**
+
+A star has parallax $p = 0.050$ arcsec and observed flux $F = 5 \times 10^{-13}$ erg cm$^{-2}$ s$^{-1}$.
+
+- (a) Calculate its distance in parsecs and centimeters
+- (b) Use $L = 4\pi d^2 F$ to compute the star's luminosity in erg/s
+- (c) Express the luminosity as a fraction of the solar luminosity ($L_\odot = 3.8 \times 10^{33}$ erg/s)
+- (d) **Sanity check:** Is this answer reasonable for a typical star? (Hint: Sun is at 1 $L_\odot$; most stars are dimmer.)
+
+*Bloom's: Apply; Theme: Observable → Model → Inference; Tools: Parallax formula, inverse-square law, dimensional analysis*
+
+<!-- Problem 5: Error propagation in distance and luminosity, Bloom's: Analyze -->
+**5. Error Propagation from Parallax to Luminosity**
+
+Gaia measures a star's parallax as $p = 0.100 ± 0.001$ arcsec (1% uncertainty).
+
+- (a) Calculate the distance: $d = 10.0 ± ?$ pc. What is the fractional uncertainty in distance?
+- (b) A photometric measurement gives flux $F = 1.0 \times 10^{-11} ± 0.05 \times 10^{-11}$ erg cm$^{-2}$ s$^{-1}$ (5% uncertainty)
+- (c) Compute luminosity $L = 4\pi d^2 F$. What is the fractional uncertainty in luminosity (from parallax alone; ignore photometry uncertainty)?
+- (d) Combined with the 5% photometry uncertainty, what is the total fractional uncertainty in $L$?
+- (e) **Conclusion:** Why is precise parallax critical for accurate luminosity measurements?
+
+*Bloom's: Analyze; Theme: Error propagation; Tools: Dimensional reasoning, uncertainty/sensitivity analysis*
+
+### Synthesis Problems
+
+<!-- Problem 6: Comparing standard candles and parallax, Bloom's: Evaluate -->
+**6. The Cosmic Distance Ladder — Parallax vs. Standard Candles**
+
+The figure below (synthetic) shows parallax distance reach for three astrometry missions and the distance reach of Cepheid variables as standard candles.
+
+- (a) **Hipparcos** (1990): 1 milliarcsecond precision. What is the maximum reliable distance for a star at (i) 1 arcsec parallax? (ii) 0.001 arcsec parallax? (Assume "reliable" = uncertainty < 10% in distance.)
+- (b) **Gaia DR2** (2018): 10 microarcsecond precision. Redo part (a) for Gaia.
+- (c) **Gaia future** (2030+): 1 microarcsecond precision. Redo part (a).
+- (d) **Cepheid variables:** A Cepheid in the Andromeda galaxy (distance ~ 2.5 million light-years ≈ 770 kpc) has measured flux $F = 10^{-14}$ erg cm$^{-2}$ s$^{-1}$ and known (from period-luminosity relation) luminosity $L = 10{,}000 L_\odot ≈ 3.8 \times 10^{37}$ erg/s.
+  - (i) Use the inverse-square law to check whether the flux and luminosity are consistent at 770 kpc
+  - (ii) Why can't we measure Andromeda's distance using parallax (even with Gaia)?
+  - (iii) Explain how the cosmic distance ladder combines parallax (nearby) with standard candles (distant)
+
+*Bloom's: Evaluate; Theme: Methods and limitations; Tools: Parallax, inverse-square law, dimensional analysis, order-of-magnitude reasoning*
+
+<!-- Problem 7: Synthesis - Building the HR diagram foundation, Bloom's: Evaluate -->
+**7. From Parallax and Photometry to the HR Diagram**
+
+Imagine a catalog with three stars: their parallaxes and apparent magnitudes (a logarithmic brightness scale; don't worry about the formula yet — just treat brighter = higher magnitude number ... wait, that's backwards. Let me restate: brighter stars have *smaller* magnitude numbers).
+
+| Star | Parallax (arcsec) | Apparent magnitude |
+|------|------|------|
+| A | 0.10 | 5.0 |
+| B | 0.010 | 5.0 |
+| C | 0.010 | 3.0 |
+
+- (a) Rank the three stars by distance (nearest to farthest)
+- (b) Rank by intrinsic brightness (luminosity). **Explain your reasoning.**
+  - (Hint: Stars B and C have the same distance but different apparent magnitudes. Which is intrinsically brighter?)
+- (c) **Conceptual:** Why is it impossible to determine intrinsic luminosity from apparent brightness alone? (What information is missing?)
+- (d) Write out the Observable → Model → Inference sequence for constructing the HR diagram using parallax and photometry
+
+*Bloom's: Evaluate; Theme: Synthesis of the full measurement chain; Tools: Parallax, inverse-square law, reasoning about observables and models*
+
+---
+
+## Glossary & Key Terms
+
+::: {.column-margin}
+**Angular size (angular diameter):** The apparent size of an object as seen from Earth, measured in degrees, arcminutes, or arcseconds.
+:::
+
+::: {.column-margin}
+**Apparent magnitude:** A logarithmic measure of brightness as seen from Earth (confusingly, smaller numbers = brighter).
+:::
+
+::: {.column-margin}
+**Arcsecond (arcsec):** 1/3600 of a degree, or 1/60 of an arcminute; the standard unit for stellar parallax.
+:::
+
+::: {.column-margin}
+**Flux:** Energy per unit time per unit area (erg cm$^{-2}$ s$^{-1}$ in CGS). Flux decreases with distance as $1/d^2$.
+:::
+
+::: {.column-margin}
+**Extinction:** Dimming of starlight caused by dust in the interstellar medium; wavelength-dependent (more in UV/blue).
+:::
+
+::: {.column-margin}
+**Hertzsprung-Russell diagram (HR diagram):** A plot of stellar luminosity (vertical axis) vs. effective temperature (horizontal axis), revealing stellar properties and evolution.
+:::
+
+::: {.column-margin}
+**Inverse-square law:** The principle that flux (or gravitational force, electrostatic force, etc.) decreases as $1/d^2$ when spreading isotropically from a point source.
+:::
+
+::: {.column-margin}
+**Luminosity:** The total power radiated by a star (erg/s in CGS). Intrinsic; does not depend on distance.
+:::
+
+::: {.column-margin}
+**Parallax angle ($p$):** The apparent angular shift of a nearby star as Earth orbits the Sun, measured from the star (half of the total baseline shift). The unit "arcsecond" is standard.
+:::
+
+::: {.column-margin}
+**Parsec (pc):** A unit of distance defined as the distance at which a star has parallax angle $p = 1$ arcsecond. 1 pc ≈ 3.26 light-years ≈ $3.09 \times 10^{18}$ cm.
+:::
+
+::: {.column-margin}
+**Radian:** The natural unit for angles, defined as the angle subtended by an arc whose length equals the radius. 1 radian = 206,265 arcsec. It is dimensionless.
+:::
+
+::: {.column-margin}
+**Small-angle approximation:** For angles $\alpha \ll 1$ radian, $\sin(\alpha) ≈ \tan(\alpha) ≈ \alpha$ (in radians). Simplifies trigonometry for distant objects.
+:::
+
+::: {.column-margin}
+**Standard candle:** An object (e.g., Cepheid variable, Type Ia supernova) with known or determinable intrinsic luminosity, allowing distance inference from measured flux.
+:::
+
+---
+
+## Looking Ahead
+
+**Lecture 2: Surface Flux & Colors of Stars**
+- Apply Stefan-Boltzmann and Wien's law to connect color to temperature and size
+- Infer stellar radii from luminosity and temperature
+
+**Lecture 3: Spectra & Composition**
+- Identify elements via spectral lines; classify stars by spectral type (OBAFGKM)
+- Measure radial velocities with the Doppler effect
+
+**Lecture 4: Masses from Motion**
+- Use binary star orbits and Kepler's third law to measure stellar masses
+- Establish the mass-luminosity relation
+
+**Lecture 5: Magnitudes & the Distance Modulus**
+- Logarithmic brightness scales; the distance modulus equation
+- Extend distance measurements beyond parallax with standard candles
+
+**Lecture 6: Building the HR Diagram**
+- Plot luminosity vs. temperature; identify the main sequence, giants, white dwarfs
+- Synthesize all Module 2 tools into a single diagram

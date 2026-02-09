@@ -1,0 +1,571 @@
+---
+title: "Lecture 3: Spectra & Composition"
+subtitle: "What's it made of, and how is it moving?"
+author: "Dr. Anna Rosen"
+date: "2026-02-17"
+description: "Every element has a unique spectral fingerprint. By spreading starlight into a rainbow and analyzing dark absorption lines, we can determine what atoms are present in a star's atmosphere and how fast it is moving toward or away from us. This lecture connects atomic physics to cosmic inference."
+draft: true
+categories: [spectroscopy, spectra, composition, doppler-shift, spectral-lines, stellar-atmospheres, obafgkm]
+course: ASTR 201
+module: "2 - Discovering the HR Diagram"
+learning-objectives:
+  - Explain Kirchhoff's three laws of spectroscopy and predict which type of spectrum a source will produce
+  - Interpret the Bohr model to explain why atoms produce discrete spectral lines at characteristic wavelengths
+  - Connect observable spectral line wavelengths to atomic composition using the Observable → Model → Inference framework
+  - Classify stars by spectral type (OBAFGKM) and explain why this sequence represents a temperature sequence, not composition
+  - Apply the Doppler shift formula to measure stellar radial velocities from observed line wavelength shifts
+  - Distinguish between spectral type, spectral luminosity class, and metallicity in describing a star's spectrum
+  - Synthesize observational evidence (line wavelengths, line shifts, line widths) to infer stellar composition, temperature, and motion
+Concept-Throughline:
+  - Atoms emit and absorb light at discrete wavelengths determined by electron energy levels — nature's fingerprint
+  - A star's spectrum encodes three independent pieces of information: composition (which lines appear), temperature (line strengths), and motion (line positions)
+  - Kirchhoff's laws explain why stars show absorption spectra: a hot continuum source (the interior) shining through a cool absorbing layer (the atmosphere)
+  - The same physical principles (quantum mechanics + Doppler effect) let us decode starlight across billions of light-years
+  - Observable → Model → Inference: measure lines → atomic physics → infer what a star is made of and how it moves
+math-level: symbolic_with_interpretation
+prerequisites: Lecture 4 (Module 1 — light and spectra basics), Bohr model and electron energy levels (quantum mechanics review), blackbody radiation concept
+---
+
+## Learning Objectives
+
+After completing this lecture, you should be able to:
+
+1. **Explain** Kirchhoff's three laws and predict whether a source produces continuous, emission, or absorption spectrum
+2. **Interpret** the Bohr model to explain why spectral lines occur at characteristic wavelengths
+3. **Describe** how to use spectral line wavelengths to determine composition
+4. **Classify** stars by spectral type (OBAFGKM) and explain the temperature sequence
+5. **Apply** the Doppler shift formula quantitatively to find radial velocities from line shifts
+6. **Distinguish** spectral type from luminosity class from metallicity
+7. **Synthesize** multiple observational clues (lines, shifts, line widths) to infer stellar properties
+
+## Concept Throughline
+
+> *Atoms are nature's barcode readers — each element absorbs and emits light at a unique set of wavelengths determined by its electron energy levels.* By carefully measuring where spectral lines appear and how they shift, we can read off a star's composition and its motion toward or away from us, unlocking information that would be impossible to measure any other way.
+
+---
+
+## Part 1: Kirchhoff's Laws — Why Stars Show Absorption Spectra
+
+### Three Types of Spectra
+
+Light sources can produce three different spectral signatures, depending on their structure and temperature:
+
+- **Continuous spectrum (blackbody continuum):** A **hot, dense source** (solid, liquid, or dense gas) emits all wavelengths, creating a smooth rainbow. Examples: the Sun's photosphere (the visible surface), an incandescent light bulb filament, a blackbody.
+
+- **Emission spectrum (bright lines):** A **hot, tenuous gas** emits light only at specific wavelengths where its atoms transition between energy levels. The background is dark, and you see bright colored lines (a "line emission" or "bright-line" spectrum). Examples: nebulae excited by nearby hot stars, neon signs, lab discharge tubes.
+
+- **Absorption spectrum (dark lines):** A **cool gas in front of a hot continuum source** absorbs photons from the continuum at the same wavelengths its atoms emit. You see the continuum interrupted by dark lines — like a photographic negative of an emission spectrum. Examples: **stellar spectra** (which is why stars are so informative), the solar spectrum.
+
+<!-- FIGURE: Three types of spectra side by side — continuous (smooth rainbow gradient), emission (black background with bright colored lines), absorption (rainbow with dark absorption lines cutting through) -->
+
+### Kirchhoff's Laws (Revisited from Lecture 4, Module 1)
+
+These three observations codify into **Kirchhoff's laws of spectroscopy:**
+
+1. **A hot, dense object emits a continuous spectrum** — all wavelengths present, following the Planck function (blackbody).
+
+2. **A hot, tenuous gas emits bright lines at specific wavelengths** — determined by the atomic/molecular transitions possible in that gas.
+
+3. **A cool gas in front of a hot continuum absorbs light at specific wavelengths** — at the same wavelengths the cool gas would emit if heated. The wavelengths absorbed are a "negative image" of what emission would show.
+
+### Why Stars Show Absorption Spectra: A Two-Layer Model
+
+A star has a dramatic **temperature gradient:**
+- Deep interior: millions of Kelvin (too hot to worry about now)
+- **Photosphere** (surface): ~5,000–6,000 K for the Sun (hot, dense, radiating as a blackbody)
+- **Stellar atmosphere** (just above the surface): slightly cooler than the photosphere
+
+The starlight we observe is emitted by the **photosphere** (Kirchhoff law 1 → continuous spectrum). But as this light travels outward through the cooler **stellar atmosphere**, atoms in the atmosphere absorb photons at specific wavelengths (Kirchhoff law 3 → dark lines appear). The result: **a continuous spectrum with dark absorption lines superimposed**.
+
+::: {.callout-important}
+## Why Stellar Spectra Are Absorption Spectra
+
+The **key insight**: The photosphere is hot enough to emit a rainbow, but it's surrounded by a cooler layer (the atmosphere) that absorbs certain colors. This is not a coincidence — it's a natural consequence of how stars are structured. If a star had no atmosphere (impossible, but imagine it), we'd see a pure blackbody. If we observed only the atmosphere, we'd see emission lines. We see absorption lines because we observe the photosphere through the atmosphere.
+:::
+
+::: {.callout-note title="What About Emission Nebulae?" collapse="true"}
+Nebulae (gas clouds) show bright-line emission because they don't have a dense, hot blackbody continuum source sitting in front of them. Instead, they are photoionized (energized) by ultraviolet radiation from nearby hot stars. Electrons cascade down through energy levels, emitting photons at the characteristic wavelengths of the nebula's composition. This is Kirchhoff law 2.
+:::
+
+---
+
+## Part 2: Spectral Lines as Atomic Fingerprints
+
+### The Bohr Model and Discrete Energy Levels
+
+From quantum mechanics, electrons in an atom cannot have arbitrary energies. Instead, they occupy **discrete energy levels** (or "orbitals"), like rungs on a ladder that can only go up or down in fixed steps.
+
+The **Bohr model** (circa 1913) is not perfect, but it captures the essential idea: the energy of the $n$-th level in a hydrogen atom is:
+
+$$E_n = -\frac{13.6\ \text{eV}}{n^2}$$
+
+where $n = 1, 2, 3, \ldots$ is the level number and 13.6 eV (electron volts) is the Rydberg energy.
+
+Key observations:
+- Level $n=1$ (ground state) has energy $E_1 = -13.6$ eV — the lowest (most negative, most bound).
+- Level $n=2$ has $E_2 = -13.6/4 = -3.4$ eV — higher energy (closer to zero, less tightly bound).
+- As $n$ increases, energy levels get closer together and approach $E = 0$ (ionization threshold).
+
+When an electron **jumps down** from level $n_{\text{upper}}$ to level $n_{\text{lower}}$, it releases a photon with energy equal to the difference:
+
+$$\Delta E = E_{\text{upper}} - E_{\text{lower}}$$
+
+This photon has frequency $\nu$ and wavelength $\lambda$ related by:
+
+{{< include ../../../_includes/equations/photon-energy.qmd >}}
+
+**Inverting the photon-energy relation:**
+
+$$\lambda = \frac{hc}{\Delta E}$$
+
+This is the key insight: **each transition produces a photon at a specific wavelength, determined by the energy difference between levels.**
+
+### Spectral Lines: Unique Fingerprints for Each Element
+
+Because each element has a unique set of energy levels (different nuclear charge, different electron configurations), each element produces a unique set of spectral lines.
+
+**Example: Hydrogen Balmer Series (visible lines)**
+
+When electrons fall into level $n=2$, they emit visible-light photons. The main transitions are:
+- $n=3 \to n=2$: **Hα** (H-alpha) at $\lambda = 656.3$ nm (deep red)
+- $n=4 \to n=2$: **Hβ** (H-beta) at $\lambda = 486.1$ nm (blue-green)
+- $n=5 \to n=2$: **Hγ** (H-gamma) at $\lambda = 434.0$ nm (violet)
+- $n=6 \to n=2$: **Hδ** (H-delta) at $\lambda = 410.2$ nm (ultraviolet edge)
+
+These four lines are unmistakable in optical spectra and are the **canonical example** of how atoms encode information in light.
+
+**Why is the Balmer series visible?** These transitions release ~1.9–3.4 eV of energy, which corresponds to visible/near-UV photons (the energy of visible photons is roughly 2–3 eV). The series forms because many stars have hydrogen atoms in the $n=2$ state, waiting to emit.
+
+::: {.callout-worked-example}
+### Worked Example: Bohr Energy and Wavelength
+
+**Problem:** Calculate the wavelength of the Hα line ($n=3 \to n=2$).
+
+**Solution:**
+
+Step 1: Find the energy difference
+$$\Delta E = E_2 - E_3 = -3.4 - (-13.6/9) = -3.4 - (-1.51) = -1.89\ \text{eV}$$
+
+Wait, let me recalculate: $E_3 = -13.6/9 = -1.51$ eV
+$$\Delta E = |E_3 - E_2| = |-1.51 - (-3.4)| = |1.89| = 1.89\ \text{eV}$$
+
+Step 2: Convert to ergs (cgs)
+$$1\ \text{eV} = 1.602 \times 10^{-12}\ \text{erg}$$
+$$\Delta E = 1.89 \times 1.602 \times 10^{-12}\ \text{erg} = 3.03 \times 10^{-12}\ \text{erg}$$
+
+Step 3: Use photon energy formula, rearranged for wavelength
+$$\lambda = \frac{hc}{\Delta E}$$
+
+Where:
+- $h = 6.626 \times 10^{-27}\ \text{erg·s}$ (Planck constant)
+- $c = 2.998 \times 10^{10}\ \text{cm/s}$ (speed of light)
+
+$$\lambda = \frac{(6.626 \times 10^{-27})(2.998 \times 10^{10})}{3.03 \times 10^{-12}}$$
+
+$$\lambda = \frac{1.986 \times 10^{-16}}{3.03 \times 10^{-12}} = 6.56 \times 10^{-5}\ \text{cm}$$
+
+Step 4: Convert to nanometers
+$$\lambda = 6.56 \times 10^{-5}\ \text{cm} \times \frac{10^{7}\ \text{nm}}{1\ \text{cm}} = 656\ \text{nm}$$
+
+**Answer:** Hα occurs at approximately **656 nm** — matching the observed wavelength! ✓
+
+**Physical insight:** The ~1.9 eV energy drop corresponds to visible red light. This is why Hα is a deep red line.
+:::
+
+### Observable → Model → Inference
+
+**Observable:** In a stellar spectrum, we measure dark lines at specific wavelengths (Hα at 656.3 nm, Hβ at 486.1 nm, etc.)
+
+**Model:** We use atomic physics (Bohr model or full quantum mechanics) to predict which wavelengths each element produces
+
+**Inference:** The presence of these lines tells us **which atoms are in the star's atmosphere**
+
+::: {.callout-important}
+## Spectral Lines Are Nature's Barcodes
+
+Just as a barcode uniquely identifies a product, the pattern of spectral lines uniquely identifies which chemical elements are present. No two elements have the same set of line wavelengths. This lets astronomers determine stellar composition without ever visiting the star — a triumph of inference from a distance.
+:::
+
+::: {.callout-tip title="Check Yourself" collapse="true"}
+1. **What does an absorption line represent?** (A) An electron jumping up to a higher level, (B) An electron jumping down to a lower level, (C) A wavelength at which the star's atmosphere absorbs photons
+2. **Why does each element have a unique spectral signature?** (A) Different density, (B) Different mass, (C) Different energy level spacing
+3. **Why is the Hα line red?** (A) Because hot stars are red, (B) Because the energy release (~1.9 eV) corresponds to red light, (C) Because hydrogen prefers red wavelengths
+
+**Answers:** (1) C — absorption means photons are removed from the spectrum. (2) C — the energy levels depend on nuclear charge and electron configuration. (3) B — photon energy directly sets wavelength via $E = hc/\lambda$.
+:::
+
+---
+
+## Part 3: The OBAFGKM Spectral Sequence — Temperature, Not Composition
+
+### History and the Mnemonic
+
+In the early 1900s, astronomers classified stars by their spectral features into categories: O, B, A, F, G, K, M. Originally the categories were arranged alphabetically by line *strength* (how dark the lines appeared), but later astronomers realized the sequence actually represented a **temperature sequence** when rearranged.
+
+The classic mnemonic: **"Oh Be A Fine Guy/Girl, Kiss Me"** — helps you remember the order from hottest to coolest.
+
+| Spectral Type | Temperature (K) | Color | Examples |
+|---|---|---|---|
+| O | $\gtrsim 30{,}000$ | Blue | Rigel, Betelgeuse's companion (rarely observed) |
+| B | $10{,}000$–30,000 | Blue-white | Rigel in Orion, Spica |
+| A | $7{,}500$–10,000 | White | Sirius, Vega |
+| F | $6{,}000$–7,500 | Yellow-white | Procyon A, Canopus |
+| G | $5{,}200$–6,000 | Yellow | **The Sun (G2)**, Alpha Centauri A |
+| K | $3{,}700$–5,200 | Orange | Betelgeuse (actually M1), Alpha Centauri B |
+| M | $2{,}400$–3,700 | Red | Proxima Centauri, Betelgeuse (M2) |
+
+### Why OBAFGKM Is a Temperature Sequence, Not Composition
+
+This is a **critical conceptual point**: the spectral type does NOT tell you the composition directly. All stars have roughly the same composition: about 73% hydrogen, 25% helium, and 2% heavier elements ("metals" in astronomical parlance). The spectral type reflects which *transitions* are strong, and that depends on **temperature through the Boltzmann distribution**.
+
+**The Boltzmann Factor** (qualitative picture):
+
+For an atom to absorb a photon at a given wavelength, an electron must be in the right starting energy level. The **fraction of atoms with electrons in a given level** depends on temperature:
+
+$$\text{fraction in level } n \propto e^{-E_n / k_B T}$$
+
+where $k_B$ is Boltzmann's constant and $T$ is temperature. Hotter gas distributes electrons higher up the energy ladder; cooler gas concentrates them lower.
+
+**How This Creates the OBAFGKM Sequence:**
+
+- **O stars (30,000+ K):** So hot that hydrogen atoms are **ionized** — electrons torn free by collisions. No neutral hydrogen, so H Balmer lines are weak or absent. Instead, we see **He II lines** (singly ionized helium, which is harder to ionize at these temperatures). Spectrum dominated by ionized metals.
+
+- **A stars (7,500–10,000 K):** Goldilocks temperature for hydrogen. Many H atoms have electrons in level $n=2$, perfectly positioned to absorb Balmer-series photons. **H lines are very strong**. Ionized metals start to weaken because cooler temperatures mean fewer high-energy collisions.
+
+- **G stars (5,800 K, like the Sun):** Balmer lines still visible but weaker (fewer atoms in $n=2$). **Metal absorption lines** become prominent (ionized calcium, iron, etc.). The spectrum shows the "forest" of metallic lines characteristic of cooler stars.
+
+- **M stars (3,000 K):** So cool that neutral atoms dominate, and even **molecules form** (like TiO, titanium oxide). The spectrum is crowded with molecular absorption bands. Hydrogen lines are weak because few atoms are in $n=2$.
+
+::: {.callout-important}
+## The Spectral Sequence Is Controlled by Temperature, Not Composition
+
+**Do O stars have more helium than M stars?** No — roughly the same composition. But the much higher temperature ionizes hydrogen and excites helium, producing He II lines.
+
+**Do A stars have more hydrogen than M stars?** No — similar abundance. But A stars' temperature puts a fraction of hydrogen atoms in the right state to absorb Balmer photons very effectively.
+
+This is why **spectral type ≈ effective temperature**. A low-metallicity O star and a high-metallicity O star would look similar if they have the same temperature.
+:::
+
+<!-- FIGURE: OBAFGKM spectral sequence showing 7 stellar spectra arranged by temperature, with wavelength on x-axis and intensity on y-axis. Annotations showing where H Balmer lines peak (strongest in A), where He II appears (O), where metal lines crowd in (G, K), and where molecular bands appear (M) -->
+
+### The Role of Metallicity (Z)
+
+**Metallicity** in astronomy means the **mass fraction of elements heavier than helium**. It's denoted $Z$ (the Sun has $Z_\odot \approx 0.02$).
+
+- High-metallicity stars ($Z > 0.05$): More metal absorption lines visible; metals slightly strengthen certain transitions.
+- Low-metallicity stars ($Z \sim 0.001$ or less): Fewer metal lines; spectrum appears "cleaner."
+
+**Important:** Metallicity is a *subtle* effect for spectral classification. Two stars at the same temperature but different metallicities will look very similar. Spectral type is driven by temperature; metallicity is a secondary refinement.
+
+::: {.callout-note title="Spectral Type vs. Luminosity Class" collapse="true"}
+You might see stellar classifications like "A0V" or "G2V." The letter is the **spectral type** (temperature). The Roman numeral is the **luminosity class** — a separate classification that tells whether the star is a dwarf (V), subgiant (IV), giant (III), bright giant (II), or supergiant (I).
+
+Luminosity class is determined by **line broadening** due to pressure in the star's atmosphere:
+- Giant stars have low-density atmospheres → narrow lines (low pressure broadening)
+- Dwarf stars have high-density atmospheres → broad lines (high pressure broadening)
+
+This is a preview of Lecture 6. For now, know that spectral type is temperature; luminosity class is something else (related to surface gravity).
+:::
+
+::: {.callout-tip title="Check Yourself" collapse="true"}
+1. **Which spectral type has the hottest stars?** O, A, or M?
+2. **Why are H Balmer lines weak in O stars?** (A) O stars have no hydrogen, (B) O stars are too hot and ionize hydrogen, (C) O stars have strong He lines
+3. **If two stars have the same spectral type, what do we know about them?** (A) Same composition, (B) Similar temperature, (C) Same luminosity
+4. **Does metallicity determine the spectral type sequence?** Yes or no?
+
+**Answers:** (1) **O** (30,000+ K). (2) **B** — ionization removes the neutral atoms needed to absorb Balmer photons. (3) **B** — spectral type ≈ temperature. Composition is similar (all ~73% H, ~25% He), and luminosity can vary (hence the need for luminosity class). (4) **No** — temperature does. Metallicity is a secondary effect.
+:::
+
+---
+
+## Part 4: Doppler Shift — Reading Stellar Motion
+
+### The Doppler Effect for Light
+
+When a light source moves toward or away from an observer, the observed wavelength shifts. This **Doppler shift** is the basis for measuring stellar velocities.
+
+If a source moves with **radial velocity** $v_r$ (positive = receding, negative = approaching), the observed wavelength $\lambda_{\text{obs}}$ relates to the rest wavelength $\lambda_0$ by:
+
+{{< include ../../../_includes/equations/doppler-shift.qmd >}}
+
+For velocities much smaller than the speed of light ($v_r \ll c$), this simplifies to:
+
+$$\frac{\Delta \lambda}{\lambda_0} = \frac{v_r}{c}$$
+
+where $\Delta \lambda = \lambda_{\text{obs}} - \lambda_0$.
+
+**Interpretation:**
+- **Redshift** ($\Delta \lambda > 0$): Source receding, $v_r > 0$
+- **Blueshift** ($\Delta \lambda < 0$): Source approaching, $v_r < 0$
+
+### Worked Example: A Star's Radial Velocity
+
+::: {.callout-worked-example}
+### Problem: Measuring a Star's Motion from Its Hα Line
+
+A nearby star's Hα absorption line is observed at $\lambda_{\text{obs}} = 656.5$ nm, compared to the laboratory rest wavelength $\lambda_0 = 656.3$ nm.
+
+**Part A:** Is the star approaching or receding?
+
+**Part B:** Calculate the radial velocity.
+
+---
+
+### Solution:
+
+**Part A:**
+Since $\lambda_{\text{obs}} > \lambda_0$, the wavelength is **redshifted**, meaning the star is **receding** (moving away).
+
+**Part B:**
+
+Step 1: Calculate the wavelength shift
+$$\Delta \lambda = \lambda_{\text{obs}} - \lambda_0 = 656.5 - 656.3 = 0.2\ \text{nm}$$
+
+Step 2: Apply the Doppler formula, rearranged for velocity
+$$v_r = c \times \frac{\Delta \lambda}{\lambda_0}$$
+
+Step 3: Plug in numbers (note: use consistent units)
+$$v_r = (3 \times 10^5\ \text{km/s}) \times \frac{0.2\ \text{nm}}{656.3\ \text{nm}}$$
+
+$$v_r = (3 \times 10^5) \times \frac{0.2}{656.3} \text{ km/s}$$
+
+$$v_r = (3 \times 10^5) \times (3.05 \times 10^{-4}) \text{ km/s}$$
+
+$$v_r \approx 91\ \text{km/s}$$
+
+**Answer:** The star is receding at approximately **91 km/s** — a substantial radial velocity, typical of a star in our galaxy.
+
+**Physical insight:** A shift of 0.2 nm out of 656.3 nm seems tiny (0.03%), but it translates to a velocity of ~100 km/s because light travels very fast. This demonstrates the power of spectroscopy: even millionth-part shifts in wavelength can be measured with precision spectrographs, revealing stellar motion.
+:::
+
+### Observable → Model → Inference
+
+**Observable:** Stellar absorption lines are shifted to longer (or shorter) wavelengths compared to lab measurements
+
+**Model:** Doppler shift formula $\Delta \lambda / \lambda_0 = v_r / c$
+
+**Inference:** Calculate radial velocity — how fast the star moves toward or away from us
+
+::: {.callout-important}
+## The Doppler Shift Is the Gateway to Stellar Masses
+
+The radial velocity of a star is not directly interesting (we can't see the star move across the sky very fast). But here's the payoff: if a star has an invisible companion orbiting nearby, **both stars orbit around their common center of mass**. The visible star wobbles back and forth, its radial velocity oscillating.
+
+By measuring how fast and how often it wobbles, we can infer the companion's mass and the orbital properties. This is how we measure **binary star masses** — the most direct way we have to determine how much stars actually weigh.
+
+**This will be Lecture 4's main topic.**
+:::
+
+### Limitations and Complications
+
+**1. Spectral Line Broadening:** Stellar atmospheres have **turbulent motions** (convection, rotation), **magnetic fields**, and **pressure broadening** (collisions). These effects spread a single line into a broader feature, making the exact center harder to pinpoint.
+
+**2. Rotation:** If a star is **rotating** rapidly, the side moving toward us has a blueshift, the side moving away has a redshift. The line broadens and becomes symmetric, but no net shift appears — we measure $v_r = 0$ even though the star is rotating. (Rotational broadening will reappear in Lecture 6.)
+
+**3. Spectral Type Dependence:** Hotter stars' lines are broader (higher temperature → faster turbulence). Cool M stars have narrower lines and easier-to-measure shifts. Giant stars have different pressure broadening than dwarfs.
+
+::: {.callout-tip title="Check Yourself" collapse="true"}
+1. **A star's Hα line is observed at 656.0 nm (bluer than the lab value of 656.3 nm). What does this tell you?** (A) The star is getting hotter, (B) The star is approaching us, (C) The star is rotating
+2. **If a star's Hα line is very broad and difficult to locate precisely, what does that suggest?** (A) The star is massive and hot, (B) The star is distant, (C) Rotational broadening or turbulent motion
+3. **Can we measure the orbital period of a binary star from Doppler shifts?** Yes or no? If yes, what would we measure?
+
+**Answers:** (1) **B** — blueshift means approaching. (2) **A** — hotter stars have broader, messier lines due to faster turbulent motions and pressure effects. (3) **Yes** — we measure the *periodicity* in the radial velocity oscillations; the period of the oscillation equals the orbital period.
+:::
+
+---
+
+## Part 5: What Spectra DON'T Tell Us Directly
+
+### Spectral Type ≠ Composition
+
+We've emphasized this, but it bears repeating: **two stars with the same spectral type have very similar temperatures and a similar fraction of hydrogen, helium, and metals, but they might have different total metallicities.**
+
+A **low-metallicity O star** and a **high-metallicity O star** look nearly identical in spectral type. Metallicity is determined by the *relative strengths* of weak metal lines — a second-order effect requiring careful analysis.
+
+### Luminosity Class ≠ Spectral Type
+
+A G0 dwarf (main-sequence star, V) and a G0 giant (III) have the same temperature and spectral type, but wildly different luminosities and surface gravities. Luminosity class is determined by **pressure broadening** (which depends on atmospheric density), not temperature.
+
+**This is a major source of confusion for beginners.** Knowing a star is G2 tells you its temperature (~5800 K). Knowing it's G2V tells you it's a dwarf (Sun-like). We'll explore this in Lecture 6 (the HR diagram).
+
+### What Spectral Lines CAN Tell Us (Directly)
+
+✓ **Composition** (which elements are present)
+✓ **Temperature** (via the spectral type sequence and line strengths)
+✓ **Radial velocity** (via Doppler shifts)
+✓ **Rotation rate** (via line broadening)
+✓ **Magnetic fields** (via Zeeman splitting — line splitting in the presence of a magnetic field)
+✓ **Pressure/density in the atmosphere** (via line broadening)
+
+### What Spectral Lines CANNOT Tell Us Directly
+
+✗ **Luminosity** (need magnitudes + distance, or luminosity class subtleties)
+✗ **Mass** (need dynamics — binary orbits, asteroseismology, etc.)
+✗ **Radius** (need Stefan-Boltzmann law + temperature + luminosity)
+✗ **Distance** (need parallax, standard candles, or other methods — spectra alone don't measure distance)
+✗ **Transverse velocity** (proper motion requires positional tracking over years)
+
+::: {.callout-important}
+## The Inverse-Square Law of Stellar Inference
+
+We can directly measure a star's spectrum (wavelengths, line shapes, line shifts). From that, we extract **temperature, composition, and radial velocity**. To get other properties like mass, radius, and luminosity, we need to combine spectroscopy with other observations (magnitudes, distances, binary dynamics, etc.).
+
+The Module 2 arc shows this progression:
+- **Lecture 1:** Parallax → distance
+- **Lecture 2:** Magnitude + distance → luminosity; blackbody + luminosity → radius; Stefan-Boltzmann + radius + luminosity → temperature
+- **Lecture 3:** Spectra → composition, temperature, radial velocity (you are here)
+- **Lecture 4:** Binary orbits + radial velocities → masses
+- **Lectures 5–6:** Combine everything into the HR diagram
+
+Each new tool adds one or two pieces to the puzzle. Spectra are incredibly powerful — we get three things directly (T, composition, v_r) — but even spectroscopy requires companions to unlock the deepest mysteries (like mass).
+:::
+
+---
+
+## Part 6: Summary — Observable → Model → Inference
+
+Here's the complete framework for this lecture, in table form:
+
+| Observable | Model | Inference |
+|---|---|---|
+| Spectral lines present (or absent) at characteristic wavelengths | Atomic physics: each element has unique energy levels | **Composition**: detect H, He, Ca, Fe, TiO, etc. |
+| Relative strength of spectral lines (which are darker/lighter) | Boltzmann distribution: fraction of atoms in each level depends on temperature | **Effective temperature** and **spectral type** (O/B/A/F/G/K/M) |
+| Wavelength of a spectral line shifted from lab value | Doppler formula: $\Delta\lambda/\lambda_0 = v_r/c$ | **Radial velocity** (motion toward/away from Earth) |
+| Width and broadening of spectral lines | Pressure, rotation, magnetic effects | **Atmospheric pressure/density**, **rotation rate**, **magnetic field strength** |
+
+---
+
+## Self-Assessment Checklist
+
+After this lecture, you should be able to:
+
+- [ ] Sketch the three types of spectra (continuous, emission, absorption) and explain when each appears
+- [ ] State Kirchhoff's three laws and apply them to a star's spectrum
+- [ ] Explain why stars show absorption spectra using a two-layer (photosphere + atmosphere) model
+- [ ] Describe how the Bohr model leads to discrete spectral lines
+- [ ] Calculate the wavelength of a hydrogen transition using $\Delta E = hc/\lambda$
+- [ ] List the OBAFGKM sequence and state that it represents a temperature sequence
+- [ ] Explain why H Balmer lines are strong in A stars but weak in O and M stars
+- [ ] Distinguish spectral type (temperature), metallicity (heavy element abundance), and luminosity class (surface gravity)
+- [ ] Apply the Doppler formula to measure radial velocity from a line shift
+- [ ] Identify what spectra can and cannot tell us directly about stars
+
+---
+
+## Practice Problems
+
+### Conceptual Problems
+
+**1. Kirchhoff's Laws and Stellar Spectra**
+
+You observe three astronomical sources and obtain the spectra below:
+- Source A: Smooth rainbow of colors, brightest in the infrared
+- Source B: Black background with bright colored emission lines
+- Source C: Rainbow of colors with dark absorption lines, brightest in the optical
+
+For each source, (a) identify which Kirchhoff law applies, (b) describe the physical situation, and (c) give an astronomical example.
+
+**2. The OBAFGKM Sequence**
+
+A student claims: "O stars have more hydrogen than M stars, which is why O stars have stronger hydrogen lines."
+
+Is this statement correct? Explain why or why not, and describe what actually causes the difference in hydrogen line strength.
+
+**3. Doppler Interpretation**
+
+Two identical hydrogen Hα lines from different galaxies are observed:
+- Galaxy 1: Hα at 656.5 nm
+- Galaxy 2: Hα at 655.8 nm
+
+(a) Which galaxy is approaching us? (b) Which is receding? (c) Which has the larger radial velocity (by magnitude)?
+
+### Calculation Problems
+
+**4. Bohr Model and Spectral Lines**
+
+Calculate the wavelength of the Hβ line ($n=4 \to n=2$ transition in hydrogen).
+
+(Given: $E_n = -13.6$ eV $/n^2$, $h = 6.626 \times 10^{-27}$ erg·s, $c = 2.998 \times 10^{10}$ cm/s, $1$ eV $= 1.602 \times 10^{-12}$ erg)
+
+**5. Doppler Shift Calculation**
+
+A star's Hα line is observed at 656.8 nm (rest wavelength: 656.3 nm). Calculate the radial velocity. Is the star approaching or receding? Express your answer in km/s and explain what this velocity magnitude tells us about the star's motion in the galaxy.
+
+**6. Ionization and Spectral Type**
+
+At what approximate temperature would you expect hydrogen to become mostly ionized (no longer able to absorb Balmer photons)? Use the fact that the ionization energy of hydrogen is 13.6 eV and compare it to the thermal energy $k_B T$ (where $k_B = 8.617 \times 10^{-5}$ eV/K). Why does the Sun (at 5800 K) show strong Balmer absorption lines, but O stars (at 30,000+ K) do not?
+
+### Synthesis Problems
+
+**7. Multi-Wavelength Stellar Diagnosis**
+
+You observe a nearby star and measure:
+- Effective temperature from blackbody fit: 6500 K
+- Strong metal lines in the optical spectrum
+- Hα absorption line center at 656.4 nm
+- Hα line width: 0.4 nm (broad, somewhat blurred)
+
+(a) What is the star's approximate spectral type? (b) Is the star approaching or receding? At what velocity? (c) What can you infer about the star's rotation or atmospheric motions? (d) If the star is part of a close binary system, why would measuring its Doppler shift be valuable?
+
+**8. Combining Spectroscopy with Other Observations**
+
+You have collected the following data for a star:
+- Distance (from parallax): 10 pc
+- Apparent magnitude (optical band): 5.0
+- Effective temperature (from spectrum): 5800 K
+- Spectral type: G2V
+
+(a) Calculate the star's absolute magnitude and luminosity. (b) Using the Stefan-Boltzmann law, estimate the star's radius. (c) How do your results compare to the Sun? (d) What additional observations would you need to measure the star's mass?
+
+---
+
+## Reading Guide & Next Steps
+
+**This lecture wraps up our toolkit for extracting stellar properties from light:**
+
+- **Lecture 1:** Distance (parallax)
+- **Lecture 2:** Temperature, radius, luminosity (blackbody + magnitudes)
+- **Lecture 3:** Composition, radial velocity (spectroscopy) ← **You are here**
+- **Lecture 4:** Binary orbits → masses (Doppler shifts in action)
+
+**Next lecture:** We'll use Doppler shifts in a powerful new context: **binary stars**. By watching a star's radial velocity oscillate, we can measure the masses of stars — the most direct mass measurements we have in astronomy. The spectroscopy toolkit will unlock stellar masses.
+
+---
+
+## Key Equations Summary
+
+| Concept | Equation | Meaning |
+|---|---|---|
+| Photon energy | $E = h\nu = hc\lambda^{-1}$ | Energy of a photon from frequency or wavelength |
+| Bohr hydrogen levels | $E_n = -13.6\ \text{eV} \cdot n^{-2}$ | Energy of the $n$-th electron level |
+| Energy level transition | $\Delta E = h\nu = hc\lambda^{-1}$ | Photon emitted when electron changes levels |
+| Doppler shift (non-relativistic) | $\Delta\lambda/\lambda_0 = v_r/c$ | Wavelength shift for motion toward/away |
+| Boltzmann factor (qualitative) | fraction in level $n \propto \exp(-E_n/k_B T)$ | Temperature controls which energy levels populate |
+
+---
+
+## Glossary
+
+**Absorption line:** A dark line in a spectrum where cool gas absorbs photons from a hot background source at a specific wavelength.
+
+**Balmer series:** The series of hydrogen emission/absorption lines corresponding to transitions down to (or up from) the $n=2$ level. The Hα, Hβ, Hγ, Hδ lines are in the visible/UV range.
+
+**Blueshift:** A shift of spectral lines to shorter (bluer) wavelengths, indicating the source is moving toward the observer.
+
+**Bohr model:** A quantum model of the atom (specifically hydrogen) in which electrons occupy discrete energy levels and emit/absorb photons when transitioning between levels.
+
+**Doppler shift:** The change in observed wavelength of light from a moving source due to the source's motion toward or away from the observer.
+
+**Kirchhoff's laws of spectroscopy:** Three empirical rules describing continuous, emission, and absorption spectra.
+
+**Metallicity (Z):** The mass fraction of elements heavier than helium in a star.
+
+**Radial velocity:** The component of a star's velocity along the line of sight (toward or away from Earth), measured via Doppler shift.
+
+**Redshift:** A shift of spectral lines to longer (redder) wavelengths, indicating the source is moving away from the observer.
+
+**Spectral line:** A discrete wavelength (or narrow range of wavelengths) at which a particular element emits or absorbs light.
+
+**Spectral type:** A classification (O, B, A, F, G, K, M) of a star based on its spectrum; corresponds primarily to effective temperature.
+
+**Spectroscopy:** The study of light's wavelength, intensity, and polarization; in astronomy, the principal tool for determining stellar composition and motion.

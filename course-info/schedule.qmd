@@ -43,38 +43,47 @@ Reading labels:
 
 ## Module 1 — Foundations (Weeks 1–3)
 
-| Week | Dates | Topics (in class) | Required Reading | Recommended  |
+*The physics toolkit: laws of motion, gravity, and radiation.*
+
+| Week | Dates | Topics (in class) | Required Reading | Recommended |
 |:-|:--|:-----|:--|:-|
-| 1 | Jan 20 & 22 | Spoiler Alerts: overview + how we know<br>Scaling, units, dimensional analysis | FoA Ch 1  |  |
-| 2 | Jan 27 & 29 | Kepler → Newton → Einstein (empirical vs physical laws)<br>Gravity/orbits; energy & angular momentum (1st pass) | Ch 7 (pp. 43–46) | 4 |
-| 3 | Feb 3 & 5 | Light as information (preview)<br>Blackbodies (deep 1): spectrum + peak wavelength | Ch 4.1–4.3 (pp. 25–27) | 3 |
+| 1 | Jan 20 & 22 | Spoiler Alerts: course overview + the inference framework<br>Tools of the Trade: scaling, units, dimensional analysis | FoA Ch. 1 | |
+| 2 | Jan 27 & 29 | Gravity I: Kepler → Newton (empirical vs physical laws)<br>Gravity II: orbits, energy & angular momentum, virial theorem | Ch. 7 (pp. 43–46) | 4 |
+| 3 | Feb 3 & 5 | Radiation I: EM spectrum, light–matter interactions, blackbody radiation<br>Radiation II: Wien's law, spectral lines, Doppler, telescopes | Ch. 4.1–4.3 (pp. 25–27) + Ch. 5 (p. 32) | 4 |
 
 ---
 
-## Module 2 — Inferring the properties of stars (Weeks 4–7)
+## Module 2 — Discovering the HR Diagram (Weeks 4–6)
 
-| Week | Dates | Topics (in class) | Required Reading | Recommended Reading |
-|:-|:--|:-----|:--|:-|
-| 4 | Feb 10 & 12 | Distance: angular size + parallax + solid angle<br>Luminosity/flux; magnitudes & distance modulus | Ch 2 (pp. 11–16) + Ch 3 (pp. 19–21) | 9 |
-| 5 | Feb 17 & 19 | Blackbodies (deep 2): color → temperature; Stefan–Boltzmann; radius<br>Spectra: composition + ionization; H–R diagram meaning | Ch 4.4 (p. 28) + Ch 5 (p. 32) + Ch 6 (pp. 35–40) | 8 |
-| 6 | Feb 24 & 26 | Motions: proper motion + Doppler (SR only as needed)<br>Binaries: measuring stellar masses (core methods) | Ch 9 (pp. 54–56) + Ch 10.1–10.3 (pp. 59–63) | 8 |
-| 7 | Mar 3 & 5 | Intensity vs flux; mean free path; optical depth (RT vocabulary)<br>Thu: **EXAM 1** | Ch 12.1–12.2 (pp. 74–76) | 3 |
+> Module 1 gave us the laws; now we **use** them. Each lecture answers one question about stars — *How far? How hot and how big? What's it made of? How fast? How heavy?* — and contributes one measurable axis. The module culminates with the **Hertzsprung–Russell diagram**, which emerges as a synthesis of every inference tool we've built.
+
+| Week | Dates | Lec | Topics (in class) | Required Reading | Core pp |
+|:-|:--|:-:|:-----|:--|:-:|
+| 4 | Feb 10 & 12 | 7 | **Distance & Parallax** — *How far?*<br>Spherical geometry (source at origin, observer at radius *r*); angular size & small-angle approximation; parallax → parsec → Gaia; inverse-square law derived (geometric + scaling); flux + distance → luminosity | Ch. 2 (pp. 10–17) + Ch. 3.1 (pp. 18–19) | 9 |
+|  |  | 8 | **Surface Flux & Colors of Stars** — *How hot, how big?*<br>Emitted / surface flux; Stefan–Boltzmann law ($L = 4\pi R^2 \sigma T^4$); Wien's law applied: color → temperature; inferring stellar radii from $L$ and $T$ | Ch. 3.2 (pp. 19–21) + Ch. 4.4 (p. 28) | 4 |
+| 5 | Feb 17 & 19 | 9 | **Spectra & Composition** — *What's it made of, and how is it moving?*<br>Spectral lines in context (absorption/emission); OBAFGKM as a temperature sequence; Doppler effect → radial velocity | Ch. 5 (p. 32) + Ch. 6 (pp. 35–40) | 7 |
+|  |  | 10 | **Masses from Motion** — *How heavy?*<br>Binary stars (visual, spectroscopic, eclipsing); radial velocity curves; Kepler's 3rd law revisited → stellar masses; the mass–luminosity relation | Ch. 9 (pp. 54–56) + Ch. 10.1–10.3 (pp. 59–63) | 8 |
+| 6 | Feb 24 & 26 | 11 | **Magnitudes & the Distance Modulus** — *The astronomer's brightness scale*<br>Logarithms in astronomy; apparent vs absolute magnitude; distance modulus ($m - M = 5\log_{10}(d/10\,\text{pc})$); standard candles preview | Ch. 3.3 (pp. 21–22) | 2 |
+|  |  | 12 | **Building the HR Diagram** — *Putting it all together*<br>$L$ vs $T$ plane; main sequence as a mass sequence; luminosity classes & giant/dwarf distinction; lines of constant $R$ from Stefan–Boltzmann | Ch. 6 (synthesis) | — |
 
 ---
 
-## Module 3 — Stellar structure, evolution, and the stellar graveyard (Weeks 8–12)
+## Module 3 — Stellar structure, evolution, and the stellar graveyard (Weeks 7–12)
 
-> This module includes hydrostatic equilibrium, transport, fusion, scaling relations, and **stellar endpoints** (white dwarfs / neutron stars / black holes).  
+> This module includes hydrostatic equilibrium, transport, fusion, scaling relations, and **stellar endpoints** (white dwarfs / neutron stars / black holes).
 > We also cover **minimum and maximum stellar masses**, including a short Quantum Mechanics/de Broglie motivation for the minimum mass.
+>
+> **Note:** The first Module 3 lecture (Week 7 Tue) is delivered *before* Exam 1 but is **not** covered on it — this gives you study time for Modules 1–2.
 
 | Week | Dates | Topics (in class) | Required reading (Core) | Core pages |
 |:-|:--|:-----|:--|:-|
-| 8 | Mar 10 & 12 | Ages & lifetimes; timescale reasoning<br>Hydrostatic equilibrium + virial temperature (thermal lens) | Ch 8 (pp. 49–51) + Ch 15 (pp. 101–104) | 7 |
-| 9 | Mar 17 & 19 | Radiation transport: diffusion, radiation pressure, atmosphere vs depth<br>Radiative vs convective envelopes | Ch 16 (pp. 107–110) + Ch 17 (pp. 112–116) | 9 |
-| 10 | Mar 24 & 26 | Fusion ignition + main-sequence scalings<br>Min/max masses: brown dwarfs (QM + de Broglie) & Eddington limit | Ch 18 (pp. 120–124) | 5 |
+| 7 | Mar 3 & 5 | Ages & lifetimes; timescale reasoning<br>Thu: **EXAM 1** (covers Modules 1–2) | Ch. 8 (pp. 49–51) | 3 |
+| 8 | Mar 10 & 12 | Hydrostatic equilibrium + virial temperature (thermal lens)<br>Radiation transport: diffusion, radiation pressure | Ch. 15 (pp. 101–104) + Ch. 16 (pp. 107–110) | 8 |
+| 9 | Mar 17 & 19 | Radiative vs convective envelopes<br>Fusion ignition + main-sequence scalings | Ch. 17 (pp. 112–116) + Ch. 18 (pp. 120–122) | 7 |
+| 10 | Mar 24 & 26 | Min/max masses: brown dwarfs (QM + de Broglie) & Eddington limit<br>Low-mass evolution → white dwarfs | Ch. 18 (pp. 122–124) + Ch. 19 (pp. 128–131) | 6 |
 | Spring Break | Mar 31 & Apr 2 | — No class — | — | — |
-| 11 | Apr 7 & 9 | Low-mass evolution → white dwarfs<br>Degeneracy pressure + Chandrasekhar limit (conceptual QM/stat-phys) | Ch 19 (pp. 128–134) | 7 |
-| 12 | Apr 14 & 16 | High-mass evolution → core-collapse supernovae<br>Neutron stars + black holes; where GR matters (conceptual)<br>Thu: **EXAM 2** | Ch 20.1–20.5 (pp. 137–143) | 7 |
+| 11 | Apr 7 & 9 | Degeneracy pressure + Chandrasekhar limit (conceptual QM/stat-phys)<br>High-mass evolution → core-collapse supernovae | Ch. 19 (pp. 131–134) + Ch. 20.1–20.3 (pp. 137–140) | 7 |
+| 12 | Apr 14 & 16 | Neutron stars + black holes; where GR matters (conceptual)<br>Thu: **EXAM 2** | Ch. 20.4–20.5 (pp. 140–143) | 4 |
 
 ---
 

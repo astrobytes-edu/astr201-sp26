@@ -1,0 +1,436 @@
+---
+title: "Lecture 6: Building the HR Diagram"
+subtitle: "Putting It All Together"
+author: "Dr. Anna Rosen"
+date: "2026-02-26"
+description: "The capstone of Module 2: every measurement tool we've built — distance, luminosity, temperature, radius, composition, velocity, mass, and magnitudes — converges on a single diagram that reveals the hidden structure of the stellar universe."
+draft: true
+categories: [hr-diagram, stellar-properties, synthesis, exam-review]
+course: ASTR 201
+module: "2 - Discovering the HR Diagram"
+learning-objectives:
+  - Construct an HR diagram from stellar data by plotting luminosity (or absolute magnitude) against temperature (or spectral type / color index)
+  - Identify the main sequence, red giant branch, supergiant region, and white dwarf region on the HR diagram and explain what physical properties distinguish each
+  - Derive lines of constant stellar radius on the L–T plane using the Stefan-Boltzmann law and use them to estimate stellar radii by inspection
+  - Explain why the main sequence is a mass sequence using the mass–luminosity relation
+  - Distinguish luminosity classes (I through V) and explain how spectral line widths discriminate between giants and dwarfs at the same temperature
+  - Trace the complete inference chain from raw observables (brightness, position, wavelength) through physical models to placement on the HR diagram
+  - Evaluate what the HR diagram does and does not reveal about stellar evolution
+  - Synthesize Modules 1–2 tools into a coherent framework for Exam 1 preparation
+Concept-Throughline:
+  - "The HR diagram is not a new measurement — it is a synthesis of EVERY measurement tool from Modules 1–2"
+  - "Stars cluster in specific regions because stellar structure is governed by mass"
+  - "Lines of constant radius from Stefan-Boltzmann reveal the size scale of different stellar populations"
+  - "This lecture IS the exam review — if you can place a star on the HR diagram and explain what its position means, you understand the core material"
+math-level: symbolic_with_interpretation
+mode: Draft
+prerequisites: "Lectures 1–5 (Module 2); all Module 1 foundations (gravity, radiation, blackbody, Doppler)"
+---
+
+## Learning Objectives
+
+After completing this reading, you should be able to:
+
+1. **Construct** an HR diagram from stellar data by plotting luminosity (or absolute magnitude) against temperature (or spectral type / color index)
+2. **Identify** the main sequence, red giant branch, supergiant region, and white dwarf region on the HR diagram and explain what physical properties distinguish each
+3. **Derive** lines of constant stellar radius on the $L$ — $T$ plane using the Stefan-Boltzmann law and use them to estimate stellar radii by inspection
+4. **Explain** why the main sequence is a mass sequence using the mass — luminosity relation
+5. **Distinguish** luminosity classes (I through V) and explain how spectral line widths discriminate between giants and dwarfs at the same temperature
+6. **Trace** the complete inference chain from raw observables (brightness, position, wavelength) through physical models to placement on the HR diagram
+7. **Evaluate** what the HR diagram does and does not reveal about stellar evolution
+8. **Synthesize** Modules 1–2 tools into a coherent framework for Exam 1 preparation
+
+## Concept Throughline
+
+> *Every tool we've built — parallax, flux, Wien's law, Stefan-Boltzmann, spectral classification, Doppler shifts, Kepler's law, magnitudes — converges here.*
+> The HR diagram is the most important diagram in stellar astrophysics, and it emerges naturally from plotting two quantities you already know how to measure: luminosity and temperature.
+
+---
+
+## Part 1: The Big Idea — One Diagram to Rule Them All
+
+### Opening Hook
+
+- Over the past five lectures, students have learned to measure distance (Lec 1), luminosity and temperature and radius (Lec 2), composition and velocity (Lec 3), mass (Lec 4), and magnitudes (Lec 5). Each lecture answered one question about stars. Now: what happens when we put ALL of these measurements together?
+- Historical framing: In 1911–1913, Ejnar Hertzsprung (Denmark) and Henry Norris Russell (Princeton) independently had the same idea — plot stars by luminosity vs. temperature. The pattern that emerged revolutionized our understanding of stars.
+- The key revelation: stars do NOT scatter randomly on this plot. They cluster in specific regions, and those regions encode the physics of stellar structure.
+
+<!-- FIGURE: Historical portraits of Hertzsprung and Russell, with their original diagrams side by side -->
+
+:::{.callout-important title="The Big Idea"}
+The HR diagram is not a new measurement — it is a **synthesis** of every measurement tool from Modules 1 and 2. If you can explain how a star gets placed on this diagram and what its position tells us, you understand the core material of this course so far.
+:::
+
+---
+
+## Part 2: The Axes of the HR Diagram
+
+### 2.1 What Goes Where
+
+- **Vertical axis: Luminosity** $L$ (in $L_\odot$) or equivalently absolute magnitude $M_V$
+  - Ranges from $\sim 10^{-4}\,L_\odot$ (faintest red dwarfs) to $\sim 10^6\,L_\odot$ (brightest supergiants)
+  - That's a factor of $10^{10}$ — must use a LOG scale
+  - Where this comes from: $L = 4\pi d^2 F$ (Lectures 1, 5) — requires measuring flux AND distance
+  - Equivalently: $M_V$ from the distance modulus $m - M = 5\log_{10}(d/10\,\text{pc})$ (Lecture 5)
+
+- **Horizontal axis: Effective temperature** $T_\text{eff}$ (in K), or spectral type (OBAFGKM), or color index ($B - V$)
+  - Where this comes from: Wien's law $\lambda_\text{peak} = b/T$ (Lecture 2), spectral classification (Lecture 3), or color photometry (Lecture 5)
+  - IMPORTANT convention: **temperature increases to the LEFT** (historical — O stars on the left, M stars on the right)
+  - Also on log scale (though sometimes linear in $B-V$)
+
+<!-- FIGURE: Blank HR diagram axes showing all three possible x-axis labels (T_eff, spectral type, B-V) and two possible y-axis labels (L/L_sun, M_V). Arrow indicating "hot" on left, "cool" on right. Arrow indicating "bright" at top, "dim" at bottom. Note that M_V axis is inverted (more negative = brighter = higher). -->
+
+### 2.2 Mapping Lectures to Axes
+
+- Outline table showing which lecture(s) provide each axis:
+
+| HR Diagram Axis | Physical Quantity | How We Measure It | Lecture |
+|:--|:--|:--|:-:|
+| Vertical | $L$ or $M_V$ | Flux + distance → $L = 4\pi d^2 F$ | 1, 5 |
+| Horizontal | $T_\text{eff}$ | Color (Wien), spectral type, $B-V$ | 2, 3, 5 |
+| (hidden) | $R$ | Inferred from $L = 4\pi R^2 \sigma T^4$ | 2 |
+| (hidden) | $M$ | Binary orbits + Kepler III | 4 |
+
+:::{.callout-check-yourself title="Check Yourself"}
+1. Why must the luminosity axis be logarithmic?
+2. Which direction does temperature increase on the HR diagram, and why is this counterintuitive?
+3. Name two independent methods for determining the horizontal-axis quantity.
+:::
+
+---
+
+## Part 3: Plotting Stars — What Patterns Emerge?
+
+### 3.1 The Main Sequence
+
+- When we plot a large sample of stars (e.g., nearby stars with Gaia parallaxes), they cluster along a diagonal band from upper-left (hot, luminous) to lower-right (cool, dim).
+- This band is called the **main sequence** and contains roughly 90% of all stars.
+- Key insight (from Lecture 4): the main sequence is a **mass sequence**
+  - Bottom-right: low-mass M dwarfs ($\sim 0.1\,M_\odot$, $T \sim 3000$ K, $L \sim 10^{-3}\,L_\odot$)
+  - Middle: Sun-like G stars ($1\,M_\odot$, $T \sim 5800$ K, $L = L_\odot$)
+  - Top-left: massive O stars ($\sim 50\,M_\odot$, $T \sim 40{,}000$ K, $L \sim 10^5\,L_\odot$)
+- The mass-luminosity relation $L \propto M^{3.5}$ (Lecture 4) explains WHY more massive stars are both hotter and more luminous — this is not coincidence, it's physics.
+
+### 3.2 Red Giants and Supergiants
+
+- Stars in the **upper-right** of the HR diagram: cool ($T \sim 3000$ — $5000$ K) but very luminous ($L \sim 10^2$ — $10^5\,L_\odot$)
+- From Stefan-Boltzmann: if $T$ is low but $L$ is high → $R$ must be enormous
+  - Example: Betelgeuse ($T \approx 3400$ K, $L \approx 10^5\,L_\odot$) → $R \approx 900\,R_\odot$ (would engulf Mars's orbit)
+- These are NOT on the main sequence — they are evolved stars that have left it (Module 3 preview)
+
+### 3.3 White Dwarfs
+
+- Stars in the **lower-left**: hot ($T \sim 10{,}000$ — $30{,}000$ K) but very dim ($L \sim 10^{-2}$ — $10^{-4}\,L_\odot$)
+- If $T$ is high but $L$ is low → $R$ must be tiny
+  - Typical: $R \sim 0.01\,R_\odot \approx R_\oplus$ (Earth-sized!)
+- These are stellar remnants — the cores of dead low-mass stars (Module 3)
+
+<!-- FIGURE: HR diagram with main sequence band, red giant branch, supergiant region (Ia/Ib), and white dwarf region labeled. Representative stars marked: Sun, Sirius A, Betelgeuse, Rigel, Proxima Centauri, Sirius B. Approximate mass labels along main sequence. -->
+
+:::{.callout-check-yourself title="Check Yourself"}
+1. A star is cool (3500 K) and luminous ($10^4\,L_\odot$). Where does it sit on the HR diagram, and what can you infer about its radius?
+2. A star is hot (25,000 K) and dim ($10^{-3}\,L_\odot$). What kind of star is it, and why must it be small?
+3. Why does the main sequence run diagonally rather than vertically or horizontally?
+:::
+
+---
+
+## Part 4: Lines of Constant Radius — Reading Size from the Diagram
+
+:::{.callout-important title="Key Derivation: Lines of Constant $R$"}
+This is one of the most powerful features of the HR diagram: you can READ OFF a star's radius without any calculation, just by seeing where it falls relative to lines of constant $R$.
+:::
+
+### 4.1 Derivation
+
+- Start with the Stefan-Boltzmann law:
+
+$$L = 4\pi R^2 \sigma T^4$$
+
+- Take the logarithm of both sides:
+
+$$\log L = 2\log R + 4\log T + \log(4\pi\sigma)$$
+
+- For a FIXED radius $R = \text{const}$, the last two terms are constant, so:
+
+$$\log L = 4\log T + \text{const} \quad (\text{at fixed } R)$$
+
+- This is a **straight line** in the $\log L$ vs. $\log T$ plane with **slope 4**
+
+**Important note on axis direction:** The mathematical slope is +4 (luminosity increases with temperature to the fourth power). But because the HR diagram conventionally plots temperature *increasing to the left*, the visual appearance on the diagram is lines running from upper-left (hot, luminous) to lower-right (cool, dim). This can look like a negative slope visually, but mathematically it's +4. When doing calculations, always use the mathematical form $\log L = 4\log T + \text{const}$.
+
+### 4.2 Drawing the Lines
+
+- Draw lines for $R = 0.01\,R_\odot$, $0.1\,R_\odot$, $1\,R_\odot$, $10\,R_\odot$, $100\,R_\odot$, $1000\,R_\odot$
+- Each line is parallel (same slope), just shifted vertically (larger $R$ → higher $L$ at any given $T$)
+- The main sequence falls between roughly $R = 0.1\,R_\odot$ and $R = 10\,R_\odot$
+- Red giants: $R \sim 10$ — $100\,R_\odot$
+- Supergiants: $R \sim 100$ — $1000\,R_\odot$
+- White dwarfs: $R \sim 0.01\,R_\odot$
+
+<!-- FIGURE: HR diagram with diagonal dashed lines of constant R overlaid, labeled from 0.01 R_sun to 1000 R_sun. Main sequence, giant, and white dwarf regions shown between appropriate R lines. -->
+
+### 4.3 Worked Example
+
+:::{.callout-tip title="Worked Example: Reading Radius from the HR Diagram"}
+**Problem:** A star has $L = 100\,L_\odot$ and $T = 5800$ K (same temperature as the Sun). What is its radius?
+
+**Setup:** Use the solar-units scaling relation from Lecture 2:
+
+$$\frac{L}{L_\odot} = \left(\frac{R}{R_\odot}\right)^2 \left(\frac{T}{T_\odot}\right)^4$$
+
+**Solution:** Since $T = T_\odot$, the temperature ratio is 1, so:
+
+$$100 = \left(\frac{R}{R_\odot}\right)^2 \times 1 \implies R = 10\,R_\odot$$
+
+**Sanity check:** The star is at the same temperature as the Sun but 100× more luminous. The only way to be the same color but brighter is to be BIGGER — and indeed $R = 10\,R_\odot$. On the HR diagram, this star sits directly above the Sun, on the $R = 10\,R_\odot$ line. It's a giant star.
+:::
+
+### 4.4 HW Preview
+
+- Students will be asked to show how the Stefan-Boltzmann law generates the HR diagram and produces lines of constant $R$ — this is the key synthesis problem connecting Lectures 2 and 6.
+
+:::{.callout-check-yourself title="Check Yourself"}
+1. What is the slope of a line of constant $R$ on a $\log L$ vs. $\log T$ plot?
+2. If you double a star's radius while keeping its temperature fixed, how does its luminosity change? How does this show up on the HR diagram?
+3. Two stars have the same luminosity but one is twice as hot. Which has the larger radius, and by what factor?
+:::
+
+---
+
+## Part 5: The Main Sequence as a Mass Sequence
+
+### 5.1 Mass Along the Main Sequence
+
+- From binary star measurements (Lecture 4), we know that mass increases along the main sequence from lower-right to upper-left
+- Approximate mass labels:
+
+| Spectral Type | $T_\text{eff}$ (K) | $M/M_\odot$ | $L/L_\odot$ | $R/R_\odot$ |
+|:-:|:-:|:-:|:-:|:-:|
+| O5 | 44,000 | 60 | $8 \times 10^5$ | 12 |
+| B0 | 30,000 | 18 | $5 \times 10^4$ | 7 |
+| A0 | 9,500 | 2.9 | 54 | 2.4 |
+| F0 | 7,200 | 1.6 | 6.5 | 1.5 |
+| G2 (Sun) | 5,800 | 1.0 | 1.0 | 1.0 |
+| K0 | 5,300 | 0.8 | 0.4 | 0.85 |
+| M0 | 3,800 | 0.5 | 0.08 | 0.6 |
+| M5 | 3,200 | 0.2 | 0.01 | 0.3 |
+
+### 5.2 Why Mass Determines Everything (Preview of Module 3)
+
+For a self-gravitating sphere of gas (like a star), hydrostatic equilibrium sets the central pressure needed to support the star's weight:
+
+$$P_c \sim \frac{GM^2}{R^4}$$
+
+Combining this with the ideal gas law, $P = \rho k T / (\mu m_H)$, gives the central temperature:
+
+$$T_c \sim \frac{GM}{\mu k R}$$
+
+For main-sequence stars, the radius scales weakly with mass (roughly $R \propto M^{0.7}$), so the central temperature increases strongly with mass.
+
+The nuclear burning rate is extremely sensitive to temperature. For the proton–proton chain (which powers the Sun), the energy generation rate is proportional to $T^4$. For the CNO cycle (which dominates in massive stars), it scales as $T^{16}$ to $T^{20}$. A modest increase in $T_c$ produces a dramatic increase in energy output.
+
+Combining these effects: more mass → higher central temperature → exponentially more energy generation → luminosity scales as $L \propto M^{3.5}$ (or steeper). The exact exponent depends on which nuclear reaction dominates.
+
+Why is the main sequence so narrow? Stars of the same mass settle into nearly identical structures because hydrostatic equilibrium and thermal equilibrium (where energy generated in the core equals energy radiated from the surface) determine a unique stellar structure for a given mass and composition. This is the **Vogt–Russell theorem** (in simplified form): mass and composition uniquely determine the stellar structure. This is why the main sequence is essentially a **one-parameter family** parameterized by mass — each point on the main sequence represents one mass value.
+
+The full, rigorous derivation of the $L$ — $M$ relation requires solving the stellar structure equations (Module 3). But the scaling argument above captures the essential physics: more mass leads to higher core temperature, exponentially higher fusion rates, and therefore much higher luminosity.
+
+<!-- FIGURE: Main sequence with mass labels at representative spectral types, showing how mass increases from M to O -->
+
+---
+
+## Part 6: Luminosity Classes — Distinguishing Giants from Dwarfs
+
+### 6.1 The Problem
+
+- Two stars can have the SAME spectral type (same temperature) but wildly different luminosities
+- Example: a K2 star on the main sequence has $L \approx 0.5\,L_\odot$, while a K2 red giant has $L \approx 100\,L_\odot$
+- The spectrum looks similar (same lines, same temperature) — how do we tell them apart?
+
+### 6.2 The Solution: Line Widths
+
+- Giant stars have extended, low-density atmospheres — spectral lines are NARROW (low pressure — less collisional broadening)
+- Main-sequence (dwarf) stars have compact, higher-density atmospheres — spectral lines are BROADER
+- By measuring line widths, we can assign a **luminosity class**:
+
+| Class | Name | Example |
+|:-:|:--|:--|
+| Ia, Ib | Supergiants | Betelgeuse (M1 Ia), Rigel (B8 Ia) |
+| II | Bright giants | — |
+| III | Giants | Arcturus (K1.5 III) |
+| IV | Subgiants | Procyon (F5 IV) |
+| V | Dwarfs (main sequence) | Sun (G2 V), Sirius A (A1 V) |
+
+### 6.3 Full Spectral Classification
+
+- Combine spectral type + luminosity class for a complete classification
+- Sun = **G2 V** (a G2 main-sequence dwarf)
+- Betelgeuse = **M1 Ia** (an M1 supergiant)
+- This two-dimensional classification places a star on the HR diagram: spectral type gives $T$, luminosity class gives $L$
+
+<!-- FIGURE: HR diagram with luminosity class regions labeled (I, II, III, IV, V) overlaid on main sequence, giant branch, etc. -->
+
+:::{.callout-check-yourself title="Check Yourself"}
+1. Two stars are both classified as K5. One has narrow absorption lines, the other has broad lines. Which is the giant? Which is the dwarf?
+2. Why does surface gravity matter for spectral line width?
+3. What is the Sun's full spectral classification?
+:::
+
+---
+
+## Part 7: The Complete Inference Chain — Module 2 Synthesis
+
+:::{.callout-important title="The Inference Chain"}
+Starting from a single point of light, here is EVERY step we've learned to characterize a star:
+:::
+
+### The Chain
+
+1. **Measure position shift** (parallax $p$) → **Model**: small-angle geometry → **Infer**: distance $d = 1/p$ pc — *Lecture 1*
+2. **Measure flux** $F$ → combine with distance → **Infer**: luminosity $L = 4\pi d^2 F$ — *Lecture 1*
+3. **Measure color** (peak wavelength) → **Model**: Wien's law → **Infer**: temperature $T = b/\lambda_\text{peak}$ — *Lecture 2*
+4. **Combine** $L$ and $T$ → **Model**: Stefan-Boltzmann → **Infer**: radius $R = \sqrt{L/(4\pi\sigma T^4)}$ — *Lecture 2*
+5. **Measure spectral lines** → **Model**: atomic physics → **Infer**: composition, spectral type — *Lecture 3*
+6. **Measure line shifts** → **Model**: Doppler effect → **Infer**: radial velocity $v_r = c\,\Delta\lambda/\lambda_0$ — *Lecture 3*
+7. **For binaries: measure RV curves** → **Model**: Kepler's 3rd law → **Infer**: mass $M_1 + M_2 = 4\pi^2 a^3/(GP^2)$ — *Lecture 4*
+8. **Express brightness as magnitude** → **Model**: logarithmic scale + inverse-square → **Infer**: distance modulus $m - M$ → distance — *Lecture 5*
+9. **Plot** $L$ vs. $T$ → the star's position on the HR diagram reveals its nature — *Lecture 6*
+
+<!-- FIGURE: Flow chart showing the complete inference chain from "point of light" through each measurement to HR diagram placement, with lecture numbers labeled at each step -->
+
+### Observable → Model → Inference Summary Table (All of Module 2)
+
+| Observable | Physical Model | Inferred Quantity | Lecture |
+|:--|:--|:--|:-:|
+| Position shift (parallax) | Small-angle geometry | Distance | 1 |
+| Flux $F$ + distance $d$ | Inverse-square law | Luminosity $L$ | 1 |
+| Color / $\lambda_\text{peak}$ | Wien's displacement law | Temperature $T$ | 2 |
+| $L$ + $T$ | Stefan-Boltzmann law | Radius $R$ | 2 |
+| Spectral line wavelengths | Atomic energy levels | Composition, spectral type | 3 |
+| Spectral line shifts | Doppler effect | Radial velocity $v_r$ | 3 |
+| RV curves + period | Kepler's 3rd law | Mass (binaries) | 4 |
+| Apparent brightness | Magnitude system | $m$, $M$, distance modulus | 5 |
+
+---
+
+## Part 8: What the HR Diagram Does NOT Tell Us
+
+### 8.1 A Snapshot, Not a Movie
+
+- The HR diagram shows where stars are RIGHT NOW — it is a snapshot in time
+- Stars MOVE on the HR diagram as they evolve (age)
+- Why are ~90% of stars on the main sequence? Because that's where stars spend MOST of their lives (hydrogen burning phase is the longest) — selection effect
+- This is a statistical argument, not a physical one → Module 3 will explain the physics
+
+### 8.2 What's Next (Module 3 Preview)
+
+- What powers stars? → nuclear fusion (Module 3)
+- How long do stars live? → lifetime $\tau \propto M/L \propto M^{-2.5}$ (massive stars die fast!)
+- What happens when they leave the main sequence? → red giants, supergiants, white dwarfs, neutron stars, black holes
+- Stellar evolution = paths on the HR diagram (evolutionary tracks)
+
+:::{.callout-note title="Foreshadowing"}
+The fact that the main-sequence lifetime scales as $\tau \propto M^{-2.5}$ has a profound consequence: the most luminous, most massive stars we see today must be YOUNG. An O star visible now could not have been born before the dinosaurs went extinct. This will be the starting point of Module 3.
+:::
+
+---
+
+## Part 9: Exam 1 Preparation — What You Should Know
+
+:::{.callout-important title="Self-Assessment for Exam 1"}
+The HR diagram is the synthesis of everything in Modules 1–2. If you can place a star on the HR diagram and explain what its position tells us, you understand the core material.
+:::
+
+### Key Equations (with meaning, not just formulas)
+
+| Equation | What It Connects | Lecture |
+|:--|:--|:-:|
+| $F = L/(4\pi d^2)$ | Flux, luminosity, distance | 1 |
+| $L = 4\pi R^2 \sigma T^4$ | Luminosity, radius, temperature | 2 |
+| $\lambda_\text{peak} = b/T$ | Peak wavelength, temperature | 2 |
+| $\Delta\lambda/\lambda_0 = v_r/c$ | Line shift, radial velocity | 3 |
+| $M_1 + M_2 = 4\pi^2 a^3/(GP^2)$ | Masses, orbital elements | 4 |
+| $m - M = 5\log_{10}(d/10\,\text{pc})$ | Apparent mag, absolute mag, distance | 5 |
+| $L/L_\odot = (R/R_\odot)^2 (T/T_\odot)^4$ | Solar-units scaling | 2, 6 |
+
+### What to Practice
+
+- Convert between $L$, $T$, and $R$ using Stefan-Boltzmann (in both directions)
+- Calculate distance from parallax and vice versa
+- Use the distance modulus to find $m$, $M$, or $d$ given the other two
+- Identify where different types of stars fall on the HR diagram and explain WHY
+- Read stellar radii from lines of constant $R$ on the HR diagram
+
+---
+
+## Summary
+
+The HR diagram is the synthesis of Module 2 — and the culmination of everything in the course so far. It emerges from plotting two measurable quantities (luminosity and temperature) for a large sample of stars. The resulting pattern — main sequence, giants, supergiants, white dwarfs — is NOT random; it reflects the underlying physics of stellar structure, governed primarily by mass. Lines of constant radius from the Stefan-Boltzmann law allow us to read size directly from the diagram. The main sequence is a mass sequence, and understanding WHY requires the physics of stellar interiors, which is the subject of Module 3.
+
+---
+
+## Self-Assessment Checklist
+
+- [ ] I can draw and label the axes of an HR diagram, including the counterintuitive direction of the temperature axis
+- [ ] I can identify the main sequence, red giant branch, supergiant region, and white dwarf region
+- [ ] I can derive lines of constant $R$ from Stefan-Boltzmann and draw them on the HR diagram
+- [ ] I can explain why the main sequence is a mass sequence
+- [ ] I can distinguish luminosity classes using spectral line widths
+- [ ] I can trace the complete inference chain from observables to HR diagram placement
+- [ ] I can use the HR diagram to estimate a star's radius, given its $L$ and $T$
+- [ ] I can explain what the HR diagram does and does not reveal about stellar evolution
+- [ ] I can use every key equation from Module 2 and explain what each term means physically
+- [ ] I know what I still need to study for Exam 1
+
+---
+
+## Practice Problems
+
+### Conceptual
+
+**1.** A friend says, "The HR diagram shows how stars evolve over time — you can follow a star's path from birth to death." Is this correct? Explain what the HR diagram actually shows and what additional information would be needed to track a star's evolution.
+
+**2.** Two stars have identical spectral types (both are K2 stars). Star A has narrow absorption lines and Star B has broad absorption lines. Which star is more luminous? Which has the larger radius? Explain your reasoning using the concepts of luminosity class and Stefan-Boltzmann.
+
+### Calculation
+
+**3.** A star has $L = 10{,}000\,L_\odot$ and $T_\text{eff} = 4{,}000$ K.
+
+(a) Calculate its radius in solar radii using the scaling relation $L/L_\odot = (R/R_\odot)^2 (T/T_\odot)^4$.
+
+(b) On what region of the HR diagram does this star fall?
+
+(c) What is its luminosity class likely to be?
+
+**4.** Using the main-sequence data table in Part 5, verify that the mass-luminosity relation $L/L_\odot \approx (M/M_\odot)^{3.5}$ approximately holds for an A0 star ($M = 2.9\,M_\odot$, $L = 54\,L_\odot$). Then predict the luminosity of a $5\,M_\odot$ star and estimate where it would fall on the HR diagram.
+
+### Synthesis
+
+**5. The Full Inference Chain.** You observe a star with the following measured properties:
+
+- Parallax: $p = 0.050$ arcsec
+- Apparent magnitude: $m = +5.0$
+- Peak wavelength: $\lambda_\text{peak} = 725$ nm
+
+(a) Calculate the star's distance in parsecs.
+
+(b) Calculate its absolute magnitude using the distance modulus.
+
+(c) Calculate its effective temperature using Wien's law ($b = 2.898 \times 10^{-1}$ cm K).
+
+(d) Convert its absolute magnitude to luminosity (using $M_\odot = +4.83$).
+
+(e) Calculate its radius in solar radii.
+
+(f) Where does this star fall on the HR diagram? Is it a main-sequence star, a giant, or a white dwarf?
+
+**6. Lines of Constant $R$ on the HR Diagram.** Starting from the Stefan-Boltzmann law $L = 4\pi R^2 \sigma T^4$:
+
+(a) Show that on a $\log L$ vs. $\log T$ plot, lines of constant $R$ are straight lines with slope 4.
+
+(b) At $T = T_\odot = 5800$ K, what luminosity corresponds to $R = 1\,R_\odot$? To $R = 10\,R_\odot$? To $R = 100\,R_\odot$?
+
+(c) On a sketch of the HR diagram, draw the lines of constant $R$ for $R = 0.01\,R_\odot$, $1\,R_\odot$, $100\,R_\odot$, and $1000\,R_\odot$. Label the regions of the HR diagram that fall between these lines and explain what types of stars are found in each region.
+
+(d) Explain in 2–3 sentences why this derivation shows that the HR diagram is really just the Stefan-Boltzmann law visualized.

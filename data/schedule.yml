@@ -7,85 +7,102 @@ days: [Tue, Thu]
 
 # Academic calendar breaks (no class)
 breaks:
-  - date: 2026-03-16
+  - date: 2026-03-30
     name: "Spring Break"
-    duration: 5  # days (Mon-Fri)
-  - date: 2026-03-31
-    name: "Cesar Chavez Day"
-    duration: 1
+    duration: 5  # days (Mon–Fri, Mar 30 – Apr 3)
+  # Cesar Chavez Day (Mar 31) falls within Spring Break
 
 # Exams (dates computed from week number, or fixed)
 exams:
   midterm1:
-    week: 6
+    week: 7
     day: Thu
     name: "Midterm Exam 1"
+    covers: "Modules 1–2"
   midterm2:
-    week: 11
+    week: 12
     day: Thu
     name: "Midterm Exam 2"
+    covers: "Modules 1–3"
   final:
     date: 2026-05-07
     time: "10:30 am – 12:30 pm"
     name: "Final Exam (Cumulative)"
 
-# Modules with lectures
+# ── Modules with lectures ──────────────────────────────────────────
+#
+# Module 1:  Foundations — the physics toolkit
+# Module 2:  Discovering the HR Diagram — applying the toolkit to stars
+# Module 3:  Stellar Structure & Evolution — what makes stars tick
+# Module 4:  Galaxies & Cosmology — the bigger picture
+#
+# Note: Module 3 begins Week 7 Tue (before Exam 1 on Week 7 Thu).
+# The first Module 3 lecture is NOT covered on Exam 1, giving students
+# study time for Modules 1–2.
+
 modules:
   - name: "Foundations"
     weeks: [1, 2, 3]
     lectures:
-      - title: "Course Overview"
+      - title: "Spoiler Alerts: Course Overview"
         reading: "Syllabus"
-      - title: "Scaling & Units"
+      - title: "Tools of the Trade: Scaling, Units & Dimensional Analysis"
         reading: "Ch. 1"
-      - title: "Dimensional Analysis"
-        reading: "Ch. 1"
-      - title: "Kepler's Laws"
-        reading: "Ch. 7.1-7.2"
-      - title: "Newton & Gravity"
-        reading: "Ch. 7.3"
-      - title: "Orbital Mechanics"
-        reading: "Ch. 7.4"
+      - title: "Gravity I: Kepler's Laws & Newton"
+        reading: "Ch. 7.1–7.2"
+      - title: "Gravity II: Orbits & Conservation Laws"
+        reading: "Ch. 7.3–7.4"
+      - title: "Radiation I: Light as Information"
+        reading: "Ch. 4.1–4.3"
+      - title: "Radiation II: Blackbody, Spectra & Doppler"
+        reading: "Ch. 4.4 + Ch. 5"
 
-  - name: "Inferring Star Properties"
-    weeks: [4, 5, 6, 7]
+  - name: "Discovering the HR Diagram"
+    weeks: [4, 5, 6]
     lectures:
       - title: "Distance & Parallax"
-        reading: "Ch. 3"
-      - title: "Blackbody Radiation"
-        reading: "Ch. 4.1-4.2"
-      - title: "Stellar Spectra I"
-        reading: "Ch. 4.3-4.4"
-      - title: "Stellar Spectra II"
-        reading: "Ch. 5"
-      - title: "The H-R Diagram"
-        reading: "Ch. 6.1"
-      - title: "Stellar Classification"
-        reading: "Ch. 6.2"
-      - title: "Exam 1 Review"
-        reading: ""
-      - title: "MIDTERM 1"
-        reading: ""
+        subtitle: "How far? — spherical geometry, angular size, parallax, parsec; inverse-square law derived; flux + distance → luminosity"
+        reading: "Ch. 2 + Ch. 3.1"
+      - title: "Surface Flux & Colors of Stars"
+        subtitle: "How hot, how big? — emitted flux, Stefan–Boltzmann (L = 4πR²σT⁴), Wien applied, color → temperature, stellar radii"
+        reading: "Ch. 3.2 + Ch. 4.4"
+      - title: "Spectra & Composition"
+        subtitle: "What's it made of, how is it moving? — spectral lines in context, OBAFGKM as temperature sequence, Doppler → radial velocity"
+        reading: "Ch. 5 + Ch. 6"
+      - title: "Masses from Motion"
+        subtitle: "How heavy? — binary stars, radial velocity curves, Kepler revisited → stellar masses, mass–luminosity relation"
+        reading: "Ch. 9 + Ch. 10.1–10.3"
+      - title: "Magnitudes & the Distance Modulus"
+        subtitle: "The astronomer's brightness scale — logarithms, apparent vs absolute magnitude, distance modulus, standard candles preview"
+        reading: "Ch. 3.3"
+      - title: "Building the HR Diagram"
+        subtitle: "Synthesis — L vs T, main sequence as mass sequence, luminosity classes, giant/dwarf distinction; lines of constant R from Stefan–Boltzmann"
+        reading: "Ch. 6 (synthesis)"
 
   - name: "Stellar Structure & Evolution"
-    weeks: [8, 9, 10, 11, 12]
+    weeks: [7, 8, 9, 10, 11, 12]
+    note: "Starts Week 7 Tue. First lecture precedes Exam 1 (Week 7 Thu) but is NOT tested."
     lectures:
+      - title: "Ages & Lifetimes"
+        reading: "Ch. 8 (pp. 49–51)"
       - title: "Hydrostatic Equilibrium"
-        reading: "Ch. 8.1"
+        reading: "Ch. 15 (pp. 101–104)"
       - title: "Energy Transport"
-        reading: "Ch. 8.2"
-      - title: "Nuclear Fusion"
-        reading: "Ch. 8.3"
-      - title: "Main Sequence"
-        reading: "Ch. 9.1"
-      - title: "Post-Main Sequence"
-        reading: "Ch. 9.2"
-      - title: "White Dwarfs"
-        reading: "Ch. 10.1"
-      - title: "Neutron Stars"
-        reading: "Ch. 10.2"
-      - title: "Black Holes"
-        reading: "Ch. 10.3"
+        reading: "Ch. 16 (pp. 107–110)"
+      - title: "Radiative vs Convective Envelopes"
+        reading: "Ch. 17 (pp. 112–116)"
+      - title: "Fusion Ignition & Main-Sequence Scalings"
+        reading: "Ch. 18 (pp. 120–122)"
+      - title: "Min/Max Masses: Brown Dwarfs & Eddington Limit"
+        reading: "Ch. 18 (pp. 122–124)"
+      - title: "Low-Mass Evolution → White Dwarfs"
+        reading: "Ch. 19 (pp. 128–131)"
+      - title: "Degeneracy Pressure & Chandrasekhar Limit"
+        reading: "Ch. 19 (pp. 131–134)"
+      - title: "High-Mass Evolution → Core-Collapse Supernovae"
+        reading: "Ch. 20.1–20.3 (pp. 137–140)"
+      - title: "Neutron Stars & Black Holes"
+        reading: "Ch. 20.4–20.5 (pp. 140–143)"
       - title: "Exam 2 Review"
         reading: ""
       - title: "MIDTERM 2"
