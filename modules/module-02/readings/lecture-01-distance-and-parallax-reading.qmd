@@ -72,6 +72,10 @@ This lecture is threaded through by a single framework that threads through all 
 
 Understanding this three-step process is central to astronomy. Models can be wrong. Assumptions can fail. Good scientists always ask: what am I assuming, and what would break it?
 
+### What's Ahead
+
+Here is the plan for this reading. In Parts 2 and 3, we build the angular toolkit — degrees, arcminutes, arcseconds, radians, and the small-angle approximation — that makes distance measurement possible. In Part 4, we apply that toolkit to parallax, deriving the parsec and the distance formula $d = 1/p$. Part 5 develops the inverse-square law from two independent perspectives (geometry and dimensional analysis), establishing the flux-luminosity-distance relation. In Part 6, we combine parallax and the inverse-square law to infer stellar luminosities and examine how measurement errors propagate through the chain. Finally, Part 7 previews standard candles — objects of known luminosity that extend our distance reach beyond the parallax horizon.
+
 ---
 
 ## Part 2: Angular Measure — The Language of the Sky
@@ -232,9 +236,9 @@ Convert: $0.5° = 30$ arcmin = 1800 arcsec
 
 In radians: $1800 / 206{,}265 = 0.00873$ rad
 
-True size: $s = \alpha d = (0.00873)(3.84 \times 10^{10}) \approx 3.3 \times 10^{8}$ cm = 3300 km
+True size (diameter): $s = \alpha d = (0.00873)(3.84 \times 10^{10}) \approx 3.4 \times 10^{8}$ cm $\approx$ 3,400 km
 
-The actual Moon radius is 1737 km, so our estimate is good order-of-magnitude (within a factor of 2). The difference is because the Moon doesn't appear as a sharp edge to the human eye — we're measuring the angular size of the bright disk, which is slightly larger than the geometric edge.
+The actual lunar diameter is about 3,474 km, so our estimate agrees to within about 2% — excellent! This confirms both that the small-angle approximation works beautifully at half-degree scales and that our angular measurements are reliable.
 :::
 :::
 
@@ -346,7 +350,7 @@ Proxima Centauri is the nearest known star. At 1.3 pc, it's about 25 trillion mi
 
 ::: {.callout-important title="Why Gaia Changed Everything"}
 
-Gaia did not just measure more parallaxes — it fundamentally transformed stellar astrophysics. Because luminosity depends on the *square* of distance (as we'll see soon), a factor-of-100 improvement in parallax precision leads to a 10,000× reduction in luminosity uncertainty. This has reshaped our understanding of stellar populations, ages, and evolution across the galaxy. It has also directly enabled the study of exoplanet host stars — something impossible with less precise parallax data.
+Gaia did not just measure more parallaxes — it fundamentally transformed stellar astrophysics. A factor-of-100 improvement in parallax precision directly translates to a 100× reduction in luminosity uncertainty (as we'll derive in Part 6). But the impact goes beyond precision for individual stars: Gaia's reach extends to kiloparsecs, opening up roughly a million times more volume than Hipparcos could survey. This has reshaped our understanding of stellar populations, ages, and evolution across the galaxy. It has also directly enabled the study of exoplanet host stars — something impossible with less precise parallax data.
 :::
 
 ::: {.callout-tip title="Quick Check Yourself"}
@@ -509,11 +513,11 @@ The accepted solar luminosity is $L_{\odot} = 3.828 \times 10^{33}$ erg/s. Our c
 
 Here's a critical insight. If your parallax measurement has uncertainty, how does that affect your luminosity inference?
 
-Since $d = 1/p$, if parallax has a 10% uncertainty, distance has a 20% uncertainty. Why 20%? Because the relationship is inverse: if $p$ is uncertain by a factor of 1.1, then $d$ is uncertain by a factor of $1/1.1 \approx 0.91 — a 9% relative uncertainty becomes 11%.
+**Step 1: Parallax → Distance.** Since $d = 1/p$, the fractional uncertainty propagates directly: $\delta d / d = \delta p / p$ (to first order). A 10% parallax uncertainty gives roughly a 10% distance uncertainty. You can verify this: if $p$ is uncertain by a factor of 1.1, then $d = 1/(1.1\,p) \approx 0.91\,d$ — about a 9% shift, consistent with the first-order estimate.
 
-But worse: since $L = 4\pi d^2 F$, distance appears *squared*. A 20% error in distance becomes a $(1.2)^2 \approx 1.44$ factor, or 44% error in luminosity.
+**Step 2: Distance → Luminosity.** Since $L = 4\pi d^2 F$ and distance appears *squared*, the fractional uncertainty doubles: $\delta L / L \approx 2 \, (\delta d / d)$. A 10% distance error becomes roughly a 20% luminosity error.
 
-Errors in parallax **cascade** through to luminosity with quadratic amplification. This is why improving parallax precision is so valuable. Gaia's 100× improvement in parallax precision translates to 10,000× improvement in luminosity precision. That's why Gaia has been transformative.
+**The complete chain:** 10% parallax uncertainty → ~10% distance uncertainty → ~20% luminosity uncertainty. Errors in parallax cascade through to luminosity with this amplification. This is why improving parallax precision is so valuable — Gaia's 100× improvement in parallax precision translates directly to a 100× improvement in luminosity precision for any given star.
 
 ::: {.callout-tip title="Quick Check Yourself"}
 A star has parallax $p = 0.1$ arcsec and observed flux $F = 10^{-11}$ erg cm$^{-2}$ s$^{-1}$.
@@ -536,9 +540,9 @@ $$\approx 1.2 \times 10^{29} \text{ erg/s}$$
 
 Express as solar luminosity: $L_{\odot} = 3.8 \times 10^{33}$ erg/s
 
-$$\frac{L}{L_{\odot}} = \frac{1.2 \times 10^{29}}{3.8 \times 10^{33}} \approx 0.0003 L_{\odot}$$
+$$\frac{L}{L_{\odot}} = \frac{1.2 \times 10^{29}}{3.8 \times 10^{33}} \approx 3.2 \times 10^{-5}$$
 
-This is a very faint star — roughly 3000 times dimmer than the Sun. This is typical for red dwarfs, the most common stars in the galaxy.
+This is a very faint star — roughly 30,000 times dimmer than the Sun. This is typical for red dwarfs, the most common stars in the galaxy.
 :::
 :::
 
@@ -555,7 +559,7 @@ Once you have distance, the chain unfolds:
 - **Distance + spectrum = stellar composition** (Module 2, Lecture 3)
 - **Distance + radial velocity of binary = stellar mass** (Module 2, Lecture 4)
 
-Each link in the chain amplifies errors. A 1% parallax error becomes 2% in distance, 4% in luminosity, cascading upward. This is why precision parallax from Gaia has been so revolutionary — it pulls the entire chain taut and makes everything downstream more reliable.
+Each link in the chain amplifies errors. A 1% parallax error becomes ~1% in distance and ~2% in luminosity (because $L \propto d^2$), cascading upward through every derived quantity. This is why precision parallax from Gaia has been so revolutionary — it pulls the entire chain taut and makes everything downstream more reliable.
 
 ---
 

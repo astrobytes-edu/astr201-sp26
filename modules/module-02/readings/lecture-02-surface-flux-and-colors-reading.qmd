@@ -51,7 +51,7 @@ After completing this reading, you should be able to:
 ::: {.callout-important}
 ## The Big Idea
 
-**You already have the tools.** In Lecture 4 (Module 1), you learned that color encodes temperature (Wien's law) and that blackbodies follow $B_\lambda(T)$ curves. In Lecture 1, you learned to measure luminosity from received flux and distance. Today we combine these into a complete inference: if you know a star's color and its brightness from Earth, you can infer its size. This is how we learned that Betelgeuse is 900 times the Sun's radius.
+**You already have the tools.** In Lecture 4 (Module 1), you learned that color encodes temperature (Wien's law) and that blackbodies follow $B_\lambda(T)$ curves. In Lecture 1, you learned to measure luminosity from received flux and distance. Today we combine these into a complete inference: if you know a star's color and its brightness from Earth, you can infer its size. This is how we learned that Betelgeuse is nearly 900 times the Sun's radius.
 
 :::
 
@@ -235,7 +235,9 @@ Three observables, three inferences. This is how we built a census of stellar ra
 
 ## Part 4: Dimensionless Form — Scaling Relations with the Sun
 
-For easy comparison, we often express luminosity, radius, and temperature in solar units:
+Working with the Stefan-Boltzmann law in absolute CGS units means juggling numbers like $\sigma = 5.67 \times 10^{-5}$ and $R_\odot = 6.96 \times 10^{10}$ cm — easy places for arithmetic errors to creep in. There's a much cleaner approach: express everything relative to the Sun. Since the Sun is a well-characterized star whose luminosity, radius, and temperature are precisely known, it serves as a natural benchmark. Dividing the Stefan-Boltzmann law for any star by the same law applied to the Sun cancels the constants and yields a dimensionless scaling relation.
+
+For easy comparison, we express luminosity, radius, and temperature in solar units:
 
 $$\frac{L}{L_\odot} = \left(\frac{R}{R_\odot}\right)^2 \left(\frac{T}{T_\odot}\right)^4$$
 
@@ -278,6 +280,8 @@ From $L \propto R^2 T^4$:
 ---
 
 ## Part 5: Wien's Law Applied — Color to Temperature
+
+We now have the Stefan-Boltzmann law connecting $L$, $R$, and $T$ — but to use it, we need an independent way to measure temperature. That's where Wien's displacement law enters. By measuring a star's color (the wavelength where its spectrum peaks), we get temperature directly — no model of internal structure required.
 
 ### Review and Quantification
 
@@ -419,7 +423,7 @@ $$\frac{R_{\text{Sirius}}}{R_\odot} = \sqrt{\frac{25}{8.52}} = \sqrt{2.93} \appr
 
 So Sirius A's radius is approximately $1.7 R_\odot$:
 
-$$R_{\text{Sirius}} \approx 1.7 \times 6.96 \times 10^{10}\ \text{cm} \approx 1.2 \times 10^{11}\ \text{cm} \approx 1{,}750{,}000\ \text{km}$$
+$$R_{\text{Sirius}} \approx 1.7 \times 6.96 \times 10^{10}\ \text{cm} \approx 1.2 \times 10^{11}\ \text{cm} \approx 1{,}200{,}000\ \text{km}$$
 
 Compare to the Sun: $R_\odot \approx 696{,}000$ km.
 
@@ -516,13 +520,13 @@ For now, the key point: **every star you can observe lies on some curve of const
 
 ### Preview of the HR Diagram Structure
 
-When you plot many stars on the HR diagram, they don't scatter uniformly. Instead, they cluster in regions:
+When you plot many stars on the HR diagram, they don't scatter uniformly. Instead, they cluster in distinct regions:
 
-- **Main sequence** (diagonal band from hot/luminous to cool/dim): stars in hydrogen-burning core
-- **Giant branch** (cool, very luminous): evolved stars with large radii
-- **White dwarf sequence** (cool, very dim): stellar remnants
+- **Main sequence** (diagonal band from hot/luminous to cool/dim): stars burning hydrogen in their cores, where the Sun lives. Most stars spend most of their lives here.
+- **Giant branch** (cool but very luminous — upper right): evolved stars with greatly expanded envelopes. Their large radii ($R \gg R_\odot$) compensate for their lower temperatures. Betelgeuse lives here.
+- **White dwarf sequence** (hot but very dim — lower left): stellar remnants about the size of Earth. Their tiny radii ($R \sim 0.01\,R_\odot$) explain why they're faint despite high surface temperatures.
 
-Each region corresponds to different physical states of stellar structure — but the Stefan-Boltzmann law applies to all of them. Your ability to measure colors and brightness and infer sizes is what makes the HR diagram a tool for understanding stellar evolution.
+Each region corresponds to a different physical state of stellar structure — but the Stefan-Boltzmann law applies to all of them. The lines of constant radius you can draw on the HR diagram separate these populations: main-sequence stars occupy a band near $R \sim 0.1$–$10\,R_\odot$, giants extend to hundreds of $R_\odot$, and white dwarfs cluster near $0.01\,R_\odot$. Your ability to measure colors and brightness and infer sizes is what makes the HR diagram not just a pretty plot, but a diagnostic tool for understanding stellar evolution. In Lecture 6, we'll build the full diagram and see these patterns emerge from data.
 
 :::
 

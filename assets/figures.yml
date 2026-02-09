@@ -38,16 +38,19 @@ figures:
     path: /assets/images/common/jwst-em-spectrum-ir.png
     caption: "What to notice: different wavelength bands are different information channels; infrared sits just beyond visible light."
     alt: "Graphic of the electromagnetic spectrum labeled gamma, X-ray, ultraviolet, visible, infrared, microwave, and radio, with a highlighted visible band and an extended infrared region; includes sketches of several space telescopes."
+    credit: "JWST/STScI"
 
   jwst-vs-hst-ngc1566:
     path: /assets/images/common/NGC1566-jwst-vs-hst.jpg
     caption: "What to notice: the same galaxy can look dramatically different in different bands; dust that hides structure in one band may become transparent in another."
     alt: "Side-by-side comparison of a spiral galaxy in two different views, showing differing levels of detail and dust structure between the images."
+    credit: "JWST/STScI"
 
   jwst-vs-hst-arp142:
     path: /assets/images/common/Arp142-penguin-jwst-vs-hst.jpg
     caption: "What to notice: changing wavelength reveals different components of the same system (stars, dust, and gas), not a different object."
     alt: "Side-by-side comparison of a galaxy system in two different views, where one image emphasizes stars and the other emphasizes dust and infrared-bright regions."
+    credit: "JWST/STScI"
 
   milky-way-panoramic:
     path: /assets/images/common/eso-milky-way-panoramic.jpg
@@ -58,6 +61,7 @@ figures:
     path: /assets/images/common/cosmic-cliffs-jwst.png
     caption: "What to notice: even a dramatic nebula image is data — color and brightness patterns encode physical differences."
     alt: "Colorful nebula scene with bright blue ridges, orange-brown dust clouds, and scattered stars."
+    credit: "JWST/STScI"
 
   # ==============================================================
   # Module 1: Foundations
@@ -81,7 +85,7 @@ figures:
     path: /assets/images/module-01/universe-phone-number-owocki-nblm.png
     caption: "The Universe's Phone Number: (555)-711-2555 maps cosmic scales"
     alt: "Staircase diagram showing scale factors from nucleus (10^-15 m) through atom, cell, human, Earth, Jupiter, Sun, AU, light-year, parsec, galaxy, to observable universe (10^26 m). Phone number digits encode the multiplication factors between each level."
-    credit: "Adapted from Owocki (course illustration)"
+    credit: "Fundamentals of Astrophysics (Owocki)"
     module: 1
 
   # Dimensional Analysis Protocol (Lecture 02)
@@ -204,7 +208,7 @@ figures:
     path: /assets/images/module-01/pillars-hubble-jwst.png
     caption: "**What to notice:** Left (Hubble optical)—dark, opaque columns block visible light. Right (JWST infrared)—thousands of embedded newborn stars revealed. Infrared penetrates the dust that blocks optical light."
     alt: "Side-by-side comparison of the Pillars of Creation in the Eagle Nebula: Left panel shows Hubble optical image with dark opaque dust pillars against glowing gas. Right panel shows JWST near-infrared image revealing thousands of previously hidden stars embedded within and behind the pillars."
-    credit: "NASA, ESA, CSA, STScI"
+    credit: "JWST/STScI"
     module: 1
 
   # Spoiler 8: Crab Nebula multiwavelength
@@ -392,6 +396,97 @@ figures:
     alt: "Diagram showing blueshift and redshift of spectral lines"
     module: 2
 
+  week04-angle-units-cococubed:
+    path: /assets/images/module-02/week-04/angle_units-cococubed.svg
+    caption: "**What to notice:** Angle units are nested by factors of 60 (degrees → arcminutes → arcseconds), and the Moon spans about 31 arcminutes (about 0.5°)."
+    alt: "Teaching diagram titled 'Angle Units' with three panels: a circle marked in degrees, a 1 degree wedge subdivided into arcminutes, and a 1 arcminute wedge subdivided into arcseconds. A bottom example shows the Moon's apparent size labeled 31 arcminutes equals 0.5 degrees."
+    credit: "cococubed.com"
+    module: 2
+
+  week04-distance-angle-cococubed:
+    path: /assets/images/module-02/week-04/distance_angle-cococubed.svg
+    caption: "**What to notice:** Arc length is a fixed fraction of circumference, so angle over 360° equals arc distance over $2\\pi$ times radius."
+    alt: "Circle geometry diagram with radius, an arc labeled distance, and a central angle. The right side shows the proportion part over whole equals part over whole and the equation angle over 360 degrees equals distance over 2 pi radius."
+    credit: "cococubed.com"
+    module: 2
+
+  week04-celestial-sphere-depth-cococubed:
+    path: /assets/images/module-02/week-04/celestial_sphere_02-cococubed.svg
+    caption: "**What to notice:** Stars appear projected onto one celestial sphere, but the arrows emphasize they are actually at different distances in 3D space."
+    alt: "Celestial sphere illustration with Earth near the center, celestial equator and ecliptic marked, and constellations drawn on the sphere. Red arrows point outward from several stars with text noting stars seem to lie on the sphere but are really at different distances."
+    credit: "cococubed.com"
+    module: 2
+
+  week04-parallax1-cococubed:
+    path: /assets/images/module-02/week-04/parallax1-cococubed.svg
+    caption: "**What to notice:** A nearby star shifts against distant background stars between January and July; that angular shift is parallax and gives distance."
+    alt: "Parallax geometry diagram showing Earth on opposite sides of its orbit around the Sun in January and July, a nearby red star, distant purple stars, and two inset sky views where the nearby star changes position. Labels include parallax angle p, distance d, and 1 AU baseline."
+    credit: "cococubed.com"
+    module: 2
+
+  week04-nearest-stars2-white-cococubed:
+    path: /assets/images/module-02/week-04/nearest_stars2_white-cococubed.svg
+    caption: "**What to notice:** The nearest stellar neighborhood is a sparse 3D map around the Sun, with distance rings (3, 6, and 10 light-years) and stars not confined to one plane."
+    alt: "Three-dimensional local star map centered on the Sun with dashed rings at 3, 6, and 10 light-years. Labeled nearby systems include Alpha Centauri, Barnard's Star, Sirius, Procyon, Ross 154, Lacaille 9352, and others at different vertical heights above and below the reference plane."
+    credit: "cococubed.com"
+    module: 2
+
+  week04-nearest-massive-stars-cococubed:
+    path: /assets/images/module-02/week-04/nearest_massive_stars-cococubed.svg
+    caption: "**What to notice:** Massive stars are rarer and generally farther away than the nearest low-mass stars, so the local sample extends out to several tenths of a kiloparsec."
+    alt: "Top-down map of nearby massive stars around the Sun with concentric dashed rings at 0.2, 0.4, and 0.6 kiloparsecs. Points are color coded by spectral class and labeled with examples such as Spica, Antares, Beta Ori, and Epsilon Cyg, with coordinates referenced to the celestial equator and vernal equinox direction."
+    credit: "cococubed.com"
+    module: 2
+
+  week04-photosphere-line-formation-cococubed:
+    path: /assets/images/module-02/week-04/photosphere_line_formation-cococubed.svg
+    caption: "**What to notice:** Different wavelengths form at different depths in the photosphere, so absorption lines encode atmospheric structure, not just composition."
+    alt: "Cross-section of a stellar photosphere with curved layers labeled about 5800 K deeper and 4500 K higher up across roughly 500 km. Dashed sight lines from different depths connect to a spectrum panel showing a dark absorption line dip versus wavelength and intensity."
+    credit: "cococubed.com"
+    module: 2
+
+  week04-owocki-fig2-1-angular-size:
+    path: /assets/images/module-02/week-04/Owocki_Fig2-1.jpg
+    caption: "**What to notice:** Angular size comes from geometry: the same physical size $s$ subtends a smaller angle $\\alpha$ at larger distance $d$."
+    alt: "Basic viewing geometry with observer A at left and object segment BC at right. Rays from A to B and C define an angle alpha, with distance d to the object centerline and object size s shown on the right vertical segment."
+    credit: "Fundamentals of Astrophysics (Owocki)"
+    module: 2
+
+  week04-owocki-fig2-3-small-angle:
+    path: /assets/images/module-02/week-04/Owocki_Fig2-3.jpg
+    caption: "**What to notice:** The exact relation $\\sin(\\alpha/2)=R/d$ reduces to $\\alpha\\approx2R/d$ when $R\\ll d$, which is the small-angle approximation used in astronomy."
+    alt: "Small-angle derivation diagram with observer A viewing a circular object of radius R at distance d. The diagram includes the equations sine of alpha over 2 equals R over d and, for R much less than d, alpha approximately equals 2R over d."
+    credit: "Fundamentals of Astrophysics (Owocki)"
+    module: 2
+
+  week04-owocki-fig2-4-parallax-parsec:
+    path: /assets/images/module-02/week-04/Owocki_Fig2-4.jpg
+    caption: "**What to notice:** Parallax uses Earth's 1 AU orbital radius as a baseline; the relation $d(\\text{pc})=1/p(\\text{arcsec})$ turns tiny angles into distances."
+    alt: "Parallax sketch with a nearby star at left and Earth positions in January and July on a small orbit at right. Lines of sight define parallax angle p, distance d, and a 1 AU vertical baseline, with distant background stars indicated."
+    credit: "Fundamentals of Astrophysics (Owocki)"
+    module: 2
+
+  week04-owocki-fig2-5-solid-angle:
+    path: /assets/images/module-02/week-04/Owocki_Fig2-5.jpg
+    caption: "**What to notice:** A small patch on the sky has solid angle $\\delta\\Omega=\\sin\\theta\\,\\delta\\theta\\,\\delta\\phi$, the 2D angular area element used in flux and intensity integrals."
+    alt: "Spherical coordinate diagram highlighting a small surface patch between theta and theta plus delta-theta and across delta-phi. From the sphere center, dashed rays outline the patch and the formula delta-Omega equals sin theta times delta-theta times delta-phi is shown."
+    credit: "Fundamentals of Astrophysics (Owocki)"
+    module: 2
+
+  week04-owocki-fig3-1-surface-brightness:
+    path: /assets/images/module-02/week-04/Owocki_Fig3-1.jpg
+    caption: "**What to notice:** Surface brightness is distance-independent because both received flux and apparent solid angle scale as $1/d^2$, so their ratio stays constant."
+    alt: "Derivation graphic comparing a star viewed at two distances d1 and d2 with angular radii alpha1 and alpha2. Equations show angular radius, solid angle, flux F equals L over 4 pi d squared, and intensity I equals F over Omega simplifying to L over 4 pi squared R squared equals F-star over pi."
+    credit: "Fundamentals of Astrophysics (Owocki)"
+    module: 2
+
+  week04-jwst-spectroscopy-density:
+    path: /assets/images/module-02/week-04/jwst-spectroscopy-1.png
+    caption: "**What to notice:** Broader absorption lines indicate higher pressure and density, so white dwarfs show pressure-broadened spectra compared with low-density giants."
+    alt: "Infographic titled 'Comparing Density Through Spectra' comparing a blue giant and a white dwarf. Two rainbow spectra are shown with dark absorption lines, where the white dwarf's lines are visibly broader to illustrate pressure broadening at higher density."
+    credit: "JWST/STScI"
+    module: 2
+
   # ==============================================================
   # Module 3: Stellar Structure & Evolution
   # ==============================================================
@@ -564,35 +659,35 @@ figures:
     path: /assets/images/module-01/week-03/em-wave-only-jwst.png
     caption: "**What to notice:** Light is oscillating electric and magnetic fields perpendicular to each other and to the direction of travel. The wavelength λ is the distance between crests."
     alt: "3D diagram of an electromagnetic wave showing perpendicular electric field (cyan, oscillating in z-y plane) and magnetic field (yellow, oscillating in x-y plane) propagating along the x-axis."
-    credit: "JWST Education"
+    credit: "JWST/STScI"
     module: 1
 
   mechanical-vs-em-wave:
     path: /assets/images/module-01/week-03/mechanical-vs-em-wave-jwst.png
     caption: "**What to notice:** Mechanical waves need a medium (water, air); EM waves don't. Light travels through the vacuum of space—no medium required."
     alt: "Side-by-side comparison: left shows a simple sine wave labeled 'Mechanical Wave' with wavelength marked; right shows an EM wave with perpendicular electric and magnetic field components."
-    credit: "JWST Education"
+    credit: "JWST/STScI"
     module: 1
 
   em-spectrum-bands:
     path: /assets/images/module-01/week-03/em-spectrum-jwst.png
     caption: "**What to notice:** The EM spectrum spans from gamma rays (≈ $10^{-13}$ cm) to radio waves (≈ $10^{3}$ cm). Visible light is a tiny sliver—400 to 700 nm. Different wavelengths = different physics revealed."
     alt: "Horizontal electromagnetic spectrum diagram showing a wavelength scale from very short gamma rays (~1e-13 cm) through X-ray and ultraviolet to visible light (expanded as a rainbow, 400–700 nm), then infrared, microwave, and radio up to long wavelengths (~1e3 cm)."
-    credit: "JWST Education"
+    credit: "JWST/STScI"
     module: 1
 
   em-spectrum-astro-objects:
     path: /assets/images/module-01/week-03/em-spectrum-astro-objects-jwst.png
     caption: "**What to notice:** Different wavelengths reveal different cosmic phenomena. Gamma rays see black holes; X-rays see hot plasma; visible shows stars; infrared penetrates dust; radio maps cold gas."
     alt: "EM spectrum with astronomical objects shown at each band: gamma rays from black holes and supernovae, X-rays from hot stellar coronae, UV from hot stars, visible from stellar surfaces, infrared from dust and cool stars, microwave from CMB, radio from cold gas and pulsars."
-    credit: "JWST Education"
+    credit: "JWST/STScI"
     module: 1
 
   wavelength-energy-relation:
     path: /assets/images/module-01/week-03/wavelength-energy-jwst.png
     caption: "**What to notice:** Short wavelength = high energy = high frequency. The wave 'crests' are closer together for blue/UV light than for red/IR light. E = hc/λ quantifies this."
     alt: "Visible spectrum from UV through infrared showing a wave pattern with wavelength scale across visible light (400–700 nm). Left side labeled 'higher energy (shorter wavelength)' with compressed waves; right side labeled 'lower energy (longer wavelength)' with stretched waves."
-    credit: "JWST Education"
+    credit: "JWST/STScI"
     module: 1
 
   double-slit-interference-openstax:
@@ -607,7 +702,7 @@ figures:
     path: /assets/images/module-01/week-03/prism-spectrum-jwst.png
     caption: "**What to notice:** A prism separates 'white' sunlight into its component wavelengths. Blue bends more than red because shorter wavelengths interact more strongly with glass."
     alt: "Sunlight beam entering a triangular prism and dispersing into a rainbow spectrum, with ultraviolet beyond blue and infrared beyond red labeled."
-    credit: "JWST Education"
+    credit: "JWST/STScI"
     module: 1
 
   # Blackbody Radiation
@@ -615,14 +710,14 @@ figures:
     path: /assets/images/module-01/week-03/blackbody-spectra-jwst.jpg
     caption: "**What to notice:** Hotter stars peak at shorter wavelengths (bluer) AND emit more total light. A blue 8000 K star peaks near $\\lambda_{\\mathrm{peak}}\\approx 360\\ \\mathrm{nm}$; a red 3000 K star peaks near $970\\ \\mathrm{nm}$. Wien’s law: $\\lambda_{\\mathrm{peak}} = b/T$ with $b = 0.2898$ cm·K."
     alt: "Graph showing three Planck curves for stars at 8000 K (blue, peaks in the near-UV around 360 nm), 5000 K (yellow, peaks near 580 nm), and 3000 K (red, peaks in the near-IR around 970 nm). The visible band (about 400–700 nm) is marked. Y-axis is brightness; X-axis is wavelength."
-    credit: "JWST Education"
+    credit: "JWST/STScI"
     module: 1
 
   continuous-vs-line-spectrum:
     path: /assets/images/module-01/week-03/lightbulb-vs-sun-spectrum-jwst.png
     caption: "**What to notice:** The Sun's spectrum is nearly a smooth blackbody curve (continuous). A fluorescent bulb shows discrete spikes—it's NOT a thermal emitter. Spectrum shape tells you about the emission mechanism."
     alt: "Top: Sun image with smooth continuous spectrum graph (brightness vs wavelength, rainbow bar below). Bottom: Fluorescent bulb with spiky discrete emission spectrum showing peaks at specific wavelengths."
-    credit: "JWST Education"
+    credit: "JWST/STScI"
     module: 1
 
   # Types of Spectra (preview for spectroscopy)
@@ -630,7 +725,7 @@ figures:
     path: /assets/images/module-01/week-03/types-of-spectra-jwst.png
     caption: "**What to notice:** Three spectrum types encode different physics. Continuous = hot dense source. Absorption = cool gas in front of hot source. Emission = hot thin gas. Same atoms, different conditions, different spectra."
     alt: "Diagram showing three scenarios: (1) continuous spectrum from hot dense object producing rainbow, (2) absorption spectrum with dark lines when cool gas absorbs from continuous source, (3) emission spectrum with bright lines from hot thin gas cloud."
-    credit: "JWST Education"
+    credit: "JWST/STScI"
     module: 1
 
   # Light-Matter Interactions
@@ -638,7 +733,7 @@ figures:
     path: /assets/images/module-01/week-03/light-matter-interactions-jwst.png
     caption: "**What to notice:** Light can be absorbed, emitted, transmitted, reflected, or refracted. Each interaction encodes information about the material. Blackbodies absorb all wavelengths (no reflection)."
     alt: "Five panels showing light behaviors: Absorption (rays entering and stopping), Emission (rays leaving), Transmission (rays passing through), Reflection (rays bouncing off surface), Refraction (rays bending at interface)."
-    credit: "JWST Education"
+    credit: "JWST/STScI"
     module: 1
 
   # Atomic Spectra (preview for Module 2)
@@ -646,21 +741,21 @@ figures:
     path: /assets/images/module-01/week-03/absorption-emission-spectra-jwst.png
     caption: "**What to notice:** Each element has a unique spectral fingerprint. The dark lines in absorption exactly match the bright lines in emission—same energy transitions, opposite directions."
     alt: "Absorption and emission spectra for sodium, nitrogen, hydrogen, and oxygen showing matching line patterns. Absorption spectra show dark lines on continuous rainbow; emission spectra show same-position bright lines on black background."
-    credit: "JWST Education"
+    credit: "JWST/STScI"
     module: 1
 
   hydrogen-absorption:
     path: /assets/images/module-01/week-03/absorption-of-light-hydrogen-jwst.png
     caption: "**What to notice:** Hydrogen absorbs specific wavelengths because electrons jump UP between quantized energy levels. Each dark line = one electron transition. E = hν determines which wavelengths."
     alt: "Left: Bohr model of hydrogen with electron energy levels 1-6. Right top: energy level diagram showing electron absorbing photons and jumping up. Right bottom: absorption spectrum with dark lines at specific wavelengths corresponding to transitions."
-    credit: "JWST Education"
+    credit: "JWST/STScI"
     module: 1
 
   hydrogen-emission:
     path: /assets/images/module-01/week-03/emission-of-light-hydrogen-jwst.png
     caption: "**What to notice:** Hydrogen emits specific wavelengths because electrons fall DOWN between energy levels. Each bright line = one electron transition. The Balmer series (visible) comes from transitions to level 2."
     alt: "Left: Bohr model of hydrogen with electron falling between levels. Right top: energy level diagram showing electron emitting photons while dropping down. Right bottom: emission spectrum with bright lines at specific wavelengths."
-    credit: "JWST Education"
+    credit: "JWST/STScI"
     module: 1
 
   # Real Stellar Spectrum
@@ -668,7 +763,7 @@ figures:
     path: /assets/images/module-01/week-03/altair-spectrum-jwst.png
     caption: "**What to notice:** A real stellar spectrum combines continuous (blackbody) shape with absorption lines. The overall curve gives temperature (Wien); the lines give composition (spectroscopy). Two inference tools in one observation."
     alt: "Top: rainbow spectrum image of star Altair showing dark absorption lines. Bottom: graph of brightness vs wavelength (about 400–700 nm) showing a smooth blackbody-like curve with sharp dips at absorption line wavelengths. Hydrogen Balmer lines labeled."
-    credit: "JWST Education"
+    credit: "JWST/STScI"
     module: 1
 
   # Doppler Shift (preview for Week 6)
@@ -676,7 +771,7 @@ figures:
     path: /assets/images/module-01/week-03/doppler-shift-star-jwst.png
     caption: "**What to notice:** Motion toward us compresses wavelengths (blueshift); motion away stretches them (redshift). This lets us measure stellar velocities—and detect exoplanets via the star's wobble."
     alt: "Star with orbiting exoplanet showing how spectral lines shift: blueshifted when star moves toward viewer, neutral when perpendicular, redshifted when moving away. Three spectra shown for comparison."
-    credit: "JWST Education"
+    credit: "JWST/STScI"
     module: 1
 
   # Betelgeuse Size Comparison
@@ -692,7 +787,7 @@ figures:
     path: /assets/images/module-01/week-03/reflectance-spectra-earth-jwst.png
     caption: "**What to notice:** Different materials reflect different wavelengths. Snow reflects broadly; water absorbs IR; vegetation has a sharp 'red edge' at 700 nm. Spectra can identify surface composition—even on exoplanets."
     alt: "Graph showing reflectance vs wavelength (400-2400 nm) for snow (high, flat), vegetation (red edge jump at 700 nm), dry soil (rising toward IR), and water (absorbs in IR). Each material has distinct spectral signature."
-    credit: "JWST Education"
+    credit: "JWST/STScI"
     module: 1
 
   # Scattering and Telescopes (Lecture 04 expansion)
