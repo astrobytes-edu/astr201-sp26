@@ -208,3 +208,31 @@ doppler_shift:
     - "Speeds are much less than the speed of light (non-relativistic)"
     - "Only the line-of-sight component matters"
     - "Rest wavelength is known from lab measurements"
+
+small_angle:
+  predicts: "Given angular size $\\alpha$ (radians) and distance $d$, it predicts the true physical size $s$ of an object (or vice versa)."
+  depends: "Scales as $s \\propto \\alpha d$; angular size is inversely proportional to distance at fixed physical size."
+  says: "For small angles, the arc length equals the chord length — geometry becomes simple multiplication. Angular size, physical size, and distance form a triangle; know any two, infer the third."
+  assumptions:
+    - "Angle is small ($\\alpha \\lesssim 0.1$ rad $\\approx$ 6°)"
+    - "Uses $\\sin\\alpha \\approx \\alpha$ (radians); error is $<0.5\\%$ for $\\alpha < 0.1$ rad"
+    - "Both $s$ and $d$ must be in the same length units"
+
+parallax_general:
+  predicts: "Given a baseline length $b$ and measured parallax angle $p$ (radians), it predicts the distance $d$ to the object."
+  depends: "Scales as $d \\propto b$ and $d \\propto p^{-1}$. Longer baselines probe greater distances; smaller parallax angles mean farther objects."
+  says: "Parallax is the small-angle formula applied to distance measurement. The baseline sets the distance reach — a longer baseline lets you measure smaller angles and therefore greater distances. This equation works for any baseline: the diameter of your head (binocular vision), the radius of Earth's orbit (stellar parallax), or the orbit of Jupiter (if you could observe from there)."
+  assumptions:
+    - "Small-angle regime ($p \\ll 1$ rad)"
+    - "Baseline $b$ is known precisely"
+    - "Background reference objects are effectively at infinity"
+
+parallax_parsec:
+  predicts: "Given stellar parallax $p$ in arcseconds (measured from Earth's orbit), it predicts the distance $d$ in parsecs."
+  depends: "Scales as $d \\propto p^{-1}$. Halving the parallax doubles the inferred distance."
+  says: "This compact form hides two specific choices: (1) baseline = 1 AU (Earth's orbital radius), and (2) angle measured in arcseconds. The parsec is defined as the distance at which 1 AU subtends 1 arcsecond. It is not a universal constant of nature — it is a unit tied to Earth's orbit. An observer on Jupiter ($b \\approx 5.2$ AU) using the same angular units would define a 'Jupiter-parsec' 5.2 times larger."
+  assumptions:
+    - "Baseline is Earth's orbital radius (1 AU)"
+    - "Parallax angle $p$ is in arcseconds"
+    - "Small-angle regime (always satisfied for stellar parallax)"
+    - "Background reference stars are effectively at infinity"

@@ -487,6 +487,13 @@ figures:
     credit: "JWST/STScI"
     module: 2
 
+  week04-hr-diagram-eso:
+    path: /assets/images/module-02/week-04/hr-diagram-eso.jpg
+    caption: "**What to notice:** The H-R diagram separates stars into main sequence, giants/supergiants, and white dwarfs; temperature decreases left-to-right while luminosity increases upward."
+    alt: "Hertzsprung-Russell diagram with logarithmic luminosity on the vertical axis (relative to the Sun) and surface temperature on the horizontal axis decreasing from about 30000 K at left to 3000 K at right. Colored stellar points and shaded regions mark the main sequence, giants, supergiants, and white dwarfs, with the Sun labeled near luminosity 1 and temperature about 5800 K."
+    credit: "ESO"
+    module: 2
+
   # ==============================================================
   # Module 3: Stellar Structure & Evolution
   # ==============================================================

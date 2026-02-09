@@ -151,3 +151,21 @@ doppler-shift:
   anchor: "eq-doppler-shift"
   include: "_includes/equations/doppler-shift.qmd"
   card: "doppler_shift"
+
+small-angle:
+  title: "Small-angle approximation"
+  anchor: "eq-small-angle"
+  include: "_includes/equations/small-angle.qmd"
+  card: "small_angle"
+
+parallax-general:
+  title: "Parallax-distance relation (general baseline)"
+  anchor: "eq-parallax-general"
+  include: "_includes/equations/parallax-general.qmd"
+  card: "parallax_general"
+
+parallax-parsec:
+  title: "Parallax-distance relation (Earth baseline, parsec form)"
+  anchor: "eq-parallax-parsec"
+  include: "_includes/equations/parallax-parsec.qmd"
+  card: "parallax_parsec"

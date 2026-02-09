@@ -1,0 +1,3 @@
+$$
+d = \frac{b}{p}
+$$ {#eq-parallax-general}

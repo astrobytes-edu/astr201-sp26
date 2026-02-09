@@ -1,0 +1,3 @@
+$$
+d(\text{pc}) = \frac{1}{p(\text{arcsec})}
+$$ {#eq-parallax-parsec}

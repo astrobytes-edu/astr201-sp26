@@ -89,7 +89,8 @@ Your intuition from everyday experience might say: "They're equally bright, so t
 
 In Lecture 1, you learned that the flux received at Earth is
 
-$$F = \frac{L}{4\pi d^2}$$
+{{< include ../../../_includes/equations/flux-luminosity-distance.qmd >}}
+{{< eqrefcard flux-luminosity-distance >}}
 
 where $L$ is the star's luminosity and $d$ is the distance.
 
@@ -166,9 +167,11 @@ $$F_* = \sigma T^4$$
 
 where $\sigma = 5.67 \times 10^{-5}$ erg cm$^{-2}$ s$^{-1}$ K$^{-4}$ is the **Stefan-Boltzmann constant**.
 
-This tells us the surface flux in terms of temperature alone. Combined with the definition of surface flux, we get:
+This tells us the surface flux — the power radiated per unit area — in terms of temperature alone.
 
-$$L = 4\pi R^2 \sigma T^4$$
+To get the total luminosity, recall the definition from Part 2: $L = F_* \times (\text{surface area})$. For a sphere, the surface area is $4\pi R^2$. Substituting $F_* = \sigma T^4$:
+
+$$L = F_* \times 4\pi R^2 = \sigma T^4 \times 4\pi R^2 = 4\pi R^2 \sigma T^4$$
 
 {{< include ../../../_includes/equations/stefan-boltzmann.qmd >}}
 {{< eqrefcard stefan-boltzmann >}}
@@ -241,9 +244,15 @@ For easy comparison, we express luminosity, radius, and temperature in solar uni
 
 $$\frac{L}{L_\odot} = \left(\frac{R}{R_\odot}\right)^2 \left(\frac{T}{T_\odot}\right)^4$$
 
-This comes directly from Stefan-Boltzmann applied to the Sun, then divided:
+To derive this, write the Stefan-Boltzmann law for any star and for the Sun, then divide:
 
-$$\frac{L}{L_\odot} = \frac{4\pi R^2 \sigma T^4}{4\pi R_\odot^2 \sigma T_\odot^4} = \left(\frac{R}{R_\odot}\right)^2 \left(\frac{T}{T_\odot}\right)^4$$
+$$\frac{L}{L_\odot} = \frac{4\pi R^2 \sigma T^4}{4\pi R_\odot^2 \sigma T_\odot^4}$$
+
+Notice that $4\pi$ and $\sigma$ appear in both the numerator and denominator, so they cancel — leaving only ratios of stellar properties:
+
+$$\frac{L}{L_\odot} = \frac{R^2}{R_\odot^2} \cdot \frac{T^4}{T_\odot^4} = \left(\frac{R}{R_\odot}\right)^2 \left(\frac{T}{T_\odot}\right)^4$$
+
+This is the payoff: constants disappear, and you work entirely with dimensionless ratios.
 
 **Why this form is useful:**
 
@@ -386,15 +395,25 @@ Now you have all the pieces:
 
 1. **From Lecture 1:** Measure flux at Earth + measure distance → infer **luminosity** $L$
 2. **From Lecture 4 (Module 1):** Measure spectrum, find peak → apply Wien's law → infer **temperature** $T$
-3. **From Stefan-Boltzmann:** Given $L$ and $T$, solve for **radius** $R$:
+3. **From Stefan-Boltzmann:** Given $L$ and $T$, solve for **radius** $R$.
+
+Start from the Stefan-Boltzmann law:
+
+$$L = 4\pi R^2 \sigma T^4$$
+
+We want $R$, so isolate $R^2$ by dividing both sides by $4\pi\sigma T^4$:
+
+$$R^2 = \frac{L}{4\pi\sigma T^4}$$
+
+Then take the square root:
 
 $$R = \sqrt{\frac{L}{4\pi\sigma T^4}}$$
 
-**In solar units** (often easier):
+**In solar units** (often easier): apply the same algebra to the dimensionless ratio $L/L_\odot = (R/R_\odot)^2 (T/T_\odot)^4$, isolating $(R/R_\odot)^2$:
 
-$$\frac{R}{R_\odot} = \sqrt{\frac{L/L_\odot}{(T/T_\odot)^4}}$$
+$$\left(\frac{R}{R_\odot}\right)^2 = \frac{L/L_\odot}{(T/T_\odot)^4} \quad \Longrightarrow \quad \frac{R}{R_\odot} = \sqrt{\frac{L/L_\odot}{(T/T_\odot)^4}}$$
 
-This is the observational technique that revealed stellar sizes before spectroscopic interferometry.
+This is the observational technique that revealed stellar sizes before spectroscopic interferometry — and no physical constants appear in the solar-unit form.
 
 ::: {.callout-note}
 ## Worked Example 3: Sirius A

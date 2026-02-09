@@ -210,7 +210,8 @@ $$\alpha (\text{radians}) = \frac{\text{arc length}}{\text{radius}} \approx \fra
 
 This is the **small-angle approximation**:
 
-$$\boxed{\alpha \approx \frac{s}{d} \quad \text{(radians, valid when } \alpha \ll 1 \text{)}}$$
+{{< include ../../../_includes/equations/small-angle.qmd >}}
+{{< eqrefcard small-angle >}}
 
 **Physical meaning:** This says that angular size is inversely proportional to distance. A distant object appears small; a nearby object appears large.
 
@@ -258,17 +259,43 @@ Now we apply the small-angle formula to the most direct distance-measurement tec
 
 Hold your finger at arm's length and close one eye, then the other. Your finger appears to shift against the background. The farther away your finger is, the smaller this shift. This is parallax, and it's the foundation of depth perception in human vision.
 
+The geometry is just the small-angle formula rearranged. Recall the small-angle formula: $s = \alpha \, d$. In a parallax measurement, we map the variables as follows:
+
+- The "size" $s$ is the baseline $b$ — the physical separation between your two viewpoints.
+- The "angle" $\alpha$ is the parallax angle $p$ — the angular shift you measure.
+- The "distance" $d$ is the distance to the object — the quantity we want to find.
+
+Substituting these into the small-angle formula gives $b = p \, d$. Solving for $d$:
+
+{{< include ../../../_includes/equations/parallax-general.qmd >}}
+{{< eqrefcard parallax-general >}}
+
+where $b$ is the baseline length, $p$ is the parallax angle in radians, and $d$ is the distance in the same units as $b$. This is the general parallax-distance relation — it works for *any* baseline and *any* observer.
+
+### The Baseline Determines the Reach
+
+This is worth pausing on. The distance you can probe is set by the length of your baseline:
+
+- **Your head** ($b \approx 7$ cm, the distance between your eyes): you perceive depth out to a few meters — that's binocular vision.
+- **Earth's diameter** ($b \approx 12{,}700$ km): radar ranging to nearby planets, but useless for stars.
+- **Earth's orbit** ($b = 1$ AU $\approx 1.5 \times 10^{13}$ cm): this is what makes stellar parallax possible.
+- **Jupiter's orbit** ($b \approx 5.2$ AU): if you could observe from Jupiter, you'd measure parallax angles 5.2× larger for any star at the same distance — or equivalently, reach 5.2× farther at the same angular precision.
+
+The physics is always the same ($d = b/p$). What changes is the baseline, and therefore the distance reach. Every parallax measurement implicitly encodes a choice of baseline.
+
+### Stellar Parallax: Earth's Orbit as Baseline
+
 In astronomy, Earth's orbit provides the baseline. As Earth moves from one side of the Sun to the opposite side — a baseline of 2 AU — a nearby star appears to shift against the distant background stars. This shift is **parallax**.
 
-We define the **parallax angle ($p$)** carefully: it is **half** the total angular shift, measured from the star's perspective looking back at Earth. In other words, $p$ is the angle subtended by Earth's orbital radius (1 AU) as seen from the star.
+We define the **parallax angle ($p$)** carefully: it is **half** the total angular shift, corresponding to a baseline of 1 AU (the orbital *radius*, not diameter). In other words, $p$ is the angle subtended by Earth's orbital radius as seen from the star.
 
 <!-- FIGURE: Sun at center, Earth's orbit as a circle with radius 1 AU, a nearby star at distance d above the ecliptic plane; the triangle Sun–Star–Earth is drawn with angle p at the star marking the parallax angle as half the total baseline shift -->
 
-This definition is chosen by convention to keep the numbers simple. When you measure a star at opposite sides of Earth's orbit, the total shift is $2p$; the parallax angle is $p$.
+This definition is chosen by convention to keep the numbers simple. When you measure a star at opposite sides of Earth's orbit (six months apart), the total shift is $2p$; the parallax angle is $p$.
 
-### Deriving the Distance-Parallax Relationship
+### From General Parallax to the Parsec
 
-Apply the small-angle formula with a 1 AU baseline:
+Substituting Earth's baseline $b = 1$ AU into the general parallax formula:
 
 $$p (\text{radians}) \approx \frac{1 \text{ AU}}{d}$$
 
@@ -278,24 +305,34 @@ $$p (\text{arcsec}) = \frac{1 \text{ AU}}{d} \times 206{,}265 \text{ arcsec/rad}
 Rearrange for distance:
 $$d = \frac{206{,}265 \text{ AU}}{p (\text{arcsec})}$$
 
-This is the fundamental parallax formula. But astronomers have made a brilliant choice: **define a new distance unit** to make this formula even simpler.
+This is the fundamental parallax formula *for Earth-based observers*. But astronomers have made a brilliant choice: **define a new distance unit** to make this formula even simpler.
 
-### The Parsec — A Natural Unit of Distance
+### The Parsec — A Unit Tied to Earth's Orbit
 
-**Definition:** One **parsec** (pc) is defined as the distance at which a star has a parallax angle of exactly 1 arcsecond.
+**Definition:** One **parsec** (pc) is defined as the distance at which a star has a parallax angle of exactly 1 arcsecond *when observed from Earth's orbit* (baseline = 1 AU).
 
 From our formula above, if $p = 1$ arcsec, then:
 $$1 \text{ pc} = 206{,}265 \text{ AU}$$
 
 This means the distance-parallax relationship becomes breathtakingly simple:
 
-$$\boxed{d(\text{pc}) = \frac{1}{p(\text{arcsec})}}$$
+{{< include ../../../_includes/equations/parallax-parsec.qmd >}}
+{{< eqrefcard parallax-parsec >}}
 
 A star with parallax 0.5 arcsecond is at 2 pc. A star with parallax 0.1 arcsecond is at 10 pc. The inverse relationship is exact and convenient.
 
-The name "parsec" comes from "parallax arcsecond" — it's not arbitrary. It emerges naturally from choosing 1 AU as the baseline and 1 arcsecond as the angular unit. For this reason, the parsec is the natural distance unit for stellar parallax measurements.
+The name "parsec" comes from **par**allax **a**rc**sec**ond — it's not arbitrary. It emerges naturally from choosing 1 AU as the baseline and 1 arcsecond as the angular unit.
+
+::: {.callout-important title="The Parsec Is Not a Universal Constant"}
+
+The parsec is defined relative to Earth's orbital radius. It is a *human* unit, not a law of nature. If astronomers lived on Jupiter ($b \approx 5.2$ AU), the same "parallax of 1 arcsecond" would correspond to a distance of $5.2 \times 206{,}265$ AU $\approx 1{,}070{,}000$ AU — about 5.2 pc. A "Jupiter-parsec" would be 5.2 times larger than our parsec.
+
+The compact formula $d(\text{pc}) = 1/p$ works *only* because we've baked Earth's baseline into the definition of the parsec. If the baseline changes, the unit changes. Always remember: the general formula $d = b/p$ is the physics; $d(\text{pc}) = 1/p(\text{arcsec})$ is a convenient specialization for Earth-bound astronomers.
+
+:::
 
 **Convert to more familiar units:**
+
 - 1 pc = $3.09 \times 10^{18}$ cm (approximately $3 \times 10^{18}$ cm)
 - 1 pc = 3.26 light-years
 - 1 kiloparsec (kpc) = 1000 pc
