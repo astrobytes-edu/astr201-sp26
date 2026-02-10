@@ -46,6 +46,15 @@ Parallax — the apparent shift in a star's position as Earth orbits — gives u
 This lecture is the gateway to the HR diagram: measure distance, then luminosity becomes knowable.
 :::
 
+::: {.callout-note title="Reading Map — Choose Your Track"}
+
+**Track A (Core, ~15 min):** Parts 1, 4, 5, and 6. Read the main text and worked examples; skip any box marked *Enrichment* or *Explore*. This gives you every equation and concept you need for homework and exams.
+
+**Track B (Full, ~30 min):** Read everything, including the historical enrichment boxes, "Argue With a Peer" prompts, and the standard-candle preview in Part 7. This deeper pass builds context that will pay off in later modules.
+
+*Either track covers all the learning objectives above. Track B simply adds historical depth and extra practice.*
+:::
+
 ---
 
 ## Part 1: The Distance Problem — Why It Matters
@@ -239,6 +248,14 @@ This is the **small-angle approximation**:
 {{< include ../../../_includes/equations/small-angle.qmd >}}
 {{< eqrefcard small-angle >}}
 
+::: {.callout-tip title="What You Should Be Able to Do Now"}
+After reading the small-angle equation, you should be able to:
+
+1. Sketch the triangle that defines $\alpha$, $s$, and $d$
+2. State which unit $\alpha$ must be in for the formula to work without a conversion factor (radians)
+3. Predict: if $d$ doubles while $s$ stays fixed, what happens to $\alpha$?
+:::
+
 ::: {.callout-note collapse="true" title="Enrichment: Alternative Geometry View"}
 {{< fig week04-owocki-fig2-3-small-angle >}}
 
@@ -327,7 +344,19 @@ We define the **parallax angle ($p$)** carefully: it is **half** the total angul
 
 {{< fig week04-parallax1-cococubed >}}
 
+::: {.callout-tip title="Guided Reading: Study This Figure"}
+Before moving on, identify these elements in the figure above:
+
+1. **Point to the baseline.** What is its length? (1 AU — Earth's orbital radius.)
+2. **Point to $p$.** Where is the parallax angle measured — at Earth or at the star?
+3. **Think:** If $p$ shrinks by a factor of 2, what happens to $d$? (It doubles — $d = 1/p$.)
+:::
+
 This definition is chosen by convention to keep the numbers simple. When you measure a star at opposite sides of Earth's orbit (six months apart), the total shift is $2p$; the parallax angle is $p$. (In reality, the apparent motion of a star over the year traces an ellipse on the sky, not a simple back-and-forth line; $p$ is defined as the semi-major axis of that ellipse.)
+
+::: {.callout-warning title="Misconception Alert: Parallax Is Not Angular Size"}
+Parallax and angular size are both measured in arcseconds, but they describe completely different things. **Angular size** is how big an object *looks* (e.g., the Moon spans $0.5^\circ$). **Parallax** is how much an object's *position shifts* against the background when viewed from two different vantage points. Stars have no measurable angular size — they are unresolved points — yet they have perfectly measurable parallax angles. Do not confuse the two.
+:::
 
 ::: {.callout-warning title="Misconception Alert: $p$ Is Half the Total Shift"}
 A common error is to use the full six-month angular shift as $p$. Remember: the total back-and-forth shift across six months is $2p$. The parallax angle $p$ corresponds to a 1 AU baseline (Earth's orbital radius), not the full 2 AU diameter. If a problem gives you the total angular shift, divide by 2 before applying $d = 1/p$.
@@ -358,6 +387,14 @@ This means the distance-parallax relationship becomes breathtakingly simple:
 
 {{< include ../../../_includes/equations/parallax-parsec.qmd >}}
 {{< eqrefcard parallax-parsec >}}
+
+::: {.callout-tip title="What You Should Be Able to Do Now"}
+After reading the parallax-parsec equation, you should be able to:
+
+1. Calculate the distance (in pc) for any star whose parallax is given in arcseconds
+2. Explain why this formula only works when $p$ is in arcseconds and $b = 1$ AU
+3. State the general formula ($d = b/p$) and identify which assumption converts it to $d = 1/p$
+:::
 
 A star with parallax 0.5 arcsecond is at 2 pc. A star with parallax 0.1 arcsecond is at 10 pc. The exact relation is $\tan p = b/d$, but for stellar parallax $p$ is so tiny that $\tan p \approx p$ to absurd precision — the inverse relationship $d = 1/p$ is effectively exact and extremely convenient.
 
@@ -435,7 +472,7 @@ This map shows our nearest stellar neighbors. Notice how Proxima Centauri, at 1.
 
 **Hipparcos (1989–1993):** The first space-based parallax mission achieved roughly 1 milliarcsecond precision. This extended parallax measurements to about 100,000 stars and out to distances of roughly 100 pc.
 
-**Gaia (2013–2025; data releases ongoing):** The Gaia astrometry mission represents a genuine revolution. With approximately 10 microarcsecond precision (about $100\times$ better than Hipparcos), Gaia has measured parallaxes for roughly 1.8 billion stars. The distance reach extends to kiloparsecs, mapping the structure and motion of the entire Milky Way. Gaia completed its science observations in January 2025, but data processing continues — Data Release 4 is expected in late 2026.
+**[Gaia](https://www.esa.int/Science_Exploration/Space_Science/Gaia) (2013–2025; data releases ongoing):** The Gaia astrometry mission represents a genuine revolution. With approximately 10 microarcsecond precision (about $100\times$ better than Hipparcos), Gaia has measured parallaxes for roughly 1.8 billion stars. The distance reach extends to kiloparsecs, mapping the structure and motion of the entire Milky Way. Gaia completed its science observations in January 2025, but data processing continues — Data Release 4 is expected in late 2026.
 :::
 
 ::: {.callout-note collapse="true" title="Explore: Nearby Massive Stars in 3D"}
@@ -503,6 +540,14 @@ This is the **inverse-square law**. Let's understand why it has this form.
 These assumptions are sometimes violated. Dust between the star and observer absorbs light (extinction). Some sources (like pulsars) beam radiation preferentially in one direction. Real measurements require correcting for these complications.
 :::
 
+::: {.callout-note collapse="true" title="Explore: What Happens When Dust Absorbs Light?"}
+Suppose interstellar dust absorbs half the light from a star before it reaches your detector. You measure a flux $F_{\text{obs}} = F_{\text{true}}/2$. If you naively apply the standard candle formula without correcting for dust:
+
+$$d_{\text{naive}} = \sqrt{\frac{L}{4\pi F_{\text{obs}}}} = \sqrt{\frac{L}{4\pi (F_{\text{true}}/2)}} = \sqrt{2}\;\sqrt{\frac{L}{4\pi F_{\text{true}}}} = \sqrt{2}\;d_{\text{true}}$$
+
+You would overestimate the distance by a factor of $\sqrt{2} \approx 1.41$ — about 41% too far. This is why dust corrections (called *extinction corrections*) are essential. Astronomers measure reddening — the wavelength-dependent dimming caused by dust — and remove it before computing distances and luminosities.
+:::
+
 ### Dimensional Analysis Derivation
 
 Here's a second path to the same result, using dimensional analysis. This approach is faster and requires no geometric picture — only logic about dimensions.
@@ -554,6 +599,14 @@ Two stars have exactly the same apparent brightness in your telescope. Your lab 
 
 {{< include ../../../_includes/equations/flux-luminosity-distance.qmd >}}
 {{< eqrefcard flux-luminosity-distance >}}
+
+::: {.callout-tip title="What You Should Be Able to Do Now"}
+After reading the flux-luminosity-distance equation, you should be able to:
+
+1. Rearrange $F = L/(4\pi d^2)$ to solve for $L$ or $d$
+2. Predict by what factor the flux changes if the distance triples
+3. Explain why you need *both* flux and distance to determine luminosity
+:::
 
 This equation is the cornerstone of all stellar luminosity measurements. Let's parse its meaning:
 
@@ -724,6 +777,24 @@ If we *know* the intrinsic luminosity of a star (from theory, calibration, or ph
 $$d = \sqrt{\frac{L}{4\pi F}}$$
 
 Objects whose intrinsic luminosity is known or determinable are called **standard candles**. They are one of the most powerful tools in astronomy for mapping the universe.
+
+::: {.callout-tip title="Worked Example: Standard Candle Distance"}
+
+**Given:** A Cepheid variable star has a known luminosity $L = 10{,}000\,L_\odot = 3.8 \times 10^{37}$ erg s$^{-1}$ (from its pulsation period). You measure its flux as $F = 1.0 \times 10^{-14}$ erg cm$^{-2}$ s$^{-1}$.
+
+**Find:** Distance to the Cepheid.
+
+**Step 1:** Apply the standard candle formula:
+$$d = \sqrt{\frac{L}{4\pi F}} = \sqrt{\frac{3.8 \times 10^{37} \text{ erg s}^{-1}}{4\pi \times 1.0 \times 10^{-14} \text{ erg cm}^{-2}\text{ s}^{-1}}}$$
+
+**Step 2:** Evaluate:
+$$d = \sqrt{\frac{3.8 \times 10^{37}}{1.26 \times 10^{-13}} \text{ cm}^2} = \sqrt{3.0 \times 10^{50} \text{ cm}^2} \approx 1.7 \times 10^{25} \text{ cm}$$
+
+**Step 3:** Convert to parsecs:
+$$d = \frac{1.7 \times 10^{25} \text{ cm}}{3.09 \times 10^{18} \text{ cm pc}^{-1}} \approx 5.5 \times 10^{6} \text{ pc} = 5.5 \text{ Mpc}$$
+
+**Interpret:** This Cepheid is about 5.5 Mpc away — well beyond the Milky Way, placing it in a nearby galaxy. This is far beyond parallax reach, illustrating why standard candles are essential for extragalactic distance measurements.
+:::
 
 {{< fig standard-candles >}}
 
