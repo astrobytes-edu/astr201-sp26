@@ -1,5 +1,5 @@
 ---
-title: "Module 2: Inferring Star Properties"
+title: "Module 2: Discovering the HR Diagram"
 subtitle: "Weeks 4–7 | From photons to physical properties"
 draft: false
 page-layout: article
@@ -9,26 +9,37 @@ listing:
     template: ../../assets/templates/lecture-card.ejs
     sort: "date"
   - id: module-readings
-    contents: "readings/*.qmd"
+    contents: "readings/*-reading.qmd"
     template: ../../assets/templates/reading-card.ejs
+    sort: "date"
+  - id: module-solutions
+    contents: "readings/*-solutions.qmd"
+    template: ../../assets/templates/solution-card.ejs
     sort: "date"
 ---
 
 ## Why this module matters
 
-Now that you have the foundational tools, we turn to the central question of
-observational astronomy: how do we learn about objects we can never touch?
-This module shows you how to extract distance, temperature, composition, and
-motion from nothing but the light that reaches our telescopes.
+You now have the foundational tools — dimensions, gravity, and light. This
+module puts them to work on the central question of observational astronomy:
+**how do we learn about objects we can never touch?**
+
+Starting from nothing but the photons that reach our telescopes, you will
+measure stellar distances, luminosities, temperatures, compositions, and
+masses. Each lecture adds one link to the inference chain, and by the end of
+the module you will have built the Hertzsprung–Russell diagram — the single
+most important map in stellar astrophysics.
 
 ## Learning objectives
 
 By the end of this module, you will be able to:
 
-- Calculate stellar distances using parallax and standard candles
+- Measure stellar distances using parallax geometry and define the parsec
+- Derive and apply the inverse-square law to infer luminosity from flux and distance
+- Connect color to temperature via Wien's law and infer radius via Stefan-Boltzmann
 - Interpret stellar spectra to determine temperature and composition
-- Apply the H-R diagram to classify stars
-- Measure stellar velocities from Doppler shifts
+- Apply the HR diagram to classify stars and understand their evolutionary states
+- Measure stellar velocities from Doppler shifts and determine masses from binary orbits
 
 ## Lectures
 
@@ -44,10 +55,21 @@ By the end of this module, you will be able to:
 :::
 :::
 
+## Solutions
+
+Solutions are posted for practice problems after homework deadlines. Use them to study and to check your reasoning.
+
+::: {.lecture-grid}
+::: {#module-solutions}
+:::
+:::
+
 ## Required Textbook Reading
 
-- Chapter 3 (pp. 15–24): Distance and Parallax
-- Chapter 5 (pp. 28–35): Stellar Spectra
+- Chapter 2 (pp. 9–14): Angular Size, Parallax, and the Parsec
+- Chapter 3 (pp. 15–24): Stellar Flux, Luminosity, and Distance
+- Chapter 4 (pp. 25–30): Blackbody Radiation and Wien's Law
+- Chapter 5 (pp. 28–35): Stellar Spectra and Classification
 
 ::: {.callout-frontier}
 - **What causes the solar abundance problem?** Helioseismology and spectroscopy give different answers for the Sun's composition.

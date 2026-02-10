@@ -4,7 +4,7 @@ subtitle: "How hot, how big? From luminosity and color to temperature and radius
 author: "Dr. Anna Rosen"
 date: "2026-02-13"
 description: "Given that we can measure a star's total luminosity (from Lecture 1) and its color, we ask: what can we learn about temperature and physical size? We apply blackbody radiation (Lecture 4 (Module 1)) to solve one of astronomy's central inference problems — how Stefan-Boltzmann and Wien's laws connect observable color to physical properties of stars."
-draft: true
+draft: false
 categories: [surface-flux, stellar-radiation, stefan-boltzmann, wien-law, stellar-radius, blackbody-application, colors-hr-diagram]
 course: ASTR 201
 module: "2 - Discovering the HR Diagram"
@@ -131,6 +131,8 @@ where $R$ is the star's radius.
 
 ### Surface Brightness is Independent of Distance (Brief Optional Insight)
 
+{{< fig week04-owocki-fig3-1-surface-brightness >}}
+
 ::: {.callout-note collapse="true"}
 ## Derivation: Why Surface Brightness Doesn't Change with Distance
 
@@ -138,6 +140,8 @@ Imagine looking at a star's disk through a small telescope.
 
 - **Flux received:** $F \propto d^{-2}$ (inverse-square law)
 - **Solid angle subtended:** $\Omega \propto R^2 d^{-2}$ (the star looks smaller at distance; angular size is $\theta \sim R/d$, and solid angle is $\theta^2$)
+
+{{< fig week04-owocki-fig2-5-solid-angle >}}
 - **Surface brightness:** $B = F/\Omega \propto (d^{-2})/(R^2 d^{-2}) = \text{constant}$
 
 The inverse-square decline in flux is exactly canceled by the inverse-square decline in solid angle, so the surface brightness (flux per unit solid angle) is independent of distance. You can't determine a star's distance just by measuring how bright it looks on the sky without additional information. A dim, distant star can appear to have the same surface brightness as a bright, nearby one.
@@ -194,6 +198,8 @@ Let's interpret this equation piece by piece:
 - $4\pi R^2$ = surface area of a sphere (geometry)
 - $\sigma T^4$ = power radiated per unit area at temperature $T$ (blackbody physics)
 - The product = total power output
+
+{{< fig blackbody-stellar-spectra >}}
 
 ::: {.callout-note}
 ## Unit Check: Stefan-Boltzmann Law
@@ -375,7 +381,7 @@ $$\frac{T_{\text{Rigel}}}{T_{\text{Betelgeuse}}} = \frac{12{,}100}{3{,}500} \app
 
 Rigel is about **3.5 times hotter** than Betelgeuse. Their visible colors directly reflect this temperature difference: hot objects are blue, cool objects are red. This is the **color-temperature relationship** that will anchor the HR diagram's horizontal axis.
 
-<!-- FIGURE: Orion constellation showing Rigel (blue) and Betelgeuse (red); overlaid blackbody curves at T_Rigel and T_Betelgeuse showing peak wavelengths and visible-light portions -->
+{{< fig betelgeuse-size >}}
 
 ---
 
@@ -478,7 +484,7 @@ $$R_{\text{Betelgeuse}} \approx 870 R_\odot \approx 870 \times 6.96 \times 10^{1
 
 **Why such a difference despite equal luminosity?** Betelgeuse is much cooler than the Sun ($T_{\text{Betelgeuse}} \approx 0.6 T_\odot$), so each square centimeter radiates $(0.603)^4 \approx 0.13$ times as much power as the Sun. To produce 100,000 times more luminosity, it must be vastly larger.
 
-<!-- FIGURE: Size comparison: Sun, Sirius A, and Betelgeuse with relative scale labels -->
+{{< fig betelgeuse-size >}}
 
 ---
 
@@ -539,6 +545,8 @@ For now, the key point: **every star you can observe lies on some curve of const
 
 ### Preview of the HR Diagram Structure
 
+{{< fig week04-hr-diagram-eso >}}
+
 When you plot many stars on the HR diagram, they don't scatter uniformly. Instead, they cluster in distinct regions:
 
 - **Main sequence** (diagonal band from hot/luminous to cool/dim): stars burning hydrogen in their cores, where the Sun lives. Most stars spend most of their lives here.
@@ -578,6 +586,9 @@ Astronomers determine stellar effective temperature using several methods, all b
 1. **From color/peak wavelength:** Wien's law (simplest, uses one wavelength)
 2. **From spectral energy distribution (SED):** Fit the entire spectrum to a Planck curve (more data, more robust)
 3. **From spectroscopic features:** The *strength* of temperature-sensitive lines (e.g., hydrogen Balmer lines, ionization balance) — requires understanding atomic physics
+
+{{< fig week04-jwst-spectroscopy-density >}}
+
 4. **From stellar parallax + photometry:** If you know distance $d$, apparent magnitude $m$, and extinction, you can construct the entire SED and fit $T$ directly
 
 These methods often agree to within 100–200 K, which is sufficient for most purposes.

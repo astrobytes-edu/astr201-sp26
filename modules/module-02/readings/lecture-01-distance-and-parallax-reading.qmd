@@ -4,7 +4,7 @@ subtitle: "How far? The foundation of stellar astrophysics"
 author: "Dr. Anna Rosen"
 date: "2026-02-12"
 description: "Measuring distance is the fundamental problem in astronomy. This lecture introduces parallax, derives the inverse-square law, and shows how distance unlocks luminosity — the vertical axis of the HR diagram."
-draft: true
+draft: false
 categories: [distance, parallax, luminosity, inverse-square-law]
 course: ASTR 201
 module: "2 - Discovering the HR Diagram"
@@ -52,6 +52,8 @@ This lecture is the gateway to the HR diagram: measure distance, then luminosity
 
 ### The Fundamental Challenge
 
+{{< fig week04-celestial-sphere-depth-cococubed >}}
+
 Look up on any clear night. Every star is a point of light — a tiny, seemingly dimensionless dot in the darkness. This simplicity conceals one of the deepest challenges in astronomy: **How far away is it?**
 
 Unlike nearby objects on Earth, we cannot pace out a star's distance. We cannot send a probe and measure travel time. We must infer distance from the light alone. And that inference is fraught with ambiguity. A faint, distant star can appear the same brightness as a near, luminous one. Without knowing *how far* a star is, we cannot determine its *true* brightness — its intrinsic power output, or **luminosity**. And without luminosity, we cannot build the Hertzsprung-Russell diagram, the map that reveals stellar properties and evolution.
@@ -92,6 +94,8 @@ A single degree is substantial. The Sun and Moon each span about 0.5° as seen f
 
 **Arcseconds:** One arcminute divides into 60 arcseconds (″ or arcsec). So 1 arcsecond = 1/3600 degree. This is the scale of stellar parallax. Proxima Centauri, the nearest star, shifts by 0.77 arcseconds as Earth orbits. Most measurable stars shift by fractions of an arcsecond.
 
+{{< fig week04-angle-units-cococubed >}}
+
 ::: {.callout-tip title="Quick Check Yourself"}
 Convert the following to arcseconds:
 
@@ -117,6 +121,8 @@ Convert the following to arcseconds:
 Degrees work because they're part of human convention. But for doing physics and mathematics, degrees are awkward. Nature prefers **radians**, a unit that emerges directly from geometry.
 
 **Definition:** 1 radian is the angle subtended by an arc whose length equals the radius of the circle. If you draw a circle of radius $r$ and mark off an arc of length $r$ along the circumference, the angle from the center to that arc is 1 radian.
+
+{{< fig week04-distance-angle-cococubed >}}
 
 This definition is elegant because it's dimensionless. An angle in radians is defined as:
 
@@ -203,7 +209,7 @@ Consider an observer at a distance $d$ from a small object of true size $s$. The
 
 Draw a right triangle: the observer at one vertex, the center of the object at another, and the edge of the object at the third. If the angle is small (which it always is for distant objects), then the small arc subtended by the object's edge is approximately equal to the object's true size. The radius of the arc is the distance $d$.
 
-<!-- FIGURE: Small-angle triangle showing observer at distance d from an object of true size s subtending angle α, with the arc length approximately equal to s -->
+{{< fig week04-owocki-fig2-1-angular-size >}}
 
 By definition of angle in radians:
 $$\alpha (\text{radians}) = \frac{\text{arc length}}{\text{radius}} \approx \frac{s}{d}$$
@@ -212,6 +218,8 @@ This is the **small-angle approximation**:
 
 {{< include ../../../_includes/equations/small-angle.qmd >}}
 {{< eqrefcard small-angle >}}
+
+{{< fig week04-owocki-fig2-3-small-angle >}}
 
 **Physical meaning:** This says that angular size is inversely proportional to distance. A distant object appears small; a nearby object appears large.
 
@@ -289,7 +297,7 @@ In astronomy, Earth's orbit provides the baseline. As Earth moves from one side 
 
 We define the **parallax angle ($p$)** carefully: it is **half** the total angular shift, corresponding to a baseline of 1 AU (the orbital *radius*, not diameter). In other words, $p$ is the angle subtended by Earth's orbital radius as seen from the star.
 
-<!-- FIGURE: Sun at center, Earth's orbit as a circle with radius 1 AU, a nearby star at distance d above the ecliptic plane; the triangle Sun–Star–Earth is drawn with angle p at the star marking the parallax angle as half the total baseline shift -->
+{{< fig week04-parallax1-cococubed >}}
 
 This definition is chosen by convention to keep the numbers simple. When you measure a star at opposite sides of Earth's orbit (six months apart), the total shift is $2p$; the parallax angle is $p$.
 
@@ -322,6 +330,8 @@ This means the distance-parallax relationship becomes breathtakingly simple:
 A star with parallax 0.5 arcsecond is at 2 pc. A star with parallax 0.1 arcsecond is at 10 pc. The inverse relationship is exact and convenient.
 
 The name "parsec" comes from **par**allax **a**rc**sec**ond — it's not arbitrary. It emerges naturally from choosing 1 AU as the baseline and 1 arcsecond as the angular unit.
+
+{{< fig week04-owocki-fig2-4-parallax-parsec >}}
 
 ::: {.callout-important title="The Parsec Is Not a Universal Constant"}
 
@@ -373,6 +383,8 @@ Nearby stars should be in the range 1–5 pc. Our answer fits perfectly. ✓
 
 Proxima Centauri is the nearest known star. At 1.3 pc, it's about 25 trillion miles away — farther than anything human-made has ever traveled. Yet it's so close that its parallax was measurable (though barely) from ground-based telescopes, and easily detectable by space missions. This illustrates why parallax measurement was historically so difficult and why measuring it well was so transformative.
 
+{{< fig week04-nearest-stars2-white-cococubed >}}
+
 ### From Hipparcos to Gaia: The Parallax Revolution
 
 **Pre-1600s:** Astronomers looked for parallax but never found it, even for the brightest stars. This wasn't a technical limitation — it was a fundamental limitation of naked-eye observation. Parallax angles are tiny, and parallax shifts require *precise astrometry* (position measurement) from year to year. Without telescopes and precise instruments, the shift was invisible against observational noise.
@@ -384,6 +396,8 @@ Proxima Centauri is the nearest known star. At 1.3 pc, it's about 25 trillion mi
 **Hipparcos (1989–1993):** The first space-based parallax mission achieved roughly 1 milliarcsecond precision. This extended parallax measurements to about 100,000 stars and out to distances of roughly 100 pc.
 
 **Gaia (2013–present):** The Gaia astrometry mission represents a genuine revolution. With approximately 10 microarcsecond precision (about 100× better than Hipparcos), Gaia has parallax measurements for roughly 2 billion stars. The distance reach extends to kiloparsecs, mapping the structure and motion of the entire Milky Way.
+
+{{< fig week04-nearest-massive-stars-cococubed >}}
 
 ::: {.callout-important title="Why Gaia Changed Everything"}
 
@@ -412,7 +426,7 @@ We now turn to the second pillar of distance measurement: understanding how ligh
 
 Imagine a star at the center of a sphere, emitting light uniformly in all directions. The star has a total luminosity $L$ — the total power (energy per unit time) radiated in all directions.
 
-<!-- FIGURE: Star at center with two concentric spheres of radius d₁ and d₂ (d₂ > d₁); arrows show the same total energy passing through both spheres, but spread over the larger sphere's surface area, illustrating why flux decreases with distance -->
+{{< fig week04-owocki-fig2-5-solid-angle >}}
 
 At a distance $d$ from the star, this energy is spread over a sphere of surface area:
 
@@ -614,6 +628,8 @@ $$d = \sqrt{\frac{L}{4\pi F}}$$
 
 Objects whose intrinsic luminosity is known or determinable are called **standard candles**. They are one of the most powerful tools in astronomy for mapping the universe.
 
+{{< fig standard-candles >}}
+
 ### Cepheid Variables
 
 Cepheids are pulsating stars that regularly brighten and dim over days to months. In 1912, Henrietta Leavitt discovered something remarkable: **the period of pulsation is directly related to intrinsic luminosity**. A Cepheid that pulsates once per week is intrinsically brighter than one that pulsates once per day.
@@ -629,6 +645,8 @@ Type Ia supernovae are thermonuclear explosions of white dwarfs in binary system
 In 1998, observations of Type Ia supernovae in distant galaxies revealed something unexpected: the universe's expansion is accelerating, not slowing down. This discovery of dark energy won the Nobel Prize in Physics. It came directly from using Type Ia supernovae as standard candles to measure distances out to several gigaparsecs.
 
 ### The Cosmic Distance Ladder
+
+{{< fig cosmic-distance-ladder >}}
 
 The distance ladder links different measurement techniques:
 
