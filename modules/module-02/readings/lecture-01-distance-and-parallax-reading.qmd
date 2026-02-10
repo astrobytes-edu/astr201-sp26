@@ -48,11 +48,17 @@ This lecture is the gateway to the HR diagram: measure distance, then luminosity
 
 ::: {.callout-note title="Reading Map — Choose Your Track"}
 
-**Track A (Core, ~15 min):** Parts 1, 4, 5, and 6. Read the main text and worked examples; skip any box marked *Enrichment* or *Explore*. This gives you every equation and concept you need for homework and exams.
+**Track A (Core, ~20 min):** Read **Parts 1–6** in order — the main text, worked examples, Quick Checks, and Misconception Alerts. Skip any box marked *Enrichment* or *Explore* (these are collapsible and clearly labeled). This gives you every equation, conversion, and concept you need for homework and exams.
 
-**Track B (Full, ~30 min):** Read everything, including the historical enrichment boxes, "Argue With a Peer" prompts, and the standard-candle preview in Part 7. This deeper pass builds context that will pay off in later modules.
+**Track B (Full, ~30 min):** Read everything, including *Enrichment* boxes (historical context, alternative derivations), *Explore* boxes (extended examples, 3D maps), "Argue With a Peer" prompts, and the standard-candle preview in Part 7. This deeper pass builds context that will pay off in later modules.
 
-*Either track covers all the learning objectives above. Track B simply adds historical depth and extra practice.*
+*Both tracks cover all learning objectives. Track B adds historical depth, extra figures, and bonus practice. Part 7 (Standard Candles) is a preview — it won't appear on exams, but it motivates what comes next.*
+
+**How the boxes work:** Throughout this reading, content is labeled by type:
+
+- **Main text + Quick Checks + Misconception Alerts** → Core (both tracks)
+- **Enrichment** (collapsed) → Historical context, alternative views (Track B)
+- **Explore** (collapsed) → Extended calculations, 3D visualizations (Track B)
 :::
 
 ---
@@ -305,7 +311,11 @@ In astronomy, we rarely deal with angles larger than a degree (except when measu
 Now we apply the small-angle formula to the most direct distance-measurement technique in astronomy: **parallax**. The core idea is simple and has been known for centuries: use a long baseline and measure the angular shift of a nearby object against distant, fixed background objects.
 
 ::: {.callout-tip title="Play First: Parallax Interactive"}
-Before reading the derivation, spend 90 seconds with the [Cosmic Playground parallax demo](https://astrobytes-edu.github.io/cosmic-playground/exhibits/parallax-distance/). Move the star closer and farther, and watch how the parallax angle changes. Then come back and read — the math will make more sense.
+Before reading the derivation, spend 90 seconds with the interactive demo below. Move the star closer and farther, and watch how the parallax angle changes. Then continue reading — the math will make more sense.
+
+<iframe src="https://astrobytes-edu.github.io/cosmic-playground/exhibits/parallax-distance/" width="100%" height="450" style="border:1px solid #e5e7eb; border-radius:8px;"></iframe>
+
+*If the demo doesn't load above, [open it in a new tab](https://astrobytes-edu.github.io/cosmic-playground/exhibits/parallax-distance/).*
 :::
 
 ### The Parallax Angle
@@ -675,7 +685,7 @@ The accepted solar luminosity is $L_{\odot} = 3.828 \times 10^{33}$ erg s$^{-1}$
 ### Error Propagation: Why Precision Matters
 
 ::: {.callout-tip title="Predict First"}
-Suppose Gaia improves parallax precision by a factor of 10 compared to Hipparcos. How much does the luminosity uncertainty improve — by the same factor of 10, more, or less? Make a prediction and reason about why, then read on.
+Suppose Gaia improves parallax precision by a factor of 100 compared to Hipparcos (from ~1 milliarcsecond to ~10 microarcseconds). How much does the luminosity uncertainty improve — by the same factor of 100, more, or less? Make a prediction and reason about why, then read on.
 :::
 
 Here's a critical insight. If your parallax measurement has uncertainty, how does that affect your luminosity inference?
@@ -808,9 +818,9 @@ Cepheids are bright enough to be detected in nearby galaxies. In the 1920s, Edwi
 
 ### Type Ia Supernovae
 
-Type Ia supernovae are thermonuclear explosions of white dwarfs in binary systems. They're violent, short-lived events. But remarkably, they have roughly similar peak luminosities — around $10^9 L_{\odot}$. This makes them excellent standard candles for cosmological distances.
+Type Ia supernovae are thermonuclear explosions of white dwarfs in binary systems. They're violent, short-lived events. But remarkably, they have roughly similar peak luminosities — a few $\times 10^9 L_{\odot}$. This makes them excellent standard candles for cosmological distances.
 
-In 1998, observations of Type Ia supernovae in distant galaxies revealed something unexpected: the universe's expansion is accelerating, not slowing down. This discovery of dark energy won the Nobel Prize in Physics. It came directly from using Type Ia supernovae as standard candles to measure distances out to several gigaparsecs.
+In 1998, observations of Type Ia supernovae in distant galaxies revealed something unexpected: the universe's expansion is accelerating, not slowing down. This discovery of dark energy won the 2011 Nobel Prize in Physics (awarded to Perlmutter, Schmidt, and Riess). It came directly from using Type Ia supernovae as standard candles to measure distances out to several gigaparsecs.
 
 ### The Cosmic Distance Ladder
 

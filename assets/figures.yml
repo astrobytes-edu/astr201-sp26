@@ -380,9 +380,10 @@ figures:
   # ==============================================================
 
   parallax-geometry:
-    path: /assets/images/module-02/parallax-geometry.png
-    caption: "Geometry of stellar parallax measurement"
-    alt: "Diagram showing Earth's orbit and parallax angle to nearby star"
+    path: /assets/images/module-02/week-04/parallax1-cococubed.svg
+    caption: "Geometry of stellar parallax measurement (Earth at opposite sides of its orbit; nearby star shifts against distant background stars)."
+    alt: "Parallax geometry diagram showing Earth on opposite sides of its orbit around the Sun in January and July, a nearby red star, distant background stars, and two inset sky views where the nearby star changes position. Labels include parallax angle p, distance d, and a 1 AU baseline."
+    credit: "cococubed.com"
     module: 2
 
   spectral-lines:
