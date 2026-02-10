@@ -527,7 +527,7 @@ Nearby stars should be 1–5 pc. ✓
 
 . . .
 
-At 1.3 pc, Proxima is ~25 trillion miles away — yet it's the *closest* star.
+At 1.3 pc, Proxima is $\sim 25$ trillion miles away — yet it's the *closest* star.
 
 This shows why parallax was historically so difficult to measure.
 :::
@@ -552,7 +552,7 @@ The nearest stellar neighborhood is a sparse place.
 ::: {.fragment}
 - Proxima Centauri: 1.3 pc
 - Sirius: 2.6 pc
-- Within 5 pc: only ~60 known stellar systems
+- Within 5 pc: only $\sim 60$ known stellar systems
 :::
 
 ::: {.fragment}
@@ -571,9 +571,9 @@ Most are **red dwarfs** too faint to see with the naked eye — the night sky is
 
 | Mission | Precision | Stars | Distance reach |
 |---------|-----------|-------|----------------|
-| **Ground** (pre-1990) | $\sim 50$ mas | ~1,000 | ~20 pc |
-| **Hipparcos** (1989–93) | ~1 mas | ~100,000 | ~100 pc |
-| **[Gaia](https://www.esa.int/Science_Exploration/Space_Science/Gaia)** (2013–25) | ~10 $\mu$as | ~1.8 billion | ~10 kpc |
+| **Ground** (pre-1990) | $\sim 50$ mas | $\sim 1{,}000$ | $\sim 20$ pc |
+| **Hipparcos** (1989–93) | $\sim 1$ mas | $\sim 100{,}000$ | $\sim 100$ pc |
+| **[Gaia](https://www.esa.int/Science_Exploration/Space_Science/Gaia)** (2013–25) | $\sim 10$ $\mu$as | $\sim 1.8$ billion | $\sim 10$ kpc |
 
 ::: {.fragment .mt-2}
 Gaia's $100\times$ better precision directly translates to $100\times$ better luminosity measurements for every star observed.
@@ -597,7 +597,7 @@ Gaia's $100\times$ better precision directly translates to $100\times$ better lu
 
 **(c)** Could Hipparcos have measured this parallax? Could Gaia?
 
-**(d)** Estimate the parallax of a star at the center of the Milky Way (~8 kpc away).
+**(d)** Estimate the parallax of a star at the center of the Milky Way ($\sim 8$ kpc away).
 :::
 
 ::: {.column width="45%"}
@@ -608,7 +608,7 @@ Gaia's $100\times$ better precision directly translates to $100\times$ better lu
 ::::
 
 ::: {.fragment .mt-2}
-**Answers:** (a) $d = 1/0.050 = 20$ pc. (b) $20 \times 3.26 = 65$ ly. (c) Yes (Hipparcos limit ~1 mas = 0.001'', this is much larger). (d) $p = 1/8000 = 0.000125'' = 125\,\mu$as — detectable by Gaia.
+**Answers:** (a) $d = 1/0.050 = 20$ pc. (b) $20 \times 3.26 = 65$ ly. (c) Yes (Hipparcos limit $\sim 1$ mas $= 0.001''$, this is much larger). (d) $p = 1/8000 = 0.000125'' = 125\,\mu$as — detectable by Gaia.
 :::
 
 ::: {.notes}
@@ -889,7 +889,7 @@ $$L = 4\pi d^2 F \implies \frac{\delta L}{L} \approx 2\,\frac{\delta d}{d}$$
 ::: {.fragment}
 **The complete chain:**
 
-10% parallax error → ~10% distance error → ~**20% luminosity error**
+10% parallax error → $\sim 10$% distance error → $\sim$**20% luminosity error**
 :::
 
 ::: {.fragment .highlight-red}
@@ -942,7 +942,7 @@ This star at $L \approx 0.08\,L_\odot$ sits on the **lower main sequence** — a
 1. Distance? ($d = 10$ pc $= 3.09 \times 10^{19}$ cm)
 2. Luminosity? ($L = 4\pi d^2 F \approx 1.2 \times 10^{29}$ erg s$^{-1}$)
 3. In solar luminosities? ($L/L_\odot \approx 3 \times 10^{-5}$)
-4. What kind of star? (Very faint red dwarf — ~30,000× dimmer than the Sun!)
+4. What kind of star? (Very faint red dwarf — $\sim 30{,}000\times$ dimmer than the Sun!)
 :::
 :::
 
@@ -999,12 +999,12 @@ Beyond Parallax
 Parallax works out to:
 
 ::: {.incremental}
-- ~100 pc from ground-based telescopes
-- ~10 kpc with Gaia
+- $\sim 100$ pc from ground-based telescopes
+- $\sim 10$ kpc with Gaia
 :::
 
 ::: {.fragment .mt-2}
-But the Milky Way is ~30 kpc across, and Andromeda is ~770 kpc away.
+But the Milky Way is $\sim 30$ kpc across, and Andromeda is $\sim 770$ kpc away.
 
 **How do we measure distances beyond parallax?**
 :::
@@ -1045,14 +1045,14 @@ Objects with known or determinable luminosity are called [**standard candles**]{
 
 - Pulsating stars; period → luminosity
 - Discovered by Henrietta Leavitt (1912)
-- Reach: ~30 Mpc
+- Reach: $\sim 30$ Mpc
 - Hubble used them to prove Andromeda is a separate galaxy (1920s)
 
 **Type Ia Supernovae**
 
 - Thermonuclear explosions of white dwarfs
 - Peak luminosity: ~few $\times 10^9 L_\odot$
-- Reach: ~10 Gpc (cosmological!)
+- Reach: $\sim 10$ Gpc (cosmological!)
 - Led to the discovery of dark energy (2011 Nobel Prize)
 :::
 

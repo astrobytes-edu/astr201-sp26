@@ -685,7 +685,7 @@ The accepted solar luminosity is $L_{\odot} = 3.828 \times 10^{33}$ erg s$^{-1}$
 ### Error Propagation: Why Precision Matters
 
 ::: {.callout-tip title="Predict First"}
-Suppose Gaia improves parallax precision by a factor of 100 compared to Hipparcos (from ~1 milliarcsecond to ~10 microarcseconds). How much does the luminosity uncertainty improve — by the same factor of 100, more, or less? Make a prediction and reason about why, then read on.
+Suppose Gaia improves parallax precision by a factor of 100 compared to Hipparcos (from $\sim 1$ milliarcsecond to $\sim 10$ microarcseconds). How much does the luminosity uncertainty improve — by the same factor of 100, more, or less? Make a prediction and reason about why, then read on.
 :::
 
 Here's a critical insight. If your parallax measurement has uncertainty, how does that affect your luminosity inference?
@@ -736,7 +736,7 @@ Once you have distance, the chain unfolds:
 - **Distance + spectrum = stellar composition** (Module 2, Lecture 3)
 - **Distance + radial velocity of binary = stellar mass** (Module 2, Lecture 4)
 
-Each link in the chain amplifies errors. A 1% parallax error becomes ~1% in distance and ~2% in luminosity (because $L \propto d^2$), cascading upward through every derived quantity. This is why precision parallax from Gaia has been so revolutionary — it pulls the entire chain taut and makes everything downstream more reliable.
+Each link in the chain amplifies errors. A 1% parallax error becomes $\sim 1$% in distance and $\sim 2$% in luminosity (because $L \propto d^2$), cascading upward through every derived quantity. This is why precision parallax from Gaia has been so revolutionary — it pulls the entire chain taut and makes everything downstream more reliable.
 
 ::: {.callout-tip title="Worked Example: The Full Measurement Chain — From Parallax to Astrophysics"}
 
@@ -828,9 +828,9 @@ In 1998, observations of Type Ia supernovae in distant galaxies revealed somethi
 
 The distance ladder links different measurement techniques:
 
-1. **Parallax** (direct geometry): out to ~100 pc from ground, ~10 kpc with Gaia
-2. **Nearby Cepheids** (calibrated with parallax): out to $\sim$30 Mpc (well beyond the Local Group, which spans $\sim$3 Mpc)
-3. **Type Ia supernovae** (calibrated with Cepheids): out to ~10 Gpc (edge of observable universe)
+1. **Parallax** (direct geometry): out to $\sim 100$ pc from ground, $\sim 10$ kpc with Gaia
+2. **Nearby Cepheids** (calibrated with parallax): out to $\sim 30$ Mpc (well beyond the Local Group, which spans $\sim 3$ Mpc)
+3. **Type Ia supernovae** (calibrated with Cepheids): out to $\sim 10$ Gpc (edge of observable universe)
 
 Each rung is calibrated using the rung below. The entire cosmic distance scale rests on getting nearby distances right — which is why parallax is so fundamental.
 
@@ -885,7 +885,7 @@ By the end of this lecture, you should be able to check off each of these items.
 ### Parallax Measurement History and Modern Surveys
 
 - [ ] I understand why parallax was historically difficult to measure
-- [ ] I know the precision improvements: Hipparcos (~1 milliarcsecond) to Gaia (~10 microarcseconds)
+- [ ] I know the precision improvements: Hipparcos ($\sim 1$ milliarcsecond) to Gaia ($\sim 10$ microarcseconds)
 - [ ] I can estimate the distance reach for each mission
 - [ ] I understand why Gaia's improved precision transformed all of stellar astrophysics
 
@@ -930,7 +930,7 @@ Explain why parallax angles for stars are so tiny. Use the small-angle formula t
 
 (a) Show that $p \approx 1/d$ (in parsecs and arcseconds), so a star at 30 pc has $p \approx 0.03$ arcsec.
 
-(b) Convert 0.03 arcsec to microarcseconds and compare to Gaia's precision (~10 microarcsec).
+(b) Convert 0.03 arcsec to microarcseconds and compare to Gaia's precision ($\sim 10$ $\mu$arcsec).
 
 (c) Explain why measuring such tiny angles requires space telescopes (ground-based telescopes suffer from atmospheric distortion).
 
@@ -992,7 +992,7 @@ Gaia measures a star's parallax as $p = 0.100 \pm 0.001$ arcsec (1% uncertainty)
 
 (c) **Gaia future** (2030+): 1 microarcsecond precision. Redo part (a).
 
-(d) **Cepheid variables:** A Cepheid in the Andromeda galaxy (distance ~2.5 million light-years = ~770 kpc) has measured flux $F = 10^{-14}$ erg cm$^{-2}$ s$^{-1}$ and known (from period-luminosity relation) luminosity $L = 10{,}000 L_{\odot} \approx 3.8 \times 10^{37}$ erg/s.
+(d) **Cepheid variables:** A Cepheid in the Andromeda galaxy (distance $\sim 2.5$ million light-years $= \sim 770$ kpc) has measured flux $F = 10^{-14}$ erg cm$^{-2}$ s$^{-1}$ and known (from period-luminosity relation) luminosity $L = 10{,}000 L_{\odot} \approx 3.8 \times 10^{37}$ erg/s.
 
   (i) Use the inverse-square law to verify whether the flux and luminosity are consistent at 770 kpc.
 
