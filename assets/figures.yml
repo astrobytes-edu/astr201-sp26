@@ -786,8 +786,8 @@ figures:
   # Betelgeuse Size Comparison
   betelgeuse-size:
     path: /assets/images/module-01/week-03/betelgeuse-size-eso.jpg
-    caption: "**What to notice:** Betelgeuse is HUGE—it would engulf Mercury, Venus, Earth, Mars, and extend past Jupiter's orbit. Red supergiants are cool (~3500 K) but luminous because of their enormous surface area."
-    alt: "ESO image of Betelgeuse with solar system orbits overlaid for scale. The star's disk extends beyond Jupiter's orbit. Inner planets (Mercury, Venus, Earth, Mars) would be inside the star. Angular scale bar shows 0.015 arcseconds."
+    caption: "**What to notice:** Betelgeuse is HUGE — it would engulf Mercury, Venus, Earth, and Mars, and extend to about 4 AU, approaching but not quite reaching Jupiter's orbit (5.2 AU). Red supergiants are cool (~3,500 K) but luminous because of their enormous surface area."
+    alt: "ESO image of Betelgeuse with solar system orbits overlaid for scale. The star's disk extends past Mars's orbit and approaches Jupiter's orbit. Inner planets (Mercury, Venus, Earth, Mars) would be inside the star. Angular scale bar shows 0.015 arcseconds."
     credit: "ESO/L. Calçada"
     module: 1
 

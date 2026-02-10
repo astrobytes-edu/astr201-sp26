@@ -284,11 +284,15 @@ Read the negative exponents carefully: cm$^{-2}$ means "per square centimeter," 
 
 The Stefan-Boltzmann law connects three quantities: $L$, $T$, and $R$. If you know any two, you can solve for the third.
 
-$$\text{Given } L \text{ and } T: \quad R = \sqrt{\frac{L}{4\pi\sigma T^4}}$$
+$$\text{Given } L \text{ and } T: \quad R = \left(\frac{L}{4\pi\sigma T^4}\right)^{1/2}$$
 
 $$\text{Given } R \text{ and } T: \quad L = 4\pi R^2 \sigma T^4$$
 
 $$\text{Given } L \text{ and } R: \quad T = \left(\frac{L}{4\pi\sigma R^2}\right)^{1/4}$$
+
+::: {.callout-note}
+**Notation convention:** Throughout this reading, we write fractional powers rather than root symbols: $x^{1/2}$ instead of $\sqrt{x}$, $x^{1/4}$ instead of $\sqrt[4]{x}$. This convention generalizes cleanly — you'll encounter $1/3$ and $1/4$ powers in later modules — and it makes algebraic manipulation easier (e.g., $(x^{1/2})^2 = x^1 = x$). Both notations mean the same thing; the exponent form is what you should use in your own work.
+:::
 
 This is powerful because:
 
@@ -354,9 +358,9 @@ This is the payoff: constants disappear, and you work entirely with dimensionles
 
 $$\left(\frac{R}{R_\odot}\right)^2 = \frac{L/L_\odot}{(T/T_\odot)^4}$$
 
-Then take the square root:
+Then raise both sides to the $1/2$ power:
 
-$$\frac{R}{R_\odot} = \sqrt{\frac{L/L_\odot}{(T/T_\odot)^4}}$$
+$$\frac{R}{R_\odot} = \left(\frac{L/L_\odot}{(T/T_\odot)^4}\right)^{1/2}$$
 
 No physical constants appear — just ratios. This is the form we'll use in most worked examples.
 
@@ -552,25 +556,25 @@ We want $R$, so isolate $R^2$ by dividing both sides by $4\pi\sigma T^4$:
 
 $$R^2 = \frac{L}{4\pi\sigma T^4}$$
 
-Then take the **square root** of both sides:
+Then raise both sides to the $1/2$ power:
 
-$$\boxed{R = \sqrt{\frac{L}{4\pi\sigma T^4}}}$$
+$$\boxed{R = \left(\frac{L}{4\pi\sigma T^4}\right)^{1/2}}$$
 
 ::: {.callout-important}
-## Don't Forget the Square Root!
+## Don't Forget the $1/2$ Power!
 
-A common mistake is to write $R = L/(4\pi\sigma T^4)$ — that gives $R^2$, not $R$. You **must** take the square root as the final step. Always check: does your answer have units of length (cm)?
+A common mistake is to write $R = L/(4\pi\sigma T^4)$ — that gives $R^2$, not $R$. You **must** raise to the $1/2$ power as the final step. Always check: does your answer have units of length (cm)?
 
-$$[R] = \sqrt{\frac{[\text{erg/s}]}{[\text{erg}\ \text{cm}^{-2}\ \text{s}^{-1}\ \text{K}^{-4}] \times [\text{K}^4]}} = \sqrt{\frac{\text{erg/s}}{\text{erg}\ \text{cm}^{-2}\ \text{s}^{-1}}} = \sqrt{\text{cm}^2} = \text{cm}\ \checkmark$$
+$$[R] = \left(\frac{[\text{erg/s}]}{[\text{erg}\ \text{cm}^{-2}\ \text{s}^{-1}\ \text{K}^{-4}] \times [\text{K}^4]}\right)^{1/2} = \left(\frac{\text{erg/s}}{\text{erg}\ \text{cm}^{-2}\ \text{s}^{-1}}\right)^{1/2} = (\text{cm}^2)^{1/2} = \text{cm}\ \checkmark$$
 :::
 
 **In solar units** (often easier): apply the same algebra to the dimensionless ratio $L/L_\odot = (R/R_\odot)^2 (T/T_\odot)^4$, isolating $(R/R_\odot)^2$:
 
-$$\left(\frac{R}{R_\odot}\right)^2 = \frac{L/L_\odot}{(T/T_\odot)^4} \quad \Longrightarrow \quad \frac{R}{R_\odot} = \sqrt{\frac{L/L_\odot}{(T/T_\odot)^4}}$$
+$$\left(\frac{R}{R_\odot}\right)^2 = \frac{L/L_\odot}{(T/T_\odot)^4} \quad \Longrightarrow \quad \frac{R}{R_\odot} = \left(\frac{L/L_\odot}{(T/T_\odot)^4}\right)^{1/2}$$
 
 This is the observational technique that revealed stellar sizes before spectroscopic interferometry — and no physical constants appear in the solar-unit form.
 
-**Part 6 takeaway:** Solving Stefan-Boltzmann for radius requires isolating $R^2$ first, then taking the square root. The solar-unit form eliminates all physical constants and reduces the problem to ratios.
+**Part 6 takeaway:** Solving Stefan-Boltzmann for radius requires isolating $R^2$ first, then raising to the $1/2$ power. The solar-unit form eliminates all physical constants and reduces the problem to ratios.
 
 ::: {.callout-important title="Connection: The Complete Triangle"}
 In Lecture 1, you measured distance and luminosity. In Lecture 4 (Module 1), color gave you temperature. Now Stefan-Boltzmann completes the triangle: $L$, $T$, and $R$ are connected by a single equation, so knowing any two determines the third. Every star in the sky is characterized by just three numbers — and you can infer all three from two measurements (brightness + color) and one distance.
@@ -592,7 +596,7 @@ Calculate Sirius A's radius.
 
 Using the solar-unit form:
 
-$$\frac{R_{\text{Sirius}}}{R_\odot} = \sqrt{\frac{L_{\text{Sirius}}/L_\odot}{(T_{\text{Sirius}}/T_\odot)^4}}$$
+$$\frac{R_{\text{Sirius}}}{R_\odot} = \left(\frac{L_{\text{Sirius}}/L_\odot}{(T_{\text{Sirius}}/T_\odot)^4}\right)^{1/2}$$
 
 **Step 1 — Calculate the temperature ratio:**
 $$\frac{T_{\text{Sirius}}}{T_\odot} = \frac{9{,}900\ \text{K}}{5{,}800\ \text{K}} = 1.707$$
@@ -602,11 +606,11 @@ $$\frac{T_{\text{Sirius}}}{T_\odot} = \frac{9{,}900\ \text{K}}{5{,}800\ \text{K}
 **Step 2 — Raise to the fourth power:**
 $$(T_{\text{Sirius}}/T_\odot)^4 = (1.707)^4 = 1.707^2 \times 1.707^2 = 2.914 \times 2.914 \approx 8.49$$
 
-**Step 3 — Compute the ratio under the square root:**
+**Step 3 — Compute $(R/R_\odot)^2$:**
 $$\left(\frac{R_{\text{Sirius}}}{R_\odot}\right)^2 = \frac{25}{8.49} = 2.94$$
 
-**Step 4 — Take the square root to get $R/R_\odot$:**
-$$\frac{R_{\text{Sirius}}}{R_\odot} = \sqrt{2.94} \approx 1.71$$
+**Step 4 — Raise to the $1/2$ power to get $R/R_\odot$:**
+$$\frac{R_{\text{Sirius}}}{R_\odot} = (2.94)^{1/2} \approx 1.71$$
 
 So Sirius A's radius is approximately **$1.7\,R_\odot$**.
 
@@ -640,7 +644,7 @@ Calculate Betelgeuse's radius and compare it to the Sun.
 
 Using the solar-unit form:
 
-$$\frac{R_{\text{Betelgeuse}}}{R_\odot} = \sqrt{\frac{L_{\text{Betelgeuse}}/L_\odot}{(T_{\text{Betelgeuse}}/T_\odot)^4}}$$
+$$\frac{R_{\text{Betelgeuse}}}{R_\odot} = \left(\frac{L_{\text{Betelgeuse}}/L_\odot}{(T_{\text{Betelgeuse}}/T_\odot)^4}\right)^{1/2}$$
 
 **Step 1 — Calculate the temperature ratio:**
 $$\frac{T_{\text{Betelgeuse}}}{T_\odot} = \frac{3{,}500\ \text{K}}{5{,}800\ \text{K}} = 0.6034$$
@@ -650,11 +654,11 @@ $$\frac{T_{\text{Betelgeuse}}}{T_\odot} = \frac{3{,}500\ \text{K}}{5{,}800\ \tex
 **Step 2 — Raise to the fourth power:**
 $$(T_{\text{Betelgeuse}}/T_\odot)^4 = (0.6034)^4 = 0.6034^2 \times 0.6034^2 = 0.3641 \times 0.3641 \approx 0.1326$$
 
-**Step 3 — Compute the ratio under the square root:**
+**Step 3 — Compute $(R/R_\odot)^2$:**
 $$\left(\frac{R_{\text{Betelgeuse}}}{R_\odot}\right)^2 = \frac{10^5}{0.1326} = 7.54 \times 10^5$$
 
-**Step 4 — Take the square root to get $R/R_\odot$:**
-$$\frac{R_{\text{Betelgeuse}}}{R_\odot} = \sqrt{7.54 \times 10^5} = \sqrt{7.54} \times \sqrt{10^5} = 2.75 \times 316 \approx 868$$
+**Step 4 — Raise to the $1/2$ power to get $R/R_\odot$:**
+$$\frac{R_{\text{Betelgeuse}}}{R_\odot} = (7.54 \times 10^5)^{1/2} = (7.54)^{1/2} \times (10^5)^{1/2} = 2.75 \times 316 \approx 868$$
 
 So Betelgeuse's radius is approximately **$870\,R_\odot$**.
 
@@ -808,7 +812,7 @@ Both effects must be corrected before inferring temperatures and luminosities. T
 |---|---|---|
 | Received flux $F$ at distance $d$ (Lecture 1) | $L = 4\pi d^2 F$ | **Luminosity** |
 | Spectrum peak wavelength $\lambda_{\text{peak}}$ | Wien's law: $T = b/\lambda_{\text{peak}}$ | **Temperature** |
-| Luminosity $L$ and temperature $T$ | Stefan-Boltzmann: $R = \sqrt{L/(4\pi\sigma T^4)}$ | **Radius** |
+| Luminosity $L$ and temperature $T$ | Stefan-Boltzmann: $R = \bigl(L/(4\pi\sigma T^4)\bigr)^{1/2}$ | **Radius** |
 
 **The complete inference chain:**
 - Step 1: Measure brightness and distance → $L$
@@ -894,7 +898,7 @@ You now have two of the HR diagram's three axes: **luminosity** (from Lecture 1)
    $$\frac{L}{L_\odot} = \left(\frac{R}{R_\odot}\right)^2 \left(\frac{T}{T_\odot}\right)^4$$
 
    (a) Show that $(R/R_\odot)^2 = (L/L_\odot) \div (T/T_\odot)^4 = 4/16 = 0.25$.
-   (b) Take the square root: $R/R_\odot = \sqrt{0.25} = {?}$
+   (b) Raise to the $1/2$ power: $R/R_\odot = (0.25)^{1/2} = {?}$
    (c) Is this star larger or smaller than the Sun? Convert to km.
 
 <!-- Problem: Calculation:Full / Application / O→M→I / Tools: Scaling/Ratio, Unit-Conversion, Model-Inversion / ⭐⭐ -->
@@ -904,7 +908,7 @@ You now have two of the HR diagram's three axes: **luminosity** (from Lecture 1)
 
    (a) Compute the temperature ratio $T_{\text{Rigel}}/T_\odot$ and verify it is dimensionless.
    (b) Raise to the fourth power: $(T_{\text{Rigel}}/T_\odot)^4 = {?}$
-   (c) Compute $(R_{\text{Rigel}}/R_\odot)^2$, then take the square root to find $R_{\text{Rigel}}/R_\odot$.
+   (c) Compute $(R_{\text{Rigel}}/R_\odot)^2$, then raise to the $1/2$ power to find $R_{\text{Rigel}}/R_\odot$.
    (d) Express $R_{\text{Rigel}}$ in km. (Convert from solar radii using $R_\odot = 6.96 \times 10^{10}$ cm and $1\ \text{km} = 10^5$ cm.)
    (e) How does Rigel compare to Betelgeuse ($R_{\text{Betelgeuse}} \approx 870\,R_\odot$)? Both are supergiants — why is one so much larger?
 
@@ -920,7 +924,7 @@ You now have two of the HR diagram's three axes: **luminosity** (from Lecture 1)
 
     (a) **Temperature from color.** Use Wien's law to calculate the effective temperature $T$. Show units. Then compute $T/T_\odot$.
     (b) **Luminosity from flux + distance.** Convert $d = 50$ pc to cm, then use $L = 4\pi d^2 F$ to calculate the luminosity in erg/s. Show all unit conversions. Express the result as $L/L_\odot$.
-    (c) **Radius from Stefan-Boltzmann.** Using the solar-unit form, first compute $(R/R_\odot)^2$, then take the square root to find $R/R_\odot$.
+    (c) **Radius from Stefan-Boltzmann.** Using the solar-unit form, first compute $(R/R_\odot)^2$, then raise to the $1/2$ power to find $R/R_\odot$.
     (d) **Interpret.** Convert your radius to km. Is this star larger or smaller than the Sun? How does it compare to Betelgeuse ($R \approx 870\,R_\odot$)? Does the combination of cool temperature and large radius make physical sense?
 
 <!-- Problem: Synthesis / Connection / O→M→I / Tools: Scaling/Ratio, Data/Graph / ⭐⭐ -->
@@ -929,7 +933,7 @@ You now have two of the HR diagram's three axes: **luminosity** (from Lecture 1)
     - Star B: $T = 3{,}000$ K, $L = 100\,L_\odot$ (red giant)
     - Star C: $T = 12{,}000$ K, $L = 1\,L_\odot$ (hot but dim)
 
-    (a) Using Stefan-Boltzmann in solar units, calculate the radius of each star in solar radii. For each star, show $(R/R_\odot)^2$ first, then take the square root.
+    (a) Using Stefan-Boltzmann in solar units, calculate the radius of each star in solar radii. For each star, show $(R/R_\odot)^2$ first, then raise to the $1/2$ power.
     (b) Which star is largest? Which is smallest?
     (c) Sketch these three points on an HR diagram (luminosity vs. temperature, with $T$ increasing to the left). Draw approximate lines of constant radius through each point. What do these lines tell you about the giant and white-dwarf regions of the HR diagram?
 
@@ -959,9 +963,9 @@ The key equations from this reading — Stefan-Boltzmann ($L = 4\pi R^2 \sigma T
 | $L = 4\pi R^2 \sigma T^4$ | Stefan-Boltzmann law | Connects $L$, $T$, $R$ |
 | $\sigma = 5.67 \times 10^{-5}$ erg cm$^{-2}$ s$^{-1}$ K$^{-4}$ | Stefan-Boltzmann constant | Memorize or reference |
 | $\lambda_{\text{peak}} = b T^{-1}$ | Wien's displacement law (from Lecture 4 (Module 1)) | $b = 0.2898$ cm·K; per-$\lambda$ peak |
-| $R = \sqrt{L/(4\pi\sigma T^4)}$ | Solve Stefan-Boltzmann for $R$ | Don't forget the $\sqrt{\ }$ ! |
+| $R = \bigl(L/(4\pi\sigma T^4)\bigr)^{1/2}$ | Solve Stefan-Boltzmann for $R$ | Don't forget the ${}^{1/2}$ power! |
 | $L/L_\odot = (R/R_\odot)^2 (T/T_\odot)^4$ | Stefan-Boltzmann in solar units | Convenient scaling |
-| $R/R_\odot = \sqrt{(L/L_\odot)/(T/T_\odot)^4}$ | Solve for radius in solar units | Show $(R/R_\odot)^2$ first, then $\sqrt{\ }$ |
+| $R/R_\odot = \bigl((L/L_\odot)/(T/T_\odot)^4\bigr)^{1/2}$ | Solve for radius in solar units | Show $(R/R_\odot)^2$ first, then ${}^{1/2}$ |
 
 ---
 
