@@ -24,7 +24,7 @@ This section contains optional resources for students who want to explore astron
 
 - [NASA Science: Electromagnetic Spectrum](https://science.nasa.gov/ems/) — Interactive tour of the EM spectrum with videos and activities
 - [NASA Universe](https://science.nasa.gov/universe/) — NASA's portal for all things cosmic
-- [NASA Astronomy Picture of the Day](https://apod.nasa.gov/)
+- [NASA Astronomy Picture of the Day](https://apod.nasa.gov/){data-proofer-ignore="true"}
 - [ESA/Hubble Image Archive](https://esahubble.org/images/)
 - [JWST Image Gallery](https://webbtelescope.org/images)
 - [Astrobites](https://astrobites.org)
