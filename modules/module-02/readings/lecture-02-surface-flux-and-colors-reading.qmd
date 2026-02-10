@@ -71,7 +71,7 @@ After completing this reading, you should be able to:
 
 ### The Puzzle
 
-Step outside on a winter evening and look toward Orion. The constellation's two brightest stars — blue-white Rigel at the foot and red Betelgeuse at the shoulder — have roughly similar brightness to your eye. But one is a compact blue supergiant and the other is an enormous red supergiant whose surface would swallow Jupiter's orbit. How can two stars of similar brightness be so different in size?
+Step outside on a winter evening and look toward Orion. The constellation's two brightest stars — blue-white Rigel at the foot and red Betelgeuse at the shoulder — appear similarly bright to your eye. It turns out their total luminosities are also comparable: each radiates roughly 100,000 times the Sun's total power. Yet one is a compact blue supergiant and the other is an enormous red supergiant whose surface would extend past Mars's orbit and nearly reach Jupiter's. How can two stars with the same luminosity be so different in size?
 
 Your intuition from everyday experience might say: "They're equally bright, so they must be similar in size." But that intuition is wrong for stars.
 
@@ -124,6 +124,25 @@ where $R$ is the star's radius.
 |----------|----------|------------------|-----------|
 | **Received flux** ($F$) | $F = L/(4\pi d^2)$ | Brightness we measure | Star's distance; our location |
 | **Surface flux** ($F_*$) | $F_* = L/(4\pi R^2)$ | Radiation intensity at star's surface | Star's luminosity and radius only |
+
+::: {.callout-note collapse="true" title="Symbol Legend — Quantities Used in This Reading"}
+
+| Symbol | Name | Units (CGS) | Meaning |
+|--------|------|-------------|---------|
+| $L$ | Luminosity | erg/s | Total power output of a star |
+| $F$ | Received flux | erg s$^{-1}$ cm$^{-2}$ | Power per unit area at distance $d$ |
+| $F_*$ | Surface flux | erg s$^{-1}$ cm$^{-2}$ | Power per unit area at star's surface |
+| $R$ | Stellar radius | cm (or $R_\odot$) | Physical size of the star |
+| $d$ | Distance | cm (or pc) | Observer-to-star distance |
+| $T$ | Effective temperature | K | Blackbody temperature matching total flux |
+| $\sigma$ | Stefan-Boltzmann constant | erg cm$^{-2}$ s$^{-1}$ K$^{-4}$ | $5.67 \times 10^{-5}$ |
+| $b$ | Wien's constant | cm·K (or nm·K) | $0.2898$ cm·K $= 2.898 \times 10^6$ nm·K |
+| $\lambda_{\text{peak}}$ | Peak wavelength | nm or cm | Where the Planck curve peaks |
+| $B_\lambda(T)$ | Planck function | erg s$^{-1}$ cm$^{-2}$ sr$^{-1}$ cm$^{-1}$ | Spectral radiance (from Lecture 4, Module 1) |
+| $\Omega$ | Solid angle | sr (steradians) | Angular area subtended on the sky |
+
+Subscript $\odot$ denotes solar values: $L_\odot$, $R_\odot$, $T_\odot$.
+:::
 
 ::: {.callout-note}
 ### Connecting the Two Fluxes
@@ -375,6 +394,14 @@ From $L \propto R^2 T^4$:
 
 We now have the Stefan-Boltzmann law connecting $L$, $R$, and $T$ — but to use it, we need an independent way to measure temperature. That's where Wien's displacement law enters. By measuring a star's color (the wavelength where its spectrum peaks), we get temperature directly — no model of internal structure required.
 
+### See the Peaks First
+
+Before we write down the equation, look at the Planck curves for stars of different temperatures:
+
+{{< fig energy-wavelength-connection >}}
+
+Notice that each curve has a single peak, and hotter stars peak at shorter (bluer) wavelengths while cooler stars peak at longer (redder) wavelengths. Wien's displacement law is the equation that quantifies this pattern.
+
 ### Review and Quantification
 
 From Lecture 4 (Module 1), you learned Wien's displacement law:
@@ -383,8 +410,6 @@ From Lecture 4 (Module 1), you learned Wien's displacement law:
 {{< eqrefcard wien-displacement >}}
 
 where $b = 0.2898$ cm·K $= 2.898 \times 10^{6}$ nm·K is Wien's constant.
-
-{{< fig energy-wavelength-connection >}}
 
 **Interpretation:**
 - $\lambda_{\text{peak}}$ is the wavelength where the star's blackbody curve peaks
@@ -395,6 +420,8 @@ where $b = 0.2898$ cm·K $= 2.898 \times 10^{6}$ nm·K is Wien's constant.
 - You measure the color/spectrum and identify the peak (or use other methods to estimate the effective wavelength)
 - You use Wien's law to calculate temperature
 - Unlike distance, which requires additional information, temperature can be read directly from color
+
+**From idealized peak to real filters:** In practice, astronomers rarely measure the exact peak wavelength. Instead, they observe a star through standardized broadband filters (e.g., blue $B$ and visual $V$ filters) and compare the flux in each band. A star whose Planck curve peaks at short wavelengths will appear brighter through the blue filter than through the red filter. The *ratio* of fluxes in two filters serves as a proxy for the peak wavelength — and hence the temperature — grounded in the same Wien's-law physics. You'll encounter this "color index" technique formally in later lectures, but the physical principle is the one you already know: a hotter blackbody puts more of its radiation at shorter wavelengths.
 
 ::: {.callout-note collapse="true" title="Enrichment: Wien's Law Caveat — Which Peak?"}
 
@@ -492,7 +519,7 @@ Rigel is about **3.5 times hotter** than Betelgeuse. Their visible colors direct
 {{< fig em-spectrum-temperature >}}
 
 ::: {.callout-important title="Connection: From Planck Curves to Stellar Colors"}
-In Lecture 4 (Module 1), you saw the family of Planck curves $B_\lambda(T)$ — each temperature producing a different curve shape and peak location. Rigel and Betelgeuse sit at opposite ends of that family: Rigel's curve peaks in the ultraviolet and Betelgeuse's in the near-infrared. Their visible colors — blue-white vs. deep red — are the observable consequence of those Planck curves. Wien's law quantifies the connection: measure the peak, know the temperature.
+In Lecture 4 (Module 1), you saw the family of Planck curves $B_\lambda(T)$ — each temperature producing a different curve shape and peak location. Rigel and Betelgeuse sit at opposite ends of that family: Rigel's curve peaks in the ultraviolet (~240 nm) and Betelgeuse's in the near-infrared (~830 nm). But wait — if their peaks are *outside* visible light, why do we see them as blue-white and deep red? Because the Planck curve is broad. Rigel's curve peaks in the UV but its long-wavelength tail floods the visible band with more blue light than red, so we see it as blue-white. Betelgeuse's curve peaks in the near-IR but its short-wavelength tail sends more red light than blue into the visible band, so we see it as deep red. The *peak* is outside our eyes' range, but the *tail* still determines the visible color. Wien's law quantifies the connection: measure the peak, know the temperature.
 :::
 
 ---
@@ -917,6 +944,10 @@ You now have two of the HR diagram's three axes: **luminosity** (from Lecture 1)
     (d) If an astronomer used the reddened temperature to infer the star's radius via Stefan-Boltzmann (at the correct luminosity), would the inferred radius be too large or too small? By what factor? (Hint: $R \propto T^{-2}$ at fixed $L$.)
 
 ---
+
+::: {.callout-tip title="What's on the Formula Sheet?"}
+The key equations from this reading — Stefan-Boltzmann ($L = 4\pi R^2 \sigma T^4$), Wien's law ($\lambda_{\text{peak}} = b/T$), and the flux-luminosity-distance relation ($F = L/4\pi d^2$) — will be provided on your formula sheet for exams and homework. You do not need to memorize them. What you *do* need is the ability to use them: set up the problem, identify knowns and unknowns, solve algebraically, track units, and interpret your answer physically.
+:::
 
 ## Key Equations Reference
 
