@@ -46,6 +46,15 @@ After completing this reading, you should be able to:
 >
 > By measuring a star's color (from Wien's law) and its luminosity (from flux plus distance), we can determine its physical size — the radius — without ever visiting the star. This is the power of blackbody physics applied to astronomy.
 
+::: {.callout-note title="Reading Map — Choose Your Track"}
+
+**Track A (Core, ~25 min):** Read **Parts 1–6** in order — the main text, all four worked examples, Quick Checks, and the Common Student Confusions box. Skip any box marked *Enrichment* (these are collapsible and clearly labeled). This gives you every equation, technique, and concept you need for homework and exams.
+
+**Track B (Full, ~35 min):** Read everything, including *Enrichment* boxes (historical context, the Wien caveat, OBAFGKM spectral types) and **Parts 7–8** (HR diagram preview and assumptions/limitations). Part 8 won't appear on exams, but it builds important context for later modules.
+
+*Both tracks cover all learning objectives. Track B adds depth that will pay off as we build the full HR diagram.*
+:::
+
 ---
 
 ::: {.callout-important}
@@ -53,6 +62,7 @@ After completing this reading, you should be able to:
 
 **You already have the tools.** In Lecture 4 (Module 1), you learned that color encodes temperature (Wien's law) and that blackbodies follow $B_\lambda(T)$ curves. In Lecture 1, you learned to measure luminosity from received flux and distance. Today we combine these into a complete inference: if you know a star's color and its brightness from Earth, you can infer its size. This is how we learned that Betelgeuse is nearly 900 times the Sun's radius.
 
+**What you'll gain:** By the end of this reading, you'll be able to look at any star's color and brightness and determine its temperature, luminosity, and physical size — without ever leaving Earth. That's three fundamental properties from two measurements and one equation.
 :::
 
 ---
@@ -61,7 +71,7 @@ After completing this reading, you should be able to:
 
 ### The Puzzle
 
-Suppose you observe two stars with identical luminosity — they're equally bright. But one is blue (like Rigel in Orion) and one is red (like Betelgeuse). Which is physically larger?
+Step outside on a winter evening and look toward Orion. The constellation's two brightest stars — blue-white Rigel at the foot and red Betelgeuse at the shoulder — have roughly similar brightness to your eye. But one is a compact blue supergiant and the other is an enormous red supergiant whose surface would swallow Jupiter's orbit. How can two stars of similar brightness be so different in size?
 
 Your intuition from everyday experience might say: "They're equally bright, so they must be similar in size." But that intuition is wrong for stars.
 
@@ -180,6 +190,10 @@ Before moving on, watch out for these pitfalls:
 - **Flux vs. luminosity:** Flux ($F$) is power per unit area received at a specific distance; luminosity ($L$) is total power output. Same received flux does **not** imply same luminosity unless both stars are at the same distance.
 - **Flux vs. intensity:** Flux ($F$) is the total power per unit area arriving from all directions; intensity ($I$) is power per unit area per unit solid angle. They are related ($F = \pi I$ for isotropic emission from a flat surface) but not interchangeable.
 - **"Brightness" is ambiguous:** In everyday language, "bright" could mean high luminosity, high received flux, or high surface brightness. In this course, always specify which quantity you mean.
+:::
+
+::: {.callout-tip title="Argue With a Peer"}
+Your lab partner claims: "If we moved Betelgeuse to the same distance as Sirius, they'd have the same received flux, so they must have the same surface flux too." Construct a counterargument. Which quantities in the claim are distance-dependent, and which are intrinsic to the star? Use the relationship $F/F_* = R^2/d^2$ to explain why equal received flux does *not* imply equal surface flux.
 :::
 
 ---
@@ -382,8 +396,7 @@ where $b = 0.2898$ cm·K $= 2.898 \times 10^{6}$ nm·K is Wien's constant.
 - You use Wien's law to calculate temperature
 - Unlike distance, which requires additional information, temperature can be read directly from color
 
-::: {.callout-note}
-### Wien's Law Caveat: Which Peak?
+::: {.callout-note collapse="true" title="Enrichment: Wien's Law Caveat — Which Peak?"}
 
 The constant $b = 2.898 \times 10^6$ nm·K applies to the peak of the **per-wavelength** Planck curve $B_\lambda(T)$ — the curve you get when plotting intensity vs. wavelength. If you instead plot intensity vs. frequency ($B_\nu(T)$), the peak shifts to a different location because you're stretching the axis nonlinearly. The per-frequency Wien constant is $b_\nu \approx 5.88 \times 10^{10}$ Hz/K.
 
@@ -478,6 +491,10 @@ Rigel is about **3.5 times hotter** than Betelgeuse. Their visible colors direct
 
 {{< fig em-spectrum-temperature >}}
 
+::: {.callout-important title="Connection: From Planck Curves to Stellar Colors"}
+In Lecture 4 (Module 1), you saw the family of Planck curves $B_\lambda(T)$ — each temperature producing a different curve shape and peak location. Rigel and Betelgeuse sit at opposite ends of that family: Rigel's curve peaks in the ultraviolet and Betelgeuse's in the near-infrared. Their visible colors — blue-white vs. deep red — are the observable consequence of those Planck curves. Wien's law quantifies the connection: measure the peak, know the temperature.
+:::
+
 ---
 
 ## Check Yourself
@@ -528,6 +545,10 @@ This is the observational technique that revealed stellar sizes before spectrosc
 
 **Part 6 takeaway:** Solving Stefan-Boltzmann for radius requires isolating $R^2$ first, then taking the square root. The solar-unit form eliminates all physical constants and reduces the problem to ratios.
 
+::: {.callout-important title="Connection: The Complete Triangle"}
+In Lecture 1, you measured distance and luminosity. In Lecture 4 (Module 1), color gave you temperature. Now Stefan-Boltzmann completes the triangle: $L$, $T$, and $R$ are connected by a single equation, so knowing any two determines the third. Every star in the sky is characterized by just three numbers — and you can infer all three from two measurements (brightness + color) and one distance.
+:::
+
 ---
 
 ::: {.callout-note}
@@ -575,6 +596,10 @@ Compare to the Sun: $R_\odot \approx 696{,}000$ km.
 :::
 
 ---
+
+::: {.callout-note title="Predict First"}
+Before you work through the next example, commit to a prediction. Betelgeuse is $10^5$ times more luminous than the Sun but only 60% as hot. Will its radius be closer to **10×**, **100×**, or **1000×** the Sun's? Write down your guess and your reasoning — then check it against the calculation below.
+:::
 
 ## Worked Example 4: Betelgeuse (A Supergiant)
 
@@ -640,7 +665,11 @@ You now know:
 - Cool stars are red (long peak wavelength, low $T$)
 - The relationship is quantitative: $\lambda_{\text{peak}} = b T^{-1}$
 
-**In practice, astronomers use "color indices"** — the magnitude difference between two passbands — to estimate temperature without even finding the exact peak wavelength. But the physics is the same: color maps to temperature.
+**In practice, astronomers use "color indices"** — comparing a star's brightness in two different wavelength bands (e.g., blue vs. red filters) — to estimate temperature without finding the exact peak wavelength. The physics is the same: color maps to temperature.
+
+::: {.callout-note collapse="true" title="Enrichment: Who Built the HR Diagram?"}
+In 1911, the Danish chemist Ejnar Hertzsprung plotted the brightness of stars in the Pleiades cluster against their color and noticed that most fell along a diagonal band — what we now call the **main sequence**. Independently, the American astronomer Henry Norris Russell produced a similar diagram in 1913 using nearby stars with known parallax distances, plotting absolute brightness against spectral type. Neither initially understood *why* stars clustered where they did — that required the Stefan-Boltzmann connection you're learning now. The diagram that bears both their names became the single most important tool in stellar astrophysics, revealing patterns that eventually led to our understanding of stellar structure and evolution.
+:::
 
 ### The HR Diagram's Horizontal Axis
 
@@ -652,16 +681,15 @@ The key insight: **the horizontal axis is a temperature axis.**
 - **Right side:** cool, red stars (K and M types, $T < 4{,}000$ K)
 - **Hot stars are on the left; cool stars are on the right** (historical convention from spectral classification)
 
-::: {.callout-note}
-## Why the OBAFGKM Sequence Is Really a Temperature Sequence
+::: {.callout-note collapse="true" title="Enrichment: Why the OBAFGKM Sequence Is Really a Temperature Sequence"}
 
 The stellar spectral sequence OBAFGKM, defined by prominent spectral *lines* (ionized helium, hydrogen Balmer lines, metal absorption, etc.), is fundamentally sorted by *temperature*:
 
 | Type | Temperature Range | Color | Example |
 |------|-------------------|-------|---------|
 | O | 30,000–50,000 K | Blue-UV | $\theta$ Orionis |
-| B | 10,000–30,000 K | Blue-white | Rigel, Sirius |
-| A | 7,000–10,000 K | White | Vega |
+| B | 10,000–30,000 K | Blue-white | Rigel, Spica |
+| A | 7,000–10,000 K | White | Vega, Sirius |
 | F | 6,000–7,500 K | Yellow-white | Procyon A |
 | G | 5,200–6,000 K | Yellow | **Sun** |
 | K | 3,700–5,200 K | Orange | Aldebaran |
@@ -688,7 +716,7 @@ When you plot many stars on the HR diagram, they don't scatter uniformly. Instea
 - **Giant branch** (cool but very luminous — upper right): evolved stars with greatly expanded envelopes. Their large radii ($R \gg R_\odot$) compensate for their lower temperatures. Betelgeuse lives here.
 - **White dwarf sequence** (hot but very dim — lower left): stellar remnants about the size of Earth. Their tiny radii ($R \sim 0.01\,R_\odot$) explain why they're faint despite high surface temperatures.
 
-Each region corresponds to a different physical state of stellar structure — but the Stefan-Boltzmann law applies to all of them. The lines of constant radius you can draw on the HR diagram separate these populations: main-sequence stars occupy a band near $R \sim 0.1$–$10\,R_\odot$, giants extend to hundreds of $R_\odot$, and white dwarfs cluster near $0.01\,R_\odot$. Your ability to measure colors and brightness and infer sizes is what makes the HR diagram not just a pretty plot, but a diagnostic tool for understanding stellar evolution. In Lecture 6, we'll build the full diagram and see these patterns emerge from data.
+Each region corresponds to a different physical state of stellar structure — but the Stefan-Boltzmann law applies to all of them. The lines of constant radius you can draw on the HR diagram separate these populations: main-sequence stars occupy a band near $R \sim 0.1$–$10\,R_\odot$, giants extend to hundreds of $R_\odot$, and white dwarfs cluster near $0.01\,R_\odot$. Your ability to measure colors and brightness and infer sizes is what makes the HR diagram not just a pretty plot, but a diagnostic tool for understanding stellar evolution. In Lecture 3, we'll learn how spectral *lines* refine temperature measurements and reveal chemical composition. In Lecture 4, we'll formalize the OBAFGKM spectral classification. And by Lecture 6, we'll build the full HR diagram from real data and see these patterns emerge.
 
 :::
 
@@ -732,14 +760,13 @@ Astronomers determine stellar effective temperature using several methods, all b
 
 These methods often agree to within 100–200 K, which is sufficient for most purposes.
 
-::: {.callout-note}
-### Reality Check: Bolometric Corrections and Extinction
+::: {.callout-note collapse="true" title="Enrichment: Bolometric Corrections and Extinction"}
 
 All of the temperature and luminosity inferences above assume you're measuring the **total (bolometric) flux** — integrated over all wavelengths. In practice, telescopes observe in limited wavelength bands (e.g., optical $V$-band), so a **bolometric correction** is needed to convert band-limited measurements to total luminosity. Additionally, interstellar dust absorbs and scatters starlight (**extinction**), preferentially removing blue light and making stars appear redder and dimmer than they truly are.
 
 {{< fig interstellar-reddening >}}
 
-Both effects must be corrected before inferring temperatures and luminosities. The extinction problem is explored in Practice Problem 11.
+Both effects must be corrected before inferring temperatures and luminosities. The extinction problem is explored in Practice Problem 12.
 :::
 
 **Part 8 takeaway:** The Stefan-Boltzmann approach works remarkably well for most stars, but the temperature we infer is an *effective* temperature, and real observations require bolometric corrections and extinction corrections before the inference chain is reliable.
@@ -778,6 +805,10 @@ After working through this lecture, you should be able to:
 - [ ] List two assumptions behind Stefan-Boltzmann and explain their impact
 - [ ] Interpret what "effective temperature" means in practice
 
+::: {.callout-tip title="Looking Ahead"}
+You now have two of the HR diagram's three axes: **luminosity** (from Lecture 1) and **temperature/color** (this lecture). In **Lecture 3**, we'll see how absorption lines in stellar spectra reveal composition and refine temperature measurements — the science of spectroscopy. **Lecture 4** formalizes the spectral classification system (OBAFGKM) and connects it to the temperature sequence you've already learned. By **Lecture 6**, you'll build the full HR diagram from real data and see how the main sequence, giant branch, and white dwarf sequence emerge as natural consequences of stellar physics.
+:::
+
 ---
 
 ## Practice Problems
@@ -786,41 +817,49 @@ After working through this lecture, you should be able to:
 
 ### Conceptual
 
-1. **Two stars, same luminosity, different colors.** Star A is blue; Star B is red. Both have the same luminosity (same total power output).
+<!-- Problem: Conceptual / Connection / O→M→I / Tools: Scaling/Ratio / ⭐ -->
+1. ⭐ **Two stars, same luminosity, different colors.** Star A is blue; Star B is red. Both have the same luminosity (same total power output).
    - (a) Which star has the higher effective temperature?
    - (b) Which star must have the larger radius? Explain using Stefan-Boltzmann ($L = 4\pi R^2 \sigma T^4$).
    - (c) If you could stand on each star's surface (without burning up), which surface would radiate more power per square centimeter? How do you know?
 
-2. **Why Betelgeuse is huge.** Betelgeuse has:
+<!-- Problem: Conceptual / Connection / — / Tools: Scaling/Ratio / ⭐ -->
+2. ⭐ **Why Betelgeuse is huge.** Betelgeuse has:
    - Luminosity: $\sim 10^5 L_\odot$ (100,000 times the Sun)
    - Temperature: $\sim 3{,}500$ K (about 60% of the Sun's temperature)
 
    Use Stefan-Boltzmann to explain qualitatively why Betelgeuse must be so large despite being cooler than the Sun. Your answer should reference $F_* = \sigma T^4$ (power per unit area) and surface area.
 
-3. **Peak wavelength, temperature, and radius.** A star's spectrum peaks at $\lambda_{\text{peak}} = 1000$ nm (near-infrared), while the Sun peaks at $\lambda_{\text{peak}} = 500$ nm.
+<!-- Problem: Conceptual / Application / O→M→I / Tools: Scaling/Ratio / ⭐⭐ -->
+3. ⭐⭐ **Peak wavelength, temperature, and radius.** A star's spectrum peaks at $\lambda_{\text{peak}} = 1000$ nm (near-infrared), while the Sun peaks at $\lambda_{\text{peak}} = 500$ nm.
    - (a) Is this star hotter or cooler than the Sun? By what factor? (Use Wien's law as a ratio: $T_{\text{star}}/T_\odot = \lambda_{\text{peak},\odot}/\lambda_{\text{peak,star}}$.)
    - (b) If this star has the same luminosity as the Sun, which must have the larger radius? By what factor? (Use $R \propto T^{-2}$ at fixed $L$.)
    - (c) Which star has the greater surface flux ($F_* = \sigma T^4$)? By what factor?
 
-4. **Surface brightness independence.** Explain why you cannot determine a star's distance just by measuring how bright its disk appears per unit solid angle, using the fact that surface brightness $\text{SB} = F/\Omega$ is independent of distance. Does this principle apply most directly to unresolved point sources or to resolved objects (disks, galaxies, nebulae)?
+<!-- Problem: Conceptual / Connection / — / Tools: Scaling/Ratio / ⭐⭐ -->
+4. ⭐⭐ **Surface brightness independence.** Explain why you cannot determine a star's distance just by measuring how bright its disk appears per unit solid angle, using the fact that surface brightness $\text{SB} = F/\Omega$ is independent of distance. Does this principle apply most directly to unresolved point sources or to resolved objects (disks, galaxies, nebulae)?
 
 ### Calculation
 
-5. **Sun's effective temperature from Wien's law.** The Sun's spectrum peaks at $\lambda_{\text{peak}} = 500$ nm.
+<!-- Problem: Calculation:Full / Application / — / Tools: Unit-Conversion / ⭐ -->
+5. ⭐ **Sun's effective temperature from Wien's law.** The Sun's spectrum peaks at $\lambda_{\text{peak}} = 500$ nm.
    - (a) Convert 500 nm to cm. ($1\ \text{nm} = 10^{-7}\ \text{cm}$, so $500\ \text{nm} = 500 \times 10^{-7}\ \text{cm} = 5.0 \times 10^{-5}\ \text{cm}$.)
    - (b) Use Wien's law ($T = b/\lambda_{\text{peak}}$) with $b = 0.2898$ cm·K to calculate the Sun's effective temperature $T_\odot$. Show the unit cancellation explicitly.
    - (c) Compare your answer to the known value of 5800 K.
 
-6. **Stellar temperature from color.** A star's spectrum peaks at 700 nm (red).
+<!-- Problem: Calculation:Full / Application / — / Tools: Unit-Conversion / ⭐ -->
+6. ⭐ **Stellar temperature from color.** A star's spectrum peaks at 700 nm (red).
    - (a) Calculate its effective temperature using Wien's law. Show the unit conversion from nm to cm (or use $b = 2.898 \times 10^6$ nm·K directly).
    - (b) Is this star hotter or cooler than the Sun? By what factor?
 
-7. **From received flux to luminosity.** A star at a parallax-measured distance of $d = 10$ pc has a measured bolometric flux at Earth of $F = 8.0 \times 10^{-6}$ erg s$^{-1}$ cm$^{-2}$.
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Unit-Conversion, Model-Inversion / ⭐⭐ -->
+7. ⭐⭐ **From received flux to luminosity.** A star at a parallax-measured distance of $d = 10$ pc has a measured bolometric flux at Earth of $F = 8.0 \times 10^{-6}$ erg s$^{-1}$ cm$^{-2}$.
    - (a) Convert the distance to cm: $d = 10\ \text{pc} \times 3.086 \times 10^{18}\ \text{cm/pc} = {?}$
    - (b) Calculate the luminosity using $L = 4\pi d^2 F$. Show units at every step to verify you get erg/s.
    - (c) Express your answer in solar luminosities ($L/L_\odot$). Does this luminosity remind you of any star from the worked examples?
 
-8. **Stellar radius from Stefan-Boltzmann (ratio method).** A star has:
+<!-- Problem: Calculation:Full / Application / — / Tools: Scaling/Ratio, Model-Inversion / ⭐⭐ -->
+8. ⭐⭐ **Stellar radius from Stefan-Boltzmann (ratio method).** A star has:
    - Luminosity: $L = 4 L_\odot$
    - Temperature: $T = 2 T_\odot$ (from its color)
 
@@ -831,7 +870,8 @@ After working through this lecture, you should be able to:
    (b) Take the square root: $R/R_\odot = \sqrt{0.25} = {?}$
    (c) Is this star larger or smaller than the Sun? Convert to km.
 
-9. **Rigel's radius (full calculation).** Rigel (a blue supergiant) has:
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Scaling/Ratio, Unit-Conversion, Model-Inversion / ⭐⭐ -->
+9. ⭐⭐ **Rigel's radius (full calculation).** Rigel (a blue supergiant) has:
    - Luminosity: $L_{\text{Rigel}} = 120{,}000\,L_\odot$ (inferred from parallax + received flux)
    - Effective temperature: $T_{\text{Rigel}} = 12{,}100$ K (inferred from color via Wien's law)
 
@@ -843,7 +883,8 @@ After working through this lecture, you should be able to:
 
 ### Synthesis
 
-10. **Complete inference chain: From photons to radius.** You observe a nearby red giant with the following measurements:
+<!-- Problem: Synthesis / Connection / O→M→I / Tools: Unit-Conversion, Model-Inversion, Scaling/Ratio / ⭐⭐ -->
+10. ⭐⭐ **Complete inference chain: From photons to radius.** You observe a nearby red giant with the following measurements:
     - Bolometric flux received at Earth: $F = 1.28 \times 10^{-6}$ erg s$^{-1}$ cm$^{-2}$
     - Peak wavelength of its spectrum: $\lambda_{\text{peak}} = 1{,}000$ nm (near-infrared)
     - Distance from parallax: $d = 50$ pc
@@ -855,7 +896,8 @@ After working through this lecture, you should be able to:
     (c) **Radius from Stefan-Boltzmann.** Using the solar-unit form, first compute $(R/R_\odot)^2$, then take the square root to find $R/R_\odot$.
     (d) **Interpret.** Convert your radius to km. Is this star larger or smaller than the Sun? How does it compare to Betelgeuse ($R \approx 870\,R_\odot$)? Does the combination of cool temperature and large radius make physical sense?
 
-11. **HR Diagram reasoning.** Three stars lie on the HR diagram:
+<!-- Problem: Synthesis / Connection / O→M→I / Tools: Scaling/Ratio, Data/Graph / ⭐⭐ -->
+11. ⭐⭐ **HR Diagram reasoning.** Three stars lie on the HR diagram:
     - Star A: $T = 6{,}000$ K, $L = 1\,L_\odot$ (like the Sun)
     - Star B: $T = 3{,}000$ K, $L = 100\,L_\odot$ (red giant)
     - Star C: $T = 12{,}000$ K, $L = 1\,L_\odot$ (hot but dim)
@@ -864,7 +906,8 @@ After working through this lecture, you should be able to:
     (b) Which star is largest? Which is smallest?
     (c) Sketch these three points on an HR diagram (luminosity vs. temperature, with $T$ increasing to the left). Draw approximate lines of constant radius through each point. What do these lines tell you about the giant and white-dwarf regions of the HR diagram?
 
-12. **The effect of extinction on temperature inference.** Interstellar dust reddens starlight by scattering blue photons more than red ones. An observer measures a star and finds:
+<!-- Problem: Synthesis / Connection / O→M→I / Tools: Unit-Conversion, Model-Inversion, Uncertainty/Assumptions / ⭐⭐⭐ -->
+12. ⭐⭐⭐ **The effect of extinction on temperature inference.** Interstellar dust reddens starlight by scattering blue photons more than red ones. An observer measures a star and finds:
     - Observed peak wavelength: $\lambda_{\text{obs}} = 700$ nm (appears very red)
     - True peak wavelength (after correcting for dust): $\lambda_{\text{true}} = 500$ nm
 
