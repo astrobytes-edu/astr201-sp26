@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Inverse-square law (flux vs distance)</title>
+  <desc id="desc">A star emits light uniformly. Two spheres at distance d and 2d show that the outer sphere has four times the area, so flux is one quarter.</desc>
+
+  <defs>
+    <style>
+      .bg { fill: #ffffff; }
+      .ink { stroke: #111111; stroke-width: 3; fill: none; }
+      .thin { stroke-width: 2; }
+      .ray { stroke: #1b6ef3; stroke-width: 3; fill: none; stroke-linecap: round; }
+      .patch { fill: rgba(27,110,243,0.12); stroke: #1b6ef3; stroke-width: 3; }
+      .label { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; fill: #111111; }
+      .h1 { font-size: 34px; font-weight: 700; }
+      .h2 { font-size: 26px; font-weight: 650; }
+      .p  { font-size: 24px; font-weight: 450; }
+      .math { font-family: ui-serif, Georgia, Times, "Times New Roman", serif; font-size: 28px; font-style: italic; }
+      .small { font-size: 20px; }
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#111111"/>
+    </marker>
+    <marker id="arrowBlue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1b6ef3"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1200" height="675"/>
+
+  <!-- Title -->
+  <text class="label h1" x="60" y="72">Inverse-square law: same luminosity, larger area</text>
+
+  <!-- Star -->
+  <circle cx="240" cy="360" r="16" fill="#f6c744" stroke="#111111" stroke-width="3"/>
+  <g>
+    <path class="ray" d="M 240 360 L 520 255" marker-end="url(#arrowBlue)"/>
+    <path class="ray" d="M 240 360 L 520 465" marker-end="url(#arrowBlue)"/>
+    <path class="ray" d="M 240 360 L 420 360" marker-end="url(#arrowBlue)"/>
+  </g>
+  <text class="label p" x="170" y="410">star</text>
+
+  <!-- Concentric spheres -->
+  <circle class="ink" cx="240" cy="360" r="170"/>
+  <circle class="ink" cx="240" cy="360" r="340"/>
+
+  <!-- Patch with same angular size on both spheres -->
+  <path class="patch" d="M 410 300 A 170 170 0 0 1 410 420 L 435 408 A 200 200 0 0 0 435 312 Z"/>
+  <path class="patch" d="M 580 240 A 340 340 0 0 1 580 480 L 620 455 A 380 380 0 0 0 620 265 Z"/>
+
+  <!-- Rays to patch edges -->
+  <path class="thin ray" d="M 240 360 L 410 300"/>
+  <path class="thin ray" d="M 240 360 L 410 420"/>
+  <path class="thin ray" d="M 240 360 L 580 240"/>
+  <path class="thin ray" d="M 240 360 L 580 480"/>
+
+  <!-- Distance annotations -->
+  <line class="ink thin" x1="240" y1="545" x2="410" y2="545" marker-end="url(#arrow)"/>
+  <text class="label p" x="300" y="535">d</text>
+
+  <line class="ink thin" x1="240" y1="600" x2="580" y2="600" marker-end="url(#arrow)"/>
+  <text class="label p" x="370" y="590">2d</text>
+
+  <!-- Area + flux statements -->
+  <g transform="translate(700,140)">
+    <text class="label h2" x="0" y="0">Spherical area</text>
+    <text class="label p" x="0" y="48">A(d) = 4π d²</text>
+    <text class="label p" x="0" y="88">A(2d) = 4π (2d)² = 4 A(d)</text>
+
+    <text class="label h2" x="0" y="150">Flux (power per area)</text>
+    <text class="label p" x="0" y="198">F(d) = L / A(d)</text>
+    <text class="label p" x="0" y="238">F(2d) = L / A(2d) = F(d) / 4</text>
+
+    <text class="label small" x="0" y="300">Key idea: the same luminosity L spreads over a larger area.</text>
+  </g>
+</svg>

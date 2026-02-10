@@ -363,9 +363,10 @@ figures:
     module: 1
 
   inverse-square-law:
-    path: /assets/images/module-01/inverse-square-law.png
+    path: /assets/images/module-01/inverse-square-law.svg
     caption: "Light intensity decreases with the square of distance"
-    alt: "Diagram showing how light spreads over increasing area with distance"
+    alt: "Inverse-square law diagram: a star at the center emits light through two concentric spheres at distance d and 2d. The outer sphere has four times the surface area, so the same luminosity is spread over four times the area and the flux is one quarter."
+    credit: "Course illustration (A. Rosen)"
     module: 1
 
   kepler-orbits:

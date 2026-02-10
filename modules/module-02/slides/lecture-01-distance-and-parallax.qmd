@@ -164,31 +164,26 @@ Everything starts with distance.
 ## The Observable → Model → Inference Framework
 
 :::: {.columns}
-::: {.column width="33%"}
-**Observable**
-
-What we *measure* directly:
-
-- Position shifts on the sky
-- Brightness (flux)
+::: {.column width="55%"}
+```{mermaid}
+%%| fig-width: 6
+flowchart LR
+  O["🔭 Observable\nWhat we measure"]
+  M["📐 Model\nWhat we assume"]
+  I["💡 Inference\nWhat we derive"]
+  O --> M --> I
+  style O fill:#dbeafe,stroke:#2563eb
+  style M fill:#fef3c7,stroke:#d97706
+  style I fill:#dcfce7,stroke:#16a34a
+```
 :::
 
-::: {.column width="33%" .fragment}
-**Model**
-
-What we *assume*:
-
-- Parallax geometry
-- Light spreads isotropically
-:::
-
-::: {.column width="33%" .fragment}
-**Inference**
-
-What we *derive*:
-
-- Distance (from parallax)
-- Luminosity (from flux + distance)
+::: {.column width="45%"}
+| Step | This lecture |
+|------|-------------|
+| **Observable** | Position shifts, brightness |
+| **Model** | Parallax geometry, ISL |
+| **Inference** | Distance, luminosity |
 :::
 ::::
 
@@ -197,7 +192,7 @@ Good scientists always ask: *what am I assuming, and what would break it?*
 :::
 
 ::: {.notes}
-5–6 min. This framework appears in every lecture. Establish it clearly here.
+5–6 min. This framework appears in every lecture. Establish it clearly here. The Mermaid diagram makes the flow visual — point to each box.
 :::
 
 ---
@@ -320,6 +315,34 @@ $$\boxed{\alpha\,(\text{rad}) \approx \frac{s}{d}}$$
 
 ---
 
+## Why Does It Work? sin θ ≈ θ
+
+:::: {.columns}
+::: {.column width="50%"}
+{{< img week04-owocki-fig2-3-small-angle >}}
+:::
+
+::: {.column width="50%"}
+The exact relation: $\sin(\alpha/2) = R/d$
+
+For small $\alpha$: $\sin(\alpha/2) \approx \alpha/2$
+
+$$\implies \alpha \approx \frac{2R}{d} = \frac{s}{d}$$
+
+::: {.fragment}
+**How small is "small enough"?**
+
+At $\alpha = 5°$, error is only 0.1%. For astronomy (arcseconds!), it's essentially exact.
+:::
+:::
+::::
+
+::: {.notes}
+12–13 min. This figure shows the exact vs approximate relation. The takeaway: for any angle smaller than a few degrees, the approximation is superb.
+:::
+
+---
+
 ## Quick Check 2: Small-Angle Scaling
 
 **If you double your distance from an object (keeping its true size fixed), its angular size:**
@@ -385,22 +408,21 @@ Parallax
 
 ## Try It First: Parallax Demo
 
-Before we derive anything, try the interactive demo:
+Before we derive anything, explore the interactive demo:
 
-**[Cosmic Playground: Parallax Distance](https://astrobytes-edu.github.io/cosmic-playground/exhibits/parallax-distance/)**
+<iframe src="https://astrobytes-edu.github.io/cosmic-playground/exhibits/parallax-distance/" width="100%" height="420" style="border:1px solid #e5e7eb; border-radius:8px;"></iframe>
 
 ::: {.incremental}
 - Move the star closer and farther — watch the parallax angle change
-- Notice: closer star → larger parallax shift
-- Notice: the shift is measured against *distant* background stars
+- Closer star → larger parallax shift; the shift is measured against *distant* background stars
 :::
 
 ::: {.fragment .mt-2}
-Now let's derive *why* this works.
+Now let's derive *why* this works. → [Full-screen demo](https://astrobytes-edu.github.io/cosmic-playground/exhibits/parallax-distance/)
 :::
 
 ::: {.notes}
-15–16 min. If projecting, show the demo live for 60 seconds. Otherwise, tell students to try it on their phones.
+15–16 min. The demo is embedded — interact with it live. If the embed doesn't load, click the full-screen link. Give students 60 seconds to explore.
 :::
 
 ---
@@ -429,6 +451,8 @@ $$p\,(\text{rad}) \approx \frac{1\,\text{AU}}{d}$$
 
 ## From Geometry to the Parsec
 
+:::: {.columns}
+::: {.column width="55%"}
 Convert parallax to arcseconds:
 
 $$p\,('') = \frac{1\,\text{AU}}{d} \times 206{,}265$$
@@ -444,9 +468,15 @@ The distance formula becomes breathtakingly simple:
 
 $$\boxed{d\,(\text{pc}) = \frac{1}{p\,('')}}$$
 :::
+:::
+
+::: {.column width="45%"}
+{{< img week04-owocki-fig2-4-parallax-parsec >}}
+:::
+::::
 
 ::: {.notes}
-17–18 min. "Parsec" = **par**allax **a**rc**sec**ond. The unit is defined to make the formula simple — it bakes in Earth's orbital radius.
+17–18 min. "Parsec" = **par**allax **a**rc**sec**ond. The unit is defined to make the formula simple — it bakes in Earth's orbital radius. Point to the figure: 1 AU baseline, parallax angle $p$, distance $d$.
 :::
 
 ---
@@ -509,6 +539,34 @@ This shows why parallax was historically so difficult to measure.
 
 ---
 
+## Our Nearest Neighbors
+
+:::: {.columns}
+::: {.column width="55%"}
+{{< img week04-nearest-stars2-white-cococubed >}}
+:::
+
+::: {.column width="45%"}
+The nearest stellar neighborhood is a sparse place.
+
+::: {.fragment}
+- Proxima Centauri: 1.3 pc
+- Sirius: 2.6 pc
+- Within 5 pc: only ~60 known stellar systems
+:::
+
+::: {.fragment}
+Most are **red dwarfs** too faint to see with the naked eye — the night sky is biased toward luminous stars.
+:::
+:::
+::::
+
+::: {.notes}
+20–21 min. This 3D map shows distances measured by parallax. Point out how few stars are truly nearby. Connect to the degeneracy problem: apparent brightness ≠ nearness.
+:::
+
+---
+
 ## The Parallax Revolution: Hipparcos to Gaia
 
 | Mission | Precision | Stars | Distance reach |
@@ -529,19 +587,23 @@ Gaia's $100\times$ better precision directly translates to $100\times$ better lu
 
 ## Active Learning Break 1: Think-Pair-Share
 
+:::: {.columns}
+::: {.column width="55%"}
 **Problem:** A star has parallax $p = 0.050''$.
 
-:::: {.columns}
-::: {.column width="50%"}
 **(a)** What is its distance in parsecs?
 
 **(b)** Convert to light-years.
-:::
 
-::: {.column width="50%"}
 **(c)** Could Hipparcos have measured this parallax? Could Gaia?
 
 **(d)** Estimate the parallax of a star at the center of the Milky Way (~8 kpc away).
+:::
+
+::: {.column width="45%"}
+{{< img week04-parallax1-cococubed >}}
+
+*Reference: parallax geometry*
 :::
 ::::
 
@@ -664,6 +726,30 @@ The $4\pi$ comes from geometry — DA gives the **scaling**.
 
 ---
 
+## Where Does the 4π Come From?
+
+:::: {.columns}
+::: {.column width="50%"}
+{{< img week04-owocki-fig2-5-solid-angle >}}
+:::
+
+::: {.column width="50%"}
+A full sphere subtends $4\pi$ steradians of solid angle.
+
+Light from an isotropic source spreads evenly over this solid angle. At distance $d$, the sphere has area $4\pi d^2$.
+
+::: {.fragment}
+**So $F = L/(4\pi d^2)$ simply says:** total luminosity ÷ total area of the sphere you're standing on.
+:::
+:::
+::::
+
+::: {.notes}
+30–31 min. This figure connects the $4\pi$ factor to geometry. The solid angle concept is introduced here and returns in surface brightness (Module 2 Lecture 2).
+:::
+
+---
+
 ## Flux vs. Luminosity — Don't Confuse Them!
 
 :::: {.columns}
@@ -689,7 +775,33 @@ A dim red dwarf nearby can have the **same observed flux** as a luminous blue gi
 :::
 
 ::: {.notes}
-30–31 min. This is the single most important conceptual point. Hammer it home.
+31–32 min. This is the single most important conceptual point. Hammer it home.
+:::
+
+---
+
+## A Useful Surprise: Surface Brightness Is Distance-Independent
+
+:::: {.columns}
+::: {.column width="50%"}
+{{< img week04-owocki-fig3-1-surface-brightness >}}
+:::
+
+::: {.column width="50%"}
+Flux drops as $1/d^2$, but angular area also drops as $1/d^2$.
+
+Their ratio — **surface brightness** — is constant:
+
+$$\frac{F}{\Delta\Omega} = \frac{L/(4\pi d^2)}{\pi R^2/d^2} = \frac{L}{4\pi^2 R^2}$$
+
+::: {.fragment}
+This is why galaxy images don't "fade" at greater distances — they just get smaller. Surface brightness depends only on the source, not distance.
+:::
+:::
+::::
+
+::: {.notes}
+32–33 min. This is a beautiful consequence of the ISL. It surprises students: "I thought everything gets dimmer!" — it does, but so does the apparent area. We'll use this in Lecture 2.
 :::
 
 ---
@@ -749,16 +861,16 @@ $$= 4\pi \times 3.15 \times 10^{32}$$
 $$\approx 3.96 \times 10^{33}\,\text{erg s}^{-1}$$
 :::
 
-::: {.column width="45%" .fragment}
+::: {.column width="45%"}
+{{< img inverse-square-law >}}
+
+::: {.fragment}
 **Standard value:** $L_\odot = 3.83 \times 10^{33}$ erg s$^{-1}$
 
 Agreement within **4%**!
 
-. . .
-
-This is not an alternative way to measure the Sun's luminosity — this **is** how we know it.
-
-Every star on the HR diagram is placed using this same method.
+This **is** how we know the Sun's luminosity. Every star on the HR diagram uses this same method.
+:::
 :::
 ::::
 
@@ -808,15 +920,9 @@ $$\approx 2.9 \times 10^{32}\,\text{erg s}^{-1}$$
 :::
 
 ::: {.column width="45%" .fragment}
-**Interpretation:**
+{{< img week04-hr-diagram-eso >}}
 
-This star is **~13× dimmer** than the Sun.
-
-At 4.67 pc, it's one of our nearest neighbors.
-
-$L \approx 0.08\,L_\odot$ is characteristic of a **late K or early M dwarf** — a small, cool, red star.
-
-These dominate the lower main sequence of the HR diagram.
+This star at $L \approx 0.08\,L_\odot$ sits on the **lower main sequence** — a late K or early M dwarf. These small, cool, red stars dominate the Galaxy by number.
 :::
 ::::
 
@@ -828,6 +934,8 @@ These dominate the lower main sequence of the HR diagram.
 
 ## Active Learning Break 2: Synthesis Problem
 
+:::: {.columns}
+::: {.column width="55%"}
 **A star has parallax $p = 0.1''$ and flux $F = 10^{-11}$ erg cm$^{-2}$ s$^{-1}$.**
 
 ::: {.incremental}
@@ -836,9 +944,17 @@ These dominate the lower main sequence of the HR diagram.
 3. In solar luminosities? ($L/L_\odot \approx 3 \times 10^{-5}$)
 4. What kind of star? (Very faint red dwarf — ~30,000× dimmer than the Sun!)
 :::
+:::
+
+::: {.column width="45%"}
+{{< img week04-hr-diagram-eso >}}
+
+*Where does your answer land on the HR diagram?*
+:::
+::::
 
 ::: {.notes}
-39–42 min (3 min total). 90 seconds individual work. 90 seconds pair discussion. Quick poll: "Who got something in the range $10^{28}$–$10^{30}$?" Celebrate correct order-of-magnitude.
+39–42 min (3 min total). 90 seconds individual work. 90 seconds pair discussion. Quick poll: "Who got something in the range $10^{28}$–$10^{30}$?" Point to the HR diagram — their star sits at the very bottom of the main sequence.
 :::
 
 ---
@@ -931,15 +1047,21 @@ Objects with known or determinable luminosity are called [**standard candles**]{
 - Discovered by Henrietta Leavitt (1912)
 - Reach: ~30 Mpc
 - Hubble used them to prove Andromeda is a separate galaxy (1920s)
-:::
 
-::: {.column width="50%"}
 **Type Ia Supernovae**
 
 - Thermonuclear explosions of white dwarfs
-- Peak luminosity: ~$10^9 L_\odot$
+- Peak luminosity: ~few $\times 10^9 L_\odot$
 - Reach: ~10 Gpc (cosmological!)
-- Led to the discovery of dark energy (1998 Nobel Prize)
+- Led to the discovery of dark energy (2011 Nobel Prize)
+:::
+
+::: {.column width="50%"}
+{{< img week04-nearest-massive-stars-cococubed >}}
+
+::: {.fragment}
+Massive, luminous stars are rare and distant — we need long-reach methods to study them. Standard candles solve this.
+:::
 :::
 ::::
 
@@ -973,21 +1095,44 @@ Wrapping Up
 
 ## Summary: Key Equations
 
+:::: {.columns}
+::: {.column width="55%"}
 | Equation | What it does |
 |----------|-------------|
-| $\alpha \approx s/d$ | Relates angular size, true size, distance |
-| $d\,(\text{pc}) = 1/p\,('')$ | Parallax → distance (Earth baseline) |
+| $\alpha \approx s/d$ | Angular size ↔ true size + distance |
+| $d\,(\text{pc}) = 1/p\,('')$ | Parallax → distance |
 | $F = L/(4\pi d^2)$ | Inverse-square law |
-| $L = 4\pi d^2 F$ | Infer luminosity from flux + distance |
+| $L = 4\pi d^2 F$ | Luminosity from flux + distance |
 | $d = \sqrt{L/(4\pi F)}$ | Standard candle distance |
+:::
+
+::: {.column width="45%"}
+{{< img parallax-geometry >}}
+:::
+::::
 
 ::: {.fragment .mt-2}
-**The Observable → Model → Inference chain:**
-Position shift → parallax geometry → distance → ISL → luminosity
+```{mermaid}
+%%| fig-width: 8
+flowchart LR
+  P["Position shift\n(Observable)"] --> G["Parallax geometry\n(Model)"]
+  G --> D["Distance d\n(Inference)"]
+  F["Flux F\n(Observable)"] --> ISL["Inverse-square law\n(Model)"]
+  D --> ISL
+  ISL --> L["Luminosity L\n(Inference)"]
+  L --> HR["HR Diagram"]
+  style P fill:#dbeafe,stroke:#2563eb
+  style F fill:#dbeafe,stroke:#2563eb
+  style G fill:#fef3c7,stroke:#d97706
+  style ISL fill:#fef3c7,stroke:#d97706
+  style D fill:#dcfce7,stroke:#16a34a
+  style L fill:#dcfce7,stroke:#16a34a
+  style HR fill:#f3e8ff,stroke:#9333ea
+```
 :::
 
 ::: {.notes}
-50–52 min. Quick summary. Students should have these equations on their reference card.
+50–52 min. The Mermaid diagram is the complete measurement chain. Blue = observables, yellow = models, green = inferences, purple = destination. Point to each node.
 :::
 
 ---
