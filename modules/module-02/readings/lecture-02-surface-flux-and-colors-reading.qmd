@@ -2,7 +2,7 @@
 title: "Lecture 2: Surface Flux & Colors of Stars"
 subtitle: "How hot, how big? From luminosity and color to temperature and radius"
 author: "Dr. Anna Rosen"
-date: "2026-02-13"
+date: "2026-02-12"
 description: "Given that we can measure a star's total luminosity (from Lecture 1) and its color, we ask: what can we learn about temperature and physical size? We apply blackbody radiation (Lecture 4 (Module 1)) to solve one of astronomy's central inference problems — how Stefan-Boltzmann and Wien's laws connect observable color to physical properties of stars."
 draft: false
 categories: [surface-flux, stellar-radiation, stefan-boltzmann, wien-law, stellar-radius, blackbody-application, colors-hr-diagram]
@@ -45,6 +45,14 @@ After completing this reading, you should be able to:
 > *Color is temperature. Luminosity, temperature, and radius form a closed relationship: know any two, infer the third.*
 >
 > By measuring a star's color (from Wien's law) and its luminosity (from flux plus distance), we can determine its physical size — the radius — without ever visiting the star. This is the power of blackbody physics applied to astronomy.
+
+::: {.callout-warning title="What Does 'Color' Mean Here?"}
+When we say "color is temperature," we do **not** mean only the color your eyes perceive. We mean **electromagnetic color** — the peak wavelength of a star's Planck curve across the entire electromagnetic spectrum, from radio waves through gamma rays. Rigel's "color" peaks in the ultraviolet at ~240 nm; Betelgeuse's peaks in the near-infrared at ~830 nm. Neither peak is visible to the human eye, yet both encode the star's temperature through Wien's law.
+
+In practice, two additional complications matter: (1) **interstellar dust** scatters and absorbs blue light preferentially, making stars appear redder and cooler than they truly are (you'll quantify this effect in Practice Problem 12), and (2) astronomers rarely measure the exact peak wavelength — instead they compare flux through standardized filters and infer an **effective temperature** from that ratio.
+
+**Bottom line:** "Color" in this course means "where the Planck curve peaks" — a quantity defined across all wavelengths, not just the narrow visible band. The temperature we infer is always an *effective* temperature, and it requires corrections for dust before it's reliable.
+:::
 
 ::: {.callout-note title="Reading Map — Choose Your Track"}
 
@@ -207,8 +215,8 @@ This is why parallax (Lecture 1) and standard candles matter for distance — br
 Before moving on, watch out for these pitfalls:
 
 - **Flux vs. luminosity:** Flux ($F$) is power per unit area received at a specific distance; luminosity ($L$) is total power output. Same received flux does **not** imply same luminosity unless both stars are at the same distance.
-- **Flux vs. intensity:** Flux ($F$) is the total power per unit area arriving from all directions; intensity ($I$) is power per unit area per unit solid angle. They are related ($F = \pi I$ for isotropic emission from a flat surface) but not interchangeable.
 - **"Brightness" is ambiguous:** In everyday language, "bright" could mean high luminosity, high received flux, or high surface brightness. In this course, always specify which quantity you mean.
+- **(Track B) Flux vs. intensity:** Flux ($F$) is the total power per unit area arriving from all directions; intensity ($I$) is power per unit area per unit solid angle. They are related ($F = \pi I$ for isotropic emission from a flat surface) but not interchangeable. You won't need this distinction for exams, but it matters in the surface brightness derivation above.
 :::
 
 ::: {.callout-tip title="Argue With a Peer"}
@@ -250,7 +258,7 @@ $$L = F_* \times 4\pi R^2 = \sigma T^4 \times 4\pi R^2 = 4\pi R^2 \sigma T^4$$
 
 Let's interpret this equation piece by piece:
 
-**The story:**
+**The story — Temperature dominates; size amplifies:**
 - A hot object radiates much more power per unit area than a cool object (temperature appears as $T^4$)
 - The total power radiated is proportional to surface area ($4\pi R^2$)
 - Together: the hotter something is, and the larger it is, the more power it radiates
@@ -415,7 +423,7 @@ From Lecture 4 (Module 1), you learned Wien's displacement law:
 
 where $b = 0.2898$ cm·K $= 2.898 \times 10^{6}$ nm·K is Wien's constant.
 
-**Interpretation:**
+**Interpretation — Hotter means bluer; cooler means redder:**
 - $\lambda_{\text{peak}}$ is the wavelength where the star's blackbody curve peaks
 - It depends *only* on temperature: hotter objects peak at shorter (bluer) wavelengths
 - The relationship is inverse: $\lambda_{\text{peak}} \propto T^{-1}$
@@ -514,7 +522,7 @@ $$T_{\text{Betelgeuse}} = \frac{2.898 \times 10^6\ \text{nm·K}}{830\ \text{nm}}
 
 Unit check: $\text{nm·K}/\text{nm} = \text{K}$ $\checkmark$
 
-**Interpretation and comparison:**
+**Interpretation — 3.5× hotter means a completely different Planck curve:**
 
 $$\frac{T_{\text{Rigel}}}{T_{\text{Betelgeuse}}} = \frac{12{,}100}{3{,}500} \approx 3.5$$
 
@@ -622,7 +630,7 @@ $$R_{\text{Sirius}} = \frac{1.19 \times 10^{11}\ \text{cm}}{10^5\ \text{cm/km}} 
 
 Compare to the Sun: $R_\odot \approx 696{,}000$ km.
 
-**Interpretation:** Sirius A is a hot, luminous A-type star, but it's only about 70% larger than the Sun despite being 25 times brighter. The high temperature ($T_{\text{Sirius}} \approx 1.7\,T_\odot$) means each square centimeter radiates $(1.707)^4 \approx 8.5$ times more power than the Sun's surface, so it doesn't need to be enormous.
+**Interpretation — Hot stars don't need to be big to be bright:** Sirius A is a hot, luminous A-type star, but it's only about 70% larger than the Sun despite being 25 times brighter. The high temperature ($T_{\text{Sirius}} \approx 1.7\,T_\odot$) means each square centimeter radiates $(1.707)^4 \approx 8.5$ times more power than the Sun's surface, so it doesn't need to be enormous.
 
 :::
 
@@ -675,7 +683,7 @@ $$R_{\text{Betelgeuse}} = \frac{6.06 \times 10^8\ \text{km}}{1.496 \times 10^8\ 
 
 **Comparison:** If you placed Betelgeuse at the center of our solar system, its surface would extend to about 4 AU — past the orbit of Mars (1.5 AU) and approaching Jupiter (5.2 AU). The Sun, by comparison, fits comfortably in the inner solar system at a radius of only $0.005$ AU.
 
-**Why so enormous?** Betelgeuse is much cooler than the Sun ($T_{\text{Betelgeuse}} \approx 0.6\,T_\odot$), so each square centimeter of its surface radiates only $(0.603)^4 \approx 0.13$ times as much power as the Sun's. But Betelgeuse is $10^5$ times more luminous. To produce that much total power with so little power per unit area, the surface area must be enormous: $\text{Area}_{\text{Betelgeuse}}/\text{Area}_\odot = (870)^2 \approx 7.6 \times 10^5$. Betelgeuse has roughly **760,000 times** the Sun's surface area.
+**Why so enormous? — Cool surface means huge area to compensate.** Betelgeuse is much cooler than the Sun ($T_{\text{Betelgeuse}} \approx 0.6\,T_\odot$), so each square centimeter of its surface radiates only $(0.603)^4 \approx 0.13$ times as much power as the Sun's. But Betelgeuse is $10^5$ times more luminous. To produce that much total power with so little power per unit area, the surface area must be enormous: $\text{Area}_{\text{Betelgeuse}}/\text{Area}_\odot = (870)^2 \approx 7.6 \times 10^5$. Betelgeuse has roughly **760,000 times** the Sun's surface area.
 
 ---
 
