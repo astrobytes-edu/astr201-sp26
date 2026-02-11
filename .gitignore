@@ -1,5 +1,6 @@
 /.quarto/
 _site/
+_site-instructor/
 .venv/
 .DS_Store
 **/.DS_Store
@@ -17,6 +18,7 @@ _test-*
 # Rendered HTML in source directories (should be in _site/)
 # Quarto outputs to _site/, so HTML in source dirs is accidental
 **/*.html
+**/*_files/
 
 # LaTeX build artifacts
 **/*.aux
