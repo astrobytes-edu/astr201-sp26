@@ -933,6 +933,8 @@ If they forget the numerical constant, they can still solve ratio questions corr
 
 ## Why Calculus Matters: Deriving Wien's Law
 
+:::: {.columns}
+::: {.column width="56%"}
 ::: {.callout-warning}
 Optional extension for interested students: this section uses calculus and is **not required** for this course.
 :::
@@ -946,15 +948,23 @@ B_\lambda(T)
 \frac{1}{e^{hc/(\lambda kT)} - 1}
 $$
 
-Wien’s law comes from **finding where this function peaks**.
-
-Mathematically:
+Goal: find the wavelength at the maximum, $\lambda_{\rm peak}$.
 
 $$
 \frac{dB_\lambda}{d\lambda} = 0
 $$
+:::
 
-This is an optimization problem.
+::: {.column width="44%"}
+{{< img blackbody-stellar-spectra width="100%" >}}
+
+Peak-finding on this curve is exactly where calculus enters.
+:::
+::::
+
+::: {.notes}
+Start by pointing at the visual peak and say: “this is what the derivative is locating.”
+:::
 
 ---
 
@@ -990,27 +1000,41 @@ It cannot be solved analytically.
 
 ---
 
-## Step 3: Solve the Peak Equation
+## Step 3: Solve the Peak Equation (Numerically)
 
-The equation:
+Peak condition:
 
 $$
 5(1 - e^{-x}) = x
 $$
 
-has solution:
+Numerical solution:
 
 $$
 x \approx 4.965
 $$
 
-Recall:
+This single number pins down where the Planck curve peaks.
+
+::: {.callout-important}
+This is the calculus payoff: one equation, one number, one measurable prediction.
+:::
+
+::: {.notes}
+Point at the curve peak and connect it to the solved value of $x$.
+:::
+
+---
+
+## Step 4: Turn $x$ into Wien's Constant
+
+Use the definition
 
 $$
 x = \frac{hc}{\lambda_{\rm peak} kT}
 $$
 
-So:
+to get
 
 $$
 \lambda_{\rm peak} T
@@ -1018,21 +1042,21 @@ $$
 \frac{hc}{kx}
 $$
 
-Plug in constants:
+Substitute $x \approx 4.965$:
 
 $$
 \lambda_{\rm peak} T
 =
 2.898 \times 10^{-3}\ \mathrm{m\,K}
-$$
-
-or
-
-$$
+=
 2.898 \times 10^6\ \mathrm{nm\,K}
 $$
 
 That constant is **Wien’s displacement constant**.
+
+::: {.callout-tip}
+Why calculus matters: it generates the constant you use in real stellar temperature inference.
+:::
 
 ---
 
