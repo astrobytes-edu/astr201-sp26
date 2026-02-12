@@ -49,9 +49,9 @@ execute:
 By the end of Lecture 2, you can:
 
 ::: {.incremental}
-- Distinguish **received flux** \(F\) from **surface flux** \(F_\star\) (they answer different questions).
-- Use **Stefan-Boltzmann** to connect \(L\), \(R\), \(T\) and do scaling quickly.
-- Use **Wien’s law** to infer \(T\) from \(\lambda_{\rm peak}\) (especially with ratios).
+- Distinguish **received flux** $F$ from **surface flux** $F_\star$ (they answer different questions).
+- Use **Stefan-Boltzmann** to connect $L$, $R$, $T$ and do scaling quickly.
+- Use **Wien’s law** to infer $T$ from $\lambda_{\rm peak}$ (especially with ratios).
 - Explain (briefly, correctly) the **ultraviolet catastrophe** and why Planck mattered.
 - Read the HR diagram as a **radius map in disguise** (preview).
 :::
@@ -70,9 +70,9 @@ Astronomy is an inference machine.
 
 We measure **photons at Earth** (brightness + spectrum) and infer **physical properties** of stars:
 
-- \(F\) + \(d\)  \(\rightarrow\)  \(L\)  (Lecture 1)
-- color / \(\lambda_{\rm peak}\) \(\rightarrow\) \(T\) (today)
-- \(L\) and \(T\) \(\rightarrow\) \(R\) (today)
+- $F$ + $d$  $\rightarrow$  $L$  (Lecture 1)
+- color / $\lambda_{\rm peak}$ $\rightarrow$ $T$ (today)
+- $L$ and $T$ $\rightarrow$ $R$ (today)
 
 ::: {.notes}
 Two observables + one distance gives you a lot of reality.
@@ -84,8 +84,8 @@ Two observables + one distance gives you a lot of reality.
 
 Rigel (blue) and Betelgeuse (red) can have **comparable luminosities** yet **very different radii**.
 
-- Blue star: hotter \(\rightarrow\) can be smaller and still luminous
-- Red star: cooler \(\rightarrow\) must be huge to be equally luminous
+- Blue star: hotter $\rightarrow$ can be smaller and still luminous
+- Red star: cooler $\rightarrow$ must be huge to be equally luminous
 
 ::: {.callout-warning}
 **Same luminosity does not imply same radius.**
@@ -108,21 +108,21 @@ If two stars have the same luminosity and one is cooler, that cooler star is mos
 - impossible to determine from physics
 
 ::: {.notes}
-Don’t overthink: we’re holding \(L\) fixed. We’ll prove it.
+Don’t overthink: we’re holding $L$ fixed. We’ll prove it.
 :::
 
 ---
 
 ## Vocabulary Lock-In: The Three Core Quantities
 
-**Luminosity \(L\)**
+**Luminosity $L$**
 Total power output (intrinsic). Units: erg/s (or W).
 
-**Flux \(F\)**
-Power per area measured at a location (depends on where you stand). Units: erg s\(^{-1}\) cm\(^{-2}\).
+**Flux $F$**
+Power per area measured at a location (depends on where you stand). Units: erg s$^{-1}$ cm$^{-2}$.
 
-**Radius \(R\)**
-Physical size of star. Units: cm (or \(R_\odot\)).
+**Radius $R$**
+Physical size of star. Units: cm (or $R_\odot$).
 
 ::: {.notes}
 If they can’t define these cleanly, everything collapses later.
@@ -135,21 +135,21 @@ If they can’t define these cleanly, everything collapses later.
 These answer two different questions:
 
 ### Received flux (what we measure here)
-\[
+$$
 F = \frac{L}{4\pi d^2}
-\]
-Depends on **distance** \(d\).
+$$
+Depends on **distance** $d$.
 
 ### Surface flux (what the star emits per cm² of surface)
-\[
+$$
 F_\star = \frac{L}{4\pi R^2}
-\]
-Depends on **star size** \(R\).
+$$
+Depends on **star size** $R$.
 
 ::: {.callout-tip}
 Say it out loud:
-- \(F\): “How bright does it look *here*?”
-- \(F_\star\): “How intense is the radiation *at the surface*?”
+- $F$: “How bright does it look *here*?”
+- $F_\star$: “How intense is the radiation *at the surface*?”
 :::
 
 ::: {.notes}
@@ -162,8 +162,8 @@ Same structure, different geometry. Don’t mix them.
 
 Answer using proportional reasoning:
 
-1) If \(d \rightarrow 2d\) with \(L\) fixed, what happens to \(F\)?
-2) If \(R \rightarrow 2R\) with \(L\) fixed, what happens to \(F_\star\)?
+1) If $d \rightarrow 2d$ with $L$ fixed, what happens to $F$?
+2) If $R \rightarrow 2R$ with $L$ fixed, what happens to $F_\star$?
 3) What is physically different about those two changes?
 
 ::: {.callout-important}
@@ -180,13 +180,13 @@ Collect one answer emphasizing ‘dilution over distance’ vs ‘spread over su
 
 Divide the two equations:
 
-\[
+$$
 \frac{F}{F_\star} = \frac{R^2}{d^2}
-\]
+$$
 
 Meaning:
 
-- Stars are tiny on the sky: \(R \ll d\)
+- Stars are tiny on the sky: $R \ll d$
 - So only a **tiny fraction** of the surface emission reaches Earth
 
 ::: {.callout-tip}
@@ -201,16 +201,16 @@ This is a nice ‘sanity geometry’ checkpoint.
 
 ## What We Need Next
 
-To get radius \(R\), we need a link between:
+To get radius $R$, we need a link between:
 
-- **how much power per cm² the surface emits** (\(F_\star\))
-- and **temperature** \(T\)
+- **how much power per cm² the surface emits** ($F_\star$)
+- and **temperature** $T$
 
 That link is **thermal physics**:
 
-\[
+$$
 F_\star = \sigma T^4
-\]
+$$
 
 Then luminosity is surface flux × area.
 
@@ -223,19 +223,19 @@ This is where ‘color becomes temperature’ will matter.
 ## The Engine: Stefan–Boltzmann (Surface → Total)
 
 Surface flux of a blackbody:
-\[
+$$
 F_\star = \sigma T^4
-\]
+$$
 
 Total luminosity = surface flux × surface area:
-\[
+$$
 L = 4\pi R^2 \sigma T^4
-\]
+$$
 
 ::: {.callout-important}
 **Interpretation:**
-- \(R^2\) is “how much surface you have”
-- \(T^4\) is “how hard each cm² radiates”
+- $R^2$ is “how much surface you have”
+- $T^4$ is “how hard each cm² radiates”
 :::
 
 ::: {.notes}
@@ -246,16 +246,16 @@ Read it as a sentence. Don’t start with algebra.
 
 ## What Stefan–Boltzmann Is Saying (in plain English)
 
-- Temperature is a **steep lever**: small \(T\) changes → huge luminosity changes.
+- Temperature is a **steep lever**: small $T$ changes → huge luminosity changes.
 - Radius is a **quadratic lever**: bigger star → more emitting area.
 
 At fixed radius:
-\[
+$$
 T \rightarrow 2T \quad \Rightarrow \quad L \rightarrow 16L
-\]
+$$
 
 ::: {.callout-tip}
-This is why “hot” matters so much in stars: \(T^4\) is ruthless.
+This is why “hot” matters so much in stars: $T^4$ is ruthless.
 :::
 
 ::: {.notes}
@@ -268,10 +268,10 @@ Make them *feel* the steepness.
 
 A star twice as hot as another, with the same radius, is how much more luminous?
 
-- \(2\times\)
-- \(4\times\)
-- [\(16\times\)]{.correct}
-- \(32\times\)
+- $2\times$
+- $4\times$
+- [$16\times$]{.correct}
+- $32\times$
 
 ::: {.notes}
 This is your quick confidence win.
@@ -283,11 +283,11 @@ This is your quick confidence win.
 
 If luminosity is fixed:
 
-\[
+$$
 L = 4\pi R^2 \sigma T^4 = \text{constant}
 \Rightarrow R^2T^4=\text{constant}
 \Rightarrow R \propto T^{-2}
-\]
+$$
 
 **Translation:** at the same luminosity…
 
@@ -310,7 +310,7 @@ Pause. Let this land. Re-ask the prediction question verbally.
 
 When temperature increases in a blackbody spectrum, predict:
 
-1) Does \(\lambda_{\rm peak}\) shift to shorter or longer wavelengths?
+1) Does $\lambda_{\rm peak}$ shift to shorter or longer wavelengths?
 2) Does the total area under the curve increase a little or a lot?
 3) What happens at very short wavelengths (UV)?
 
@@ -324,8 +324,8 @@ Make them commit before you touch the slider.
 
 During the demo, you’re watching for three signatures:
 
-1) **Peak shift** (Wien’s law): \(\lambda_{\rm peak}\) moves with \(T^{-1}\)
-2) **Area growth** (Stefan–Boltzmann): total emission grows like \(T^4\)
+1) **Peak shift** (Wien’s law): $\lambda_{\rm peak}$ moves with $T^{-1}$
+2) **Area growth** (Stefan–Boltzmann): total emission grows like $T^4$
 3) **UV behavior** (quantum): short-wavelength emission gets suppressed
 
 ::: {.callout-tip}
@@ -341,9 +341,9 @@ This demo is not entertainment. It’s an experiment.
 [Open full-screen demo](https://astrobytes-edu.github.io/cosmic-playground/exhibits/blackbody-radiation/)
 
 ::: {.notes}
-1) Increase \(T\): point at peak moving left.
+1) Increase $T$: point at peak moving left.
 2) Emphasize area increase (brightness).
-3) Zoom short \(\lambda\): set up UV catastrophe story.
+3) Zoom short $\lambda$: set up UV catastrophe story.
 :::
 
 ---
@@ -367,14 +367,14 @@ This is the demo, frozen.
 
 At long wavelength, classical physics gives the Rayleigh–Jeans form:
 
-\[
+$$
 B_\lambda \propto \frac{T}{\lambda^4}
-\]
+$$
 
-If you extend that to \(\lambda \rightarrow 0\):
+If you extend that to $\lambda \rightarrow 0$:
 
 ::: {.callout-warning}
-\(B_\lambda \rightarrow \infty\) → infinite energy output.
+$B_\lambda \rightarrow \infty$ → infinite energy output.
 That would mean hot objects radiate unlimited UV.
 **The universe would be absurdly UV-bright.**
 :::
@@ -427,14 +427,14 @@ No derivation today; HW3 has the limits.
 
 ## Wien’s Law: Color → Temperature (the fast tool)
 
-Wien’s displacement law (peak in \(B_\lambda\)):
+Wien’s displacement law (peak in $B_\lambda$):
 
 {{< include ../../../_includes/equations/wien-displacement.qmd >}}
 
 Interpretation:
 
-- hotter → smaller \(\lambda_{\rm peak}\) (bluer peak)
-- cooler → larger \(\lambda_{\rm peak}\) (redder peak)
+- hotter → smaller $\lambda_{\rm peak}$ (bluer peak)
+- cooler → larger $\lambda_{\rm peak}$ (redder peak)
 
 ::: {.callout-tip}
 Use ratio form whenever possible — constants cancel.
@@ -444,17 +444,17 @@ Use ratio form whenever possible — constants cancel.
 
 ## Wien Ratio Form (Exam-Safe)
 
-From \(\lambda_{\rm peak} = b/T\):
+From $\lambda_{\rm peak} = b/T$:
 
-\[
+$$
 \frac{T_1}{T_2} = \frac{\lambda_{\rm peak,2}}{\lambda_{\rm peak,1}}
-\]
+$$
 
 So relative to the Sun:
 
-\[
+$$
 \frac{T_\star}{T_\odot} = \frac{\lambda_{\rm peak,\odot}}{\lambda_{\rm peak,\star}}
-\]
+$$
 
 ::: {.notes}
 This is the version I want you using under time pressure.
@@ -466,15 +466,15 @@ This is the version I want you using under time pressure.
 
 Given:
 
-- \(\lambda_{\rm peak,\odot} \approx 500\,\text{nm}\)
-- \(\lambda_{\rm peak,\star} \approx 250\,\text{nm}\)
+- $\lambda_{\rm peak,\odot} \approx 500\,\text{nm}$
+- $\lambda_{\rm peak,\star} \approx 250\,\text{nm}$
 
 Then:
 
-\[
+$$
 \frac{T_\star}{T_\odot} = \frac{500}{250} = 2
 \Rightarrow T_\star \approx 2(5800\,\text{K}) \approx 1.16\times10^4\,\text{K}
-\]
+$$
 
 ::: {.callout-tip}
 Halving peak wavelength doubles temperature.
@@ -488,7 +488,7 @@ Make them say the direction out loud.
 
 ## Quick Check: Direction {.quiz-question}
 
-If \(\lambda_{\rm peak}\) shifts to a longer wavelength, the star is:
+If $\lambda_{\rm peak}$ shifts to a longer wavelength, the star is:
 
 - hotter
 - [cooler]{.correct}
@@ -501,20 +501,20 @@ This prevents the classic sign flip.
 
 ---
 
-## Radius Inference: Solve Stefan–Boltzmann for \(R\)
+## Radius Inference: Solve Stefan–Boltzmann for $R$
 
 From
-\[
+$$
 L = 4\pi R^2 \sigma T^4
-\]
+$$
 
 Solve:
-\[
+$$
 R = \left(\frac{L}{4\pi\sigma T^4}\right)^{1/2}
-\]
+$$
 
 ::: {.callout-warning}
-Common mistake: forgetting the \(1/2\) power (writing \(R^2\) by accident).
+Common mistake: forgetting the $1/2$ power (writing $R^2$ by accident).
 :::
 
 ::: {.notes}
@@ -527,20 +527,20 @@ If they only remember one pitfall, it’s this.
 
 Divide by the Sun’s Stefan–Boltzmann law:
 
-\[
+$$
 \frac{L}{L_\odot} =
 \left(\frac{R}{R_\odot}\right)^2
 \left(\frac{T}{T_\odot}\right)^4
-\]
+$$
 
 Solve for radius:
 
-\[
+$$
 \frac{R}{R_\odot} =
 \left(
 \frac{L/L_\odot}{(T/T_\odot)^4}
 \right)^{1/2}
-\]
+$$
 
 ::: {.callout-tip}
 This is the “no constants, no unit pain” form.
@@ -552,9 +552,9 @@ This is the “no constants, no unit pain” form.
 
 **Observable → Model → Inference**
 
-1) Measure brightness + distance: \(F + d \rightarrow L\)
-2) Measure color/peak: \(\lambda_{\rm peak} \rightarrow T\)
-3) Combine: \((L, T) \rightarrow R\) via Stefan–Boltzmann
+1) Measure brightness + distance: $F + d \rightarrow L$
+2) Measure color/peak: $\lambda_{\rm peak} \rightarrow T$
+3) Combine: $(L, T) \rightarrow R$ via Stefan–Boltzmann
 
 {{< img decoder-ring width="52%" >}}
 
@@ -571,7 +571,7 @@ We can validate radii with independent methods:
 ::: {.incremental}
 - **Eclipsing binaries:** geometry + timing gives radii directly
 - **Interferometry:** angular size + distance → physical radius
-- **Spectral energy distributions:** fit full spectrum for \(T\) and bolometric flux
+- **Spectral energy distributions:** fit full spectrum for $T$ and bolometric flux
 :::
 
 ::: {.callout-important}
@@ -588,10 +588,10 @@ This is your scientific-method / epistemology anchor.
 
 Betelgeuse is:
 
-- cooler than the Sun (\(T \sim 3500\,\text{K}\))
-- incredibly luminous (\(L \sim 10^5 L_\odot\))
+- cooler than the Sun ($T \sim 3500\,\text{K}$)
+- incredibly luminous ($L \sim 10^5 L_\odot$)
 
-Cool surface means low \(F_\star=\sigma T^4\), yet total luminosity is huge.
+Cool surface means low $F_\star=\sigma T^4$, yet total luminosity is huge.
 
 ::: {.callout-important}
 Only one way to reconcile both: **enormous emitting area** → **large radius**.
@@ -608,9 +608,9 @@ Force the logic chain in English before numbers.
 {{< img betelgeuse-size width="80%" >}}
 
 Order-of-magnitude:
-\[
+$$
 R \sim 10^3 R_\odot \quad (\text{hundreds to ~thousand solar radii})
-\]
+$$
 
 ::: {.notes}
 Pause. Let them react. This is the emotional payoff.
@@ -623,16 +623,16 @@ Pause. Let them react. This is the emotional payoff.
 Work in pairs. Write **one equation + one sentence**.
 
 A star has:
-- \(L = L_\odot\)
-- \(T = 2T_\odot\)
+- $L = L_\odot$
+- $T = 2T_\odot$
 
 Tasks:
-1) Find \(R/R_\odot\).
+1) Find $R/R_\odot$.
 2) Predict: bluer or redder than the Sun?
 3) Place it relative to the Sun on the HR diagram (left/right, up/down).
 
 ::: {.callout-tip}
-At fixed \(L\): \(R \propto T^{-2}\).
+At fixed $L$: $R \propto T^{-2}$.
 :::
 
 ::: {.notes}
@@ -645,14 +645,14 @@ Start timer. Cold-call for #1 and #3.
 
 At fixed luminosity:
 
-\[
+$$
 R \propto T^{-2}
 \Rightarrow
 \frac{R}{R_\odot} = \left(\frac{T}{T_\odot}\right)^{-2}
 = (2)^{-2} = \frac{1}{4}
-\]
+$$
 
-So the star is **hotter** (bluer) and **smaller** but with **same \(L\)**.
+So the star is **hotter** (bluer) and **smaller** but with **same $L$**.
 
 ::: {.notes}
 Reinforce: same luminosity ≠ same size.
@@ -664,10 +664,10 @@ Reinforce: same luminosity ≠ same size.
 
 {{< img week04-hr-diagram-eso width="68%" >}}
 
-Interpretation using \(L \propto R^2T^4\):
+Interpretation using $L \propto R^2T^4$:
 
-- Cool + luminous → **large \(R\)** (giants/supergiants, upper right)
-- Hot + dim → **small \(R\)** (white dwarfs, lower left)
+- Cool + luminous → **large $R$** (giants/supergiants, upper right)
+- Hot + dim → **small $R$** (white dwarfs, lower left)
 
 ::: {.callout-tip}
 Hotter is to the **left** (historical convention). Yes, it’s backwards.
@@ -681,7 +681,7 @@ Say the line: ‘HR diagram is a radius map in disguise.’
 
 ## Synthesis Quiz: What Determines Apparent Brightness? {.quiz-question}
 
-To decide whether Betelgeuse placed at \(10\,\mathrm{pc}\) would appear brighter or dimmer than Sirius, which quantities must you compare directly?
+To decide whether Betelgeuse placed at $10\,\mathrm{pc}$ would appear brighter or dimmer than Sirius, which quantities must you compare directly?
 
 - surface flux and temperature
 - [luminosity and distance]{.correct}
@@ -689,7 +689,7 @@ To decide whether Betelgeuse placed at \(10\,\mathrm{pc}\) would appear brighter
 - color index and surface flux
 
 ::: {.notes}
-Apparent brightness comparisons need \(L\) and \(d\).
+Apparent brightness comparisons need $L$ and $d$.
 :::
 
 ---
@@ -713,14 +713,14 @@ Collect or have them self-check.
 ::: {.column width="52%"}
 The three intrinsic stellar properties are:
 
-- Luminosity \(L\): total power output
-- Effective temperature \(T_{\text{eff}}\): surface temperature
-- Radius \(R\): physical size
+- Luminosity $L$: total power output
+- Effective temperature $T_{\text{eff}}$: surface temperature
+- Radius $R$: physical size
 
 These form a closed physical relationship:
-\[
+$$
 L = 4\pi R^2 \sigma T^4
-\]
+$$
 
 If you know any two, physics constrains the third.
 :::
@@ -728,22 +728,22 @@ If you know any two, physics constrains the third.
 ::: {.column width="48%"}
 ::: {.callout-important}
 Astronomy is an inference machine:
-\[
+$$
 \text{observables} \rightarrow \text{model} \rightarrow \text{physical reality}
-\]
+$$
 :::
 
-\[
+$$
 T \rightarrow 2T \quad \Rightarrow \quad L \rightarrow 16L
-\]
-\[
+$$
+$$
 R \rightarrow 2R \quad \Rightarrow \quad L \rightarrow 4L
-\]
+$$
 :::
 ::::
 
 ::: {.notes}
-Reinforce that \(T^4\) is the dominant lever: temperature changes drive luminosity much more steeply than radius changes.
+Reinforce that $T^4$ is the dominant lever: temperature changes drive luminosity much more steeply than radius changes.
 :::
 
 ---
@@ -753,27 +753,27 @@ Reinforce that \(T^4\) is the dominant lever: temperature changes drive luminosi
 :::: {.columns}
 ::: {.column width="50%"}
 **Received flux** (observer-dependent):
-\[
+$$
 F = \frac{L}{4\pi d^2}
-\]
-Depends on distance \(d\).
+$$
+Depends on distance $d$.
 
 This tells us how bright a star looks from Earth.
 :::
 
 ::: {.column width="50%"}
 **Surface flux** (intrinsic):
-\[
+$$
 F_\star = \frac{L}{4\pi R^2} = \sigma T^4
-\]
+$$
 Depends on stellar properties, not observer location.
 
-This tells us how intensely each cm\(^2\) of stellar surface radiates.
+This tells us how intensely each cm$^2$ of stellar surface radiates.
 :::
 ::::
 
 ::: {.callout-warning}
-Key distinction: \(F\) changes when **you** move; \(F_\star\) changes only if the **star** changes.
+Key distinction: $F$ changes when **you** move; $F_\star$ changes only if the **star** changes.
 :::
 
 ::: {.notes}
@@ -784,26 +784,26 @@ Say explicitly: received flux is a geometric dilution effect, while surface flux
 
 ## Summary Takeaways: The Inference Chain
 
-\[
+$$
 F + d \rightarrow L,\quad
 \lambda_{\rm peak} \rightarrow T,\quad
 (L,T) \rightarrow R
-\]
+$$
 
 Use Wien’s law for temperature:
-\[
+$$
 \lambda_{\rm peak} \propto \frac{1}{T}
-\]
+$$
 
 Then solve Stefan-Boltzmann for radius:
-\[
+$$
 R=\left(\frac{L}{4\pi \sigma T^4}\right)^{1/2}
-\]
+$$
 
 Case-study conclusion (Rigel vs Betelgeuse):
 
 - Similar luminosity can coexist with very different radii.
-- Cooler stars must have much larger surface area to match high \(L\).
+- Cooler stars must have much larger surface area to match high $L$.
 - This logic is what maps stars onto the H-R diagram as a radius structure.
 
 ::: {.notes}
@@ -817,7 +817,7 @@ Close by restating the thesis: stars are not points of light, they are constrain
 Next: **spectral lines** and **classification** refine temperature and reveal composition.
 
 Today you built the core chain:
-\(F + d \rightarrow L\), \(\lambda_{\rm peak} \rightarrow T\), \((L,T)\rightarrow R\).
+$F + d \rightarrow L$, $\lambda_{\rm peak} \rightarrow T$, $(L,T)\rightarrow R$.
 
 ::: {.notes}
 End with continuity + confidence.
@@ -848,37 +848,37 @@ This is here so students can study the logic, not because they need to memorize 
 
 Start from Wien’s law:
 
-\[
+$$
 \lambda_{\rm peak} = \frac{b}{T}
-\]
+$$
 
 Write it for two stars:
 
-\[
+$$
 \lambda_1 = \frac{b}{T_1}, \quad
 \lambda_2 = \frac{b}{T_2}
-\]
+$$
 
 Take the ratio:
 
-\[
+$$
 \frac{\lambda_1}{\lambda_2}
 =
 \frac{(b/T_1)}{(b/T_2)}
 =
 \frac{T_2}{T_1}
-\]
+$$
 
 Rearrange:
 
-\[
+$$
 \frac{T_1}{T_2}
 =
 \frac{\lambda_2}{\lambda_1}
-\]
+$$
 
 ::: {.callout-important}
-The constant \(b\) cancels automatically.
+The constant $b$ cancels automatically.
 That is why the ratio method is fast and safe.
 :::
 
@@ -892,20 +892,20 @@ If they forget the numerical constant, they can still solve ratio questions corr
 
 Planck’s function (per wavelength form):
 
-\[
+$$
 B_\lambda(T)
 =
 \frac{2hc^2}{\lambda^5}
 \frac{1}{e^{hc/(\lambda kT)} - 1}
-\]
+$$
 
 Wien’s law comes from **finding where this function peaks**.
 
 Mathematically:
 
-\[
+$$
 \frac{dB_\lambda}{d\lambda} = 0
-\]
+$$
 
 This is an optimization problem.
 
@@ -915,27 +915,27 @@ This is an optimization problem.
 
 Let:
 
-\[
+$$
 x = \frac{hc}{\lambda kT}
-\]
+$$
 
 Then:
 
-\[
+$$
 \lambda = \frac{hc}{xkT}
-\]
+$$
 
-We rewrite Planck’s function in terms of \(x\).
+We rewrite Planck’s function in terms of $x$.
 
 ---
 
-## Step 2: Express the Peak Condition in Terms of \(x\)
+## Step 2: Express the Peak Condition in Terms of $x$
 
 After rewriting and differentiating (details skipped here for space), the peak condition becomes:
 
-\[
+$$
 5(1 - e^{-x}) = x
-\]
+$$
 
 This is a transcendental equation.
 
@@ -947,43 +947,43 @@ It cannot be solved analytically.
 
 The equation:
 
-\[
+$$
 5(1 - e^{-x}) = x
-\]
+$$
 
 has solution:
 
-\[
+$$
 x \approx 4.965
-\]
+$$
 
 Recall:
 
-\[
+$$
 x = \frac{hc}{\lambda_{\rm peak} kT}
-\]
+$$
 
 So:
 
-\[
+$$
 \lambda_{\rm peak} T
 =
 \frac{hc}{kx}
-\]
+$$
 
 Plug in constants:
 
-\[
+$$
 \lambda_{\rm peak} T
 =
 2.898 \times 10^{-3}\ \mathrm{m\,K}
-\]
+$$
 
 or
 
-\[
+$$
 2.898 \times 10^6\ \mathrm{nm\,K}
-\]
+$$
 
 That constant is **Wien’s displacement constant**.
 
@@ -992,12 +992,12 @@ That constant is **Wien’s displacement constant**.
 ## What This Derivation Really Means
 
 - The peak of the Planck curve is determined by a balance between two effects.
-- The \(\lambda^{-5}\) factor rises sharply at short wavelength.
+- The $\lambda^{-5}$ factor rises sharply at short wavelength.
 - The exponential suppression term kills short-wavelength emission.
 
 - The maximum occurs where those two competing effects balance.
 
-- The number \(4.965\) encodes that balance.
+- The number $4.965$ encodes that balance.
 
 ::: {.callout-important}
 Wien’s law is not empirical magic.
@@ -1012,17 +1012,17 @@ This connects blackbody shape to quantization at a deeper level.
 
 ## Long-Wavelength Limit (Rayleigh–Jeans)
 
-When \(x = hc/(\lambda kT) \ll 1\):
+When $x = hc/(\lambda kT) \ll 1$:
 
-\[
+$$
 e^x \approx 1 + x
-\]
+$$
 
 Planck reduces to:
 
-\[
+$$
 B_\lambda \propto \frac{T}{\lambda^4}
-\]
+$$
 
 This matches classical physics.
 
@@ -1030,17 +1030,17 @@ This matches classical physics.
 
 ## Short-Wavelength Limit (Exponential Suppression)
 
-When \(x \gg 1\):
+When $x \gg 1$:
 
-\[
+$$
 e^x - 1 \approx e^x
-\]
+$$
 
 Planck becomes:
 
-\[
+$$
 B_\lambda \propto \lambda^{-5} e^{-hc/(\lambda kT)}
-\]
+$$
 
 The exponential term suppresses UV emission.
 
@@ -1061,5 +1061,5 @@ Without Planck’s exponential cutoff:
 Quantum mechanics makes stellar astrophysics possible.
 
 ::: {.notes}
-Close the loop: QM \(\rightarrow\) finite spectrum \(\rightarrow\) usable temperature \(\rightarrow\) usable radius.
+Close the loop: QM $\rightarrow$ finite spectrum $\rightarrow$ usable temperature $\rightarrow$ usable radius.
 :::
