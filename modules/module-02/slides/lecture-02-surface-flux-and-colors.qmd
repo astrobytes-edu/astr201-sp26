@@ -1,0 +1,604 @@
+---
+title: "Lecture 2: Surface Flux and Colors"
+subtitle: "From color to temperature to radius"
+author: "Dr. Anna Rosen"
+date: "2026-02-12"
+description: "Color-temperature inference, Stefan-Boltzmann scaling, blackbody demo, ultraviolet catastrophe, and HR diagram radius intuition."
+draft: false
+format:
+  revealjs:
+    theme: [default, ../../../assets/theme/slides/theme.scss]
+    smaller: true
+    slide-number: true
+    transition: fade
+    transition-speed: fast
+    background-transition: fade
+    center: false
+    footer: "ASTR 201 • Module 2, Lecture 2"
+    chalkboard: true
+    code-line-numbers: true
+    fig-align: center
+    html-math-method: mathjax
+    pointer:
+      color: "#dc2626"
+      pointerSize: 18
+    spotlight:
+      size: 80
+      fadeInAndOut: 150
+      toggleSpotlightOnMouseDown: true
+      initialPresentationMode: false
+    quiz:
+      shuffleOptions: true
+      defaultCorrect: "✓ Nice. Your scaling logic is right."
+      defaultIncorrect: "✗ Re-check which quantity is fixed."
+revealjs-plugins:
+  - pointer
+  - spotlight
+  - attribution
+  - quiz
+filters:
+  - roughnotation
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+## Learning Objectives
+
+By the end of this lecture, you will be able to:
+
+::: {.incremental}
+- Distinguish received flux $F$ from surface flux $F_*$
+- Use Stefan-Boltzmann scaling to connect $L$, $R$, and $T$
+- Use Wien's law to infer temperature from peak wavelength
+:::
+
+::: {.notes}
+0–2 min. Keep this brisk. Frame today's lecture as the first time the full inference chain feels tangible.
+:::
+
+---
+
+## Learning Objectives (continued)
+
+::: {.incremental}
+- Explain why cool giants can still be extremely luminous
+- Describe why the ultraviolet catastrophe forced quantum physics
+- Read the HR diagram as a hidden radius map
+:::
+
+::: {.notes}
+2–3 min. This keeps the title slide legible and avoids objective-overload on one frame.
+:::
+
+---
+
+## Surface Flux, Color, and Stellar Size
+
+::: {.r-fit-text}
+Astronomy is an inference machine.
+:::
+
+From two observables (brightness and color), we infer three stellar properties ($L$, $T$, $R$).
+
+::: {.notes}
+2–3 min. Set tone: this is not a formula parade; it is a logic chain.
+:::
+
+---
+
+## Orion Puzzle: Comparable Luminosity, Wildly Different Size
+
+:::: {.columns}
+::: {.column width="52%"}
+Rigel: blue, hotter, more compact.
+
+Betelgeuse: red, cooler, enormous.
+
+How can both be very luminous?
+
+::: {.callout-warning}
+Same luminosity does **not** imply same radius.
+:::
+:::
+
+::: {.column width="48%"}
+{{< img betelgeuse-size width="100%" >}}
+:::
+::::
+
+<!-- PLACEHOLDER FIGURE (Orion side-by-side):
+Need a two-panel teaching visual for this slide.
+Panel A: Orion image with Rigel and Betelgeuse labeled.
+Panel B: compact comparison card (approx T, spectral class, luminosity order of magnitude, radius order of magnitude).
+Purpose: create cognitive dissonance before introducing equations.
+-->
+
+::: {.notes}
+3–5 min. No equations yet. Ask for gut-level explanations and do not correct immediately.
+:::
+
+---
+
+## Commit to a Prediction {.quiz-question}
+
+If two stars have the same luminosity and one is cooler, that cooler star is most likely:
+
+- smaller
+- [larger]{.correct}
+- at the same radius
+- impossible to determine from physics
+
+::: {.notes}
+5–6 min. Poll quickly. Tell them we will prove this rigorously in ~20 minutes.
+:::
+
+---
+
+## Two Fluxes — Do Not Mix Them Up
+
+:::: {.columns}
+::: {.column width="50%"}
+$$
+F = \frac{L}{4\pi d^2}
+$$
+
+`F`: received flux at distance $d$.
+:::
+
+::: {.column width="50%"}
+$$
+F_* = \frac{L}{4\pi R^2}
+$$
+
+`F_*`: emitted flux at stellar surface radius $R$.
+:::
+::::
+
+::: {.callout-tip}
+Ask two different questions: "How bright here?" ($F$) and "How intense at the surface?" ($F_*$).
+:::
+
+::: {.notes}
+6–8 min. Stress the two questions: "How bright does it look here?" vs "How hard is the surface radiating?"
+:::
+
+---
+
+## Think–Pair–Share: Scaling Intuition
+
+If distance doubles (fixed $L$), what happens to $F$?
+
+If radius doubles (fixed $L$), what happens to $F_*$?
+
+What is physically different about those two changes?
+
+::: {.notes}
+8–10 min. 60 seconds think, 60 seconds pair, then collect two responses.
+Expected: both quarter, but one is distance dilution and one is surface-area dilution.
+:::
+
+---
+
+## Geometric Bridge
+
+$$
+\frac{F}{F_*} = \frac{R^2}{d^2}
+$$
+
+Since $R \ll d$, only a tiny fraction of surface output reaches us.
+
+{{< img inverse-square-law width="76%" >}}
+
+::: {.notes}
+10–12 min. Point to geometry physically with laser pointer.
+:::
+
+---
+
+## The Engine: Stefan–Boltzmann Law
+
+{{< include ../../../_includes/equations/stefan-boltzmann.qmd >}}
+{{< eqrefcard stefan-boltzmann >}}
+
+::: {.notes}
+12–14 min. Read equation as a sentence before any algebra: total power comes from surface area times thermal intensity.
+:::
+
+---
+
+## What the Law Is Saying
+
+:::: {.columns}
+::: {.column width="52%"}
+Radius enters as $R^2$.
+
+Temperature enters as $T^4$.
+
+Temperature is the steep lever.
+:::
+
+::: {.column width="48%"}
+::: {.callout-important}
+At fixed radius:
+
+$$
+T \rightarrow 2T \quad \Rightarrow \quad L \rightarrow 16L
+$$
+:::
+:::
+::::
+
+$$
+[R^2\sigma T^4] = \text{erg s}^{-1}
+$$
+
+::: {.notes}
+14–16 min. Units sanity check out loud; model quantitative discipline.
+:::
+
+---
+
+## Mini-Prediction {.quiz-question}
+
+A star twice as hot as another, with the same radius, is how much more luminous?
+
+- $2\times$
+- $4\times$
+- [$16\times$]{.correct}
+- $32\times$
+
+::: {.notes}
+16–17 min. Fast confidence-builder.
+:::
+
+---
+
+## Same Luminosity, Different Temperature
+
+If luminosity is fixed:
+
+$$
+R^2T^4=\text{constant}
+\Rightarrow
+R \propto T^{-2}
+$$
+
+Hotter star $\rightarrow$ smaller radius (at fixed $L$).
+
+::: {.notes}
+17–19 min. This is the conceptual pivot of the lecture. Pause after reveal.
+:::
+
+---
+
+## Predict Before We Drag the Slider
+
+When temperature increases in a blackbody spectrum, predict:
+
+1. Peak wavelength shift direction
+2. Total area under curve
+3. Blue-to-red balance in visible band
+
+::: {.notes}
+19–20 min. Get verbal predictions before opening demo.
+:::
+
+---
+
+## Let's See It Live (Blackbody Demo)
+
+<iframe src="https://astrobytes-edu.github.io/cosmic-playground/exhibits/blackbody-radiation/" width="100%" height="450" style="border:1px solid #e5e7eb; border-radius:8px;"></iframe>
+
+[Open full-screen demo](https://astrobytes-edu.github.io/cosmic-playground/exhibits/blackbody-radiation/)
+
+::: {.notes}
+20–26 min. Run guided sequence:
+1) increase T, 2) track peak shift, 3) comment on area growth, 4) zoom short wavelengths for UV bridge.
+:::
+
+---
+
+## Static Anchor: Planck Curves
+
+{{< fig blackbody-stellar-spectra >}}
+
+::: {.notes}
+26–27 min. Transition from interaction back to formal interpretation.
+:::
+
+---
+
+## UV Catastrophe (Classical Failure)
+
+At long wavelength, classical physics gives:
+
+$$
+B_\lambda \propto \frac{T}{\lambda^4}
+$$
+
+As $\lambda \to 0$, predicted intensity diverges.
+
+That implies infinite total energy emission. Nature does not do this.
+
+::: {.notes}
+27–29 min. Keep story dramatic but precise: model failure, not observational confusion.
+:::
+
+---
+
+## Planck's Radical Move (1900)
+
+Energy exchange is quantized:
+
+{{< include ../../../_includes/equations/photon-energy.qmd >}}
+{{< eqrefcard photon-energy >}}
+
+High-frequency photons are expensive.
+
+Short-wavelength emission is exponentially suppressed.
+
+::: {.notes}
+29–31 min. Phrase: "That UV cutoff in the demo is quantum mechanics showing up in data."
+:::
+
+---
+
+## The Fix in Full Spectrum Form
+
+{{< include ../../../_includes/equations/planck-function.qmd >}}
+{{< eqrefcard planck-function >}}
+
+Long wavelength $\rightarrow$ classical limit.
+
+Short wavelength $\rightarrow$ exponential cutoff.
+
+Finite luminosity is restored.
+
+::: {.notes}
+31–33 min. No derivation. Focus on physical meaning and why this legitimizes Wien/Stefan inference.
+:::
+
+---
+
+## Wien's Law: Color $\rightarrow$ Temperature
+
+:::: {.columns}
+::: {.column width="56%"}
+{{< include ../../../_includes/equations/wien-displacement.qmd >}}
+{{< eqrefcard wien-displacement >}}
+
+Hotter stars peak at shorter wavelengths.
+
+Ratio form:
+
+$$
+\frac{T_1}{T_2}=\frac{\lambda_{\text{peak},2}}{\lambda_{\text{peak},1}}
+$$
+:::
+
+::: {.column width="44%"}
+{{< img blackbody-stellar-spectra width="100%" >}}
+:::
+::::
+
+::: {.notes}
+33–36 min. Tell students this is the fastest exam-safe proportional form.
+:::
+
+---
+
+## Ratio Example (No Calculator Heroics)
+
+If Sun peaks near $500\ \mathrm{nm}$ and a star peaks at $250\ \mathrm{nm}$:
+
+$$
+\frac{T_\star}{T_\odot}=\frac{500}{250}=2
+$$
+
+So the star is about twice as hot as the Sun.
+
+::: {.notes}
+36–38 min. Keep it clean and quick.
+:::
+
+---
+
+## Quick Check: Direction {.quiz-question}
+
+If $\lambda_{\text{peak}}$ shifts to a longer wavelength, the star is:
+
+- hotter
+- [cooler]{.correct}
+- unchanged in temperature
+- impossible to classify
+
+::: {.notes}
+38–39 min. Fast directional check so the class does not leave with sign confusion.
+:::
+
+---
+
+## Demo Checkpoint: Find Solar Temperature
+
+In the demo, tune to a peak near $500\ \mathrm{nm}$.
+
+Expected $T \approx 5800\ \mathrm{K}$.
+
+This is our in-class calibration moment.
+
+::: {.notes}
+38–40 min. Short return to demo if time.
+:::
+
+---
+
+## The Astronomer's Decoder Ring (Today)
+
+1. $F + d \rightarrow L$
+2. color $\rightarrow T$
+3. $(L,T)$ with $L = 4\pi R^2\sigma T^4 \rightarrow R$
+
+{{< img decoder-ring width="74%" >}}
+
+<!-- PLACEHOLDER FIGURE (module-02 decoder overlay):
+Create an annotated version of the existing decoder-ring figure with only three highlighted steps for this lecture:
+1) $F + d \rightarrow L$, 2) color/peak $\rightarrow T$, 3) $(L + T) \rightarrow R$.
+Add one red misconception badge: "apparent bright ≠ large radius."
+Design target: high-contrast labels readable from back row in 1280x720 projection.
+-->
+
+::: {.notes}
+40–43 min. This slide is the lecture thesis.
+:::
+
+---
+
+## Betelgeuse Qualitative Inference
+
+:::: {.columns}
+::: {.column width="56%"}
+Cooler than Sun.
+
+Enormously luminous.
+
+So surface flux is lower, but total output is huge.
+
+Only one way to reconcile both: very large radius.
+:::
+
+::: {.column width="44%"}
+::: {.callout-important}
+Inference chain:
+
+$$
+\text{cool }T \;+\; \text{high }L \;\rightarrow\; \text{large }R
+$$
+:::
+:::
+::::
+
+::: {.notes}
+43–45 min. Force logic in words before any arithmetic.
+:::
+
+---
+
+## Betelgeuse Radius Scale
+
+{{< img betelgeuse-size width="80%" >}}
+
+Order-of-magnitude result: hundreds of solar radii (about $8.7\times10^2\,R_\odot$).
+
+::: {.notes}
+45–47 min. Let scale land visually.
+:::
+
+---
+
+## Mini-Activity 2 (Groups, 8 min)
+
+A star has:
+
+- same luminosity as the Sun
+- twice the Sun's temperature
+
+Find $R/R_\odot$.
+
+Then place it qualitatively on the HR diagram.
+
+::: {.notes}
+47–55 min. Target reasoning:
+$R \propto T^{-2}$ at fixed $L$, so $R=(1/2)^2=1/4$.
+Hotter and dimmer-at-same-size logic places it below/left of Sun-like giant region.
+:::
+
+---
+
+## Mini-Activity 2 Debrief
+
+$$
+R \propto T^{-2}
+\Rightarrow
+R = \left(\frac{1}{2}\right)^2 R_\odot = \frac{1}{4}R_\odot
+$$
+
+Smaller, hotter star for same luminosity.
+
+::: {.notes}
+55–57 min. Emphasize "same luminosity does not imply same size."
+:::
+
+---
+
+## HR Diagram Preview: A Radius Map in Disguise
+
+{{< img week04-hr-diagram-eso width="84%" >}}
+
+Cool and luminous $\rightarrow$ giant radii.
+
+Hot and dim $\rightarrow$ compact radii (white dwarf region).
+
+<!-- PLACEHOLDER FIGURE (constant-radius overlay for HR diagram):
+Produce an instructional overlay based on week04-hr-diagram-eso with dashed constant-radius tracks
+for approximately $0.01R_\odot$, $0.1R_\odot$, $1R_\odot$, $10R_\odot$, and $100R_\odot$.
+Include axis reminder text: "hotter to the left."
+Goal: make the "radius map in disguise" claim visually explicit in one glance.
+-->
+
+::: {.notes}
+57–61 min. Say the line explicitly: "HR diagram is a radius map in disguise."
+:::
+
+---
+
+## Quick Video Bridge: Omega Centauri
+
+{{< media hr-diagram-omega-centauri width="100%" height="430px" >}}
+
+::: {.notes}
+61–64 min. Optional depending on pace. Connect observed pattern-building to coming lectures.
+:::
+
+---
+
+## Optional Advanced Prompt (If Time)
+
+If Betelgeuse were moved to 10 pc, would it appear brighter or dimmer than Sirius?
+
+State which quantities you must separate:
+
+- luminosity
+- distance
+- received flux
+- surface flux
+
+::: {.notes}
+64–69 min. Keep this as synthesis, not grind.
+:::
+
+---
+
+## Exit Ticket
+
+Write two sentences:
+
+1. "Color tells us ______ because ______."
+2. "At fixed luminosity, hotter means ______ radius because ______."
+
+::: {.notes}
+69–72 min. Collect fast for formative check.
+:::
+
+---
+
+## Next Time
+
+Spectral lines and stellar classification deepen the temperature/composition story.
+
+Today gave you the inference chain. Next time we sharpen the diagnostic tools.
+
+::: {.notes}
+72–75 min. End cleanly with continuity.
+:::
