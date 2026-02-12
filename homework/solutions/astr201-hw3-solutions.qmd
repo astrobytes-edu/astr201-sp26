@@ -1,0 +1,291 @@
+---
+title: "Homework 3 Solutions"
+subtitle: "Parallax + Surface Flux & Radiation Inference"
+author: "Dr. Anna Rosen"
+date: "2026-02-20"
+description: "Solutions to Homework 3."
+draft: false
+course: ASTR 201
+module: "Module 2 — Distance, Luminosity, Temperature, and Radius"
+---
+
+::: {.callout-note}
+**Student note:** These are model solutions written to show setup, reasoning, units, and checks. Your own work can be shorter if your logic is clear and complete.
+:::
+
+---
+
+## Part A — Distance, Parallax, and Luminosity
+
+## Problem 1 — Parallax Is Not Angular Size
+
+<!-- Problem: Conceptual / Connection / O→M→I / Tools: Model-Inversion, Uncertainty/Assumptions / ⭐⭐ -->
+
+**Key idea:** Parallax is a position shift from changing viewpoint; angular size is apparent object diameter on the sky.
+
+**Answer:**
+
+- (a) The statement is incorrect because large parallax means the star is nearby, not physically large in angular diameter.
+- (b) Parallax angle: the apparent shift in a star's sky position between two viewpoints (e.g., opposite sides of Earth's orbit). Angular size: the apparent diameter of an object's disk on the sky.
+- (c) Parallax reverses direction over six months as Earth moves around the Sun; angular size does not show that periodic sign flip.
+
+---
+
+## Problem 2 — Parallax to Distance
+
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Unit-Conversion, Model-Inversion / ⭐⭐ -->
+
+Use
+$$d(\text{pc}) = \frac{1}{p('')}.$$
+
+Given:
+$$1\ \text{pc} = 3.086\times10^{18}\ \text{cm}.$$
+
+**(a) Star A: $p=0.50''$**
+$$d_A = \frac{1}{0.50} = 2.0\ \text{pc}.$$
+$$d_A = 2.0\times 3.086\times10^{18}\ \text{cm} = 6.17\times10^{18}\ \text{cm}.$$
+
+**(b) Star B: $p=0.020''$**
+$$d_B = \frac{1}{0.020} = 50\ \text{pc}.$$
+$$d_B = 50\times3.086\times10^{18}\ \text{cm} = 1.54\times10^{20}\ \text{cm}.$$
+
+**(c) Farther by factor**
+$$\frac{d_B}{d_A} = \frac{50}{2.0} = 25.$$
+
+\[
+\boxed{d_A = 2.0\ \text{pc} = 6.17\times10^{18}\ \text{cm}},\quad
+\boxed{d_B = 50\ \text{pc} = 1.54\times10^{20}\ \text{cm}},\quad
+\boxed{\text{Star B is }25\times\text{ farther.}}
+\]
+
+---
+
+## Problem 3 — Inverse-Square Flux Scaling
+
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Scaling/Ratio, Model-Inversion / ⭐⭐ -->
+
+With equal luminosity, flux scales as:
+$$F \propto d^{-2}.$$
+
+So
+$$\frac{F_X}{F_Y}=\left(\frac{d_Y}{d_X}\right)^2
+=\left(\frac{50}{20}\right)^2
+=2.5^2
+=6.25.$$
+
+\[
+\boxed{\frac{F_X}{F_Y}=6.25}
+\]
+
+- (b) Star X appears brighter.
+- (c) Equal luminosity does not imply equal observed flux because flux depends on distance through inverse-square spreading.
+
+---
+
+## Problem 4 — Luminosity from Flux + Distance
+
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Unit-Conversion, Model-Inversion, Dimensional / ⭐⭐ -->
+
+Given:
+$$p=0.10'',\qquad \frac{F_\star}{F_\odot}=2.0\times10^{-11},\qquad
+\frac{L_\star}{L_\odot}=\frac{F_\star}{F_\odot}\left(\frac{d_\star}{1\ \text{AU}}\right)^2.$$
+
+Distance:
+$$d_\star(\text{pc})=\frac{1}{0.10}=10\ \text{pc}.$$
+$$d_\star = 10\times206{,}265\ \text{AU}=2.06265\times10^6\ \text{AU}.$$
+
+Luminosity ratio:
+$$\frac{L_\star}{L_\odot}
+=\left(2.0\times10^{-11}\right)\left(2.06265\times10^6\right)^2
+=\left(2.0\times10^{-11}\right)\left(4.2545\times10^{12}\right)
+=85.1.$$
+
+\[
+\boxed{d_\star=10\ \text{pc}=2.06265\times10^6\ \text{AU}},\qquad
+\boxed{\frac{L_\star}{L_\odot}\approx85}
+\]
+
+The star is about \(85\times\) more luminous than the Sun.
+
+---
+
+## Problem 5 — Same Flux, Different Parallax
+
+<!-- Problem: Synthesis / Connection / O→M→I / Tools: Scaling/Ratio, Model-Inversion / ⭐⭐ -->
+
+Given same observed flux:
+$$F_A = F_B.$$
+
+Distances from parallax:
+$$\frac{d_B}{d_A}=\frac{p_A}{p_B}=\frac{0.100}{0.025}=4.$$
+
+At fixed flux, luminosity scales as:
+$$L\propto d^2 \quad\Rightarrow\quad
+\frac{L_B}{L_A}=\left(\frac{d_B}{d_A}\right)^2=4^2=16.$$
+
+\[
+\boxed{\frac{d_B}{d_A}=4},\qquad
+\boxed{\frac{L_B}{L_A}=16}
+\]
+
+Equal observed flux means only that \(L/d^2\) is equal. A farther star must be intrinsically more luminous to produce the same flux at Earth.
+
+---
+
+## Part B — Radiation, Temperature, and Radius
+
+## Problem 6 — Same Luminosity, Different Color
+
+<!-- Problem: Conceptual / Connection / O→M→I / Tools: Model-Inversion, Limiting-Cases / ⭐⭐ -->
+
+At fixed luminosity:
+$$L \propto R^2T^4 \quad\Rightarrow\quad R\propto T^{-2}.$$
+
+- (a) Blue star is hotter.
+- (b) Hotter star must have smaller radius at the same luminosity.
+- (c) Since \(R\propto T^{-2}\), increasing temperature requires decreasing radius to keep \(L\) constant.
+
+---
+
+## Problem 7 — Temperature from Wien's Law
+
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Unit-Conversion, Scaling/Ratio / ⭐⭐ -->
+
+Given:
+$$\lambda_{\text{peak}}=725\ \text{nm},\qquad b=2.898\times10^6\ \text{nm·K}.$$
+
+Temperature:
+$$T=\frac{b}{\lambda_{\text{peak}}}
+=\frac{2.898\times10^6}{725}
+=3.997\times10^3\ \text{K}\approx4.00\times10^3\ \text{K}.$$
+
+Compare to Sun:
+$$\frac{T}{T_\odot}=\frac{3997}{5800}=0.689\approx0.69.$$
+
+\[
+\boxed{T\approx4.0\times10^3\ \text{K}},\qquad
+\boxed{T/T_\odot\approx0.69}
+\]
+
+So the star is cooler than the Sun.
+
+---
+
+## Problem 8 — Planck Limits and Physical Meaning
+
+<!-- Problem: Synthesis / Connection / O→M→I / Tools: Limiting-Cases, Model-Inversion, Uncertainty/Assumptions / ⭐⭐⭐ -->
+
+Given:
+$$B_\lambda(T)=\frac{2hc^2}{\lambda^5}\frac{1}{e^{hc/\lambda k_B T}-1},\qquad
+x\equiv\frac{hc}{\lambda k_B T}.$$
+
+**(a) Long-wavelength limit (\(x\ll1\))**
+
+Use \(e^x\approx1+x\), so \(e^x-1\approx x\):
+$$B_\lambda \approx \frac{2hc^2}{\lambda^5}\frac{1}{x}
+=\frac{2hc^2}{\lambda^5}\frac{\lambda k_B T}{hc}
+=\frac{2ck_B T}{\lambda^4}.$$
+
+Thus
+$$B_\lambda \propto T\lambda^{-4}\quad\text{(Rayleigh-Jeans limit).}$$
+
+**(b) Short-wavelength limit (\(x\gg1\))**
+
+Use \(e^x-1\approx e^x\):
+$$B_\lambda \approx \frac{2hc^2}{\lambda^5}e^{-x}
+=\frac{2hc^2}{\lambda^5}\exp\!\left(-\frac{hc}{\lambda k_B T}\right).$$
+
+Emission is suppressed by the exponential factor.
+
+**(c) UV catastrophe resolution**
+
+Classical Rayleigh-Jeans behavior diverges toward short \(\lambda\), but Planck's exponential cutoff suppresses high-frequency emission, preventing the divergence.
+
+**(d) “Photons are expensive”**
+
+At high frequency, photon energy \(h\nu\) is much larger than available thermal energy scale \(k_B T\). Occupying those photon states is unlikely, so short-wavelength emission is exponentially rare.
+
+---
+
+## Problem 9 — Radius from Luminosity and Temperature
+
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Scaling/Ratio, Model-Inversion / ⭐⭐ -->
+
+Use ratio form:
+$$\frac{L}{L_\odot}=\left(\frac{R}{R_\odot}\right)^2\left(\frac{T}{T_\odot}\right)^4.$$
+
+Given:
+$$\frac{L}{L_\odot}=16,\qquad \frac{T}{T_\odot}=2.$$
+
+Then
+$$\left(\frac{R}{R_\odot}\right)^2
+=\frac{16}{2^4}
+=\frac{16}{16}
+=1,$$
+so
+$$\frac{R}{R_\odot}=1.$$
+
+\[
+\boxed{\left(\frac{R}{R_\odot}\right)^2=1},\qquad
+\boxed{\frac{R}{R_\odot}=1}
+\]
+
+The star has the same radius as the Sun.
+
+---
+
+## Problem 10 — Full Chain: Parallax + Flux + Color
+
+<!-- Problem: Synthesis / Connection / O→M→I / Tools: Model-Inversion, Unit-Conversion, Scaling/Ratio, Uncertainty/Assumptions / ⭐⭐⭐ -->
+
+Given:
+$$p=0.050'',\qquad \frac{F_\star}{F_\odot}=1.5\times10^{-12},\qquad
+\lambda_{\text{peak}}=500\ \text{nm}.$$
+
+**(a) Distance**
+$$d(\text{pc})=\frac{1}{p('')}=\frac{1}{0.050}=20\ \text{pc}.$$
+$$d=20\times206{,}265\ \text{AU}=4.1253\times10^6\ \text{AU}.$$
+
+**(b) Luminosity ratio**
+$$\frac{L_\star}{L_\odot}
+=\frac{F_\star}{F_\odot}\left(\frac{d_\star}{1\ \text{AU}}\right)^2
+=\left(1.5\times10^{-12}\right)\left(4.1253\times10^6\right)^2
+\approx25.5.$$
+
+**(c) Temperature**
+$$T=\frac{b}{\lambda_{\text{peak}}}
+=\frac{2.898\times10^6\ \text{nm·K}}{500\ \text{nm}}
+=5796\ \text{K}\approx5800\ \text{K}.$$
+
+So
+$$\frac{T}{T_\odot}\approx\frac{5796}{5800}\approx1.00.$$
+
+**(d) Radius ratio**
+$$\frac{R}{R_\odot}
+=\left[\frac{L/L_\odot}{(T/T_\odot)^4}\right]^{1/2}
+\approx\left[\frac{25.5}{(1.00)^4}\right]^{1/2}
+\approx5.05.$$
+
+**(e) Uncertainty propagation**
+
+Given \(p=0.050''\pm0.003''\):
+$$\frac{\delta p}{p}=\frac{0.003}{0.050}=0.06=6\%.$$
+
+For \(d=1/p\):
+$$\frac{\delta d}{d}\approx\frac{\delta p}{p}\approx6\%.$$
+
+For \(L\propto d^2\) (assuming flux uncertainty negligible):
+$$\frac{\delta L}{L}\approx2\frac{\delta d}{d}\approx12\%.$$
+
+**(f) O→M→I summary**
+
+We measured observables (parallax, flux ratio, and peak wavelength). We applied models (parallax geometry, inverse-square flux spreading, and thermal-radiation scaling). From those, we inferred intrinsic properties: distance, luminosity, temperature, and radius.
+
+\[
+\boxed{d=20\ \text{pc}=4.1253\times10^6\ \text{AU}},\quad
+\boxed{L_\star/L_\odot\approx25.5},\quad
+\boxed{T\approx5800\ \text{K}},\quad
+\boxed{R/R_\odot\approx5.05},\quad
+\boxed{\delta d/d\approx6\%,\ \delta L/L\approx12\%}
+\]
+

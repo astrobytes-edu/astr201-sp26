@@ -1,0 +1,199 @@
+---
+title: "Homework 3"
+subtitle: "Parallax + Surface Flux & Radiation Inference"
+author: "Dr. Anna Rosen"
+course: ASTR 201
+module: "Module 2 — Distance, Luminosity, Temperature, and Radius"
+lectures: "Module 2 core (Distance & Parallax; Surface Flux & Colors) with Module 1 review (Light as Information)"
+math-level: symbolic_with_interpretation
+draft: false
+estimated-time: "4–6 hours"
+due: "Tuesday, February 17, 2026 at 11:59 pm"
+grade-memo-due: "Friday, February 20, 2026 at 11:59 pm"
+submission: "Canvas; upload a single clearly scanned PDF or a legible PDF export"
+format:
+  html:
+    toc: true
+  pdf:
+    toc: false
+    geometry: margin=1in
+    fontsize: 11pt
+---
+
+{{< hwmeta >}}
+
+## Learning Objectives
+
+- Use **parallax geometry** to infer stellar distance and avoid common interpretation errors.
+- Apply the **inverse-square law** to connect observed flux, luminosity, and distance.
+- Propagate uncertainty along the chain: **parallax → distance → luminosity**.
+- Use **Wien's law** to infer effective temperature from peak wavelength/color.
+- Use **Stefan-Boltzmann scaling** to infer surface flux and stellar radius.
+- Synthesize the full **observable → model → inference** chain for a star.
+
+## Concept Throughline
+
+- Measured angular shift gives distance.
+- Distance plus measured flux gives intrinsic luminosity.
+- Color gives temperature.
+- Luminosity plus temperature gives radius.
+- Every step has assumptions; good inference means checking them explicitly.
+
+## Prerequisites
+
+- Scientific notation and proportional reasoning
+- Unit conversion (arcsec, pc, cm, nm, K)
+- Module 1 light basics (Wien + Planck ideas)
+
+## Relevant Sources (Module-Based)
+
+- [Module 2 (slides): Distance & Parallax](https://astrobytes-edu.github.io/astr201-sp26/modules/module-02/slides/lecture-01-distance-and-parallax.html)
+- [Module 2 (reading/source set): Surface Flux & Colors of Stars](https://astrobytes-edu.github.io/astr201-sp26/modules/module-02/readings/lecture-02-surface-flux-and-colors-reading.html)
+- [Module 1 review: Light as Information](https://astrobytes-edu.github.io/astr201-sp26/modules/module-01/readings/lecture-04-light-as-information.html)
+
+::: {.callout-note}
+**Before you start:** Review the [Homework Guidelines](hw-tips.qmd) for required format and tools.
+:::
+
+::: {.callout-tip}
+**HW3 note:** Tool hints are not shown. Part of the goal is deciding which model and scaling apply.
+:::
+
+::: {.callout-note}
+Use these constants unless a problem states otherwise:
+
+- $1\ \text{pc} = 206{,}265$ AU
+- $1\ \text{AU} = 1.496 \times 10^{13}$ cm
+- $1\ \text{pc} = 3.086 \times 10^{18}$ cm
+- $T_\odot = 5800$ K
+- $b = 2.898 \times 10^6$ nm·K
+:::
+
+---
+
+## Problems (10 total)
+
+### Part A — Distance, Parallax, and Luminosity
+
+<!-- Problem: Conceptual / Connection / O→M→I / Tools: Model-Inversion, Uncertainty/Assumptions / ⭐⭐ -->
+### Problem 1 — Parallax Is Not Angular Size
+
+A student says: "This nearby star has a large parallax, so it must have a large angular size."
+
+- (a) Explain why this statement is incorrect.
+- (b) Define parallax angle and angular size in one sentence each.
+- (c) Give one observational signature that distinguishes the two measurements.
+
+---
+
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Unit-Conversion, Model-Inversion / ⭐⭐ -->
+### Problem 2 — Parallax to Distance
+
+- (a) Star A has $p = 0.50''$. Find $d$ in pc and in cm.
+- (b) Star B has $p = 0.020''$. Find $d$ in pc and in cm.
+- (c) Which star is farther, and by what factor?
+
+---
+
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Scaling/Ratio, Model-Inversion / ⭐⭐ -->
+### Problem 3 — Inverse-Square Flux Scaling
+
+Two identical stars have the same luminosity. Star X is at 20 pc and Star Y is at 50 pc.
+
+- (a) Compute $F_X/F_Y$ using inverse-square scaling.
+- (b) Which star appears brighter at Earth?
+- (c) In one sentence, explain why equal luminosity does not imply equal observed flux.
+
+---
+
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Unit-Conversion, Model-Inversion, Dimensional / ⭐⭐ -->
+### Problem 4 — Luminosity from Flux + Distance
+
+A star has measured parallax $p = 0.10''$ and bolometric flux at Earth
+$F_\star = 2.0 \times 10^{-11}\,F_\odot$, where $F_\odot$ is the Sun’s bolometric flux measured at Earth.
+
+- (a) Compute distance in pc and in AU.
+- (b) Use
+  $$\frac{L_\star}{L_\odot} = \frac{F_\star}{F_\odot}\left(\frac{d_\star}{1\,\text{AU}}\right)^2$$
+  since $F_\odot$ is measured at 1 AU.
+- (c) State whether the star is more or less luminous than the Sun, and by what factor.
+
+---
+
+<!-- Problem: Synthesis / Connection / O→M→I / Tools: Scaling/Ratio, Model-Inversion / ⭐⭐ -->
+### Problem 5 — Same Flux, Different Parallax
+
+Two stars have the same measured bolometric flux at Earth. Their parallaxes are:
+
+- Star A: $p_A = 0.100''$
+- Star B: $p_B = 0.025''$
+
+- (a) Which star is farther, and by what factor?
+- (b) Infer $L_B/L_A$ using a ratio method.
+- (c) In 2–3 sentences, explain why equal observed flux does not imply equal intrinsic luminosity.
+
+---
+
+### Part B — Radiation, Temperature, and Radius
+
+<!-- Problem: Conceptual / Connection / O→M→I / Tools: Model-Inversion, Limiting-Cases / ⭐⭐ -->
+### Problem 6 — Same Luminosity, Different Color
+
+Two stars have the same luminosity. One appears blue, the other red.
+
+- (a) Which star is hotter?
+- (b) Which star has the larger radius?
+- (c) Justify your answer using Stefan-Boltzmann scaling, not just verbal intuition.
+
+---
+
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Unit-Conversion, Scaling/Ratio / ⭐⭐ -->
+### Problem 7 — Temperature from Wien's Law
+
+A star's spectrum peaks at $\lambda_{\text{peak}} = 725$ nm.
+
+- (a) Compute the star's effective temperature from the peak wavelength.
+- (b) Compare this temperature to the Sun's by computing $T/T_\odot$.
+- (c) State whether this star is hotter or cooler than the Sun.
+
+---
+
+<!-- Problem: Synthesis / Connection / O→M→I / Tools: Limiting-Cases, Model-Inversion, Uncertainty/Assumptions / ⭐⭐⭐ -->
+### Problem 8 — Planck Limits and Physical Meaning
+
+Consider the Planck function
+$$B_\lambda(T) = \frac{2hc^2}{\lambda^5}\frac{1}{e^{hc/\lambda k_B T}-1}.$$
+
+- (a) Define $x = hc/(\lambda k_B T)$. In the long-wavelength limit ($x \ll 1$), use an appropriate approximation to show the leading scaling of $B_\lambda$ with $T$ and $\lambda$. (Hint: $e^x \approx 1+x$ for $x\ll1$.)
+- (b) In the short-wavelength limit ($x \gg 1$), show the leading scaling behavior of $B_\lambda$ and identify which term suppresses emission. (Hint: $e^x-1 \approx e^x$ for $x\gg1$.)
+- (c) Explain in words why these two limits resolve the ultraviolet-catastrophe issue from classical physics.
+- (d) Connect your result to the statement: "photons are expensive when $h\nu \gg k_B T$."
+
+---
+
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Scaling/Ratio, Model-Inversion / ⭐⭐ -->
+### Problem 9 — Radius from Luminosity and Temperature
+
+A star has luminosity $L = 16\,L_\odot$ and temperature $T = 2\,T_\odot$.
+
+- (a) Solve for $(R/R_\odot)^2$.
+- (b) Solve for $R/R_\odot$.
+- (c) Interpret whether the star is physically larger or smaller than the Sun.
+
+---
+
+<!-- Problem: Synthesis / Connection / O→M→I / Tools: Model-Inversion, Unit-Conversion, Scaling/Ratio, Uncertainty/Assumptions / ⭐⭐⭐ -->
+### Problem 10 — Full Chain: Parallax + Flux + Color
+
+You observe a star with:
+
+- Parallax: $p = 0.050''$
+- Bolometric flux at Earth: $F_\star = 1.5 \times 10^{-12}\,F_\odot$
+- Peak wavelength: $\lambda_{\text{peak}} = 500$ nm
+
+- (a) Compute distance in pc and in AU.
+- (b) Infer luminosity in units of $L_\odot$ using a ratio method.
+- (c) Compute temperature from the peak wavelength.
+- (d) Compute radius in solar units using the appropriate radiation relation.
+- (e) Assume the parallax is measured as $p = 0.050'' \pm 0.003''$. Estimate the fractional uncertainty in distance, and then in luminosity (assuming flux uncertainty is negligible).
+- (f) In 2–4 sentences, summarize the full observable → model → inference chain you used.
