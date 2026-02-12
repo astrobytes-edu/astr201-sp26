@@ -550,13 +550,19 @@ This is the “no constants, no unit pain” form.
 
 ## The Astronomer’s Decoder Ring (Today)
 
-**Observable → Model → Inference**
+:::: {.columns}
+::: {.column width="56%"}
+**Observable $\rightarrow$ Model $\rightarrow$ Inference**
 
-1) Measure brightness + distance: $F + d \rightarrow L$
-2) Measure color/peak: $\lambda_{\rm peak} \rightarrow T$
+1) Measure brightness + distance: $F + d \rightarrow L$  
+2) Measure color/peak: $\lambda_{\rm peak} \rightarrow T$  
 3) Combine: $(L, T) \rightarrow R$ via Stefan–Boltzmann
+:::
 
-{{< img decoder-ring width="52%" >}}
+::: {.column width="44%"}
+{{< img decoder-ring width="95%" >}}
+:::
+::::
 
 ::: {.notes}
 This is the thesis slide. Slow down here.
@@ -605,12 +611,25 @@ Force the logic chain in English before numbers.
 
 ## Betelgeuse Scale (let this land)
 
-{{< img betelgeuse-size width="80%" >}}
+:::: {.columns}
+::: {.column width="58%"}
+{{< img betelgeuse-size width="100%" >}}
+:::
 
-Order-of-magnitude:
+::: {.column width="42%"}
+Order-of-magnitude radius:
+
 $$
-R \sim 10^3 R_\odot \quad (\text{hundreds to ~thousand solar radii})
+R \sim 10^3 R_\odot
 $$
+
+Roughly hundreds to about a thousand solar radii.
+
+::: {.callout-warning}
+Spoiler alert: Betelgeuse is an evolved massive star, a **red supergiant**.
+:::
+:::
+::::
 
 ::: {.notes}
 Pause. Let them react. This is the emotional payoff.
@@ -620,20 +639,37 @@ Pause. Let them react. This is the emotional payoff.
 
 ## Mini-Activity (8 minutes): Hotter, Same Luminosity
 
+:::: {.columns}
+::: {.column width="56%"}
 Work in pairs. Write **one equation + one sentence**.
 
 A star has:
+
 - $L = L_\odot$
+
 - $T = 2T_\odot$
 
-Tasks:
-1) Find $R/R_\odot$.
-2) Predict: bluer or redder than the Sun?
-3) Place it relative to the Sun on the HR diagram (left/right, up/down).
+Start from:
 
-::: {.callout-tip}
-At fixed $L$: $R \propto T^{-2}$.
+$$
+L \propto R^2 T^4
+$$
+
+Tasks:
+
+1. Find $R/R_\odot$.
+
+2. Predict: bluer or redder than the Sun.
+
+3. Place it relative to the Sun on the HR diagram (left/right, up/down).
 :::
+
+::: {.column width="44%"}
+{{< img week04-hr-diagram-eso width="100%" >}}
+
+Use this map for directional placement only.
+:::
+::::
 
 ::: {.notes}
 Start timer. Cold-call for #1 and #3.
@@ -662,16 +698,23 @@ Reinforce: same luminosity ≠ same size.
 
 ## HR Diagram Preview: Radius Map in Disguise
 
-{{< img week04-hr-diagram-eso width="68%" >}}
-
-Interpretation using $L \propto R^2T^4$:
-
-- Cool + luminous → **large $R$** (giants/supergiants, upper right)
-- Hot + dim → **small $R$** (white dwarfs, lower left)
-
-::: {.callout-tip}
-Hotter is to the **left** (historical convention). Yes, it’s backwards.
+:::: {.columns}
+::: {.column width="58%"}
+{{< img week04-hr-diagram-eso width="100%" >}}
 :::
+
+::: {.column width="42%"}
+Interpretation using
+$$
+L \propto R^2T^4
+$$
+
+- Cool + luminous $\rightarrow$ large $R$ (giants/supergiants)
+- Hot + dim $\rightarrow$ small $R$ (white dwarfs)
+
+Hotter is to the **left** (historical convention).
+:::
+::::
 
 ::: {.notes}
 Say the line: ‘HR diagram is a radius map in disguise.’
@@ -888,7 +931,11 @@ If they forget the numerical constant, they can still solve ratio questions corr
 
 ---
 
-## Appendix B: Where Does Wien’s Law Come From?
+## Why Calculus Matters: Deriving Wien's Law
+
+::: {.callout-warning}
+Optional extension for interested students: this section uses calculus and is **not required** for this course.
+:::
 
 Planck’s function (per wavelength form):
 
