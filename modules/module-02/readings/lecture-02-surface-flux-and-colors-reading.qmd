@@ -52,6 +52,8 @@ When we say "color is temperature," we do **not** mean only the color your eyes 
 In practice, two additional complications matter: (1) **interstellar dust** scatters and absorbs blue light preferentially, making stars appear redder and cooler than they truly are (you'll quantify this effect in Practice Problem 12), and (2) astronomers rarely measure the exact peak wavelength — instead they compare flux through standardized filters and infer an **effective temperature** from that ratio.
 
 **Bottom line:** "Color" in this course means "where the Planck curve peaks" — a quantity defined across all wavelengths, not just the narrow visible band. The temperature we infer is always an *effective* temperature, and it requires corrections for dust before it's reliable.
+
+In HW3 and exams, we will treat color operationally as peak wavelength (or a close proxy) and use Wien's law to infer $T_{\text{eff}}$.
 :::
 
 ::: {.callout-note title="Reading Map — Choose Your Track"}
@@ -178,9 +180,13 @@ This single ratio encapsulates the geometry: the fraction of the surface flux th
 :::
 :::
 
-### Surface Brightness is Independent of Distance (Brief Optional Insight)
+### Surface Brightness is Independent of Distance (Optional Extension)
 
 {{< fig week04-owocki-fig3-1-surface-brightness >}}
+
+::: {.callout-note}
+**Optional (Track B):** You can skip this derivation for HW3 and exams. It becomes very useful later for galaxies, nebulae, and any resolved extended source.
+:::
 
 ::: {.callout-note collapse="true"}
 ## Derivation: Why Surface Brightness Doesn't Change with Distance
@@ -244,6 +250,8 @@ Every blackbody is fundamentally described by its temperature $T$. The Stefan-Bo
 $$F_* = \sigma T^4$$
 
 where $\sigma = 5.67 \times 10^{-5}$ erg cm$^{-2}$ s$^{-1}$ K$^{-4}$ is the **Stefan-Boltzmann constant**.
+
+Units sanity check: $\sigma$ is "power per area per $T^4$" so $\sigma T^4$ has units of flux (erg cm$^{-2}$ s$^{-1}$).
 
 This tells us the surface flux — the power radiated per unit area — in terms of temperature alone.
 
@@ -372,6 +380,10 @@ $$\frac{R}{R_\odot} = \left(\frac{L/L_\odot}{(T/T_\odot)^4}\right)^{1/2}$$
 
 No physical constants appear — just ratios. This is the form we'll use in most worked examples.
 
+::: {.callout-tip title="Ratio Method Reminder (Part 4)"}
+Whenever possible, compute in solar ratios first. This cancels constants like $4\pi$ and $\sigma$, reduces arithmetic mistakes, and keeps the physics transparent.
+:::
+
 ::: {.callout-tip}
 ### Proportional Reasoning: Stefan-Boltzmann
 
@@ -397,7 +409,7 @@ From $L \propto R^2 T^4$:
 ## Check Yourself
 
 1. State the Stefan-Boltzmann law in words and symbols.
-2. If two stars have the same luminosity but different temperatures, how do their radii compare? (Hint: use $R \propto T^{-2}$ at fixed $L$.)
+2. If two stars have the same luminosity but different temperatures, how do their radii compare? (Hint: use $R \propto T^{-2}$ at fixed $L$.) Write one equation that supports your claim.
 3. The Sun has $T_\odot = 5800$ K. If a star has $T = 11{,}600$ K (twice the Sun's temperature) and the same radius as the Sun, how many times more luminous is it than the Sun?
 
 ---
@@ -405,6 +417,18 @@ From $L \propto R^2 T^4$:
 ## Part 5: Wien's Law Applied — Color to Temperature
 
 We now have the Stefan-Boltzmann law connecting $L$, $R$, and $T$ — but to use it, we need an independent way to measure temperature. That's where Wien's displacement law enters. By measuring a star's color (the wavelength where its spectrum peaks), we get temperature directly — no model of internal structure required.
+
+::: {.callout-note collapse="true" title="Enrichment (Track B): Why Planck's Law Avoids the UV Catastrophe"}
+Classically, the Rayleigh-Jeans limit works at long wavelength, but if you push it to short wavelength it predicts divergent ultraviolet emission (the ultraviolet catastrophe).
+
+Planck's quantum hypothesis fixes this: energy comes in packets $E = h\nu$, so high-frequency photons are energetically expensive.
+
+At short wavelength (high frequency), emission is exponentially suppressed, which keeps the total radiated energy finite and gives a physically sensible thermal spectrum.
+
+This is why Wien's law and blackbody temperature inference are trustworthy: they rest on the correct quantum description, not the classical divergent one.
+
+Full historical and conceptual treatment: [Module 1, Lecture 4 — Light as Information](/modules/module-01/readings/lecture-04-light-as-information.qmd).
+:::
 
 ### See the Peaks First
 
@@ -422,6 +446,8 @@ From Lecture 4 (Module 1), you learned Wien's displacement law:
 {{< eqrefcard wien-displacement >}}
 
 where $b = 0.2898$ cm·K $= 2.898 \times 10^{6}$ nm·K is Wien's constant.
+
+Units sanity check: $b$ has units of length$\times$temperature, so $b/\lambda$ has units of K.
 
 **Interpretation — Hotter means bluer; cooler means redder:**
 - $\lambda_{\text{peak}}$ is the wavelength where the star's blackbody curve peaks
@@ -540,11 +566,22 @@ In Lecture 4 (Module 1), you saw the family of Planck curves $B_\lambda(T)$ — 
 
 1. If a star's peak wavelength is half the Sun's, what is its temperature relative to the Sun?
 2. A star has $\lambda_{\text{peak}} = 1.0$ $\mu$m. What is its temperature? (Hint: $1.0\ \mu\text{m} = 1000\ \text{nm}$.)
-3. Two stars are the same luminosity but different colors. Which must have a smaller radius — the hot (blue) one or the cool (red) one?
+3. Two stars are the same luminosity but different colors. Which must have a smaller radius — the hot (blue) one or the cool (red) one? Include one equation in your justification.
 
 ---
 
 ## Part 6: Inferring Stellar Radii
+
+At this point, it can feel surprising that we infer a star's radius from light measured at Earth. We trust this chain because it is cross-validated where methods overlap: nearby stars with geometric distances (parallax) match luminosities from photometry, some stellar angular diameters are measured directly with interferometry, and eclipsing binaries provide independent size constraints. Effective temperatures from spectral-energy fits and color methods also agree within expected uncertainty ranges. The chain is model-based, but it is repeatedly tested against independent observables.
+
+::: {.callout-important title="Decoder Ring (Use This First)"}
+When a problem feels busy, reduce it to four moves:
+
+1. **Flux + distance $\rightarrow$ luminosity** (Lecture 1)
+2. **Color or $\lambda_{\text{peak}} \rightarrow T_{\text{eff}}$** (Wien's law)
+3. **Luminosity + temperature $\rightarrow$ radius** (Stefan-Boltzmann)
+4. **Apply corrections/checks** (dust reddening, bolometric corrections, uncertainty propagation)
+:::
 
 ### The Complete Chain
 
@@ -553,6 +590,14 @@ Now you have all the pieces:
 1. **From Lecture 1:** Measure flux at Earth + measure distance → infer **luminosity** $L$
 2. **From Lecture 4 (Module 1):** Measure spectrum, find peak → apply Wien's law → infer **temperature** $T$
 3. **From Stefan-Boltzmann:** Given $L$ and $T$, solve for **radius** $R$.
+
+::: {.callout-tip title="Ratio Method Reminder (Part 6)"}
+Whenever possible, solve in solar units first:
+
+$$\frac{R}{R_\odot} = \left(\frac{L/L_\odot}{(T/T_\odot)^4}\right)^{1/2}$$
+
+This avoids large constants and makes sanity checks faster.
+:::
 
 ### The Algebra: Isolating $R$ (Step by Step)
 
