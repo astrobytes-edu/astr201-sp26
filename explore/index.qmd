@@ -28,4 +28,5 @@ This section contains optional resources for students who want to explore astron
 - [ESA/Hubble Image Archive](https://esahubble.org/images/)
 - [JWST Image Gallery](https://webbtelescope.org/images)
 - [Astrobites](https://astrobites.org)
+- [ViewSpace](https://viewspace.org) — Interactive space and astronomy visualizations
   

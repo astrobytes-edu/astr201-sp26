@@ -4,7 +4,7 @@ subtitle: "Parallax + Surface Flux & Radiation Inference"
 author: "Dr. Anna Rosen"
 date: "2026-02-20"
 description: "Solutions to Homework 3."
-draft: false
+draft: true
 course: ASTR 201
 module: "Module 2 — Distance, Luminosity, Temperature, and Radius"
 ---
@@ -288,4 +288,3 @@ We measured observables (parallax, flux ratio, and peak wavelength). We applied 
 \boxed{R/R_\odot\approx5.05},\quad
 \boxed{\delta d/d\approx6\%,\ \delta L/L\approx12\%}
 \]
-
