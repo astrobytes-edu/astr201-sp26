@@ -58,6 +58,13 @@ After completing this reading, you should be able to:
 **Color encodes temperature.** A star's color tells you its surface temperature through Wien's displacement law: hotter objects peak at shorter (bluer) wavelengths, cooler objects at longer (redder) wavelengths. In practice we correct for dust reddening and remember stellar atmospheres add spectral lines — but the blackbody shape is still the starting model.
 :::
 
+### What You Can Infer After This Reading
+
+1. Use the continuum shape to infer **temperature**.
+2. Use absorption and emission lines to infer **composition**.
+3. Use line shifts to infer **line-of-sight motion**.
+4. Use telescope scalings to infer **faintness reach and angular detail**.
+
 ---
 
 ## Part 1: Why Light Matters
@@ -90,7 +97,7 @@ Unlike mechanical waves (water ripples, sound, a vibrating string), electromagne
 
 Both wave types share the same vocabulary:
 
-**Wavelength ($\lambda$):** The distance between successive wave crests. For a water wave, you could measure this with a ruler. For light, wavelengths range from kilometers (radio) down to smaller than an atomic nucleus (gamma rays). Optical and UV wavelengths are often written in nanometers (nm), where $1\ \text{nm} = 10^{-7}\ \text{cm} = 10^{-9}\ \text{m}$.
+**Wavelength ($\lambda$):** The distance between successive wave crests. For a water wave, you could measure this with a ruler. For light, wavelengths range from kilometers (radio) down to sub-atomic scales (gamma rays). Optical and UV wavelengths are often written in nanometers (nm), where $1\ \text{nm} = 10^{-7}\ \text{cm} = 10^{-9}\ \text{m}$.
 
 ::: {.callout-note title="Glossary: The Nanometer"}
 The **nanometer** (nm) is a unit of length equal to $10^{-9}$ m = $10^{-7}$ cm. It's roughly 10 times the diameter of a hydrogen atom and is convenient for optical and UV wavelengths. Visible light spans about 400–700 nm.
@@ -149,7 +156,7 @@ This notation is standard in upper-division physics. Getting comfortable with it
 
 ### The Spectrum: From Radio to Gamma
 
-The electromagnetic spectrum spans an enormous range of wavelengths, from radio waves with wavelengths of centimeters and longer to gamma rays smaller than atomic nuclei. We divide this spectrum into named bands:
+The electromagnetic spectrum spans an enormous range of wavelengths, from radio waves with wavelengths of centimeters and longer down to sub-atomic scales (gamma rays). We divide this spectrum into named bands:
 
 {{< fig em-spectrum-bands >}}
 
@@ -275,7 +282,8 @@ Scattering is what happens when light is redirected into new directions. When th
 {{< include ../../../_includes/equations/rayleigh-scattering.qmd >}}
 {{< eqrefcard rayleigh-scattering >}}
 
-The $\lambda^{-4}$ dependence is steep. Blue light ($\lambda \approx 450\ \text{nm} = 4.5\times10^{-5}\ \text{cm}$) scatters about $(650/450)^4 \approx 4$ times more than red light ($\lambda \approx 650\ \text{nm} = 6.5\times10^{-5}\ \text{cm}$).
+The $\lambda^{-4}$ dependence is steep. Blue light ($\lambda \approx 450\ \text{nm} = 4.5\times10^{-5}\ \text{cm}$) scatters about $(650/450)^4 \approx 4$ times more than red light ($\lambda \approx 650\ \text{nm} = 6.5\times10^{-5}\ \text{cm}$). Because $\sigma \propto \lambda^{-4}$, shorter wavelength means larger scattering cross-section, so write the ratio as
+$$\frac{\sigma_{450}}{\sigma_{650}} = \left(\frac{650}{450}\right)^4.$$
 
 #### Why the Sky Is Blue
 
@@ -309,7 +317,7 @@ Dust between stars can also remove blue light more efficiently than red light. T
 ::: {.callout-note collapse="true"}
 ## Answers
 1. **Decreases by $2^4 = 16\times$** — the $\lambda^{-4}$ dependence is steep!
-2. Blue scatters $(6500/4500)^4 \approx 4\times$ more than red
+2. Blue scatters $(650/450)^4 \approx 4\times$ more than red
 3. **Much less blue** — longer wavelengths scatter far less, so the sky would appear darker/grayer in the IR
 :::
 :::
@@ -443,13 +451,15 @@ $$B_\lambda(T) = \frac{2hc^2}{\lambda^5} \frac{1}{e^{hc/\lambda k_B T} - 1}$$
 
 This looks intimidating. **Don't panic.** Let's break it down piece by piece:
 
+For this course, you do not need to compute $B_\lambda$ from scratch. You need to recognize the shape and know which term controls which regime: the $\lambda^{-5}$ factor would drive short wavelengths up, but the exponential term suppresses them at high photon energy.
+
 ::: {.callout-note}
 ## Units Note (cgs)
 
 From here on I'm using cgs units (erg, cm), which are still common in astrophysics. The physics is identical; only the unit choices change.
 :::
 
-**What is spectral radiance?** The Planck function $B_\lambda(T)$ gives the **spectral radiance** — the power emitted per unit area, per unit solid angle, per unit wavelength interval. It tells you how much energy flows out of each square centimeter of surface, in each direction, at each wavelength. This is exactly what you need to describe how a glowing object distributes its light across the spectrum.
+**What is spectral radiance?** The Planck function $B_\lambda(T)$ gives the **spectral radiance** — the power emitted per unit area, per unit solid angle, per unit wavelength interval. It tells you how much energy flows out of each square centimeter of surface, in each direction, at each wavelength. If “per steradian” feels abstract, think “per direction”: $B_\lambda$ tells you how bright a surface looks in a given direction at each wavelength.
 
 | Symbol | Meaning | Value / Units |
 |---|---|---|
@@ -475,6 +485,13 @@ The units are power per area per solid angle per wavelength interval — exactly
 - The competition between these terms creates the peak
 
 **You don't need to memorize this equation.** But you should recognize it and understand its structure. Equations like this will appear throughout your astronomy career. The key skill is knowing how to *read* them.
+
+::: {.callout-note title="Do Not Confuse These Two $\lambda^{-4}$ Relations"}
+- **Rayleigh scattering:** $\sigma \propto \lambda^{-4}$ (light being redirected by small particles/molecules)
+- **Rayleigh-Jeans limit:** $B_\lambda \propto T\lambda^{-4}$ (thermal emission behavior at long wavelength)
+
+Same exponent, different physics.
+:::
 
 ### Limiting Cases: The Key to Taming Complex Equations
 
@@ -566,6 +583,10 @@ The Planck function has a peak — a wavelength where emission is maximum. This 
 {{< eqrefcard wien-displacement >}}
 
 where $b = 0.2898\ \text{cm·K} = 2.898\times10^{6}\ \text{nm·K}$ is **Wien's displacement constant**.
+
+Here “peak wavelength” means the maximum of $B_\lambda$ (brightness per unit wavelength). If you instead plot brightness per unit frequency ($B_\nu$), the peak appears at a different wavelength — same physical spectrum, different binning.
+
+Conversion anchor: $500\ \text{nm} = 5\times10^{-5}\ \text{cm}$.
 
 This can be rewritten as:
 
@@ -663,6 +684,11 @@ $$T_{\text{Rigel}} = \frac{2.898 \times 10^{6}\ \text{nm·K}}{240\ \text{nm}} = 
 {{< fig betelgeuse-size >}}
 
 **Interpretation:** Rigel is about 3.5× hotter than Betelgeuse. The color difference — blue vs. red — directly reflects this temperature difference. When you look at the constellation Orion, you're literally seeing temperature encoded as color: Betelgeuse (the red shoulder) is cool; Rigel (the blue foot) is hot.
+
+::: {.callout-note title="Observe and Predict"}
+1. Look up side-by-side images of Betelgeuse and Rigel. Which is hotter, and by roughly what factor?
+2. Compare spectra from an incandescent bulb, an LED bulb, and a fluorescent bulb. Which looks most continuous, and which look line-dominated?
+:::
 
 ---
 
@@ -787,6 +813,8 @@ An **absorption line** happens when photons of a particular energy are removed f
 
 Kirchhoff recognized that there are three basic spectrum “shapes,” and each corresponds to a different physical situation:
 
+This is how we know what stars are made of without sampling them.
+
 {{< fig three-types-of-spectra >}}
 
 1. **Continuous spectrum:** hot, dense matter (a blackbody-like source).
@@ -869,6 +897,8 @@ For speeds much smaller than the speed of light, the non‑relativistic Doppler 
 
 Here $\Delta\lambda = \lambda_{\text{obs}} - \lambda_0$, $\lambda_0$ is the rest wavelength measured in the lab, and $v_r$ is the **radial** (line‑of‑sight) velocity. If $v_r > 0$ the lines shift to longer wavelengths (redshift); if $v_r < 0$ they shift to shorter wavelengths (blueshift).
 
+This non-relativistic form is accurate when $|v_r| \ll c$ (for example, stars and planets moving at km/s to hundreds of km/s). For very large redshifts in cosmology, we need relativistic/cosmological treatments.
+
 Why it matters: this tiny shift lets us infer some of the biggest stories in astronomy:
 
 - **Exoplanets:** a star's tiny wobble reveals an orbiting planet.
@@ -937,6 +967,8 @@ Even if you collect lots of light, you can’t see detail smaller than your tele
 {{< eqrefcard telescope-resolution >}}
 
 {{< fig telescope-resolution >}}
+
+For a circular aperture, a more precise form is $\theta \approx 1.22\,\lambda/D$. In this course we usually use $\lambda/D$ when doing scaling arguments.
 
 ::: {.callout-tip title="Quick Check: Proportional Reasoning" collapse="true"}
 **Angular resolution:** $\theta \approx \lambda D^{-1}$, so $\theta \propto \lambda D^{-1}$
@@ -1091,63 +1123,77 @@ Answer these without a calculator. Then check your reasoning.
    - (b) A smooth rainbow with no lines
    - (c) A dark background with bright lines
 
-   For each, identify the physical source (hot dense object, hot thin gas, or cool gas in front of a hot source). Explain your reasoning.
+   For each, identify the physical source (hot dense object, hot thin gas, or cool gas in front of a hot source). State which of Kirchhoff’s three laws applies and what physical condition/geometry is required.
 
 <!-- Problem: Conceptual / Connection / O→M→I / Tools: Data/Graph, Model-Inversion / ⭐⭐ -->
-2. **Blackbody or not?** You observe two sources. Source A has a smooth spectrum with a single broad peak. Source B has a jagged spectrum with sharp spikes. Which is better described as a blackbody, and what does the non‑blackbody spectrum imply about the source?
+2. **Blackbody or not?** You observe two sources. Source A has a smooth spectrum with a single broad peak. Source B has sharp spikes at specific wavelengths (discrete line emission). Which source is better described as a blackbody? What does the non‑blackbody spectrum imply, and what emission mechanism is suggested (thermal continuum vs. atomic transitions)?
 
 <!-- Problem: Conceptual / Connection / O→M→I / Tools: Limiting-Cases, Model-Inversion / ⭐⭐ -->
-3. **Why skies are red at sunset.** Use Rayleigh scattering to explain why the Sun looks red near the horizon but not at noon. What changes about the path through the atmosphere, and how does $\lambda^{-4}$ make the effect strong?
+3. **Why skies are red at sunset.** Use Rayleigh scattering to explain why the sky is blue in daytime and why the Sun looks red near the horizon. Distinguish what you see when looking **away from the Sun** (scattered skylight) versus **at the Sun** near the horizon (transmitted beam after blue light is removed). What changes about the atmospheric path length, and how does $\lambda^{-4}$ make the effect strong?
 
 <!-- Problem: Conceptual / Application / O→M→I / Tools: Scaling/Ratio, Model-Inversion / ⭐ -->
-4. **Two telescope goals.** If your goal is to (i) detect the faintest possible objects and (ii) resolve the smallest angular details, which telescope property matters most for each? Justify using the $D^2$ and $\lambda/D$ scalings.
+4. **Two telescope goals.** If your goal is to (i) detect the faintest possible objects and (ii) resolve the smallest angular details, which telescope property matters most for each? Assume identical throughput and exposure time for faintness, and assume diffraction-limited conditions (space or perfect adaptive optics) for resolution. Justify using the $D^2$ and $\lambda/D$ scalings.
+
+<!-- Problem: Conceptual / Connection / O→M→I / Tools: Model-Inversion, Uncertainty/Assumptions / ⭐⭐ -->
+5. **Peak is not only.** A star peaks at 250 nm. In 2–4 sentences, explain why it can still appear blue-white to human eyes.
 
 ### Calculation
 
 <!-- Problem: Calculation:Full / Application / O→M→I / Tools: Unit-Conversion, Dimensional / ⭐⭐ -->
-5. **Photon energy from wavelength.** A green photon has $\lambda = 600$ nm.
+6. **Wave relation.** A radio wave has $\lambda = 3$ cm.
+   - (a) What is its frequency $\nu$?
+   - (b) Visible light has $\lambda = 500$ nm. How many times larger is $\nu_{\text{vis}}$ than $\nu_{\text{radio}}$?
+
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Unit-Conversion, Dimensional / ⭐⭐ -->
+7. **Photon energy from wavelength.** A green photon has $\lambda = 600$ nm.
    - (a) Convert this wavelength to cm.
    - (b) Compute its frequency.
-   - (c) Compute its energy in erg using $E = hc/\lambda$ with $h = 6.626 \times 10^{-27}$ erg·s.
+   - (c) Compute its energy in erg using $E = hc/\lambda$ with $h = 6.626 \times 10^{-27}$ erg·s and $c = 2.998 \times 10^{10}$ cm/s.
+
+   Give numerical answers to 2 significant figures.
 
 <!-- Problem: Calculation:Full / Application / O→M→I / Tools: Scaling/Ratio, Unit-Conversion / ⭐⭐ -->
-6. **Wien's law temperature.** A star's spectrum peaks at $\lambda_{\text{peak}} = 700$ nm. Use $b = 2.898 \times 10^6$ nm·K to estimate the temperature.
+8. **Wien's law temperature.** A star's spectrum peaks at $\lambda_{\text{peak}} = 700$ nm. Use $b = 2.898 \times 10^6$ nm·K to estimate the temperature. Then compare to the Sun ($\sim 5800$ K): hotter or cooler, and by roughly what factor?
 
 <!-- Problem: Calculation:Full / Application / O→M→I / Tools: Scaling/Ratio, Order-of-Magnitude / ⭐⭐ -->
-7. **Rayleigh scattering ratio.** Compare the scattering strength at 450 nm and 900 nm. Which is scattered more, and by what factor?
+9. **Rayleigh scattering ratio.** Compute $\sigma_{450}/\sigma_{900}$ using $\sigma \propto \lambda^{-4}$. Which wavelength is scattered more, and by what factor?
 
 <!-- Problem: Calculation:Full / Application / O→M→I / Tools: Scaling/Ratio, Model-Inversion / ⭐⭐ -->
-8. **Telescope scaling.** Compare two telescopes observing at the same wavelength:
+10. **Telescope scaling.** Compare two telescopes observing at the same wavelength:
    - Telescope A: $D = 2$ m
    - Telescope B: $D = 8$ m
 
-   (a) How much more light does Telescope B collect?  
-   (b) How does its diffraction-limited resolution compare to Telescope A?
+   (a) Compute $A_B/A_A$.  
+   (b) Compute $\theta_B/\theta_A$ (diffraction-limited).  
+   (c) State which telescope is better for faint objects and which gives sharper images.
+
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Unit-Conversion, Model-Inversion / ⭐⭐ -->
+11. **Doppler sign and speed.** The H$\alpha$ line ($\lambda_0 = 656.3$ nm) is observed at 656.6 nm. Is the source approaching or receding? Estimate $v_r$ using the non-relativistic Doppler relation.
+
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Scaling/Ratio, Model-Inversion / ⭐⭐ -->
+12. **JWST versus Hubble.**
+   - (a) Compute the collecting-area ratio using $A \propto D^2$ with $D_{\text{JWST}} = 6.5$ m and $D_{\text{HST}} = 2.4$ m.
+   - (b) Compute the angular-resolution ratio at the same wavelength using $\theta \propto \lambda D^{-1}$.
+   - (c) Interpret each ratio in one sentence.
 
 ### Synthesis
 
 <!-- Problem: Synthesis / Connection / O→M→I / Tools: Model-Inversion, Scaling/Ratio, Uncertainty/Assumptions / ⭐⭐ -->
-9. **Temperature plus absorption.** A star’s spectrum peaks near 1.0 μm and shows deep absorption lines.
+13. **Temperature plus absorption.** A star’s spectrum peaks near 1.0 μm and shows deep absorption lines.
    - (a) Use Wien’s law to estimate the temperature.
-   - (b) What do the absorption lines imply about the star’s atmosphere?
-   - (c) If dust reddening is present, how would your temperature estimate change qualitatively?
+   - (b) Explain what deep absorption lines imply about the atmosphere and viewing geometry using Kirchhoff’s laws.
+   - (c) What additional information do line positions provide?
 
-<!-- Problem: Synthesis / Connection / O→M→I / Tools: Scaling/Ratio, Model-Inversion, Limiting-Cases / ⭐⭐ -->
-10. **Design trade-off.** Two telescopes observe the same target:
-   - Telescope A: $D = 3$ m at $\lambda = 500$ nm
-   - Telescope B: $D = 6$ m at $\lambda = 2000$ nm
+<!-- Problem: Conceptual / Connection / O→M→I / Tools: Limiting-Cases, Uncertainty/Assumptions / ⭐⭐⭐ -->
+14. **Short-wavelength suppression.** Use the Planck function
+   $$B_\lambda(T) = \frac{2hc^2}{\lambda^5}\frac{1}{e^{hc/\lambda k_B T}-1}$$
+   to explain why intensity is suppressed at very short wavelengths.
 
-   (a) Which telescope has better angular resolution?  
-   (b) Which collects more light?  
-   (c) If the target’s emission peaks near 500 nm, which telescope is better for signal‑to‑noise, and why?
-
-<!-- Problem: Synthesis / Connection / O→M→I / Tools: Model-Inversion, Scaling/Ratio, Unit-Conversion, Uncertainty/Assumptions / ⭐⭐⭐ -->
-11. **Challenge: Doppler → virial mass.** A globular cluster shows a typical Doppler broadening of $\Delta \lambda \approx 0.02$ nm around a line at $\lambda_0 = 500$ nm. Assume the non‑relativistic Doppler relation $\Delta \lambda/\lambda_0 = v/c$. The cluster's half‑light radius is $R \approx 3$ pc.
-   - (a) Estimate the line‑of‑sight velocity dispersion $v$.
-   - (b) Use the virial estimate $M \sim Rv^2/G$ to estimate the cluster mass. Express your answer in grams and in solar masses.
-   - (c) State two assumptions behind this estimate and one way they could bias the mass.
-
-   Use $c = 3.0 \times 10^{10}$ cm/s, $G = 6.67 \times 10^{-8}\ \text{cm}^3\ \text{g}^{-1}\ \text{s}^{-2}$, and $1$ pc $= 3.09 \times 10^{18}$ cm.
+   Scaffolding prompts:
+   - (a) In the short-wavelength limit ($\lambda \to 0$), what happens to the prefactor $\lambda^{-5}$?
+   - (b) In that same limit, what happens to the exponent $x = hc/(\lambda k_B T)$ and therefore to $e^x - 1$?
+   - (c) Which effect dominates the product, and why does that prevent the ultraviolet catastrophe?
+   - (d) Connect your conclusion to the statement “photons are expensive when $h\nu \gg k_B T$.”
 
 ---
 
