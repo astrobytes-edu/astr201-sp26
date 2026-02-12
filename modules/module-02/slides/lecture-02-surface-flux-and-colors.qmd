@@ -92,9 +92,9 @@ From two observables (brightness and color), we infer three stellar properties (
 
 :::: {.columns}
 ::: {.column width="52%"}
-Rigel: blue, hotter, more compact.
+**Rigel**: blue, hotter, more compact.
 
-Betelgeuse: red, cooler, enormous.
+**Betelgeuse**: red, cooler, enormous.
 
 How can both be very luminous?
 
@@ -183,13 +183,23 @@ Expected: both quarter, but one is distance dilution and one is surface-area dil
 
 ## Geometric Bridge
 
+:::: {.columns}
+::: {.column width="52%"}
 $$
 \frac{F}{F_*} = \frac{R^2}{d^2}
 $$
 
 Since $R \ll d$, only a tiny fraction of surface output reaches us.
 
-{{< img inverse-square-law width="76%" >}}
+::: {.callout-tip}
+Same physics, two viewpoints: dilution across distance ($d$) and dilution across stellar surface ($R$).
+:::
+:::
+
+::: {.column width="48%"}
+{{< img inverse-square-law width="100%" >}}
+:::
+::::
 
 ::: {.notes}
 10–12 min. Point to geometry physically with laser pointer.
@@ -302,7 +312,9 @@ When temperature increases in a blackbody spectrum, predict:
 
 ## Static Anchor: Planck Curves
 
-{{< fig blackbody-stellar-spectra >}}
+{{< img blackbody-stellar-spectra width="86%" >}}
+
+Hotter curves peak at shorter wavelengths and rise to larger total output.
 
 ::: {.notes}
 26–27 min. Transition from interaction back to formal interpretation.
@@ -389,18 +401,74 @@ $$
 
 ---
 
-## Ratio Example (No Calculator Heroics)
+## Ratio Example (Show Every Step) {.smaller}
 
-If Sun peaks near $500\ \mathrm{nm}$ and a star peaks at $250\ \mathrm{nm}$:
+:::: {.columns}
+::: {.column width="58%"}
+Given:
 
 $$
-\frac{T_\star}{T_\odot}=\frac{500}{250}=2
+\lambda_{\text{peak},\odot} \approx 500\ \mathrm{nm}, \quad
+\lambda_{\text{peak},\star} \approx 250\ \mathrm{nm}
 $$
 
-So the star is about twice as hot as the Sun.
+Write Wien's law for each star:
+
+$$
+\lambda_{\text{peak},\star} = \frac{b}{T_\star},
+\qquad
+\lambda_{\text{peak},\odot} = \frac{b}{T_\odot}
+$$
+
+Take the ratio:
+
+$$
+\frac{\lambda_{\text{peak},\star}}{\lambda_{\text{peak},\odot}}
+=
+\frac{(b/T_\star)}{(b/T_\odot)}
+=
+\frac{T_\odot}{T_\star}
+$$
+:::
+
+::: {.column width="42%"}
+Invert both sides:
+
+$$
+\frac{T_\star}{T_\odot}
+=
+\frac{\lambda_{\text{peak},\odot}}{\lambda_{\text{peak},\star}}
+$$
+
+Substitute values:
+
+$$
+\frac{T_\star}{T_\odot}
+=
+\frac{500}{250}
+=2
+$$
+
+Now solve for $T_\star$:
+
+$$
+T_\star = 2T_\odot
+$$
+
+Using $T_\odot \approx 5800\ \mathrm{K}$:
+
+$$
+\boxed{T_\star \approx 1.16\times 10^4\ \mathrm{K}}
+$$
+:::
+::::
 
 ::: {.notes}
-36–38 min. Keep it clean and quick.
+36–39 min. Walk line-by-line and narrate each algebra move:
+1) write Wien for both objects,
+2) ratio to cancel $b$,
+3) invert to isolate the desired temperature ratio,
+4) substitute numbers.
 :::
 
 ---
@@ -436,11 +504,21 @@ This is our in-class calibration moment.
 
 ## The Astronomer's Decoder Ring (Today)
 
+:::: {.columns}
+::: {.column width="54%"}
 1. $F + d \rightarrow L$
 2. color $\rightarrow T$
-3. $(L,T)$ with $L = 4\pi R^2\sigma T^4 \rightarrow R$
+3. $L = 4\pi R^2\sigma T^4$ and $(L,T)\rightarrow R$
 
-{{< img decoder-ring width="74%" >}}
+::: {.callout-tip}
+Observable $\rightarrow$ model $\rightarrow$ inference.
+:::
+:::
+
+::: {.column width="46%"}
+{{< img decoder-ring width="100%" >}}
+:::
+::::
 
 <!-- PLACEHOLDER FIGURE (module-02 decoder overlay):
 Create an annotated version of the existing decoder-ring figure with only three highlighted steps for this lecture:
@@ -534,7 +612,7 @@ Smaller, hotter star for same luminosity.
 
 ## HR Diagram Preview: A Radius Map in Disguise
 
-{{< img week04-hr-diagram-eso width="84%" >}}
+{{< img week04-hr-diagram-eso width="68%" >}}
 
 Cool and luminous $\rightarrow$ giant radii.
 
@@ -555,7 +633,9 @@ Goal: make the "radius map in disguise" claim visually explicit in one glance.
 
 ## Quick Video Bridge: Omega Centauri
 
-{{< media hr-diagram-omega-centauri width="100%" height="430px" >}}
+<iframe src="https://www.youtube.com/embed/1JPDN8qoRjs" width="100%" height="430" style="border:1px solid #e5e7eb; border-radius:8px;" allowfullscreen></iframe>
+
+[Open on YouTube](https://www.youtube.com/watch?v=1JPDN8qoRjs)
 
 ::: {.notes}
 61–64 min. Optional depending on pace. Connect observed pattern-building to coming lectures.
@@ -563,19 +643,18 @@ Goal: make the "radius map in disguise" claim visually explicit in one glance.
 
 ---
 
-## Optional Advanced Prompt (If Time)
+## Synthesis Quiz: Betelgeuse vs Sirius {.quiz-question}
 
-If Betelgeuse were moved to 10 pc, would it appear brighter or dimmer than Sirius?
+To decide whether Betelgeuse placed at $10\ \mathrm{pc}$ would appear brighter or dimmer than Sirius, which quantities must you compare directly?
 
-State which quantities you must separate:
-
-- luminosity
-- distance
-- received flux
-- surface flux
+- surface flux and temperature
+- [luminosity and distance]{.correct}
+- radius and peak wavelength
+- color index and surface flux
 
 ::: {.notes}
 64–69 min. Keep this as synthesis, not grind.
+Key point: apparent brightness comparisons require luminosity and distance.
 :::
 
 ---
