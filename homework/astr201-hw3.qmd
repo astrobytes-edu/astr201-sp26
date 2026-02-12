@@ -57,6 +57,8 @@ format:
 
 ::: {.callout-tip}
 **HW3 note:** Tool hints are not shown. Part of the goal is deciding which model and scaling apply.
+
+**Use ratios whenever possible** to avoid unnecessary constants.
 :::
 
 ::: {.callout-note}
@@ -67,6 +69,23 @@ Use these constants unless a problem states otherwise:
 - $1\ \text{pc} = 3.086 \times 10^{18}$ cm
 - $T_\odot = 5800$ K
 - $b = 2.898 \times 10^6$ nm·K
+:::
+
+::: {.callout-note}
+**Required reporting format:**
+
+- Every numeric answer must include units.
+- Use scientific notation where appropriate.
+- Include a one-line sanity check for each problem (e.g., farther should look dimmer; hotter should peak at shorter wavelength).
+:::
+
+::: {.callout-tip}
+**Sanity-check scalings:**
+
+- $d(\mathrm{pc}) = 1/p('')$
+- $F \propto Ld^{-2}$
+- $T = b/\lambda_{\text{peak}}$
+- $L \propto R^2T^4$
 :::
 
 ---
@@ -80,6 +99,7 @@ Use these constants unless a problem states otherwise:
 
 A student says: "This nearby star has a large parallax, so it must have a large angular size."
 
+- Be explicit: parallax is an **apparent positional shift against distant background**, not an apparent size.
 - (a) Explain why this statement is incorrect.
 - (b) Define parallax angle and angular size in one sentence each.
 - (c) Give one observational signature that distinguishes the two measurements.
@@ -89,6 +109,7 @@ A student says: "This nearby star has a large parallax, so it must have a large 
 <!-- Problem: Calculation:Full / Application / O→M→I / Tools: Unit-Conversion, Model-Inversion / ⭐⭐ -->
 ### Problem 2 — Parallax to Distance
 
+- Do the factor comparison in pc first; convert to cm afterward.
 - (a) Star A has $p = 0.50''$. Find $d$ in pc and in cm.
 - (b) Star B has $p = 0.020''$. Find $d$ in pc and in cm.
 - (c) Which star is farther, and by what factor?
@@ -99,6 +120,7 @@ A student says: "This nearby star has a large parallax, so it must have a large 
 ### Problem 3 — Inverse-Square Flux Scaling
 
 Two identical stars have the same luminosity. Star X is at 20 pc and Star Y is at 50 pc.
+Assume no extinction/reddening.
 
 - (a) Compute $F_X/F_Y$ using inverse-square scaling.
 - (b) Which star appears brighter at Earth?
@@ -110,7 +132,7 @@ Two identical stars have the same luminosity. Star X is at 20 pc and Star Y is a
 ### Problem 4 — Luminosity from Flux + Distance
 
 A star has measured parallax $p = 0.10''$ and bolometric flux at Earth
-$F_\star = 2.0 \times 10^{-11}\,F_\odot$, where $F_\odot$ is the Sun’s bolometric flux measured at Earth.
+$F_\star = 2.0 \times 10^{-11}\,F_\odot$, where $F_\odot$ is specifically the Sun’s bolometric flux measured at **1 AU**.
 
 - (a) Compute distance in pc and in AU.
 - (b) Use
@@ -131,6 +153,7 @@ Two stars have the same measured bolometric flux at Earth. Their parallaxes are:
 - (a) Which star is farther, and by what factor?
 - (b) Infer $L_B/L_A$ using a ratio method.
 - (c) In 2–3 sentences, explain why equal observed flux does not imply equal intrinsic luminosity.
+- (d) Include a one-line equation showing the scaling you used at fixed observed flux.
 
 ---
 
@@ -152,7 +175,7 @@ Two stars have the same luminosity. One appears blue, the other red.
 
 A star's spectrum peaks at $\lambda_{\text{peak}} = 725$ nm.
 
-- (a) Compute the star's effective temperature from the peak wavelength.
+- (a) Compute the star's effective temperature from the peak wavelength (report to 2 significant figures).
 - (b) Compare this temperature to the Sun's by computing $T/T_\odot$.
 - (c) State whether this star is hotter or cooler than the Sun.
 
@@ -160,6 +183,8 @@ A star's spectrum peaks at $\lambda_{\text{peak}} = 725$ nm.
 
 <!-- Problem: Synthesis / Connection / O→M→I / Tools: Limiting-Cases, Model-Inversion, Uncertainty/Assumptions / ⭐⭐⭐ -->
 ### Problem 8 — Planck Limits and Physical Meaning
+
+Goal: show how Planck's law reduces to Rayleigh-Jeans behavior at long wavelength and becomes exponentially suppressed at short wavelength.
 
 Consider the Planck function
 $$B_\lambda(T) = \frac{2hc^2}{\lambda^5}\frac{1}{e^{hc/\lambda k_B T}-1}.$$
@@ -195,5 +220,5 @@ You observe a star with:
 - (b) Infer luminosity in units of $L_\odot$ using a ratio method.
 - (c) Compute temperature from the peak wavelength.
 - (d) Compute radius in solar units using the appropriate radiation relation.
-- (e) Assume the parallax is measured as $p = 0.050'' \pm 0.003''$. Estimate the fractional uncertainty in distance, and then in luminosity (assuming flux uncertainty is negligible).
+- (e) Assume the parallax is measured as $p = 0.050'' \pm 0.003''$. Estimate the fractional uncertainty in distance, and then in luminosity (assuming flux uncertainty is negligible). (Use fractional uncertainty: if $d \propto p^{-1}$, then $\delta d/d \approx \delta p/p$.)
 - (f) In 2–4 sentences, summarize the full observable → model → inference chain you used.
