@@ -170,7 +170,7 @@ Use Rayleigh scattering to explain why the Sun looks red near the horizon but no
 <!-- Problem: Calculation:Full / Application / O→M→I / Tools: Unit-Conversion, Dimensional / ⭐⭐ -->
 ### Problem 10 — Photon Energy from Wavelength
 
-A green photon has $\lambda = 600$ nm.
+An orange photon has $\lambda = 600$ nm.
 
 - (a) Convert this wavelength to cm.
 - (b) Compute its frequency.

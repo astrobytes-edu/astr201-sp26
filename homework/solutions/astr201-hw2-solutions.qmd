@@ -250,6 +250,8 @@ $$M + m \approx M_\odot$$
 
 $$P^2 \approx \frac{4\pi^2}{GM_\odot}a^3$$
 
+**Answer (a):** $\boxed{P^2 \approx \dfrac{4\pi^2}{GM_\odot}a^3}$
+
 **(b) Verify for Earth ($a = 1$ AU, $P = 1$ yr):**
 
 Using CGS units:
@@ -272,11 +274,15 @@ Convert to years:
 
 $$P = 3.16 \times 10^7\,\text{s} \times \frac{1\,\text{yr}}{3.16 \times 10^7\,\text{s}} = 1\,\text{yr} \quad \checkmark$$
 
+**Answer (b):** $\boxed{P \approx 1\,\text{yr}}$
+
 **(c) Unit check:**
 
 $$\left[\frac{a^3}{G(M+m)}\right] = \frac{[L^3]}{[M^{-1}L^3T^{-2}][M]} = \frac{[L^3]}{[L^3T^{-2}]} = [T^2] \quad \checkmark$$
 
 Both sides have dimensions of time squared.
+
+**Answer (c):** $\boxed{[P^2] = [\text{s}^2]\ \text{on both sides}}$
 
 **(d) Binary star comparison (two equal $1\,M_\odot$ stars):**
 
@@ -291,6 +297,8 @@ $$\frac{(P^2/a^3)_{\text{binary}}}{(P^2/a^3)_{\odot}} = \frac{M_\odot}{2M_\odot}
 **Answer (d):** $\boxed{\left(\frac{P^2}{a^3}\right)_{\text{binary}} = \frac{1}{2}\left(\frac{P^2}{a^3}\right)_{\odot}}$
 
 At the same orbital separation, the binary has a shorter period because the total mass is larger.
+
+**Sanity check:** Doubling total mass should strengthen gravity and shorten the period at fixed separation, so a smaller $P^2/a^3$ constant is physically consistent. $\checkmark$
 
 ---
 
@@ -307,13 +315,19 @@ At the same orbital separation, the binary has a shorter period because the tota
 
 **Equation:**
 
-Rearranging $P^2 = 4\pi^2 a^3/(GM)$ (assuming $m_{\text{Io}} \ll M_J$):
+Start from Newton's two-body form:
 
-$$M = \frac{4\pi^2 a^3}{GP^2}$$
+$$P^2 = \frac{4\pi^2 a^3}{G\left(M_J + m_{\text{Io}}\right)}$$
+
+Assuming $m_{\text{Io}} \ll M_J$, solve for $M_J$:
+
+$$M_J \approx \frac{4\pi^2 a^3}{GP^2}$$
 
 **Steps:**
 
-**(a) Convert period to seconds using the identity trick:**
+**(a) Use Newton's Kepler III to solve for Jupiter's mass.**
+
+Convert period to seconds:
 
 $$P = 1.77\,\cancel{\text{days}} \times \frac{24\,\cancel{\text{hr}}}{1\,\cancel{\text{day}}} \times \frac{3600\,\text{s}}{1\,\cancel{\text{hr}}}$$
 
@@ -321,7 +335,7 @@ $$= 1.77 \times 24 \times 3600\,\text{s}$$
 
 $$= 1.77 \times 86400\,\text{s} \approx 1.53 \times 10^5\,\text{s}$$
 
-**(b) Calculate each component:**
+Compute the components:
 
 $$a^3 = (4.22 \times 10^{10})^3 = 75.2 \times 10^{30} = 7.52 \times 10^{31}\,\text{cm}^3$$
 
@@ -333,7 +347,17 @@ $$4\pi^2 a^3 = 4 \times 9.87 \times 7.52 \times 10^{31} = 2.97 \times 10^{33}\,\
 
 $$M_J = \frac{4\pi^2 a^3}{GP^2} = \frac{2.97 \times 10^{33}}{1.56 \times 10^{3}} \approx 1.9 \times 10^{30}\,\text{g}$$
 
-**(c) Express in solar masses:**
+**(b) Unit check: verify $\dfrac{a^3}{GP^2}$ has units of mass.**
+
+$$\left[\frac{a^3}{GP^2}\right] = \frac{[L^3]}{[M^{-1}L^3T^{-2}][T^2]} = \frac{[L^3]}{[M^{-1}L^3]} = [M] \quad \checkmark$$
+
+**(c) Express your answer in grams and in solar masses.**
+
+In grams:
+
+$$M_J \approx 1.9 \times 10^{30}\,\text{g}$$
+
+In solar masses:
 
 $$\frac{M_J}{M_\odot} = \frac{1.9 \times 10^{30}}{2 \times 10^{33}} = 0.95 \times 10^{-3} \approx 10^{-3}$$
 
@@ -346,10 +370,6 @@ $$\boxed{M_J \approx 1.9 \times 10^{30}\,\text{g} \approx 10^{-3}\,M_\odot}$$
 - **Io's orbital size** (measured from angular separation and Jupiter's distance)
 
 Neither quantity requires knowing Jupiter's mass—we measure the orbit and *infer* the mass.
-
-**Unit check:**
-
-$$\left[\frac{a^3}{GP^2}\right] = \frac{[L^3]}{[M^{-1}L^3T^{-2}][T^2]} = \frac{[L^3]}{[M^{-1}L^3]} = [M] \quad \checkmark$$
 
 **Sanity check:** Jupiter is about 1/1000 of a solar mass, which matches the known value. $\checkmark$
 
@@ -456,6 +476,10 @@ Since $E' < 0$, the cluster is **still bound**, but less tightly.
 
 **Physical follow-up:** The system is no longer in virial equilibrium ($2K' \neq -U'$). It will expand until stars slow down and it re-virializes at a larger radius. If the injected energy had been $\geq 1.0 \times 10^{50}$ erg, the cluster would become unbound ($E \geq 0$) and disperse.
 
+**Unit check:** $K$, $U$, and $E$ are all energies, so every term carries units of erg and can be added directly. $\checkmark$
+
+**Sanity check:** For virial equilibrium, $E = K + U = -K$. Starting at $K = 1.0 \times 10^{50}$ erg gives $E = -1.0 \times 10^{50}$ erg, and adding kinetic energy makes $E$ less negative, exactly as we found. $\checkmark$
+
 ---
 
 ## Part B — Light as Information
@@ -474,7 +498,7 @@ Since $E' < 0$, the cluster is **still bound**, but less tightly.
 
 **(a) Smooth rainbow with dark lines (absorption spectrum):**
 
-**Source:** A **hot dense object** (produces continuous spectrum) with a **cooler gas** in front of it.
+**Source:** **Cool gas in front of a hot source** (the hot source supplies the continuum).
 
 **Reasoning:** The hot object emits all wavelengths (continuous blackbody). The cooler foreground gas absorbs photons at specific wavelengths (its atomic transitions), creating dark gaps in the rainbow. This is how stellar atmospheres work: the hot interior produces the continuum, the cooler outer layers absorb at characteristic wavelengths.
 
@@ -542,7 +566,7 @@ The fourth power is steep. Doubling the wavelength reduces scattering by $2^4 = 
 
 **Given:**
 
-- Wavelength: $\lambda = 600$ nm (orange light, not green as stated)
+- Wavelength: $\lambda = 600$ nm (orange light)
 - Speed of light: $c = 3.00 \times 10^{10}$ cm/s
 - Planck's constant: $h = 6.626 \times 10^{-27}$ erg·s
 
