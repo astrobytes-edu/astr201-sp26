@@ -496,6 +496,13 @@ figures:
     credit: "ESO"
     module: 2
 
+  harvard-computers:
+    path: /assets/images/module-02/week-05/harvard-computers.jpg
+    caption: "**What to notice:** These women analyzed hundreds of thousands of stellar spectra from photographic plates, discovering the patterns (OBAFGKM, period-luminosity relation, luminosity classification) that transformed astronomy into astrophysics."
+    alt: "Black-and-white photograph from circa 1890 showing seven women working at desks in a room at Harvard College Observatory, examining photographic plates and notebooks. A light-curve chart labeled 'B Aurigae Dec 1889' hangs on the wall behind them."
+    credit: "Harvard College Observatory / Smithsonian Institution"
+    module: 2
+
   # ==============================================================
   # Module 3: Stellar Structure & Evolution
   # ==============================================================

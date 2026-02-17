@@ -52,6 +52,7 @@ By the end of this module, you will be able to:
 
 - [Lecture 1 Slides: Distance & Parallax](slides/lecture-01-distance-and-parallax.qmd)
 - [Lecture 2 Slides: Surface Flux & Colors](slides/lecture-02-surface-flux-and-colors.qmd)
+- [Lecture 3 Reading: Spectra & Composition](readings/lecture-03-spectra-and-composition-reading.qmd)
 
 ## Lecture Readings
 
