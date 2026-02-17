@@ -1,0 +1,892 @@
+---
+title: "Spectra & Composition"
+subtitle: "What's It Made Of, and How Is It Moving?"
+author: "Dr. Anna Rosen"
+date: "2026-02-17"
+description: "Every element has a unique spectral fingerprint. By spreading starlight into a rainbow, we decode composition, temperature, and velocity — from a single observation."
+draft: true
+
+format:
+  revealjs:
+    theme: [default, ../../../assets/theme/slides/theme.scss]
+    slide-number: true
+    transition: fade
+    transition-speed: fast
+    background-transition: fade
+    center: false
+    footer: "ASTR 201 • Lecture 3 • Spectra & Composition"
+    chalkboard: true
+    code-line-numbers: true
+    fig-align: center
+    html-math-method: mathjax
+    title-slide-attributes:
+      data-background-image: "/assets/images/common/cosmic-cliffs-jwst.png"
+      data-background-opacity: "0.5"
+    pointer:
+      key: "q"
+      color: "#5dbfbf"
+      pointerSize: 18
+      alwaysVisible: true
+    spotlight:
+      size: 80
+      fadeInAndOut: 150
+      toggleSpotlightOnMouseDown: true
+      initialPresentationMode: true
+    quiz:
+      shuffleOptions: true
+      defaultCorrect: "✓ Correct!"
+      defaultIncorrect: "✗ Not quite — let's discuss."
+
+revealjs-plugins:
+  - pointer
+  - spotlight
+  - attribution
+  - quiz
+
+filters:
+  - roughnotation
+
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+## Learning Objectives
+
+By the end of this lecture, you will be able to:
+
+::: {.incremental}
+- **Explain** Kirchhoff's three laws and predict which spectrum a source produces
+- **Interpret** the Bohr model to explain why spectral lines have specific wavelengths
+- **Classify** stars by spectral type (OBAFGKM) as a **temperature** sequence
+- **Apply** the Doppler shift to measure stellar radial velocities
+- **Connect** spectral absorption to the greenhouse effect
+:::
+
+::: {.notes}
+Read aloud. ~1 min. Students should note these — they map to what's testable.
+:::
+
+---
+
+## {background-image="/assets/images/common/noirlab-nightsky-mosaic.jpg" background-opacity="0.2"}
+
+::: {.r-fit-text}
+All stars are ~73% hydrogen and ~25% helium.
+
+So why do their spectra look so different?
+:::
+
+::: {.notes}
+0–1 min. Let this sit for 5 seconds. Don't answer yet.
+
+This is the throughline question for the whole lecture. The answer (temperature controls which energy levels are populated) won't land until Part 3, but planting it now gives students a reason to pay attention.
+:::
+
+---
+
+## Today's Roadmap {background-image="/assets/images/common/cosmic-cliffs-jwst.png" background-opacity="0.3"}
+
+::: {.bg-muted .p-2}
+1. **Kirchhoff's Laws** — why stars show absorption spectra
+2. **Spectral Lines** — atomic fingerprints from the Bohr model
+3. **OBAFGKM** — a temperature sequence, not composition
+4. **Doppler Shift** — reading stellar motion from light
+5. **Putting It Together** — three clues from one spectrum
+6. **Climate Connection** — same physics, different scale
+:::
+
+::: {.notes}
+30 seconds. Quick orientation. Point to each item.
+:::
+
+---
+
+## {.center}
+
+::: {.r-fit-text}
+Kirchhoff's Laws
+:::
+
+*Three spectra, three physical setups*
+
+---
+
+## Three Types of Spectra {background-color="black"}
+
+{{< fig three-types-of-spectra >}}
+
+::: {.notes}
+2–3 min. Point to each type in the figure.
+
+1. **Continuous** — hot, dense source → all wavelengths (Planck curve)
+2. **Emission** — hot, low-density gas → bright lines on dark background
+3. **Absorption** — cooler gas in front of hot continuum → dark lines
+
+Emphasize: the **same gas** produces emission OR absorption lines depending on what's behind it.
+:::
+
+---
+
+## Kirchhoff's Three Laws
+
+::: {.incremental}
+1. **Hot, dense source** → continuous spectrum (all wavelengths)
+2. **Hot, low-density gas** → emission lines (bright lines, dark background)
+3. **Cooler gas in front of hot continuum** → absorption lines (dark lines in rainbow)
+:::
+
+::: {.fragment}
+::: {.text-center .text-base .text-muted .mt-2}
+The **same gas** absorbs at the **same wavelengths** it would emit.
+:::
+:::
+
+::: {.notes}
+3–4 min. Reveal one at a time. Stress law 3: the absorption wavelengths match the emission wavelengths — Kirchhoff noticed this empirically.
+:::
+
+---
+
+## Why Stars Show Absorption Spectra {background-color="black"}
+
+{{< fig week04-photosphere-line-formation-cococubed >}}
+
+::: {.notes}
+4–5 min. Walk through the two-layer model:
+
+1. **Photosphere** (hot, dense) → emits a continuous spectrum (Law 1)
+2. **Stellar atmosphere** (cooler) → absorbs at specific wavelengths (Law 3)
+3. We see: **continuous rainbow with dark lines carved into it**
+
+Temperature decreases outward — that's the key to why absorption, not emission.
+:::
+
+---
+
+## Observable → Model → Inference
+
+::: {.bg-muted .p-2}
+- **Observable:** Dark lines at specific wavelengths in a stellar spectrum
+- **Model:** Kirchhoff's third law — cooler atmosphere absorbs from hotter photosphere
+- **Inference:** The star has a hot interior surrounded by a cooler atmosphere
+:::
+
+::: {.fragment .text-center .text-base .text-muted .mt-2}
+The dark lines are the key to **everything** that follows.
+:::
+
+::: {.notes}
+~5 min. This is the O→M→I frame for the whole lecture. Every dark line encodes physics.
+:::
+
+---
+
+## Prediction: Which Spectrum? {background-color="#1a1a2e"}
+
+You look at a **glowing neon sign** through a spectrograph.
+
+::: {.bg-muted .p-2 .text-sm}
+**Commit to one answer:**
+
+(a) Continuous spectrum — smooth rainbow
+
+(b) Emission spectrum — bright lines on dark background
+
+(c) Absorption spectrum — dark lines in a rainbow
+:::
+
+::: {.notes}
+~6 min. Give 30 seconds. Cold-call 2 students.
+
+Answer: **(b) Emission.** Neon is a hot, low-density gas (Kirchhoff's law 2). No hot dense source behind it → no continuum to absorb from.
+:::
+
+---
+
+## {.center}
+
+::: {.r-fit-text}
+Spectral Lines as Atomic Fingerprints
+:::
+
+*The Bohr model and discrete energy levels*
+
+---
+
+## The Bohr Model: Discrete Energy Levels {background-color="black"}
+
+{{< fig hydrogen-absorption >}}
+
+::: {.fragment .text-center .text-base .text-muted .mt-2}
+Electrons occupy **specific energy rungs** — they cannot hover between them.
+:::
+
+::: {.notes}
+7–8 min. Point to the energy levels in the diagram.
+
+Key idea: electrons can only be at certain energies. To absorb a photon, the photon's energy must **exactly match** a gap between levels. This is why absorption happens at specific wavelengths.
+:::
+
+---
+
+## The Reverse: Emission {background-color="black"}
+
+{{< fig hydrogen-emission >}}
+
+::: {.fragment .text-center .text-base .text-muted .mt-2}
+Same energy gaps → same wavelengths — whether absorbing or emitting.
+:::
+
+::: {.notes}
+~8 min. Quick. Same gaps, same wavelengths. This is why Kirchhoff's observation works: the gas absorbs at the same wavelengths it emits.
+:::
+
+---
+
+## Hydrogen Energy Levels
+
+$$E_n = -\frac{13.6\ \text{eV}}{n^2}$$
+
+::: {.fragment}
+- $n = 1$ (ground state): $E_1 = -13.6$ eV — most tightly bound
+- $n = 2$: $E_2 = -3.4$ eV
+- $n \to \infty$: $E = 0$ — electron is free (ionized)
+:::
+
+::: {.fragment .highlight-red}
+**Negative sign** = the electron is *bound*. You must add energy to free it.
+:::
+
+::: {.notes}
+8–9 min. Walk through the levels slowly. The minus sign confuses students — address it directly. "More negative = more tightly bound."
+:::
+
+---
+
+## Spectral Lines Come from Transitions
+
+When an electron jumps between levels:
+
+$$\Delta E = |E_{\text{upper}} - E_{\text{lower}}|$$
+
+. . .
+
+The photon's wavelength is set by the energy gap:
+
+$$\lambda = \frac{hc}{\Delta E}$$
+
+::: {.fragment}
+**Different elements → different energy levels → different spectral lines.**
+:::
+
+::: {.notes}
+9–10 min. This is the core mechanism. Each element has a unique set of energy levels, so each element produces a unique barcode of spectral lines.
+:::
+
+---
+
+## The Balmer Series: Hydrogen's Visible Fingerprint
+
+Transitions to/from $n = 2$:
+
+::: {.table-scroll .text-sm}
+| Transition | Name | Wavelength | Color |
+|---|---|---|---|
+| $n = 3 \to 2$ | H$\alpha$ | 656 nm | Deep red |
+| $n = 4 \to 2$ | H$\beta$ | 486 nm | Blue-green |
+| $n = 5 \to 2$ | H$\gamma$ | 434 nm | Violet |
+| $n = 6 \to 2$ | H$\delta$ | 410 nm | Near-UV |
+:::
+
+::: {.fragment .text-center .text-base .text-muted .mt-2}
+Energy gaps of ~1.9–3.0 eV → visible wavelengths.
+:::
+
+::: {.notes}
+10–11 min. These are the most important spectral lines in stellar astronomy. H$\alpha$ is the red glow in nebula photos.
+:::
+
+---
+
+## Worked Example: Calculating H$\alpha$
+
+**Problem:** Predict the wavelength of $n = 3 \to 2$ in hydrogen.
+
+. . .
+
+**Step 1:** Find energy levels.
+
+$$E_3 = -13.6/9 = -1.51\ \text{eV} \qquad E_2 = -13.6/4 = -3.40\ \text{eV}$$
+
+. . .
+
+**Step 2:** Energy gap.
+
+$$\Delta E = |-1.51 - (-3.40)| = 1.89\ \text{eV}$$
+
+. . .
+
+**Step 3:** Convert and compute $\lambda$.
+
+$$\lambda = \frac{hc}{\Delta E} = \frac{1.986 \times 10^{-16}\ \text{erg·cm}}{3.03 \times 10^{-12}\ \text{erg}} = 6.56 \times 10^{-5}\ \text{cm} = 656\ \text{nm}\ \checkmark$$
+
+::: {.notes}
+11–13 min. Walk through step by step. Emphasize the unit conversion: 1 eV = 1.602 × 10⁻¹² erg. Final answer agrees with the Balmer table — the Bohr model works.
+:::
+
+---
+
+## Every Element Has a Unique Barcode {background-color="black"}
+
+{{< fig absorption-emission-elements >}}
+
+::: {.fragment .text-center .text-base .text-muted .mt-2}
+Match observed lines to laboratory wavelengths → **identify the element.**
+:::
+
+::: {.notes}
+13–14 min. This is the payoff: we identify elements in stars by matching their spectral barcode to lab data. No need to visit the star.
+:::
+
+---
+
+## Quick Check: Spectral Lines {background-color="#1a1a2e"}
+
+::: {.quiz}
+An absorption line appears at 486.1 nm in a star's spectrum. Which element and transition is this?
+
+- [ ] Helium, ground-state transition
+- [x] Hydrogen, $n = 4 \to 2$ (H$\beta$)
+- [ ] Sodium, D-line transition
+- [ ] Iron, ionized state
+:::
+
+::: {.notes}
+~14 min. Give 20–30 seconds.
+
+Correct: 486.1 nm is H$\beta$, the second Balmer line. Students should be learning to recognize these numbers.
+:::
+
+---
+
+## {.center}
+
+::: {.r-fit-text}
+OBAFGKM
+:::
+
+*A temperature sequence — not composition*
+
+---
+
+## The Harvard Computers {background-color="black"}
+
+{{< fig harvard-computers >}}
+
+::: {.text-center .text-sm .text-muted .mt-1}
+Women who classified 350,000+ spectra by hand — and discovered the patterns that made astrophysics possible.
+:::
+
+::: {.notes}
+15–16 min. Quick history beat:
+
+- **Annie Jump Cannon:** classified 350,000 spectra, developed OBAFGKM
+- **Williamina Fleming:** discovered 310 variable stars, the Horsehead Nebula
+- **Cecilia Payne-Gaposchkin (1925):** proved stars are mostly hydrogen — the most important PhD in astronomy history
+
+They weren't allowed to use telescopes, earned less than secretaries, and transformed the field.
+:::
+
+---
+
+## The Spectral Sequence {background-color="black"}
+
+{{< fig obafgkm-spectra >}}
+
+::: {.fragment .text-center .text-base .text-muted .mt-2}
+**Oh Be A Fine Guy/Girl, Kiss Me.**
+:::
+
+::: {.notes}
+16–17 min. Walk through the sequence from O (hot, blue) to M (cool, red). Point to how the spectral features change dramatically even though composition is ~the same.
+:::
+
+---
+
+## OBAFGKM at a Glance
+
+::: {.table-scroll .text-xs}
+| Type | Color | Temperature | Main-Seq. Prevalence | Dominant Features |
+|---|---|---|---|---|
+| O | Blue-violet | $\gtrsim 30{,}000$ K | 0.00003% | Ionized helium |
+| B | Blue-white | 10,000–30,000 K | 0.13% | Neutral helium, strong H |
+| **A** | White | 7,500–10,000 K | 0.6% | **Strongest H Balmer** |
+| F | Yellow-white | 6,000–7,500 K | 3% | Moderate H, weak metals |
+| **G** | Yellow | 5,200–6,000 K | 7.6% | Weak H, **strong metals** |
+| K | Orange | 3,700–5,200 K | 12.1% | Very weak H, molecular bands |
+| **M** | Red-orange | $\lesssim 3{,}700$ K | 76.5% | **TiO molecular bands** |
+:::
+
+::: {.fragment .text-center .text-base .text-muted .mt-2}
+M dwarfs are **76.5%** of all stars — too faint to see by eye.
+:::
+
+::: {.notes}
+17–18 min. Don't read the whole table. Highlight three things:
+
+1. A stars have strongest H lines
+2. G stars (like the Sun) show strong metal lines
+3. M dwarfs dominate the galaxy by number
+:::
+
+---
+
+## Why Temperature Controls Line Strength
+
+::: {.incremental}
+- For H absorption: electron must already be in $n = 2$
+- Fraction in $n = 2$ depends on temperature: $\propto e^{-\chi_2/k_BT}$
+- [**Too cool (M stars):**]{.rn rn-type="underline" rn-color="#ff6b6b"} almost no atoms in $n = 2$ → weak H lines
+- [**Just right (A stars):**]{.rn rn-type="box" rn-color="#4ecdc4"} maximum population in $n = 2$ → strongest H lines
+- [**Too hot (O stars):**]{.rn rn-type="underline" rn-color="#ff6b6b"} hydrogen is **ionized** → no neutral H → weak H lines
+:::
+
+::: {.notes}
+18–20 min. This is the hardest conceptual point. Walk slowly.
+
+The Boltzmann factor $e^{-\chi/kT}$ with $\chi_2 = 10.2$ eV means you need T ~ 10,000 K to populate $n = 2$ significantly. But go too hot and hydrogen ionizes entirely. The "sweet spot" is A-star temperatures.
+:::
+
+---
+
+## Prediction: Why Weak H Lines? {background-color="#1a1a2e"}
+
+An M star ($T \approx 3{,}000$ K) has **weak** hydrogen Balmer lines.
+
+::: {.bg-muted .p-2 .text-sm}
+**Which explanation is correct?**
+
+(a) M stars have very little hydrogen
+
+(b) M stars are too cool — almost no H atoms in the $n = 2$ state
+
+(c) M stars are so hot that hydrogen is ionized
+
+(d) M stars are too far away to show lines
+:::
+
+::: {.notes}
+~20 min. Give 30 seconds. Cold-call.
+
+Answer: **(b).** All stars have ~73% hydrogen. But at 3,000 K, the Boltzmann factor puts almost no atoms in $n = 2$, so Balmer absorption is extremely weak.
+
+This directly answers the hook question from the beginning!
+:::
+
+---
+
+## The Spectral Sequence Is Temperature {background-color="black"}
+
+::: {.bg-muted .p-2}
+- **Do O stars have more helium?** No — same composition. Temperature ionizes H and excites He.
+- **Do A stars have more hydrogen?** No — same abundance. Temperature puts H into $n = 2$.
+- **Do M stars lack hydrogen?** No. Temperature keeps H atoms in $n = 1$ (ground state).
+:::
+
+::: {.fragment .text-center .text-lg .font-semibold .mt-2}
+Same atoms. Different temperatures. Different spectra.
+:::
+
+::: {.notes}
+20–21 min. This is the punchline that answers the opening question. Land it clearly.
+:::
+
+---
+
+## Quick Check: Spectral Type {background-color="#1a1a2e"}
+
+::: {.quiz}
+Two stars have identical composition. Star X is spectral type A; Star Y is spectral type M. What's different?
+
+- [ ] Star X has more hydrogen
+- [ ] Star Y has more metals
+- [x] Star X is hotter, so more H atoms occupy the $n = 2$ level
+- [ ] Star Y is closer, so lines appear weaker
+:::
+
+::: {.notes}
+~21 min. Give 20 seconds.
+
+Correct: temperature controls level populations, not composition.
+:::
+
+---
+
+## {.center}
+
+::: {.r-fit-text}
+The Doppler Shift
+:::
+
+*Reading stellar motion from light*
+
+---
+
+## Doppler: Wavelength Shifts from Motion {background-color="black"}
+
+{{< fig doppler-shift-exoplanet >}}
+
+::: {.notes}
+22–23 min. Connect to sound analogy (ambulance siren) but keep it brief — go straight to the formula.
+:::
+
+---
+
+## The Doppler Formula
+
+$$\frac{\Delta\lambda}{\lambda_0} = \frac{v_r}{c}$$
+
+::: {.fragment}
+- $\Delta\lambda = \lambda_{\text{obs}} - \lambda_0$ — the shift
+- $v_r$ — radial velocity (+ = receding, − = approaching)
+- $c = 3.0 \times 10^5$ km/s — speed of light
+:::
+
+::: {.fragment}
+::: {.bg-muted .p-2}
+**Redshift** ($\Delta\lambda > 0$): source receding | **Blueshift** ($\Delta\lambda < 0$): source approaching
+:::
+:::
+
+::: {.notes}
+23–24 min. Both sides are dimensionless ratios. Stress: typical stellar velocities are 10–100 km/s, so shifts are tiny (~0.01–0.03%) but measurable.
+:::
+
+---
+
+## Worked Example: Radial Velocity from H$\alpha$
+
+**Problem:** H$\alpha$ observed at 656.5 nm (rest: 656.3 nm). Approaching or receding?
+
+. . .
+
+**Step 1 — Direction:** $\lambda_{\text{obs}} > \lambda_0$ → **redshifted** → **receding**
+
+. . .
+
+**Step 2 — Shift:** $\Delta\lambda = 656.5 - 656.3 = 0.2$ nm
+
+. . .
+
+**Step 3 — Velocity:**
+
+$$v_r = c \times \frac{\Delta\lambda}{\lambda_0} = (3.0 \times 10^5\ \text{km/s}) \times \frac{0.2}{656.3} \approx 91\ \text{km/s}$$
+
+::: {.fragment .text-center .text-base .text-muted .mt-2}
+A 0.03% shift → ~91 km/s. Tiny shift, huge velocity.
+:::
+
+::: {.notes}
+24–26 min. Walk each step. Unit check: (km/s) × (nm/nm) = km/s ✓. Emphasize how a 0.2 nm shift is barely perceptible but translates to ~91 km/s because $c$ is enormous.
+:::
+
+---
+
+## Quick Check: Doppler Direction {background-color="#1a1a2e"}
+
+::: {.quiz}
+H$\beta$ (rest: 486.1 nm) is observed at 485.9 nm. The star is…
+
+- [x] Approaching (blueshifted — observed wavelength is shorter)
+- [ ] Receding (redshifted)
+- [ ] Stationary (no shift)
+- [ ] Rotating (broadened)
+:::
+
+::: {.notes}
+~26 min. Give 20 seconds.
+
+$\lambda_{\text{obs}} < \lambda_0$ → blueshift → approaching. The velocity would be $v_r = c \times (-0.2/486.1) \approx -123$ km/s.
+:::
+
+---
+
+## Doppler Unlocks Masses {background-color="black"}
+
+::: {.bg-muted .p-2}
+If a star is in a **binary system**, its radial velocity oscillates as it orbits.
+
+Measure the oscillation period and amplitude → infer the companion's **mass**.
+:::
+
+::: {.fragment .text-center .text-lg .font-semibold .mt-2}
+**Lecture 4:** Binary orbits + Doppler → stellar masses.
+:::
+
+::: {.notes}
+26–27 min. Forward pointer. Doppler isn't just a velocity tool — it's the most direct route to stellar masses, which determine everything about stellar evolution.
+:::
+
+---
+
+## {.center}
+
+::: {.r-fit-text}
+Putting It Together
+:::
+
+*Three clues from one spectrum*
+
+---
+
+## One Spectrum, Three Inferences {background-color="black"}
+
+::: {.table-scroll .text-sm}
+| Observable | What we measure | What we infer |
+|---|---|---|
+| **Which lines appear** | Line wavelengths matched to lab data | **Composition** |
+| **How strong lines are** | Relative strengths of different species | **Temperature** (spectral type) |
+| **Where lines are shifted** | Doppler shift $\Delta\lambda$ | **Radial velocity** |
+:::
+
+::: {.fragment .text-center .text-base .text-muted .mt-2}
+Composition, temperature, and motion — from a single observation.
+:::
+
+::: {.notes}
+27–28 min. This is the synthesis moment. Three independent pieces of information from one spectrum.
+:::
+
+---
+
+## Multi-Clue Diagnosis
+
+**Observed:** $T \approx 9{,}500$ K, strong Balmer lines, weak metals, H$\alpha$ at 656.1 nm
+
+. . .
+
+**(a) Spectral type:** ~9,500 K + strong Balmer → **type A**
+
+. . .
+
+**(b) Velocity:** $\Delta\lambda = 656.1 - 656.3 = -0.2$ nm → blueshifted → approaching
+
+$$v_r = (3.0 \times 10^5) \times \frac{-0.2}{656.3} \approx -91\ \text{km/s}$$
+
+. . .
+
+**(c) What else do we need?** Distance → luminosity → radius. Time-series Doppler → mass.
+
+::: {.notes}
+28–30 min. This worked example ties everything together. Reveal progressively. Each step uses a different tool from the lecture.
+:::
+
+---
+
+## The Module 2 Inference Chain {background-color="black"}
+
+::: {.table-scroll .text-sm}
+| Lecture | New Tool | What It Unlocks |
+|---|---|---|
+| 1 | Parallax → distance | Distance, then luminosity |
+| 2 | Color → temperature; Stefan-Boltzmann | Radius |
+| **3** | **Spectral lines** | **Composition, refined $T$, velocity** |
+| 4 | Binary orbits + Doppler | **Mass** |
+| 5–6 | Magnitudes + HR diagram | Full classification |
+:::
+
+::: {.fragment .text-center .text-base .text-muted .mt-2}
+Five properties from photons alone. Mass needs one more tool.
+:::
+
+::: {.notes}
+30–31 min. Show where we are in the semester arc. After Lecture 4, we'll have everything we need for the full H–R diagram.
+:::
+
+---
+
+## {.center}
+
+::: {.r-fit-text}
+Spectroscopy Meets Climate
+:::
+
+*Same physics, different scale*
+
+---
+
+## Planetary Energy Balance
+
+At equilibrium: power absorbed from star = power radiated by planet.
+
+::: {.fragment}
+$$T_{\text{eq}} = 279\ \text{K} \times (1-A)^{1/4} \times \left(\frac{d}{1\ \text{AU}}\right)^{-1/2}$$
+:::
+
+::: {.fragment}
+For Earth ($A = 0.3$, $d = 1$ AU):
+
+$$T_{\text{eq}} = 279 \times (0.70)^{1/4} \times 1 = 279 \times 0.915 = 255\ \text{K} = -18°\text{C}$$
+:::
+
+::: {.fragment .text-center .text-base .text-muted .mt-2}
+**Earth's actual average: 288 K = +15°C.** Something warms us by 33 K.
+:::
+
+::: {.notes}
+31–33 min. The ratio method makes this quick. Emphasize: 255 K is well below freezing — without the greenhouse effect, Earth would be an ice ball.
+:::
+
+---
+
+## The Greenhouse Effect: Kirchhoff's Law 3 for Planets {background-color="black"}
+
+{{< fig earth-energy-balance-blackbodies >}}
+
+::: {.notes}
+33–35 min. Point to the two Planck curves:
+
+1. **Sun's incoming radiation** peaks at ~0.5 μm (visible) — passes through atmosphere
+2. **Earth's outgoing radiation** peaks at ~10 μm (thermal infrared) — **blocked by greenhouse gases**
+
+CO₂, H₂O, CH₄ have absorption bands right where Earth is trying to radiate. They absorb outgoing IR and re-emit some back down → surface warms.
+
+This IS Kirchhoff's law 3: the atmosphere is the "cool gas" absorbing from the "hot continuum" (Earth's surface).
+:::
+
+---
+
+## A Tale of Three Planets {background-color="black"}
+
+{{< fig greenhouse-comparison >}}
+
+::: {.table-scroll .text-xs}
+| Planet | $T_{\text{eq}}$ (K) | Actual $T$ (K) | Greenhouse warming |
+|---|---|---|---|
+| Venus | 227 | **735** | +508 K |
+| Earth | 255 | **288** | +33 K |
+| Mars | 210 | **210** | ~0 K |
+:::
+
+::: {.fragment .text-center .text-base .text-muted .mt-2}
+Same star, similar compositions. **Atmosphere thickness** makes all the difference.
+:::
+
+::: {.notes}
+35–37 min. Venus: runaway greenhouse, CO₂ at 92 bar, hot enough to melt lead. Mars: CO₂ atmosphere but only 0.6% of Earth's pressure → negligible greenhouse. Earth: just right — for now.
+
+Note the paradox: Venus has a LOWER equilibrium temperature than Earth (high albedo reflects most sunlight), yet it's 460°C at the surface. That's how powerful the greenhouse effect is.
+:::
+
+---
+
+## CO$_2$'s 15 $\mu$m Band {background-color="black"}
+
+{{< fig earth-reflectance-spectra >}}
+
+::: {.fragment .text-center .text-base .text-muted .mt-2}
+CO$_2$ absorbs at 15 $\mu$m — right where Earth's thermal radiation peaks.
+:::
+
+::: {.notes}
+37–38 min. Point to the 15 μm absorption dip. This is the same quantum mechanics as hydrogen Balmer lines — molecular energy levels producing absorption at specific wavelengths. Adding more CO₂ deepens and broadens this band, trapping more outgoing IR.
+
+CO₂ has gone from 280 ppm (pre-industrial) to ~425 ppm. The physics of why this matters has been understood since Tyndall (1861) and Arrhenius (1896).
+:::
+
+---
+
+## Quick Check: Greenhouse Physics {background-color="#1a1a2e"}
+
+::: {.quiz}
+The greenhouse effect warms Earth because…
+
+- [ ] CO$_2$ absorbs incoming visible sunlight
+- [ ] The ozone layer traps heat
+- [x] Atmospheric gases absorb outgoing infrared radiation and re-emit some downward
+- [ ] Earth's core heats the surface
+:::
+
+::: {.notes}
+~38 min. Give 20 seconds.
+
+Correct: greenhouse gases absorb outgoing IR (not incoming visible), re-emit in all directions including downward. This is Kirchhoff's law 3.
+:::
+
+---
+
+## Summary: Key Takeaways
+
+::: {.incremental}
+1. **Kirchhoff's laws** connect spectral appearance to physical conditions — stars show absorption spectra because of their temperature gradient
+2. **Spectral lines** are atomic fingerprints — energy levels set wavelengths
+3. **OBAFGKM** is a **temperature** sequence — same composition, different excitation
+4. **Doppler shift** converts wavelength shifts to velocities — $\Delta\lambda/\lambda_0 = v_r/c$
+5. **Greenhouse effect** is Kirchhoff's law 3 applied to planets — same physics, different scale
+:::
+
+::: {.notes}
+38–39 min. Read through once. Each takeaway maps to a learning objective.
+:::
+
+---
+
+## The Takeaway {.center}
+
+If you forget everything else from today, remember this:
+
+::: {.fragment .fade-up}
+::: {.r-fit-text}
+**One spectrum → composition, temperature, velocity.**
+:::
+:::
+
+::: {.fragment .mt-2}
+A star's light is an autobiography — if you know how to read it.
+:::
+
+::: {.notes}
+~39 min. Let this land. This is the core message of the entire lecture.
+:::
+
+---
+
+## Next Time: Binary Stars & Stellar Masses {background-image="/assets/images/common/cosmic-cliffs-jwst.png" background-opacity="0.2"}
+
+**Lecture 4:** We put the Doppler shift to work on **binary stars**.
+
+::: {.incremental}
+- Radial velocity oscillations → orbital period + amplitude
+- Kepler's laws → **stellar masses**
+- Mass is the property that determines a star's entire life story
+:::
+
+::: {.fragment}
+::: {.text-center .text-lg .font-semibold .mt-2}
+The last fundamental property — and the most important one.
+:::
+:::
+
+::: {.notes}
+39–40 min. Build anticipation for Lecture 4. Mass determines luminosity, lifetime, fate — everything.
+:::
+
+---
+
+## Questions? {background-image="/assets/images/common/noirlab-nightsky-mosaic.jpg" background-opacity="0.4"}
+
+::: {.text-center .text-base .text-muted .mt-2}
+Common questions at this point:
+:::
+
+::: {.incremental}
+- "How do we know the lab wavelengths are right?" — Measured precisely since 1859
+- "Can we determine composition from just one line?" — Need multiple lines for confidence
+- "Do all stars have absorption spectra?" — Most, but emission-line stars exist (Be stars, Wolf-Rayet)
+:::
+
+::: {.notes}
+Leave 5+ minutes for questions. Address the hook question one final time: "Same composition, different spectra — because temperature controls which energy levels are populated."
+:::

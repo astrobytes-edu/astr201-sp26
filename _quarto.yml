@@ -143,6 +143,8 @@ website:
                 href: modules/module-02/readings/lecture-02-surface-flux-and-colors-reading.qmd
           - section: "Lecture 3: Spectra & Composition"
             contents:
+              - text: "Slides"
+                href: modules/module-02/slides/lecture-03-spectra-and-composition.qmd
               - text: "Reading"
                 href: modules/module-02/readings/lecture-03-spectra-and-composition-reading.qmd
 
