@@ -51,9 +51,9 @@ In everyday language, "spectrum" might mean a range or continuum. In astrophysic
 
 ::: {.callout-note title="Reading Map — Choose Your Track"}
 
-**Track A (Core, ~25 min):** Read **Parts 1–6** in order — the main text, all worked examples, Quick Checks, and the Common Confusions box. Skip any box marked *Enrichment* (collapsible and clearly labeled). This gives you every equation, technique, and concept you need for homework and exams.
+**Track A (Core, ~25 min):** Read **Parts 1–5** in order — the main text, all worked examples, Quick Checks, and the Common Confusions box. Skip any box marked *Enrichment* (collapsible and clearly labeled). This gives you every equation, technique, and concept you need for homework and exams.
 
-**Track B (Full, ~40 min):** Read everything, including *Enrichment* boxes (historical context, ionization physics, line broadening details) and **Parts 7–8** (planetary atmospheres and climate, assumptions and limitations). Part 7 connects spectroscopy to climate science — it *will* appear on exams because the physics is the same.
+**Track B (Full, ~40 min):** Read everything, including *Enrichment* boxes (historical context, ionization physics, line broadening details) and **Parts 6–7** (planetary atmospheres and climate, assumptions and limitations). Part 6 connects spectroscopy to climate science — it *will* appear on exams because the physics is the same.
 
 *Both tracks cover all core learning objectives. Track B adds depth that connects spectroscopy to some of the most consequential physics on Earth.*
 :::
@@ -73,6 +73,11 @@ In Lectures 1 and 2, you learned to measure a star's distance, luminosity, tempe
 ---
 
 ## Part 1: Kirchhoff's Laws — Why Stars Show Absorption Spectra
+
+::: {.callout-tip}
+### Think First
+All stars are made of roughly the same stuff — about 73% hydrogen and 25% helium by mass. So why do their spectra look so different? Hold this question as you read Parts 1–3. By the end of Part 3, you should be able to answer it quantitatively.
+:::
 
 ### Three Types of Spectra
 
@@ -160,7 +165,11 @@ Why do atoms absorb and emit at *specific* wavelengths rather than at all wavele
 
 {{< fig hydrogen-absorption >}}
 
+Now look at the reverse process — what happens when excited electrons fall *back down* through the energy levels:
+
 {{< fig hydrogen-emission >}}
+
+The same energy gaps produce the same wavelengths whether the photon is absorbed (electron jumps *up*) or emitted (electron falls *down*). This is why absorption and emission lines appear at identical wavelengths — a fact that Kirchhoff noticed empirically decades before quantum mechanics explained it.
 
 The **Bohr model** (1913) captures the essential idea for hydrogen. The energy of the $n$-th level is:
 
@@ -174,6 +183,11 @@ Key observations from this equation:
 - **$n = 2$ (first excited state):** $E_2 = -13.6/4 = -3.4$ eV — less tightly bound
 - **As $n$ increases:** levels crowd together and approach $E = 0$ (the ionization threshold, where the electron is free)
 - **Negative sign:** means the electron is *bound*. You must add energy to free it.
+
+::: {.callout-tip}
+### Try It Before Reading On
+Use $E_n = -13.6\ \text{eV}/n^2$ to compute $E_4$. What is the energy gap $\Delta E$ between $n = 4$ and $n = 2$, in eV? Convert that energy to a wavelength using $\lambda = hc/\Delta E$ with $hc = 1.986 \times 10^{-16}\ \text{erg·cm}$ and $1\ \text{eV} = 1.602 \times 10^{-12}\ \text{erg}$. What color does that correspond to? (Check your answer against the Balmer series table below.)
+:::
 
 When an electron **transitions between levels**, it either absorbs or emits a photon whose energy equals the difference between the two levels:
 
@@ -524,11 +538,9 @@ Also, if a star is **rotating**, one limb moves toward you and the other moves a
 
 ---
 
-## Part 5: What Spectra Tell Us — and What They Don't
+## Part 5: Putting It Together — Reading a Real Stellar Spectrum
 
-### The Spectroscopic Toolkit: Three Inferences from One Observation
-
-A single stellar spectrum gives us **three independent pieces of information**:
+You now have a complete spectroscopic toolkit. Before applying it, take stock of what a single stellar spectrum gives you — **three independent pieces of information**:
 
 | Observable | What we measure | What we infer |
 |---|---|---|
@@ -538,15 +550,7 @@ A single stellar spectrum gives us **three independent pieces of information**:
 
 Additional information can be extracted from **line widths** (broadening from pressure, rotation, turbulence) and **line splitting** (Zeeman effect from magnetic fields), but the three inferences above are the workhorses.
 
-### What Spectra Cannot Tell Us Directly
-
-Spectra are powerful, but they have limits. Spectroscopy alone **does not** directly give:
-
-- **Luminosity** — you need a distance measurement (parallax or standard candle) plus photometry
-- **Mass** — you need dynamics (binary orbits from Doppler shifts, or asteroseismology)
-- **Radius** — you need Stefan-Boltzmann plus luminosity and temperature
-- **Distance** — you need parallax, standard candles, or other methods
-- **Transverse velocity** — you need astrometric tracking over years
+Spectra are powerful, but they have limits. Spectroscopy alone **does not** directly give luminosity (you need distance + photometry), mass (you need binary orbits or asteroseismology), radius (you need Stefan-Boltzmann with $L$ and $T$), distance (you need parallax or standard candles), or transverse velocity (you need astrometric tracking over years).
 
 ::: {.callout-important title="Connection: The Module 2 Inference Chain"}
 
@@ -560,12 +564,8 @@ Each lecture in Module 2 adds one link:
 | 4 | Binary orbits + Doppler | **Mass** |
 | 5–6 | Magnitudes + HR diagram | Full stellar classification |
 
-Lecture 3 gives us three new inferences (composition, refined temperature, velocity) and sets up Lecture 4 (binary masses from radial velocity curves).
+Combined with distance (Lecture 1) and Stefan-Boltzmann (Lecture 2), we can now characterize five fundamental stellar properties — distance, luminosity, temperature, radius, and composition — from photons alone. Mass requires one more tool: binary orbits (Lecture 4).
 :::
-
-**Part 5 takeaway:** Spectroscopy extracts composition, temperature, and radial velocity from a single observation. Combined with distance (Lecture 1) and Stefan-Boltzmann (Lecture 2), we can now characterize five fundamental stellar properties — distance, luminosity, temperature, radius, and composition — from photons alone. Mass requires one more tool: binary orbits (Lecture 4).
-
----
 
 ## Check Yourself
 
@@ -575,7 +575,7 @@ Lecture 3 gives us three new inferences (composition, refined temperature, veloc
 
 ---
 
-## Part 6: Putting It Together — Reading a Real Stellar Spectrum
+Now let's use all three clues simultaneously on a real problem.
 
 ### Worked Example 3: Diagnosing a Mystery Star
 
@@ -631,7 +631,7 @@ The star approaches at about 91 km/s.
 
 ---
 
-## Part 7: Spectroscopy Meets Climate — Why CO$_2$ Warms Planets
+## Part 6: Spectroscopy Meets Climate — Why CO$_2$ Warms Planets
 
 Everything you've learned about spectral absorption applies not only to stars but to **planetary atmospheres**. The same quantum physics that creates stellar absorption lines also creates the **greenhouse effect** — one of the most consequential applications of spectroscopy in all of science.
 
@@ -700,6 +700,15 @@ Venus, Earth, and Mars orbit the same star and formed from the same protoplaneta
 Look carefully at the table and figure: Venus is *closer* to the Sun than Earth, yet its equilibrium temperature is *lower* (227 K vs. 255 K). How? **Albedo.** Venus's thick sulfuric acid clouds reflect 77% of incoming sunlight back to space before it can be absorbed. The $(1-A)^{1/4}$ factor in the equilibrium temperature formula means that only the *absorbed* fraction of sunlight matters. Venus absorbs just 23% of its incoming flux, while Earth absorbs 70%. The higher albedo more than compensates for the shorter distance — making the +508 K greenhouse warming even more staggering.
 
 Venus is an extreme case: its massive CO$_2$ atmosphere creates a **runaway greenhouse effect** — surface temperatures hot enough to melt lead (735 K = 462°C). Mars has a CO$_2$-dominated atmosphere too, but it's so thin (surface pressure only 0.6% of Earth's) that the greenhouse effect is negligible. Earth sits in between — a modest greenhouse effect that makes the planet habitable.
+
+::: {.callout-tip}
+### Try It: Mars's Equilibrium Temperature
+Use the ratio method to verify Mars's entry in the table above. With $d = 1.52$ AU and $A = 0.25$:
+
+$$T_{\text{eq}} = 279\ \text{K} \times (1-0.25)^{1/4} \times \left(\frac{1.52\ \text{AU}}{1\ \text{AU}}\right)^{-1/2}$$
+
+Work through the arithmetic: $(0.75)^{1/4} \approx 0.930$ and $(1.52)^{-1/2} \approx 0.811$. Multiply these together with 279 K. Do you get close to 210 K? What does the fact that $T_{\text{eq}} \approx T_{\text{surface}}$ tell you about Mars's atmosphere?
+:::
 
 ::: {.callout-note}
 ### Worked Example 4: Earth's Equilibrium Temperature
@@ -792,7 +801,7 @@ Atmospheric CO$_2$ has risen from ~280 ppm (pre-industrial) to ~425 ppm (2025) �
 This is the same Stefan-Boltzmann physics you used in Lecture 2, now applied to a planet instead of a star. The equations don't care whether the blackbody is Betelgeuse or Earth.
 :::
 
-**Part 7 takeaway:** The greenhouse effect is Kirchhoff's third law applied to a planet: atmospheric molecules absorb infrared radiation from the warm surface at specific wavelengths set by quantum mechanics. CO$_2$'s strong 15 $\mu$m band sits squarely in Earth's thermal emission window. Increasing CO$_2$ deepens this absorption, traps more outgoing radiation, and warms the surface. The same spectroscopy that tells us what stars are made of tells us why our planet is warming.
+**Part 6 takeaway:** The greenhouse effect is Kirchhoff's third law applied to a planet: atmospheric molecules absorb infrared radiation from the warm surface at specific wavelengths set by quantum mechanics. CO$_2$'s strong 15 $\mu$m band sits squarely in Earth's thermal emission window. Increasing CO$_2$ deepens this absorption, traps more outgoing radiation, and warms the surface. The same spectroscopy that tells us what stars are made of tells us why our planet is warming.
 
 ::: {.callout-note title="Watch: JWST and Planetary Atmospheres"}
 The James Webb Space Telescope uses exactly the infrared spectroscopy we've been discussing to study the atmospheres of exoplanets — worlds orbiting other stars. By measuring which wavelengths are absorbed when a planet passes in front of its star, JWST can identify molecules like CO$_2$, H$_2$O, and CH$_4$ in atmospheres light-years away. It's Kirchhoff's third law applied across interstellar distances.
@@ -802,7 +811,7 @@ The James Webb Space Telescope uses exactly the infrared spectroscopy we've been
 
 ---
 
-## Part 8: Assumptions and Limitations
+## Part 7: Assumptions and Limitations
 
 ### Where These Tools Work (and Where They Need Refinement)
 
@@ -814,7 +823,7 @@ The James Webb Space Telescope uses exactly the infrared spectroscopy we've been
 
 **Interstellar absorption adds extra lines.** Gas and dust between us and a star can imprint *additional* absorption features (e.g., interstellar sodium D lines, diffuse interstellar bands). These must be separated from the star's own atmospheric lines — usually by checking whether the lines share the star's Doppler shift or not. (Interstellar lines have their own, different velocity.)
 
-**Part 8 takeaway:** Spectroscopy is robust but not foolproof. Binaries blend spectra, interstellar gas adds false lines, and precise composition requires careful modeling beyond simple line identification. These caveats don't undermine the method — they refine it.
+**Part 7 takeaway:** Spectroscopy is robust but not foolproof. Binaries blend spectra, interstellar gas adds false lines, and precise composition requires careful modeling beyond simple line identification. These caveats don't undermine the method — they refine it.
 
 ---
 
@@ -884,7 +893,7 @@ You now have composition, temperature, and velocity from spectroscopy. In **Lect
 5. ⭐⭐ **Doppler Velocity.** A star's sodium D line (rest wavelength $\lambda_0 = 589.0$ nm) is observed at $\lambda_{\text{obs}} = 589.4$ nm. (a) Is the star approaching or receding? (b) Calculate the radial velocity in km/s. (c) Express the fractional shift $\Delta\lambda/\lambda_0$ as a percentage — how does it compare to the ratio $v_r/c$?
 
 <!-- Problem: Calculation:Full / Application / O→M→I / Tools: Unit-Conversion, Model-Inversion / ⭐⭐ -->
-6. ⭐⭐ **Earth's Equilibrium Temperature.** Calculate the equilibrium temperature of a planet at $d = 1.5$ AU from a Sun-like star, with albedo $A = 0.25$. (a) Use the ratio formula $T_{\text{eq}} = 279\ \text{K} \times (1-A)^{1/4} \times (d/1\ \text{AU})^{-1/2}$. (b) Compare to Mars's actual surface temperature (~210 K). (c) What does the comparison tell you about Mars's greenhouse effect?
+6. ⭐⭐ **Earth's Equilibrium Temperature.** Calculate the equilibrium temperature of a planet at $d = 1.5$ AU from a Sun-like star, with albedo $A = 0.25$. (a) Use the ratio method $T_{\text{eq}} = 279\ \text{K} \times (1-A)^{1/4} \times (d/1\ \text{AU})^{-1/2}$. (b) Compare to Mars's actual surface temperature (~210 K). (c) What does the comparison tell you about Mars's greenhouse effect?
 
 ### Synthesis
 
@@ -901,7 +910,7 @@ You now have composition, temperature, and velocity from spectroscopy. In **Lect
 8. ⭐⭐ **Stellar vs. Planetary Spectroscopy.** Explain how Kirchhoff's third law applies to *both* of the following situations: (a) A G-type star's spectrum showing Ca II absorption lines. (b) Earth's atmosphere absorbing outgoing infrared radiation at CO$_2$'s 15 $\mu$m band. In each case, identify the "hot continuum source" and the "cooler absorbing gas."
 
 <!-- Problem: Synthesis / Connection / O→M→I / Tools: Model-Inversion, Uncertainty/Assumptions / ⭐⭐⭐ -->
-9. ⭐⭐⭐ **Venus's Runaway Greenhouse.** Venus has $d = 0.72$ AU from the Sun, albedo $A = 0.77$ (highly reflective clouds), and an atmosphere that is 96.5% CO$_2$ at 92 bar surface pressure. (a) Calculate Venus's equilibrium temperature using the ratio formula. (b) Compare to the actual surface temperature of 735 K. (c) Calculate the greenhouse warming $\Delta T = T_{\text{surface}} - T_{\text{eq}}$. (d) The greenhouse warming on Venus is about 15× larger than on Earth. Using the molecular absorption concept from Part 7, explain qualitatively why a thicker CO$_2$ atmosphere produces a much larger greenhouse effect. (e) Could Earth experience a runaway greenhouse? What would need to happen?
+9. ⭐⭐⭐ **Venus's Runaway Greenhouse.** Venus has $d = 0.72$ AU from the Sun, albedo $A = 0.77$ (highly reflective clouds), and an atmosphere that is 96.5% CO$_2$ at 92 bar surface pressure. (a) Calculate Venus's equilibrium temperature using the ratio method. (b) Compare to the actual surface temperature of 735 K. (c) Calculate the greenhouse warming $\Delta T = T_{\text{surface}} - T_{\text{eq}}$. (d) The greenhouse warming on Venus is about 15× larger than on Earth. Using the molecular absorption concept from Part 6, explain qualitatively why a thicker CO$_2$ atmosphere produces a much larger greenhouse effect. (e) Could Earth experience a runaway greenhouse? What would need to happen?
 
 ---
 
