@@ -503,6 +503,34 @@ figures:
     credit: "Harvard College Observatory / Smithsonian Institution"
     module: 2
 
+  greenhouse-comparison:
+    path: /assets/images/module-02/week-05/greenhouse-comparison.png
+    caption: "**What to notice:** Venus is closer to the Sun yet has a *lower* equilibrium temperature than Earth because its high albedo reflects 77% of sunlight. The greenhouse warming (mauve arrows) is what separates $T_{\\text{eq}}$ from $T_{\\text{actual}}$ — Venus's massive CO$_2$ atmosphere adds 508 K, Earth's adds 33 K, and Mars's thin atmosphere adds essentially nothing."
+    alt: "Bar chart comparing equilibrium temperature (teal) and actual surface temperature (gold) for Venus, Earth, and Mars. Venus shows the largest greenhouse gap of +508 K, Earth shows +33 K, and Mars shows approximately zero. Dominant atmospheric greenhouse gases are labeled beneath each planet."
+    credit: "ASTR 201 (generated)"
+    module: 2
+
+  obafgkm-spectra:
+    path: /assets/images/module-02/week-05/obafgkm_noao_big.jpg
+    caption: "**What to notice:** The spectral sequence from O (top, hottest) to M (bottom, coolest). Dark absorption lines shift across the sequence — hydrogen Balmer lines peak at A-type, helium lines dominate O and B, metal lines crowd in at G and K, and molecular bands appear at M. The bottom three rows show special cases: a metal-poor F star, an M star with emission lines, and a B star with emission."
+    alt: "Composite image of stellar spectra arranged vertically from O6.5 at top to M5 at bottom, with wavelength increasing left to right across the visible band. Each horizontal strip shows a rainbow-colored spectrum with dark absorption lines at different positions. Star catalog identifiers (HD numbers) are labeled on the right. Three additional spectra at the bottom show an F4 metal-poor star, an M4.5 emission star, and a B1 emission star."
+    credit: "NOAO/AURA/NSF"
+    module: 2
+
+  mk-star-sizes:
+    path: /assets/images/module-02/week-05/800px-Morgan-Keenan_spectral_classificatio.max-1000x1000.png
+    caption: "**What to notice:** Main-sequence stars span a huge range of size and color. M dwarfs (left) are small and red-orange; O stars (right) are large and blue-white. But size on the main sequence is just one dimension — a red *supergiant* can dwarf an O star despite being cooler."
+    alt: "Artistic rendering of main-sequence stars arranged left to right by spectral type from M (small, red-orange) through K, G, F, A, B to O (large, blue-white), shown to relative scale against a black background. Each star is labeled with its spectral letter."
+    credit: "Wikimedia Commons (after Morgan & Keenan)"
+    module: 2
+
+  earth-energy-balance-blackbodies:
+    path: /assets/images/module-02/week-05/energy_breakdown.png
+    caption: "**What to notice:** Two blackbodies, two very different temperatures. The Sun (~5,800 K) radiates a Planck curve peaking in visible light (~0.5 $\\mu$m). Earth (~288 K) re-radiates a Planck curve peaking in thermal infrared (~10 $\\mu$m). Greenhouse gases absorb in the infrared window where Earth is trying to radiate — not where the Sun's energy arrives. The sharp absorption features in the outgoing spectrum are the molecular fingerprints of CO$_2$, H$_2$O, and O$_3$."
+    alt: "Diagram showing the electromagnetic spectrum with two Planck curves. Left panel (yellow background): incoming solar radiation peaking near 1 micron in the visible band. Right panel (blue background): outgoing terrestrial radiation peaking near 10 microns in the thermal infrared, with deep absorption notches carved by atmospheric greenhouse gases. The full EM spectrum from gamma rays to long waves is labeled across the top."
+    credit: "NOAA JetStream"
+    module: 2
+
   # ==============================================================
   # Module 3: Stellar Structure & Evolution
   # ==============================================================

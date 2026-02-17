@@ -160,6 +160,8 @@ Why do atoms absorb and emit at *specific* wavelengths rather than at all wavele
 
 {{< fig hydrogen-absorption >}}
 
+{{< fig hydrogen-emission >}}
+
 The **Bohr model** (1913) captures the essential idea for hydrogen. The energy of the $n$-th level is:
 
 {{< include ../../../_includes/equations/bohr-energy.qmd >}}
@@ -198,7 +200,7 @@ The most famous set of spectral lines in astronomy is the **Balmer series** — 
 | $n = 5 \to 2$ | H$\gamma$ | 434.0 | Violet |
 | $n = 6 \to 2$ | H$\delta$ | 410.2 | Near-UV |
 
-These four lines are the most prominent features in the visible spectra of many stars. They fall in the visible range because the energy differences ($\sim$1.9–3.4 eV) correspond to the energy of visible photons.
+These four lines are the most prominent features in the visible spectra of many stars. They fall in the visible range because the energy differences ($\sim$1.9–3.0 eV) correspond to the energy of visible photons.
 
 ::: {.callout-note}
 ### Why Is H$\alpha$ Red?
@@ -211,7 +213,7 @@ The $n = 3 \to 2$ transition releases $\Delta E = 1.89$ eV. Using $\lambda = hc/
 ::: {.callout-note}
 ## Worked Example 1: Calculating H$\alpha$'s Wavelength
 
-**Problem:** Verify that the $n = 3 \to 2$ transition in hydrogen produces a photon at 656 nm.
+**Problem:** Use the Bohr model to predict the wavelength of the $n = 3 \to 2$ transition in hydrogen. Compare to the observed H$\alpha$ wavelength of 656.3 nm.
 
 **Solution:**
 
@@ -227,17 +229,17 @@ $$\Delta E = 1.889 \times 1.602 \times 10^{-12}\ \text{erg} = 3.026 \times 10^{-
 
 **Step 4 — Apply $\lambda = hc / \Delta E$.**
 $$\lambda = \frac{(6.626 \times 10^{-27}\ \text{erg·s})(2.998 \times 10^{10}\ \text{cm/s})}{3.026 \times 10^{-12}\ \text{erg}}$$
-$$\lambda = \frac{1.986 \times 10^{-16}\ \text{erg·cm}}{3.026 \times 10^{-12}\ \text{erg}} = 6.563 \times 10^{-5}\ \text{cm}$$
+$$\lambda = \frac{1.986 \times 10^{-16}\ \text{erg·cm}}{3.026 \times 10^{-12}\ \text{erg}} = 6.56 \times 10^{-5}\ \text{cm}$$
 
 **Step 5 — Convert to nm.** ($1\ \text{cm} = 10^7\ \text{nm}$)
-$$\lambda = 6.563 \times 10^{-5}\ \text{cm} \times 10^7\ \text{nm/cm} = 656.3\ \text{nm}\ \checkmark$$
+$$\lambda = 6.56 \times 10^{-5}\ \text{cm} \times 10^7\ \text{nm/cm} = 656\ \text{nm}\ \checkmark$$
 
 ::: {.callout-note}
 ## Unit Check
 $$[\lambda] = \frac{[\text{erg·s}][\text{cm/s}]}{[\text{erg}]} = \frac{\text{erg·cm}}{\text{erg}} = \text{cm}\ \checkmark$$
 :::
 
-**Interpretation:** The Bohr model *predicts* the observed H$\alpha$ wavelength exactly. This was one of its great early triumphs. The energy gap between $n = 3$ and $n = 2$ is 1.89 eV, which corresponds to deep red visible light — the same red glow you see in photographs of emission nebulae.
+**Interpretation:** The Bohr model predicts H$\alpha$ at 656 nm — within 0.3 nm of the precise laboratory value (656.28 nm). The small difference comes from rounding the ionization energy to 13.6 eV; the exact Rydberg value is 13.5984 eV. This close agreement was one of the Bohr model's great early triumphs. The energy gap between $n = 3$ and $n = 2$ is 1.89 eV, which corresponds to deep red visible light — the same red glow you see in photographs of emission nebulae.
 :::
 
 ---
@@ -278,17 +280,19 @@ The classic mnemonic: **"Oh Be A Fine Guy/Girl, Kiss Me."**
 
 The breakthrough came when Cecilia Payne-Gaposchkin showed in her 1925 PhD thesis — arguably the most important doctoral dissertation in the history of astronomy — that stars are overwhelmingly composed of hydrogen and helium, and that the spectral sequence is fundamentally a **temperature sequence**, not a composition sequence. This was so radical that her advisor, Henry Norris Russell, initially urged caution (he later acknowledged she was right). The composition of stars is remarkably uniform (about 74% hydrogen, 25% helium, 1–2% heavier elements by mass). What changes along the sequence is not *what atoms are present* but *which quantum states those atoms occupy* — and that depends on temperature.
 
-<!-- FIGURE NEEDED: OBAFGKM spectral sequence — seven stellar spectra arranged vertically by temperature, wavelength on x-axis, intensity on y-axis. Annotations showing where H Balmer lines peak (strongest in A), where He II appears (O), where metal lines crowd in (G, K), and where molecular bands appear (M). Credit: NOAO or similar. -->
+{{< fig obafgkm-spectra >}}
 
-| Spectral Type | Temperature (K) | Color | Dominant Spectral Features | Examples |
-|---|---|---|---|---|
-| O | $\gtrsim 30{,}000$ | Blue | He II (ionized helium), weak H | $\zeta$ Puppis |
-| B | $10{,}000$–$30{,}000$ | Blue-white | He I (neutral helium), strong H | Rigel, Spica |
-| A | $7{,}500$–$10{,}000$ | White | **Strongest H Balmer lines** | Sirius, Vega |
-| F | $6{,}000$–$7{,}500$ | Yellow-white | Moderate H, weak metals | Procyon A, Canopus |
-| G | $5{,}200$–$6{,}000$ | Yellow | Weak H, **strong metal lines** (Ca, Fe) | **The Sun (G2V)** |
-| K | $3{,}700$–$5{,}200$ | Orange | Very weak H, strong metals, molecular bands appear | Arcturus |
-| M | $\lesssim 3{,}700$ | Red | **Molecular bands** (TiO), very weak H | Betelgeuse, Proxima Cen |
+| Spectral Type | Color | Temperature Range | Main-Sequence Prevalence | Dominant Spectral Features | Example |
+|---|---|---|---|---|---|
+| O | Blue-violet | $\gtrsim 30{,}000$ K | 0.00003% | He II (ionized helium), weak H | O5V ($\zeta$ Puppis) |
+| B | Blue-white | $10{,}000$–$30{,}000$ K | 0.13% | He I (neutral helium), strong H | B8V (Rigel), B1V (Spica) |
+| A | White | $7{,}500$–$10{,}000$ K | 0.6% | **Strongest H Balmer lines** | A0V (Sirius), A0V (Vega) |
+| F | Yellow-white | $6{,}000$–$7{,}500$ K | 3% | Moderate H, weak metals | F5IV (Procyon A) |
+| G | Yellow | $5{,}200$–$6{,}000$ K | 7.6% | Weak H, **strong metal lines** (Ca, Fe) | **G2V (Sun)** |
+| K | Orange | $3{,}700$–$5{,}200$ K | 12.1% | Very weak H, strong metals, molecular bands appear | K1III (Arcturus) |
+| M | Red-orange | $\lesssim 3{,}700$ K | 76.5% | **Molecular bands** (TiO), very weak H | M2Ia (Betelgeuse), M5V (Proxima Cen) |
+
+Look at the prevalence column: **M dwarfs make up over three-quarters of all main-sequence stars**, yet they're too faint to see with the naked eye. The bright stars that fill constellations — Rigel (B), Sirius (A), Arcturus (K giant) — are the rare luminous ones. The galaxy is dominated by cool, dim, long-lived M dwarfs.
 
 ### Why Temperature Controls Line Strength
 
@@ -354,33 +358,40 @@ Quantum mechanics (1900–1930) provided the "why" behind every spectral line on
 
 **The acceleration.** World War II technologies turbocharged the field. Radar became radio astronomy, revealing neutral hydrogen's 21 cm line (1951). Nuclear weapons research provided fusion cross-sections needed for stellar models. Electronic detectors from military applications replaced photographic plates, increasing sensitivity a hundredfold. Rockets designed for warfare carried the first X-ray and UV detectors above Earth's atmosphere.
 
-**The societal return.** The transformation from positional astronomy to astrophysics hasn't just satisfied human curiosity — it has driven technological revolutions that touch daily life:
+**The societal return.** The transformation from positional astronomy to astrophysics hasn't just satisfied human curiosity — it has driven technological development that touches daily life. Astronomical demands for better detectors pushed CCD technology forward in the 1970s–80s, accelerating the digital imaging revolution that eventually led to the camera sensors in your phone. Signal-processing techniques developed for radio astronomy — specifically, methods for extracting faint signals from noise — contributed to the wireless networking patents behind WiFi. The radiative transfer equations that model stellar atmospheres are the *same* equations used today to model Earth's climate, optimize solar panel efficiency, and plan radiation therapy for cancer treatment. And the general relativity you'll encounter in this course — the physics that bends light around black holes — is the same physics that GPS satellites use to keep your location accurate to within a few meters.
 
-- CCD sensors developed for astronomical imaging became the digital cameras in your phone.
-- Adaptive optics designed for telescopes enabled LASIK eye surgery.
-- WiFi uses signal-processing techniques from radio astronomy for detecting weak signals in noise.
-- GPS satellites require relativistic corrections first understood through pulsar timing.
-- The same radiative transfer equations that model stellar atmospheres now model climate change, optimize solar panel design, and plan radiation therapy.
-
-When we fund astrophysics, we aren't just understanding distant stars — we are developing the technologies and training the problem-solvers who transform society. The spectroscopy you're learning in this course has a direct line from Kirchhoff's 1859 laboratory through the Harvard Computers' glass plates to the JWST spectra of exoplanet atmospheres.
+These aren't loose analogies. The mathematical tools astronomers build to solve astrophysical problems turn out to be exactly what engineers and physicians need in completely different contexts. When we fund astrophysics, we are training problem-solvers and building tools that transform society. The spectroscopy you're learning in this course has a direct line from Kirchhoff's 1859 laboratory through the Harvard Computers' glass plates to the JWST spectra of exoplanet atmospheres.
 :::
 
 ### Metallicity: A Secondary Effect
 
 **Metallicity** ($Z$) is the mass fraction of elements heavier than helium. The Sun has $Z_\odot \approx 0.014$ — about 1.4% of its mass is "metals" (everything heavier than He, in astronomical parlance; older references cite $Z_\odot \approx 0.02$, but modern measurements have revised this downward). High-metallicity stars show more and stronger metal absorption lines; low-metallicity stars appear "cleaner." But metallicity is a *second-order* effect for classification. Two stars at the same temperature with different metallicities have the same spectral type — the metal line *strengths* differ, but the overall pattern (which species dominates) is set by temperature.
 
-::: {.callout-note collapse="true" title="Enrichment (Track B): Spectral Type vs. Luminosity Class"}
-Stellar classifications like "G2V" or "B1Ia" encode two independent pieces of information. The letter-number combination (G2, B1) is the **spectral type** — primarily temperature. The Roman numeral is the **luminosity class**, which tells you the star's evolutionary state:
+::: {.callout-note collapse="true" title="Enrichment (Track B): The Morgan–Keenan System — Temperature + Size in One Label"}
 
-- **V** = dwarf (main sequence) — like the Sun
-- **IV** = subgiant
-- **III** = giant
-- **II** = bright giant
-- **I** = supergiant (Ia = most luminous, Ib = less)
+The spectral type (OBAFGKM) tells you temperature. But stars of the same temperature can have wildly different luminosities — a G2 main-sequence star like the Sun ($L \approx 1\,L_\odot$) and a G2 supergiant ($L \approx 10{,}000\,L_\odot$) look very different despite having similar surface temperatures. The missing piece is **luminosity class**, which encodes surface gravity and therefore evolutionary state.
 
-Luminosity class is determined from **line widths**: giant stars have low atmospheric density, so their spectral lines are narrow (little pressure broadening). Dwarf stars have dense atmospheres, so their lines are broader. Two stars can have the *same* spectral type (same temperature) but wildly different luminosity classes — a G2V star like the Sun has $L \approx 1\,L_\odot$, while a G2I supergiant might have $L \approx 10{,}000\,L_\odot$.
+The **Morgan–Keenan (MK) system** combines both into a compact label: **spectral type + luminosity class**. A star labeled G2V is not just "yellow" — it has a specific effective temperature (~5,770 K) and a main-sequence surface gravity ($\log g \approx 4.4$).
 
-We'll return to luminosity class when we build the full HR diagram in Lecture 6.
+{{< fig mk-star-sizes >}}
+
+| Luminosity Class | Description | Physical Meaning |
+|---|---|---|
+| 0 / Ia+ | Hypergiant | Most extreme supergiants; very rare |
+| Ia | Luminous supergiant | Massive evolved stars; low surface gravity |
+| Ib | Less-luminous supergiant | Evolved, but less extreme than Ia |
+| II | Bright giant | Intermediate between supergiants and giants |
+| III | Giant | Evolved off main sequence; expanded envelope |
+| IV | Subgiant | Transitioning from main sequence to giant branch |
+| V | Main-sequence (dwarf) | Core hydrogen burning; where stars spend most of their lives |
+| VI | Subdwarf | Below main sequence; typically metal-poor |
+| VII | White dwarf | Stellar remnant (rarely used in MK; usually classified separately) |
+
+**How is luminosity class determined?** From **spectral line widths**. Giant and supergiant stars have extended, low-density atmospheres, so their spectral lines are narrow (little pressure broadening). Dwarfs have compact, dense atmospheres, so their lines are broader. The same absorption line in a K1III giant (Arcturus) and a K1V dwarf looks noticeably different in width — a trained spectroscopist can read the luminosity class directly from the line profile.
+
+**The key insight:** You can have an M supergiant (M2Ia, like Betelgeuse) that is far more luminous than a hot O dwarf. Temperature $\neq$ luminosity. The H–R diagram is a 2D space, and the MK system encodes both axes — spectral type maps to the horizontal axis (temperature), luminosity class maps to the vertical axis (luminosity). It's a compressed astrophysical state vector.
+
+We'll use MK classifications extensively when we build the full H–R diagram in Lecture 6.
 :::
 
 ::: {.callout-tip}
@@ -613,6 +624,8 @@ The star approaches at about 91 km/s.
 
 **"Redshift means the star is red."** No. A redshifted star could be blue, white, yellow — any color. "Redshift" means its spectral lines are shifted to *longer* wavelengths. A blue O star receding from us is still blue — its lines are just 0.01% longer than in the lab.
 
+**"Stronger lines mean more of that element."** Not necessarily. As you learned in Part 3, line strength depends primarily on *temperature* — which quantum states are populated — not on how much of that element is present. A star with strong hydrogen Balmer lines (spectral type A) doesn't have more hydrogen than a star with weak Balmer lines (spectral type M). It just has the right temperature to populate the $n = 2$ level. Abundance matters, but it's a secondary effect that requires careful modeling to extract.
+
 **"Absorption lines make a star dimmer."** Negligibly. The energy absorbed at specific wavelengths is re-emitted — the photon is destroyed, its energy is thermalized, and a new photon is emitted (generally at a different wavelength and in a random direction). The total luminosity is conserved; the spectrum just has narrow dark features carved into it. The *continuum* carries almost all the energy.
 :::
 
@@ -624,7 +637,9 @@ Everything you've learned about spectral absorption applies not only to stars bu
 
 ### Planetary Energy Balance: Stefan-Boltzmann Applied to Planets
 
-In Lecture 2, you learned the Stefan-Boltzmann law: $L = 4\pi R^2 \sigma T^4$. A planet doesn't generate its own luminosity — it absorbs sunlight and re-radiates that energy as infrared (thermal) radiation. At **energy balance**, the planet radiates exactly as much as it absorbs:
+In Lecture 2, you learned the Stefan-Boltzmann law: $L = 4\pi R^2 \sigma T^4$. That law applies to **any blackbody** — and to first approximation, a planet is one. A planet doesn't generate its own luminosity — it absorbs sunlight and re-radiates that energy as **thermal (blackbody) radiation** at infrared wavelengths. The key insight is that the Sun and Earth are *both* approximate blackbodies, but at very different temperatures: the Sun's Planck curve peaks in visible light (~0.5 $\mu$m), while Earth's peaks in the thermal infrared (~10 $\mu$m). These two blackbody spectra barely overlap — and that spectral separation is what makes the greenhouse effect possible.
+
+At **energy balance**, the planet radiates exactly as much as it absorbs:
 
 $$\text{Power absorbed from star} = \text{Power radiated by planet}$$
 
@@ -632,11 +647,11 @@ The power absorbed from the star is the stellar flux at the planet's distance ($
 
 $$\text{Absorbed} = \frac{L_\star}{4\pi d^2} \times \pi R_p^2 \times (1 - A)$$
 
-The power radiated by the planet (assumed to radiate isotropically from its full surface) is:
+The power radiated by the planet (modeled as a blackbody radiating isotropically from its full surface) is:
 
 $$\text{Radiated} = 4\pi R_p^2 \sigma T_{\text{eq}}^4$$
 
-Setting these equal and solving for the **equilibrium temperature** $T_{\text{eq}}$:
+Setting these equal and solving for the **equilibrium temperature** $T_{\text{eq}}$ — the blackbody temperature the planet would have if it had no atmosphere:
 
 $$T_{\text{eq}} = \left(\frac{L_\star (1-A)}{16\pi\sigma d^2}\right)^{1/4}$$
 
@@ -650,11 +665,15 @@ This is derived from the full formula using solar values. For Earth ($d = 1$ AU,
 
 ### The Greenhouse Effect: Absorption Lines in the Atmosphere
 
-Here's where spectroscopy enters. Earth's surface radiates thermal infrared radiation — a Planck curve peaking near $\lambda_{\text{peak}} = b/T = 2.898 \times 10^6\ \text{nm·K} / 288\ \text{K} \approx 10{,}000\ \text{nm} = 10\ \mu\text{m}$. This infrared radiation must escape to space to maintain energy balance.
+Here's where spectroscopy — and the blackbody model — become essential. Earth's surface radiates as an approximate blackbody at 288 K. Wien's law gives the peak wavelength:
 
-But **greenhouse gases** — CO$_2$, H$_2$O, CH$_4$, N$_2$O, and others — have molecular absorption lines and bands in the infrared, exactly where Earth is trying to radiate. These molecules absorb outgoing infrared photons and re-emit them in random directions — some back downward toward the surface. The surface receives extra energy and warms until it radiates enough to compensate.
+$$\lambda_{\text{peak}} = \frac{b}{T} = \frac{2.898 \times 10^6\ \text{nm·K}}{288\ \text{K}} \approx 10{,}000\ \text{nm} = 10\ \mu\text{m}$$
 
-<!-- FIGURE NEEDED: Earth's outgoing infrared spectrum as seen from space, showing the blackbody envelope and the deep absorption bite taken by CO₂ at 15 μm, H₂O bands, O₃ at 9.6 μm, and CH₄. Compare to a smooth blackbody curve at 288 K. Credit: NASA or MODTRAN. -->
+This is deep in the **thermal infrared** — far from the visible band where sunlight arrives. The figure below makes this separation vivid: the Sun's incoming Planck curve (left, peaking at ~0.5 $\mu$m) and Earth's outgoing Planck curve (right, peaking at ~10 $\mu$m) barely overlap. Earth absorbs energy in the visible and must re-radiate it in the infrared.
+
+{{< fig earth-energy-balance-blackbodies >}}
+
+For Earth to maintain energy balance, this outgoing infrared radiation must escape to space. But **greenhouse gases** — CO$_2$, H$_2$O, CH$_4$, N$_2$O, and others — have molecular absorption lines and bands in the infrared, precisely where Earth's blackbody curve is trying to radiate. Look at the sharp absorption features carved into the outgoing spectrum in the figure — those are the molecular fingerprints of greenhouse gases. These molecules absorb outgoing infrared photons and re-emit them in random directions — some back downward toward the surface. The surface receives extra energy and warms until it radiates enough to compensate.
 
 **This is Kirchhoff's law 3 applied to a planet:** the atmosphere is the "cool gas" absorbing from the "hot continuum" (Earth's surface thermal emission). The physics is identical to stellar absorption lines — the only difference is that the relevant wavelengths are in the infrared rather than the visible.
 
@@ -676,7 +695,9 @@ Venus, Earth, and Mars orbit the same star and formed from the same protoplaneta
 | Earth | 1.00 | 0.30 | 255 | **288** | +33 | H$_2$O + CO$_2$ (0.04%) |
 | Mars | 1.52 | 0.25 | 210 | **210** | ~0 | CO$_2$ (95%, but atmosphere very thin) |
 
-<!-- FIGURE NEEDED: Comparative bar chart or diagram showing Venus/Earth/Mars equilibrium temperature vs actual surface temperature, with the greenhouse warming gap highlighted and dominant atmospheric gases labeled. -->
+{{< fig greenhouse-comparison >}}
+
+Look carefully at the table and figure: Venus is *closer* to the Sun than Earth, yet its equilibrium temperature is *lower* (227 K vs. 255 K). How? **Albedo.** Venus's thick sulfuric acid clouds reflect 77% of incoming sunlight back to space before it can be absorbed. The $(1-A)^{1/4}$ factor in the equilibrium temperature formula means that only the *absorbed* fraction of sunlight matters. Venus absorbs just 23% of its incoming flux, while Earth absorbs 70%. The higher albedo more than compensates for the shorter distance — making the +508 K greenhouse warming even more staggering.
 
 Venus is an extreme case: its massive CO$_2$ atmosphere creates a **runaway greenhouse effect** — surface temperatures hot enough to melt lead (735 K = 462°C). Mars has a CO$_2$-dominated atmosphere too, but it's so thin (surface pressure only 0.6% of Earth's) that the greenhouse effect is negligible. Earth sits in between — a modest greenhouse effect that makes the planet habitable.
 
@@ -766,7 +787,7 @@ The effect intensifies with distance through the atmosphere, just as starlight p
 
 A rough estimate (from the radiative forcing literature): doubling atmospheric CO$_2$ increases the planetary equilibrium temperature by approximately 1–1.2 K from the direct radiative effect alone, before feedbacks. Including water vapor feedback (warmer air holds more H$_2$O, which is also a greenhouse gas), the total warming per CO$_2$ doubling — the **climate sensitivity** — is estimated at 2.5–4 K.
 
-Atmospheric CO$_2$ has risen from ~280 ppm (pre-industrial) to ~425 ppm (2025) — roughly a 50% increase. We're already about halfway to the first doubling.
+Atmospheric CO$_2$ has risen from ~280 ppm (pre-industrial) to ~425 ppm (2025) — roughly a 50% increase. Since radiative forcing scales logarithmically with CO$_2$ concentration, we're actually slightly *more* than halfway to the first doubling in terms of warming impact.
 
 This is the same Stefan-Boltzmann physics you used in Lecture 2, now applied to a planet instead of a star. The equations don't care whether the blackbody is Betelgeuse or Earth.
 :::
