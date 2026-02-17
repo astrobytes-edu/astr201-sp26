@@ -91,6 +91,10 @@ In Lecture 4 (Module 1), you saw a preview of spectral types. Now we formalize t
 
 **Absorption spectrum (dark lines in a continuous rainbow):** A **cooler gas in front of a hotter continuum source** absorbs photons from the continuum at exactly the wavelengths it would emit if heated. You see the rainbow interrupted by dark lines — a photographic negative of the emission spectrum. Examples: **stellar spectra**, the solar spectrum (Fraunhofer lines).
 
+::: {.callout-tip title="Quick Label (30 seconds)"}
+Look at the three spectrum descriptions above. For each, write down: (1) the spectrum type, and (2) the physical setup in six words or fewer. Example format: *"Continuous — hot, dense source emits all wavelengths."*
+:::
+
 ### Kirchhoff's Laws of Spectroscopy
 
 These three observations codify into **Kirchhoff's laws:**
@@ -98,6 +102,10 @@ These three observations codify into **Kirchhoff's laws:**
 1. A hot, dense object emits a **continuous spectrum** — all wavelengths, shaped by $B_\lambda(T)$.
 2. A hot, low-density gas emits an **emission-line spectrum** — bright lines at wavelengths determined by its atomic composition.
 3. A cooler gas in front of a hot continuum source produces an **absorption-line spectrum** — the continuum minus specific wavelengths, at the same positions the gas would emit if heated.
+
+::: {.callout-tip title="The Reverse Problem"}
+In practice, you work Kirchhoff's laws *backwards*: given a spectrum, infer the physical configuration. Dark lines in a rainbow? → cooler gas in front of a hotter continuum. Bright lines on a dark background? → hot, tenuous gas with no bright continuum behind it. **This is the skill you'll use for the rest of the course.**
+:::
 
 ::: {.callout-note}
 ## Observable → Model → Inference
@@ -109,11 +117,19 @@ These three observations codify into **Kirchhoff's laws:**
 
 ### Why Stars Show Absorption Spectra: The Two-Layer Model
 
-A star has a steep temperature gradient. Deep in the interior, temperatures reach millions of kelvin. The **photosphere** — the visible "surface" — sits at thousands of kelvin (about 5,800 K for the Sun). Just above the photosphere lies the **stellar atmosphere**, a thin layer of gas that is slightly cooler than the photosphere below it.
+A star has a steep temperature gradient. Deep in the interior, temperatures reach millions of kelvin. The **photosphere** — the visible "surface," meaning the depth where the star becomes opaque (optical depth $\tau \approx 1$) — sits at thousands of kelvin (about 5,800 K for the Sun). Just above the photosphere lies the **stellar atmosphere**, a thin layer of gas that is slightly cooler than the photosphere below it.
 
 The light we observe is emitted by the photosphere (Kirchhoff's law 1 → continuous spectrum). As this light travels outward through the cooler stellar atmosphere, atoms in the atmosphere absorb photons at their characteristic wavelengths (Kirchhoff's law 3 → dark absorption lines appear). The result: **a continuous spectrum scored by dark absorption lines**.
 
 {{< fig week04-photosphere-line-formation-cococubed >}}
+
+::: {.callout-warning title="Two Myths to Kill Now"}
+You'll see the evidence in Parts 3 and 4, but plant these flags now so you don't build the wrong mental model:
+
+**Myth 1: "Spectral type tells me what a star is made of."** It doesn't — not directly. Spectral type primarily reflects *temperature*. Stars of wildly different spectral types have nearly identical compositions. Part 3 explains why.
+
+**Myth 2: "A redshifted star looks red."** It doesn't. "Redshift" means spectral lines shift to *longer wavelengths* — a fractional change of ~0.01%. A blue O star receding from you is still blue. Part 4 makes this quantitative.
+:::
 
 ::: {.callout-important}
 ## Why Stellar Spectra Are Absorption Spectra
@@ -265,7 +281,7 @@ The full CGS unit grind above is good practice, but there's a faster path. The p
 
 $$hc \approx 1240\ \text{eV·nm}$$
 
-So for any transition with energy gap $\Delta E$ (in eV), the wavelength is simply $\lambda\ (\text{nm}) \approx \frac{1240\ \text{eV·nm}}{\Delta E\ (\text{eV})}$. For H$\alpha$: $\lambda \approx \frac{1240\ \text{eV·nm}}{1.89\ \text{eV}} \approx 656\ \text{nm}$ — same answer, one line. Use the CGS derivation when you need to show your work; use this shortcut for quick estimates and sanity checks.
+So for any transition with energy gap $\Delta E$ (in eV), the wavelength is simply $\lambda\ (\text{nm}) \approx \frac{1240\ \text{eV·nm}}{\Delta E\ (\text{eV})}$. For H$\alpha$: $\lambda \approx \frac{1240\ \text{eV·nm}}{1.89\ \text{eV}} \approx 656\ \text{nm}$ — same answer, one line. Use the CGS derivation when you need to show your work; use this shortcut for quick estimates and sanity checks. **For this course, $hc \approx 1240\ \text{eV·nm}$ is your default tool** — use it freely unless a problem explicitly asks for CGS.
 :::
 
 ---
@@ -288,7 +304,7 @@ In Lecture 4 (Module 1), you learned that blackbody radiation produces a *contin
 
 1. **Hydrogen, H$\beta$** ($n = 4 \to 2$ or $n = 2 \to 4$). The wavelength 486.1 nm is the second Balmer line.
 2. **Absorbs** — the electron moves to a higher energy level. The energy gap $|E_3 - E_1| = |-1.51\ \text{eV} - (-13.6\ \text{eV})| = 12.09\ \text{eV}$ corresponds to $\lambda = hc/\Delta E \approx 102.6\ \text{nm}$ — deep **ultraviolet**, not visible. This is the Lyman series ($n = 1 \to 3$, Ly$\beta$).
-3. Because energy levels are **quantized** — the electron can only occupy specific energies. A photon must have exactly the right energy (matching a level gap) to be absorbed. A photon at a "wrong" wavelength passes through unabsorbed.
+3. Because energy levels are **quantized** — the electron can only occupy specific energies. A photon must have exactly the right energy (matching a level gap) to be absorbed (absorption is upward: the electron moves to a higher level). A photon at a "wrong" wavelength passes through unabsorbed.
 :::
 :::
 
@@ -330,13 +346,26 @@ Look at the prevalence column: **M dwarfs make up over three-quarters of all mai
 
 This is a **critical conceptual point** that trips up beginners: the spectral type does NOT directly reflect composition. All main-sequence stars have roughly the same composition. What changes is **which atomic transitions are active** — and that depends on temperature through the **Boltzmann distribution**.
 
+::: {.callout-note title="Four Knobs, One Spectrum"}
+A stellar spectrum encodes multiple independent properties. Here's how to read them:
+
+| What You Measure | What It Tells You |
+|---|---|
+| **Line positions** (which wavelengths are dark) | **Composition** — which elements are present |
+| **Line strength pattern** (which species dominate) | **Temperature** → spectral type (OBAFGKM) |
+| **Line widths** (narrow vs. broad) | **Surface gravity/rotation** → luminosity class |
+| **Metal line forest** (amplitude relative to H) | **Metallicity** (heavy-element abundance) |
+
+Temperature is the dominant knob — it controls line strengths so powerfully that it can mask composition differences entirely.
+:::
+
 For an atom to absorb a photon at a given wavelength, an electron must already be in the right starting energy level. The fraction of atoms in any given level depends on temperature through the **Boltzmann distribution**:
 
 $$\text{fraction in level } n \propto e^{-\chi_n / k_B T}$$
 
 where $\chi_n$ is the **excitation energy** — the energy *above the ground state* needed to reach level $n$ (always positive) — and $k_B = 8.617 \times 10^{-5}\ \text{eV/K}$ is Boltzmann's constant. For hydrogen, $\chi_2 = 10.2\ \text{eV}$ (the energy to excite from $n = 1$ to $n = 2$). Note that $\chi_n$ is *not* the same as the Bohr energy $E_n$ used earlier — it's the gap $\chi_n = E_n - E_1$, which is always positive.
 
-The exponential is ruthless: even modest temperature changes dramatically shift which levels are populated. Higher excitation energy $\chi_n$ demands higher temperature for significant population.
+The exponential is ruthless: even modest temperature changes dramatically shift which levels are populated. Higher excitation energy $\chi_n$ demands higher temperature for significant population. As a rough guide, every factor-of-two increase in temperature can boost high-energy level populations by orders of magnitude — the exponential amplifies what a linear function would barely notice.
 
 ::: {.callout-important title="The Boltzmann Punchline"}
 **Temperature controls which lines you see.** A cool star and a hot star can have identical compositions — but their spectra look completely different because the Boltzmann factor decides which energy levels are occupied.
@@ -376,35 +405,58 @@ Your lab partner claims: "M stars have weak hydrogen lines because they have les
 
 ::: {.callout-note collapse="true" title="Enrichment (Track B): When Astronomy Became Astrophysics — The Harvard Computers"}
 
-The OBAFGKM sequence didn't fall from the sky. It was built — by hand, by women who were denied telescope access, paid less than secretaries, and rarely credited in publications. Their story is one of the most important in the history of science, and it begins with two technologies converging in the late 19th century.
+### The Industrial Data Problem
 
-**The two catalysts.** Spectroscopy arrived first: Fraunhofer's dark lines in the solar spectrum (1814) gained physical meaning when Kirchhoff and Bunsen showed in 1859 that they matched laboratory spectra of specific elements. Suddenly, *light itself* carried chemical information. Then came photographic plates in the 1880s. Unlike the human eye, which forgets what it sees, emulsions accumulated photons over hours and recorded spectra permanently. Harvard Observatory alone amassed over 500,000 glass plates — millions of stellar spectra, frozen in silver halide, waiting to be read.
+The OBAFGKM sequence didn't fall from the sky. It was built — by hand, from glass.
 
-Reading them required an army. Director Edward Pickering hired women as "computers" — college-educated women who earned 25–50 cents per hour, less than Harvard's secretaries. Pickering reportedly declared that "even my Scottish maid could do better" than his male assistants, then hired that maid: **Williamina Fleming**, who went on to discover 310 variable stars, 10 novae, and the Horsehead Nebula. She developed the first photographic spectral classification system and eventually became Harvard's Curator of Astronomical Photographs.
+By the 1880s, two technologies had converged to create an unprecedented data bottleneck. Spectroscopy, pioneered by Kirchhoff and Bunsen (1859), had shown that dark lines in stellar spectra encode chemical information. Photographic plates, unlike the human eye, could accumulate photons over hours and record spectra permanently. Harvard Observatory alone amassed over 500,000 glass plates — millions of stellar spectra, frozen in silver halide, waiting to be classified. Reading them required a workforce. That workforce would come from a pool of talent that the scientific establishment had otherwise excluded.
+
+### Working Conditions and Structural Inequity
+
+Director Edward Pickering hired women as "computers" — not out of progressive conviction, but because they were available, educated, and cheap. College-educated women, largely shut out of faculty positions, teaching appointments, and telescope time, could be hired at 25–50 cents per hour — less than Harvard paid its secretaries, and far less than male assistants earned. Pickering reportedly declared that "even my Scottish maid could do better" than his male staff, then hired that maid: **Williamina Fleming**.
 
 {{< fig harvard-computers >}}
 
-For these women, Harvard offered something rare: access to cutting-edge scientific data and intellectual engagement, even without formal recognition or advancement. Many had astronomy degrees but were banned from observing at night "for propriety." Working within these constraints, they transformed astronomy:
+The working conditions were plain. The women were classified as staff, not researchers. They were denied access to telescopes — some explicitly, others by social convention ("propriety" barred women from observing at night). They were rarely listed as authors on publications that used their work. Public credit came inconsistently, often filtered through male supervisors. They worked in a room at the observatory, hunched over glass plates with magnifying loupes, hand-recording spectral features into catalogs. There was no automation. Every classification was a human judgment.
 
-- **Annie Jump Cannon** classified over 350,000 stellar spectra at roughly three per minute, developing the OBAFGKM temperature sequence you just learned. Despite her deafness and the discrimination she faced, she became the first woman officer of the American Astronomical Society.
-- **Henrietta Swan Leavitt** discovered the period-luminosity relation for Cepheid variable stars (1912), which became the foundation for measuring cosmic distances — enabling Hubble's later discovery of the expanding universe.
-- **Antonia Maury** noticed that spectral line *widths* varied systematically among stars of the same type — later understood as luminosity classification (the Roman numeral in "G2V"). Her insistence on physical interpretation over rapid cataloging clashed with Pickering's priorities, but she was right.
+And yet: within these constraints, they did science that redefined the field.
 
-These women weren't data processors. They discovered the *patterns* in photographic data that demanded physical explanation.
+### The Intellectual Breakthroughs
 
-**The breakthrough era.** The patterns the Harvard Computers found became the raw material for theoretical astrophysics:
+Classification was not clerical work. It required recognizing subtle differences in line patterns across noisy photographic data — detecting structure by eye that no theory yet predicted. This was statistical pattern recognition before formal statistics, physical interpretation without quantum mechanics.
 
-- **1925:** Cecilia Payne-Gaposchkin used the Harvard classifications to prove that stars are overwhelmingly hydrogen and helium — the result her advisor Russell called "clearly impossible" before later acknowledging she was correct.
+- **Williamina Fleming** developed the first photographic spectral classification system, discovered 310 variable stars, 10 novae, and the Horsehead Nebula, and became Harvard's Curator of Astronomical Photographs.
+- **Annie Jump Cannon** classified over 350,000 stellar spectra — roughly three per minute — and reordered the classification letters into the OBAFGKM temperature sequence you just learned. Despite her deafness and the discrimination she faced, she became the first woman officer of the American Astronomical Society.
+- **Henrietta Swan Leavitt** discovered the period-luminosity relation for Cepheid variable stars (1912), which became the foundation for measuring cosmic distances and enabled Hubble's later discovery of the expanding universe.
+- **Antonia Maury** noticed that spectral line *widths* varied systematically among stars of the same spectral type — later understood as luminosity classification (the Roman numeral in "G2V"). Her insistence on physical interpretation over rapid cataloging clashed with Pickering's production-line priorities. She was right.
+
+These women built the empirical dataset that made astrophysics possible. Their classifications were so precise that they *demanded* physical explanation — and that explanation came:
+
+- **1925:** Cecilia Payne-Gaposchkin used the Harvard classifications to prove that stars are overwhelmingly hydrogen and helium — the result her advisor Russell initially called "clearly impossible" before later acknowledging she was correct.
 - **1920s:** Eddington's stellar interior models explained the OBAFGKM sequence as a temperature progression.
-- **1938:** Bethe's nuclear fusion theory completed the picture, explaining *why* stars of different temperatures produce different spectra.
+- **1938:** Bethe's nuclear fusion theory completed the picture, explaining *why* stars at different temperatures produce different spectra.
 
-Quantum mechanics (1900–1930) provided the "why" behind every spectral line on those glass plates. Every spectrum became a physics experiment.
+The data came first. The theory followed. This is how science usually works, even when textbooks present it the other way around.
 
-**The acceleration.** World War II technologies turbocharged the field. Radar became radio astronomy, revealing neutral hydrogen's 21 cm line (1951). Nuclear weapons research provided fusion cross-sections needed for stellar models. Electronic detectors from military applications replaced photographic plates, increasing sensitivity a hundredfold. Rockets designed for warfare carried the first X-ray and UV detectors above Earth's atmosphere.
+### From Glass Plates to Algorithms
 
-**The societal return.** The transformation from positional astronomy to astrophysics hasn't just satisfied human curiosity — it has driven technological development that touches daily life. Astronomical demands for better detectors pushed CCD technology forward in the 1970s–80s, accelerating the digital imaging revolution that eventually led to modern camera sensors. Signal-processing techniques developed for radio astronomy — methods for extracting faint signals from noise — influenced broader developments in wireless communications and data processing. The radiative transfer equations that model stellar atmospheres are the *same* equations used today to model Earth's climate, optimize solar panel efficiency, and plan radiation therapy for cancer treatment. And the general relativity you'll encounter in this course — the physics that bends light around black holes — is the same physics that GPS satellites use to keep your location accurate to within a few meters.
+The 500,000 glass plates at Harvard were the "big data" of the 19th century. Today, spectroscopic surveys like SDSS and LAMOST classify millions of stellar spectra using automated pipelines and machine learning. CCD detectors — developed in part because astronomers needed more sensitive light collectors than photographic emulsions — replaced glass plates in the 1980s. Signal-processing techniques refined for extracting faint spectral features from noise now underpin applications from radio astronomy to medical imaging.
 
-The broader pattern is real even where the specific causal chains are complex: the mathematical tools astronomers build to solve astrophysical problems turn out to be what engineers and physicians need in completely different contexts. When we fund astrophysics, we are training problem-solvers and building tools that find unexpected applications. The spectroscopy you're learning in this course has a direct line from Kirchhoff's 1859 laboratory through the Harvard Computers' glass plates to the JWST spectra of exoplanet atmospheres.
+But the core intellectual act is unchanged: detecting meaningful patterns in noisy spectral data. What Cannon did by eye at three spectra per minute, a modern pipeline does at thousands per second. The speed changed. The science didn't.
+
+### The Societal Return
+
+Astronomy doesn't happen in a vacuum. The demand to measure faint, distant signals under extreme conditions has repeatedly driven tool development that finds applications far beyond the observatory.
+
+The need for more sensitive detectors pushed CCD technology forward in the 1970s–80s, accelerating the digital imaging revolution that produced modern camera sensors. Signal-processing techniques developed to extract faint spectral features from noisy radio data influenced broader developments in wireless communications and data processing. The radiative transfer equations that model how photons travel through stellar atmospheres are the *same* equations used today to model Earth's climate, optimize solar cell efficiency, and plan radiation therapy for cancer treatment. And the general relativity you'll encounter later in this course — the physics that bends light around black holes — is the same physics that GPS satellites use to keep your position accurate to within meters.
+
+World War II accelerated this exchange. Radar technology became radio astronomy, revealing neutral hydrogen's 21 cm emission line (1951). Electronic detectors from military applications replaced photographic plates, increasing sensitivity a hundredfold. Rockets designed for warfare carried the first ultraviolet and X-ray spectrographs above Earth's atmosphere, opening spectral windows that the ground could never access.
+
+The pattern is consistent: astronomers build mathematical and instrumental tools to solve extreme measurement problems, and those tools turn out to be what engineers and physicians need in completely different contexts. The spectroscopy you're learning in this reading has a direct line from Kirchhoff's 1859 laboratory through the Harvard Computers' glass plates to the JWST spectra of exoplanet atmospheres — and outward to climate models, medical imaging, and satellite navigation.
+
+### *Why This Matters in This Course*
+
+*The OBAFGKM sequence you just learned was not derived from theory. It was built from data — by women working under conditions of structural inequity, using tools no more sophisticated than magnifying glasses and hand-written catalogs. The Boltzmann distribution and Saha equation you studied above came later, explaining* why *their empirical temperature sequence exists. This is Observable → Model → Inference in its purest historical form: the pattern was observed first, and the physics was built to explain it.*
 :::
 
 ### Metallicity: A Secondary Effect
@@ -451,7 +503,7 @@ We'll use MK classifications extensively when we build the full H–R diagram in
 
 1. **A** — the temperature (~8,000–10,000 K) maximally populates the $n = 2$ level.
 2. **Something else** — O stars have plenty of hydrogen, but it's mostly **ionized** at 30,000+ K. No neutral hydrogen means no Balmer absorption.
-3. **No** — same spectral type means similar temperature, but they could be a dwarf (V) or a giant (III) with very different luminosities. That's why luminosity class exists.
+3. **No** — same spectral type means similar temperature, but they could be a dwarf (V) or a giant (III) with luminosities that differ by orders of magnitude. That's why luminosity class exists.
 4. **Cool** — molecular bands form only at low temperatures ($\lesssim 3{,}700\ \text{K}$), characteristic of M-type stars.
 :::
 :::
@@ -469,6 +521,13 @@ We'll use MK classifications extensively when we build the full H–R diagram in
 1. State Kirchhoff's three laws in your own words.
 2. Why do A stars have the strongest hydrogen Balmer lines? (Your answer should mention the $n = 2$ energy level and temperature.)
 3. If you observe a stellar spectrum dominated by molecular TiO bands, what is the approximate spectral type and temperature range?
+4. A star shows very weak hydrogen Balmer lines. Give two physically distinct reasons (other than "less hydrogen") why the Balmer lines could be weak.
+
+::: {.callout-note collapse="true"}
+## Answers
+
+4. Two reasons besides "less hydrogen": (1) the star is too *hot* — hydrogen is ionized, so no neutral atoms exist for Balmer absorption (O stars); (2) the star is too *cool* — almost no hydrogen atoms are excited to the $n = 2$ level needed for Balmer transitions (M stars). Both are temperature effects, not composition effects.
+:::
 
 ---
 
@@ -491,7 +550,7 @@ where $\Delta \lambda = \lambda_{\text{obs}} - \lambda_0$.
 - **Redshift** ($\Delta \lambda > 0$, $\lambda_{\text{obs}} > \lambda_0$): source receding, $v_r > 0$
 - **Blueshift** ($\Delta \lambda < 0$, $\lambda_{\text{obs}} < \lambda_0$): source approaching, $v_r < 0$
 
-This formula is valid for $v_r \ll c$ (the non-relativistic limit), which covers virtually all stellar velocities in our galaxy. Typical stellar radial velocities are 10–100 km/s; the speed of light is 300,000 km/s. The ratio $v_r/c \sim 10^{-4}$ to $10^{-3}$ — tiny shifts, but measurable with precision spectrographs. For relativistic speeds (galaxies, jets, cosmology), a full relativistic Doppler formula is needed, and for the expanding universe the interpretation becomes *cosmological redshift* — a stretch of space itself, not simple motion. We'll revisit this distinction if it arises later in the course.
+This formula is valid for $v_r \ll c$ (the non-relativistic limit), which covers virtually all stellar velocities in our galaxy. Typical stellar radial velocities are 10–100 km/s; the speed of light is 300,000 km/s. The ratio $v_r/c \sim 10^{-4}$ to $10^{-3}$ — tiny shifts, but measurable with precision spectrographs. For relativistic speeds (galaxies, jets, cosmology), a full relativistic Doppler formula is needed, and for the expanding universe the interpretation becomes *cosmological redshift* — a stretch of space itself, not simple motion. We'll revisit this distinction if it arises later in the course. One crucial diagnostic: a real Doppler shift moves *all* lines by the same fractional amount $\Delta\lambda/\lambda_0$. If only one line is shifted, it's not motion — it's a misidentification.
 
 ::: {.callout-note}
 ## Unit Check: Doppler Formula
