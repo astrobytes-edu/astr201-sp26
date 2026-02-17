@@ -526,7 +526,7 @@ figures:
 
   earth-energy-balance-blackbodies:
     path: /assets/images/module-02/week-05/energy_breakdown.png
-    caption: "**What to notice:** Two blackbodies, two very different temperatures. The Sun (~5,800 K) radiates a Planck curve peaking in visible light (~0.5 $\\mu$m). Earth (~288 K) re-radiates a Planck curve peaking in thermal infrared (~10 $\\mu$m). Greenhouse gases absorb in the infrared window where Earth is trying to radiate — not where the Sun's energy arrives. The sharp absorption features in the outgoing spectrum are the molecular fingerprints of CO$_2$, H$_2$O, and O$_3$."
+    caption: "**What to notice:** Two blackbodies, two very different temperatures. The Sun (~5,800 K) radiates a Planck curve peaking in visible light (~0.5 $\\mu\\text{m}$). Earth (~288 K) re-radiates a Planck curve peaking in thermal infrared (~10 $\\mu\\text{m}$). Greenhouse gases absorb in the infrared window where Earth is trying to radiate — not where the Sun's energy arrives. The sharp absorption features in the outgoing spectrum are the molecular fingerprints of CO$_2$, H$_2$O, and O$_3$."
     alt: "Diagram showing the electromagnetic spectrum with two Planck curves. Left panel (yellow background): incoming solar radiation peaking near 1 micron in the visible band. Right panel (blue background): outgoing terrestrial radiation peaking near 10 microns in the thermal infrared, with deep absorption notches carved by atmospheric greenhouse gases. The full EM spectrum from gamma rays to long waves is labeled across the top."
     credit: "NOAA JetStream"
     module: 2

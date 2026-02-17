@@ -950,12 +950,12 @@ Note the paradox: Venus has a LOWER equilibrium temperature than Earth (high alb
 
 ---
 
-## CO$_2$'s 15 $\mu$m Band {background-color="black"}
+## CO$_2$'s 15 $\mu\text{m}$ Band {background-color="black"}
 
 {{< fig earth-reflectance-spectra >}}
 
 ::: {.fragment .text-center .text-base .text-muted .mt-2}
-CO$_2$ absorbs at 15 $\mu$m — right where Earth's thermal radiation peaks.
+CO$_2$ absorbs at 15 $\mu\text{m}$ — right where Earth's thermal radiation peaks.
 :::
 
 ::: {.notes}
