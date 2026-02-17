@@ -9,6 +9,7 @@ draft: false
 format:
   revealjs:
     theme: [default, ../../../assets/theme/slides/theme.scss]
+    smaller: true
     slide-number: true
     transition: fade
     transition-speed: fast
@@ -54,9 +55,7 @@ execute:
 
 ## Learning Objectives
 
-By the end of this lecture, you will be able to:
-
-::: {.incremental}
+::: {.incremental .text-sm}
 - **Explain** Kirchhoff's three laws and predict which spectrum a source produces
 - **Interpret** the Bohr model to explain why spectral lines have specific wavelengths
 - **Classify** stars by spectral type (OBAFGKM) as a **temperature** sequence
@@ -88,7 +87,7 @@ This is the throughline question for the whole lecture. The answer (temperature 
 
 ## Today's Roadmap {background-image="/assets/images/common/cosmic-cliffs-jwst.png" background-opacity="0.3"}
 
-::: {.bg-muted .p-2}
+::: {.bg-muted .p-2 .text-sm}
 1. **Kirchhoff's Laws** — why stars show absorption spectra
 2. **Spectral Lines** — atomic fingerprints from the Bohr model
 3. **OBAFGKM** — a temperature sequence, not composition
@@ -117,7 +116,7 @@ Kirchhoff's Laws
 
 :::: {.columns}
 ::: {.column width="55%"}
-{{< fig three-types-of-spectra >}}
+{{< img three-types-of-spectra >}}
 :::
 ::: {.column width="45%"}
 ::: {.text-sm}
@@ -208,7 +207,7 @@ Given a spectrum → infer the physical configuration.
 
 :::: {.columns}
 ::: {.column width="55%"}
-{{< fig week04-photosphere-line-formation-cococubed >}}
+{{< img week04-photosphere-line-formation-cococubed >}}
 :::
 ::: {.column width="45%"}
 ::: {.text-sm}
@@ -236,10 +235,8 @@ Temperature decreases outward — that's why absorption, not emission.
 
 ## Two Myths to Kill Now {background-color="#1a1a2e"}
 
-Plant these flags before we go further:
-
 ::: {.fragment}
-::: {.bg-muted .p-2}
+::: {.bg-muted .p-2 .text-sm}
 **Myth 1: "Spectral type tells me what a star is made of."**
 
 It doesn't — not directly. Spectral type primarily reflects *temperature*. Stars of wildly different types have nearly identical compositions. (Part 3 will prove this.)
@@ -247,7 +244,7 @@ It doesn't — not directly. Spectral type primarily reflects *temperature*. Sta
 :::
 
 ::: {.fragment .mt-1}
-::: {.bg-muted .p-2}
+::: {.bg-muted .p-2 .text-sm}
 **Myth 2: "A redshifted star looks red."**
 
 It doesn't. "Redshift" means lines shift to *longer wavelengths* — a fractional change of ~0.01%. A blue O star receding from you is still blue. (Part 4 makes this quantitative.)
@@ -262,7 +259,7 @@ It doesn't. "Redshift" means lines shift to *longer wavelengths* — a fractiona
 
 ## Observable → Model → Inference
 
-::: {.bg-muted .p-2}
+::: {.bg-muted .p-2 .text-sm}
 - **Observable:** Dark lines at specific wavelengths in a stellar spectrum
 - **Model:** Kirchhoff's third law — cooler atmosphere absorbs from hotter photosphere
 - **Inference:** The star has a hot interior surrounded by a cooler atmosphere
@@ -342,7 +339,7 @@ Spectral Lines as Atomic Fingerprints
 
 ## The Bohr Model: Discrete Energy Levels {background-color="black"}
 
-{{< fig hydrogen-absorption >}}
+{{< img hydrogen-absorption >}}
 
 ::: {.fragment .text-center .text-base .text-muted .mt-2}
 Electrons occupy **specific energy rungs** — they cannot hover between them.
@@ -358,7 +355,7 @@ Key idea: electrons can only be at certain energies. To absorb a photon, the pho
 
 ## The Reverse: Emission {background-color="black"}
 
-{{< fig hydrogen-emission >}}
+{{< img hydrogen-emission >}}
 
 ::: {.fragment .text-center .text-base .text-muted .mt-2}
 Same energy gaps → same wavelengths — whether absorbing or emitting.
@@ -435,26 +432,23 @@ Energy gaps of ~1.9–3.0 eV → visible wavelengths.
 
 ---
 
-## Worked Example: Calculating H$\alpha$
+## Worked Example: Calculating H$\alpha$ {.text-sm}
 
 **Problem:** Predict the wavelength of $n = 3 \to 2$ in hydrogen.
 
 . . .
 
 **Step 1 — Energy levels:**
-
 $$E_3 = \frac{-13.6\ \text{eV}}{9} = -1.51\ \text{eV} \qquad E_2 = \frac{-13.6\ \text{eV}}{4} = -3.40\ \text{eV}$$
 
 . . .
 
 **Step 2 — Energy gap:**
-
 $$\Delta E = |-1.51\ \text{eV} - (-3.40\ \text{eV})| = 1.89\ \text{eV}$$
 
 . . .
 
 **Step 3 — CGS conversion:** ($1\ \text{eV} = 1.602 \times 10^{-12}\ \text{erg}$)
-
 $$\lambda = \frac{hc}{\Delta E} = \frac{1.986 \times 10^{-16}\ \text{erg·cm}}{3.03 \times 10^{-12}\ \text{erg}} = 6.56 \times 10^{-5}\ \text{cm} = 656\ \text{nm}\ \checkmark$$
 
 ::: {.notes}
@@ -487,7 +481,7 @@ Same answer, one line. **Use $hc \approx 1240\ \text{eV·nm}$ freely** unless a 
 
 ## Every Element Has a Unique Barcode {background-color="black"}
 
-{{< fig absorption-emission-elements >}}
+{{< img absorption-emission-elements >}}
 
 ::: {.fragment .text-center .text-base .text-muted .mt-2}
 Match observed lines to laboratory wavelengths → **identify the element.**
@@ -505,7 +499,7 @@ Match observed lines to laboratory wavelengths → **identify the element.**
 
 ## Real Data: Altair's Spectrum {background-color="black"}
 
-{{< fig altair-spectrum-annotated >}}
+{{< img altair-spectrum-annotated >}}
 
 ::: {.fragment .text-center .text-base .text-muted .mt-2}
 **Two tools in one observation:** the curve gives temperature (Wien), the lines give composition.
@@ -576,7 +570,7 @@ OBAFGKM
 
 :::: {.columns}
 ::: {.column width="50%"}
-{{< fig harvard-computers >}}
+{{< img harvard-computers >}}
 :::
 ::: {.column width="50%"}
 ::: {.text-sm}
@@ -627,7 +621,7 @@ The pattern was observed first. The physics was built to explain it.
 
 :::: {.columns}
 ::: {.column width="55%"}
-{{< fig obafgkm-spectra >}}
+{{< img obafgkm-spectra >}}
 :::
 ::: {.column width="45%"}
 ::: {.text-sm}
@@ -705,7 +699,7 @@ Temperature is the dominant knob — it controls line strengths so powerfully th
 
 ## Why Temperature Controls Line Strength
 
-::: {.incremental}
+::: {.incremental .text-sm}
 - For H absorption: electron must already be in $n = 2$
 - Fraction in $n = 2$ depends on temperature: $\propto e^{-\chi_2/k_BT}$
 - [**Too cool (M stars):**]{.rn rn-type="underline" rn-color="#ff6b6b"} almost no atoms in $n = 2$ → weak H lines
@@ -739,7 +733,7 @@ At which spectral type — **O, A, G, or M** — would you expect the **stronges
 
 ## The Goldilocks Problem: A Balmer Line Peak
 
-::: {.bg-muted .p-2}
+::: {.bg-muted .p-2 .text-sm}
 **Two competing effects at work:**
 
 1. **Excitation** ($\propto e^{-\chi_2/k_BT}$): hotter → more atoms in $n = 2$
@@ -748,7 +742,7 @@ At which spectral type — **O, A, G, or M** — would you expect the **stronges
 
 . . .
 
-::: {.table-scroll .text-sm}
+::: {.table-scroll .text-xs}
 | Temperature | Excitation | Ionization | Balmer strength |
 |---|---|---|---|
 | 3,000 K (M) | Very low | Negligible | **Weak** — no $n=2$ |
@@ -794,7 +788,7 @@ This directly answers the hook question from the beginning!
 
 ## The Spectral Sequence Is Temperature {background-color="black"}
 
-::: {.bg-muted .p-2}
+::: {.bg-muted .p-2 .text-sm}
 - **Do O stars have more helium?** No — same composition. Temperature ionizes H and excites He.
 - **Do A stars have more hydrogen?** No — same abundance. Temperature puts H into $n = 2$.
 - **Do M stars lack hydrogen?** No. Temperature keeps H atoms in $n = 1$ (ground state).
@@ -837,14 +831,14 @@ Correct: temperature controls level populations, not composition.
 
 **Metallicity** ($Z$) = mass fraction of elements heavier than helium.
 
-::: {.incremental}
+::: {.incremental .text-sm}
 - Sun: $Z_\odot \approx 0.014$ — about 1.4% "metals"
 - High-$Z$ stars: more and stronger metal absorption lines
 - Low-$Z$ stars: "cleaner" spectra with fewer metal lines
 :::
 
 ::: {.fragment}
-::: {.bg-muted .p-2}
+::: {.bg-muted .p-2 .text-sm}
 **But metallicity is second-order for classification.** Two stars at the same temperature with different $Z$ have the **same spectral type** — the metal line strengths differ, but which species dominates is set by temperature.
 :::
 :::
@@ -859,7 +853,7 @@ Fun fact: in astronomy, everything heavier than helium is a "metal." Carbon, oxy
 
 ## Beyond Temperature: What Line Widths Reveal {background-color="black"}
 
-{{< fig mk-star-sizes >}}
+{{< img mk-star-sizes >}}
 
 ::: {.fragment}
 ::: {.bg-muted .p-2 .text-sm}
@@ -894,7 +888,7 @@ The Doppler Shift
 
 :::: {.columns}
 ::: {.column width="55%"}
-{{< fig doppler-shift-exoplanet >}}
+{{< img doppler-shift-exoplanet >}}
 :::
 ::: {.column width="45%"}
 ::: {.text-sm}
@@ -920,19 +914,19 @@ Typical stellar velocities: 10–100 km/s → shifts of only ~0.01–0.03%, but 
 
 $$\frac{\Delta\lambda}{\lambda_0} = \frac{v_r}{c}$$
 
-::: {.fragment}
+::: {.fragment .text-sm}
 - $\Delta\lambda = \lambda_{\text{obs}} - \lambda_0$ — the shift
 - $v_r$ — radial velocity (+ = receding, − = approaching)
 - $c = 3.0 \times 10^5$ km/s — speed of light
 :::
 
 ::: {.fragment}
-::: {.bg-muted .p-2}
+::: {.bg-muted .p-2 .text-sm}
 **Redshift** ($\Delta\lambda > 0$): source receding | **Blueshift** ($\Delta\lambda < 0$): source approaching
 :::
 :::
 
-::: {.fragment .text-sm .text-muted .mt-1}
+::: {.fragment .text-xs .text-muted .mt-1}
 **Diagnostic:** A real Doppler shift moves *all* lines by the same fraction $\Delta\lambda/\lambda_0$. If only one line shifts — it's a misidentification, not motion.
 :::
 
@@ -942,7 +936,7 @@ $$\frac{\Delta\lambda}{\lambda_0} = \frac{v_r}{c}$$
 
 ---
 
-## Worked Example: Radial Velocity from H$\alpha$
+## Worked Example: Radial Velocity from H$\alpha$ {.text-sm}
 
 **Problem:** H$\alpha$ observed at 656.5 nm (rest: 656.3 nm). Approaching or receding?
 
@@ -957,10 +951,9 @@ $$\frac{\Delta\lambda}{\lambda_0} = \frac{v_r}{c}$$
 . . .
 
 **Step 3 — Velocity:**
-
 $$v_r = c \times \frac{\Delta\lambda}{\lambda_0} = (3.0 \times 10^5\ \text{km/s}) \times \frac{0.2}{656.3} \approx 91\ \text{km/s}$$
 
-::: {.fragment .text-center .text-base .text-muted .mt-2}
+::: {.fragment .text-center .text-sm .text-muted .mt-1}
 A 0.03% shift → ~91 km/s. Tiny shift, huge velocity.
 :::
 
@@ -1072,7 +1065,7 @@ Composition, temperature, motion, and size — from a single observation.
 
 ---
 
-## Multi-Clue Diagnosis
+## Multi-Clue Diagnosis {.text-sm}
 
 **Observed:** $T \approx 9{,}500$ K, strong Balmer lines, weak metals, H$\alpha$ at 656.1 nm
 
@@ -1083,7 +1076,6 @@ Composition, temperature, motion, and size — from a single observation.
 . . .
 
 **(b) Velocity:** $\Delta\lambda = 656.1 - 656.3 = -0.2$ nm → blueshifted → approaching
-
 $$v_r = (3.0 \times 10^5) \times \frac{-0.2}{656.3} \approx -91\ \text{km/s}$$
 
 . . .
@@ -1122,7 +1114,7 @@ You've just done real spectroscopy. Every line encodes the same physics from Par
 
 ## The Module 2 Inference Chain {background-color="black"}
 
-::: {.table-scroll .text-sm}
+::: {.table-scroll .text-xs}
 | Lecture | New Tool | What It Unlocks |
 |---|---|---|
 | 1 | Parallax → distance | Distance, then luminosity |
@@ -1198,7 +1190,7 @@ Think about Kirchhoff's third law applied to a *planet* instead of a star.
 
 :::: {.columns}
 ::: {.column width="55%"}
-{{< fig earth-energy-balance-blackbodies >}}
+{{< img earth-energy-balance-blackbodies >}}
 :::
 ::: {.column width="45%"}
 ::: {.text-sm}
@@ -1226,7 +1218,7 @@ This IS Kirchhoff's Law 3: atmosphere = "cool gas" absorbing from the "hot conti
 
 ## A Tale of Three Planets {background-color="black"}
 
-{{< fig greenhouse-comparison >}}
+{{< img greenhouse-comparison >}}
 
 ::: {.table-scroll .text-xs}
 | Planet | $T_{\text{eq}}$ (K) | Actual $T$ (K) | Greenhouse warming |
@@ -1250,7 +1242,7 @@ Note the paradox: Venus has a LOWER equilibrium temperature than Earth (high alb
 
 ## CO$_2$'s 15 $\mu\text{m}$ Band {background-color="black"}
 
-{{< fig earth-reflectance-spectra >}}
+{{< img earth-reflectance-spectra >}}
 
 ::: {.fragment .text-center .text-base .text-muted .mt-2}
 CO$_2$ absorbs at 15 $\mu\text{m}$ — right where Earth's thermal radiation peaks.
@@ -1309,7 +1301,7 @@ Correct: greenhouse gases absorb outgoing IR (not incoming visible), re-emit in 
 
 ## Two More Confusions to Clear Up
 
-::: {.incremental}
+::: {.incremental .text-sm}
 - **"Stronger lines = more of that element."** Not necessarily. Line strength depends primarily on **temperature** — which levels are populated — not abundance. An A star doesn't have *more* hydrogen than an M star; it just has the right $T$ to populate $n = 2$.
 - **"Absorption lines make a star dimmer."** Negligibly. Absorbed photons are re-emitted in random directions (resonant scattering). Total luminosity is conserved; the spectrum just has narrow dark features carved into it.
 :::
@@ -1345,7 +1337,7 @@ Spectra are powerful — but not omnipotent. Every tool has limits.
 
 ## Summary: Key Takeaways
 
-::: {.incremental}
+::: {.incremental .text-sm}
 1. **Kirchhoff's laws** connect spectral appearance to physical conditions — stars show absorption spectra because of their temperature gradient
 2. **Spectral lines** are atomic fingerprints — energy levels set wavelengths
 3. **OBAFGKM** is a **temperature** sequence — same composition, different excitation
