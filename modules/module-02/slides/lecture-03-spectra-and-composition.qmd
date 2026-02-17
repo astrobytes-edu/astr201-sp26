@@ -115,16 +115,25 @@ Kirchhoff's Laws
 
 ## Three Types of Spectra {background-color="black"}
 
+:::: {.columns}
+::: {.column width="55%"}
 {{< fig three-types-of-spectra >}}
-
-::: {.notes}
-2–3 min. Point to each type in the figure.
-
+:::
+::: {.column width="45%"}
+::: {.text-sm}
 1. **Continuous** — hot, dense source → all wavelengths (Planck curve)
 2. **Emission** — hot, low-density gas → bright lines on dark background
 3. **Absorption** — cooler gas in front of hot continuum → dark lines
+:::
 
-Emphasize: the **same gas** produces emission OR absorption lines depending on what's behind it.
+::: {.fragment .text-sm .text-muted .mt-1}
+The **same gas** produces emission OR absorption depending on what's behind it.
+:::
+:::
+::::
+
+::: {.notes}
+2–3 min. Point to each type in the figure. Reveal the list, then the fragment. Emphasize that the physical setup — not the gas itself — determines which type you see.
 :::
 
 ---
@@ -197,16 +206,30 @@ Given a spectrum → infer the physical configuration.
 
 ## Why Stars Show Absorption Spectra {background-color="black"}
 
+:::: {.columns}
+::: {.column width="55%"}
 {{< fig week04-photosphere-line-formation-cococubed >}}
+:::
+::: {.column width="45%"}
+::: {.text-sm}
+**Two-layer model:**
+
+1. **Photosphere** ($\tau \approx 1$) — hot, dense → continuous spectrum (Law 1)
+2. **Atmosphere** (cooler, above) → absorbs at specific wavelengths (Law 3)
+:::
+
+::: {.fragment .text-sm .mt-1}
+We see: a **continuous rainbow with dark lines** carved into it.
+:::
+
+::: {.fragment .text-sm .text-muted .mt-1}
+Temperature decreases outward — that's why absorption, not emission.
+:::
+:::
+::::
 
 ::: {.notes}
-4–5 min. Walk through the two-layer model:
-
-1. **Photosphere** — the visible "surface," where optical depth $\tau \approx 1$ (the depth where the star becomes opaque). Hot, dense → continuous spectrum (Law 1).
-2. **Stellar atmosphere** (cooler, just above photosphere) → absorbs at specific wavelengths (Law 3)
-3. We see: **continuous rainbow with dark lines carved into it**
-
-Temperature decreases outward — that's the key to why absorption, not emission.
+4–5 min. Walk through the two-layer model. The photosphere is where optical depth $\tau \approx 1$ — the depth where the star becomes opaque. The cooler atmosphere above it absorbs at specific wavelengths.
 :::
 
 ---
@@ -602,11 +625,28 @@ The pattern was observed first. The physics was built to explain it.
 
 ## The Spectral Sequence {background-color="black"}
 
+:::: {.columns}
+::: {.column width="55%"}
 {{< fig obafgkm-spectra >}}
+:::
+::: {.column width="45%"}
+::: {.text-sm}
+From top to bottom: **O → B → A → F → G → K → M**
 
-::: {.fragment .text-center .text-base .text-muted .mt-2}
+- Hot (O): ionized helium lines
+- Middle (A): strongest hydrogen Balmer lines
+- Cool (M): molecular bands (TiO)
+:::
+
+::: {.fragment .text-sm .text-muted .mt-1}
+Spectral features change dramatically — but **composition is nearly the same** across all types.
+:::
+
+::: {.fragment .text-center .text-base .mt-1}
 **Oh Be A Fine Guy/Girl, Kiss Me.**
 :::
+:::
+::::
 
 ::: {.notes}
 24–25 min. Walk through the sequence from O (hot, blue) to M (cool, red). Point to how the spectral features change dramatically even though composition is ~the same.
@@ -852,10 +892,26 @@ The Doppler Shift
 
 ## Doppler: Wavelength Shifts from Motion {background-color="black"}
 
+:::: {.columns}
+::: {.column width="55%"}
 {{< fig doppler-shift-exoplanet >}}
+:::
+::: {.column width="45%"}
+::: {.text-sm}
+Motion along the line of sight shifts **all** spectral lines:
+
+- **Receding** → lines shift to longer wavelengths (**redshift**)
+- **Approaching** → lines shift to shorter wavelengths (**blueshift**)
+:::
+
+::: {.fragment .text-sm .text-muted .mt-1}
+Typical stellar velocities: 10–100 km/s → shifts of only ~0.01–0.03%, but **measurable**.
+:::
+:::
+::::
 
 ::: {.notes}
-36–37 min. Connect to sound analogy (ambulance siren) but keep it brief — go straight to the formula.
+36–37 min. Connect to sound analogy (ambulance siren) but keep it brief — go straight to the formula on the next slide.
 :::
 
 ---
@@ -1140,17 +1196,30 @@ Think about Kirchhoff's third law applied to a *planet* instead of a star.
 
 ## The Greenhouse Effect: Kirchhoff's Law 3 for Planets {background-color="black"}
 
+:::: {.columns}
+::: {.column width="55%"}
 {{< fig earth-energy-balance-blackbodies >}}
+:::
+::: {.column width="45%"}
+::: {.text-sm}
+**Two Planck curves:**
+
+1. **Sun → Earth** peaks at ~0.5 μm (visible) — passes through atmosphere
+2. **Earth → space** peaks at ~10 μm (IR) — **blocked by greenhouse gases**
+:::
+
+::: {.fragment .text-sm .mt-1}
+CO$_2$, H$_2$O, CH$_4$ absorb outgoing IR and re-emit some **back down** → surface warms.
+:::
+
+::: {.fragment .text-sm .text-muted .mt-1}
+This IS Kirchhoff's Law 3: atmosphere = "cool gas" absorbing from the "hot continuum" (Earth's surface).
+:::
+:::
+::::
 
 ::: {.notes}
-48–49 min. Point to the two Planck curves:
-
-1. **Sun's incoming radiation** peaks at ~0.5 μm (visible) — passes through atmosphere
-2. **Earth's outgoing radiation** peaks at ~10 μm (thermal infrared) — **blocked by greenhouse gases**
-
-CO₂, H₂O, CH₄ have absorption bands right where Earth is trying to radiate. They absorb outgoing IR and re-emit some back down → surface warms.
-
-This IS Kirchhoff's law 3: the atmosphere is the "cool gas" absorbing from the "hot continuum" (Earth's surface).
+48–49 min. Point to the two Planck curves in the figure. The atmosphere is transparent at visible wavelengths but opaque at thermal IR — that asymmetry is the entire greenhouse mechanism.
 :::
 
 ---
