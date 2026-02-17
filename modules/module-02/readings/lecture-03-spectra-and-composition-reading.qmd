@@ -256,6 +256,14 @@ $$[\lambda] = \frac{[\text{erg·s}][\text{cm/s}]}{[\text{erg}]} = \frac{\text{er
 **Interpretation:** The Bohr model predicts H$\alpha$ at 656 nm — within 0.3 nm of the precise laboratory value (656.28 nm). The small difference comes from rounding the ionization energy to 13.6 eV; the exact Rydberg value is 13.5984 eV. This close agreement was one of the Bohr model's great early triumphs. The energy gap between $n = 3$ and $n = 2$ is 1.89 eV, which corresponds to deep red visible light — the same red glow you see in photographs of emission nebulae.
 :::
 
+::: {.callout-tip title="Toolbox: The $hc$ Shortcut"}
+The full CGS unit grind above is good practice, but there's a faster path. The product $hc$ in convenient units is:
+
+$$hc \approx 1240\ \text{eV·nm}$$
+
+So for any transition with energy gap $\Delta E$ (in eV), the wavelength is simply $\lambda\ (\text{nm}) \approx 1240 / \Delta E\ (\text{eV})$. For H$\alpha$: $\lambda \approx 1240/1.89 \approx 656$ nm — same answer, one line. Use the CGS derivation when you need to show your work; use this shortcut for quick estimates and sanity checks.
+:::
+
 ---
 
 ::: {.callout-important title="Connection: From Planck Curves to Line Spectra"}
@@ -275,7 +283,7 @@ In Lecture 4 (Module 1), you learned that blackbody radiation produces a *contin
 ## Answers
 
 1. **Hydrogen, H$\beta$** ($n = 4 \to 2$ or $n = 2 \to 4$). The wavelength 486.1 nm is the second Balmer line.
-2. **Absorbs** — the electron moves to a higher energy level. The energy gap $|E_3 - E_1| = |-1.51 - (-13.6)| = 12.09$ eV corresponds to $\lambda = hc/\Delta E \approx 102.6$ nm — deep **ultraviolet**, not visible. This is the Lyman series ($n = 1 \to 3$, Ly$\gamma$).
+2. **Absorbs** — the electron moves to a higher energy level. The energy gap $|E_3 - E_1| = |-1.51 - (-13.6)| = 12.09$ eV corresponds to $\lambda = hc/\Delta E \approx 102.6$ nm — deep **ultraviolet**, not visible. This is the Lyman series ($n = 1 \to 3$, Ly$\beta$).
 3. Because energy levels are **quantized** — the electron can only occupy specific energies. A photon must have exactly the right energy (matching a level gap) to be absorbed. A photon at a "wrong" wavelength passes through unabsorbed.
 :::
 :::
@@ -298,15 +306,17 @@ The breakthrough came when Cecilia Payne-Gaposchkin showed in her 1925 PhD thesi
 
 | Spectral Type | Color | Temperature Range | Main-Sequence Prevalence | Dominant Spectral Features | Example |
 |---|---|---|---|---|---|
-| O | Blue-violet | $\gtrsim 30{,}000$ K | 0.00003% | He II (ionized helium), weak H | O5V ($\zeta$ Puppis) |
-| B | Blue-white | $10{,}000$–$30{,}000$ K | 0.13% | He I (neutral helium), strong H | B8V (Rigel), B1V (Spica) |
-| A | White | $7{,}500$–$10{,}000$ K | 0.6% | **Strongest H Balmer lines** | A0V (Sirius), A0V (Vega) |
+| O | Blue-violet | $\gtrsim 30{,}000$ K | 0.00003% | He II (ionized helium), weak H | O4I ($\zeta$ Puppis), O9.5V (10 Lac) |
+| B | Blue-white | $10{,}000$–$30{,}000$ K | 0.13% | He I (neutral helium), strong H | B8Ia (Rigel), B1III (Spica) |
+| A | White | $7{,}500$–$10{,}000$ K | 0.6% | **Strongest H Balmer lines** | A1V (Sirius), A0V (Vega) |
 | F | Yellow-white | $6{,}000$–$7{,}500$ K | 3% | Moderate H, weak metals | F5IV (Procyon A) |
 | G | Yellow | $5{,}200$–$6{,}000$ K | 7.6% | Weak H, **strong metal lines** (Ca, Fe) | **G2V (Sun)** |
-| K | Orange | $3{,}700$–$5{,}200$ K | 12.1% | Very weak H, strong metals, molecular bands appear | K1III (Arcturus) |
+| K | Orange | $3{,}700$–$5{,}200$ K | 12.1% | Very weak H, strong metals, molecular bands appear | K1.5III (Arcturus) |
 | M | Red-orange | $\lesssim 3{,}700$ K | 76.5% | **Molecular bands** (TiO), very weak H | M2Ia (Betelgeuse), M5V (Proxima Cen) |
 
-Look at the prevalence column: **M dwarfs make up over three-quarters of all main-sequence stars**, yet they're too faint to see with the naked eye. The bright stars that fill constellations — Rigel (B), Sirius (A), Arcturus (K giant) — are the rare luminous ones. The galaxy is dominated by cool, dim, long-lived M dwarfs.
+Several of these examples are giants or supergiants rather than main-sequence dwarfs — those are the ones bright enough to have names. The prevalence column refers to main-sequence stars only.
+
+Look at the prevalence column: **M dwarfs make up over three-quarters of all main-sequence stars**, yet they're too faint to see with the naked eye. The bright stars that fill constellations — Rigel (B supergiant), Sirius (A dwarf), Arcturus (K giant) — are the rare luminous ones. The galaxy is dominated by cool, dim, long-lived M dwarfs.
 
 ### Why Temperature Controls Line Strength
 
@@ -318,7 +328,7 @@ $$\text{fraction in level } n \propto e^{-\chi_n / k_B T}$$
 
 where $\chi_n$ is the **excitation energy** — the energy *above the ground state* needed to reach level $n$ (always positive) — and $k_B = 8.617 \times 10^{-5}$ eV/K is Boltzmann's constant. For hydrogen, $\chi_2 = 10.2$ eV (the energy to excite from $n = 1$ to $n = 2$). Note that $\chi_n$ is *not* the same as the Bohr energy $E_n$ used earlier — it's the gap $\chi_n = E_n - E_1$, which is always positive.
 
-This exponential dependence means that even modest temperature changes can dramatically shift which levels are populated. Higher excitation energy $\chi_n$ requires higher temperature for significant population.
+This exponential dependence means that even modest temperature changes can dramatically shift which levels are populated. Higher excitation energy $\chi_n$ requires higher temperature for significant population. (More precisely, the full Boltzmann expression includes degeneracy factors $g_n$ and a partition function in the denominator, but the key physics — exponential sensitivity to $\chi_n/k_BT$ — is captured by the expression above.)
 
 **How this creates the spectral sequence:**
 
@@ -342,6 +352,8 @@ This exponential dependence means that even modest temperature changes can drama
 
 ::: {.callout-tip title="Argue With a Peer"}
 Your lab partner claims: "M stars have weak hydrogen lines because they have less hydrogen than A stars." Construct a counterargument using the Boltzmann distribution and the concept of energy-level populations. What fraction of hydrogen atoms are in $n = 2$ at 3,000 K vs. 10,000 K?
+
+*Punchline (order-of-magnitude):* At 3,000 K, $k_BT \approx 0.26$ eV, so $e^{-10.2/0.26} \sim 10^{-17}$ — essentially zero atoms in $n = 2$. At 10,000 K, $k_BT \approx 0.86$ eV, so $e^{-10.2/0.86} \sim 10^{-5}$ — a tiny but significant fraction. That's a factor of $\sim 10^{12}$ difference in the Boltzmann factor, with *zero* change in hydrogen abundance.
 :::
 
 ::: {.callout-note collapse="true" title="Enrichment (Track B): When Astronomy Became Astrophysics — The Harvard Computers"}
@@ -372,9 +384,9 @@ Quantum mechanics (1900–1930) provided the "why" behind every spectral line on
 
 **The acceleration.** World War II technologies turbocharged the field. Radar became radio astronomy, revealing neutral hydrogen's 21 cm line (1951). Nuclear weapons research provided fusion cross-sections needed for stellar models. Electronic detectors from military applications replaced photographic plates, increasing sensitivity a hundredfold. Rockets designed for warfare carried the first X-ray and UV detectors above Earth's atmosphere.
 
-**The societal return.** The transformation from positional astronomy to astrophysics hasn't just satisfied human curiosity — it has driven technological development that touches daily life. Astronomical demands for better detectors pushed CCD technology forward in the 1970s–80s, accelerating the digital imaging revolution that eventually led to the camera sensors in your phone. Signal-processing techniques developed for radio astronomy — specifically, methods for extracting faint signals from noise — contributed to the wireless networking patents behind WiFi. The radiative transfer equations that model stellar atmospheres are the *same* equations used today to model Earth's climate, optimize solar panel efficiency, and plan radiation therapy for cancer treatment. And the general relativity you'll encounter in this course — the physics that bends light around black holes — is the same physics that GPS satellites use to keep your location accurate to within a few meters.
+**The societal return.** The transformation from positional astronomy to astrophysics hasn't just satisfied human curiosity — it has driven technological development that touches daily life. Astronomical demands for better detectors pushed CCD technology forward in the 1970s–80s, accelerating the digital imaging revolution that eventually led to modern camera sensors. Signal-processing techniques developed for radio astronomy — methods for extracting faint signals from noise — influenced broader developments in wireless communications and data processing. The radiative transfer equations that model stellar atmospheres are the *same* equations used today to model Earth's climate, optimize solar panel efficiency, and plan radiation therapy for cancer treatment. And the general relativity you'll encounter in this course — the physics that bends light around black holes — is the same physics that GPS satellites use to keep your location accurate to within a few meters.
 
-These aren't loose analogies. The mathematical tools astronomers build to solve astrophysical problems turn out to be exactly what engineers and physicians need in completely different contexts. When we fund astrophysics, we are training problem-solvers and building tools that transform society. The spectroscopy you're learning in this course has a direct line from Kirchhoff's 1859 laboratory through the Harvard Computers' glass plates to the JWST spectra of exoplanet atmospheres.
+The broader pattern is real even where the specific causal chains are complex: the mathematical tools astronomers build to solve astrophysical problems turn out to be what engineers and physicians need in completely different contexts. When we fund astrophysics, we are training problem-solvers and building tools that find unexpected applications. The spectroscopy you're learning in this course has a direct line from Kirchhoff's 1859 laboratory through the Harvard Computers' glass plates to the JWST spectra of exoplanet atmospheres.
 :::
 
 ### Metallicity: A Secondary Effect
@@ -457,7 +469,7 @@ where $\Delta \lambda = \lambda_{\text{obs}} - \lambda_0$.
 - **Redshift** ($\Delta \lambda > 0$, $\lambda_{\text{obs}} > \lambda_0$): source receding, $v_r > 0$
 - **Blueshift** ($\Delta \lambda < 0$, $\lambda_{\text{obs}} < \lambda_0$): source approaching, $v_r < 0$
 
-This formula is valid for $v_r \ll c$ (the non-relativistic limit), which covers virtually all stellar velocities in our galaxy. Typical stellar radial velocities are 10–100 km/s; the speed of light is 300,000 km/s. The ratio $v_r/c \sim 10^{-4}$ to $10^{-3}$ — tiny shifts, but measurable with precision spectrographs.
+This formula is valid for $v_r \ll c$ (the non-relativistic limit), which covers virtually all stellar velocities in our galaxy. Typical stellar radial velocities are 10–100 km/s; the speed of light is 300,000 km/s. The ratio $v_r/c \sim 10^{-4}$ to $10^{-3}$ — tiny shifts, but measurable with precision spectrographs. For relativistic speeds (galaxies, jets, cosmology), a full relativistic Doppler formula is needed, and for the expanding universe the interpretation becomes *cosmological redshift* — a stretch of space itself, not simple motion. We'll revisit this distinction if it arises later in the course.
 
 ::: {.callout-note}
 ## Unit Check: Doppler Formula
@@ -481,15 +493,14 @@ Both sides are dimensionless ratios. The units of $\Delta\lambda$ and $\lambda_0
 Since $\lambda_{\text{obs}} = 656.5 > \lambda_0 = 656.3$ nm, the line is **redshifted**. The star is **receding**.
 
 **Step 2 — Calculate the wavelength shift.**
-$$\Delta\lambda = \lambda_{\text{obs}} - \lambda_0 = 656.5 - 656.3 = 0.2\ \text{nm}$$
+$$\Delta\lambda = \lambda_{\text{obs}} - \lambda_0 = 656.5\ \text{nm} - 656.3\ \text{nm} = 0.2\ \text{nm}$$
 
 **Step 3 — Apply the Doppler formula, solved for $v_r$.**
 $$v_r = c \times \frac{\Delta\lambda}{\lambda_0}$$
 
 **Step 4 — Plug in numbers.**
 $$v_r = (3.0 \times 10^5\ \text{km/s}) \times \frac{0.2\ \text{nm}}{656.3\ \text{nm}}$$
-$$v_r = (3.0 \times 10^5) \times (3.05 \times 10^{-4})\ \text{km/s}$$
-$$v_r \approx 91\ \text{km/s}$$
+$$v_r = (3.0 \times 10^5\ \text{km/s}) \times (3.05 \times 10^{-4}) = 91\ \text{km/s}$$
 
 Unit check: (km/s) × (nm/nm) = km/s $\checkmark$
 
@@ -529,7 +540,7 @@ Also, if a star is **rotating**, one limb moves toward you and the other moves a
 ## Answers
 
 1. **Approaching** — $\lambda_{\text{obs}} < \lambda_0$, so the light is blueshifted.
-2. $v_r = c \times \Delta\lambda / \lambda_0 = (3 \times 10^5) \times (485.9 - 486.1)/486.1 = (3 \times 10^5) \times (-0.2/486.1) = -123$ km/s. The negative sign confirms approach. The speed is $|v_r| \approx 123$ km/s.
+2. $v_r = c \times \Delta\lambda / \lambda_0 = (3.0 \times 10^5\ \text{km/s}) \times (485.9\ \text{nm} - 486.1\ \text{nm})/486.1\ \text{nm} = (3.0 \times 10^5\ \text{km/s}) \times (-0.2\ \text{nm}/486.1\ \text{nm}) = -123\ \text{km/s}$. The negative sign confirms approach. The speed is $|v_r| \approx 123\ \text{km/s}$.
 3. **No** — rotation broadens spectral lines symmetrically (one limb approaches, the other recedes). We can measure rotational broadening from the *width* of the line, but a single Doppler shift of the line *center* tells us only the bulk radial motion.
 :::
 :::
@@ -600,7 +611,7 @@ $$\Delta\lambda = 656.1 - 656.3 = -0.2\ \text{nm}$$
 
 The line is **blueshifted** (shorter wavelength), so the star is **approaching**.
 
-$$v_r = c \times \frac{\Delta\lambda}{\lambda_0} = (3.0 \times 10^5\ \text{km/s}) \times \frac{-0.2}{656.3} \approx -91\ \text{km/s}$$
+$$v_r = c \times \frac{\Delta\lambda}{\lambda_0} = (3.0 \times 10^5\ \text{km/s}) \times \frac{-0.2\ \text{nm}}{656.3\ \text{nm}} \approx -91\ \text{km/s}$$
 
 The star approaches at about 91 km/s.
 
@@ -626,7 +637,7 @@ The star approaches at about 91 km/s.
 
 **"Stronger lines mean more of that element."** Not necessarily. As you learned in Part 3, line strength depends primarily on *temperature* — which quantum states are populated — not on how much of that element is present. A star with strong hydrogen Balmer lines (spectral type A) doesn't have more hydrogen than a star with weak Balmer lines (spectral type M). It just has the right temperature to populate the $n = 2$ level. Abundance matters, but it's a secondary effect that requires careful modeling to extract.
 
-**"Absorption lines make a star dimmer."** Negligibly. The energy absorbed at specific wavelengths is re-emitted — the photon is destroyed, its energy is thermalized, and a new photon is emitted (generally at a different wavelength and in a random direction). The total luminosity is conserved; the spectrum just has narrow dark features carved into it. The *continuum* carries almost all the energy.
+**"Absorption lines make a star dimmer."** Negligibly. When an atom absorbs a photon at a line wavelength, it re-emits a photon in a *random* direction — this is resonant scattering. Because re-emission goes in all directions (not just toward us), the line appears dark along our line of sight. More precisely, the higher opacity at line wavelengths means the photons we receive at those wavelengths emerge from higher, *cooler* atmospheric layers, so they carry less intensity. The total luminosity of the star is conserved; the spectrum just has narrow dark features carved into it.
 :::
 
 ---
@@ -643,11 +654,17 @@ At **energy balance**, the planet radiates exactly as much as it absorbs:
 
 $$\text{Power absorbed from star} = \text{Power radiated by planet}$$
 
-The power absorbed from the star is the stellar flux at the planet's distance ($L_\star / 4\pi d^2$), intercepted by the planet's cross-section ($\pi R_p^2$), corrected for albedo $A$ (the fraction reflected):
+The power absorbed from the star is built from three factors:
+
+- **Stellar flux at the planet's distance:** $L_\star / 4\pi d^2$ — the luminosity spread over a sphere of radius $d$.
+- **Intercepted cross-section:** $\pi R_p^2$ — this is the area of the *shadow* the planet casts, not the planet's total surface area. Think of how the full Moon looks from Earth: you see a flat disk, not a sphere. Starlight "sees" the planet the same way — as a circular disk of area $\pi R_p^2$. (The planet's full surface area is $4\pi R_p^2$, four times larger, which matters on the re-radiation side.)
+- **Albedo correction:** $(1 - A)$, where the **albedo** $A$ is the fraction of incoming light a planet reflects back to space without absorbing it. A perfectly absorbing body has $A = 0$; a perfect mirror has $A = 1$. Real solar-system values span a wide range: the Moon's surface is dark rock ($A \approx 0.12$), Earth's clouds, ice, and oceans give $A \approx 0.30$, and Venus's thick sulfuric-acid clouds make it almost mirror-like ($A \approx 0.75$). Higher albedo means less energy absorbed and a cooler equilibrium temperature.
+
+Putting these together:
 
 $$\text{Absorbed} = \frac{L_\star}{4\pi d^2} \times \pi R_p^2 \times (1 - A)$$
 
-The power radiated by the planet (modeled as a blackbody radiating isotropically from its full surface) is:
+The power radiated by the planet (modeled as a blackbody radiating isotropically from its full surface — now we use the *full* $4\pi R_p^2$, because the planet re-radiates in all directions, not just toward the star) is:
 
 $$\text{Radiated} = 4\pi R_p^2 \sigma T_{\text{eq}}^4$$
 
@@ -656,11 +673,40 @@ Setting these equal and solving for the **equilibrium temperature** $T_{\text{eq
 $$T_{\text{eq}} = \left(\frac{L_\star (1-A)}{16\pi\sigma d^2}\right)^{1/4}$$
 
 ::: {.callout-tip title="Ratio Method: Planetary Temperature"}
-For a planet orbiting the Sun at distance $d$ (in AU), with albedo $A$:
 
-$$T_{\text{eq}} = 279\ \text{K} \times (1-A)^{1/4} \times \left(\frac{d}{1\ \text{AU}}\right)^{-1/2}$$
+The general equilibrium-temperature formula contains five quantities — $L_\star$, $A$, $\sigma$, $d$, and $T_{\text{eq}}$ — three of which are fundamental constants or stellar properties. The **ratio method** strategy is: evaluate the messy constants *once* for a convenient reference case, then express every new problem as dimensionless ratios multiplied by that reference value.
 
-This is derived from the full formula using solar values. For Earth ($d = 1$ AU, $A \approx 0.3$): $T_{\text{eq}} \approx 255$ K $= -18°$C. That's well below freezing — colder than Earth's actual average surface temperature of about 288 K ($+15°$C). **Something is warming Earth by about 33 K beyond the bare equilibrium.** That something is the greenhouse effect.
+**Step 1 — Pick a reference case.** Choose a zero-albedo planet orbiting the Sun at 1 AU. Set $L_\star = L_\odot$, $A = 0$, $d = 1$ AU:
+
+$$T_{\text{ref}} = \left(\frac{L_\odot}{16\pi\sigma\, (1\ \text{AU})^2}\right)^{1/4}$$
+
+**Step 2 — Evaluate $T_{\text{ref}}$ once and for all.** Plug in CGS values:
+
+$$T_{\text{ref}}^{\,4} = \frac{3.828 \times 10^{33}\ \text{erg s}^{-1}}{16\pi\,(5.670 \times 10^{-5}\ \text{erg\,cm}^{-2}\text{s}^{-1}\text{K}^{-4})\,(1.496 \times 10^{13}\ \text{cm})^2}$$
+
+Working the denominator: $16\pi \times 5.670 \times 10^{-5}\ \text{erg\,cm}^{-2}\text{s}^{-1}\text{K}^{-4} \times 2.238 \times 10^{26}\ \text{cm}^2 = 6.38 \times 10^{23}\ \text{erg\,s}^{-1}\text{K}^{-4}$, so
+
+$$T_{\text{ref}}^{\,4} = \frac{3.828 \times 10^{33}\ \text{erg\,s}^{-1}}{6.38 \times 10^{23}\ \text{erg\,s}^{-1}\text{K}^{-4}} = 6.00 \times 10^{9}\ \text{K}^4 \quad\Longrightarrow\quad T_{\text{ref}} = 278\ \text{K}$$
+
+(Rounding to three significant figures: $T_{\text{ref}} \approx 279$ K.)
+
+**Step 3 — Write the general formula as ratios.** For *any* planet with albedo $A$ at distance $d$ from the Sun, divide the general formula by the reference case. The $\sigma$ and $16\pi$ cancel, leaving:
+
+$$\frac{T_{\text{eq}}^{\,4}}{T_{\text{ref}}^{\,4}} = \frac{L_\star}{L_\odot}\,(1 - A)\,\left(\frac{d}{1\ \text{AU}}\right)^{-2}$$
+
+Take the fourth root of both sides:
+
+$$\boxed{T_{\text{eq}} = 279\ \text{K} \times \left(\frac{L_\star}{L_\odot}\right)^{1/4} \times (1-A)^{1/4} \times \left(\frac{d}{1\ \text{AU}}\right)^{-1/2}}$$
+
+Every factor is a dimensionless ratio raised to a simple power. No unit conversions, no $\sigma$, no powers of ten — just the reference value times knobs you can turn by inspection.
+
+**Step 4 — Apply.** For Earth orbiting the Sun ($L_\star/L_\odot = 1$, $d = 1$ AU, $A \approx 0.3$):
+
+$$T_{\text{eq}} = 279\ \text{K} \times 1 \times (0.7)^{1/4} \times 1 = 279\ \text{K} \times 0.915 = 255\ \text{K} = -18°\text{C}$$
+
+That's well below freezing — colder than Earth's actual average surface temperature of about 288 K ($+15°$C). **Something is warming Earth by about 33 K beyond the bare equilibrium.** That something is the greenhouse effect.
+
+**Why this works so well:** Once you have the reference value memorized (279 K), you can estimate *any* planet's equilibrium temperature in your head. Mars at 1.52 AU with $A \approx 0.25$? $T_{\text{eq}} \approx 279\ \text{K} \times (0.75)^{1/4} \times (1.52)^{-1/2} \approx 279\ \text{K} \times 0.93 \times 0.81 \approx 210\ \text{K}$. No calculator needed — just ratios and intuition.
 :::
 
 ### The Greenhouse Effect: Absorption Lines in the Atmosphere
@@ -720,25 +766,23 @@ Work through the arithmetic: $(0.75)^{1/4} \approx 0.930$ and $(1.52)^{-1/2} \ap
 $$T_{\text{eq}} = \left(\frac{L_\odot (1 - A)}{16\pi\sigma d^2}\right)^{1/4}$$
 
 **Step 1 — Compute the numerator.**
-$$L_\odot(1-A) = 3.828 \times 10^{33} \times 0.70 = 2.680 \times 10^{33}\ \text{erg/s}$$
+$$L_\odot(1-A) = (3.828 \times 10^{33}\ \text{erg/s}) \times 0.70 = 2.680 \times 10^{33}\ \text{erg/s}$$
 
 **Step 2 — Compute the denominator.**
-$$16\pi\sigma d^2 = 16\pi \times (5.67 \times 10^{-5}) \times (1.496 \times 10^{13})^2$$
-$$= 16\pi \times 5.67 \times 10^{-5} \times 2.238 \times 10^{26}$$
-$$= 16\pi \times 1.269 \times 10^{22}$$
-$$= 6.376 \times 10^{23}\ \text{erg/s/K}^4$$
+$$16\pi\sigma d^2 = 16\pi \times (5.67 \times 10^{-5}\ \text{erg\,cm}^{-2}\text{s}^{-1}\text{K}^{-4}) \times (1.496 \times 10^{13}\ \text{cm})^2$$
+$$= 16\pi \times (5.67 \times 10^{-5}\ \text{erg\,cm}^{-2}\text{s}^{-1}\text{K}^{-4}) \times (2.238 \times 10^{26}\ \text{cm}^2)$$
+$$= 16\pi \times 1.269 \times 10^{22}\ \text{erg\,s}^{-1}\text{K}^{-4}$$
+$$= 6.376 \times 10^{23}\ \text{erg\,s}^{-1}\text{K}^{-4}$$
 
 **Step 3 — Compute $T_{\text{eq}}^4$.**
-$$T_{\text{eq}}^4 = \frac{2.680 \times 10^{33}}{6.376 \times 10^{23}} = 4.203 \times 10^9\ \text{K}^4$$
+$$T_{\text{eq}}^4 = \frac{2.680 \times 10^{33}\ \text{erg\,s}^{-1}}{6.376 \times 10^{23}\ \text{erg\,s}^{-1}\text{K}^{-4}} = 4.203 \times 10^9\ \text{K}^4$$
 
 **Step 4 — Raise to the $1/4$ power.**
-$$T_{\text{eq}} = (4.203 \times 10^9)^{1/4}$$
+$$T_{\text{eq}} = (4.203 \times 10^9\ \text{K}^4)^{1/4}$$
 
-Take $(10^9)^{1/4} = 10^{9/4} = 10^{2.25} \approx 177.8$
+Separate the numerical and unit parts: $(10^9)^{1/4} = 10^{2.25} \approx 177.8$, and $(4.203)^{1/4} \approx (4.203)^{0.5\times0.5} = (2.050)^{0.5} \approx 1.432$, while $(\text{K}^4)^{1/4} = \text{K}$. Combining:
 
-Take $(4.203)^{1/4} \approx (4.203)^{0.5\times0.5} = (2.050)^{0.5} \approx 1.432$
-
-$$T_{\text{eq}} \approx 1.432 \times 177.8 \approx 255\ \text{K}$$
+$$T_{\text{eq}} \approx 1.432 \times 177.8\ \text{K} = 255\ \text{K}$$
 
 ::: {.callout-note}
 ## Unit Check
@@ -826,6 +870,16 @@ The James Webb Space Telescope uses exactly the infrared spectroscopy we've been
 **Part 7 takeaway:** Spectroscopy is robust but not foolproof. Binaries blend spectra, interstellar gas adds false lines, and precise composition requires careful modeling beyond simple line identification. These caveats don't undermine the method — they refine it.
 
 ---
+
+::: {.callout-tip title="Spectrum Decoding Recipe"}
+When you're handed a stellar spectrum, here's the procedure:
+
+1. **Fit the continuum** — the overall shape gives the blackbody temperature (Wien's law).
+2. **Identify line positions** — match absorption wavelengths to laboratory data to determine which elements are present.
+3. **Measure line shifts** — compare observed wavelengths to rest wavelengths; apply the Doppler formula to get radial velocity.
+
+Three independent measurements, one observation, three inferences: temperature, composition, velocity.
+:::
 
 ## Summary: Observable → Model → Inference
 
