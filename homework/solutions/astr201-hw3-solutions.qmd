@@ -60,25 +60,25 @@ The parsec is defined so that a star with a parallax of exactly $1''$ is at $1\ 
 **Steps:**
 
 **(a) Star A: $p=0.50''$**
-$$d_A = \frac{1}{0.50} = 2.0\ \text{pc}.$$
-$$d_A = 2.0\times 3.086\times10^{18}\ \text{cm} = 6.17\times10^{18}\ \text{cm}.$$
+$$d_A = \frac{1}{0.50\ \text{arcsec}} = 2.0\ \text{pc}.$$
+$$d_A = 2.0\ \text{pc}\times 3.086\times10^{18}\ \frac{\text{cm}}{\text{pc}} = 6.17\times10^{18}\ \text{cm}.$$
 
 **(b) Star B: $p=0.020''$**
-$$d_B = \frac{1}{0.020} = 50\ \text{pc}.$$
-$$d_B = 50\times3.086\times10^{18}\ \text{cm} = 1.54\times10^{20}\ \text{cm}.$$
+$$d_B = \frac{1}{0.020\ \text{arcsec}} = 50\ \text{pc}.$$
+$$d_B = 50\ \text{pc}\times 3.086\times10^{18}\ \frac{\text{cm}}{\text{pc}} = 1.54\times10^{20}\ \text{cm}.$$
 
 **(c) Farther by factor**
-$$\frac{d_B}{d_A} = \frac{50}{2.0} = 25.$$
+$$\frac{d_B}{d_A} = \frac{50\ \text{pc}}{2.0\ \text{pc}} = 25.$$
 
-\[
+$$
 \boxed{d_A = 2.0\ \text{pc} = 6.17\times10^{18}\ \text{cm}},\quad
 \boxed{d_B = 50\ \text{pc} = 1.54\times10^{20}\ \text{cm}},\quad
 \boxed{\text{Star B is }25\times\text{ farther.}}
-\]
+$$
 
 **Unit check:** $d = 1/p$ with $p$ in arcseconds gives $d$ in parsecs by definition. The cm conversion multiplies pc by $3.086 \times 10^{18}\ \text{cm/pc}$, giving cm. $\checkmark$
 
-**Sanity check:** Star B's parallax is $25\times$ smaller than Star A's ($0.020/0.50 = 1/25$), so it should be $25\times$ farther. Indeed $d_B/d_A = 50/2 = 25$. Star A at 2 pc is comparable to the nearest stars (Alpha Centauri is at 1.3 pc), so the numbers are astrophysically reasonable. $\checkmark$
+**Sanity check:** Star B's parallax is $25\times$ smaller than Star A's ($0.020''/0.50'' = 1/25$), so it should be $25\times$ farther. Indeed $d_B/d_A = 50\ \text{pc}/2.0\ \text{pc} = 25$. Star A at $2.0\ \text{pc}$ is comparable to the nearest stars (Alpha Centauri is at $1.3\ \text{pc}$), so the numbers are astrophysically reasonable. $\checkmark$
 
 ---
 
@@ -99,20 +99,20 @@ At fixed luminosity, flux falls as the square of the distance. The $4\pi d^2$ fa
 **Steps:**
 
 $$\frac{F_X}{F_Y}=\left(\frac{d_Y}{d_X}\right)^2
-=\left(\frac{50}{20}\right)^2
+=\left(\frac{50\ \text{pc}}{20\ \text{pc}}\right)^2
 =2.5^2
 =6.25.$$
 
-\[
+$$
 \boxed{\frac{F_X}{F_Y}=6.25}
-\]
+$$
 
 - (b) Star X appears brighter — it is closer, so more of its luminosity reaches us per unit area.
 - (c) Equal luminosity does not imply equal observed flux because flux depends on distance through inverse-square spreading. Two identical candles look very different in brightness when one is across the room and the other is across the street.
 
 **Unit check:** The ratio $F_X/F_Y = (d_Y/d_X)^2$ — both distances are in the same units (pc), which cancel. The result is a dimensionless ratio. $\checkmark$
 
-**Sanity check:** Star X is closer ($20 < 50$ pc), so it should appear brighter. $F_X/F_Y = 6.25 > 1$ confirms this. The factor $2.5^2 = 6.25$ also matches the distance ratio of $50/20 = 2.5$ squared — consistent with inverse-square scaling. $\checkmark$
+**Sanity check:** Star X is closer ($20\ \text{pc} < 50\ \text{pc}$), so it should appear brighter. $F_X/F_Y = 6.25 > 1$ confirms this. The factor $2.5^2 = 6.25$ also matches the distance ratio of $50\ \text{pc}/20\ \text{pc} = 2.5$ squared — consistent with inverse-square scaling. $\checkmark$
 
 ---
 
@@ -123,7 +123,7 @@ $$\frac{F_X}{F_Y}=\left(\frac{d_Y}{d_X}\right)^2
 **Given:**
 
 - Parallax: $p=0.10''$
-- Flux ratio: $F_\star/F_\odot=2.0\times10^{-11}$ (where $F_\odot$ is the Sun's bolometric flux at 1 AU)
+- Flux ratio: $F_\star/F_\odot=2.0\times10^{-11}$ (where $F_\odot$ is the Sun's bolometric flux at $1\ \text{AU}$)
 - $1\ \text{pc} = 206{,}265\ \text{AU}$
 
 **Find:** Distance in pc and AU; luminosity ratio $L_\star/L_\odot$.
@@ -133,30 +133,31 @@ $$\frac{F_X}{F_Y}=\left(\frac{d_Y}{d_X}\right)^2
 $$d(\text{pc}) = \frac{1}{p('')},\qquad
 \frac{L_\star}{L_\odot}=\frac{F_\star}{F_\odot}\left(\frac{d_\star}{1\ \text{AU}}\right)^2$$
 
-The luminosity formula works because $F_\odot$ is the Sun's flux measured at 1 AU, making it the natural reference. The $d^2$ factor undoes the geometrical dilution: a star's flux is its luminosity spread over a sphere of radius $d$, so to recover $L$ from $F$ we multiply back by the area $\propto d^2$.
+The luminosity formula works because $F_\odot$ is the Sun's flux measured at $1\ \text{AU}$, making it the natural reference. The $d^2$ factor undoes the geometrical dilution: a star's flux is its luminosity spread over a sphere of radius $d$, so to recover $L$ from $F$ we multiply back by the area $\propto d^2$.
 
 **Steps:**
 
 Distance:
-$$d_\star(\text{pc})=\frac{1}{0.10}=10\ \text{pc}.$$
-$$d_\star = 10\times206{,}265\ \text{AU}=2.06265\times10^6\ \text{AU}.$$
+$$d_\star=\frac{1}{0.10\ \text{arcsec}}=10\ \text{pc}.$$
+$$d_\star = 10\ \text{pc}\times 206{,}265\ \frac{\text{AU}}{\text{pc}}=2.06265\times10^6\ \text{AU}.$$
 
-Luminosity ratio:
+Luminosity ratio (both factors are dimensionless — flux ratio and distance ratio):
 $$\frac{L_\star}{L_\odot}
-=\left(2.0\times10^{-11}\right)\left(2.06265\times10^6\right)^2
+=\frac{F_\star}{F_\odot}\left(\frac{d_\star}{1\ \text{AU}}\right)^2
+=\left(2.0\times10^{-11}\right)\left(\frac{2.06265\times10^6\ \text{AU}}{1\ \text{AU}}\right)^2
 =\left(2.0\times10^{-11}\right)\left(4.2545\times10^{12}\right)
 =85.1.$$
 
-\[
+$$
 \boxed{d_\star=10\ \text{pc}=2.06265\times10^6\ \text{AU}},\qquad
 \boxed{\frac{L_\star}{L_\odot}\approx85}
-\]
+$$
 
 The star is about $85\times$ more luminous than the Sun.
 
 **Unit check:** $L_\star/L_\odot = (F_\star/F_\odot)(d_\star/1\ \text{AU})^2$ — the flux ratio is dimensionless and the distance ratio (AU/AU) is dimensionless, so the product is a dimensionless luminosity ratio. $\checkmark$
 
-**Sanity check:** A star 85× the Sun's luminosity is in the range of a luminous A-type or early F-type main-sequence star, or a subgiant — astrophysically plausible. At 10 pc its flux is tiny ($2 \times 10^{-11}\ F_\odot$), which makes sense: even a bright star is extremely faint compared to the Sun seen from 1 AU. $\checkmark$
+**Sanity check:** A star $85\times$ the Sun's luminosity is in the range of a luminous A-type or early F-type main-sequence star, or a subgiant — astrophysically plausible. At $10\ \text{pc}$ its flux is tiny ($2 \times 10^{-11}\ F_\odot$), which makes sense: even a bright star is extremely faint compared to the Sun seen from $1\ \text{AU}$. $\checkmark$
 
 ---
 
@@ -179,7 +180,7 @@ The star is about $85\times$ more luminous than the Sun.
 $$F_A = F_B.$$
 
 Distances from parallax ($d = 1/p$, so the star with smaller parallax is farther):
-$$\frac{d_B}{d_A}=\frac{p_A}{p_B}=\frac{0.100}{0.025}=4.$$
+$$\frac{d_B}{d_A}=\frac{p_A}{p_B}=\frac{0.100''}{0.025''}=4.$$
 
 Star B is $4\times$ farther.
 
@@ -187,10 +188,10 @@ Star B is $4\times$ farther.
 $$L = 4\pi d^2 F \quad\Rightarrow\quad L\propto d^2\ \text{(at fixed}\ F\text{)} \quad\Rightarrow\quad
 \frac{L_B}{L_A}=\left(\frac{d_B}{d_A}\right)^2=4^2=16.$$
 
-\[
+$$
 \boxed{\frac{d_B}{d_A}=4},\qquad
 \boxed{\frac{L_B}{L_A}=16}
-\]
+$$
 
 **(c)** Equal observed flux means only that $L/d^2$ is the same for both stars. A farther star must be intrinsically more luminous to produce the same flux at Earth — it compensates for the greater distance by emitting more total power. Conversely, a nearby faint star can appear just as bright as a distant luminous one. Flux alone cannot distinguish a nearby dim star from a far-away bright one; parallax breaks the degeneracy.
 
@@ -250,22 +251,22 @@ Wien's displacement law: the peak wavelength of a blackbody spectrum shifts to s
 
 Temperature:
 $$T=\frac{b}{\lambda_{\text{peak}}}
-=\frac{2.898\times10^6}{725}
-=3.997\times10^3\ \text{K}\approx4.00\times10^3\ \text{K}.$$
+=\frac{2.898\times10^6\ \text{nm}\cdot\text{K}}{725\ \text{nm}}
+=3997\ \text{K}\approx4.00\times10^3\ \text{K}.$$
 
 Compare to Sun:
-$$\frac{T}{T_\odot}=\frac{3997}{5800}=0.689\approx0.69.$$
+$$\frac{T}{T_\odot}=\frac{3997\ \text{K}}{5800\ \text{K}}=0.689\approx0.69.$$
 
-\[
+$$
 \boxed{T\approx4.0\times10^3\ \text{K}},\qquad
 \boxed{T/T_\odot\approx0.69}
-\]
+$$
 
 So the star is cooler than the Sun.
 
 **Unit check:** $[b/\lambda_{\text{peak}}] = [\text{nm·K}]/[\text{nm}] = [\text{K}]$. The wavelength units cancel, leaving temperature. $\checkmark$
 
-**Sanity check:** A peak at 725 nm is at the red edge of the visible spectrum (red light is $\sim 620$–$750$ nm), suggesting a cool, reddish star. A temperature of $\sim 4000$ K corresponds to a K-type star — consistent with a red/orange appearance. The Sun peaks at $\sim 500$ nm and has $T = 5800$ K, so a star peaking at longer wavelength should indeed be cooler. $\checkmark$
+**Sanity check:** A peak at $725\ \text{nm}$ is at the red edge of the visible spectrum (red light is $\sim 620\text{–}750\ \text{nm}$), suggesting a cool, reddish star. A temperature of $\sim 4000\ \text{K}$ corresponds to a K-type star — consistent with a red/orange appearance. The Sun peaks at $\sim 500\ \text{nm}$ and has $T = 5800\ \text{K}$, so a star peaking at longer wavelength should indeed be cooler. $\checkmark$
 
 ---
 
@@ -288,7 +289,7 @@ x\equiv\frac{hc}{\lambda k_B T}.$$
 
 **(a) Long-wavelength limit ($x\ll1$)**
 
-Use \(e^x\approx1+x\), so \(e^x-1\approx x\):
+Use $e^x\approx1+x$, so $e^x-1\approx x$:
 $$B_\lambda \approx \frac{2hc^2}{\lambda^5}\frac{1}{x}
 =\frac{2hc^2}{\lambda^5}\frac{\lambda k_B T}{hc}
 =\frac{2ck_B T}{\lambda^4}.$$
@@ -296,16 +297,16 @@ $$B_\lambda \approx \frac{2hc^2}{\lambda^5}\frac{1}{x}
 Thus
 $$\boxed{B_\lambda \approx \frac{2ck_B T}{\lambda^4}}\quad\text{(Rayleigh-Jeans limit).}$$
 
-**(b) Short-wavelength limit (\(x\gg1\))**
+**(b) Short-wavelength limit ($x\gg1$)**
 
-Use \(e^x-1\approx e^x\):
+Use $e^x-1\approx e^x$:
 $$\boxed{B_\lambda \approx \frac{2hc^2}{\lambda^5}\exp\!\left(-\frac{hc}{\lambda k_B T}\right)}$$
 
 Emission is suppressed by the exponential factor $e^{-x}$.
 
 **(c) UV catastrophe resolution**
 
-Classical Rayleigh-Jeans behavior diverges toward short \(\lambda\), but Planck's exponential cutoff suppresses high-frequency emission, preventing the divergence.
+Classical Rayleigh-Jeans behavior diverges toward short $\lambda$, but Planck's exponential cutoff suppresses high-frequency emission, preventing the divergence.
 
 **(d) “Photons are expensive”**
 
@@ -344,10 +345,10 @@ $$\left(\frac{R}{R_\odot}\right)^2
 so
 $$\frac{R}{R_\odot}=1.$$
 
-\[
+$$
 \boxed{\left(\frac{R}{R_\odot}\right)^2=1},\qquad
 \boxed{\frac{R}{R_\odot}=1}
-\]
+$$
 
 The star has the same radius as the Sun.
 
@@ -377,39 +378,43 @@ $$p=0.050'',\qquad \frac{F_\star}{F_\odot}=1.5\times10^{-12},\qquad
 \lambda_{\text{peak}}=500\ \text{nm}.$$
 
 **(a) Distance**
-$$d(\text{pc})=\frac{1}{p('')}=\frac{1}{0.050}=20\ \text{pc}.$$
-$$d=20\times206{,}265\ \text{AU}=4.1253\times10^6\ \text{AU}.$$
+$$d=\frac{1}{p}=\frac{1}{0.050\ \text{arcsec}}=20\ \text{pc}.$$
+$$d=20\ \text{pc}\times 206{,}265\ \frac{\text{AU}}{\text{pc}}=4.1253\times10^6\ \text{AU}.$$
 
 **(b) Luminosity ratio**
+
+Both factors are dimensionless (flux ratio and distance ratio), so the result is a dimensionless luminosity ratio:
 $$\frac{L_\star}{L_\odot}
 =\frac{F_\star}{F_\odot}\left(\frac{d_\star}{1\ \text{AU}}\right)^2
-=\left(1.5\times10^{-12}\right)\left(4.1253\times10^6\right)^2
+=\left(1.5\times10^{-12}\right)\left(\frac{4.1253\times10^6\ \text{AU}}{1\ \text{AU}}\right)^2
+=\left(1.5\times10^{-12}\right)\left(1.7018\times10^{13}\right)
 \approx25.5.$$
 
 **(c) Temperature**
 $$T=\frac{b}{\lambda_{\text{peak}}}
-=\frac{2.898\times10^6\ \text{nm·K}}{500\ \text{nm}}
+=\frac{2.898\times10^6\ \text{nm}\cdot\text{K}}{500\ \text{nm}}
 =5796\ \text{K}\approx5800\ \text{K}.$$
 
 So
-$$\frac{T}{T_\odot}\approx\frac{5796}{5800}\approx1.00.$$
+$$\frac{T}{T_\odot}\approx\frac{5796\ \text{K}}{5800\ \text{K}}\approx1.00.$$
 
 **(d) Radius ratio**
 $$\frac{R}{R_\odot}
-=\left[\frac{L/L_\odot}{(T/T_\odot)^4}\right]^{1/2}
-\approx\left[\frac{25.5}{(1.00)^4}\right]^{1/2}
+=\left[\frac{L_\star/L_\odot}{(T/T_\odot)^4}\right]^{1/2}
+=\left[\frac{25.5}{(1.00)^4}\right]^{1/2}
+=\left[25.5\right]^{1/2}
 \approx5.05.$$
 
 **(e) Uncertainty propagation**
 
-Given \(p=0.050''\pm0.003''\):
-$$\frac{\delta p}{p}=\frac{0.003}{0.050}=0.06=6\%.$$
+Given $p=0.050''\pm0.003''$:
+$$\frac{\delta p}{p}=\frac{0.003''}{0.050''}=0.06=6\%.$$
 
-For \(d=1/p\):
+For $d=1/p$ (power-law error propagation: if $d \propto p^{-1}$, then $\delta d/d = |\!-\!1|\,\delta p/p$):
 $$\frac{\delta d}{d}\approx\frac{\delta p}{p}\approx6\%.$$
 
-For \(L\propto d^2\) (assuming flux uncertainty negligible):
-$$\frac{\delta L}{L}\approx2\frac{\delta d}{d}\approx12\%.$$
+For $L\propto d^2$ at fixed flux (power-law propagation: exponent 2 doubles the fractional uncertainty):
+$$\frac{\delta L}{L}\approx2\,\frac{\delta d}{d}\approx2\times6\%=12\%.$$
 
 **(f) O→M→I summary**
 
@@ -417,12 +422,12 @@ We measured observables (parallax, flux ratio, and peak wavelength). We applied 
 
 **Unit check:** Each step produces dimensionless ratios — $d$ in pc or AU (defined units), $L/L_\odot$ (dimensionless), $T$ in K (from nm·K/nm), $R/R_\odot$ (dimensionless). Fractional uncertainties $\delta d/d$ and $\delta L/L$ are also dimensionless. Every intermediate result carries the expected units or is properly dimensionless. $\checkmark$
 
-\[
+$$
 \boxed{d=20\ \text{pc}=4.1253\times10^6\ \text{AU}},\quad
 \boxed{L_\star/L_\odot\approx25.5},\quad
 \boxed{T\approx5800\ \text{K}},\quad
 \boxed{R/R_\odot\approx5.05},\quad
 \boxed{\delta d/d\approx6\%,\ \delta L/L\approx12\%}
-\]
+$$
 
 **Sanity check:** $T \approx 5800\ \text{K} \approx T_\odot$ (solar temperature) with $R \approx 5\,R_\odot$ suggests a subgiant or early red giant — a star that has expanded off the main sequence while maintaining roughly solar surface temperature. Its luminosity $L \approx 25\,L_\odot$ is self-consistent: $L \propto R^2 T^4$ gives $25 \approx 5^2 \times 1^4 = 25$. $\checkmark$ The 6% distance uncertainty propagating to 12% luminosity uncertainty also makes physical sense: luminosity depends on $d^2$, so uncertainty doubles. $\checkmark$

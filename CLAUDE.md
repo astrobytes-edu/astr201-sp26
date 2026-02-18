@@ -52,6 +52,26 @@ Adversarial reviewer and refactor analyst. STEM Pedagogy and Astrophysics expert
 - **SI units are allowed only if explicitly stated**
 - Spectral radiance: erg s$^{-1}$ cm$^{-2}$ sr$^{-1}$ cm$^{-1}$ (NOT W m$^{-2}$ sr$^{-1}$ m$^{-1}$)
 
+### Mathematical Expressions — SHOW ALL UNITS (NON-NEGOTIABLE)
+
+**Every numeric expression MUST carry explicit units at every step.** This applies to:
+- Problem statements (homework, exams, readings)
+- Model solutions
+- Worked examples
+- Plan files describing problems or solutions
+
+**Rules:**
+1. **Every number gets units.** Write `$E_2 = -13.6~\text{eV}/4 = -3.40~\text{eV}$`, NOT `$E_2 = -13.6/4 = -3.40$`
+2. **Use `\text{}` for unit labels** in LaTeX: `$T = 5800~\text{K}$`, NOT `$T = 5800$ K` or `$T = 5800 K$`
+3. **Use `\frac{}{}` for displayed fractions**, not inline `/` in display math
+4. **Show unit cancellation explicitly** when converting: `$d = 10~\text{pc} \times 3.086 \times 10^{18}~\text{cm/pc} = 3.086 \times 10^{19}~\text{cm}$`
+5. **Ratios must state they are dimensionless** when the result has no units: `$(T/T_\odot) = 2$ (dimensionless)`
+6. **Never write a bare number** without units unless it is genuinely dimensionless (a ratio, a pure count, or a mathematical constant)
+
+**If you catch yourself writing a number without units — STOP and fix it before continuing.**
+
+This is the single most common failure mode. Violating this rule makes problems and solutions unprofessional and pedagogically harmful. Students learn unit discipline from model solutions — if the model is sloppy, students will be sloppy.
+
 ## Typography Conventions
 
 - **Emdashes:** Use spaces around emdashes: `x — y` not `x—y`
