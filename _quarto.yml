@@ -159,6 +159,12 @@ website:
       - section: "Homework"
         contents:
           - homework/index.qmd
+          - homework/astr201-hw3.qmd
+          - homework/solutions/astr201-hw3-solutions.qmd
+          - homework/astr201-hw2.qmd
+          - homework/solutions/astr201-hw2-solutions.qmd
+          - homework/astr201-hw1.qmd
+          - homework/solutions/astr201-hw1-solutions.qmd
 
       - section: "Exams"
         contents:
