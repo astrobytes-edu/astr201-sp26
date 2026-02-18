@@ -1,0 +1,460 @@
+---
+title: "Homework 4 Solutions"
+subtitle: "Surface Flux & Colors (continued) + Spectra & Composition"
+author: "Dr. Anna Rosen"
+date: "2026-02-27"
+description: "Solutions to Homework 4."
+draft: true
+course: ASTR 201
+module: "Module 2 — Distance, Luminosity, Temperature, Radius + Spectra & Composition"
+---
+
+::: {.callout-note}
+**Student note:** These are model solutions written to show reasoning, units, and checks. Your solutions can be shorter if your setup and logic are correct.
+
+**Grade memo note:** Use these to write your reflection (what you got right, what broke, and what you will do differently next time).
+:::
+
+---
+
+## Part A — Surface Flux, Radius, and the HR Diagram
+
+## Problem 1 — Why Betelgeuse Is Huge
+
+<!-- Problem: Conceptual / Connection / — / Tools: Scaling/Ratio / ⭐ -->
+
+**Restatement:** Explain why Betelgeuse — cooler than the Sun — must have an enormous radius to achieve $L \sim 10^5\,L_\odot$.
+
+**Key insight:** Stefan-Boltzmann says $L = 4\pi R^2 \sigma T^4$. The surface flux $F_\star = \sigma T^4$ sets the power per unit area. A cooler star radiates less per square centimeter, so it needs a much larger surface area to achieve a high total luminosity.
+
+**Answer:**
+
+The surface flux is $F_\star = \sigma T^4$. Betelgeuse has $T \approx 3{,}500~\text{K} \approx 0.60\,T_\odot$, so its surface flux relative to the Sun is:
+
+$$\frac{F_{\text{Bet}}}{F_\odot} = \left(\frac{T_{\text{Bet}}}{T_\odot}\right)^4 = (0.60)^4 = 0.130 \quad (\text{dimensionless})$$
+
+Each square centimeter of Betelgeuse's surface radiates only 13% as much power as the Sun's surface. Yet its total luminosity is $\sim 10^5\,L_\odot$. Since $L = F_\star \times 4\pi R^2$, the star compensates with enormous surface area:
+
+$$\left(\frac{R}{R_\odot}\right)^2 = \frac{L/L_\odot}{(T/T_\odot)^4} = \frac{10^5}{0.130} = 7.7 \times 10^5 \quad (\text{dimensionless})$$
+
+$$\frac{R}{R_\odot} = \sqrt{7.7 \times 10^5} \approx 880 \quad (\text{dimensionless})$$
+
+Betelgeuse is roughly $880$ times the Sun's radius — so large that if placed at the Sun's position, it would engulf Mars's orbit.
+
+**Sanity check:** Cooler → lower surface flux. Much higher luminosity → must compensate with enormous area. $R \sim 880\,R_\odot$ is consistent with interferometric measurements of Betelgeuse. $\checkmark$
+
+**Common misconception:** Assuming cooler automatically means dimmer. A cooler star radiates less per unit area, but if the surface area is vast, the total luminosity can be much greater than a hotter star's.
+
+---
+
+## Problem 2 — Rigel's Radius (Ratio Method)
+
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Scaling/Ratio, Model-Inversion / ⭐⭐ -->
+
+**Given:**
+
+- $L_{\text{Rigel}} = 120{,}000\,L_\odot$
+- $T_{\text{Rigel}} = 12{,}100~\text{K}$
+- $T_\odot = 5{,}800~\text{K}$
+
+**Find:** $R_{\text{Rigel}}/R_\odot$; comparison to Betelgeuse ($R_{\text{Betelgeuse}} \approx 870\,R_\odot$).
+
+**Equation:** Stefan-Boltzmann in solar units:
+
+$$\frac{L}{L_\odot} = \left(\frac{R}{R_\odot}\right)^2 \left(\frac{T}{T_\odot}\right)^4$$
+
+Solving for radius: $(R/R_\odot)^2 = (L/L_\odot) \div (T/T_\odot)^4$. All quantities are dimensionless ratios — no CGS constants needed.
+
+**Steps:**
+
+**(a)** Temperature ratio:
+
+$$\frac{T_{\text{Rigel}}}{T_\odot} = \frac{12{,}100~\text{K}}{5{,}800~\text{K}} = 2.086 \quad (\text{dimensionless})$$
+
+The K units cancel, confirming the ratio is dimensionless. $\checkmark$
+
+**(b)** Fourth power:
+
+$$\left(\frac{T_{\text{Rigel}}}{T_\odot}\right)^4 = (2.086)^4$$
+
+Computing in steps: $(2.086)^2 = 4.352$; $(4.352)^2 = 18.94$ (dimensionless).
+
+$$\boxed{\left(\frac{T_{\text{Rigel}}}{T_\odot}\right)^4 \approx 18.9 \quad (\text{dimensionless})}$$
+
+**(c)** Radius:
+
+$$\left(\frac{R_{\text{Rigel}}}{R_\odot}\right)^2 = \frac{L_{\text{Rigel}}/L_\odot}{(T_{\text{Rigel}}/T_\odot)^4} = \frac{120{,}000}{18.9} = 6{,}350 \quad (\text{dimensionless})$$
+
+$$\frac{R_{\text{Rigel}}}{R_\odot} = \sqrt{6{,}350} = 79.7 \quad (\text{dimensionless})$$
+
+$$\boxed{R_{\text{Rigel}} \approx 80\,R_\odot}$$
+
+**(d)** Rigel is about $80$ times the Sun's radius — much larger than the Sun but roughly $1/11$ of Betelgeuse ($870\,R_\odot$). Despite both being supergiants with extreme luminosities, Rigel is much hotter ($12{,}100~\text{K}$ vs. $3{,}500~\text{K}$), so each square centimeter of its surface radiates far more power ($T^4$ factor). Betelgeuse compensates for its lower surface temperature with a vastly larger surface area.
+
+**Unit check:** All ratios are dimensionless (K/K, $L_\odot/L_\odot$). Final answer in $R_\odot$. $\checkmark$
+
+**Sanity check:** Rigel is very hot and very luminous; its radius $\sim 80\,R_\odot$ is large but modest compared to Betelgeuse because the $T^4$ factor does most of the work for Rigel. Consistent with Rigel being a blue supergiant (hot, moderately large) rather than a red supergiant (cool, enormous). $\checkmark$
+
+---
+
+## Problem 3 — HR Diagram Reasoning: Three Stars
+
+<!-- Problem: Synthesis / Connection / O→M→I / Tools: Scaling/Ratio, Data/Graph / ⭐⭐ -->
+
+**Restatement:** Compute radii of three stars at different HR diagram positions using Stefan-Boltzmann ratios, identify which is largest/smallest, and interpret lines of constant radius.
+
+**Key elements:** Stefan-Boltzmann ratio form for each star; radius ordering; HR diagram sketch with constant-$R$ lines; connection to giant and white-dwarf regions.
+
+**Sample response:**
+
+**(a)** Using $(R/R_\odot)^2 = (L/L_\odot) / (T/T_\odot)^4$:
+
+**Star A** ($T = 6{,}000~\text{K}$, $L = 1\,L_\odot$):
+
+$$\frac{T}{T_\odot} = \frac{6{,}000~\text{K}}{5{,}800~\text{K}} = 1.034 \quad (\text{dimensionless})$$
+
+$$\left(\frac{T}{T_\odot}\right)^4 = (1.034)^4 = 1.145 \quad (\text{dimensionless})$$
+
+$$\left(\frac{R}{R_\odot}\right)^2 = \frac{1}{1.145} = 0.873 \quad (\text{dimensionless}) \quad \Longrightarrow \quad \boxed{R_A \approx 0.93\,R_\odot}$$
+
+**Star B** ($T = 3{,}000~\text{K}$, $L = 100\,L_\odot$):
+
+$$\frac{T}{T_\odot} = \frac{3{,}000~\text{K}}{5{,}800~\text{K}} = 0.517 \quad (\text{dimensionless})$$
+
+$$\left(\frac{T}{T_\odot}\right)^4 = (0.517)^4 = 0.0716 \quad (\text{dimensionless})$$
+
+$$\left(\frac{R}{R_\odot}\right)^2 = \frac{100}{0.0716} = 1{,}397 \quad (\text{dimensionless}) \quad \Longrightarrow \quad \boxed{R_B \approx 37\,R_\odot}$$
+
+**Star C** ($T = 12{,}000~\text{K}$, $L = 1\,L_\odot$):
+
+$$\frac{T}{T_\odot} = \frac{12{,}000~\text{K}}{5{,}800~\text{K}} = 2.069 \quad (\text{dimensionless})$$
+
+$$\left(\frac{T}{T_\odot}\right)^4 = (2.069)^4 = 18.33 \quad (\text{dimensionless})$$
+
+$$\left(\frac{R}{R_\odot}\right)^2 = \frac{1}{18.33} = 0.0546 \quad (\text{dimensionless}) \quad \Longrightarrow \quad \boxed{R_C \approx 0.23\,R_\odot}$$
+
+**(b)** Star B ($37\,R_\odot$) is largest — a red giant. Star C ($0.23\,R_\odot$) is smallest — consistent with a white dwarf or hot subdwarf.
+
+**(c)** On the HR diagram ($L$ vs. $T$ with $T$ increasing leftward), lines of constant radius run diagonally from upper-left (hot, luminous) to lower-right (cool, dim), because $L \propto R^2 T^4$ means $L \propto T^4$ at fixed $R$. Star B sits far above the constant-$R$ line through Star A, indicating a much larger radius (giant region, upper-right). Star C sits far below, indicating a much smaller radius (white-dwarf region, lower-left). The main sequence occupies a band near $R \sim 0.1$–$10\,R_\odot$; giants extend to hundreds of $R_\odot$; white dwarfs cluster near $\sim 0.01\,R_\odot$.
+
+**Sanity check:** Cool + luminous = must be physically large (giant). Hot + dim = must be physically tiny (white dwarf). The radii we computed ($37\,R_\odot$ and $0.23\,R_\odot$) confirm these expectations. $\checkmark$
+
+**Grading guidance:** Full credit requires showing $(R/R_\odot)^2$ before taking the square root for each star (not jumping to the final answer). The sketch should show $T$ increasing leftward and constant-$R$ lines as steep diagonal curves. Interpretation should connect the three regions (main sequence, giant, white dwarf) to radius.
+
+---
+
+## Problem 4 — The Effect of Extinction on Temperature Inference
+
+<!-- Problem: Synthesis / Connection / O→M→I / Tools: Unit-Conversion, Model-Inversion, Scaling/Ratio, Uncertainty/Assumptions / ⭐⭐⭐ -->
+
+**Restatement:** Show quantitatively how interstellar reddening biases temperature low and radius high, using Wien's law and Stefan-Boltzmann scaling at fixed luminosity.
+
+**Key elements:** Wien's law applied twice (with and without dust correction); temperature ratio = wavelength ratio (inverted); radius scaling $R \propto T^{-2}$ at fixed $L$; factor-of-two bias in inferred radius.
+
+**Sample response:**
+
+**(a)** Apparent temperature from the reddened color:
+
+$$T_{\text{apparent}} = \frac{b}{\lambda_{\text{obs}}} = \frac{2.898 \times 10^6~\text{nm·K}}{700~\text{nm}} = 4{,}140~\text{K}$$
+
+$$\boxed{T_{\text{apparent}} \approx 4{,}140~\text{K}}$$
+
+**(b)** True temperature from the corrected color:
+
+$$T_{\text{true}} = \frac{b}{\lambda_{\text{true}}} = \frac{2.898 \times 10^6~\text{nm·K}}{500~\text{nm}} = 5{,}796~\text{K} \approx 5{,}800~\text{K}$$
+
+$$\boxed{T_{\text{true}} \approx 5{,}800~\text{K}}$$
+
+(This is essentially the Sun's temperature — the true star is Sun-like.)
+
+**(c)** Temperature bias factor:
+
+$$\frac{T_{\text{apparent}}}{T_{\text{true}}} = \frac{\lambda_{\text{true}}}{\lambda_{\text{obs}}} = \frac{500~\text{nm}}{700~\text{nm}} = \frac{5}{7} \approx 0.714 \quad (\text{dimensionless})$$
+
+$$\boxed{T_{\text{apparent}}/T_{\text{true}} \approx 0.71}$$
+
+Dust makes the star appear about 29% cooler than it truly is.
+
+**(d)** At fixed luminosity, $R \propto T^{-2}$ (from $L \propto R^2 T^4$). The inferred radius ratio is:
+
+$$\frac{R_{\text{inferred}}}{R_{\text{true}}} = \left(\frac{T_{\text{true}}}{T_{\text{apparent}}}\right)^2 = \left(\frac{7}{5}\right)^2 = \frac{49}{25} = 1.96 \quad (\text{dimensionless})$$
+
+$$\boxed{R_{\text{inferred}}/R_{\text{true}} \approx 2.0}$$
+
+The inferred radius would be about **twice too large**. Since the (wrong) temperature is too low, Stefan-Boltzmann requires a larger radius to produce the same luminosity.
+
+**Unit check:** Wien's law: $\text{nm·K} / \text{nm} = \text{K}$. $\checkmark$ All ratios are dimensionless. $\checkmark$
+
+**Sanity check:** Dust reddens → apparent peak shifts to longer $\lambda$ → lower inferred $T$ → at fixed $L$, need bigger $R$ to compensate → inferred $R$ too large. The direction and magnitude ($\sim 2\times$) are physically sensible. This is why extinction correction is essential before inferring stellar properties. $\checkmark$
+
+**Grading guidance:** Full credit requires: (1) showing Wien's law with units in parts (a)–(b); (2) recognizing that the temperature ratio equals the inverse wavelength ratio; (3) using the $R \propto T^{-2}$ scaling correctly (squaring the inverse temperature ratio, not the temperature ratio). Common error: using $R \propto T^{-4}$ instead of $R \propto T^{-2}$.
+
+---
+
+## Part B — Spectra, Doppler, and Planetary Climate
+
+## Problem 5 — The OBAFGKM Misconception
+
+<!-- Problem: Conceptual / Connection / — / Tools: — / ⭐ -->
+
+**Restatement:** Critique the claim that O stars show strong helium lines because they contain more helium than cooler stars.
+
+**Key insight:** Spectral line strength depends primarily on temperature (which quantum states are populated via the Boltzmann distribution), not on elemental abundance. All main-sequence stars have similar compositions ($\sim 75\%$ H, $\sim 25\%$ He by mass).
+
+**Answer:**
+
+The statement is wrong because all stars have approximately the same chemical composition ($\sim 75\%$ hydrogen, $\sim 25\%$ helium by mass). O stars show strong helium lines not because they have more helium, but because their extremely high temperatures ($T > 30{,}000~\text{K}$) provide enough thermal energy to excite and ionize helium atoms — populating the high-energy quantum states needed for helium transitions. In cooler stars, these energy levels are barely populated: the Boltzmann factor $e^{-\chi/k_B T}$ becomes exponentially small when the excitation energy $\chi$ is much larger than the thermal energy $k_B T$. The helium is still present in equal amounts; it simply isn't excited.
+
+**Sanity check:** If composition controlled line strength, all stars would show the same spectral features (since composition is nearly universal across spectral types). The fact that spectral type varies systematically with temperature confirms that temperature — not abundance — is the primary driver. $\checkmark$
+
+**Common misconception:** Confusing line strength with abundance. The same confusion applies to hydrogen Balmer lines: A-type stars ($T \sim 10{,}000~\text{K}$) show the strongest Balmer lines, but this doesn't mean A stars have the most hydrogen. It means $\sim 10{,}000~\text{K}$ is the optimal temperature for populating the $n = 2$ level from which Balmer transitions originate.
+
+---
+
+## Problem 6 — Doppler Direction
+
+<!-- Problem: Conceptual / Application / O→M→I / Tools: Scaling/Ratio / ⭐⭐ -->
+
+**Restatement:** Determine which of two stars is approaching/receding from H$\alpha$ line shifts, predict which has larger velocity magnitude, and verify by calculation.
+
+**Key insight:** $\Delta\lambda > 0$ (redshift) → receding; $\Delta\lambda < 0$ (blueshift) → approaching. The velocity magnitude scales linearly with $|\Delta\lambda|$.
+
+**Answer:**
+
+**(a)** Star X: $\lambda_{\text{obs}} = 656.8~\text{nm} > \lambda_0 = 656.3~\text{nm}$ → redshifted → **receding**.
+
+Star Y: $\lambda_{\text{obs}} = 655.8~\text{nm} < \lambda_0 = 656.3~\text{nm}$ → blueshifted → **approaching**.
+
+**(b)** Star X: $|\Delta\lambda| = |656.8 - 656.3|~\text{nm} = 0.5~\text{nm}$.
+
+Star Y: $|\Delta\lambda| = |655.8 - 656.3|~\text{nm} = 0.5~\text{nm}$.
+
+Both have the same $|\Delta\lambda| = 0.5~\text{nm}$, so both have the **same radial velocity magnitude**. They are moving at equal speeds in opposite directions.
+
+**(c)** Star X (receding):
+
+$$v_r = c \times \frac{\Delta\lambda}{\lambda_0} = 3.0 \times 10^5~\text{km/s} \times \frac{+0.5~\text{nm}}{656.3~\text{nm}} = 3.0 \times 10^5~\text{km/s} \times 7.62 \times 10^{-4}$$
+
+$$\boxed{v_{r,X} = +229~\text{km/s} \quad (\text{receding})}$$
+
+Star Y (approaching):
+
+$$v_r = c \times \frac{\Delta\lambda}{\lambda_0} = 3.0 \times 10^5~\text{km/s} \times \frac{-0.5~\text{nm}}{656.3~\text{nm}} = 3.0 \times 10^5~\text{km/s} \times (-7.62 \times 10^{-4})$$
+
+$$\boxed{v_{r,Y} = -229~\text{km/s} \quad (\text{approaching})}$$
+
+$|v_r|$ is the same for both stars, confirming part (b).
+
+**Sanity check:** Equal $|\Delta\lambda|$ → equal speed. The Doppler formula is linear in $\Delta\lambda$, so symmetric shifts above and below $\lambda_0$ give equal-magnitude velocities in opposite directions. $\sim 230~\text{km/s}$ is a plausible stellar radial velocity. $\checkmark$
+
+**Common misconception:** Assuming "redshift" means the star appears red. A blueshifted O star is still blue — its spectral lines are just shifted slightly to shorter wavelengths than their laboratory values.
+
+---
+
+## Problem 7 — Hydrogen Line Ratios from the Bohr Model
+
+<!-- Problem: Calculation:Full / Application / — / Tools: Scaling/Ratio / ⭐ -->
+
+**Given:**
+
+- $E_n = -13.6~\text{eV}/n^2$ (Bohr model for hydrogen)
+- $\lambda_{H\alpha} = 656.3~\text{nm}$ (observed H$\alpha$ wavelength)
+
+**Find:** Energy levels in eV; $\lambda_{H\beta}$ via ratio method; Balmer series limit wavelength.
+
+**Equation:** The key relation is $\lambda = hc/\Delta E$. For two transitions from the same series, the wavelength ratio equals the inverse energy-difference ratio:
+
+$$\frac{\lambda_{H\beta}}{\lambda_{H\alpha}} = \frac{\Delta E_{H\alpha}}{\Delta E_{H\beta}} \quad (\text{dimensionless})$$
+
+This means we never need $h$ or $c$ explicitly — just energy ratios and one known wavelength.
+
+**Steps:**
+
+**(a)** Energy levels as fractions of $13.6~\text{eV}$:
+
+$$E_2 = \frac{-13.6~\text{eV}}{2^2} = \frac{-13.6~\text{eV}}{4} = -3.400~\text{eV}$$
+
+$$E_3 = \frac{-13.6~\text{eV}}{3^2} = \frac{-13.6~\text{eV}}{9} = -1.511~\text{eV}$$
+
+$$E_4 = \frac{-13.6~\text{eV}}{4^2} = \frac{-13.6~\text{eV}}{16} = -0.850~\text{eV}$$
+
+**(b)** Energy differences:
+
+$$\Delta E_{H\alpha} = E_3 - E_2 = (-1.511~\text{eV}) - (-3.400~\text{eV}) = 1.889~\text{eV}$$
+
+$$\Delta E_{H\beta} = E_4 - E_2 = (-0.850~\text{eV}) - (-3.400~\text{eV}) = 2.550~\text{eV}$$
+
+Dimensionless ratio:
+
+$$\frac{\Delta E_{H\beta}}{\Delta E_{H\alpha}} = \frac{2.550~\text{eV}}{1.889~\text{eV}} = 1.350 \quad (\text{dimensionless})$$
+
+$$\boxed{\Delta E_{H\beta}/\Delta E_{H\alpha} = 1.350 \quad (\text{dimensionless})}$$
+
+**(c)** The wavelength ratio inverts the energy ratio:
+
+$$\frac{\lambda_{H\beta}}{\lambda_{H\alpha}} = \frac{\Delta E_{H\alpha}}{\Delta E_{H\beta}} = \frac{1}{1.350} = 0.741 \quad (\text{dimensionless})$$
+
+$$\lambda_{H\beta} = 0.741 \times 656.3~\text{nm} = 486.1~\text{nm}$$
+
+$$\boxed{\lambda_{H\beta} = 486.1~\text{nm}}$$
+
+This matches the observed value of $486.1~\text{nm}$ exactly. $\checkmark$
+
+**(d)** H$\gamma$ ($n = 5 \to 2$): Higher $n$ → higher energy level (less negative) → larger $\Delta E$ → **shorter** wavelength than H$\beta$.
+
+As $n \to \infty$: $E_\infty = 0~\text{eV}$ (ionization limit), so:
+
+$$\Delta E_{\text{limit}} = E_\infty - E_2 = 0~\text{eV} - (-3.400~\text{eV}) = 3.400~\text{eV}$$
+
+$$\frac{\lambda_{\text{limit}}}{\lambda_{H\alpha}} = \frac{\Delta E_{H\alpha}}{\Delta E_{\text{limit}}} = \frac{1.889~\text{eV}}{3.400~\text{eV}} = 0.556 \quad (\text{dimensionless})$$
+
+$$\lambda_{\text{limit}} = 0.556 \times 656.3~\text{nm} = 364.6~\text{nm}$$
+
+$$\boxed{\lambda_{\text{limit}} \approx 365~\text{nm} \quad (\text{near-UV — the Balmer break})}$$
+
+**Unit check:** All energy arithmetic in eV; eV/eV = dimensionless for ratios; nm × dimensionless = nm for wavelengths. $\checkmark$
+
+**Sanity check:** Higher transitions → larger energy gap → shorter wavelength. The series converges to a finite limit ($365~\text{nm}$, near-UV) set by the ionization energy from $n = 2$. H$\alpha$ (656 nm, red) → H$\beta$ (486 nm, blue-green) → H$\gamma$ → ... → limit (365 nm, UV): wavelengths decrease monotonically. $\checkmark$
+
+---
+
+## Problem 8 — Doppler Velocity
+
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Unit-Conversion, Scaling/Ratio / ⭐⭐ -->
+
+**Given:**
+
+- $\lambda_0 = 589.0~\text{nm}$ (Na D rest wavelength)
+- $\lambda_{\text{obs}} = 589.4~\text{nm}$
+- $c = 3.0 \times 10^5~\text{km/s}$
+
+**Find:** Direction of motion; $v_r$ in km/s; fractional shift as percentage.
+
+**Equation:** The non-relativistic Doppler formula:
+
+$$\frac{\Delta\lambda}{\lambda_0} = \frac{v_r}{c}$$
+
+Positive $\Delta\lambda$ (redshift) → positive $v_r$ (receding). The fractional shift $\Delta\lambda/\lambda_0$ is dimensionless and equals $v_r/c$.
+
+**Steps:**
+
+**(a)** Wavelength shift:
+
+$$\Delta\lambda = \lambda_{\text{obs}} - \lambda_0 = 589.4~\text{nm} - 589.0~\text{nm} = +0.4~\text{nm}$$
+
+Positive shift → redshifted → the star is **receding**.
+
+**(b)** Radial velocity:
+
+$$v_r = c \times \frac{\Delta\lambda}{\lambda_0} = 3.0 \times 10^5~\text{km/s} \times \frac{0.4~\text{nm}}{589.0~\text{nm}}$$
+
+$$= 3.0 \times 10^5~\text{km/s} \times 6.79 \times 10^{-4} \quad (\text{dimensionless})$$
+
+$$\boxed{v_r \approx 204~\text{km/s} \quad (\text{receding})}$$
+
+**(c)** Fractional shift:
+
+$$\frac{\Delta\lambda}{\lambda_0} = \frac{0.4~\text{nm}}{589.0~\text{nm}} = 6.79 \times 10^{-4} = 0.068\% \quad (\text{dimensionless})$$
+
+This equals $v_r/c = 204~\text{km/s} / (3.0 \times 10^5~\text{km/s}) = 6.8 \times 10^{-4}$, confirming the Doppler relation. $\checkmark$
+
+**Unit check:** nm/nm = dimensionless for the fractional shift; km/s × dimensionless = km/s for velocity. $\checkmark$
+
+**Sanity check:** $\sim 200~\text{km/s}$ is a typical stellar radial velocity. The fractional shift is tiny ($< 0.1\%$), consistent with non-relativistic motion ($v \ll c$). $\checkmark$
+
+---
+
+## Problem 9 — Planetary Equilibrium Temperature (Ratio Method)
+
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Scaling/Ratio, Model-Inversion / ⭐⭐ -->
+
+**Given:**
+
+- $L_\star = L_\odot$ (Sun-like star)
+- $d = 1.5~\text{AU}$
+- $A = 0.25$ (albedo)
+- $T_{\text{ref}} = 279~\text{K}$ (zero-albedo planet at $1~\text{AU}$ from the Sun)
+
+**Find:** $T_{\text{eq}}$ in K; comparison to Mars's surface temperature ($\sim 210~\text{K}$).
+
+**Equation:**
+
+$$T_{\text{eq}} = 279~\text{K} \times \left(\frac{L_\star}{L_\odot}\right)^{1/4} \times (1-A)^{1/4} \times \left(\frac{d}{1~\text{AU}}\right)^{-1/2}$$
+
+Each factor is dimensionless (or the reference value in K); the product gives $T_{\text{eq}}$ in K.
+
+**Steps:**
+
+**(a)** Evaluate each factor separately:
+
+**Luminosity factor:** $(L_\star/L_\odot)^{1/4} = (1)^{1/4} = 1$ (dimensionless)
+
+**Albedo factor:** $(1 - A)^{1/4} = (1 - 0.25)^{1/4} = (0.75)^{1/4}$
+
+Computing in steps: $(0.75)^{1/2} = 0.866$; $(0.866)^{1/2} = 0.931$ (dimensionless)
+
+**Distance factor:** $(d/1~\text{AU})^{-1/2} = (1.5)^{-1/2} = 1/\sqrt{1.5} = 1/1.225 = 0.816$ (dimensionless)
+
+**Combine:**
+
+$$T_{\text{eq}} = 279~\text{K} \times 1 \times 0.931 \times 0.816 = 279~\text{K} \times 0.760$$
+
+$$\boxed{T_{\text{eq}} \approx 212~\text{K}}$$
+
+**(b)** Mars's actual surface temperature is $\sim 210~\text{K}$, essentially equal to our calculated equilibrium temperature of $212~\text{K}$. They are consistent.
+
+**(c)** The fact that $T_{\text{surface}} \approx T_{\text{eq}}$ means Mars has essentially **no significant greenhouse effect**. Its CO$_2$-dominated atmosphere ($95\%$ CO$_2$) is too thin ($\sim 0.6\%$ of Earth's surface pressure) to trap meaningful amounts of outgoing infrared radiation. Atmospheric pressure — not just composition — matters for greenhouse strength.
+
+**Unit check:** K × (dimensionless factors) = K. $\checkmark$
+
+**Sanity check:** At $1.5~\text{AU}$, farther from the Sun than Earth → should be colder. $212~\text{K} < 255~\text{K}$ (Earth's $T_{\text{eq}}$). $\checkmark$ The albedo correction makes it slightly cooler than a bare $1/\sqrt{1.5}$ distance scaling would predict. $\checkmark$
+
+---
+
+## Problem 10 — Venus's Runaway Greenhouse
+
+<!-- Problem: Synthesis / Connection / O→M→I / Tools: Model-Inversion, Scaling/Ratio, Uncertainty/Assumptions / ⭐⭐⭐ -->
+
+**Restatement:** Calculate Venus's equilibrium temperature via the ratio method, compute greenhouse warming, explain why thick CO$_2$ amplifies the greenhouse effect, reconcile Venus's lower $T_{\text{eq}}$ despite being closer to the Sun, and assess runaway greenhouse risk for Earth.
+
+**Key elements:** Ratio method with albedo and distance factors; greenhouse warming $\Delta T$; molecular infrared absorption; albedo paradox (closer but cooler $T_{\text{eq}}$); runaway greenhouse physics.
+
+**Sample response:**
+
+**(a)** Evaluate each factor:
+
+$$T_{\text{eq}} = 279~\text{K} \times \left(\frac{L_\star}{L_\odot}\right)^{1/4} \times (1-A)^{1/4} \times \left(\frac{d}{1~\text{AU}}\right)^{-1/2}$$
+
+**Luminosity factor:** $(L_\star/L_\odot)^{1/4} = 1$ (dimensionless)
+
+**Albedo factor:** $(1-A)^{1/4} = (1-0.77)^{1/4} = (0.23)^{1/4}$
+
+Computing in steps: $(0.23)^{1/2} = 0.480$; $(0.480)^{1/2} = 0.693$ (dimensionless)
+
+**Distance factor:** $(d/1~\text{AU})^{-1/2} = (0.72)^{-1/2} = 1/\sqrt{0.72} = 1/0.849 = 1.179$ (dimensionless)
+
+**Combine:**
+
+$$T_{\text{eq}} = 279~\text{K} \times 1 \times 0.693 \times 1.179 = 279~\text{K} \times 0.817$$
+
+$$\boxed{T_{\text{eq}} \approx 228~\text{K}}$$
+
+**(b)** Greenhouse warming:
+
+$$\Delta T = T_{\text{surface}} - T_{\text{eq}} = 735~\text{K} - 228~\text{K} = 507~\text{K}$$
+
+$$\boxed{\Delta T \approx 508~\text{K}}$$
+
+For comparison, Earth's greenhouse warming is $\Delta T_{\text{Earth}} \approx 288~\text{K} - 255~\text{K} = 33~\text{K}$. Venus's greenhouse is about $508/33 \approx 15$ times stronger.
+
+**(c)** Venus's atmosphere contains $\sim 200{,}000$ times more CO$_2$ than Earth's (96.5% of a $92~\text{bar}$ atmosphere vs. 0.04% of a $1~\text{bar}$ atmosphere). CO$_2$ absorbs outgoing thermal infrared radiation at specific wavelengths — especially the strong $15~\mu\text{m}$ band that overlaps Earth's thermal emission peak. With vastly more absorbing molecules, Venus's atmosphere becomes opaque across a much wider range of infrared wavelengths. The surface must heat up dramatically until enough radiation escapes through the few remaining transparent spectral windows to balance the absorbed solar input. More absorbers → wider absorption bands → more trapped radiation → higher surface temperature.
+
+**(d)** Despite being closer to the Sun ($d = 0.72~\text{AU}$), Venus's equilibrium temperature ($\sim 228~\text{K}$) is lower than Earth's ($\sim 255~\text{K}$). The albedo explains this: Venus's thick sulfuric acid clouds reflect $77\%$ of incoming sunlight ($A = 0.77$), while Earth reflects only $30\%$ ($A = 0.30$). The $(1-A)^{1/4}$ factor reduces Venus's absorbed fraction so drastically — $(0.23)^{1/4} = 0.693$ for Venus vs. $(0.70)^{1/4} = 0.915$ for Earth — that it more than compensates for the shorter distance. Venus absorbs less total solar energy than Earth, despite receiving more per unit area.
+
+**(e)** Earth could experience a runaway greenhouse if surface temperatures rose enough to evaporate large fractions of the oceans. Water vapor is a potent greenhouse gas; once enough enters the atmosphere, it traps more infrared radiation, raising temperatures further, which evaporates more water — a positive feedback loop. This would require either a dramatic increase in solar luminosity (which will happen naturally in $\sim 1$–$2~\text{Gyr}$ as the Sun evolves) or an atmospheric CO$_2$ concentration orders of magnitude beyond current levels. Venus likely underwent this process early in its history when the young Sun's luminosity was already sufficient at Venus's orbital distance.
+
+**Unit check:** K × dimensionless = K for $T_{\text{eq}}$. $\Delta T = \text{K} - \text{K} = \text{K}$. $\checkmark$
+
+**Sanity check:** $T_{\text{eq, Venus}} < T_{\text{eq, Earth}}$ despite $d_{\text{Venus}} < d_{\text{Earth}}$ → albedo effect dominates. $\Delta T \approx 508~\text{K}$ is $\sim 15\times$ Earth's $33~\text{K}$ → massive greenhouse, consistent with Venus's extreme surface conditions ($735~\text{K}$, hot enough to melt lead). $\checkmark$
+
+**Grading guidance:** Full credit requires: (1) showing each ratio-method factor separately with correct arithmetic; (2) computing $\Delta T$ correctly; (3) connecting molecular absorption to greenhouse strength (not just "more CO$_2$ = hotter"); (4) explaining the albedo paradox quantitatively (comparing the $(1-A)^{1/4}$ factors); (5) a physically grounded answer to the runaway question (water vapor feedback + threshold mechanism).

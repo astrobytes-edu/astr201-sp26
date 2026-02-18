@@ -1,0 +1,234 @@
+---
+title: "Homework 4"
+subtitle: "Surface Flux & Colors (continued) + Spectra & Composition"
+author: "Dr. Anna Rosen"
+course: ASTR 201
+module: "Module 2 — Distance, Luminosity, Temperature, Radius + Spectra & Composition"
+lectures: "Module 2 Lectures 2–3 (Surface Flux & Colors; Spectra & Composition)"
+math-level: symbolic_with_interpretation
+draft: false
+estimated-time: "4–6 hours"
+due: "Tuesday, February 24, 2026 at 11:59 pm"
+grade-memo-due: "Friday, February 27, 2026 at 11:59 pm"
+submission: "Canvas; upload a single clearly scanned PDF or a legible PDF export"
+format:
+  html:
+    toc: true
+  pdf:
+    toc: false
+    geometry: margin=1in
+    fontsize: 11pt
+---
+
+{{< hwmeta >}}
+
+## Learning Objectives
+
+- Use **Stefan-Boltzmann scaling** ($L \propto R^2 T^4$) to connect luminosity, temperature, and radius via ratios.
+- Interpret how **interstellar extinction** biases temperature and radius inferences.
+- Locate stars on the **HR diagram** and connect position to physical size.
+- Apply **Kirchhoff's laws** to identify spectrum types from physical conditions.
+- Use the **Bohr model** and energy-level ratios to predict hydrogen line wavelengths.
+- Apply the **Doppler formula** ($\Delta\lambda/\lambda_0 = v_r/c$) to infer radial velocity from spectral-line shifts.
+- Calculate **planetary equilibrium temperatures** using the ratio method and interpret greenhouse warming.
+
+## Concept Throughline
+
+- Temperature and luminosity together determine radius — Stefan-Boltzmann as a diagnostic.
+- Spectral lines encode composition, temperature, and velocity — three inferences from one observation.
+- The same quantum physics (energy levels + absorption) governs stellar atmospheres and planetary climates.
+- Ratio methods and scaling arguments are more powerful than absolute calculations.
+
+## Prerequisites
+
+- Scientific notation and proportional reasoning
+- Stefan-Boltzmann and Wien's law from Module 2, Lecture 2
+- Module 1 light basics (spectra, blackbody ideas)
+
+## Relevant Sources (Module-Based)
+
+- [Module 2 (reading): Surface Flux & Colors of Stars](https://astrobytes-edu.github.io/astr201-sp26/modules/module-02/readings/lecture-02-surface-flux-and-colors-reading.html)
+- [Module 2 (reading): Spectra & Composition](https://astrobytes-edu.github.io/astr201-sp26/modules/module-02/readings/lecture-03-spectra-and-composition-reading.html)
+
+::: {.callout-note}
+**Before you start:** Review the [Homework Guidelines](hw-tips.qmd) for required format and tools.
+:::
+
+::: {.callout-tip}
+**HW4 note:** This assignment emphasizes **ratio and scaling methods**. Use solar units and dimensionless ratios whenever possible. Avoid absolute CGS calculations unless a problem explicitly requires them.
+
+**Use ratios whenever possible** to avoid unnecessary constants.
+:::
+
+::: {.callout-note}
+Use these constants unless a problem states otherwise:
+
+- $T_\odot = 5800~\text{K}$
+- $R_\odot = 6.96 \times 10^{10}~\text{cm}$
+- $L_\odot = 3.828 \times 10^{33}~\text{erg/s}$
+- $b = 2.898 \times 10^6~\text{nm·K}$
+- $\sigma = 5.67 \times 10^{-5}~\text{erg}~\text{cm}^{-2}~\text{s}^{-1}~\text{K}^{-4}$
+- $E_n(\text{hydrogen}) = -13.6~\text{eV}/n^2$
+- $c = 3.0 \times 10^5~\text{km/s}$
+- H$\alpha$ rest wavelength: $\lambda_0 = 656.3~\text{nm}$
+- Na D rest wavelength: $\lambda_0 = 589.0~\text{nm}$
+- $T_{\text{ref}} = 279~\text{K}$ (equilibrium temperature of a zero-albedo planet at $1~\text{AU}$ from the Sun)
+:::
+
+::: {.callout-note}
+**Required reporting format:**
+
+- Every numeric answer must include units.
+- Use scientific notation where appropriate.
+- Include a one-line sanity check for each problem (e.g., cooler star → larger radius at fixed $L$; redshifted → receding).
+:::
+
+::: {.callout-tip}
+**Sanity-check scalings:**
+
+- $L \propto R^2 T^4$ (Stefan-Boltzmann)
+- $T = b/\lambda_{\text{peak}}$ (Wien's law)
+- $R \propto T^{-2}$ at fixed $L$
+- $\Delta\lambda/\lambda_0 = v_r/c$ (Doppler)
+- $T_{\text{eq}} \propto (1-A)^{1/4}\,d^{-1/2}$ (planetary equilibrium)
+:::
+
+---
+
+## Problems (10 total)
+
+### Part A — Surface Flux, Radius, and the HR Diagram
+
+<!-- Problem: Conceptual / Connection / — / Tools: Scaling/Ratio / ⭐ -->
+### Problem 1 — Why Betelgeuse Is Huge
+
+Betelgeuse has:
+
+- Luminosity: $L \sim 10^5\,L_\odot$ ($100{,}000$ times the Sun)
+- Temperature: $T \sim 3{,}500~\text{K}$ (about 60% of the Sun's temperature)
+
+Use Stefan-Boltzmann to explain qualitatively why Betelgeuse must have an enormous radius despite being cooler than the Sun. Your answer should reference the surface flux $F_\star = \sigma T^4$ (power per unit area) and the surface area $4\pi R^2$.
+
+---
+
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Scaling/Ratio, Model-Inversion / ⭐⭐ -->
+### Problem 2 — Rigel's Radius (Ratio Method)
+
+Rigel (a blue supergiant) has:
+
+- Luminosity: $L_{\text{Rigel}} = 120{,}000\,L_\odot$ (inferred from parallax + received flux)
+- Effective temperature: $T_{\text{Rigel}} = 12{,}100~\text{K}$ (inferred from color via Wien's law)
+
+Using the solar-unit form of Stefan-Boltzmann:
+$$\frac{L}{L_\odot} = \left(\frac{R}{R_\odot}\right)^2 \left(\frac{T}{T_\odot}\right)^4$$
+
+- (a) Compute the temperature ratio $T_{\text{Rigel}}/T_\odot$ and verify it is dimensionless.
+- (b) Raise to the fourth power: $(T_{\text{Rigel}}/T_\odot)^4 = {?}$
+- (c) Compute $(R_{\text{Rigel}}/R_\odot)^2$, then take the square root to find $R_{\text{Rigel}}/R_\odot$.
+- (d) Is Rigel larger or smaller than the Sun? Betelgeuse has $R_{\text{Betelgeuse}} \approx 870\,R_\odot$. How does Rigel compare? Both are supergiants — explain in 1–2 sentences why one is so much larger despite both being extremely luminous.
+
+---
+
+<!-- Problem: Synthesis / Connection / O→M→I / Tools: Scaling/Ratio, Data/Graph / ⭐⭐ -->
+### Problem 3 — HR Diagram Reasoning: Three Stars
+
+Three stars lie on the HR diagram:
+
+- Star A: $T = 6{,}000~\text{K}$, $L = 1\,L_\odot$ (like the Sun)
+- Star B: $T = 3{,}000~\text{K}$, $L = 100\,L_\odot$ (red giant)
+- Star C: $T = 12{,}000~\text{K}$, $L = 1\,L_\odot$ (hot but dim)
+
+- (a) Using Stefan-Boltzmann in solar units, calculate the radius of each star in solar radii. For each star, show $(R/R_\odot)^2$ first, then take the square root.
+- (b) Which star is largest? Which is smallest?
+- (c) Sketch these three points on an HR diagram (luminosity vs. temperature, with $T$ increasing to the left). Draw approximate lines of constant radius through each point. What do these lines tell you about the giant and white-dwarf regions of the HR diagram?
+
+---
+
+<!-- Problem: Synthesis / Connection / O→M→I / Tools: Unit-Conversion, Model-Inversion, Scaling/Ratio, Uncertainty/Assumptions / ⭐⭐⭐ -->
+### Problem 4 — The Effect of Extinction on Temperature Inference
+
+Interstellar dust reddens starlight by scattering blue photons more than red ones. An observer measures a star and finds:
+
+- Observed peak wavelength: $\lambda_{\text{obs}} = 700~\text{nm}$ (appears very red)
+- True peak wavelength (after correcting for dust): $\lambda_{\text{true}} = 500~\text{nm}$
+
+- (a) Calculate the apparent temperature from the observed (reddened) color using Wien's law. Show units.
+- (b) Calculate the true temperature from the corrected color. Show units.
+- (c) By what factor does dust extinction bias the inferred temperature? Compute $T_{\text{apparent}}/T_{\text{true}}$.
+- (d) If an astronomer used the reddened temperature to infer the star's radius via Stefan-Boltzmann (at the correct luminosity), would the inferred radius be too large or too small? By what factor? (Hint: $R \propto T^{-2}$ at fixed $L$.)
+
+---
+
+### Part B — Spectra, Doppler, and Planetary Climate
+
+<!-- Problem: Conceptual / Connection / — / Tools: — / ⭐ -->
+### Problem 5 — The OBAFGKM Misconception
+
+A student says: "O stars show strong helium lines because they have more helium than cooler stars."
+
+Explain why this is wrong. What actually controls the strength of helium lines? Your answer should reference quantum energy levels and the temperature needed to populate the relevant atomic states.
+
+---
+
+<!-- Problem: Conceptual / Application / O→M→I / Tools: Scaling/Ratio / ⭐⭐ -->
+### Problem 6 — Doppler Direction
+
+Two stars are observed with H$\alpha$ lines at:
+
+- Star X: $\lambda_{\text{obs}} = 656.8~\text{nm}$
+- Star Y: $\lambda_{\text{obs}} = 655.8~\text{nm}$
+
+The H$\alpha$ rest wavelength is $\lambda_0 = 656.3~\text{nm}$.
+
+- (a) Which star is approaching and which is receding?
+- (b) Without calculating, which star has the larger radial velocity magnitude? Explain your reasoning.
+- (c) Verify your answer to (b) by computing both radial velocities using $v_r = c \times \Delta\lambda/\lambda_0$.
+
+---
+
+<!-- Problem: Calculation:Full / Application / — / Tools: Scaling/Ratio / ⭐ -->
+### Problem 7 — Hydrogen Line Ratios from the Bohr Model
+
+The Bohr model gives hydrogen energy levels $E_n = -13.6~\text{eV}/n^2$. The Balmer series consists of transitions from upper levels $n > 2$ down to $n = 2$. H$\alpha$ ($n = 3 \to 2$) is observed at $\lambda_{H\alpha} = 656.3~\text{nm}$.
+
+- (a) Write the energy of the $n = 2$, $n = 3$, and $n = 4$ levels as fractions of $13.6~\text{eV}$ (e.g., $E_2 = -13.6~\text{eV}/4 = -3.40~\text{eV}$). No unit conversions needed — stay in eV throughout.
+- (b) Compute the energy differences $\Delta E_{H\alpha} = E_3 - E_2$ and $\Delta E_{H\beta} = E_4 - E_2$, both in eV. Then compute the dimensionless ratio $\Delta E_{H\beta}/\Delta E_{H\alpha}$.
+- (c) Since $\lambda = hc/\Delta E$, we have $\lambda_{H\beta}/\lambda_{H\alpha} = \Delta E_{H\alpha}/\Delta E_{H\beta}$ (the ratio inverts). Use this plus $\lambda_{H\alpha} = 656.3~\text{nm}$ to predict $\lambda_{H\beta}$ in nm. Compare to the observed value of $486.1~\text{nm}$.
+- (d) Without computing exact values, will H$\gamma$ ($n = 5 \to 2$) have a longer or shorter wavelength than H$\beta$? As $n \to \infty$, what wavelength does the Balmer series approach? (Hint: what is $\Delta E$ for $n = \infty \to 2$ in eV, and what does the wavelength ratio $\lambda_{\text{limit}}/\lambda_{H\alpha}$ give?)
+
+---
+
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Unit-Conversion, Scaling/Ratio / ⭐⭐ -->
+### Problem 8 — Doppler Velocity
+
+A star's sodium D line (rest wavelength $\lambda_0 = 589.0~\text{nm}$) is observed at $\lambda_{\text{obs}} = 589.4~\text{nm}$.
+
+- (a) Is the star approaching or receding?
+- (b) Calculate the radial velocity in km/s using $v_r = c \times \Delta\lambda/\lambda_0$.
+- (c) Express the fractional shift $\Delta\lambda/\lambda_0$ as a percentage — how does it compare to the ratio $v_r/c$?
+
+---
+
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Scaling/Ratio, Model-Inversion / ⭐⭐ -->
+### Problem 9 — Planetary Equilibrium Temperature (Ratio Method)
+
+Calculate the equilibrium temperature of a planet at $d = 1.5~\text{AU}$ from a Sun-like star ($L_\star = L_\odot$), with albedo $A = 0.25$.
+
+- (a) Use the ratio method from the reading:
+  $$T_{\text{eq}} = 279~\text{K} \times \left(\frac{L_\star}{L_\odot}\right)^{1/4} \times (1 - A)^{1/4} \times \left(\frac{d}{1~\text{AU}}\right)^{-1/2}$$
+  Evaluate each factor separately, then multiply. Show units at each step.
+- (b) Compare your result to Mars's actual surface temperature ($\sim 210~\text{K}$). Are they consistent?
+- (c) What does the comparison in (b) tell you about the strength of Mars's greenhouse effect?
+
+---
+
+<!-- Problem: Synthesis / Connection / O→M→I / Tools: Model-Inversion, Scaling/Ratio, Uncertainty/Assumptions / ⭐⭐⭐ -->
+### Problem 10 — Venus's Runaway Greenhouse
+
+Venus has $d = 0.72~\text{AU}$ from the Sun, albedo $A = 0.77$ (highly reflective sulfuric acid clouds), and an atmosphere that is 96.5% CO$_2$ at $92~\text{bar}$ surface pressure.
+
+- (a) Calculate Venus's equilibrium temperature using the ratio method. Show each factor separately.
+- (b) Compare to the actual surface temperature of $735~\text{K}$. Calculate the greenhouse warming $\Delta T = T_{\text{surface}} - T_{\text{eq}}$.
+- (c) The greenhouse warming on Venus ($\Delta T \approx 508~\text{K}$) is about $15\times$ larger than on Earth ($\Delta T \approx 33~\text{K}$). Using the molecular absorption concept from the reading, explain qualitatively why a thicker CO$_2$ atmosphere produces a much larger greenhouse effect.
+- (d) Venus is closer to the Sun than Earth, yet its equilibrium temperature is *lower* than Earth's ($T_{\text{eq,Venus}} < T_{\text{eq,Earth}}$). Explain how this is possible. (Hint: look at the albedo term.)
+- (e) Could Earth experience a runaway greenhouse? In 2–3 sentences, describe what physical conditions would need to change.
