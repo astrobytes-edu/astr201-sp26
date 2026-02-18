@@ -6,7 +6,7 @@ draft: false
 ## Assignments
 
 ::: {.callout-tip}
-**Current assignment:** [Homework 3](astr201-hw3.qmd) — due **Tuesday, February 17, 2026 at 11:59 pm** (grade memo due **Friday, February 20, 2026 at 11:59 pm**).
+**HW3 solutions posted:** [Homework 3 Solutions](solutions/astr201-hw3-solutions.qmd) — grade memo due **Friday, February 20, 2026 at 11:59 pm**.
 :::
 
 | Assignment | Posted | Due | Grade Memo Due | Solutions |
