@@ -348,7 +348,9 @@ Positive shift → redshifted → the star is **receding**.
 
 $$v_r = c \times \frac{\Delta\lambda}{\lambda_0} = 3.0 \times 10^5~\text{km/s} \times \frac{0.4~\text{nm}}{589.0~\text{nm}}$$
 
-$$= 3.0 \times 10^5~\text{km/s} \times 6.79 \times 10^{-4} \quad (\text{dimensionless})$$
+The ratio $\Delta\lambda/\lambda_0 = 6.79 \times 10^{-4}$ is dimensionless (nm/nm cancel). Then:
+
+$$= 3.0 \times 10^5~\text{km/s} \times 6.79 \times 10^{-4}$$
 
 $$\boxed{v_r \approx 204~\text{km/s} \quad (\text{receding})}$$
 
@@ -443,9 +445,9 @@ $$\boxed{T_{\text{eq}} \approx 228~\text{K}}$$
 
 $$\Delta T = T_{\text{surface}} - T_{\text{eq}} = 735~\text{K} - 228~\text{K} = 507~\text{K}$$
 
-$$\boxed{\Delta T \approx 508~\text{K}}$$
+$$\boxed{\Delta T \approx 507~\text{K}}$$
 
-For comparison, Earth's greenhouse warming is $\Delta T_{\text{Earth}} \approx 288~\text{K} - 255~\text{K} = 33~\text{K}$. Venus's greenhouse is about $508/33 \approx 15$ times stronger.
+For comparison, Earth's greenhouse warming is $\Delta T_{\text{Earth}} \approx 288~\text{K} - 255~\text{K} = 33~\text{K}$. Venus's greenhouse is about $507/33 \approx 15$ times stronger.
 
 **(c)** Venus's atmosphere contains $\sim 200{,}000$ times more CO$_2$ than Earth's (96.5% of a $92~\text{bar}$ atmosphere vs. 0.04% of a $1~\text{bar}$ atmosphere). CO$_2$ absorbs outgoing thermal infrared radiation at specific wavelengths — especially the strong $15~\mu\text{m}$ band that overlaps Earth's thermal emission peak. With vastly more absorbing molecules, Venus's atmosphere becomes opaque across a much wider range of infrared wavelengths. The surface must heat up dramatically until enough radiation escapes through the few remaining transparent spectral windows to balance the absorbed solar input. More absorbers → wider absorption bands → more trapped radiation → higher surface temperature.
 
@@ -455,6 +457,6 @@ For comparison, Earth's greenhouse warming is $\Delta T_{\text{Earth}} \approx 2
 
 **Unit check:** K × dimensionless = K for $T_{\text{eq}}$. $\Delta T = \text{K} - \text{K} = \text{K}$. $\checkmark$
 
-**Sanity check:** $T_{\text{eq, Venus}} < T_{\text{eq, Earth}}$ despite $d_{\text{Venus}} < d_{\text{Earth}}$ → albedo effect dominates. $\Delta T \approx 508~\text{K}$ is $\sim 15\times$ Earth's $33~\text{K}$ → massive greenhouse, consistent with Venus's extreme surface conditions ($735~\text{K}$, hot enough to melt lead). $\checkmark$
+**Sanity check:** $T_{\text{eq, Venus}} < T_{\text{eq, Earth}}$ despite $d_{\text{Venus}} < d_{\text{Earth}}$ → albedo effect dominates. $\Delta T \approx 507~\text{K}$ is $\sim 15\times$ Earth's $33~\text{K}$ → massive greenhouse, consistent with Venus's extreme surface conditions ($735~\text{K}$, hot enough to melt lead). $\checkmark$
 
 **Grading guidance:** Full credit requires: (1) showing each ratio-method factor separately with correct arithmetic; (2) computing $\Delta T$ correctly; (3) connecting molecular absorption to greenhouse strength (not just "more CO$_2$ = hotter"); (4) explaining the albedo paradox quantitatively (comparing the $(1-A)^{1/4}$ factors); (5) a physically grounded answer to the runaway question (water vapor feedback + threshold mechanism).
