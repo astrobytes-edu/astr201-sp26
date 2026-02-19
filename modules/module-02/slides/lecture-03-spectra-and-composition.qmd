@@ -1095,7 +1095,7 @@ $$v_r = (3.0 \times 10^5\ \text{km/s}) \times \frac{-0.2\ \text{nm}}{656.3\ \tex
 ## Try It Tonight: Read a Real Spectrum {background-color="#1a1a2e"}
 
 ::: {.bg-muted .p-2 .text-sm}
-Open the [SDSS SkyServer Quick Look](https://skyserver.sdss.org/dr18/VisualTools/quicklook).
+Open the [SDSS SkyServer Quick Look](https://cas.sdss.org/dr18/VisualTools/quickobj).
 
 Enter: **Plate 285, MJD 51930, Fiber 164** (a classic A star).
 :::

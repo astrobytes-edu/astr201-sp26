@@ -681,7 +681,7 @@ You now have a complete spectroscopic toolkit. Before applying it, take stock of
 Additional information can be extracted from **line widths** (broadening from pressure, rotation, turbulence) and **line splitting** (Zeeman effect from magnetic fields), but the three inferences above are the workhorses.
 
 ::: {.callout-tip title="2-Minute Micro-Lab: Read a Real Spectrum"}
-Open the [SDSS SkyServer spectrum viewer](https://skyserver.sdss.org/dr18/VisualTools/quicklook). Enter any plate/MJD/fiber combination (try Plate 285, MJD 51930, Fiber 164 for a classic A-star). Look at the spectrum and identify:
+Open the [SDSS SkyServer spectrum viewer](https://cas.sdss.org/dr18/VisualTools/quickobj). Enter any plate/MJD/fiber combination (try Plate 285, MJD 51930, Fiber 164 for a classic A-star). Look at the spectrum and identify:
 
 1. **Continuum shape** — does it rise toward blue or red?
 2. **Absorption lines** — can you spot the Balmer series (H$\alpha$ at $656\ \text{nm}$, H$\beta$ at $486\ \text{nm}$)?
