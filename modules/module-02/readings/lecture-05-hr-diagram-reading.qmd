@@ -214,6 +214,10 @@ $$d \approx 3{,}981 \times 10~\text{pc} \approx 4.0 \times 10^4~\text{pc} = 40~\
 :::
 :::
 
+::: {.callout-note title="Map Builder — Axes Established" .map-builder}
+**You now have both axes of the HR diagram.** Apparent magnitude + distance (parallax) gives absolute magnitude — the vertical axis. Spectral type or color index gives the horizontal axis. The distance modulus is the bridge: it converts what you *observe* (apparent brightness) into what the star *is* (intrinsic luminosity). Two measurements, no theory required — and we're ready to plot.
+:::
+
 ---
 
 ## Part 2: The Observer's HR Diagram — Patterns from Data
@@ -226,7 +230,7 @@ Ejnar Hertzsprung (Denmark, 1911) and Henry Norris Russell (Princeton, 1913) ind
 
 What they found instead was one of the most stunning patterns in all of science. The rice didn't scatter. It fell along a narrow highway — a single diagonal band — with a few outlying clusters. Stars were not infinitely varied. Something was organizing them. **The pattern demanded an explanation — and the explanation, when it came, would require an entirely new physics of stellar interiors.**
 
-::: {.callout-note collapse="true" title="Enrichment: Cecilia Payne and the Meaning of the HR Diagram"}
+::: {.callout-important title="Cecilia Payne-Gaposchkin: The Thesis That Decoded the HR Diagram"}
 
 {{< fig harvard-computers >}}
 
@@ -319,6 +323,10 @@ A complete stellar classification includes both spectral type and luminosity cla
 :::
 :::
 
+::: {.callout-note title="Map Builder — Structures Identified" .map-builder}
+**Three structures have emerged from the data.** The main sequence (90% of stars, a diagonal band), the giant branch (cool but luminous — enormous radii), and white dwarfs (hot but faint — tiny radii). Luminosity classes add a third dimension: at the same temperature, a giant and a dwarf occupy very different positions. The map is no longer blank — it has *geography*.
+:::
+
 ---
 
 ## Part 3: The Theorist's HR Diagram — Overlaying Physics
@@ -409,6 +417,10 @@ $$\frac{R}{R_\odot} = \sqrt{1{,}770} = 42$$
 :::
 :::
 
+::: {.callout-note title="Map Builder — Size Gradient Revealed" .map-builder}
+**Lines of constant radius now overlay the map.** Stefan-Boltzmann connects $L$, $R$, and $T$, so fixing $R$ draws a diagonal line on the theorist's HR diagram. You can *read* a star's radius from its position: giants at $10\text{–}100\,R_\odot$, white dwarfs at ${\sim}0.01\,R_\odot$. The map now encodes three physical properties — luminosity, temperature, and radius — even though only two are plotted.
+:::
+
 ---
 
 ## Part 4: Mass — The Hidden Organizer
@@ -469,6 +481,10 @@ A $1\,M_\odot$ star lives ${\sim}10~\text{Gyr}$ on the main sequence; a $10\,M_\
 *(Think about this before reading Part 5 — the answer connects everything.)*
 :::
 
+::: {.callout-note title="Map Builder — Mass Writes the Addresses" .map-builder}
+**Mass is the hidden variable organizing the entire diagram.** The main sequence is a mass sequence: $0.08\,M_\odot$ at lower right to ${\sim}150\,M_\odot$ at upper left. Giants are stars that have *left* the main sequence after exhausting core hydrogen. White dwarfs are the *remnants* of dead stars. Mass does not appear on either axis, yet it determines where every star sits and where it will go.
+:::
+
 ---
 
 ## Part 5: An Evolution Diagram — Why Patterns Need Physics
@@ -521,6 +537,10 @@ The course throughline — **Measure → Infer → Balance → Evolve** — is p
 - **Evolve** (Module 3–4): What happens when the fuel runs out?
 
 The HR diagram is the bridge between "what we see" and "why we see it." Module 3 crosses that bridge.
+:::
+
+::: {.callout-note title="Map Builder — Complete Map" .map-builder}
+**The HR diagram is not a snapshot — it is an evolution diagram.** Stars are born, live on the main sequence, evolve into giants, and die as white dwarfs (or supernovae). Mass determines the path and the pace. Your map now has geography (three structures), physics (radius lines, mass labels), and *time* (evolutionary tracks). Every star has an address — and mass writes the zip code.
 :::
 
 ---
@@ -656,6 +676,22 @@ The HR diagram is the bridge between "what we see" and "why we see it." Module 3
 6. **The HR diagram is an evolution diagram.** Stars move on the diagram as they age, and mass determines the path. The main sequence is where stars *live*; the giant branch is where they *age*; the white dwarf sequence is where they *end up*.
 
 7. **Patterns demand physics.** The HR diagram raises questions — why does the main sequence exist? why do stars become giants? what sets the maximum white dwarf mass? — that Module 3 will answer.
+
+### Observable → Model → Inference: The HR Diagram Chain
+
+**Observable:** Apparent brightness and color (or spectral type) of many stars — measured with photometry and spectroscopy. Combined with parallax distances, these yield absolute magnitudes and color indices for each star.
+
+**Model:** The magnitude system converts flux ratios to a logarithmic scale; the distance modulus connects apparent and absolute magnitude through the inverse-square law. Blackbody radiation (Wien's law) connects color to temperature. The Stefan-Boltzmann law connects luminosity and temperature to radius. Stellar structure models connect luminosity and temperature to mass and evolutionary state.
+
+**Inference:** From photometry alone, we determine each star's luminosity, temperature, and radius. The HR diagram reveals that stars are not randomly distributed — they cluster into a main sequence (a mass sequence), a giant branch (evolved stars with bloated envelopes), and a white dwarf sequence (dead stellar cores). Mass, which does not appear on either axis, organizes the entire pattern. The diagram is simultaneously a classification tool, a mass map, and an evolution chart — and the patterns it reveals are the questions that Module 3 must answer.
+
+::: {.callout-note title="Watch: Gaia Builds the HR Diagram from Real Data"}
+The ESA's Gaia spacecraft has measured parallaxes, colors, and magnitudes for over a billion stars — the largest stellar census ever assembled. This animation shows how Gaia's raw observations of FGKM-type stars are transformed into physical properties (temperature and luminosity) and plotted on the HR diagram. Every step you've learned in this reading — distance modulus, color-to-temperature calibration, apparent-to-absolute magnitude — is happening here at industrial scale.
+
+{{< video https://youtu.be/Nf6kYYtkZpA >}}
+
+*Credit: ESA/Gaia/DPAC, CC BY-SA 3.0 IGO. Animation by L. Rohrbasser & K. Nienartowicz (Univ. of Geneva), in collaboration with O. Creevey (OCA, Nice), L. Eyer (Univ. of Geneva), and C. Reylé (UTINAM/CNRS, Besançon). Published for Gaia Data Release 3 (2022); stellar sample from Gaia Collaboration, Creevey et al. 2023, A&A.*
+:::
 
 ::: {.callout-tip}
 ## Looking Ahead

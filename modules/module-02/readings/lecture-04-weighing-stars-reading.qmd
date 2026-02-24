@@ -138,6 +138,23 @@ A **visual binary** is a pair of stars close enough to us (and far enough apart 
 
 **Classic example:** Sirius A and Sirius B, first resolved in 1862. Sirius A is a bright A-type star ($2.06\,M_\odot$); Sirius B is a white dwarf ($1.02\,M_\odot$). Their orbital period is $50.1~\text{yr}$, and the system is only $2.64~\text{pc}$ away, making it one of the best-measured visual binaries.
 
+::: {.callout-note collapse="true" title="Enrichment: The Dark Companion of Sirius — A Prediction Vindicated"}
+
+::: {layout-ncol=2}
+
+![Sirius A and B, imaged by the Hubble Space Telescope. Sirius A dominates with diffraction spikes; Sirius B is the tiny dot at lower left.](/assets/images/module-02/week-06/Sirius_A_and_B_Hubble_photo.jpg){fig-alt="Hubble Space Telescope image of the Sirius binary system. Sirius A is a brilliant overexposed white star with diffraction spikes. Sirius B is visible as a faint dot at lower left."}
+
+![The orbit of Sirius B around Sirius A, traced over decades of astrometric observation. The elliptical path reveals both the period and the physical separation.](/assets/images/module-02/week-06/sirius-orbit.jpg){fig-alt="Diagram showing the elliptical orbit of Sirius B around Sirius A, with positions marked at various epochs spanning decades."}
+
+:::
+
+In 1844, the mathematician Friedrich Bessel noticed something strange: Sirius, the brightest star in the sky, was not moving in a straight line. Its proper motion across the sky *wobbled* — as if something invisible were tugging it back and forth. Bessel concluded that Sirius must have an unseen companion, and predicted its orbital period from the wobble.
+
+This was mass measurement by gravitational influence, decades before anyone laid eyes on the companion. In 1862, telescope-maker Alvan Graham Clark spotted a faint point of light near Sirius — exactly where the orbit predicted it should be. That faint dot, Sirius B, turned out to be one of the most extraordinary objects in stellar astronomy: a star with $1.02\,M_\odot$ (nearly the Sun's mass) crammed into a volume the size of Earth ($R \approx 0.008\,R_\odot$). Its surface temperature is ${\sim}2.5 \times 10^4~\text{K}$ — far hotter than Sirius A — yet its luminosity is only ${\sim}0.03\,L_\odot$. Hot but tiny: a **white dwarf**.
+
+Sirius B was the first white dwarf ever identified, and its discovery foreshadowed a key theme of this course: the most important stellar properties are often the ones you cannot see directly. Bessel inferred mass from motion — exactly the strategy you are learning in this reading.
+:::
+
 ::: {.callout-note title="Mass Detective — Clue 1" .mass-detective}
 **Watch the sky:** If we can *see* both stars move, we get orbits on the sky → $P$ and $a$ → total mass. But this requires nearby, widely separated pairs — rare and slow. *We have one tool. We need more.*
 :::
@@ -501,6 +518,10 @@ Astronomers have spent over a century measuring masses of binary stars. For each
 It can. When you plot these data — mass on the horizontal axis, luminosity on the vertical axis, both in solar units, both on logarithmic scales — the scatter everyone expected simply isn't there. Instead, main-sequence stars fall on a remarkably tight relation.
 
 {{< fig mass-luminosity-plot >}}
+
+The idealized power law captures the trend, but real data have scatter. The figure below shows actual measurements from binary star studies:
+
+{{< fig mass-luminosity-scatter >}}
 
 **Main-sequence stars fall on a tight power law:**
 
