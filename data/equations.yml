@@ -188,6 +188,12 @@ mass-luminosity:
   include: "_includes/equations/mass-luminosity.qmd"
   card: "mass_luminosity"
 
+kepler-solar:
+  title: "Kepler's third law (solar units)"
+  anchor: "eq-kepler-solar"
+  include: "_includes/equations/kepler-solar.qmd"
+  card: "kepler_solar"
+
 distance-modulus:
   title: "Distance modulus"
   anchor: "eq-distance-modulus"

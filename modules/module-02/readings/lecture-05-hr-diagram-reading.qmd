@@ -66,11 +66,17 @@ You now have every measurement tool needed to characterize a star: distance (Lec
 
 ## Part 1: The Magnitude System — The Astronomer's Brightness Scale
 
+### The Problem: Stars Span a Ridiculous Range
+
+Here is a concrete challenge. You observe two stars: Proxima Centauri (the nearest star to the Sun) and Betelgeuse (the red supergiant in Orion). Betelgeuse delivers about $6 \times 10^7$ times more flux to your detector than Proxima. Now add the Sun: it delivers about $6 \times 10^{10}$ times more flux than Betelgeuse — not because it's intrinsically brighter, but because it's absurdly close. If you tried to plot all three on a linear brightness chart, two of them would be indistinguishable dots at zero while the third broke the page.
+
+You need a scale that can handle a factor of $10^{10}$ without breaking. That scale is the **magnitude system** — and it's the last measurement tool you need before we can build the HR diagram.
+
 ### Why Not Just Use Luminosity?
 
-You already know how to measure a star's luminosity in physical units: $L$ in $\text{erg}\,\text{s}^{-1}$, or in solar luminosities $L_\odot$. So why do astronomers use a completely different system — **magnitudes** — that's logarithmic, inverted (brighter = *smaller* number), and historically arbitrary?
+You already know how to measure a star's luminosity in physical units: $L$ in $\text{erg}\,\text{s}^{-1}$, or in solar luminosities $L_\odot$. So why do astronomers use a completely different system — magnitudes — that's logarithmic, inverted (brighter = *smaller* number), and historically arbitrary?
 
-The magnitude system is the last measurement tool you need before we can build the HR diagram. Once you have it, everything falls into place. Three reasons it exists:
+Three reasons:
 
 1. **Dynamic range.** Stellar brightnesses span more than ten orders of magnitude ($10^{10}$). Logarithmic scales compress this into manageable numbers (roughly $-10$ to $+20$).
 2. **What detectors actually measure.** Your eyes, photographic plates, and CCDs respond to **flux** — energy per unit area per unit time — not luminosity. Magnitudes are directly tied to flux ratios.
@@ -99,7 +105,7 @@ where $F_1$ and $F_2$ are the fluxes (energy per unit area per unit time) of two
 | $1~\text{mag}$ | $10^{0.4} \approx 2.512$ |
 | $2~\text{mag}$ | $10^{0.8} \approx 6.31$ |
 | $5~\text{mag}$ | $10^{2.0} = 100$ |
-| $10~\text{mag}$ | $10^{4.0} = 10{,}000$ |
+| $10~\text{mag}$ | $10^{4.0} = 10^4$ |
 
 The anchor: **5 magnitudes = a factor of 100 in flux.** This is by definition (Pogson's ratio).
 
@@ -133,10 +139,10 @@ Examples:
 |------|---------------|----------|----------------|-----------|
 | Sun | $-26.74$ | $1~\text{AU} \approx 5 \times 10^{-6}~\text{pc}$ | $+4.83$ | $1\,L_\odot$ |
 | Sirius | $-1.46$ | $2.64~\text{pc}$ | $+1.42$ | $25\,L_\odot$ |
-| Betelgeuse | $+0.42$ | $200~\text{pc}$ | $-5.85$ | ${\sim}100{,}000\,L_\odot$ |
+| Betelgeuse | $+0.42$ | $200~\text{pc}$ | $-5.85$ | ${\sim}10^5\,L_\odot$ |
 | Proxima Cen | $+11.13$ | $1.30~\text{pc}$ | $+15.53$ | $0.0017\,L_\odot$ |
 
-The Sun looks blindingly bright ($m = -26.74$) only because it's close. At $10~\text{pc}$, it would be a modest $M = +4.83$ — visible to the naked eye, but nothing special. Betelgeuse, on the other hand, looks unremarkable ($m = +0.42$) despite being intrinsically $100{,}000$ times more luminous — because it's $200~\text{pc}$ away.
+The Sun looks blindingly bright ($m = -26.74$) only because it's close. At $10~\text{pc}$, it would be a modest $M = +4.83$ — visible to the naked eye, but nothing special. Betelgeuse, on the other hand, looks unremarkable ($m = +0.42$) despite being intrinsically $10^5$ times more luminous — because it's $200~\text{pc}$ away.
 
 ### The Distance Modulus: Connecting $m$, $M$, and $d$
 
@@ -159,7 +165,7 @@ where:
 
 - At $d = 10~\text{pc}$: $m - M = 5\log_{10}(10/10) = 0$, so $m = M$. $\checkmark$ (Definition of absolute magnitude.)
 - At $d = 100~\text{pc}$: $m - M = 5\log_{10}(100/10) = 5\log_{10}(10) = 5$. The star appears $5~\text{mag}$ fainter than at $10~\text{pc}$, i.e., $100\times$ fainter — consistent with the inverse-square law ($100^2/10^2 = 100$). $\checkmark$
-- At $d = 1{,}000~\text{pc}$: $m - M = 10$. The star is $10{,}000\times$ fainter. $\checkmark$
+- At $d = 1{,}000~\text{pc}$: $m - M = 10$. The star is $10^4\times$ fainter. $\checkmark$
 
 ::: {.callout-note}
 ## Worked Example: Finding Distance from Magnitudes
@@ -178,9 +184,9 @@ $$18.0 = 5\log_{10}\!\left(\frac{d}{10~\text{pc}}\right)$$
 
 $$\log_{10}\!\left(\frac{d}{10~\text{pc}}\right) = \frac{18.0}{5} = 3.6$$
 
-$$\frac{d}{10~\text{pc}} = 10^{3.6} = 3{,}981$$
+$$\frac{d}{10~\text{pc}} = 10^{3.6} \approx 3{,}981$$
 
-$$d = 3{,}981 \times 10~\text{pc} = 39{,}810~\text{pc} \approx 40~\text{kpc}$$
+$$d \approx 3{,}981 \times 10~\text{pc} \approx 4.0 \times 10^4~\text{pc} = 40~\text{kpc}$$
 
 **Unit check:** We got distance in parsecs from the formula. $\checkmark$
 
@@ -216,17 +222,21 @@ $$d = 3{,}981 \times 10~\text{pc} = 39{,}810~\text{pc} \approx 40~\text{kpc}$$
 
 By the early 1900s, astronomers had measured apparent magnitudes and spectral types for thousands of stars. They had also started measuring parallaxes, which — combined with the distance modulus — gave absolute magnitudes. The question was obvious: **what happens if you plot absolute magnitude against spectral type?**
 
-Ejnar Hertzsprung (Denmark, 1911) and Henry Norris Russell (Princeton, 1913) independently did exactly this. They expected a random scatter — stars distributed all over the diagram. Instead, they found one of the most important patterns in all of science.
+Ejnar Hertzsprung (Denmark, 1911) and Henry Norris Russell (Princeton, 1913) independently did exactly this. Think about what they expected: every star has a different mass, a different age, a different composition. With so many variables, the natural expectation is *noise* — a random spray of dots filling the diagram uniformly, like scattering rice on a table. There was no theoretical reason, in 1911, to expect anything else.
 
-::: {.callout-note collapse="true" title="Enrichment: The Harvard Computers and Cecilia Payne"}
+What they found instead was one of the most stunning patterns in all of science. The rice didn't scatter. It fell along a narrow highway — a single diagonal band — with a few outlying clusters. Stars were not infinitely varied. Something was organizing them. **The pattern demanded an explanation — and the explanation, when it came, would require an entirely new physics of stellar interiors.**
+
+::: {.callout-note collapse="true" title="Enrichment: Cecilia Payne and the Meaning of the HR Diagram"}
 
 {{< fig harvard-computers >}}
 
-The spectral classification system (OBAFGKM) that forms one axis of the HR diagram was developed at Harvard College Observatory by a remarkable group of women — including Williamina Fleming, Antonia Maury, and Annie Jump Cannon. Cannon personally classified over 350,000 stellar spectra, establishing the sequence that bears her mnemonic.
+In Lecture 3, you met the Harvard Computers — the women who built the OBAFGKM classification system from $3.5 \times 10^5$ glass-plate spectra. Their work gave the HR diagram its horizontal axis. But the horizontal axis is just *labels* — to make the diagram *mean* something, someone had to decode what those labels physically represent.
 
-But the deepest question — *what does the spectral sequence actually mean?* — was answered by Cecilia Payne in her 1925 doctoral thesis, written at age 25. By applying the then-new quantum theory of ionization (the Saha equation) to stellar spectra, Payne demonstrated two revolutionary results: first, that all stars have nearly the same chemical composition — overwhelmingly hydrogen and helium — and second, that the dramatic differences in their spectra are driven by *temperature*, not chemistry. An O star shows helium lines and an M star shows molecular bands not because they contain different elements, but because different temperatures excite different atomic transitions.
+That someone was **Cecilia Payne**, whose 1925 doctoral thesis — written at age 25 — connected the HR diagram's two axes to physics. By applying the Saha ionization equation (then brand-new quantum theory) to the Harvard spectral classifications, Payne demonstrated that the horizontal axis is a **temperature sequence**, not a composition sequence. Her second result was even more radical: all stars — regardless of spectral type — are overwhelmingly hydrogen and helium. The diversity of stellar spectra is a *temperature* effect, not a *chemistry* effect.
 
-The thesis was later described by astronomer Otto Struve as "undoubtedly the most brilliant PhD thesis ever written in astronomy." Yet her conclusion about hydrogen dominance was initially rejected by Henry Norris Russell, who persuaded her to soften the result. Russell reached the same conclusion independently four years later. Payne-Gaposchkin (as she became after marriage) went on to become the first woman to hold a full professorship at Harvard — in 1956, more than three decades after her discovery.
+This meant the main sequence isn't a random collection of different kinds of stars. It's a systematic progression in temperature — and once you add mass measurements (Lecture 4), you realize it's a progression in *mass*. Payne's thesis transformed the HR diagram from a classification chart into a physical theory.
+
+Astronomer Otto Struve later called it "undoubtedly the most brilliant PhD thesis ever written in astronomy." Yet her conclusion about hydrogen dominance was initially rejected by Henry Norris Russell (the "R" in HR diagram), who persuaded her to soften the result. He reached the same conclusion independently four years later. Payne-Gaposchkin became the first woman to hold a full professorship at Harvard — in 1956, three decades after she was right.
 :::
 
 ### Building the Diagram
@@ -248,16 +258,28 @@ When you plot thousands of stars, three features jump out:
 
 This is not a coincidence. As you learned in Lecture 4, mass determines luminosity ($L \propto M^{3.5}$) and temperature for main-sequence stars. The main sequence is a **mass sequence** — high-mass stars at the upper left, low-mass stars at the lower right. We'll return to this connection in Part 4.
 
-**2. The Giant and Supergiant Region** — a cluster of stars in the upper-right: cool ($T \sim 3{,}000\text{–}5{,}000~\text{K}$) but very luminous ($100\text{–}10{,}000\,L_\odot$). These are **red giants** and **red supergiants**. They cannot be main-sequence stars — a main-sequence star at $3{,}500~\text{K}$ would be a dim M dwarf. Something must be making these stars both cool *and* luminous — and the only way to do that (recall Stefan-Boltzmann: $L = 4\pi R^2 \sigma T^4$) is if they have **enormous radii**. A red giant is typically $10\text{–}100\,R_\odot$; a supergiant can exceed $1{,}000\,R_\odot$.
+**2. The Giant and Supergiant Region** — a cluster of stars in the upper-right: cool ($T \sim 3{,}000\text{–}5{,}000~\text{K}$) but very luminous ($100\text{–}10^4\,L_\odot$). These are **red giants** and **red supergiants**. They cannot be main-sequence stars — a main-sequence star at $3{,}500~\text{K}$ would be a dim M dwarf. Something must be making these stars both cool *and* luminous — and the only way to do that (recall Stefan-Boltzmann: $L = 4\pi R^2 \sigma T^4$) is if they have **enormous radii**. A red giant is typically $10\text{–}100\,R_\odot$; a supergiant can exceed $1{,}000\,R_\odot$.
 
-**3. The White Dwarf Sequence** — a scattering of stars in the lower-left: hot ($T \sim 10{,}000\text{–}30{,}000~\text{K}$) but very faint (${\sim}0.01\,L_\odot$). By the same logic — hot but faint means small — these are **white dwarfs**, with radii comparable to Earth ($R \sim 0.01\,R_\odot$). They are the remnant cores of dead stars.
+**3. The White Dwarf Sequence** — a scattering of stars in the lower-left: hot ($T \sim 10^4\text{–}3 \times 10^4~\text{K}$) but very faint (${\sim}0.01\,L_\odot$). By the same logic — hot but faint means small — these are **white dwarfs**, with radii comparable to Earth ($R \sim 0.01\,R_\odot$). They are the remnant cores of dead stars.
 
 ::: {.callout-tip}
 ## Think First
 
-Before reading further, think about this: if a star is both hot ($T \sim 25{,}000~\text{K}$) and faint ($L \sim 0.01\,L_\odot$), what can you say about its radius? Use $L = 4\pi R^2 \sigma T^4$ and think in ratios.
+Before reading further, think about this: if a star is both hot ($T \sim 2.5 \times 10^4~\text{K}$) and faint ($L \sim 0.01\,L_\odot$), what can you say about its radius? Use $L = 4\pi R^2 \sigma T^4$ and think in ratios.
 
 *(Hint: Compare to the Sun. The star is ${\sim}4\times$ hotter and $100\times$ fainter. What radius does that require?)*
+:::
+
+::: {.callout-tip title="2-Minute Exercise: Place Stars on the Diagram"}
+Without looking at a reference, sketch a blank HR diagram (luminosity on the vertical axis, temperature on the horizontal axis — remember, temperature *decreases* to the right). Now place each of these stars approximately:
+
+1. **The Sun** — G2 V, $L = 1\,L_\odot$, $T = 5{,}800~\text{K}$
+2. **Sirius** — A1 V, $L = 25\,L_\odot$, $T = 9{,}900~\text{K}$
+3. **Betelgeuse** — M1 I, $L \sim 10^5\,L_\odot$, $T \sim 3{,}600~\text{K}$
+4. **Sirius B** — white dwarf, $L \sim 0.03\,L_\odot$, $T \sim 2.5 \times 10^4~\text{K}$
+5. **Proxima Centauri** — M5 V, $L = 0.0017\,L_\odot$, $T \sim 3{,}000~\text{K}$
+
+After plotting, check: do your points fall in the main sequence, giant, or white dwarf regions? Which star is the odd one out (not on the main sequence)? Two of them are Betelgeuse (red supergiant — upper right) and Sirius B (white dwarf — lower left).
 :::
 
 ### Luminosity Classes: Vertical Structure
@@ -372,24 +394,34 @@ $$\frac{R}{R_\odot} = \sqrt{1{,}770} = 42$$
 
 1. On the theorist's HR diagram, which direction do lines of constant radius slope? (Hint: if $T$ increases at fixed $R$, what happens to $L$?)
 
-2. A white dwarf has $T_{\text{eff}} = 20{,}000~\text{K}$ and $L = 0.01\,L_\odot$. Estimate its radius in solar radii.
+2. A white dwarf has $T_{\text{eff}} = 2 \times 10^4~\text{K}$ and $L = 0.01\,L_\odot$. Estimate its radius in solar radii.
 
-3. Where would a hypothetical star with $R = R_\odot$ and $T = 20{,}000~\text{K}$ appear on the HR diagram? Is such a star observed?
+3. Where would a hypothetical star with $R = R_\odot$ and $T = 2 \times 10^4~\text{K}$ appear on the HR diagram? Is such a star observed?
 
 ::: {.callout-note collapse="true"}
 ## Solutions
 
 1. Lines of constant $R$ slope **upward to the left** — hotter temperature at fixed radius means higher luminosity ($L \propto T^4$ at fixed $R$). On the reversed horizontal axis, this appears as a line going from lower-right to upper-left.
 
-2. $\left(\frac{R}{R_\odot}\right)^2 = \frac{L/L_\odot}{(T/T_\odot)^4} = \frac{0.01}{(20{,}000/5{,}800)^4} = \frac{0.01}{(3.45)^4} = \frac{0.01}{141} = 7.1 \times 10^{-5}$. So $R/R_\odot = \sqrt{7.1 \times 10^{-5}} = 0.0084 \approx 0.01\,R_\odot$. The white dwarf is roughly Earth-sized ($R_\oplus \approx 0.009\,R_\odot$). $\checkmark$
+2. $\left(\frac{R}{R_\odot}\right)^2 = \frac{L/L_\odot}{(T/T_\odot)^4} = \frac{0.01}{(2 \times 10^4/5{,}800)^4} = \frac{0.01}{(3.45)^4} = \frac{0.01}{141} = 7.1 \times 10^{-5}$. So $R/R_\odot = \sqrt{7.1 \times 10^{-5}} = 0.0084 \approx 0.01\,R_\odot$. The white dwarf is roughly Earth-sized ($R_\oplus \approx 0.009\,R_\odot$). $\checkmark$
 
-3. Using Stefan-Boltzmann: $L/L_\odot = (R/R_\odot)^2 (T/T_\odot)^4 = (1)^2 (20{,}000/5{,}800)^4 = (3.45)^4 = 141\,L_\odot$. This star would appear *above* the main sequence — hot and luminous. Such stars exist: they're early B-type main-sequence stars, which do have radii of a few $R_\odot$ and temperatures near $20{,}000~\text{K}$.
+3. Using Stefan-Boltzmann: $L/L_\odot = (R/R_\odot)^2 (T/T_\odot)^4 = (1)^2 (2 \times 10^4/5{,}800)^4 = (3.45)^4 \approx 141\,L_\odot$. This hypothetical star would sit *above and to the left* of the Sun on the HR diagram — hot and moderately luminous. No real main-sequence star has exactly this combination: actual B-type stars at ${\sim}2 \times 10^4~\text{K}$ have $R \sim 4\text{–}7\,R_\odot$ and $L \sim 10^3\text{–}10^4\,L_\odot$, much more luminous than $141\,L_\odot$. Our hypothetical would be a peculiar, undersized object — a useful thought experiment, not a real star.
 :::
 :::
 
 ---
 
 ## Part 4: Mass — The Hidden Organizer
+
+::: {.callout-tip}
+## Predict First
+
+You know from Lecture 4 that more massive main-sequence stars are more luminous ($L \propto M^{3.5}$) and hotter. On the HR diagram, the main sequence runs from upper-left (hot, luminous) to lower-right (cool, faint).
+
+**Prediction:** If you could label each main-sequence star with its mass, how would mass change along the sequence — does it increase from lower-right to upper-left, or from upper-left to lower-right? And would the labeling be smooth (mass increases monotonically) or jumbled?
+
+Commit to an answer before reading on.
+:::
 
 ### The Main Sequence Is a Mass Sequence
 
@@ -402,15 +434,15 @@ Here is the payoff from Lecture 4. When you label main-sequence stars by their m
 | Middle | G2 (Sun) | $1.0$ | $1.0$ | $5{,}800$ |
 | | F0 | $1.6$ | $6.5$ | $7{,}200$ |
 | Upper left | A0 | $2.5$ | $40$ | $9{,}900$ |
-| | B0 | $15$ | $30{,}000$ | $30{,}000$ |
-| | O5 | $40$ | $500{,}000$ | $42{,}000$ |
+| | B0 | $15$ | $3 \times 10^4$ | $3 \times 10^4$ |
+| | O5 | $40$ | $5 \times 10^5$ | $4.2 \times 10^4$ |
 
 The main sequence is not a random band — it is the **locus of hydrogen-burning stars ordered by mass.** Low-mass stars are cool and faint; high-mass stars are hot and luminous. The mass-luminosity relation ($L \propto M^{3.5}$) from Lecture 4 *explains* this ordering: a star's mass determines its core temperature, which determines its nuclear burning rate, which determines its luminosity and surface temperature.
 
 **But note what's remarkable:** Mass does not appear on either axis of the HR diagram. The axes are luminosity and temperature — both observable. Yet mass organizes the entire structure. It is the hidden variable that makes the diagram comprehensible.
 
 ::: {.callout-important title="Connection: Why This Matters"}
-The fact that the main sequence is a mass sequence has a profound implication: **every main-sequence star of a given mass has essentially the same luminosity and temperature.** A $1\,M_\odot$ star is always ${\sim}1\,L_\odot$ and ${\sim}5{,}800~\text{K}$. A $10\,M_\odot$ star is always ${\sim}3{,}000\,L_\odot$ and ${\sim}25{,}000~\text{K}$.
+The fact that the main sequence is a mass sequence has a profound implication: **every main-sequence star of a given mass has essentially the same luminosity and temperature.** A $1\,M_\odot$ star is always ${\sim}1\,L_\odot$ and ${\sim}5{,}800~\text{K}$. A $10\,M_\odot$ star is always ${\sim}3{,}000\,L_\odot$ and ${\sim}2.5 \times 10^4~\text{K}$.
 
 This means that if you know a main-sequence star's spectral type, you know its luminosity — and from the distance modulus, you can calculate its distance. This technique is called **spectroscopic parallax** (a misnomer — it has nothing to do with parallax, but it gives distances from spectra). It extends distance measurement far beyond the reach of geometric parallax.
 :::
@@ -511,8 +543,8 @@ The HR diagram is the bridge between "what we see" and "why we see it." Module 3
 
 | Spectral Type | $T_{\text{eff}}$ (K) | Mass ($M_\odot$) | Radius ($R_\odot$) | $L$ ($L_\odot$) | $M_V$ | Main-Seq Lifetime |
 |---|---|---|---|---|---|---|
-| O5 | $42{,}000$ | $40$ | $12$ | $500{,}000$ | $-5.7$ | ${\sim}1~\text{Myr}$ |
-| B0 | $30{,}000$ | $15$ | $7$ | $30{,}000$ | $-4.0$ | ${\sim}10~\text{Myr}$ |
+| O5 | $4.2 \times 10^4$ | $40$ | $12$ | $5 \times 10^5$ | $-5.7$ | ${\sim}1~\text{Myr}$ |
+| B0 | $3 \times 10^4$ | $15$ | $7$ | $3 \times 10^4$ | $-4.0$ | ${\sim}10~\text{Myr}$ |
 | A0 | $9{,}900$ | $2.5$ | $2.5$ | $40$ | $+0.6$ | ${\sim}1~\text{Gyr}$ |
 | F0 | $7{,}200$ | $1.6$ | $1.5$ | $6.5$ | $+2.7$ | ${\sim}3~\text{Gyr}$ |
 | G2 (Sun) | $5{,}800$ | $1.0$ | $1.0$ | $1.0$ | $+4.8$ | ${\sim}10~\text{Gyr}$ |
@@ -565,13 +597,13 @@ The HR diagram is the bridge between "what we see" and "why we see it." Module 3
 <!-- Problem: Calculation:Full / Application / O→M→I / Tools: Scaling/Ratio, Model-Inversion / ⭐⭐ -->
 7. ⭐⭐ **Radius from the HR diagram.** Use the solar-unit form of Stefan-Boltzmann ($L/L_\odot = (R/R_\odot)^2 (T/T_\odot)^4$) to find the radius of each star below:
    - (a) A red giant with $L = 200\,L_\odot$ and $T_\text{eff} = 4{,}600~\text{K}$. Show $(R/R_\odot)^2$ first, then take the square root.
-   - (b) A white dwarf with $L = 0.005\,L_\odot$ and $T_\text{eff} = 15{,}000~\text{K}$.
+   - (b) A white dwarf with $L = 0.005\,L_\odot$ and $T_\text{eff} = 1.5 \times 10^4~\text{K}$.
    - (c) Compare both radii to the Sun's. Is the giant larger or smaller than Earth's orbit ($1~\text{AU} \approx 215\,R_\odot$)?
 
 <!-- Problem: Calculation:Full / Application / O→M→I / Tools: Scaling/Ratio / ⭐⭐ -->
 8. ⭐⭐ **Lines of constant radius.** On the theorist's HR diagram, a line of constant radius satisfies $\log(L/L_\odot) = 2\log(R/R_\odot) + 4\log(T/T_\odot)$.
-   - (a) For $R = 10\,R_\odot$, calculate the luminosity at $T_\text{eff} = 3{,}000~\text{K}$ and at $T_\text{eff} = 30{,}000~\text{K}$.
-   - (b) For $R = 0.01\,R_\odot$ (roughly Earth-sized), calculate the luminosity at $T_\text{eff} = 10{,}000~\text{K}$.
+   - (a) For $R = 10\,R_\odot$, calculate the luminosity at $T_\text{eff} = 3{,}000~\text{K}$ and at $T_\text{eff} = 3 \times 10^4~\text{K}$.
+   - (b) For $R = 0.01\,R_\odot$ (roughly Earth-sized), calculate the luminosity at $T_\text{eff} = 10^4~\text{K}$.
    - (c) Does the $R = 0.01\,R_\odot$ line pass through the main sequence, the giant branch, or the white dwarf region?
 
 ### Synthesis
@@ -579,13 +611,13 @@ The HR diagram is the bridge between "what we see" and "why we see it." Module 3
 <!-- Problem: Synthesis / Connection / O→M→I / Tools: Scaling/Ratio, Model-Inversion / ⭐⭐ -->
 9. ⭐⭐ **Placing stars on the HR diagram.** For each star below, calculate the missing quantity, identify the star's HR-diagram region (main sequence, giant, or white dwarf), and justify your classification:
    - (a) $T_\text{eff} = 3{,}500~\text{K}$, $L = 2{,}000\,L_\odot$. Find $R/R_\odot$.
-   - (b) $T_\text{eff} = 25{,}000~\text{K}$, $R = 0.01\,R_\odot$. Find $L/L_\odot$.
+   - (b) $T_\text{eff} = 2.5 \times 10^4~\text{K}$, $R = 0.01\,R_\odot$. Find $L/L_\odot$.
    - (c) $L = 30\,L_\odot$, $T_\text{eff} = 9{,}500~\text{K}$. Find $R/R_\odot$.
    - (d) For star (c), use the mass-luminosity relation to estimate its mass. Is this consistent with an A-type main-sequence star?
 
 <!-- Problem: Synthesis / Connection / O→M→I / Tools: Scaling/Ratio, Model-Inversion, Data/Graph / ⭐⭐ -->
 10. ⭐⭐ **The main sequence as a mass sequence.** Using the reference table in this reading:
-    - (a) Verify that the mass-luminosity relation $L \propto M^{3.5}$ approximately holds for an O5 star ($M = 40\,M_\odot$, $L = 500{,}000\,L_\odot$) and for an M5 dwarf ($M = 0.1\,M_\odot$, $L = 0.001\,L_\odot$). How close is $3.5$ to the actual exponent for each?
+    - (a) Verify that the mass-luminosity relation $L \propto M^{3.5}$ approximately holds for an O5 star ($M = 40\,M_\odot$, $L = 5 \times 10^5\,L_\odot$) and for an M5 dwarf ($M = 0.1\,M_\odot$, $L = 0.001\,L_\odot$). How close is $3.5$ to the actual exponent for each?
     - (b) Using $t_\text{MS} \propto M^{-2.5}$, verify the lifetimes listed in the table for the O5 and M5 stars ($t_\odot = 10~\text{Gyr}$).
     - (c) The universe is $13.8~\text{Gyr}$ old. Stars with lifetimes shorter than this have already evolved off the main sequence. What is the approximate mass of the most massive star that could still be on the main sequence in a $13.8~\text{Gyr}$-old cluster? (Hint: set $t_\text{MS} = 13.8~\text{Gyr}$ and solve for $M$.)
 

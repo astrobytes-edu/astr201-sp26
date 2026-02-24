@@ -71,14 +71,18 @@ Consider two stars on the main sequence — the band where most stars spend most
 
 | Property | $0.5\,M_\odot$ star | $10\,M_\odot$ star | Ratio |
 |----------|---------------------|---------------------|-------|
-| Luminosity | $\sim 0.09\,L_\odot$ | $\sim 3{,}000\,L_\odot$ | $\sim 30{,}000\times$ |
-| Surface temperature | $\sim 3{,}800\,\text{K}$ | $\sim 25{,}000\,\text{K}$ | $\sim 7\times$ |
+| Luminosity | $\sim 0.09\,L_\odot$ | $\sim 3 \times 10^3\,L_\odot$ | $\sim 3 \times 10^4\!\times$ |
+| Surface temperature | $\sim 3{,}800\,\text{K}$ | $\sim 2.5 \times 10^4\,\text{K}$ | $\sim 7\times$ |
 | Radius | $\sim 0.5\,R_\odot$ | $\sim 6\,R_\odot$ | $\sim 12\times$ |
-| Main-sequence lifetime | $\sim 60\,\text{Gyr}$ | $\sim 20\,\text{Myr}$ | $\sim 3{,}000\times$ |
+| Main-sequence lifetime | $\sim 60\,\text{Gyr}$ | $\sim 20\,\text{Myr}$ | $\sim 3 \times 10^3\!\times$ |
 | Spectral type | M | B | — |
 | Death | White dwarf | Core-collapse supernova | — |
 
-A factor of 20 in mass produces a factor of 30,000 in luminosity, a factor of 3,000 in lifetime, and completely different endpoints. **Mass is the master variable.** Change the mass, and everything else follows.
+A factor of 20 in mass increases luminosity by a factor of $3 \times 10^4$, reduces lifetime by a factor of $3 \times 10^3$, and leads to completely different endpoints. **Mass is the master variable.** Change the mass, and everything else follows.
+
+::: {.callout-note title="Mass Detective — Case Opened" .mass-detective}
+**The suspect:** Mass — controls luminosity, temperature, radius, lifetime, and death. **The problem:** It has no fingerprint in the light. No spectral line, no color, no brightness reveals it. We need a different kind of evidence. *The investigation begins.*
+:::
 
 ### Why Mass Is Hidden
 
@@ -104,7 +108,7 @@ Before reading further, recall from Module 1 (Lecture 3): Newton showed that Kep
 
 ### Most Stars Have Partners
 
-One of the most important facts in stellar astronomy: **roughly half of all Sun-like stars are in binary or multiple star systems.** For massive stars (O and B types), the binary fraction is even higher — perhaps 70% or more. Binary stars are not rare curiosities. They are the norm.
+One of the most important facts in stellar astronomy: **roughly half of all Sun-like stars are in binary or multiple star systems.** For massive stars (O and B types), the binary fraction is even higher — at least $70\%\text{–}90\%$ (Sana et al. 2012). Binary stars are not rare curiosities. They are the norm.
 
 This is fortunate, because binary orbits are the *only* direct way to measure stellar masses. Without binaries, the mass-luminosity relation — and much of our understanding of stellar physics — would be inaccessible.
 
@@ -134,8 +138,8 @@ A **visual binary** is a pair of stars close enough to us (and far enough apart 
 
 **Classic example:** Sirius A and Sirius B, first resolved in 1862. Sirius A is a bright A-type star ($2.06\,M_\odot$); Sirius B is a white dwarf ($1.02\,M_\odot$). Their orbital period is $50.1~\text{yr}$, and the system is only $2.64~\text{pc}$ away, making it one of the best-measured visual binaries.
 
-::: {.callout-note title="Evidence Collected" .evidence-clue}
-**Strategy 1 — Watch the sky:** If we can *see* both stars move, we get orbits on the sky → $P$ and $a$ → total mass. But this requires nearby, widely separated pairs — rare and slow.
+::: {.callout-note title="Mass Detective — Clue 1" .mass-detective}
+**Watch the sky:** If we can *see* both stars move, we get orbits on the sky → $P$ and $a$ → total mass. But this requires nearby, widely separated pairs — rare and slow. *We have one tool. We need more.*
 :::
 
 ### Spectroscopic Binaries: Doppler Reveals the Orbit
@@ -162,8 +166,8 @@ In a **single-lined spectroscopic binary** (SB1), only one star's lines are visi
 In a **double-lined spectroscopic binary** (SB2), both stars' spectral lines are visible and shift in *opposite directions* (when star 1 is approaching, star 2 is receding). This gives both $K_1$ and $K_2$, which — combined with $P$ — yields both individual masses.
 :::
 
-::: {.callout-note title="Evidence Collected" .evidence-clue}
-**Strategy 2 — Read the Doppler shifts:** Periodic wavelength oscillations give $P$ and $K$ — velocity amplitudes that encode the orbit. Works for close pairs at any distance, but we only measure the *line-of-sight* component. Something is still hidden: the orbital inclination.
+::: {.callout-note title="Mass Detective — Clue 2" .mass-detective}
+**Read the Doppler shifts:** Periodic wavelength oscillations give $P$ and $K$ — velocity amplitudes that encode the orbit. Works for close pairs at any distance, but we only measure the *line-of-sight* component. Something is still hidden: the orbital inclination. *Two tools now — but a blind spot remains.*
 :::
 
 ### Eclipsing Binaries: Light Curves Reveal Geometry
@@ -185,8 +189,8 @@ The last point is particularly valuable: eclipsing binaries tell us the orbital 
 
 **Classic example:** Algol ($\beta$ Persei), one of the first-known eclipsing binaries, dips in brightness every $2.87~\text{days}$ as its cooler companion passes in front of the hot primary.
 
-::: {.callout-note title="Evidence Collected" .evidence-clue}
-**Strategy 3 — Watch the light curve:** Eclipses nail down the inclination ($i \approx 90°$) and give us stellar radii as a bonus. Combine strategies 2 + 3 in the same system, and we can measure *everything* — the gold standard for stellar mass determination.
+::: {.callout-note title="Mass Detective — Clue 3" .mass-detective}
+**Watch the light curve:** Eclipses nail down the inclination ($i \approx 90°$) and give us stellar radii as a bonus. Combine Clues 2 + 3 in the same system, and we can measure *everything* — the gold standard for stellar mass determination. *Three complementary tools. The blind spot is closed. Time to extract the masses.*
 :::
 
 ### Summary: What Each Type Reveals
@@ -225,6 +229,17 @@ Your lab partner says: "A star whose spectral lines shift periodically *and* who
 ## Part 3: Extracting Masses from Orbits
 
 We now have the observational tools. How do we go from measured quantities ($P$, $K_1$, $K_2$) to stellar masses ($M_1$, $M_2$)? The physics is entirely from Module 1 — Kepler's third law and Newton's third law — applied to a two-body system.
+
+::: {.callout-tip}
+## Predict First
+
+In a spectroscopic binary, Star 1 has radial velocity amplitude $K_1 = 80~\text{km/s}$ and Star 2 has $K_2 = 200~\text{km/s}$. Both orbit the same center of mass with the same period.
+
+1. Which star is more massive?
+2. Which star traces a *larger* orbit around the center of mass?
+
+Commit to answers before reading on. (Hint: think about a seesaw — where does the heavy person sit?)
+:::
 
 ### Step 1: Newton's Kepler III for Binaries
 
@@ -420,9 +435,9 @@ $$
 
 or equivalently:
 
-$$
-\boxed{\frac{M_1 + M_2}{M_\odot} = \frac{(a/\text{AU})^3}{(P/\text{yr})^2}}
-$$
+{{< include ../../../_includes/equations/kepler-solar.qmd >}}
+
+{{< eqrefcard kepler-solar >}}
 
 **This is the astronomer's working version of Kepler III.** All the constants ($4\pi^2$, $G$) are absorbed into the choice of units. If you measure $a$ in AU and $P$ in years, you get total mass in solar masses — no calculator needed for order-of-magnitude work.
 
@@ -467,6 +482,18 @@ We now have multiple techniques for measuring stellar masses — visual binaries
 
 ## Part 4: The Mass-Luminosity Relation — The Empirical Payoff
 
+::: {.callout-tip}
+## Predict First
+
+You know that the Sun ($1\,M_\odot$) has $L = 1\,L_\odot$. Suppose a main-sequence star has twice the Sun's mass. How much more luminous do you think it is?
+
+- (a) $2\times$ brighter (luminosity proportional to mass)
+- (b) $4\times$ brighter (luminosity proportional to mass squared)
+- (c) Something much larger — $10\times$ or more
+
+Commit to a guess before reading on. Most students guess (a) or (b). The actual answer may surprise you.
+:::
+
 ### Building the Relation from Data
 
 Astronomers have spent over a century measuring masses of binary stars. For each system where individual masses can be determined, the star's luminosity is also measured (from its apparent brightness and distance). You might expect the results to be messy — after all, stars differ in composition, age, rotation, and evolutionary state. With so many variables, surely mass alone can't predict luminosity?
@@ -489,14 +516,18 @@ The steepness of the mass-luminosity relation is the key. A modest change in mas
 
 | Mass ($M_\odot$) | $L/L_\odot \approx (M/M_\odot)^{3.5}$ | Factor relative to Sun |
 |---|---|---|
-| $0.1$ | $0.1^{3.5} = 3.2 \times 10^{-4}$ | $3{,}000\times$ fainter |
+| $0.1$ | $0.1^{3.5} = 3.2 \times 10^{-4}$ | $3 \times 10^3\!\times$ fainter |
 | $0.5$ | $0.5^{3.5} = 0.088$ | $11\times$ fainter |
 | $1.0$ | $1.0$ | $1\times$ (the Sun) |
 | $2.0$ | $2.0^{3.5} = 11.3$ | $11\times$ brighter |
-| $10$ | $10^{3.5} = 3{,}160$ | $3{,}200\times$ brighter |
-| $50$ | $50^{3.5} = 8.8 \times 10^5$ | $880{,}000\times$ brighter |
+| $10$ | $10^{3.5} = 3.16 \times 10^3$ | ${\sim}3 \times 10^3\!\times$ brighter |
+| $50$ | $50^{3.5} = 8.8 \times 10^5$ | ${\sim}10^6\!\times$ brighter |
 
-The full range of main-sequence masses (${\sim}0.08\,M_\odot$ to ${\sim}150\,M_\odot$) spans about three orders of magnitude — a factor of ${\sim}2{,}000$ in mass. But the luminosity range spans **ten orders of magnitude** — a factor of ${\sim}10^{10}$!
+::: {.callout-important title="Did your prediction land?"}
+If you guessed "(a) $2\times$" in the Predict First prompt, you're off by a factor of 5. The answer is (c): a $2\,M_\odot$ star is $2^{3.5} \approx 11\times$ brighter than the Sun. **The universe is fiercely nonlinear.** Small changes in mass produce enormous changes in luminosity — and this has profound consequences for stellar lifetimes.
+:::
+
+The full range of main-sequence masses (${\sim}0.08\,M_\odot$ to ${\sim}150\,M_\odot$) spans about three orders of magnitude — a factor of ${\sim}2 \times 10^3$ in mass. But the luminosity range spans **ten orders of magnitude** — a factor of ${\sim}10^{10}$!
 
 ### Why Mass Controls Lifetime
 
@@ -506,7 +537,9 @@ $$
 t_{\text{MS}} \sim \frac{\text{fuel}}{\text{burn rate}} \sim \frac{M}{L} \propto \frac{M}{M^{3.5}} = M^{-2.5}
 $$
 
-**More massive stars live *much* shorter lives.** The Sun's main-sequence lifetime is about $10~\text{Gyr}$. A $10\,M_\odot$ star: $t \sim 10 \times 10^{-2.5}~\text{Gyr} \approx 30~\text{Myr}$ — roughly 300 times shorter. A $0.5\,M_\odot$ star: $t \sim 10 \times 0.5^{-2.5}~\text{Gyr} \approx 57~\text{Gyr}$ — longer than the current age of the universe.
+**More massive stars live *much* shorter lives.** The Sun's main-sequence lifetime is about $10~\text{Gyr}$. A $10\,M_\odot$ star: $t \sim 10 \times 10^{-2.5}~\text{Gyr} \approx 30~\text{Myr}$ — roughly 300 times shorter. A $0.5\,M_\odot$ star: $t \sim 10 \times 0.5^{-2.5}~\text{Gyr} \approx 57~\text{Gyr}$.
+
+Pause on that last number. The universe is $13.8~\text{Gyr}$ old. A $0.5\,M_\odot$ red dwarf born at the Big Bang is not even a quarter of the way through its main-sequence life. **Every low-mass star that has ever formed is still shining today.** Not a single one has died of old age. The graveyard of stellar evolution contains only the remains of massive stars — the ones that burned bright and fast.
 
 ::: {.callout-important title="Connection: Mass as the Master Variable"}
 
@@ -519,6 +552,14 @@ This is why mass is the single most important property of a star:
 - **Death** follows from mass: low mass → white dwarf; high mass → supernova → neutron star or black hole
 
 **Know the mass, predict the fate.** This is why the mass-luminosity relation is the single most important empirical relation in stellar astrophysics — and why binary stars, which give us masses, are so precious.
+:::
+
+::: {.callout-note title="Mass Detective — Case Closed" .mass-detective}
+**Evidence summary:** Visual binaries gave us orbits on the sky (Clue 1). Spectroscopic binaries gave us Doppler velocities (Clue 2). Eclipsing binaries removed the inclination ambiguity (Clue 3). Together, they let us weigh stars using Newton's and Kepler's laws.
+
+**The verdict:** Mass is the master variable. $L \propto M^{3.5}$ means a star's mass determines its luminosity, temperature, radius, lifetime, and death. The suspect has been identified — and it controls everything.
+
+**Case status:** Closed. But the investigation continues in Lecture 5 — when we plot all these measurements on one diagram and discover that mass organizes the entire pattern.
 :::
 
 ::: {.callout-tip}
@@ -539,7 +580,7 @@ This is why mass is the single most important property of a star:
 
 2. $t_{\text{MS}} \approx 10~\text{Gyr} \times (5)^{-2.5} = 10~\text{Gyr} / 5^{2.5}$. Calculate: $5^2 = 25$, $5^{0.5} = 2.24$, so $5^{2.5} = 56$. Thus $t \approx 10/56~\text{Gyr} \approx 0.18~\text{Gyr} = 180~\text{Myr}$.
 
-3. $L \propto M^{3.5}$, so $M \propto L^{1/3.5} = L^{0.286}$. The luminosity ratio is $100/0.01 = 10{,}000 = 10^4$. The mass ratio is $(10^4)^{0.286} = 10^{1.14} \approx 14$. Star A is about 14 times more massive than star B.
+3. $L \propto M^{3.5}$, so $M \propto L^{1/3.5} = L^{0.286}$. The luminosity ratio is $100/0.01 = 10^4$. The mass ratio is $(10^4)^{0.286} = 10^{1.14} \approx 14$. Star A is about 14 times more massive than star B.
 
 4. The mass-luminosity relation is an *empirical* relationship for stars in the hydrogen-burning equilibrium of the main sequence. Giants have evolved off the main sequence — their luminosity depends on their evolutionary state, not just their current mass. White dwarfs are stellar remnants that no longer burn fuel — their luminosity comes from residual thermal cooling, not nuclear reactions. In both cases, the simple $L \propto M^{3.5}$ scaling breaks down.
 :::
@@ -624,7 +665,7 @@ Each lecture in Module 2 has added one link. The chain is now complete:
 7. ⭐⭐ **Mass-luminosity scaling.** Using the mass-luminosity relation $L/L_\odot \approx (M/M_\odot)^{3.5}$:
    - (a) Calculate the luminosity of a $3\,M_\odot$ main-sequence star in solar luminosities. Show the exponentiation step by step: $3^3 = {?}$, $3^{0.5} = {?}$, so $3^{3.5} = {?}$.
    - (b) Calculate the main-sequence lifetime of this star relative to the Sun's ($t_\odot \approx 10~\text{Gyr}$), using $t_\text{MS} \propto M^{-2.5}$.
-   - (c) A star has luminosity $L = 10{,}000\,L_\odot$. Estimate its mass using $M/M_\odot = (L/L_\odot)^{1/3.5}$.
+   - (c) A star has luminosity $L = 10^4\,L_\odot$. Estimate its mass using $M/M_\odot = (L/L_\odot)^{1/3.5}$.
 
 <!-- Problem: Calculation:Full / Application / O→M→I / Tools: Scaling/Ratio, Model-Inversion / ⭐⭐ -->
 8. ⭐⭐ **Lifetime consequences.** The most massive main-sequence stars have $M \approx 150\,M_\odot$; the least massive have $M \approx 0.08\,M_\odot$.
@@ -655,7 +696,7 @@ Each lecture in Module 2 has added one link. The chain is now complete:
     - (b) Predict the luminosity of each star using $L \propto M^{3.5}$.
     - (c) What fraction of the system's total light comes from Star 1? (Hint: compute $L_1/(L_1 + L_2)$.)
     - (d) In a single-lined spectroscopic binary (SB1), only the brighter star's lines are typically visible. Could this system appear as an SB1? Explain.
-    - (e) A $4\,M_\odot$ main-sequence star has $T_\text{eff} \approx 14{,}000~\text{K}$ and a $1\,M_\odot$ star has $T_\text{eff} \approx 5{,}800~\text{K}$. Use Stefan-Boltzmann in solar units to estimate the radius of each star. Which is larger?
+    - (e) A $4\,M_\odot$ main-sequence star has $T_\text{eff} \approx 1.4 \times 10^4~\text{K}$ and a $1\,M_\odot$ star has $T_\text{eff} \approx 5{,}800~\text{K}$. Use Stefan-Boltzmann in solar units to estimate the radius of each star. Which is larger?
 
 ---
 
@@ -667,7 +708,7 @@ Each lecture in Module 2 has added one link. The chain is now complete:
 
 3. **Newton's Kepler III for binaries** ($P^2 = 4\pi^2 a^3 / [G(M_1 + M_2)]$) gives the total mass from the orbital period and separation. The center-of-mass condition ($M_1 a_1 = M_2 a_2$) gives the mass ratio from the velocity ratio.
 
-4. **The mass-luminosity relation** ($L \propto M^{3.5}$) is the most important empirical scaling in stellar astrophysics — it means mass controls everything for main-sequence stars. A factor of 10 in mass produces a factor of ${\sim}3{,}000$ in luminosity.
+4. **The mass-luminosity relation** ($L \propto M^{3.5}$) is the most important empirical scaling in stellar astrophysics — it means mass controls everything for main-sequence stars. A factor of 10 in mass produces a factor of ${\sim}3 \times 10^3$ in luminosity.
 
 5. **Lifetime scales as $M^{-2.5}$** — massive stars burn bright and die young; low-mass stars are dim but nearly eternal.
 

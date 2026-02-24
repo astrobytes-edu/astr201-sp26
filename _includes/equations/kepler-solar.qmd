@@ -1,0 +1,3 @@
+$$
+\frac{M_1 + M_2}{M_\odot} = \frac{(a/\text{AU})^3}{(P/\text{yr})^2}
+$$ {#eq-kepler-solar}

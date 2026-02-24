@@ -263,6 +263,15 @@ mass_luminosity:
     - "Exponent $\\approx 3.5$ is an approximation — actual slope varies from $\\sim 2.3$ for $M < 0.43\\,M_\\odot$ to $\\sim 4$ for $M > 2\\,M_\\odot$"
     - "Empirical relation derived from binary star mass measurements"
 
+kepler_solar:
+  predicts: "Given the orbital separation $a$ (in AU) and period $P$ (in yr), it predicts the total mass $M_1 + M_2$ in solar masses — no constants needed."
+  depends: "Scales as $M_{\\text{total}} \\propto a^3$ and $M_{\\text{total}} \\propto P^{-2}$."
+  says: "The astronomer's working form of Kepler III — all constants absorbed into the choice of solar/AU/yr units. If $a$ in AU and $P$ in yr, the answer comes out in $M_\\odot$ automatically."
+  assumptions:
+    - "Same physics as Kepler III for binaries — this is a unit-scaling convenience, not a different equation"
+    - "Valid for any binary orbit (stellar, planetary) when using AU, yr, $M_\\odot$"
+    - "Approximately circular orbits"
+
 distance_modulus:
   predicts: "Given a star's apparent magnitude $m$ and absolute magnitude $M$, it predicts the distance $d$ (or vice versa)."
   depends: "Scales as $(m - M) \\propto \\log_{10}(d)$. Every 5 magnitudes of distance modulus corresponds to a factor of 10 in distance."
