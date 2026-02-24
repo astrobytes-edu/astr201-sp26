@@ -288,6 +288,17 @@ Commit to answers before reading on. (Hint: think about a seesaw — where does 
 - Quantitatively, $\frac{M_1}{M_2}=\frac{K_2}{K_1}=\frac{200}{80}=2.5$.
 :::
 
+### Pre-Derivation Roadmap
+
+Before we push symbols, keep the logic chain clear. First, Kepler III gives the **total system mass** from period and separation. Second, the center-of-mass condition gives the **mass ratio** from how far each star orbits from the balance point. Third, Doppler amplitudes connect measured line shifts to orbital speeds and radii, with projection by inclination. Finally, we combine total mass and mass ratio to isolate $M_1$ and $M_2$ individually.
+
+::: {.callout-note title="Equation Map"}
+- Kepler III $\rightarrow$ total mass $M_1 + M_2$
+- Center of mass $\rightarrow$ mass ratio $M_1/M_2$
+- Doppler amplitudes ($K_1$, $K_2$) $\rightarrow$ orbital velocities and radii
+- Inclination ($i$) $\rightarrow$ projection correction through $\sin i$ (mass term scales with $\sin^3 i$)
+:::
+
 ### Step 1: Newton's Kepler III for Binaries
 
 In Module 1 (Lecture 3), you derived Newton's version of Kepler's third law for a planet orbiting a star. The key insight was that the *mass of the central body* appears in the equation:
@@ -327,6 +338,8 @@ $$
 
 If we measure $P$ and $a$, we get the **total mass** of the system. But we still need to separate $M_1$ from $M_2$.
 
+**What we gained:** A direct expression for the total system mass $M_1 + M_2$ from orbital size and period.
+
 ### Step 2: The Center-of-Mass Condition
 
 Both stars orbit the **center of mass** of the system — the balance point where the gravitational pulls are equal. Newton's third law guarantees this: if star 1 pulls on star 2 with force $F$, then star 2 pulls on star 1 with force $F$ in the opposite direction. Both accelerate, but the more massive star has a smaller orbit.
@@ -347,12 +360,17 @@ $$
 
 The **mass ratio equals the inverse ratio of orbital radii.** The heavier star has the smaller orbit — it barely moves, while the lighter star swings wide around it.
 
+**What we gained:** A second independent constraint, the mass ratio $\frac{M_1}{M_2}$, that tells us which star is heavier and by how much.
+
 ### Step 3: Connecting Velocities to Orbits
 
 For spectroscopic binaries, we don't measure $a_1$ and $a_2$ directly — we measure **velocities**. For circular orbits, each star's orbital speed is:
 
 $$
-v_1 = \frac{2\pi\, a_1}{P} \qquad;\qquad v_2 = \frac{2\pi\, a_2}{P}
+\begin{aligned}
+v_1 &= \frac{2\pi\, a_1}{P} \\
+v_2 &= \frac{2\pi\, a_2}{P}
+\end{aligned}
 $$
 
 Since the period $P$ is the same for both stars (they orbit together), the velocity ratio equals the orbit-size ratio:
@@ -371,6 +389,8 @@ $$
 
 This is powerful: **the mass ratio comes directly from the velocity ratio, regardless of the orbital inclination.**
 
+**What we gained:** A way to compute the mass ratio from observables ($K_1$, $K_2$) without needing $i$.
+
 ### Step 4: Putting It All Together
 
 For a double-lined spectroscopic binary (SB2) — where we measure $P$, $K_1$, and $K_2$ — we can determine both masses if we know the inclination $i$.
@@ -378,7 +398,10 @@ For a double-lined spectroscopic binary (SB2) — where we measure $P$, $K_1$, a
 From the velocities and period, the orbital radii are:
 
 $$
-a_1 \sin i = \frac{K_1\, P}{2\pi} \qquad;\qquad a_2 \sin i = \frac{K_2\, P}{2\pi}
+\begin{aligned}
+a_1 \sin i &= \frac{K_1\, P}{2\pi} \\
+a_2 \sin i &= \frac{K_2\, P}{2\pi}
+\end{aligned}
 $$
 
 The total separation (projected):
@@ -390,10 +413,17 @@ $$
 Substituting into Kepler's third law:
 
 $$
-M_1 + M_2 = \frac{4\pi^2\,(a \sin i)^3}{G\, P^2 \sin^3 i} = \frac{(K_1 + K_2)^3\, P}{2\pi\, G\, \sin^3 i}
+\begin{aligned}
+M_1 + M_2 &= \frac{4\pi^2\,(a \sin i)^3}{G\, P^2 \sin^3 i} \\
+&= \frac{(K_1 + K_2)^3\, P}{2\pi\, G\, \sin^3 i}
+\end{aligned}
 $$
 
 Combined with the mass ratio $M_1/M_2 = K_2/K_1$, we can solve for each mass individually.
+
+**What we gained:** A complete pipeline from observables ($P$, $K_1$, $K_2$, $i$) to both individual stellar masses.
+
+Before treating inclination as a nuisance parameter, note the geometry. Doppler measurements capture only the line-of-sight component of velocity, so each observed amplitude carries one factor of $\sin i$. Kepler uses $(a \sin i)^3$, so the projection enters cubed and appears as the $\sin^3 i$ correction in the mass.
 
 ::: {.callout-warning title="The Inclination Problem"}
 Notice the $\sin^3 i$ in the denominator. If we don't know the inclination angle $i$, we can only determine $M \sin^3 i$ — a lower limit on the mass. For a face-on orbit ($i = 0^\circ$), there's no radial velocity at all. For an edge-on orbit ($i = 90^\circ$, $\sin i = 1$), we get the true mass.
@@ -425,15 +455,32 @@ Star 1 is 2.5 times more massive than star 2. (The more massive star moves *slow
 
 **Step 2 — Total separation from velocities and period.**
 
-$$a = a_1 + a_2 = \frac{(K_1 + K_2)\, P}{2\pi} = \frac{(8.0 \times 10^6 + 2.0 \times 10^7)~\text{cm/s} \times 2.59 \times 10^5~\text{s}}{2\pi}$$
+$$
+\begin{aligned}
+a &= a_1 + a_2 \\
+&= \frac{(K_1 + K_2)\, P}{2\pi} \\
+&= \frac{(8.0 \times 10^6 + 2.0 \times 10^7)~\text{cm/s} \times 2.59 \times 10^5~\text{s}}{2\pi}
+\end{aligned}
+$$
 
-$$a = \frac{2.8 \times 10^7~\text{cm/s} \times 2.59 \times 10^5~\text{s}}{6.28} = \frac{7.25 \times 10^{12}~\text{cm}}{6.28} = 1.15 \times 10^{12}~\text{cm}$$
+$$
+\begin{aligned}
+a &= \frac{2.8 \times 10^7~\text{cm/s} \times 2.59 \times 10^5~\text{s}}{6.28} \\
+&= \frac{7.25 \times 10^{12}~\text{cm}}{6.28} \\
+&= 1.15 \times 10^{12}~\text{cm}
+\end{aligned}
+$$
 
 For reference: $1~\text{AU} = 1.50 \times 10^{13}~\text{cm}$, so $a \approx 0.077~\text{AU}$ — a tight orbit.
 
 **Step 3 — Total mass from Kepler's third law.**
 
-$$M_1 + M_2 = \frac{4\pi^2\, a^3}{G\, P^2} = \frac{4\pi^2 \times (1.15 \times 10^{12}~\text{cm})^3}{(6.67 \times 10^{-8}~\text{cm}^3\,\text{g}^{-1}\,\text{s}^{-2}) \times (2.59 \times 10^5~\text{s})^2}$$
+$$
+\begin{aligned}
+M_1 + M_2 &= \frac{4\pi^2\, a^3}{G\, P^2} \\
+&= \frac{4\pi^2 \times (1.15 \times 10^{12}~\text{cm})^3}{(6.67 \times 10^{-8}~\text{cm}^3\,\text{g}^{-1}\,\text{s}^{-2}) \times (2.59 \times 10^5~\text{s})^2}
+\end{aligned}
+$$
 
 Numerator: $4\pi^2 \times 1.52 \times 10^{36}~\text{cm}^3 = 6.01 \times 10^{37}~\text{cm}^3$
 
@@ -521,7 +568,7 @@ If you have an independent estimate of $M_1$ (e.g., from its spectral type), you
 **Enrichment takeaway:** SB1 systems do not give individual masses directly, but the mass function provides a robust lower bound on the unseen companion mass.
 :::
 
-We now have multiple techniques for measuring stellar masses — visual binaries, spectroscopic binaries, eclipsing systems, and combinations thereof. Over more than a century, astronomers have applied them to hundreds of systems. The question that motivated this entire reading — *what role does mass play?* — finally has a definitive, quantitative answer.
+We now have multiple techniques for measuring stellar masses — visual binaries, spectroscopic binaries, eclipsing systems, and combinations thereof. Over more than a century, astronomers have applied them to hundreds of systems, with the tightest constraints coming from eclipsing SB2 binaries. At this point, the dynamical problem is solved: mass is no longer hidden if the orbit is measured well. That flips the scientific question. Instead of asking *how* to measure mass, we can now ask *what mass controls* once measured across many stars.
 
 ---
 
