@@ -116,11 +116,7 @@ Before diving in, explore how binary stars orbit their common center of mass —
 
 ### Visual Binaries: Resolved on the Sky
 
-<!-- FIGURE RECOMMENDATION: binary-star-visual
-     Schematic showing two stars resolved as separate points of light,
-     with their orbital paths traced around a common center of mass.
-     Mark a_1, a_2, and the center of mass. Show multiple epochs to
-     indicate orbital motion over years/decades. -->
+{{< fig binary-star-visual >}}
 
 A **visual binary** is a pair of stars close enough to us (and far enough apart from each other) that we can resolve both stars as separate points of light through a telescope. By tracking their positions over years or decades, we can map out their orbits on the sky.
 
@@ -146,11 +142,7 @@ A **visual binary** is a pair of stars close enough to us (and far enough apart 
 
 Most binary stars are too close together and too far from Earth to resolve visually. But we can detect them through the **Doppler effect** — the very tool you learned in Lecture 3.
 
-<!-- FIGURE RECOMMENDATION: binary-star-spectroscopic-orbit
-     Top panel: Schematic of two stars orbiting center of mass, shown at
-     4 orbital phases (approaching, perpendicular, receding, perpendicular).
-     Bottom panel: Corresponding radial velocity curve showing sinusoidal
-     oscillation of v_r vs. time for both stars, with K_1 and K_2 labeled. -->
+{{< fig binary-star-spectroscopic >}}
 
 If a star is in a binary system, it orbits the center of mass. During half the orbit, it moves toward us; during the other half, it moves away. Its spectral lines shift back and forth — blueshifted when approaching, redshifted when receding — with a period equal to the orbital period.
 
@@ -176,11 +168,7 @@ In a **double-lined spectroscopic binary** (SB2), both stars' spectral lines are
 
 ### Eclipsing Binaries: Light Curves Reveal Geometry
 
-<!-- FIGURE RECOMMENDATION: eclipsing-binary-light-curve
-     Top: Edge-on schematic of binary at 4 phases (no eclipse, primary
-     eclipse, between eclipses, secondary eclipse).
-     Bottom: Light curve showing total brightness vs. time with two dips
-     of different depths. Label primary and secondary eclipse. -->
+{{< fig eclipsing-binary-light-curve >}}
 
 When the orbital plane is nearly edge-on to our line of sight, the stars periodically pass in front of each other. These are **eclipsing binaries**, and they produce characteristic dips in the combined light — a **light curve**.
 
@@ -281,11 +269,7 @@ If we measure $P$ and $a$, we get the **total mass** of the system. But we still
 
 Both stars orbit the **center of mass** of the system — the balance point where the gravitational pulls are equal. Newton's third law guarantees this: if star 1 pulls on star 2 with force $F$, then star 2 pulls on star 1 with force $F$ in the opposite direction. Both accelerate, but the more massive star has a smaller orbit.
 
-<!-- FIGURE RECOMMENDATION: center-of-mass-binary
-     Two stars of different sizes orbiting a common center of mass (marked
-     with ×). Show a_1 (distance from M_1 to CM) and a_2 (distance from
-     M_2 to CM), with a = a_1 + a_2. Emphasize that the heavier star
-     has the smaller orbit. -->
+{{< fig center-of-mass-binary >}}
 
 The center-of-mass condition is:
 

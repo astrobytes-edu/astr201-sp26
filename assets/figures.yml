@@ -553,6 +553,34 @@ figures:
     credit: "ASTR 201 (generated)"
     module: 2
 
+  binary-star-visual:
+    path: /assets/images/module-02/week-06/visual-binary-gemini.png
+    caption: "**What to notice:** Two stars orbit their common center of mass (×). The heavier star (yellow-white) traces a *smaller* orbit ($a_1$); the lighter star (orange) swings wide ($a_2$). Ghosted positions at different epochs show the decades of patient observation needed to map the orbit. With the period $P$ and physical separation $a = a_1 + a_2$ (which requires knowing the distance), Kepler III yields the total mass."
+    alt: "Diagram of a visual binary star system against a dark starfield. A warm yellow-white star traces a small elliptical orbit and a cooler orange star traces a larger elliptical orbit, both centered on a common center of mass marked with a white × labeled CM. Five ghosted epoch positions along each orbit are connected by dotted timing lines, with two pairs labeled 2005 and 2015. Brackets label a₁ (CM to heavy star), a₂ (CM to light star), and a = a₁ + a₂ spanning the full separation. A caption box reads Visual Binary — resolved on the sky, P + a → Kepler III → total mass."
+    credit: "ASTR 201 (Gemini)"
+    module: 2
+
+  binary-star-spectroscopic:
+    path: /assets/images/module-02/week-06/spectroscopic-binary-gemini.png
+    caption: "**What to notice:** Top — the orbital dance seen from above at four phases. Velocity arrows show which star is approaching (blueshift) or receding (redshift) at each moment. Bottom — the radial velocity signature: two sinusoidal curves in anti-phase. The less massive star (orange, $K_2$) has the *larger* velocity amplitude because it orbits farther from the center of mass and moves faster. The mass ratio comes directly from $M_1/M_2 = K_2/K_1$."
+    alt: "Two-panel scientific diagram on black background. Top panel shows a binary star system at four orbital phases (0.00, 0.25, 0.50, 0.75) seen from above, with a blue-white star and an orange star orbiting their center of mass. Velocity arrows indicate approaching and receding motion at each phase, with a To Observer arrow. Bottom panel shows radial velocity versus orbital phase with two anti-phase sinusoidal curves: a blue curve with smaller amplitude K₁ and an orange curve with larger amplitude K₂. A dashed horizontal line marks the systemic velocity at zero. Annotation reads: Smaller mass → larger orbit → faster motion → larger K."
+    credit: "ASTR 201 (Gemini)"
+    module: 2
+
+  eclipsing-binary-light-curve:
+    path: /assets/images/module-02/week-06/eclipsing-binary-gemini.png
+    caption: "**What to notice:** Top — an edge-on binary at four phases. When the small cool star transits the hot star (phase B), it blocks high-surface-brightness area → deep dip. When the cool star is hidden behind the hot star (phase D), only its modest contribution is lost → shallow dip. Bottom — the light curve shows both eclipses. The depth ratio encodes the temperature ratio; the duration encodes the stellar radii."
+    alt: "Two-panel diagram on black background. Top panel shows four orbital phases of an eclipsing binary viewed edge-on: A (full light, both stars visible), B (primary eclipse with small orange-red star silhouetted against large blue-white star, labeled deep dip), C (full light again), D (secondary eclipse with orange star hidden behind blue star, labeled shallow dip). Bottom panel shows a light curve of total system brightness versus orbital phase. A deep symmetric dip near phase 0.25 is labeled Hot surface blocked → large flux loss. A very shallow dip near phase 0.75 is labeled Cool surface hidden → small flux loss. Scattered data points overlay the smooth model curve."
+    credit: "ASTR 201 (Gemini)"
+    module: 2
+
+  center-of-mass-binary:
+    path: /assets/images/module-02/week-06/center-of-mass-binary-orbits.png
+    caption: "**What to notice:** The center of mass (×) is the pivot point — always closer to the heavier star. $M_1$ barely moves ($a_1$ small); $M_2$ swings wide ($a_2$ large). The balance condition $M_1 a_1 = M_2 a_2$ means the mass ratio equals the *inverse* ratio of orbital sizes. Epoch dots show the stars always on opposite sides of the CM."
+    alt: "Diagram titled Binary Star Orbits and Center of Mass on black background. A large yellow-white star labeled M₁ on the left and a smaller orange star labeled M₂ on the right are connected through a white × labeled CM (center of mass), positioned closer to M₁. Dashed elliptical orbits show M₁ tracing a small orbit of radius a₁ and M₂ tracing a large orbit of radius a₂, both centered on the CM. A bracket below spans the full separation labeled a = a₁ + a₂. Epoch dots along each orbit show the stars always on opposite sides. Text reads: Stars move in synchronous elliptical orbits, always on opposite sides of the CM."
+    credit: "ASTR 201 (Gemini)"
+    module: 2
+
   # ==============================================================
   # Module 3: Stellar Structure & Evolution
   # ==============================================================
