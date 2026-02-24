@@ -78,23 +78,19 @@ You now have every measurement tool needed to characterize a star: distance (Lec
 
 ### The Problem: Stars Span a Ridiculous Range
 
-Try the naive thing first: a linear brightness plot with Proxima, Betelgeuse, and the Sun on the same axis. Set Proxima near the bottom and scale upward by equal steps of flux. Betelgeuse jumps to tens of millions of Proximas, and the Sun jumps tens of billions beyond that. On that axis, Proxima and Betelgeuse collapse against zero while the Sun runs off-scale. The plot is not just ugly — it is unreadable as a scientific tool.
+Try the naive thing first: a linear brightness plot with Proxima, Betelgeuse, and the Sun on the same axis. Set Proxima near the bottom and scale upward by equal flux steps. Betelgeuse jumps to tens of millions of Proximas, and the Sun jumps tens of billions beyond that. Proxima and Betelgeuse collapse against zero while the Sun runs off-scale. On a linear axis, the plot is scientifically unusable.
 
-We need a logarithmic scale.
-
-Without a logarithmic ruler, the HR diagram cannot even be drawn coherently.
-
-That logarithmic ruler is the **magnitude system** — and it's the last measurement tool you need before we can build the HR diagram.
+We need a logarithmic ruler: the **magnitude system** — the last measurement tool before we can build the HR diagram.
 
 ### Why Not Just Use Luminosity?
 
-You already know how to measure a star's luminosity in physical units: $L$ in $\text{erg}\,\text{s}^{-1}$, or in solar luminosities $L_\odot$. So why do astronomers use a completely different system — magnitudes — that's logarithmic, inverted (brighter = *smaller* number), and historically arbitrary?
+You already know how to measure a star's luminosity in physical units: $L$ in $\text{erg}\,\text{s}^{-1}$, or in solar luminosities $L_\odot$. So why do astronomers still use magnitudes — logarithmic, inverted (brighter = *smaller* number), and historically odd?
 
 Three reasons:
 
-1. **Dynamic range.** Stellar brightnesses span more than ten orders of magnitude ($10^{10}$). Logarithmic scales compress this into manageable numbers (roughly $-10$ to $+20$).
-2. **What detectors actually measure.** Your eyes, photographic plates, and CCDs respond to **flux** — energy per unit area per unit time — not luminosity. Magnitudes are directly tied to flux ratios.
-3. **Historical inertia.** The ancient Greek astronomer Hipparchus ranked stars from "first magnitude" (brightest) to "sixth magnitude" (faintest visible). Modern astronomy formalized this into a precise logarithmic system — but kept the convention that brighter means *smaller* magnitude.
+1. **Dynamic range.** Stellar brightnesses span ten orders of magnitude ($10^{10}$). Logarithmic scales compress this into manageable numbers (roughly $-10$ to $+20$).
+2. **What detectors measure.** Eyes, photographic plates, and CCDs respond to **flux** — energy per unit area per unit time — not luminosity. Magnitudes are tied directly to flux ratios.
+3. **Historical inertia.** Hipparchus ranked stars from "first magnitude" (brightest) to "sixth magnitude" (faintest visible). Modern astronomy formalized this into a precise logarithmic system, but kept brighter = *smaller* magnitude.
 
 ::: {.callout-warning title="The Backward Scale"}
 This is the single most confusing convention in astronomy: **brighter objects have smaller (or more negative) magnitudes.** Sirius ($m = -1.46$) is brighter than Vega ($m = 0.03$), which is brighter than Polaris ($m = 1.98$). The Sun's apparent magnitude is $m = -26.74$.
@@ -104,13 +100,13 @@ There is no deep reason for this — it's a historical accident. But it's univer
 
 ### Apparent Magnitude: How Bright It Looks
 
-The **apparent magnitude** $m$ of a star is a measure of how bright it appears *from Earth*. It depends on both the star's intrinsic brightness (luminosity) and its distance. The formal definition connects magnitude differences to **flux ratios**:
+The **apparent magnitude** $m$ of a star measures how bright it appears *from Earth*. It depends on intrinsic brightness (luminosity) and distance. The formal definition connects magnitude differences to **flux ratios**:
 
 {{< include ../../../_includes/equations/magnitude-flux.qmd >}}
 
 {{< eqrefcard magnitude-flux >}}
 
-Because this scale is logarithmic, multiplicative flux changes become additive magnitude shifts. A factor of 100 in flux is not "100 units brighter" — it is just a 5-magnitude step on the same ruler.
+Because this scale is logarithmic, multiplicative flux changes become additive magnitude shifts.
 
 where $F_1$ and $F_2$ are the fluxes (energy per unit area per unit time) of two sources, and $m_1$ and $m_2$ are their apparent magnitudes.
 
@@ -146,8 +142,6 @@ Smaller magnitude means brighter, so Star A has the larger flux. A $5~\text{mag}
 
 $$\Delta m = m_B - m_A = 6.0 - 1.0 = 5.0~\text{mag}$$
 
-A difference of $5.0~\text{mag}$ corresponds to a flux ratio of exactly $100$:
-
 $$\frac{F_A}{F_B} = 10^{0.4 \times 5.0} = 10^{2.0} = 100$$
 
 Star A is $100\times$ brighter than Star B in apparent flux.
@@ -170,7 +164,7 @@ Examples:
 | Betelgeuse | $+0.42$ | $200~\text{pc}$ | $-5.85$ | ${\sim}10^5\,L_\odot$ |
 | Proxima Cen | $+11.13$ | $1.30~\text{pc}$ | $+15.53$ | $0.0017\,L_\odot$ |
 
-The Sun looks blindingly bright ($m = -26.74$) only because it's close. At $10~\text{pc}$, it would be a modest $M = +4.83$ — visible to the naked eye, but nothing special. Betelgeuse, on the other hand, looks unremarkable ($m = +0.42$) despite being intrinsically $10^5$ times more luminous — because it's $200~\text{pc}$ away.
+The Sun looks blindingly bright ($m = -26.74$) only because it's close; at $10~\text{pc}$ it would be a modest $M = +4.83$. Betelgeuse looks unremarkable ($m = +0.42$) despite being intrinsically $10^5$ times more luminous because it's far away ($200~\text{pc}$).
 
 ### The Distance Modulus: Connecting $m$, $M$, and $d$
 
@@ -187,26 +181,26 @@ where:
 - $d$ is the distance in parsecs
 - The quantity $(m - M)$ is called the **distance modulus**
 
-**Where does this come from?** This is the same inverse-square law you already know from Lecture 1 — $F = L/(4\pi d^2)$ — rewritten in the astronomer's logarithmic language. Since magnitudes are logarithmic ($\Delta m = -2.5 \log_{10}(F_1/F_2)$), the $d^2$ dependence of flux becomes a $5 \log_{10}(d)$ dependence in magnitudes. The physics is identical; the packaging is different.
+**Where does this come from?** It is the same inverse-square law from Lecture 1 — $F = L/(4\pi d^2)$ — rewritten in logarithmic language. Because magnitudes are logarithmic ($\Delta m = -2.5 \log_{10}(F_1/F_2)$), the $d^2$ flux dependence becomes a $5 \log_{10}(d)$ term. Same physics, different packaging.
 
 **Key sanity checks:**
 
 - At $d = 10~\text{pc}$: $m - M = 5\log_{10}(10/10) = 0$, so $m = M$. $\checkmark$ (Definition of absolute magnitude.)
-- At $d = 100~\text{pc}$: $m - M = 5\log_{10}(100/10) = 5\log_{10}(10) = 5$. The star appears $5~\text{mag}$ fainter than at $10~\text{pc}$, i.e., $100\times$ fainter — consistent with the inverse-square law ($100^2/10^2 = 100$). $\checkmark$
+- At $d = 100~\text{pc}$: $m - M = 5\log_{10}(100/10) = 5\log_{10}(10) = 5$. So the star appears $5~\text{mag}$ fainter than at $10~\text{pc}$, i.e., $100\times$ fainter — consistent with inverse-square scaling. $\checkmark$
 - At $d = 1{,}000~\text{pc}$: $m - M = 10$. The star is $10^4\times$ fainter. $\checkmark$
 
 ::: {.callout-note}
 ## Worked Example: Finding Distance from Magnitudes
 
-**Problem:** A Cepheid variable star has apparent magnitude $m = 14.0$ and, from its pulsation period, we know its absolute magnitude is $M = -4.0$. How far away is it?
+**Problem:** A Cepheid has apparent magnitude $m = 14.0$ and absolute magnitude $M = -4.0$. How far away is it?
 
 **Solution:**
 
-**Step 1 — Calculate the distance modulus.**
+**Step 1 — Distance modulus**
 
 $$m - M = 14.0 - (-4.0) = 18.0~\text{mag}$$
 
-**Step 2 — Apply the distance modulus formula.**
+**Step 2 — Solve for distance**
 
 $$18.0 = 5\log_{10}\!\left(\frac{d}{10~\text{pc}}\right)$$
 
@@ -216,9 +210,9 @@ $$\frac{d}{10~\text{pc}} = 10^{3.6} \approx 3{,}981$$
 
 $$d \approx 3{,}981 \times 10~\text{pc} \approx 4.0 \times 10^4~\text{pc} = 40~\text{kpc}$$
 
-**Unit check:** We got distance in parsecs from the formula. $\checkmark$
+**Unit check:** Distance comes out in parsecs. $\checkmark$
 
-**Sanity check:** A distance modulus of $18~\text{mag}$ puts the Cepheid at $\sim 40~\text{kpc}$ — comparable to the distance across the Milky Way or to nearby satellite galaxies. This is reasonable for a luminous Cepheid ($M = -4.0$ means $L \sim 5{,}000\,L_\odot$). $\checkmark$
+**Sanity check:** A modulus of $18~\text{mag}$ gives $\sim 40~\text{kpc}$, a plausible distance for a luminous Cepheid. $\checkmark$
 :::
 
 ::: {.callout-tip}
@@ -489,6 +483,7 @@ Part 2 built a map from measurements alone: magnitudes, colors, spectral classes
 ## Predict First
 
 You know from Lecture 4 that more massive main-sequence stars are more luminous ($L \propto M^{3.5}$) and hotter. On the HR diagram, the main sequence runs from upper-left (hot, luminous) to lower-right (cool, faint).
+The exponent varies between ~3 and ~4 depending on mass regime; 3.5 is a representative average for main-sequence stars.
 
 **Prediction:** If you could label each main-sequence star with its mass, how would mass change along the sequence — does it increase from lower-right to upper-left, or from upper-left to lower-right? And would the labeling be smooth (mass increases monotonically) or jumbled?
 
@@ -532,6 +527,10 @@ If the main sequence is organized by mass, what organizes the giant branch and t
 
 In other words: the main sequence is where stars *live*. Giants are where stars *go when they age*. White dwarfs are where stars *end up when they die*.
 
+::: {.callout-warning title="Common Misconception"}
+Red giants are not necessarily more massive than the Sun. A $1\,M_\odot$ star can become a red giant after core hydrogen is exhausted and still remain near $1\,M_\odot$ (aside from modest mass loss). Giants are often brighter because their radii expand enormously, and luminosity scales as $L \propto R^2 T^4$: a large increase in $R$ can dominate even if $T$ drops.
+:::
+
 ::: {.callout-tip title="Argue With a Peer"}
 Your lab partner says: "Red giants are brighter than the Sun because they're more massive." Construct a counterargument. Use what you learned about the mass-luminosity relation (Lecture 4) and what this section says about why stars become giants. Is a $1\,M_\odot$ red giant more massive than a $1\,M_\odot$ main-sequence star?
 :::
@@ -548,6 +547,10 @@ A $1\,M_\odot$ star lives ${\sim}10~\text{Gyr}$ on the main sequence; a $10\,M_\
 **Mass is the hidden variable organizing the entire diagram.** The main sequence is a mass sequence: $0.08\,M_\odot$ at lower right to ${\sim}150\,M_\odot$ at upper left. Giants are stars that have *left* the main sequence after exhausting core hydrogen. White dwarfs are the *remnants* of dead stars. Mass does not appear on either axis, yet it determines where every star sits and where it will go.
 :::
 
+::: {.callout-important title="Pause and Reflect"}
+Notice the epistemic move: **observables → model → hidden-variable inference.** We plot luminosity and temperature (observables), apply stellar-structure and evolution models, and infer mass as the organizing variable. Mass is not on either axis; it is inferred from how stars populate the diagram and how those populations match model predictions. This is a general scientific pattern: when a projection shows tight structure, it often signals an unplotted coordinate that theory helps uncover.
+:::
+
 ---
 
 ## Part 5: An Evolution Diagram — Why Patterns Need Physics
@@ -557,6 +560,24 @@ A $1\,M_\odot$ star lives ${\sim}10~\text{Gyr}$ on the main sequence; a $10\,M_\
 The most profound interpretation of the HR diagram is not as a static classification chart, but as a map of **stellar evolution**. A star does not stay in one place on the diagram forever. It *moves* — slowly on the main sequence, then dramatically as it evolves.
 
 That motion is not arbitrary wandering across a plot; it is the response of a self-gravitating thermodynamic system to changing fuel conditions. When core hydrogen is exhausted, hydrostatic equilibrium cannot be maintained by the same fusion source, so the core contracts. Core contraction releases gravitational energy and heats deeper layers, changing where and how energy is generated. The envelope responds by expanding, which lowers surface temperature even while total luminosity can rise. HR-diagram tracks are therefore the visible footprint of gravity, thermodynamics, and nuclear burning acting together.
+
+#### Visualizing Evolutionary Tracks
+
+This schematic is a map-reading aid, not a precision plot. Follow each arrow as a phase transition and focus on direction of motion and branching endpoints rather than exact coordinates. The two tracks highlight the core contrast of this part: a solar-mass star ends as a white dwarf after a planetary nebula phase, while a high-mass star reaches core collapse and leaves a compact remnant. Read the arrows with standard HR conventions in mind: luminosity increases upward, and temperature decreases to the right.
+
+**Axis convention reminder:** Luminosity up; temperature decreases to the right (hot left, cool right).
+
+```mermaid
+flowchart LR
+  subgraph one["1 M☉"]
+    A1["Protostar contraction"] --> A2["Main sequence"] --> A3["Red giant"] --> A4["Planetary nebula"] --> A5["White dwarf cooling"]
+  end
+  subgraph ten["10 M☉"]
+    B1["Main sequence"] --> B2["Supergiant"] --> B3["Core-collapse supernova"]
+    B3 --> B4["Neutron star"]
+    B3 --> B5["Black hole"]
+  end
+```
 
 Here is the life story of a star like the Sun, traced on the HR diagram:
 
@@ -575,6 +596,10 @@ Core contraction heats the interior because gravitational potential energy is co
 A massive star ($10\,M_\odot$) follows a similar but faster and more dramatic path — it spends only ${\sim}20~\text{Myr}$ on the main sequence, becomes a supergiant, and may end its life in a core-collapse supernova rather than a planetary nebula.
 
 **The key insight:** **Mass determines the path.** A low-mass star evolves slowly along one track; a high-mass star races along a different, more dramatic track. The HR diagram is not just a map of *where stars are now* — it's a map of *where stars go as they age*, with mass as the control parameter.
+
+### What the HR Diagram Does Not Encode
+
+The HR diagram is powerful, but it is still a projection. Two plotted coordinates ($L$ and $T$) cannot uniquely encode the full stellar state space. Important hidden coordinates include metallicity, rotation, magnetic fields, and binarity; age is also not uniquely encoded once stars leave the main sequence. Different combinations of these properties can place stars in similar regions while implying different internal structures and futures. So the HR diagram is best read as a structured projection of higher-dimensional stellar physics: excellent for pattern recognition and inference, but not a complete state description by itself.
 
 ### What the HR Diagram Cannot Explain
 
