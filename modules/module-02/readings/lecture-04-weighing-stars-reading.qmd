@@ -265,6 +265,15 @@ Your lab partner says: "A star whose spectral lines shift periodically *and* who
 
 ---
 
+**Why this has to work.** For this derivation, we only need two physics ingredients: Newton/Kepler gravity for two-body orbits and the center-of-mass condition that links the two stars. On the observation side, we only need time variation (to get $P$), line-of-sight velocities (to get $K_1$ and $K_2$), and geometry (through inclination $i$). That structure forces a specific chain: $P \rightarrow a$, velocity-amplitude ratio $\rightarrow$ mass ratio, then total mass + mass ratio $\rightarrow$ individual masses. Once those pieces are measured, there is no alternative dynamical route to $M_1$ and $M_2$.
+
+::: {.callout-note title="Equation Map: what each measurement buys you"}
+- Kepler III $\rightarrow$ total mass from ($P$, $a$)
+- Doppler $\rightarrow$ $K$'s from line shifts
+- Center-of-mass $\rightarrow$ mass ratio from $K$ ratio
+- Inclination $\rightarrow$ $\sin^3(i)$ correction; eclipses remove ambiguity
+:::
+
 ## Part 3: Extracting Masses from Orbits
 
 We now have the observational tools. How do we go from measured quantities ($P$, $K_1$, $K_2$) to stellar masses ($M_1$, $M_2$)? The physics is entirely from Module 1 — Kepler's third law and Newton's third law — applied to a two-body system.
@@ -286,17 +295,6 @@ Commit to answers before reading on. (Hint: think about a seesaw — where does 
 - Star 1 is more massive because it has the smaller velocity amplitude.
 - Star 2 traces the larger orbit around the center of mass.
 - Quantitatively, $\frac{M_1}{M_2}=\frac{K_2}{K_1}=\frac{200}{80}=2.5$.
-:::
-
-### Pre-Derivation Roadmap
-
-Before we push symbols, keep the logic chain clear. First, Kepler III gives the **total system mass** from period and separation. Second, the center-of-mass condition gives the **mass ratio** from how far each star orbits from the balance point. Third, Doppler amplitudes connect measured line shifts to orbital speeds and radii, with projection by inclination. Finally, we combine total mass and mass ratio to isolate $M_1$ and $M_2$ individually.
-
-::: {.callout-note title="Equation Map"}
-- Kepler III $\rightarrow$ total mass $M_1 + M_2$
-- Center of mass $\rightarrow$ mass ratio $M_1/M_2$
-- Doppler amplitudes ($K_1$, $K_2$) $\rightarrow$ orbital velocities and radii
-- Inclination ($i$) $\rightarrow$ projection correction through $\sin i$ (mass term scales with $\sin^3 i$)
 :::
 
 ### Step 1: Newton's Kepler III for Binaries
@@ -423,7 +421,7 @@ Combined with the mass ratio $M_1/M_2 = K_2/K_1$, we can solve for each mass ind
 
 **What we gained:** A complete pipeline from observables ($P$, $K_1$, $K_2$, $i$) to both individual stellar masses.
 
-Before treating inclination as a nuisance parameter, note the geometry. Doppler measurements capture only the line-of-sight component of velocity, so each observed amplitude carries one factor of $\sin i$. Kepler uses $(a \sin i)^3$, so the projection enters cubed and appears as the $\sin^3 i$ correction in the mass.
+Before treating inclination as a nuisance parameter, pause on the geometry. The measured Doppler amplitude is a projected speed, $K=v\sin i$, so each velocity carries one factor of $\sin i$. The same projection propagates into the orbital scale as $a\sin i$ when we infer size from $K$ and $P$. Because Kepler depends on the cube of separation, the projection appears as a cubic correction, $\sin^3 i$, in the inferred mass.
 
 ::: {.callout-warning title="The Inclination Problem"}
 Notice the $\sin^3 i$ in the denominator. If we don't know the inclination angle $i$, we can only determine $M \sin^3 i$ — a lower limit on the mass. For a face-on orbit ($i = 0^\circ$), there's no radial velocity at all. For an edge-on orbit ($i = 90^\circ$, $\sin i = 1$), we get the true mass.
@@ -612,6 +610,8 @@ The idealized power law captures the trend, but real data have scatter. The figu
 
 {{< eqrefcard mass-luminosity >}}
 
+This exponent is why the main sequence is not just a temperature sequence or a luminosity sequence, but a **mass sequence** in disguise. A small shift in mass produces a disproportionate shift in luminosity, so tiny horizontal moves in mass correspond to huge vertical consequences in emitted power. In other words, the exponent is the lever arm that amplifies mass differences into the large astrophysical contrasts you observe. That is why this relation does more than fit a plot — it governs downstream physics. In Module 3, the same leverage will reappear in evolution: timescales and stellar endpoints trace back to how sharply luminosity responds to mass.
+
 The exponent $3.5$ is an approximation — the actual relationship is slightly steeper at high masses (${\sim}4$ for $M > 2\,M_\odot$) and shallower at low masses (${\sim}2.3$ for $M < 0.43\,M_\odot$). But $3.5$ captures the essential behavior across a wide range.
 
 ### What the Relation Tells Us
@@ -634,6 +634,8 @@ If you guessed "(a) $2\times$" in the Predict First prompt, you're off by a fact
 The full range of main-sequence masses (${\sim}0.08\,M_\odot$ to ${\sim}150\,M_\odot$) spans about three orders of magnitude — a factor of ${\sim}2 \times 10^3$ in mass. But the luminosity range spans **ten orders of magnitude** — a factor of ${\sim}10^{10}$!
 
 ### Why Mass Controls Lifetime
+
+Once luminosity scales this steeply with mass, lifetime becomes an exponent game.
 
 Here's a beautiful consequence. A star's hydrogen fuel available for nuclear fusion scales roughly with its total mass $M$. Its luminosity — the rate at which it burns that fuel — scales as $M^{3.5}$, so $t_{\rm MS}\propto M/L\propto M^{-2.5}$.
 
@@ -700,6 +702,25 @@ Let's trace the full O→M→I framework for binary star mass measurement:
 **Model:** Two stars orbiting a common center of mass under Newtonian gravity. Kepler's third law connects orbital parameters to total mass. Newton's third law connects the center of mass to the mass ratio.
 
 **Inference:** From the period $P$ and velocity amplitudes $K_1$, $K_2$: the individual stellar masses $M_1$ and $M_2$. From a large sample: the mass-luminosity relation — the most important empirical scaling in stellar astrophysics.
+
+```{mermaid}
+graph TD
+  O1["Observable: spectral line wavelength shifts vs time"]
+  O2["Observable: light-curve dips vs time (if eclipsing)"]
+  O3["Observable: astrometric positions vs time (visual branch)"]
+  Q["Measured quantities: P, K1, K2, i (if eclipsing), a (if visual + distance)"]
+  M["Model: Newtonian two-body orbit + center of mass"]
+  I1["Infer orbital scale: a or a sin i"]
+  I2["Infer dynamical outputs: M_total and M1/M2"]
+  I3["Infer individual masses: M1, M2"]
+  I4["Then: L ∝ M^3.5 → t_MS ∝ M^-2.5 → stellar fate"]
+
+  O1 --> Q
+  O2 --> Q
+  O3 --> Q
+  Q --> M
+  M --> I1 --> I2 --> I3 --> I4
+```
 
 ---
 
