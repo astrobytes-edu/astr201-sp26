@@ -1184,11 +1184,17 @@ So $L \approx 47\,L_\odot$.
 ## Mass Determines Everything
 
 ::: {.incremental}
-- **Luminosity** follows from mass: $L \propto M^{3.5}$
+- **Luminosity** follows from mass
 - **Temperature** follows from mass (through stellar structure)
 - **Radius** follows from $L$ and $T$: Stefan-Boltzmann
 - **Lifetime** follows from mass: $t \propto M^{-2.5}$
 - **Death** follows from mass: low mass → white dwarf; high mass → supernova → neutron star or black hole
+:::
+
+::: {.fragment}
+$$
+L \propto M^{3.5}
+$$
 :::
 
 ::: {.fragment .text-center .mt-2}
@@ -1198,7 +1204,7 @@ So $L \approx 47\,L_\odot$.
 :::
 
 ::: {.fragment .text-sm .text-muted .mt-1}
-*Mass Detective — Case Closed. The suspect has been identified: mass is the master variable. It controls everything. $L \propto M^{3.5}$.*
+*Mass Detective — Case Closed. The suspect has been identified: mass is the master variable. It controls everything.*
 :::
 
 ::: {.notes}
@@ -1218,7 +1224,11 @@ Two stars orbiting a common center of mass under Newtonian gravity
 
 **Inference:**
 From $(P, K_1, K_2) \rightarrow (M_1, M_2)$
-From many binaries $\rightarrow (L \propto M^{3.5})$
+From many binaries:
+
+$$
+L \propto M^{3.5}
+$$
 :::
 
 ::: {.notes}
@@ -1253,8 +1263,8 @@ From many binaries $\rightarrow (L \propto M^{3.5})$
 ::: {.incremental .text-sm}
 1. **Mass is the master variable** — determines luminosity, temperature, radius, lifetime, and death — but cannot be measured from a single star's light alone
 2. **Binary stars reveal masses** — visual (orbits on sky), spectroscopic (Doppler velocities), eclipsing (inclination + radii)
-3. **Newton's Kepler III** for binaries: $P^2 = 4\pi^2 a^3 / [G(M_1 + M_2)]$ gives total mass; center of mass ($M_1 a_1 = M_2 a_2$) gives the mass ratio
-4. **Mass-luminosity relation** ($L \propto M^{3.5}$) — the most important empirical scaling in stellar astrophysics
+3. **Newton's Kepler III** for binaries gives total mass; center-of-mass physics gives the mass ratio
+4. **Mass-luminosity relation** — the most important empirical scaling connecting mass to luminosity
 5. **Lifetime scales as $M^{-2.5}$** — massive stars die young; low-mass stars are nearly eternal
 :::
 
