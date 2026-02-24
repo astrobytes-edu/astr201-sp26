@@ -997,6 +997,7 @@ Why so steep?
 
 - Higher mass → higher central pressure
 - Higher temperature → nuclear reaction rates increase rapidly
+- Nuclear energy generation rates scale roughly as $\epsilon \propto T^n$, where $n \gg 1$
 - Small temperature increase → large luminosity increase
 :::
 
@@ -1157,11 +1158,15 @@ So $L \approx 47\,L_\odot$.
 ## Observable → Model → Inference
 
 ::: {.bg-muted .p-2 .text-sm}
-**Observable:** Periodic shifts in spectral-line wavelengths (Doppler oscillation); in eclipsing systems, periodic brightness dips.
+**Observable:**
+Periodic Doppler shifts in spectral lines (and eclipses, when present)
 
-**Model:** Two stars orbiting a common center of mass under Newtonian gravity. Kepler's third law connects orbital parameters to total mass. Newton's third law connects the center of mass to the mass ratio.
+**Model:**
+Two stars orbiting a common center of mass under Newtonian gravity
 
-**Inference:** From $P$, $K_1$, $K_2$: the individual stellar masses $M_1$ and $M_2$. From a large sample: the mass-luminosity relation — the most important empirical scaling in stellar astrophysics.
+**Inference:**
+From $(P, K_1, K_2) \rightarrow (M_1, M_2)$
+From many binaries $\rightarrow (L \propto M^{3.5})$
 :::
 
 ::: {.notes}
@@ -1213,7 +1218,7 @@ If you forget everything else from today, remember this:
 
 ::: {.fragment .fade-up}
 ::: {.r-fit-text}
-**Know the mass, know the fate.**
+**Measure the mass — the life story follows.**
 :::
 :::
 
