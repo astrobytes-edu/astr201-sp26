@@ -83,6 +83,23 @@ But you can't weigh a star from its light.
 
 ---
 
+## The Measurement Paradox
+
+You can measure:
+
+- Luminosity (distance + flux)
+- Temperature (spectrum)
+- Radius (Stefan–Boltzmann)
+- Composition (spectral lines)
+
+You cannot measure:
+
+- Mass
+
+**Mass controls everything — and it leaves no fingerprint in the photons.**
+
+---
+
 ## Today's Roadmap {background-image="/assets/images/common/cosmic-cliffs-jwst.png" background-opacity="0.3"}
 
 ::: {.bg-muted .p-2 .text-sm}
@@ -193,20 +210,18 @@ $$P^2 = \frac{4\pi^2\, r^3}{G\, M}$$
 
 ---
 
-## The Solution: Gravity
+## The Only Way Out
 
-If a star has a gravitational companion — another star orbiting it — orbital dynamics gives mass directly.
+Photons do not encode mass.
+Gravity does.
 
-. . .
+If we want mass, we must observe gravity in action.
 
-**Same physics as Module 1** (Kepler's laws, Newton's gravity) — now applied to binary stars.
-
-. . .
-
-Binary stars are nature's gift to astronomers: two bodies orbiting each other under gravity, revealing their masses through the physics you already know.
+Observable signature of gravity:
+**Motion.**
 
 ::: {.notes}
-~8–9 min. Transition slide. "We need to catch a star dancing with a partner. And it turns out, most stars oblige — because most stars have partners."
+~8–9 min. Transition slide. "If photons don't encode mass, then gravity has to do the work. Gravity leaves one observable trace: motion."
 :::
 
 ---
@@ -341,6 +356,25 @@ In 1844, Bessel predicted an invisible companion from the wobble of Sirius A's p
 
 ---
 
+## Connection: Exoplanet Radial Velocity
+
+Same Doppler physics as RV exoplanets.
+
+Key difference:
+
+- Exoplanet case: $M_{\text{planet}} \ll M_{\star}$
+- Binary case: $M_1 \sim M_2$
+
+Both use:
+
+$$
+\frac{\Delta \lambda}{\lambda_0} = \frac{v_r}{c}
+$$
+
+Binary stars are the symmetric version of exoplanet RV.
+
+---
+
 ## Single-Lined vs. Double-Lined
 
 :::: {.columns}
@@ -424,17 +458,32 @@ A system that is *both* an eclipsing binary *and* a double-lined spectroscopic b
 
 ---
 
-## Quick Check: Binary Type {.quiz-question background-color="#1a1a2e"}
+## When This Method Fails
 
-You observe a star whose H$\alpha$ line oscillates between $656.2~\text{nm}$ and $656.4~\text{nm}$ every $10~\text{days}$. What type of binary is this?
+- Face-on orbit → no Doppler signal
+- SB1 → mass ratio incomplete
+- Non-eclipsing SB2 → absolute masses uncertain
+- Post–main-sequence stars → mass–luminosity relation breaks
 
-- Visual binary — resolved stars on the sky
-- [Spectroscopic binary — periodic Doppler shifts reveal the orbit]{.correct}
-- Eclipsing binary — periodic brightness dips
-- Not enough information to determine
+Every inference method has blind spots.
+
+---
+
+## Ranking Challenge
+
+Rank the following by how completely they determine stellar masses:
+
+- Visual
+- SB1
+- SB2
+- Eclipsing
+- Eclipsing + SB2
+
+1 = least information  
+5 = most complete mass determination
 
 ::: {.notes}
-~21–22 min. Give 30 seconds. Press C to reveal. Answer: spectroscopic binary. The periodic wavelength oscillation is a Doppler wobble — exactly what we discussed in Lecture 3. From this you immediately get $P = 10~\text{days}$ and $K \approx c \times \Delta\lambda / \lambda_0 \approx 46~\text{km/s}$.
+~21–22 min. Give 45 seconds. Collect rankings before revealing or discussing. Keep the focus on what each method constrains vs. leaves ambiguous.
 :::
 
 ---
@@ -520,6 +569,12 @@ For two stars with comparable masses, Newton's full two-body form is:
 {{< include ../../../_includes/equations/kepler-binary.qmd >}}
 
 ::: {.fragment .text-sm}
+$a$ = total separation between the two stars
+
+$a = a_1 + a_2$
+:::
+
+::: {.fragment .text-sm}
 - $P$ = orbital period
 - $a = a_1 + a_2$ = **total** orbital separation
 - $M_1 + M_2$ = total system mass
@@ -603,6 +658,28 @@ Star 1 moves **slower** → closer to the center of mass → it's the [**heavier
 
 ---
 
+## Derive the Mass Ratio
+
+Given:
+
+$$
+M_1 a_1 = M_2 a_2
+$$
+
+$$
+v = \frac{2\pi a}{P}
+$$
+
+Show that:
+
+$$
+\frac{M_1}{M_2} = \frac{v_2}{v_1}
+$$
+
+Take 60 seconds. No calculators.
+
+---
+
 ## Step 3: Connecting Velocities to Orbits
 
 For circular orbits, each star's orbital speed is:
@@ -646,6 +723,16 @@ Without knowing $i$, we can only determine $M \sin^3 i$ — a **lower limit** on
 - Edge-on ($i = 90°$, $\sin i = 1$): we get the **true** mass
 - **Solution 1:** If the system is also eclipsing → $i \approx 90°$, problem solved
 - **Solution 2:** For a large random sample → $\langle \sin^3 i \rangle \approx 0.59$ (statistical correction)
+:::
+
+::: {.fragment .text-sm .mt-2}
+### Why $\sin^3 i$ Appears
+
+- Doppler measures $v \sin i$
+- Separation inferred from velocity introduces another $\sin i$
+- Kepler's law uses $a^3$ and introduces the third power
+
+Mass from spectroscopy alone gives $M \sin^3 i$.
 :::
 
 ::: {.notes}
@@ -750,6 +837,15 @@ $$M_2 = \frac{6.7\,M_\odot}{1 + 2.5} = 1.9\,M_\odot \qquad M_1 = 2.5 \times 1.9\
 ::: {.notes}
 ~38–40 min. Walk through. "CGS gives grams; divide by $M_\odot$. The sanity check confirms our seesaw intuition: the slower-moving star is the heavier one."
 :::
+
+---
+
+## Reverse Engineering
+
+If this system were not eclipsing:
+
+- What would we know?
+- What would remain uncertain?
 
 ---
 
@@ -862,6 +958,21 @@ The scatter is real — composition, age, evolutionary state all contribute. But
 - Applies to **main-sequence stars only** — not giants, not white dwarfs
 - *Scaling:* Double the mass → $2^{3.5} \approx 11\times$ the luminosity. Ten times the mass → ${\sim}3{,}000\times$
 - *Unit check:* Both sides are ratios (dimensionless). $\checkmark$
+:::
+
+::: {.fragment .text-sm .mt-2}
+**Applies only to main-sequence stars.**
+Giants and white dwarfs do NOT follow this relation.
+
+Luminosity depends on internal structure, not just total mass, once a star evolves.
+:::
+
+::: {.fragment .text-sm .mt-2}
+Why so steep?
+
+- Higher mass → higher central pressure
+- Higher temperature → nuclear reaction rates increase rapidly
+- Small temperature increase → large luminosity increase
 :::
 
 ::: {.fragment .mt-2}
@@ -1059,6 +1170,10 @@ Mass determines a star's luminosity, lifetime, and death — and binary stars ar
 - *"Can we measure mass for stars not in binaries?"* — Only indirectly, through model-dependent methods like spectroscopic parallax + mass-luminosity relation
 - *"What about triple or quadruple systems?"* — They exist! Same physics, harder analysis
 - *"Why doesn't the mass-luminosity relation work for giants?"* — Giants have evolved off the main sequence; their luminosity depends on evolutionary state, not just current mass
+:::
+
+::: {.fragment .text-center .mt-2}
+The main sequence is a mass sequence.
 :::
 
 ::: {.notes}
