@@ -147,6 +147,14 @@ website:
                 href: modules/module-02/slides/lecture-03-spectra-and-composition.qmd
               - text: "Reading"
                 href: modules/module-02/readings/lecture-03-spectra-and-composition-reading.qmd
+          - section: "Lecture 4: Weighing Stars"
+            contents:
+              - text: "Reading"
+                href: modules/module-02/readings/lecture-04-weighing-stars-reading.qmd
+          - section: "Lecture 5: The HR Diagram"
+            contents:
+              - text: "Reading"
+                href: modules/module-02/readings/lecture-05-hr-diagram-reading.qmd
 
       - section: "Module 3: Stellar Structure & Evolution"
         href: modules/module-03/index.qmd

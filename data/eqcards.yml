@@ -236,3 +236,45 @@ parallax_parsec:
     - "Parallax angle $p$ is in arcseconds"
     - "Small-angle regime (always satisfied for stellar parallax)"
     - "Background reference stars are effectively at infinity"
+
+kepler_binary:
+  predicts: "Given the orbital separation $a$ and total mass $M_1 + M_2$, it predicts the orbital period $P$ (or vice versa)."
+  depends: "Scales as $P \\propto a^{3/2}$ and $P \\propto (M_1 + M_2)^{-1/2}$."
+  says: "Newton's version of Kepler's third law — the *total mass* of a binary system determines how fast the two stars orbit each other at a given separation."
+  assumptions:
+    - "Approximately circular orbits (eccentricity $e \\approx 0$)"
+    - "Newtonian gravity"
+    - "Both masses contribute — this is the full two-body version"
+
+center_of_mass:
+  predicts: "Given the two masses $M_1$ and $M_2$, it predicts the ratio of their orbital radii $a_1/a_2$."
+  depends: "The more massive star orbits closer to the center of mass: $a_1/a_2 = M_2/M_1$."
+  says: "Newton's third law in action — both stars orbit the center of mass, but the heavier star has a smaller orbit."
+  assumptions:
+    - "Isolated two-body system"
+    - "No external forces"
+
+mass_luminosity:
+  predicts: "Given a main-sequence star's mass $M$, it predicts its luminosity $L$ (approximately)."
+  depends: "Scales as $L \\propto M^{3.5}$ — a steep power law."
+  says: "Mass is the master variable for main-sequence stars. Doubling the mass increases luminosity by roughly $2^{3.5} \\approx 11\\times$."
+  assumptions:
+    - "Star is on the main sequence (core hydrogen burning)"
+    - "Exponent $\\approx 3.5$ is an approximation — actual slope varies from $\\sim 2.3$ for $M < 0.43\\,M_\\odot$ to $\\sim 4$ for $M > 2\\,M_\\odot$"
+    - "Empirical relation derived from binary star mass measurements"
+
+distance_modulus:
+  predicts: "Given a star's apparent magnitude $m$ and absolute magnitude $M$, it predicts the distance $d$ (or vice versa)."
+  depends: "Scales as $(m - M) \\propto \\log_{10}(d)$. Every 5 magnitudes of distance modulus corresponds to a factor of 10 in distance."
+  says: "The difference between how bright a star *looks* and how bright it *is* encodes the distance. This is the inverse-square law in logarithmic form."
+  assumptions:
+    - "No interstellar extinction (dust absorption) — or extinction has been corrected"
+    - "Absolute magnitude $M$ is defined at $d = 10~\\text{pc}$"
+
+magnitude_flux:
+  predicts: "Given the flux ratio $F_1/F_2$ of two sources, it predicts their magnitude difference $m_1 - m_2$ (or vice versa)."
+  depends: "A factor of 100 in flux corresponds to exactly 5 magnitudes. Brighter = *smaller* (more negative) magnitude."
+  says: "Magnitudes are a logarithmic brightness scale — each step of 1 magnitude is a factor of $10^{0.4} \\approx 2.512$ in flux."
+  assumptions:
+    - "Same photometric band (same wavelength filter)"
+    - "Pogson's definition: 5 magnitudes = factor of 100 in flux"

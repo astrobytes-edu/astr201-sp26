@@ -169,3 +169,33 @@ parallax-parsec:
   anchor: "eq-parallax-parsec"
   include: "_includes/equations/parallax-parsec.qmd"
   card: "parallax_parsec"
+
+kepler-binary:
+  title: "Kepler's third law for binary systems"
+  anchor: "eq-kepler-binary"
+  include: "_includes/equations/kepler-binary.qmd"
+  card: "kepler_binary"
+
+center-of-mass:
+  title: "Center-of-mass condition (binary)"
+  anchor: "eq-center-of-mass"
+  include: "_includes/equations/center-of-mass.qmd"
+  card: "center_of_mass"
+
+mass-luminosity:
+  title: "Mass-luminosity relation (main sequence)"
+  anchor: "eq-mass-luminosity"
+  include: "_includes/equations/mass-luminosity.qmd"
+  card: "mass_luminosity"
+
+distance-modulus:
+  title: "Distance modulus"
+  anchor: "eq-distance-modulus"
+  include: "_includes/equations/distance-modulus.qmd"
+  card: "distance_modulus"
+
+magnitude-flux:
+  title: "Magnitude-flux relation (Pogson)"
+  anchor: "eq-magnitude-flux"
+  include: "_includes/equations/magnitude-flux.qmd"
+  card: "magnitude_flux"

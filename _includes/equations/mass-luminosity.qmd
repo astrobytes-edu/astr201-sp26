@@ -1,0 +1,3 @@
+$$
+\frac{L}{L_\odot} \approx \left(\frac{M}{M_\odot}\right)^{3.5}
+$$ {#eq-mass-luminosity}

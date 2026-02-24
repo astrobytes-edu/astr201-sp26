@@ -1,0 +1,3 @@
+$$
+M_1\, a_1 = M_2\, a_2
+$$ {#eq-center-of-mass}

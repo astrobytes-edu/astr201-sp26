@@ -1,0 +1,694 @@
+---
+title: "Lecture 4: The Last Piece — Weighing Stars"
+subtitle: "How binary star orbits reveal the most important property in astrophysics"
+author: "Dr. Anna Rosen"
+date: "2026-02-24"
+description: "Mass controls a star's luminosity, temperature, lifetime, and death — but you can't weigh a star from its light alone. Binary star systems, where two stars orbit a common center of mass, let us apply Newton's version of Kepler's third law to measure stellar masses directly. The result — the mass-luminosity relation — reveals that mass is the single most important property of a star."
+draft: false
+categories: [binary-stars, stellar-masses, mass-luminosity, orbits, spectroscopic-binaries]
+course: ASTR 201
+module: "2 - Discovering the HR Diagram"
+learning-objectives:
+  - Explain why mass is the most fundamental stellar property and why it cannot be measured from a single star's light alone
+  - Describe the three main types of binary star systems (visual, spectroscopic, eclipsing) and what each reveals about the orbit
+  - Apply Newton's version of Kepler's third law to binary star orbits to determine the total system mass
+  - Use the center-of-mass condition and radial velocity measurements to determine individual stellar masses
+  - Interpret the mass-luminosity relation and use it to predict stellar properties from mass (or infer mass from luminosity)
+  - Connect binary star mass measurements to the full Module 2 inference chain: distance → luminosity → temperature → composition → mass
+Concept-Throughline:
+  - Mass is the hidden variable — it controls everything about a star but cannot be measured from light alone
+  - Binary stars are nature's mass laboratories — orbital dynamics reveal what photons cannot
+  - Newton's version of Kepler's third law, applied to binary orbits, gives the total system mass
+  - The mass-luminosity relation shows that mass is the master variable for main-sequence stars — know the mass, predict everything else
+math-level: symbolic_with_interpretation
+mode: Draft
+prerequisites: "Lecture 3 (Module 1 — gravity, Kepler's laws, orbital mechanics), Lecture 3 (Module 2 — Doppler shift, spectral lines), algebra, scientific notation, logarithms"
+---
+
+## Learning Objectives
+
+After completing this reading, you should be able to:
+
+1. **Explain** why mass is the most fundamental stellar property and why it cannot be measured from a single, isolated star's light alone
+2. **Describe** visual, spectroscopic, and eclipsing binary systems and explain what each type reveals
+3. **Apply** Newton's version of Kepler's third law ($P^2 = 4\pi^2 a^3 / [G(M_1 + M_2)]$) to determine the total mass of a binary system
+4. **Use** the center-of-mass condition and radial velocity amplitudes to determine individual masses
+5. **Interpret** the mass-luminosity relation ($L \propto M^{3.5}$) and explain why it makes mass the "master variable" for main-sequence stars
+6. **Connect** mass measurement to the full Module 2 inference chain
+
+## Concept Throughline
+
+> *Mass is the most important thing about a star — and the one thing you can't see.* Every other property — luminosity, temperature, radius, lifetime, and how a star dies — follows from mass. But mass leaves no direct imprint on a star's light. To weigh a star, you need to catch it in a gravitational dance with a partner. Binary stars are nature's gift to astronomers: two bodies orbiting each other under gravity, revealing their masses through the physics you already know.
+
+::: {.callout-note title="Reading Map — Choose Your Track"}
+
+**Track A (Core, ~25 min):** Read **Parts 1–4** in order — the main text, all worked examples, and Quick Checks. Skip any box marked *Enrichment*. This gives you every concept and equation you need for homework and exams.
+
+**Track B (Full, ~35 min):** Read everything, including *Enrichment* boxes (historical context, inclination effects, mass function). These topics deepen your understanding and connect to research applications.
+
+*Both tracks cover all core learning objectives.*
+:::
+
+---
+
+::: {.callout-important}
+## The Big Idea
+
+**Mass determines a star's fate — but you can't weigh a star from its light alone.**
+
+In Lectures 1–3, you learned to measure a star's distance, luminosity, temperature, radius, and composition from photons. But none of these tells you the most consequential property: **mass**. A star's mass determines how brightly it shines, how hot its surface is, how long it lives, and how it dies. Yet mass is invisible — no spectral line, no color, no brightness measurement reveals it directly.
+
+**What you'll gain:** After this reading, you'll know how astronomers exploit gravitational physics — specifically, binary star orbits — to measure the one property that controls all the others. And you'll see that the resulting mass-luminosity relation is the most important empirical relation in stellar astrophysics.
+:::
+
+---
+
+## Part 1: The Hidden Variable
+
+### Why Mass Matters Most
+
+Consider two stars on the main sequence — the band where most stars spend most of their lives. One has mass $M = 0.5\,M_\odot$; the other has $M = 10\,M_\odot$. How do they compare?
+
+| Property | $0.5\,M_\odot$ star | $10\,M_\odot$ star | Ratio |
+|----------|---------------------|---------------------|-------|
+| Luminosity | $\sim 0.09\,L_\odot$ | $\sim 3{,}000\,L_\odot$ | $\sim 30{,}000\times$ |
+| Surface temperature | $\sim 3{,}800\,\text{K}$ | $\sim 25{,}000\,\text{K}$ | $\sim 7\times$ |
+| Radius | $\sim 0.5\,R_\odot$ | $\sim 6\,R_\odot$ | $\sim 12\times$ |
+| Main-sequence lifetime | $\sim 60\,\text{Gyr}$ | $\sim 20\,\text{Myr}$ | $\sim 3{,}000\times$ |
+| Spectral type | M | B | — |
+| Death | White dwarf | Core-collapse supernova | — |
+
+A factor of 20 in mass produces a factor of 30,000 in luminosity, a factor of 3,000 in lifetime, and completely different endpoints. **Mass is the master variable.** Change the mass, and everything else follows.
+
+### Why Mass Is Hidden
+
+So why can't we just "read" mass from a star's spectrum, the way we read temperature from spectral type or composition from line wavelengths?
+
+The problem is fundamental: **mass affects a star's light only indirectly**, through its influence on internal structure. A star's spectrum encodes surface properties — temperature, composition, surface gravity. Mass determines those surface properties, but the mapping from mass to surface isn't unique without a physical model connecting them. A red giant and a red dwarf can have similar surface temperatures but wildly different masses.
+
+Put differently: luminosity, temperature, and composition are **observables** — properties encoded directly in the photons reaching your detector. Mass is a **derived quantity** — you need a physical model (or a dynamical measurement) to get it.
+
+The solution is gravity. If a star has a gravitational companion — another star orbiting it — then orbital dynamics gives us the mass directly, through physics you already know from Module 1.
+
+::: {.callout-tip}
+## Think First
+
+Before reading further, recall from Module 1 (Lecture 3): Newton showed that Kepler's third law contains the *mass* of the central body. For a planet orbiting the Sun, we used $P^2 = 4\pi^2 r^3 / (GM)$. What changes when *both* objects have comparable mass — like two stars orbiting each other?
+
+*(Answer: you replace $M$ with $M_1 + M_2$ and $r$ with the total orbital separation $a$.)*
+:::
+
+---
+
+## Part 2: Binary Stars — Nature's Mass Laboratories
+
+### Most Stars Have Partners
+
+One of the most important facts in stellar astronomy: **roughly half of all Sun-like stars are in binary or multiple star systems.** For massive stars (O and B types), the binary fraction is even higher — perhaps 70% or more. Binary stars are not rare curiosities. They are the norm.
+
+This is fortunate, because binary orbits are the *only* direct way to measure stellar masses. Without binaries, the mass-luminosity relation — and much of our understanding of stellar physics — would be inaccessible.
+
+So the challenge is clear: **how do you weigh something you can't touch, can't visit, and whose mass leaves no direct imprint on the light it emits?** The answer is to watch it move. If a star has a gravitational partner, Newton's laws let you convert orbital motion into mass — the same physics you used in Module 1 to weigh the Sun from Earth's orbit. Astronomers have found three complementary ways to detect and exploit binary orbits, each revealing different pieces of the puzzle. Let's see what each strategy gives us and what it leaves unknown.
+
+::: {.callout-tip title="Interactive Demo: Binary Orbits"}
+Before diving in, explore how binary stars orbit their common center of mass — adjust masses, separations, and eccentricities to build intuition for what observers actually see: [Binary Orbits Demo](https://astrobytes-edu.github.io/cosmic-playground/exhibits/binary-orbits/){target="_blank"}
+:::
+
+### Visual Binaries: Resolved on the Sky
+
+<!-- FIGURE RECOMMENDATION: binary-star-visual
+     Schematic showing two stars resolved as separate points of light,
+     with their orbital paths traced around a common center of mass.
+     Mark a_1, a_2, and the center of mass. Show multiple epochs to
+     indicate orbital motion over years/decades. -->
+
+A **visual binary** is a pair of stars close enough to us (and far enough apart from each other) that we can resolve both stars as separate points of light through a telescope. By tracking their positions over years or decades, we can map out their orbits on the sky.
+
+**What visual binaries give us:**
+
+- **Orbital period** $P$ (from watching the orbit repeat)
+- **Angular size of the orbit** on the sky (in arcseconds)
+- **If the distance is known** (from parallax), the angular orbit converts to a physical separation $a$ in AU or cm
+- From $P$ and $a$, Kepler's third law gives the **total mass** $M_1 + M_2$
+- If we can track *both* stars' orbits around the center of mass, we also get the **mass ratio** $M_1/M_2$
+
+**Note the critical role of distance:** Without a parallax measurement (Lecture 1), the angular orbit cannot be converted to a physical separation, and Kepler III cannot yield the mass. Distance — as always — is the master key.
+
+**Limitation:** Visual binaries require wide separations (long periods — often decades to centuries) and nearby systems. They're relatively rare in practice.
+
+**Classic example:** Sirius A and Sirius B, first resolved in 1862. Sirius A is a bright A-type star ($2.06\,M_\odot$); Sirius B is a white dwarf ($1.02\,M_\odot$). Their orbital period is $50.1~\text{yr}$, and the system is only $2.64~\text{pc}$ away, making it one of the best-measured visual binaries.
+
+::: {.callout-note title="Evidence Collected" .evidence-clue}
+**Strategy 1 — Watch the sky:** If we can *see* both stars move, we get orbits on the sky → $P$ and $a$ → total mass. But this requires nearby, widely separated pairs — rare and slow.
+:::
+
+### Spectroscopic Binaries: Doppler Reveals the Orbit
+
+Most binary stars are too close together and too far from Earth to resolve visually. But we can detect them through the **Doppler effect** — the very tool you learned in Lecture 3.
+
+<!-- FIGURE RECOMMENDATION: binary-star-spectroscopic-orbit
+     Top panel: Schematic of two stars orbiting center of mass, shown at
+     4 orbital phases (approaching, perpendicular, receding, perpendicular).
+     Bottom panel: Corresponding radial velocity curve showing sinusoidal
+     oscillation of v_r vs. time for both stars, with K_1 and K_2 labeled. -->
+
+If a star is in a binary system, it orbits the center of mass. During half the orbit, it moves toward us; during the other half, it moves away. Its spectral lines shift back and forth — blueshifted when approaching, redshifted when receding — with a period equal to the orbital period.
+
+A **spectroscopic binary** is detected by this periodic Doppler wobble. In fact, Lecture 3 already showed you a preview: the worked example of a star with H$\alpha$ oscillating between $656.25~\text{nm}$ and $656.35~\text{nm}$ over $4.0~\text{days}$. That was a spectroscopic binary.
+
+**What spectroscopic binaries give us:**
+
+- **Orbital period** $P$ (from the Doppler oscillation period)
+- **Radial velocity amplitude** $K$ (half the peak-to-peak velocity swing) — directly from the Doppler shift
+- If both stars' lines are visible (a **double-lined spectroscopic binary**, or SB2), we get $K_1$ and $K_2$ for each star separately
+
+**Key connection to Lecture 3:** The Doppler formula $\Delta\lambda/\lambda_0 = v_r/c$ converts wavelength shifts to velocities. Now we use those velocities *as a function of time* to trace out the orbit.
+
+::: {.callout-warning title="Single-Lined vs. Double-Lined"}
+In a **single-lined spectroscopic binary** (SB1), only one star's lines are visible — the companion is too faint. You get $K_1$ for the brighter star, but not $K_2$. This gives a constraint on the masses but not the individual masses directly (you need additional information).
+
+In a **double-lined spectroscopic binary** (SB2), both stars' spectral lines are visible and shift in *opposite directions* (when star 1 is approaching, star 2 is receding). This gives both $K_1$ and $K_2$, which — combined with $P$ — yields both individual masses.
+:::
+
+::: {.callout-note title="Evidence Collected" .evidence-clue}
+**Strategy 2 — Read the Doppler shifts:** Periodic wavelength oscillations give $P$ and $K$ — velocity amplitudes that encode the orbit. Works for close pairs at any distance, but we only measure the *line-of-sight* component. Something is still hidden: the orbital inclination.
+:::
+
+### Eclipsing Binaries: Light Curves Reveal Geometry
+
+<!-- FIGURE RECOMMENDATION: eclipsing-binary-light-curve
+     Top: Edge-on schematic of binary at 4 phases (no eclipse, primary
+     eclipse, between eclipses, secondary eclipse).
+     Bottom: Light curve showing total brightness vs. time with two dips
+     of different depths. Label primary and secondary eclipse. -->
+
+When the orbital plane is nearly edge-on to our line of sight, the stars periodically pass in front of each other. These are **eclipsing binaries**, and they produce characteristic dips in the combined light — a **light curve**.
+
+**What eclipsing binaries give us:**
+
+- **Orbital period** $P$ (from the spacing between eclipses)
+- **Relative stellar radii** (from the duration and shape of the eclipses)
+- **Inclination** $i \approx 90°$ (the orbit must be nearly edge-on for eclipses to occur)
+- **Temperature ratio** (from the relative depths of primary and secondary eclipses)
+
+The last point is particularly valuable: eclipsing binaries tell us the orbital inclination is close to $90°$, which removes the biggest uncertainty in spectroscopic binary measurements (more on this below).
+
+**The gold standard:** A system that is *both* an eclipsing binary *and* a double-lined spectroscopic binary (SB2) gives us everything — period, both velocity amplitudes, inclination, and both radii. These systems provide the most precise stellar mass measurements available: uncertainties of $1\text{–}2\%$.
+
+**Classic example:** Algol ($\beta$ Persei), one of the first-known eclipsing binaries, dips in brightness every $2.87~\text{days}$ as its cooler companion passes in front of the hot primary.
+
+::: {.callout-note title="Evidence Collected" .evidence-clue}
+**Strategy 3 — Watch the light curve:** Eclipses nail down the inclination ($i \approx 90°$) and give us stellar radii as a bonus. Combine strategies 2 + 3 in the same system, and we can measure *everything* — the gold standard for stellar mass determination.
+:::
+
+### Summary: What Each Type Reveals
+
+| Binary Type | How Detected | What It Gives | What It Misses |
+|-------------|-------------|---------------|----------------|
+| **Visual** | Resolved on sky | $P$, $a$ (with distance), mass ratio | Needs decades of observation; nearby only |
+| **Spectroscopic** | Doppler wobble | $P$, $K_1$ (and $K_2$ if SB2) | Inclination $i$ unknown (only $v \sin i$) |
+| **Eclipsing** | Light curve dips | $P$, $i \approx 90°$, relative radii, $T$ ratio | Rare geometry (edge-on only) |
+| **Eclipsing + SB2** | Both | Everything: $M_1$, $M_2$, $R_1$, $R_2$, $T_1/T_2$ | Rarest; requires edge-on + bright enough for spectra |
+
+::: {.callout-tip}
+## Check Yourself
+
+1. Why can't you measure a star's mass from its spectrum alone?
+2. A binary star system has an orbital period of $30~\text{yr}$ and the stars are resolved in a telescope. What type of binary is this?
+3. You observe a star whose H$\alpha$ line oscillates between $656.2~\text{nm}$ and $656.4~\text{nm}$ every $10~\text{days}$. What type of binary is this, and what can you immediately determine?
+
+::: {.callout-note collapse="true"}
+## Solutions
+
+1. Mass affects a star's light *indirectly*, through internal structure. The spectrum encodes surface properties (temperature, composition, surface gravity), but different masses can produce similar surface conditions (e.g., a red giant and a red dwarf). You need a dynamical measurement — gravity acting on a companion — to get mass directly.
+
+2. This is a **visual binary** — the stars are spatially resolved, and the long period ($30~\text{yr}$) is typical of visual binaries with wide separations.
+
+3. This is a **spectroscopic binary** (detected via periodic Doppler shifts). You can immediately determine: (a) the period $P = 10~\text{days}$; (b) the velocity amplitude $K = c \times \Delta\lambda / \lambda_0 = (3.0 \times 10^5~\text{km/s}) \times (0.1~\text{nm} / 656.3~\text{nm}) \approx 46~\text{km/s}$.
+:::
+:::
+
+::: {.callout-tip title="Argue With a Peer"}
+Your lab partner says: "A star whose spectral lines shift periodically *and* whose brightness dips periodically — that's the jackpot. We get everything we need to measure both masses." Explain *why* this combination is so powerful. What specific problem does the eclipsing geometry solve that spectroscopy alone cannot?
+:::
+
+---
+
+## Part 3: Extracting Masses from Orbits
+
+We now have the observational tools. How do we go from measured quantities ($P$, $K_1$, $K_2$) to stellar masses ($M_1$, $M_2$)? The physics is entirely from Module 1 — Kepler's third law and Newton's third law — applied to a two-body system.
+
+### Step 1: Newton's Kepler III for Binaries
+
+In Module 1 (Lecture 3), you derived Newton's version of Kepler's third law for a planet orbiting a star. The key insight was that the *mass of the central body* appears in the equation:
+
+$$
+P^2 = \frac{4\pi^2\, r^3}{G M}
+$$
+
+But that assumed the planet's mass was negligible compared to the star's ($m \ll M$). In a binary star system, both masses matter. Newton's full two-body form is:
+
+{{< include ../../../_includes/equations/kepler-binary.qmd >}}
+
+{{< eqrefcard kepler-binary >}}
+
+where:
+
+- $P$ is the orbital period
+- $a = a_1 + a_2$ is the **total** orbital separation (the semi-major axis of the *relative* orbit)
+- $M_1$ and $M_2$ are the two stellar masses
+- $G = 6.67 \times 10^{-8}~\text{cm}^3\,\text{g}^{-1}\,\text{s}^{-2}$ is Newton's gravitational constant
+
+**What changed from the planetary case?** Two things: (1) $M$ became $M_1 + M_2$, because both bodies contribute to the gravitational interaction, and (2) $r$ became $a$, the total separation between the two stars (not the distance from either star to the center of mass).
+
+::: {.callout-note}
+## Unit Check
+
+$$
+[P^2] = \frac{[\text{cm}^3]}{[\text{cm}^3\,\text{g}^{-1}\,\text{s}^{-2}][\text{g}]} = \frac{\text{cm}^3}{\text{cm}^3\,\text{s}^{-2}} = \text{s}^2\ \checkmark
+$$
+:::
+
+**Rearranging for total mass:**
+
+$$
+M_1 + M_2 = \frac{4\pi^2\, a^3}{G\, P^2}
+$$
+
+If we measure $P$ and $a$, we get the **total mass** of the system. But we still need to separate $M_1$ from $M_2$.
+
+### Step 2: The Center-of-Mass Condition
+
+Both stars orbit the **center of mass** of the system — the balance point where the gravitational pulls are equal. Newton's third law guarantees this: if star 1 pulls on star 2 with force $F$, then star 2 pulls on star 1 with force $F$ in the opposite direction. Both accelerate, but the more massive star has a smaller orbit.
+
+<!-- FIGURE RECOMMENDATION: center-of-mass-binary
+     Two stars of different sizes orbiting a common center of mass (marked
+     with ×). Show a_1 (distance from M_1 to CM) and a_2 (distance from
+     M_2 to CM), with a = a_1 + a_2. Emphasize that the heavier star
+     has the smaller orbit. -->
+
+The center-of-mass condition is:
+
+{{< include ../../../_includes/equations/center-of-mass.qmd >}}
+
+{{< eqrefcard center-of-mass >}}
+
+where $a_1$ is star 1's distance from the center of mass, and $a_2$ is star 2's distance from the center of mass. This means:
+
+$$
+\frac{M_1}{M_2} = \frac{a_2}{a_1}
+$$
+
+The **mass ratio equals the inverse ratio of orbital radii.** The heavier star has the smaller orbit — it barely moves, while the lighter star swings wide around it.
+
+### Step 3: Connecting Velocities to Orbits
+
+For spectroscopic binaries, we don't measure $a_1$ and $a_2$ directly — we measure **velocities**. For circular orbits, each star's orbital speed is:
+
+$$
+v_1 = \frac{2\pi\, a_1}{P} \qquad;\qquad v_2 = \frac{2\pi\, a_2}{P}
+$$
+
+Since the period $P$ is the same for both stars (they orbit together), the velocity ratio equals the orbit-size ratio:
+
+$$
+\frac{v_1}{v_2} = \frac{a_1}{a_2} = \frac{M_2}{M_1}
+$$
+
+**In practice**, what we measure from Doppler shifts are the **radial velocity amplitudes** $K_1$ and $K_2$ — the maximum line-of-sight velocities. For an orbit with inclination $i$ (where $i = 90°$ is edge-on and $i = 0°$ is face-on):
+
+$$
+K_1 = v_1 \sin i \qquad;\qquad K_2 = v_2 \sin i
+$$
+
+The ratio of $K_1$ to $K_2$ is independent of $i$ (the $\sin i$ cancels):
+
+$$
+\frac{M_1}{M_2} = \frac{K_2}{K_1}
+$$
+
+This is powerful: **the mass ratio comes directly from the velocity ratio, regardless of the orbital inclination.**
+
+### Step 4: Putting It All Together
+
+For a double-lined spectroscopic binary (SB2) — where we measure $P$, $K_1$, and $K_2$ — we can determine both masses if we know the inclination $i$.
+
+From the velocities and period, the orbital radii are:
+
+$$
+a_1 \sin i = \frac{K_1\, P}{2\pi} \qquad;\qquad a_2 \sin i = \frac{K_2\, P}{2\pi}
+$$
+
+The total separation (projected):
+
+$$
+a \sin i = (a_1 + a_2) \sin i = \frac{(K_1 + K_2)\, P}{2\pi}
+$$
+
+Substituting into Kepler's third law:
+
+$$
+M_1 + M_2 = \frac{4\pi^2\,(a \sin i)^3}{G\, P^2 \sin^3 i} = \frac{(K_1 + K_2)^3\, P}{2\pi\, G\, \sin^3 i}
+$$
+
+Combined with the mass ratio $M_1/M_2 = K_2/K_1$, we can solve for each mass individually.
+
+::: {.callout-warning title="The Inclination Problem"}
+Notice the $\sin^3 i$ in the denominator. If we don't know the inclination angle $i$, we can only determine $M \sin^3 i$ — a lower limit on the mass. For a face-on orbit ($i = 0°$), there's no radial velocity at all. For an edge-on orbit ($i = 90°$, $\sin i = 1$), we get the true mass.
+
+**Solution 1:** If the system is also an eclipsing binary, we know $i \approx 90°$ — problem solved.
+
+**Solution 2:** For a large sample of randomly oriented binaries, $\langle \sin^3 i \rangle \approx 0.59$ — the average statistical correction factor.
+:::
+
+::: {.callout-note}
+## Worked Example: Weighing a Spectroscopic Binary
+
+**Problem:** An eclipsing, double-lined spectroscopic binary has:
+
+- Orbital period: $P = 3.00~\text{days} = 2.59 \times 10^5~\text{s}$
+- Star 1 radial velocity amplitude: $K_1 = 80~\text{km/s} = 8.0 \times 10^6~\text{cm/s}$
+- Star 2 radial velocity amplitude: $K_2 = 200~\text{km/s} = 2.0 \times 10^7~\text{cm/s}$
+- Inclination: $i = 90°$ (eclipsing), so $\sin i = 1$
+
+Find the individual masses $M_1$ and $M_2$.
+
+**Solution:**
+
+**Step 1 — Mass ratio from velocity ratio.**
+
+$$\frac{M_1}{M_2} = \frac{K_2}{K_1} = \frac{200~\text{km/s}}{80~\text{km/s}} = 2.5$$
+
+Star 1 is 2.5 times more massive than star 2. (The more massive star moves *slower* — it's closer to the center of mass.)
+
+**Step 2 — Total separation from velocities and period.**
+
+$$a = a_1 + a_2 = \frac{(K_1 + K_2)\, P}{2\pi} = \frac{(8.0 \times 10^6 + 2.0 \times 10^7)~\text{cm/s} \times 2.59 \times 10^5~\text{s}}{2\pi}$$
+
+$$a = \frac{2.8 \times 10^7~\text{cm/s} \times 2.59 \times 10^5~\text{s}}{6.28} = \frac{7.25 \times 10^{12}~\text{cm}}{6.28} = 1.15 \times 10^{12}~\text{cm}$$
+
+For reference: $1~\text{AU} = 1.50 \times 10^{13}~\text{cm}$, so $a \approx 0.077~\text{AU}$ — a tight orbit.
+
+**Step 3 — Total mass from Kepler's third law.**
+
+$$M_1 + M_2 = \frac{4\pi^2\, a^3}{G\, P^2} = \frac{4\pi^2 \times (1.15 \times 10^{12}~\text{cm})^3}{(6.67 \times 10^{-8}~\text{cm}^3\,\text{g}^{-1}\,\text{s}^{-2}) \times (2.59 \times 10^5~\text{s})^2}$$
+
+Numerator: $4\pi^2 \times 1.52 \times 10^{36}~\text{cm}^3 = 6.01 \times 10^{37}~\text{cm}^3$
+
+Denominator: $6.67 \times 10^{-8} \times 6.71 \times 10^{10} = 4.47 \times 10^{3}~\text{cm}^3\,\text{g}^{-1}$
+
+$$M_1 + M_2 = \frac{6.01 \times 10^{37}}{4.47 \times 10^{3}}~\text{g} = 1.34 \times 10^{34}~\text{g}$$
+
+Convert to solar masses: $M_\odot = 1.99 \times 10^{33}~\text{g}$
+
+$$M_1 + M_2 = \frac{1.34 \times 10^{34}~\text{g}}{1.99 \times 10^{33}~\text{g}} = 6.7\,M_\odot$$
+
+**Step 4 — Individual masses from mass ratio.**
+
+From $M_1/M_2 = 2.5$ and $M_1 + M_2 = 6.7\,M_\odot$:
+
+$$M_2 = \frac{6.7\,M_\odot}{1 + 2.5} = \frac{6.7}{3.5}\,M_\odot = 1.9\,M_\odot$$
+
+$$M_1 = 2.5 \times 1.9\,M_\odot = 4.8\,M_\odot$$
+
+**Unit check:** We started with cm, s, and $G$ in CGS → got grams → converted to $M_\odot$. $\checkmark$
+
+**Sanity check:** Star 1 ($K_1 = 80~\text{km/s}$) moves slower → heavier → $4.8\,M_\odot$. Star 2 ($K_2 = 200~\text{km/s}$) moves faster → lighter → $1.9\,M_\odot$. A $4.8\,M_\odot$ star would be a late B-type star — consistent with being the brighter component. $\checkmark$
+:::
+
+---
+
+### The Scaling Approach: Using Solar Units
+
+The worked example above used full CGS arithmetic — instructive but laborious. In practice, astronomers use a **scaling version** of Kepler's third law that avoids large numbers entirely.
+
+For the Sun-Earth system: $P_\oplus = 1~\text{yr}$, $a_\oplus = 1~\text{AU}$, $M_\odot + M_\oplus \approx M_\odot$. So:
+
+$$
+(1~\text{yr})^2 = \frac{4\pi^2\,(1~\text{AU})^3}{G\,M_\odot}
+$$
+
+Dividing the binary equation by this:
+
+$$
+\left(\frac{P}{1~\text{yr}}\right)^2 = \frac{(a/1~\text{AU})^3}{(M_1 + M_2)/M_\odot}
+$$
+
+or equivalently:
+
+$$
+\boxed{\frac{M_1 + M_2}{M_\odot} = \frac{(a/\text{AU})^3}{(P/\text{yr})^2}}
+$$
+
+**This is the astronomer's working version of Kepler III.** All the constants ($4\pi^2$, $G$) are absorbed into the choice of units. If you measure $a$ in AU and $P$ in years, you get total mass in solar masses — no calculator needed for order-of-magnitude work.
+
+::: {.callout-tip}
+## Check Yourself: Scaling Kepler III
+
+1. A visual binary has period $P = 50~\text{yr}$ and semimajor axis $a = 20~\text{AU}$. What is the total mass?
+
+2. Two equal-mass stars orbit each other with $P = 1~\text{yr}$ at separation $a = 1~\text{AU}$. What is each star's mass?
+
+3. If you double the orbital separation while keeping the total mass fixed, by what factor does the period increase?
+
+::: {.callout-note collapse="true"}
+## Solutions
+
+1. $M_1 + M_2 = \frac{20^3}{50^2} = \frac{8{,}000}{2{,}500} = 3.2\,M_\odot$
+
+2. $M_1 + M_2 = \frac{1^3}{1^2} = 1.0\,M_\odot$. If equal mass: $M_1 = M_2 = 0.5\,M_\odot$.
+
+3. From $P^2 \propto a^3$: $P \propto a^{3/2}$. Doubling $a$ gives $P \to 2^{3/2}\,P = 2.83\,P$. The period increases by a factor of $\sim 2.8$.
+:::
+:::
+
+::: {.callout-note collapse="true" title="Enrichment: The Mass Function (SB1 Systems)"}
+
+What if only one star's lines are visible — a single-lined spectroscopic binary (SB1)? You measure $P$ and $K_1$, but not $K_2$. Can you still learn anything about mass?
+
+Yes, but you get a combination called the **mass function**:
+
+$$
+f(M_2) = \frac{M_2^3 \sin^3 i}{(M_1 + M_2)^2} = \frac{K_1^3\, P}{2\pi\, G}
+$$
+
+The right side is entirely measured quantities. The left side contains three unknowns ($M_1$, $M_2$, $i$). So the mass function is a *lower limit* on $M_2$ (since $\sin i \leq 1$ and the left side is maximized when $M_1 \to 0$).
+
+If you have an independent estimate of $M_1$ (e.g., from its spectral type), you can constrain $M_2$ more tightly. This technique is how astronomers discovered some of the first stellar-mass black holes — the unseen companion was too massive to be a neutron star.
+:::
+
+We now have multiple techniques for measuring stellar masses — visual binaries, spectroscopic binaries, eclipsing systems, and combinations thereof. Over more than a century, astronomers have applied them to hundreds of systems. The question that motivated this entire reading — *what role does mass play?* — finally has a definitive, quantitative answer.
+
+---
+
+## Part 4: The Mass-Luminosity Relation — The Empirical Payoff
+
+### Building the Relation from Data
+
+Astronomers have spent over a century measuring masses of binary stars. For each system where individual masses can be determined, the star's luminosity is also measured (from its apparent brightness and distance). You might expect the results to be messy — after all, stars differ in composition, age, rotation, and evolutionary state. With so many variables, surely mass alone can't predict luminosity?
+
+It can. When you plot these data — mass on the horizontal axis, luminosity on the vertical axis, both in solar units, both on logarithmic scales — the scatter everyone expected simply isn't there. Instead, main-sequence stars fall on a remarkably tight relation.
+
+{{< fig mass-luminosity-plot >}}
+
+**Main-sequence stars fall on a tight power law:**
+
+{{< include ../../../_includes/equations/mass-luminosity.qmd >}}
+
+{{< eqrefcard mass-luminosity >}}
+
+The exponent $3.5$ is an approximation — the actual relationship is slightly steeper at high masses (${\sim}4$ for $M > 2\,M_\odot$) and shallower at low masses (${\sim}2.3$ for $M < 0.43\,M_\odot$). But $3.5$ captures the essential behavior across a wide range.
+
+### What the Relation Tells Us
+
+The steepness of the mass-luminosity relation is the key. A modest change in mass produces a dramatic change in luminosity:
+
+| Mass ($M_\odot$) | $L/L_\odot \approx (M/M_\odot)^{3.5}$ | Factor relative to Sun |
+|---|---|---|
+| $0.1$ | $0.1^{3.5} = 3.2 \times 10^{-4}$ | $3{,}000\times$ fainter |
+| $0.5$ | $0.5^{3.5} = 0.088$ | $11\times$ fainter |
+| $1.0$ | $1.0$ | $1\times$ (the Sun) |
+| $2.0$ | $2.0^{3.5} = 11.3$ | $11\times$ brighter |
+| $10$ | $10^{3.5} = 3{,}160$ | $3{,}200\times$ brighter |
+| $50$ | $50^{3.5} = 8.8 \times 10^5$ | $880{,}000\times$ brighter |
+
+The full range of main-sequence masses (${\sim}0.08\,M_\odot$ to ${\sim}150\,M_\odot$) spans about three orders of magnitude — a factor of ${\sim}2{,}000$ in mass. But the luminosity range spans **ten orders of magnitude** — a factor of ${\sim}10^{10}$!
+
+### Why Mass Controls Lifetime
+
+Here's a beautiful consequence. A star's hydrogen fuel available for nuclear fusion scales roughly with its total mass $M$. Its luminosity — the rate at which it burns that fuel — scales as $M^{3.5}$. So the main-sequence lifetime is:
+
+$$
+t_{\text{MS}} \sim \frac{\text{fuel}}{\text{burn rate}} \sim \frac{M}{L} \propto \frac{M}{M^{3.5}} = M^{-2.5}
+$$
+
+**More massive stars live *much* shorter lives.** The Sun's main-sequence lifetime is about $10~\text{Gyr}$. A $10\,M_\odot$ star: $t \sim 10 \times 10^{-2.5}~\text{Gyr} \approx 30~\text{Myr}$ — roughly 300 times shorter. A $0.5\,M_\odot$ star: $t \sim 10 \times 0.5^{-2.5}~\text{Gyr} \approx 57~\text{Gyr}$ — longer than the current age of the universe.
+
+::: {.callout-important title="Connection: Mass as the Master Variable"}
+
+This is why mass is the single most important property of a star:
+
+- **Luminosity** follows from mass: $L \propto M^{3.5}$
+- **Temperature** follows from mass (through stellar structure)
+- **Radius** follows from $L$ and $T$: $R \propto L^{1/2} T^{-2}$ (Stefan-Boltzmann)
+- **Lifetime** follows from mass: $t \propto M^{-2.5}$
+- **Death** follows from mass: low mass → white dwarf; high mass → supernova → neutron star or black hole
+
+**Know the mass, predict the fate.** This is why the mass-luminosity relation is the single most important empirical relation in stellar astrophysics — and why binary stars, which give us masses, are so precious.
+:::
+
+::: {.callout-tip}
+## Check Yourself
+
+1. Using the mass-luminosity relation, estimate the luminosity of a $5\,M_\odot$ main-sequence star in solar luminosities.
+
+2. Estimate the main-sequence lifetime of a $5\,M_\odot$ star, given that the Sun's is ${\sim}10~\text{Gyr}$.
+
+3. Two main-sequence stars have luminosities $L_A = 100\,L_\odot$ and $L_B = 0.01\,L_\odot$. Estimate the ratio of their masses.
+
+4. Why does the mass-luminosity relation apply only to main-sequence stars and not to giants or white dwarfs?
+
+::: {.callout-note collapse="true"}
+## Solutions
+
+1. $L \approx (5)^{3.5}\,L_\odot = 5^{3.5}\,L_\odot$. Calculate: $5^3 = 125$, $5^{0.5} = 2.24$, so $5^{3.5} = 125 \times 2.24 \approx 280\,L_\odot$.
+
+2. $t_{\text{MS}} \approx 10~\text{Gyr} \times (5)^{-2.5} = 10~\text{Gyr} / 5^{2.5}$. Calculate: $5^2 = 25$, $5^{0.5} = 2.24$, so $5^{2.5} = 56$. Thus $t \approx 10/56~\text{Gyr} \approx 0.18~\text{Gyr} = 180~\text{Myr}$.
+
+3. $L \propto M^{3.5}$, so $M \propto L^{1/3.5} = L^{0.286}$. The luminosity ratio is $100/0.01 = 10{,}000 = 10^4$. The mass ratio is $(10^4)^{0.286} = 10^{1.14} \approx 14$. Star A is about 14 times more massive than star B.
+
+4. The mass-luminosity relation is an *empirical* relationship for stars in the hydrogen-burning equilibrium of the main sequence. Giants have evolved off the main sequence — their luminosity depends on their evolutionary state, not just their current mass. White dwarfs are stellar remnants that no longer burn fuel — their luminosity comes from residual thermal cooling, not nuclear reactions. In both cases, the simple $L \propto M^{3.5}$ scaling breaks down.
+:::
+:::
+
+---
+
+## Observable → Model → Inference: The Binary Star Chain
+
+Let's trace the full O→M→I framework for binary star mass measurement:
+
+**Observable:** Periodic shifts in spectral line wavelengths (Doppler oscillation). In eclipsing systems: periodic brightness dips.
+
+**Model:** Two stars orbiting a common center of mass under Newtonian gravity. Kepler's third law connects orbital parameters to total mass. Newton's third law connects the center of mass to the mass ratio.
+
+**Inference:** From the period $P$ and velocity amplitudes $K_1$, $K_2$: the individual stellar masses $M_1$ and $M_2$. From a large sample: the mass-luminosity relation — the most important empirical scaling in stellar astrophysics.
+
+---
+
+::: {.callout-important title="Connection: The Module 2 Inference Chain — Complete"}
+
+Each lecture in Module 2 has added one link. The chain is now complete:
+
+| Lecture | Tool | Question Answered | What It Unlocks |
+|---------|------|-------------------|-----------------|
+| 1 | Parallax → distance | *How far?* | Distance $d$; then luminosity $L = 4\pi d^2 F$ |
+| 2 | Color/flux → temperature; Stefan-Boltzmann | *How hot? How big?* | Temperature $T$; radius $R$ from $L$ and $T$ |
+| 3 | Spectral lines → composition, Doppler | *What's it made of? How is it moving?* | Composition; radial velocity $v_r$ |
+| **4** | **Binary orbits → mass** | ***How heavy?*** | **Mass $M$; mass-luminosity relation** |
+
+**Combined:** From photons alone, we can now characterize every fundamental stellar property — distance, luminosity, temperature, radius, composition, and mass. **Next time:** We put everything on one diagram — the HR diagram — and discover that the patterns it reveals demand a physical explanation.
+:::
+
+---
+
+## Practice Problems
+
+**Useful constants:** $G = 6.67 \times 10^{-8}~\text{cm}^3\,\text{g}^{-1}\,\text{s}^{-2}$, $M_\odot = 1.99 \times 10^{33}~\text{g}$, $L_\odot = 3.828 \times 10^{33}~\text{erg/s}$, $1~\text{AU} = 1.496 \times 10^{13}~\text{cm}$, $1~\text{yr} = 3.156 \times 10^7~\text{s}$, $c = 3.0 \times 10^5~\text{km/s}$.
+
+### Conceptual
+
+<!-- Problem: Conceptual / Connection / O→M→I / Tools: Model-Inversion / ⭐ -->
+1. ⭐ **Which star moves more?** In a spectroscopic binary, Star A has radial velocity amplitude $K_A = 30~\text{km/s}$ and Star B has $K_B = 90~\text{km/s}$.
+   - (a) Which star is more massive? Explain using the center-of-mass condition ($M_1 a_1 = M_2 a_2$).
+   - (b) What is the mass ratio $M_A/M_B$?
+   - (c) If you could watch this system as a visual binary, which star would trace the larger orbit on the sky?
+
+<!-- Problem: Conceptual / Connection / O→M→I / Tools: Uncertainty/Assumptions / ⭐⭐ -->
+2. ⭐⭐ **The inclination problem.** A student says: "We measured $K_1$ and $K_2$ for a spectroscopic binary, so we know both masses exactly." Explain why this is wrong. Under what circumstances *can* we determine the true masses? Describe two solutions to the inclination problem discussed in this reading.
+
+<!-- Problem: Conceptual / Connection / — / Tools: Scaling/Ratio / ⭐ -->
+3. ⭐ **Why binaries matter.** Explain why binary star systems are essential for measuring stellar masses. Why can't we determine the mass of an isolated star directly from its spectrum or luminosity alone? (Hint: What observable depends on mass in a single star vs. a binary?)
+
+<!-- Problem: Conceptual / Application / O→M→I / Tools: Model-Inversion / ⭐⭐ -->
+4. ⭐⭐ **Binary classification.** For each observational signature below, identify the type of binary system (visual, spectroscopic, or eclipsing) and state what physical information it provides:
+   - (a) Two resolvable points of light orbiting each other over decades
+   - (b) Periodic Doppler shifts in the spectral lines of a single star
+   - (c) Periodic brightness dips in an otherwise constant light curve
+   - (d) Two sets of spectral lines shifting in antiphase
+
+### Calculation
+
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Scaling/Ratio / ⭐ -->
+5. ⭐ **Kepler III in solar units.** A visual binary system has an orbital period of $P = 8.0~\text{yr}$ and a semimajor axis of $a = 4.0~\text{AU}$.
+   - (a) Using the solar-unit form of Kepler's third law ($M_\text{total}/M_\odot = (a/\text{AU})^3/(P/\text{yr})^2$), calculate the total mass of the system in solar masses.
+   - (b) If the two stars have equal masses, what is each star's mass?
+   - (c) Sanity check: is your answer consistent with the stars being main-sequence stars? (Recall: the Sun has $M = 1\,M_\odot$ and $a = 1~\text{AU}$ corresponds to $P = 1~\text{yr}$.)
+
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Unit-Conversion, Model-Inversion / ⭐⭐ -->
+6. ⭐⭐ **Spectroscopic binary masses.** An eclipsing, double-lined spectroscopic binary ($i = 90°$) has:
+   - Orbital period: $P = 10.0~\text{days} = 8.64 \times 10^5~\text{s}$
+   - Star 1 velocity amplitude: $K_1 = 40~\text{km/s} = 4.0 \times 10^6~\text{cm/s}$
+   - Star 2 velocity amplitude: $K_2 = 120~\text{km/s} = 1.2 \times 10^7~\text{cm/s}$
+
+   (a) Determine the mass ratio $M_1/M_2$ from the velocity ratio. Which star is more massive?
+   (b) Calculate the total orbital separation $a = (K_1 + K_2)P/(2\pi)$. Express in cm and then in AU.
+   (c) Calculate the total mass $M_1 + M_2$ using Kepler's third law in CGS units. Convert to solar masses.
+   (d) Solve for the individual masses $M_1$ and $M_2$.
+   (e) Sanity check: using the mass-luminosity relation, estimate the luminosity of each star. What spectral types might they be?
+
+<!-- Problem: Calculation:Full / Application / — / Tools: Scaling/Ratio / ⭐⭐ -->
+7. ⭐⭐ **Mass-luminosity scaling.** Using the mass-luminosity relation $L/L_\odot \approx (M/M_\odot)^{3.5}$:
+   - (a) Calculate the luminosity of a $3\,M_\odot$ main-sequence star in solar luminosities. Show the exponentiation step by step: $3^3 = {?}$, $3^{0.5} = {?}$, so $3^{3.5} = {?}$.
+   - (b) Calculate the main-sequence lifetime of this star relative to the Sun's ($t_\odot \approx 10~\text{Gyr}$), using $t_\text{MS} \propto M^{-2.5}$.
+   - (c) A star has luminosity $L = 10{,}000\,L_\odot$. Estimate its mass using $M/M_\odot = (L/L_\odot)^{1/3.5}$.
+
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Scaling/Ratio, Model-Inversion / ⭐⭐ -->
+8. ⭐⭐ **Lifetime consequences.** The most massive main-sequence stars have $M \approx 150\,M_\odot$; the least massive have $M \approx 0.08\,M_\odot$.
+   - (a) Using $L \propto M^{3.5}$, calculate the luminosity ratio $L_\text{max}/L_\text{min}$.
+   - (b) Using $t_\text{MS} \propto M^{-2.5}$, calculate the main-sequence lifetime of a $150\,M_\odot$ star and a $0.08\,M_\odot$ star, given $t_\odot \approx 10~\text{Gyr}$.
+   - (c) The universe is ${\sim}13.8~\text{Gyr}$ old. Which of these stars — if formed at the beginning of the universe — would still be on the main sequence today?
+
+### Synthesis
+
+<!-- Problem: Synthesis / Connection / O→M→I / Tools: Scaling/Ratio, Model-Inversion, Unit-Conversion / ⭐⭐ -->
+9. ⭐⭐ **From velocities to fate.** You observe a double-lined spectroscopic binary with $P = 2.0~\text{yr}$ and velocity amplitudes $K_1 = 15~\text{km/s}$, $K_2 = 45~\text{km/s}$. Assume $i = 90°$.
+   - (a) Determine the mass ratio and the total orbital separation in AU. (Hint: use $a \sin i = (K_1 + K_2)P/(2\pi)$, converting km/s to AU/yr if helpful, or work in CGS.)
+   - (b) Calculate the total mass in solar masses using the solar-unit form of Kepler III.
+   - (c) Solve for the individual masses $M_1$ and $M_2$.
+   - (d) Estimate the luminosity of each star using the mass-luminosity relation.
+   - (e) Estimate the main-sequence lifetime of each star. Which will evolve off the main sequence first? By roughly how much sooner?
+
+<!-- Problem: Synthesis / Connection / O→M→I / Tools: Model-Inversion, Scaling/Ratio, Uncertainty/Assumptions / ⭐⭐ -->
+10. ⭐⭐ **Spectroscopic parallax from the mass-luminosity relation.** You observe a main-sequence star with spectral type B0 and apparent magnitude $m = 8.0$. From the spectral type, you estimate $M \approx 15\,M_\odot$.
+    - (a) Use the mass-luminosity relation to estimate $L/L_\odot$.
+    - (b) Convert to absolute magnitude $M_V$ using $M_V = M_{V,\odot} - 2.5\log_{10}(L/L_\odot)$, where $M_{V,\odot} = +4.83$.
+    - (c) Use the distance modulus to estimate the distance to this star in parsecs.
+    - (d) What assumptions does this method rely on? Name at least two things that could make your distance estimate wrong.
+
+<!-- Problem: Synthesis / Connection / O→M→I / Tools: Scaling/Ratio, Model-Inversion / ⭐⭐⭐ -->
+11. ⭐⭐⭐ **The mass-luminosity relation as a diagnostic.** A binary system has total mass $M_1 + M_2 = 5.0\,M_\odot$ (from orbital measurements) and mass ratio $M_1/M_2 = 4.0$.
+    - (a) Solve for $M_1$ and $M_2$ individually.
+    - (b) Predict the luminosity of each star using $L \propto M^{3.5}$.
+    - (c) What fraction of the system's total light comes from Star 1? (Hint: compute $L_1/(L_1 + L_2)$.)
+    - (d) In a single-lined spectroscopic binary (SB1), only the brighter star's lines are typically visible. Could this system appear as an SB1? Explain.
+    - (e) A $4\,M_\odot$ main-sequence star has $T_\text{eff} \approx 14{,}000~\text{K}$ and a $1\,M_\odot$ star has $T_\text{eff} \approx 5{,}800~\text{K}$. Use Stefan-Boltzmann in solar units to estimate the radius of each star. Which is larger?
+
+---
+
+## Summary: The Last Piece
+
+1. **Mass is the master variable** — it determines a star's luminosity, temperature, radius, lifetime, and death. But mass cannot be measured from a single star's light alone.
+
+2. **Binary stars reveal masses** through orbital dynamics — visual binaries give orbits on the sky, spectroscopic binaries give Doppler velocities, and eclipsing binaries give orbital inclination and stellar radii.
+
+3. **Newton's Kepler III for binaries** ($P^2 = 4\pi^2 a^3 / [G(M_1 + M_2)]$) gives the total mass from the orbital period and separation. The center-of-mass condition ($M_1 a_1 = M_2 a_2$) gives the mass ratio from the velocity ratio.
+
+4. **The mass-luminosity relation** ($L \propto M^{3.5}$) is the most important empirical scaling in stellar astrophysics — it means mass controls everything for main-sequence stars. A factor of 10 in mass produces a factor of ${\sim}3{,}000$ in luminosity.
+
+5. **Lifetime scales as $M^{-2.5}$** — massive stars burn bright and die young; low-mass stars are dim but nearly eternal.
+
+::: {.callout-tip}
+## Looking Ahead
+
+We now have every tool needed to characterize stars: distance, luminosity, temperature, radius, composition, and mass. In the next reading, we assemble all of these measurements into a single, powerful diagram — the **Hertzsprung-Russell diagram**. When we plot luminosity against temperature for thousands of stars, striking patterns emerge: the main sequence, the red giant branch, the white dwarf sequence. These patterns *demand* a physical explanation — and the fact that the main sequence turns out to be a **mass sequence** (thanks to what you just learned) will connect everything. But the HR diagram also raises questions that only physics can answer: *why* does the main sequence exist? *Why* do some stars become giants? Those questions launch Module 3.
+:::

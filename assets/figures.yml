@@ -531,6 +531,28 @@ figures:
     credit: "NOAA JetStream"
     module: 2
 
+  # Week 06: Weighing Stars + HR Diagram
+  mass-luminosity-plot:
+    path: /assets/images/module-02/week-06/mass-luminosity-relation.png
+    caption: "**What to notice:** Main-sequence stars follow a tight power law $L \\propto M^{3.5}$ — a modest increase in mass produces a dramatic increase in luminosity. The Sun sits in the middle. This relation, built entirely from binary star mass measurements, proves that mass is the master variable."
+    alt: "Log-log plot of luminosity versus mass for main-sequence stars in solar units. Points are color-coded by spectral type (blue for O/B, white for A, yellow for G, orange for K, red for M). A dashed line shows the power-law fit L proportional to M to the 3.5. The Sun is marked at (1, 1). Annotations show that 2 solar masses gives about 11 solar luminosities and 10 solar masses gives about 3000 solar luminosities."
+    credit: "ASTR 201 (generated)"
+    module: 2
+
+  hr-diagram-observer:
+    path: /assets/images/module-02/week-06/hr-diagram-observer.png
+    caption: "**What to notice:** The observer's HR diagram plots absolute magnitude $M_V$ against color index $(B-V)$. Three structures stand out: the main sequence (diagonal band, 90% of stars), the giant branch (upper right, cool but luminous), and white dwarfs (lower left, hot but faint). No theory is needed to build this diagram — it's pure measurement."
+    alt: "Color-magnitude diagram with absolute visual magnitude on the vertical axis (brighter at top) and B-V color index on the horizontal axis (blue-hot on left, red-cool on right). Hundreds of points form a diagonal main sequence from upper-left to lower-right, a clump of giants in the upper-right, scattered supergiants at the top, and white dwarfs in the lower-left. The Sun is marked at B-V = 0.65, M_V = 4.83. Spectral type labels O B A F G K M appear across the top."
+    credit: "ASTR 201 (generated)"
+    module: 2
+
+  hr-diagram-theorist:
+    path: /assets/images/module-02/week-06/hr-diagram-theorist.png
+    caption: "**What to notice:** The theorist's HR diagram uses physical axes — $\\log(L/L_\\odot)$ vs. $\\log(T_{\\text{eff}})$ — and overlays lines of constant radius from the Stefan-Boltzmann law. Giants sit on lines of $R \\sim 10\\text{–}100\\,R_\\odot$; white dwarfs sit on lines of $R \\sim 0.01\\,R_\\odot$ (Earth-sized). The same patterns appear as in the observer's diagram, confirming they are real features of stellar physics."
+    alt: "HR diagram with log luminosity in solar units on the vertical axis and log effective temperature on the horizontal axis (reversed, hotter on left). Dashed diagonal lines show constant stellar radii from 0.01 to 1000 solar radii. Main sequence stars form a diagonal band, giants cluster in the upper right near the 10-100 solar radii lines, and white dwarfs cluster in the lower left near the 0.01 solar radii line. The Sun is marked at log T = 3.76, log L = 0."
+    credit: "ASTR 201 (generated)"
+    module: 2
+
   # ==============================================================
   # Module 3: Stellar Structure & Evolution
   # ==============================================================
