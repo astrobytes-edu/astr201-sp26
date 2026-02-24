@@ -260,21 +260,10 @@ Binary Stars
 
 ## Explore: Binary Orbits
 
-Before we classify binary types, build intuition — adjust masses, separations, and eccentricities:
-
-<iframe src="https://astrobytes-edu.github.io/cosmic-playground/play/binary-orbits/" width="100%" height="420" style="border:1px solid #e5e7eb; border-radius:8px;"></iframe>
-
-::: {.incremental}
-- Make one star much heavier — watch where the center of mass moves
-- Which star traces the larger orbit? Which barely moves?
-:::
-
-::: {.fragment .mt-2}
-Now let's formalize what you're seeing. → [Full-screen demo](https://astrobytes-edu.github.io/cosmic-playground/play/binary-orbits/)
-:::
+[Open the Binary Orbits explorer](https://astrobytes-edu.github.io/cosmic-playground/exhibits/binary-orbits/)
 
 ::: {.notes}
-~10–12 min. The demo is embedded — interact with it live. If the embed doesn't load, click the full-screen link. Give students 60 seconds to explore. Key observation to draw out: the heavier star barely moves; the lighter star swings wide. This primes the seesaw analogy and the center-of-mass condition they'll see in Part 3.
+~10–12 min. Open the link and give students 60 seconds to explore. Key observation to draw out: the heavier star barely moves; the lighter star swings wide. This primes the seesaw analogy and the center-of-mass condition they'll see in Part 3.
 :::
 
 ---
@@ -310,19 +299,20 @@ Now let's formalize what you're seeing. → [Full-screen demo](https://astrobyte
 
 ## Sirius A + B: The Classic Visual Binary
 
+:::: {.columns}
+::: {.column width="55%"}
 {{< img sirius-ab-hubble >}}
-
-::: {.fragment .text-sm}
-Sirius A: $2.06\,M_\odot$, A-type main sequence. Sirius B: $1.02\,M_\odot$, **white dwarf**. $P = 50.1~\text{yr}$, $d = 2.64~\text{pc}$.
 :::
 
-::: {.fragment .text-sm}
-In 1844, Bessel predicted an invisible companion from the wobble of Sirius A's proper motion — 18 years before anyone saw it. Mass inferred from gravity, before the companion was even observed.
+::: {.column width="45%"}
+::: {.incremental .text-sm}
+- Sirius A: $2.06\,M_\odot$, A-type main sequence. Sirius B: $1.02\,M_\odot$, **white dwarf**. $P = 50.1~\text{yr}$, $d = 2.64~\text{pc}$.
+- In 1844, Bessel predicted an invisible companion from the wobble of Sirius A's proper motion — 18 years before anyone saw it.
+- Mass inferred from gravity before the companion was even observed.
+- *Mass Detective — Clue 1: Watch the sky. Visual binaries give $P$ and $a$ → total mass. But they're rare and slow. We need more tools.*
 :::
-
-::: {.fragment .text-sm .text-muted .mt-1}
-*Mass Detective — Clue 1: Watch the sky. Visual binaries give $P$ and $a$ → total mass. But they're rare and slow. We need more tools.*
 :::
+::::
 
 ::: {.notes}
 ~14–15 min. "Bessel inferred mass from motion — exactly the strategy we're learning. The companion turned out to be one of the most extraordinary objects in stellar astronomy: nearly the Sun's mass crammed into a volume the size of Earth."
@@ -330,7 +320,9 @@ In 1844, Bessel predicted an invisible companion from the wobble of Sirius A's p
 
 ---
 
-## Spectroscopic Binaries: Doppler Reveals the Orbit
+## Spectroscopic Binaries
+
+*Doppler Reveals the Orbit*
 
 :::: {.columns}
 ::: {.column width="55%"}
@@ -407,7 +399,9 @@ Get $K_1$ AND $K_2$ → **mass ratio directly**.
 
 ---
 
-## Eclipsing Binaries: Light Curves Reveal Geometry
+## Eclipsing Binaries
+
+*Light Curves Reveal Geometry*
 
 :::: {.columns}
 ::: {.column width="55%"}
@@ -765,7 +759,7 @@ Three equations, two unknowns. [**The system is fully determined.**]{.rn rn-type
 
 ---
 
-## Worked Example: Weighing a Binary {.text-sm}
+## Example: Weighing a Binary {.text-sm}
 
 **Problem:** An eclipsing, double-lined spectroscopic binary has:
 
@@ -782,7 +776,7 @@ Three equations, two unknowns. [**The system is fully determined.**]{.rn rn-type
 
 ---
 
-## Worked Example: Mass Ratio + Separation {.text-sm}
+## Example: Mass Ratio + Separation {.text-sm}
 
 **Step 1 — Mass ratio from velocity ratio:**
 
@@ -808,7 +802,7 @@ For reference: $1~\text{AU} = 1.50 \times 10^{13}~\text{cm}$, so $a \approx 0.07
 
 ---
 
-## Worked Example: Total + Individual Masses {.text-sm}
+## Example: Total + Individual Masses {.text-sm}
 
 **Step 3 — Total mass from Kepler's third law:**
 
@@ -858,12 +852,16 @@ For the Sun–Earth system: $P = 1~\text{yr}$, $a = 1~\text{AU}$, $M \approx M_\
 ::: {.fragment .text-sm}
 - Measure $a$ in AU, $P$ in years → get mass in $M_\odot$
 - All constants ($4\pi^2$, $G$) absorbed into the choice of units
-- *Scaling:* $M \propto a^3$ (wider orbit → heavier system) and $M \propto P^{-2}$ (shorter period at fixed $a$ → heavier)
+- *Scaling in solar units:* $\left(\frac{M_1+M_2}{M_\odot}\right) \propto \left(\frac{a}{\text{AU}}\right)^3$ and $\left(\frac{M_1+M_2}{M_\odot}\right) \propto \left(\frac{P}{\text{yr}}\right)^{-2}$
 - *Unit check:* $\text{AU}^3/\text{yr}^2$ → $M_\odot$ by construction. $\checkmark$
 :::
 
 ::: {.fragment .mt-1}
-**Example:** $P = 50~\text{yr}$, $a = 20~\text{AU}$ → $M_\text{total} = 20^3/50^2 = 8{,}000/2{,}500 = 3.2\,M_\odot$
+**Example:** $P = 50~\text{yr}$, $a = 20~\text{AU}$ →
+$$
+\frac{M_\text{total}}{M_\odot} = \frac{(20~\text{AU}/\text{AU})^3}{(50~\text{yr}/\text{yr})^2} = \frac{20^3}{50^2} = \frac{8{,}000}{2{,}500} = 3.2
+$$
+So $M_\text{total} = 3.2\,M_\odot$.
 :::
 
 ::: {.notes}
@@ -877,12 +875,30 @@ For the Sun–Earth system: $P = 1~\text{yr}$, $a = 1~\text{AU}$, $M \approx M_\
 A visual binary has $P = 8~\text{yr}$ and $a = 4~\text{AU}$. What is the total system mass?
 
 - $0.5\,M_\odot$
-- [$1.0\,M_\odot$ — since $4^3/8^2 = 64/64 = 1$]{.correct}
+- [$1.0\,M_\odot$]{.correct}
 - $2.0\,M_\odot$
 - $8.0\,M_\odot$
 
 ::: {.notes}
-~41–42 min. Give 30 seconds. Press C to reveal. $M = 4^3/8^2 = 64/64 = 1.0\,M_\odot$. Quick mental math. "If you can do this in your head, you've internalized the solar-unit form."
+~41–42 min. Give 30 seconds. Press C to reveal. $\frac{M}{M_\odot} = \frac{(4~\text{AU}/\text{AU})^3}{(8~\text{yr}/\text{yr})^2} = \frac{4^3}{8^2} = 1.0$, so $M = 1.0\,M_\odot$. Quick mental math. "Keep the units visible even in shortcut form."
+:::
+
+---
+
+## Quick Check Debrief
+
+$$
+\frac{M_\text{total}}{M_\odot}
+= \frac{(a/\text{AU})^3}{(P/\text{yr})^2}
+= \frac{(4~\text{AU}/\text{AU})^3}{(8~\text{yr}/\text{yr})^2}
+= \frac{4^3}{8^2}
+= 1.0
+$$
+
+So $M_\text{total} = 1.0\,M_\odot$.
+
+::: {.notes}
+~42 min. Reveal only after the vote. Keep it brisk: substitute, simplify, done.
 :::
 
 ---
@@ -967,7 +983,15 @@ Giants and white dwarfs do NOT follow this relation.
 Luminosity depends on internal structure, not just total mass, once a star evolves.
 :::
 
-::: {.fragment .text-sm .mt-2}
+::: {.notes}
+~46 min. Establish the law, validity range, and scaling behavior.
+:::
+
+---
+
+## The Mass-Luminosity Relation: Why So Steep?
+
+::: {.fragment .text-sm}
 Why so steep?
 
 - Higher mass → higher central pressure
@@ -982,7 +1006,7 @@ The universe is **fiercely nonlinear**.
 :::
 
 ::: {.notes}
-~46 min. Reveal the answer to the prediction. "Most of you guessed (a) or (b). A factor of 2 in mass gives a factor of 11 in luminosity. This is wildly steeper than linear."
+~46–47 min. Reveal the answer to the prediction. "Most of you guessed (a) or (b). A factor of 2 in mass gives a factor of 11 in luminosity. This is wildly steeper than linear."
 :::
 
 ---
@@ -1010,9 +1034,9 @@ Mass range: ${\sim}10^3\!\times$. Luminosity range: ${\sim}10^{10}\!\times$.
 
 ---
 
-## Massive Stars Die Young
+## Massive Stars Live Fast & Die Young
 
-A star's fuel scales with mass $M$. Its burn rate is the luminosity $L \propto M^{3.5}$. So:
+For main-sequence stars, the fuel is core hydrogen, and available hydrogen fuel scales with mass $M$. Its burn rate is the luminosity $L \propto M^{3.5}$. So:
 
 $$t_{\text{MS}} \sim \frac{\text{fuel}}{\text{burn rate}} \sim \frac{M}{L} \propto \frac{M}{M^{3.5}} = M^{-2.5}$$
 
@@ -1030,22 +1054,41 @@ $$t_{\text{MS}} \sim \frac{\text{fuel}}{\text{burn rate}} \sim \frac{M}{L} \prop
 
 ---
 
-## Every Low-Mass Star Ever Formed Is Still Alive
+## Main-Sequence Lifetime Cutoff
 
 The universe is $13.8~\text{Gyr}$ old.
 
 . . .
 
-A $0.5\,M_\odot$ red dwarf has a main-sequence lifetime of ${\sim}57~\text{Gyr}$ — more than four times the current age of the universe.
+Using $t_{\text{MS}} \sim 10~\text{Gyr}\,\left(\frac{M}{M_\odot}\right)^{-2.5}$ and setting $t_{\text{MS}} = 13.8~\text{Gyr}$:
+
+$$
+13.8~\text{Gyr} \sim 10~\text{Gyr}\left(\frac{M_{\text{cut}}}{M_\odot}\right)^{-2.5}
+$$
+
+$$
+\frac{13.8~\text{Gyr}}{10~\text{Gyr}} \sim \left(\frac{M_{\text{cut}}}{M_\odot}\right)^{-2.5}
+\quad\Rightarrow\quad
+\frac{M_{\text{cut}}}{M_\odot} \sim \left(\frac{10~\text{Gyr}}{13.8~\text{Gyr}}\right)^{1/2.5}
+$$
+
+$$
+\frac{10~\text{Gyr}}{13.8~\text{Gyr}} = 0.725,\quad
+\frac{M_{\text{cut}}}{M_\odot} \approx 0.88
+$$
+
+So $M_{\text{cut}} \approx 0.88\,M_\odot$.
 
 . . .
 
-[**Not a single low-mass star has ever died of old age.**]{.rn rn-type="box" rn-color="#ff6b6b"}
+So, in this scaling estimate:
 
-The graveyard of stellar evolution contains only the remains of massive stars — the ones that burned bright and fast.
+- Stars with $M \lesssim 0.9\,M_\odot$ can still be on the main sequence today
+- A $0.5\,M_\odot$ star ($t_{\text{MS}} \sim 57~\text{Gyr}$) is safely below that cutoff
+- Stars above this mass can already have exhausted core hydrogen
 
 ::: {.notes}
-~49 min. Let this sink in. "Every red dwarf born at the Big Bang is still on the main sequence. Still fusing hydrogen. Not even a quarter of the way done. This is one of the most striking facts in stellar astrophysics."
+~49 min. Emphasize this is an estimate from the main-sequence scaling relation, not a sharp boundary. The key idea: there is a mass threshold set by the universe's age, around $0.9\,M_\odot$.
 :::
 
 ---
@@ -1057,10 +1100,29 @@ A $3\,M_\odot$ main-sequence star has luminosity approximately:
 - $3\,L_\odot$
 - $9\,L_\odot$
 - $27\,L_\odot$
-- [${\sim}47\,L_\odot$ — since $3^{3.5} = 3^3 \times 3^{0.5} = 27 \times 1.73 \approx 47$]{.correct}
+- [${\sim}47\,L_\odot$]{.correct}
 
 ::: {.notes}
 ~50 min. Give 30 seconds. Press C to reveal. Walk through the exponentiation: $3^3 = 27$, $3^{0.5} \approx 1.73$, product $\approx 47$. "This is the kind of mental math you should be practicing — split $3.5 = 3 + 0.5$ and multiply."
+:::
+
+---
+
+## Quick Check Debrief: Scaling
+
+$$
+\frac{L}{L_\odot} = \left(\frac{M}{M_\odot}\right)^{3.5}
+= \left(\frac{3\,M_\odot}{M_\odot}\right)^{3.5}
+= 3^{3.5}
+= 3^3 \times 3^{0.5}
+= 27 \times 1.73
+\approx 47
+$$
+
+So $L \approx 47\,L_\odot$.
+
+::: {.notes}
+~50–51 min. Reveal after the vote. Keep this brisk and emphasize the unit ratio form first.
 :::
 
 ---
@@ -1184,16 +1246,28 @@ The main sequence is a mass sequence.
 
 ## Next Time: The HR Diagram {background-image="/assets/images/common/cosmic-cliffs-jwst.png" background-opacity="0.2"}
 
+:::: {.columns}
+::: {.column width="46%"}
 **Lecture 5:** We assemble all measurements onto one diagram.
 
-::: {.incremental}
+::: {.incremental .text-sm}
 - Plot luminosity vs. temperature for thousands of stars
 - The main sequence, red giants, white dwarfs — striking patterns emerge
 - The main sequence turns out to be a **mass sequence** — thanks to what you learned today
 :::
 
-::: {.fragment .text-center .mt-2}
+::: {.fragment .text-sm .mt-2}
 The patterns demand a physical explanation. Module 3 will provide it.
+:::
+:::
+
+::: {.column width="54%"}
+{{< img week04-hr-diagram-eso >}}
+:::
+::::
+
+::: {.fragment .text-xs .text-muted .mt-2}
+*Preview: the HR diagram plot we will unpack next lecture.*
 :::
 
 ::: {.notes}
