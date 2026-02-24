@@ -504,7 +504,10 @@ Here is the payoff from Lecture 4. When you label main-sequence stars by their m
 | | B0 | $15$ | $3 \times 10^4$ | $3 \times 10^4$ |
 | | O5 | $40$ | $5 \times 10^5$ | $4.2 \times 10^4$ |
 
-Read this as a syllogism, not a description. Along the main sequence, luminosity and temperature change monotonically from lower right to upper left. From Lecture 4, both luminosity and temperature scale systematically with mass for hydrogen-burning stars. Therefore, ordering stars by luminosity/temperature along the main sequence is equivalent to ordering them by mass. The main sequence is a one-parameter family: mass sets the sequence position, while the plotted observables reveal that hidden parameter.
+Read this as a syllogism, not a description.
+Premise 1: Along the main sequence, luminosity and temperature change monotonically from lower right to upper left.
+Premise 2: For hydrogen-burning stars, both luminosity and temperature scale systematically with mass (Lecture 4).
+Conclusion: Ordering main-sequence stars by luminosity/temperature is therefore ordering them by mass; the sequence behaves as a one-parameter family whose hidden coordinate is mass.
 
 The main sequence is not a random band — it is the **locus of hydrogen-burning stars ordered by mass.** Low-mass stars are cool and faint; high-mass stars are hot and luminous. The mass-luminosity relation ($L \propto M^{3.5}$) from Lecture 4 *explains* this ordering: a star's mass determines its core temperature, which determines its nuclear burning rate, which determines its luminosity and surface temperature.
 
@@ -596,6 +599,7 @@ Core contraction heats the interior because gravitational potential energy is co
 A massive star ($10\,M_\odot$) follows a similar but faster and more dramatic path — it spends only ${\sim}20~\text{Myr}$ on the main sequence, becomes a supergiant, and may end its life in a core-collapse supernova rather than a planetary nebula.
 
 **The key insight:** **Mass determines the path.** A low-mass star evolves slowly along one track; a high-mass star races along a different, more dramatic track. The HR diagram is not just a map of *where stars are now* — it's a map of *where stars go as they age*, with mass as the control parameter.
+Mass determines both the path and the timescale.
 
 ### What the HR Diagram Does Not Encode
 
@@ -637,6 +641,10 @@ The HR diagram is the bridge between "what we see" and "why we see it." Module 3
 
 ::: {.callout-note title="Map Builder — Complete Map" .map-builder}
 **The HR diagram is not a snapshot — it is an evolution diagram.** Stars are born, live on the main sequence, evolve into giants, and die as white dwarfs (or supernovae). Mass determines the path and the pace. Your map now has geography (three structures), physics (radius lines, mass labels), and *time* (evolutionary tracks). Every star has an address — and mass writes the zip code.
+:::
+
+::: {.callout-important title="What's Next: Module 3"}
+The HR diagram is a projection of stellar structure onto observable axes, ordered primarily by mass on the main sequence, and evolution corresponds to changes in equilibrium between gravity and pressure.
 :::
 
 ---
