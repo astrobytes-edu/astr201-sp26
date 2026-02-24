@@ -138,7 +138,7 @@ The Magnitude System
 :::
 
 ::: {.fragment .mt-2}
-**You need a logarithmic scale.** That scale is the [**magnitude system**]{.rn rn-type="underline" rn-color="#4ecdc4"}.
+**You need a logarithmic scale.** That scale is the [**magnitude system**]{.rn rn-type="underline" rn-color="#4ecdc4"} — where multiplicative flux changes become additive magnitude shifts.
 :::
 
 ::: {.notes}
@@ -492,10 +492,10 @@ From Lecture 3: the **spectral sequence** is a [**temperature sequence**]{.rn rn
 
 ::: {.column width="40%"}
 ::: {.text-sm}
-**Axes:**
+**Axes (both backwards!):**
 
-- **Vertical:** $M_V$ (brighter = up, inverted scale!)
-- **Horizontal:** Spectral type or color $B-V$ (hot → cool, left → right)
+- **Vertical:** $M_V$ — brighter (more negative) at top
+- **Horizontal:** spectral type — hotter on the left, cooler on the right
 
 Neither axis requires theory — this is pure measurement.
 :::
@@ -742,9 +742,10 @@ At fixed $R$, this is a **straight line** with slope $4$ on the $\log L$ – $\l
 . . .
 
 ::: {.text-sm}
-- *Scaling:* Double $T$ at fixed $R$ → $L$ increases by $2^4 = 16\times$
-- *What changes:* Shifting to larger $R$ moves the line **up** (brighter at every $T$)
+- *Scaling:* Double $T$ at fixed $R$ → $L$ increases by $2^4 = 16\times$ (steep!)
+- *Shifting $R$:* Larger $R$ moves the line **up** (brighter at every $T$)
 - Each line represents all possible $(L, T)$ combinations for a star of that radius
+- These lines turn clustered points into [**constrained physical states**]{.rn rn-type="underline" rn-color="#ff6b6b"}
 :::
 
 ::: {.notes}
@@ -993,16 +994,16 @@ The life of a Sun-like star ($1\,M_\odot$), traced on the HR diagram:
 ::: {.incremental .text-sm}
 1. **Birth:** Collapse from gas cloud → contracts toward the main sequence (upper right → middle)
 2. **Main sequence (${\sim}10~\text{Gyr}$):** Hydrogen burning → stable equilibrium at (G2, $1\,L_\odot$) for $10$ billion years
-3. **Red giant:** Core hydrogen exhausted → envelope expands → moves to upper right ($R \sim 100\,R_\odot$)
+3. **Red giant:** Core hydrogen exhausted → core contracts, envelope expands → moves to upper right ($R \sim 100\,R_\odot$)
 4. **Death:** Sheds outer layers → white dwarf remnant in lower left, then slowly cools rightward
 :::
 
 ::: {.fragment .mt-1}
-**90% of stars are on the main sequence because that's where they spend 90% of their lives.**
+This motion is not random — it is the response of a self-gravitating system to changing fuel. **90% of stars are on the main sequence because that's where they spend 90% of their lives.**
 :::
 
 ::: {.notes}
-~44–45 min. "This is why the main sequence contains 90% of all stars: not because most stars *are* main-sequence stars — but because stars spend most of their *time* there. The HR diagram is a census, and the main sequence is the most populated address."
+~44–45 min. "Stars don't wander randomly — each track is the response of gravity, thermodynamics, and nuclear burning acting together. When core hydrogen runs out, the core contracts, releasing gravitational energy that expands the envelope. The main sequence contains 90% of all stars because that's where stars spend 90% of their *time*."
 :::
 
 ---
@@ -1059,8 +1060,12 @@ The diagram reveals patterns — but does not explain them. **Five questions for
 5. **What sets the minimum mass for a star?** (Below ${\sim}0.08\,M_\odot$ → no hydrogen fusion)
 :::
 
+::: {.fragment .mt-1}
+If the diagram were a messy scatter, classification would suffice. Because its structure is [**tight and lawful**]{.rn rn-type="underline" rn-color="#ff6b6b"}, measurement alone is incomplete — physics is required.
+:::
+
 ::: {.notes}
-~46–48 min. Read each question. Let them sink in. "These are not rhetorical. They are the agenda for Module 3. The answers require physics: hydrostatic equilibrium, nuclear fusion, degeneracy pressure."
+~46–48 min. Read each question. Let them sink in. "These are not rhetorical. They are the agenda for Module 3. The answers require physics: hydrostatic equilibrium, nuclear fusion, degeneracy pressure. The tightness of the patterns is what demands explanation."
 :::
 
 ---

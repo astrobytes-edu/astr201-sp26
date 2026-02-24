@@ -257,14 +257,18 @@ That someone was **Cecilia Payne**, whose 1925 doctoral thesis — written at ag
 This meant the main sequence isn't a random collection of different kinds of stars. It's a systematic progression in temperature — and once you add mass measurements (Lecture 4), you realize it's a progression in *mass*. Payne's thesis transformed the HR diagram from a classification chart into a physical theory.
 
 Astronomer Otto Struve later called it "undoubtedly the most brilliant PhD thesis ever written in astronomy." Yet her conclusion about hydrogen dominance was initially rejected by Henry Norris Russell (the "R" in HR diagram), who persuaded her to soften the result. He reached the same conclusion independently four years later. Payne-Gaposchkin became the first woman to hold a full professorship at Harvard — in 1956, three decades after she was right.
+:::
 
-::: {.callout-tip collapse="true"}
+::: {.callout-tip}
 ## Reasoning Check
 
 If spectral type primarily tracked composition rather than temperature, what would you expect the HR diagram to look like?
-
-**Answer:** You would not get a tight, temperature-ordered main-sequence band. Stars of similar composition but very different thermal states would smear the diagram into much larger scatter, instead of a narrow diagonal sequence.
 :::
+
+::: {.callout-tip collapse="true"}
+## Answer
+
+You would not get a tight, temperature-ordered main-sequence band. Stars of similar composition but very different thermal states would smear the diagram into much larger scatter, instead of a narrow diagonal sequence.
 :::
 
 ::: {.callout-note title="HR Diagram Conventions (the two backwards things)"}
