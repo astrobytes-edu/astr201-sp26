@@ -61,8 +61,12 @@ execute:
 2. **Describe** visual, spectroscopic, and eclipsing binary systems and what each reveals about the orbit
 3. **Apply** Newton's version of Kepler's third law to binary star orbits to determine the total system mass
 4. **Use** the center-of-mass condition and radial velocity amplitudes to determine individual stellar masses
-5. **Interpret** the mass-luminosity relation ($L \propto M^{3.5}$) and explain why mass is the "master variable" for main-sequence stars
+5. **Interpret** the mass-luminosity relation and explain why mass is the "master variable" for main-sequence stars
 :::
+
+$$
+L \propto M^{3.5}
+$$
 
 ::: {.notes}
 ~1 min. Read aloud. These map directly to the reading's learning objectives and to the five summary takeaways at the end.
@@ -334,7 +338,13 @@ Binary Stars
 ::: {.text-sm}
 - Too close to resolve visually — but **Doppler works**
 - Star orbits center of mass → spectral lines wobble
-- **Lecture 3 connection:** $\Delta\lambda/\lambda_0 = v_r/c$ converts wavelength shifts to velocities — now we track those velocities *over time* to trace the orbit
+- **Lecture 3 connection:** Doppler shifts convert to radial velocity via
+
+$$
+\frac{\Delta \lambda}{\lambda_0} = \frac{v_r}{c}
+$$
+
+now we track those velocities *over time* to trace the orbit
 - **What they give us:**
   - Orbital period $P$ (from oscillation period)
   - Velocity amplitude $K$ (from Doppler shift)
@@ -1067,9 +1077,22 @@ Mass range: ${\sim}10^3\!\times$. Luminosity range: ${\sim}10^{10}\!\times$.
 
 ## Massive Stars Live Fast & Die Young
 
-For main-sequence stars, the fuel is core hydrogen, and available hydrogen fuel scales with mass $M$. Its burn rate is the luminosity $L \propto M^{3.5}$. So:
+For main-sequence stars, the fuel is core hydrogen, and available hydrogen fuel scales with mass $M$.
+Its burn rate scales with luminosity:
 
-$$t_{\text{MS}} \sim \frac{\text{fuel}}{\text{burn rate}} \sim \frac{M}{L} \propto \frac{M}{M^{3.5}} = M^{-2.5}$$
+$$
+L \propto M^{3.5}
+$$
+
+So:
+
+$$
+\begin{aligned}
+t_{\text{MS}} &\sim \frac{\text{fuel}}{\text{burn rate}} \\
+&\sim \frac{M}{L} \\
+&\propto \frac{M}{M^{3.5}} = M^{-2.5}
+\end{aligned}
+$$
 
 . . .
 
