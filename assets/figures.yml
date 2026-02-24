@@ -595,14 +595,11 @@ figures:
     credit: "Public domain"
     module: 2
 
-  # TODO: Replace with real observational ML scatter plot showing data points
-  # (not the idealized power-law line). Suggested sources: Torres+ 2010,
-  # Eker+ 2018, or similar binary-star mass-luminosity compilations.
   mass-luminosity-scatter:
-    path: /assets/images/module-02/week-06/mass-luminosity-scatter.png
-    caption: "**What to notice:** Real mass-luminosity data from binary star measurements. Each point is a star with a dynamically measured mass. The scatter around the power-law fit is real — it reflects differences in composition, age, and evolutionary state — but the overall trend $L \\propto M^{3.5}$ is unmistakable."
-    alt: "Log-log scatter plot of observed stellar luminosity versus dynamically measured mass for binary star components. Hundreds of data points cluster along a diagonal band with a dashed power-law fit line. Scatter is modest but nonzero, especially at high masses."
-    credit: "TODO — source TBD (instructor to provide)"
+    path: /assets/images/module-02/week-06/mass-luminosity-relation.jpeg
+    caption: "**What to notice:** Real mass-luminosity data from 509 binary star components with dynamically measured masses. Each gray circle is one star. The red solid line is a piecewise four-segment power-law fit; the blue dotted line is the classical single power law. Vertical tick marks show the mass boundaries between segments. The relation steepens at high masses ($L \\propto M^{\\sim 4}$) and flattens at low masses ($L \\propto M^{\\sim 2.3}$). Scatter increases above $\\sim 3\\,M_\\odot$ where stellar evolution is faster."
+    alt: "Log-log scatter plot of stellar luminosity in solar units versus mass in solar units from Eker et al. 2018. Hundreds of gray data points form a tight diagonal band from lower-left (low mass, low luminosity) to upper-right (high mass, high luminosity). A red piecewise linear fit and blue dotted classical power-law fit overlay the data. Short vertical tick marks along the horizontal axis indicate mass boundaries between the four power-law segments."
+    credit: "Eker et al. 2018, MNRAS 479, 5491"
     module: 2
 
   # ==============================================================
