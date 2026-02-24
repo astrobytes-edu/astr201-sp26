@@ -53,7 +53,9 @@ By the end of this module, you will be able to:
 - [Lecture 1 Slides: Distance & Parallax](slides/lecture-01-distance-and-parallax.qmd)
 - [Lecture 2 Slides: Surface Flux & Colors](slides/lecture-02-surface-flux-and-colors.qmd)
 - [Lecture 3 Reading: Spectra & Composition](readings/lecture-03-spectra-and-composition-reading.qmd)
+- [Lecture 4 Slides: Weighing Stars](slides/lecture-04-weighing-stars.qmd)
 - [Lecture 4 Reading: The Last Piece — Weighing Stars](readings/lecture-04-weighing-stars-reading.qmd)
+- [Lecture 5 Slides: The HR Diagram](slides/lecture-05-hr-diagram.qmd)
 - [Lecture 5 Reading: The HR Diagram — Finding Patterns, Needing Models](readings/lecture-05-hr-diagram-reading.qmd)
 
 ## Lecture Readings

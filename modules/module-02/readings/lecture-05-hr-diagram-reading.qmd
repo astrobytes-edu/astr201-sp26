@@ -68,9 +68,11 @@ You now have every measurement tool needed to characterize a star: distance (Lec
 
 ### The Problem: Stars Span a Ridiculous Range
 
-Here is a concrete challenge. You observe two stars: Proxima Centauri (the nearest star to the Sun) and Betelgeuse (the red supergiant in Orion). Betelgeuse delivers about $6 \times 10^7$ times more flux to your detector than Proxima. Now add the Sun: it delivers about $6 \times 10^{10}$ times more flux than Betelgeuse — not because it's intrinsically brighter, but because it's absurdly close. If you tried to plot all three on a linear brightness chart, two of them would be indistinguishable dots at zero while the third broke the page.
+Try the naive thing first: a linear brightness plot with Proxima, Betelgeuse, and the Sun on the same axis. Set Proxima near the bottom and scale upward by equal steps of flux. Betelgeuse jumps to tens of millions of Proximas, and the Sun jumps tens of billions beyond that. On that axis, Proxima and Betelgeuse collapse against zero while the Sun runs off-scale. The plot is not just ugly — it is unreadable as a scientific tool.
 
-You need a scale that can handle a factor of $10^{10}$ without breaking. That scale is the **magnitude system** — and it's the last measurement tool you need before we can build the HR diagram.
+We need a logarithmic scale.
+
+That logarithmic ruler is the **magnitude system** — and it's the last measurement tool you need before we can build the HR diagram.
 
 ### Why Not Just Use Luminosity?
 
@@ -96,6 +98,8 @@ The **apparent magnitude** $m$ of a star is a measure of how bright it appears *
 
 {{< eqrefcard magnitude-flux >}}
 
+Because this scale is logarithmic, multiplicative flux changes become additive magnitude shifts. A factor of 100 in flux is not "100 units brighter" — it is just a 5-magnitude step on the same ruler.
+
 where $F_1$ and $F_2$ are the fluxes (energy per unit area per unit time) of two sources, and $m_1$ and $m_2$ are their apparent magnitudes.
 
 **Key numbers to remember:**
@@ -108,6 +112,18 @@ where $F_1$ and $F_2$ are the fluxes (energy per unit area per unit time) of two
 | $10~\text{mag}$ | $10^{4.0} = 10^4$ |
 
 The anchor: **5 magnitudes = a factor of 100 in flux.** This is by definition (Pogson's ratio).
+
+::: {.callout-tip}
+## Think First
+
+If Star A is $5~\text{mag}$ smaller than Star B, is Star A's flux smaller or larger, and by what factor scale (order of magnitude)?
+:::
+
+::: {.callout-tip collapse="true"}
+## Answer
+
+Smaller magnitude means brighter, so Star A has the larger flux. A $5~\text{mag}$ difference is exactly a factor of $100$ in flux.
+:::
 
 ::: {.callout-note}
 ## Worked Example: Comparing Two Stars
@@ -241,6 +257,20 @@ That someone was **Cecilia Payne**, whose 1925 doctoral thesis — written at ag
 This meant the main sequence isn't a random collection of different kinds of stars. It's a systematic progression in temperature — and once you add mass measurements (Lecture 4), you realize it's a progression in *mass*. Payne's thesis transformed the HR diagram from a classification chart into a physical theory.
 
 Astronomer Otto Struve later called it "undoubtedly the most brilliant PhD thesis ever written in astronomy." Yet her conclusion about hydrogen dominance was initially rejected by Henry Norris Russell (the "R" in HR diagram), who persuaded her to soften the result. He reached the same conclusion independently four years later. Payne-Gaposchkin became the first woman to hold a full professorship at Harvard — in 1956, three decades after she was right.
+
+::: {.callout-tip collapse="true"}
+## Reasoning Check
+
+If spectral type primarily tracked composition rather than temperature, what would you expect the HR diagram to look like?
+
+**Answer:** You would not get a tight, temperature-ordered main-sequence band. Stars of similar composition but very different thermal states would smear the diagram into much larger scatter, instead of a narrow diagonal sequence.
+:::
+:::
+
+::: {.callout-note title="HR Diagram Conventions (the two backwards things)"}
+- **Magnitudes:** smaller number = brighter star, but the diagram is plotted brighter-up (more negative $M_V$ at the top).
+- **Temperature axis:** hotter on the left, cooler on the right.
+- These are conventions; the physics is in the patterns.
 :::
 
 ### Building the Diagram
@@ -267,7 +297,7 @@ This is not a coincidence. As you learned in Lecture 4, mass determines luminosi
 **3. The White Dwarf Sequence** — a scattering of stars in the lower-left: hot ($T \sim 10^4\text{–}3 \times 10^4~\text{K}$) but very faint (${\sim}0.01\,L_\odot$). By the same logic — hot but faint means small — these are **white dwarfs**, with radii comparable to Earth ($R \sim 0.01\,R_\odot$). They are the remnant cores of dead stars.
 
 ::: {.callout-tip}
-## Think First
+## Quick Reasoning
 
 Before reading further, think about this: if a star is both hot ($T \sim 2.5 \times 10^4~\text{K}$) and faint ($L \sim 0.01\,L_\odot$), what can you say about its radius? Use $L = 4\pi R^2 \sigma T^4$ and think in ratios.
 
@@ -358,6 +388,18 @@ $$
 
 These are **lines of constant radius** — diagonal lines on the theorist's HR diagram. Each line represents all possible combinations of $L$ and $T$ for a star of a given radius.
 
+::: {.callout-tip}
+## Think First
+
+At fixed radius, if $T$ doubles, how does luminosity change — direction and power?
+:::
+
+::: {.callout-tip collapse="true"}
+## Answer
+
+Luminosity increases very steeply: $L \propto T^4$ at fixed $R$, so doubling $T$ gives $L \rightarrow 2^4 L = 16L$. Same radius, much hotter surface, dramatically brighter star.
+:::
+
 {{< fig hr-diagram-theorist >}}
 
 **Reading the diagram with radius lines:**
@@ -421,6 +463,8 @@ $$\frac{R}{R_\odot} = \sqrt{1{,}770} = 42$$
 **Lines of constant radius now overlay the map.** Stefan-Boltzmann connects $L$, $R$, and $T$, so fixing $R$ draws a diagonal line on the theorist's HR diagram. You can *read* a star's radius from its position: giants at $10\text{–}100\,R_\odot$, white dwarfs at ${\sim}0.01\,R_\odot$. The map now encodes three physical properties — luminosity, temperature, and radius — even though only two are plotted.
 :::
 
+Part 2 built a map from measurements alone: magnitudes, colors, spectral classes, and distances assembled into structure. Part 3 changes the game by overlaying explicit physics relationships on that map. Radius lines from Stefan-Boltzmann turn clustered points into constrained physical states. This is the epistemic hinge of the reading: we move from **classification** to **explanation**, without discarding the measurement backbone.
+
 ---
 
 ## Part 4: Mass — The Hidden Organizer
@@ -474,7 +518,7 @@ Your lab partner says: "Red giants are brighter than the Sun because they're mor
 :::
 
 ::: {.callout-tip}
-## Think First
+## Preview Question
 
 A $1\,M_\odot$ star lives ${\sim}10~\text{Gyr}$ on the main sequence; a $10\,M_\odot$ star lives only ${\sim}20~\text{Myr}$. Imagine you observe a star cluster where all stars formed at the same time, ${\sim}100~\text{Myr}$ ago. Which stars would have already left the main sequence? What would the cluster's HR diagram look like compared to a younger cluster?
 
@@ -492,6 +536,8 @@ A $1\,M_\odot$ star lives ${\sim}10~\text{Gyr}$ on the main sequence; a $10\,M_\
 ### Stars Move on the HR Diagram
 
 The most profound interpretation of the HR diagram is not as a static classification chart, but as a map of **stellar evolution**. A star does not stay in one place on the diagram forever. It *moves* — slowly on the main sequence, then dramatically as it evolves.
+
+That motion is not arbitrary wandering across a plot; it is the response of a self-gravitating thermodynamic system to changing fuel conditions. When core hydrogen is exhausted, hydrostatic equilibrium cannot be maintained by the same fusion source, so the core contracts. Core contraction releases gravitational energy and heats deeper layers, changing where and how energy is generated. The envelope responds by expanding, which lowers surface temperature even while total luminosity can rise. HR-diagram tracks are therefore the visible footprint of gravity, thermodynamics, and nuclear burning acting together.
 
 Here is the life story of a star like the Sun, traced on the HR diagram:
 
@@ -520,6 +566,8 @@ The HR diagram reveals patterns. But it does not — by itself — explain them.
 4. **Why is there a maximum mass for white dwarfs?** (There is — it's ${\sim}1.4\,M_\odot$, the Chandrasekhar limit.) What happens to more massive stellar cores?
 
 5. **Why is there a minimum mass for stars?** (Below ${\sim}0.08\,M_\odot$, objects never ignite hydrogen fusion — they're brown dwarfs.) What sets this threshold?
+
+If the diagram were just a messy catalog, classification would be enough; because its structure is tight and lawful, measurement alone is incomplete and physics is required.
 
 None of these questions can be answered by measurement alone. They require **models** — physical theories of stellar interiors, nuclear fusion, and the balance between gravity and pressure. This is the subject of **Module 3: Stellar Structure and Evolution.**
 
@@ -684,6 +732,38 @@ The HR diagram is the bridge between "what we see" and "why we see it." Module 3
 **Model:** The magnitude system converts flux ratios to a logarithmic scale; the distance modulus connects apparent and absolute magnitude through the inverse-square law. Blackbody radiation (Wien's law) connects color to temperature. The Stefan-Boltzmann law connects luminosity and temperature to radius. Stellar structure models connect luminosity and temperature to mass and evolutionary state.
 
 **Inference:** From photometry alone, we determine each star's luminosity, temperature, and radius. The HR diagram reveals that stars are not randomly distributed — they cluster into a main sequence (a mass sequence), a giant branch (evolved stars with bloated envelopes), and a white dwarf sequence (dead stellar cores). Mass, which does not appear on either axis, organizes the entire pattern. The diagram is simultaneously a classification tool, a mass map, and an evolution chart — and the patterns it reveals are the questions that Module 3 must answer.
+
+```{mermaid}
+graph TD
+  O1["Observables: photometry (m, colors)"]
+  O2["Observables: spectroscopy (spectral type)"]
+  O3["Observables: parallax (distance)"]
+  T1["Transform: distance modulus (m → M)"]
+  T2["Transform: calibration (spectral type/color → T_eff)"]
+  T3["Transform: magnitude-luminosity link (M ↔ L)"]
+  H1["HR representation: observer CMD (M_V vs color/spectral type)"]
+  H2["HR representation: theorist HRD (L vs T_eff)"]
+  H3["Physics overlay: radius lines (Stefan-Boltzmann)"]
+  I1["Inferences: radius estimates"]
+  I2["Inferences: main sequence as mass sequence (Lecture 4 link)"]
+  I3["Inferences: evolutionary interpretation (tracks)"]
+  I4["Epistemic outcome: pattern demands physics → Module 3"]
+
+  O1 --> T1
+  O3 --> T1
+  O1 --> T2
+  O2 --> T2
+  T1 --> T3
+  T3 --> H1
+  T2 --> H1
+  T2 --> H2
+  T3 --> H2
+  H2 --> H3
+  H1 --> I1
+  H2 --> I1
+  H3 --> I1
+  I1 --> I2 --> I3 --> I4
+```
 
 ::: {.callout-note title="Watch: Gaia Builds the HR Diagram from Real Data"}
 The ESA's Gaia spacecraft has measured parallaxes, colors, and magnitudes for over a billion stars — the largest stellar census ever assembled. This animation shows how Gaia's raw observations of FGKM-type stars are transformed into physical properties (temperature and luminosity) and plotted on the HR diagram. Every step you've learned in this reading — distance modulus, color-to-temperature calibration, apparent-to-absolute magnitude — is happening here at industrial scale.
