@@ -2,9 +2,9 @@
 title: "Homework 4 Solutions"
 subtitle: "Surface Flux & Colors (continued) + Spectra & Composition"
 author: "Dr. Anna Rosen"
-date: "2026-02-27"
+date: "2026-02-25"
 description: "Solutions to Homework 4."
-draft: true
+draft: false
 course: ASTR 201
 module: "Module 2 — Distance, Luminosity, Temperature, Radius + Spectra & Composition"
 ---
@@ -31,17 +31,34 @@ module: "Module 2 — Distance, Luminosity, Temperature, Radius + Spectra & Comp
 
 The surface flux is $F_\star = \sigma T^4$. Betelgeuse has $T \approx 3{,}500~\text{K} \approx 0.60\,T_\odot$, so its surface flux relative to the Sun is:
 
-$$\frac{F_{\text{Bet}}}{F_\odot} = \left(\frac{T_{\text{Bet}}}{T_\odot}\right)^4 = (0.60)^4 = 0.130 \quad (\text{dimensionless})$$
+$$
+\frac{F_{\text{Bet}}}{F_\odot}
+= \left(\frac{T_{\text{Bet}}}{T_\odot}\right)^4
+= \left(\frac{3{,}500~\text{K}}{5{,}800~\text{K}}\right)^4
+= (0.603)^4
+= 0.133\frac{\text{K}^4}{\text{K}^4}
+= 0.133.
+$$
 
 Each square centimeter of Betelgeuse's surface radiates only 13% as much power as the Sun's surface. Yet its total luminosity is $\sim 10^5\,L_\odot$. Since $L = F_\star \times 4\pi R^2$, the star compensates with enormous surface area:
 
-$$\left(\frac{R}{R_\odot}\right)^2 = \frac{L/L_\odot}{(T/T_\odot)^4} = \frac{10^5}{0.130} = 7.7 \times 10^5 \quad (\text{dimensionless})$$
+$$
+\left(\frac{R}{R_\odot}\right)^2
+= \frac{L/L_\odot}{(T/T_\odot)^4}
+= \frac{10^5~L_\odot/L_\odot}{0.133~\text{K}^4/\text{K}^4}
+= 7.5 \times 10^5.
+$$
 
-$$\frac{R}{R_\odot} = \sqrt{7.7 \times 10^5} \approx 880 \quad (\text{dimensionless})$$
+$$
+\frac{R}{R_\odot}
+= \sqrt{7.5 \times 10^5}
+= 8.7 \times 10^2
+\approx 870.
+$$
 
-Betelgeuse is roughly $880$ times the Sun's radius — so large that if placed at the Sun's position, it would engulf Mars's orbit.
+Betelgeuse is roughly $870$ times the Sun's radius — so large that if placed at the Sun's position, it would engulf Mars's orbit.
 
-**Sanity check:** Cooler → lower surface flux. Much higher luminosity → must compensate with enormous area. $R \sim 880\,R_\odot$ is consistent with interferometric measurements of Betelgeuse. $\checkmark$
+**Sanity check:** Cooler → lower surface flux. Much higher luminosity → must compensate with enormous area. $R \sim 870\,R_\odot$ is consistent with interferometric measurements of Betelgeuse. $\checkmark$
 
 **Common misconception:** Assuming cooler automatically means dimmer. A cooler star radiates less per unit area, but if the surface area is vast, the total luminosity can be much greater than a hotter star's.
 
@@ -75,17 +92,26 @@ The K units cancel, confirming the ratio is dimensionless. $\checkmark$
 
 **(b)** Fourth power:
 
-$$\left(\frac{T_{\text{Rigel}}}{T_\odot}\right)^4 = (2.086)^4$$
+$$
+\left(\frac{T_{\text{Rigel}}}{T_\odot}\right)^4
+= \left(\frac{12{,}100~\text{K}}{5{,}800~\text{K}}\right)^4
+= (2.086)^4
+= 18.94\frac{\text{K}^4}{\text{K}^4}
+= 18.94.
+$$
 
-Computing in steps: $(2.086)^2 = 4.352$; $(4.352)^2 = 18.94$ (dimensionless).
-
-$$\boxed{\left(\frac{T_{\text{Rigel}}}{T_\odot}\right)^4 \approx 18.9 \quad (\text{dimensionless})}$$
+$$\boxed{\left(\frac{T_{\text{Rigel}}}{T_\odot}\right)^4 \approx 18.9}$$
 
 **(c)** Radius:
 
-$$\left(\frac{R_{\text{Rigel}}}{R_\odot}\right)^2 = \frac{L_{\text{Rigel}}/L_\odot}{(T_{\text{Rigel}}/T_\odot)^4} = \frac{120{,}000}{18.9} = 6{,}350 \quad (\text{dimensionless})$$
+$$
+\left(\frac{R_{\text{Rigel}}}{R_\odot}\right)^2
+= \frac{L_{\text{Rigel}}/L_\odot}{(T_{\text{Rigel}}/T_\odot)^4}
+= \frac{120{,}000~L_\odot/L_\odot}{18.9~\text{K}^4/\text{K}^4}
+= 6{,}350.
+$$
 
-$$\frac{R_{\text{Rigel}}}{R_\odot} = \sqrt{6{,}350} = 79.7 \quad (\text{dimensionless})$$
+$$\frac{R_{\text{Rigel}}}{R_\odot} = \sqrt{6{,}350} = 79.7$$
 
 $$\boxed{R_{\text{Rigel}} \approx 80\,R_\odot}$$
 
@@ -113,31 +139,49 @@ $$\boxed{R_{\text{Rigel}} \approx 80\,R_\odot}$$
 
 $$\frac{T}{T_\odot} = \frac{6{,}000~\text{K}}{5{,}800~\text{K}} = 1.034 \quad (\text{dimensionless})$$
 
-$$\left(\frac{T}{T_\odot}\right)^4 = (1.034)^4 = 1.145 \quad (\text{dimensionless})$$
+$$\left(\frac{T}{T_\odot}\right)^4 = \left(\frac{6{,}000~\text{K}}{5{,}800~\text{K}}\right)^4 = (1.034)^4 = 1.145\frac{\text{K}^4}{\text{K}^4} = 1.145$$
 
-$$\left(\frac{R}{R_\odot}\right)^2 = \frac{1}{1.145} = 0.873 \quad (\text{dimensionless}) \quad \Longrightarrow \quad \boxed{R_A \approx 0.93\,R_\odot}$$
+$$
+\left(\frac{R}{R_\odot}\right)^2
+= \frac{1~L_\odot/L_\odot}{1.145~\text{K}^4/\text{K}^4}
+= 0.873
+\quad\Longrightarrow\quad
+\boxed{R_A \approx 0.93\,R_\odot}.
+$$
 
 **Star B** ($T = 3{,}000~\text{K}$, $L = 100\,L_\odot$):
 
 $$\frac{T}{T_\odot} = \frac{3{,}000~\text{K}}{5{,}800~\text{K}} = 0.517 \quad (\text{dimensionless})$$
 
-$$\left(\frac{T}{T_\odot}\right)^4 = (0.517)^4 = 0.0716 \quad (\text{dimensionless})$$
+$$\left(\frac{T}{T_\odot}\right)^4 = \left(\frac{3{,}000~\text{K}}{5{,}800~\text{K}}\right)^4 = (0.517)^4 = 0.0716\frac{\text{K}^4}{\text{K}^4} = 0.0716$$
 
-$$\left(\frac{R}{R_\odot}\right)^2 = \frac{100}{0.0716} = 1{,}397 \quad (\text{dimensionless}) \quad \Longrightarrow \quad \boxed{R_B \approx 37\,R_\odot}$$
+$$
+\left(\frac{R}{R_\odot}\right)^2
+= \frac{100~L_\odot/L_\odot}{0.0716~\text{K}^4/\text{K}^4}
+= 1{,}397
+\quad\Longrightarrow\quad
+\boxed{R_B \approx 37\,R_\odot}.
+$$
 
 **Star C** ($T = 12{,}000~\text{K}$, $L = 1\,L_\odot$):
 
 $$\frac{T}{T_\odot} = \frac{12{,}000~\text{K}}{5{,}800~\text{K}} = 2.069 \quad (\text{dimensionless})$$
 
-$$\left(\frac{T}{T_\odot}\right)^4 = (2.069)^4 = 18.33 \quad (\text{dimensionless})$$
+$$\left(\frac{T}{T_\odot}\right)^4 = \left(\frac{12{,}000~\text{K}}{5{,}800~\text{K}}\right)^4 = (2.069)^4 = 18.33\frac{\text{K}^4}{\text{K}^4} = 18.33$$
 
-$$\left(\frac{R}{R_\odot}\right)^2 = \frac{1}{18.33} = 0.0546 \quad (\text{dimensionless}) \quad \Longrightarrow \quad \boxed{R_C \approx 0.23\,R_\odot}$$
+$$
+\left(\frac{R}{R_\odot}\right)^2
+= \frac{1~L_\odot/L_\odot}{18.33~\text{K}^4/\text{K}^4}
+= 0.0546
+\quad\Longrightarrow\quad
+\boxed{R_C \approx 0.23\,R_\odot}.
+$$
 
-**(b)** Star B ($37\,R_\odot$) is largest — a red giant. Star C ($0.23\,R_\odot$) is smallest — consistent with a white dwarf or hot subdwarf.
+**(b)** Star B ($37\,R_\odot$) is largest — a red giant. Star C ($0.23\,R_\odot$) is smallest — a compact, hot star (smaller than typical main-sequence stars but larger than a canonical white dwarf).
 
-**(c)** On the HR diagram ($L$ vs. $T$ with $T$ increasing leftward), lines of constant radius run diagonally from upper-left (hot, luminous) to lower-right (cool, dim), because $L \propto R^2 T^4$ means $L \propto T^4$ at fixed $R$. Star B sits far above the constant-$R$ line through Star A, indicating a much larger radius (giant region, upper-right). Star C sits far below, indicating a much smaller radius (white-dwarf region, lower-left). The main sequence occupies a band near $R \sim 0.1$–$10\,R_\odot$; giants extend to hundreds of $R_\odot$; white dwarfs cluster near $\sim 0.01\,R_\odot$.
+**(c)** On the HR diagram ($L$ vs. $T$ with $T$ increasing leftward), lines of constant radius run diagonally from upper-left (hot, luminous) to lower-right (cool, dim), because $L \propto R^2 T^4$ means $L \propto T^4$ at fixed $R$. Star B sits far above the constant-$R$ line through Star A, indicating a much larger radius (giant region, upper-right). Star C sits far below, indicating a much smaller radius in the compact-star direction (toward the white-dwarf side of the diagram). The main sequence occupies a band near $R \sim 0.1$–$10\,R_\odot$; giants extend to hundreds of $R_\odot$; white dwarfs cluster near $\sim 0.01\,R_\odot$.
 
-**Sanity check:** Cool + luminous = must be physically large (giant). Hot + dim = must be physically tiny (white dwarf). The radii we computed ($37\,R_\odot$ and $0.23\,R_\odot$) confirm these expectations. $\checkmark$
+**Sanity check:** Cool + luminous = must be physically large (giant). Hot + dim = must be physically compact. The radii we computed ($37\,R_\odot$ and $0.23\,R_\odot$) confirm these expectations: Star C is much smaller than a solar-type star, though not as small as a canonical white dwarf ($\sim 0.01\,R_\odot$). $\checkmark$
 
 **Grading guidance:** Full credit requires showing $(R/R_\odot)^2$ before taking the square root for each star (not jumping to the final answer). The sketch should show $T$ increasing leftward and constant-$R$ lines as steep diagonal curves. Interpretation should connect the three regions (main sequence, giant, white dwarf) to radius.
 
@@ -177,7 +221,14 @@ Dust makes the star appear about 29% cooler than it truly is.
 
 **(d)** At fixed luminosity, $R \propto T^{-2}$ (from $L \propto R^2 T^4$). The inferred radius ratio is:
 
-$$\frac{R_{\text{inferred}}}{R_{\text{true}}} = \left(\frac{T_{\text{true}}}{T_{\text{apparent}}}\right)^2 = \left(\frac{7}{5}\right)^2 = \frac{49}{25} = 1.96 \quad (\text{dimensionless})$$
+$$
+\frac{R_{\text{inferred}}}{R_{\text{true}}}
+= \left(\frac{T_{\text{true}}}{T_{\text{apparent}}}\right)^2
+= \left(\frac{5{,}796~\text{K}}{4{,}140~\text{K}}\right)^2
+= \left(\frac{7}{5}\right)^2
+= \frac{49}{25}
+= 1.96.
+$$
 
 $$\boxed{R_{\text{inferred}}/R_{\text{true}} \approx 2.0}$$
 
@@ -292,7 +343,13 @@ $$\boxed{\Delta E_{H\beta}/\Delta E_{H\alpha} = 1.350 \quad (\text{dimensionless
 
 **(c)** The wavelength ratio inverts the energy ratio:
 
-$$\frac{\lambda_{H\beta}}{\lambda_{H\alpha}} = \frac{\Delta E_{H\alpha}}{\Delta E_{H\beta}} = \frac{1}{1.350} = 0.741 \quad (\text{dimensionless})$$
+$$
+\frac{\lambda_{H\beta}}{\lambda_{H\alpha}}
+= \frac{\Delta E_{H\alpha}}{\Delta E_{H\beta}}
+= \frac{1.889~\text{eV}}{2.550~\text{eV}}
+= 0.741\frac{\text{eV}}{\text{eV}}
+= 0.741.
+$$
 
 $$\lambda_{H\beta} = 0.741 \times 656.3~\text{nm} = 486.1~\text{nm}$$
 
@@ -389,13 +446,25 @@ Each factor is dimensionless (or the reference value in K); the product gives $T
 
 **(a)** Evaluate each factor separately:
 
-**Luminosity factor:** $(L_\star/L_\odot)^{1/4} = (1)^{1/4} = 1$ (dimensionless)
+**Luminosity factor:**
+$$
+\left(\frac{L_\star}{L_\odot}\right)^{1/4}
+= \left(\frac{1.0~L_\odot}{1.0~L_\odot}\right)^{1/4}
+= 1.
+$$
 
 **Albedo factor:** $(1 - A)^{1/4} = (1 - 0.25)^{1/4} = (0.75)^{1/4}$
 
 Computing in steps: $(0.75)^{1/2} = 0.866$; $(0.866)^{1/2} = 0.931$ (dimensionless)
 
-**Distance factor:** $(d/1~\text{AU})^{-1/2} = (1.5)^{-1/2} = 1/\sqrt{1.5} = 1/1.225 = 0.816$ (dimensionless)
+**Distance factor:**
+$$
+\left(\frac{d}{1~\text{AU}}\right)^{-1/2}
+= \left(\frac{1.5~\text{AU}}{1.0~\text{AU}}\right)^{-1/2}
+= \frac{1}{\sqrt{1.5}}
+= \frac{1}{1.225}
+= 0.816.
+$$
 
 **Combine:**
 
@@ -427,13 +496,25 @@ $$\boxed{T_{\text{eq}} \approx 212~\text{K}}$$
 
 $$T_{\text{eq}} = 279~\text{K} \times \left(\frac{L_\star}{L_\odot}\right)^{1/4} \times (1-A)^{1/4} \times \left(\frac{d}{1~\text{AU}}\right)^{-1/2}$$
 
-**Luminosity factor:** $(L_\star/L_\odot)^{1/4} = 1$ (dimensionless)
+**Luminosity factor:**
+$$
+\left(\frac{L_\star}{L_\odot}\right)^{1/4}
+= \left(\frac{1.0~L_\odot}{1.0~L_\odot}\right)^{1/4}
+= 1.
+$$
 
 **Albedo factor:** $(1-A)^{1/4} = (1-0.77)^{1/4} = (0.23)^{1/4}$
 
 Computing in steps: $(0.23)^{1/2} = 0.480$; $(0.480)^{1/2} = 0.693$ (dimensionless)
 
-**Distance factor:** $(d/1~\text{AU})^{-1/2} = (0.72)^{-1/2} = 1/\sqrt{0.72} = 1/0.849 = 1.179$ (dimensionless)
+**Distance factor:**
+$$
+\left(\frac{d}{1~\text{AU}}\right)^{-1/2}
+= \left(\frac{0.72~\text{AU}}{1.0~\text{AU}}\right)^{-1/2}
+= \frac{1}{\sqrt{0.72}}
+= \frac{1}{0.849}
+= 1.179.
+$$
 
 **Combine:**
 

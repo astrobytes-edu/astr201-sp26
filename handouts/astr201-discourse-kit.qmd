@@ -19,7 +19,7 @@ format:
 
 Use these in Socratic Seminar, think-pair-share, and group inquiry activities. The goal is not fancy wording—it's clear scientific thinking.
 
-<div class="card-grid">
+<section class="card-grid">
 
 <details class="collapsible-card">
 <summary>Claim (what you think is true)</summary>
@@ -109,7 +109,7 @@ Use these in Socratic Seminar, think-pair-share, and group inquiry activities. T
 </div>
 </details>
 
-</div>
+</section>
 
 \newpage
 
@@ -119,7 +119,7 @@ Astronomy is inference under constraints. These pitfalls are *normal*—the goal
 
 Use this sheet during problem-solving and seminar.
 
-<div class="card-grid">
+<section class="card-grid">
 
 <details class="collapsible-card">
 <summary>1. Mixing up what's measured vs what's inferred</summary>
@@ -196,7 +196,7 @@ Use this sheet during problem-solving and seminar.
 </div>
 </details>
 
-</div>
+</section>
 
 ::: {.callout-tip}
 ## The most scientific question you can ask

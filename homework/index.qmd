@@ -6,12 +6,12 @@ draft: false
 ## Assignments
 
 ::: {.callout-tip}
-**Current assignment:** [Homework 4](astr201-hw4.qmd) — due **Tuesday, February 24, 2026 at 11:59 pm**.
+**Current cycle:** [Homework 4](astr201-hw4.qmd) solutions are now posted. **Grade memo due Friday, February 27, 2026 at 11:59 pm**.
 :::
 
 | Assignment | Posted | Due | Grade Memo Due | Solutions |
 |------------|--------|-----|----------------|-----------|
-| [Homework 4](astr201-hw4.qmd) | Wed Feb 18 | Tues Feb 24 | Fri Feb 27 | |
+| [Homework 4](astr201-hw4.qmd) | Wed Feb 18 | Tues Feb 24 | Fri Feb 27 | [Solutions](solutions/astr201-hw4-solutions.qmd) |
 | [Homework 3](astr201-hw3.qmd) | Wed Feb 11 | Tues Feb 17 | Fri Feb 20 | [Solutions](solutions/astr201-hw3-solutions.qmd) |
 | [Homework 2](astr201-hw2.qmd) | Tues Feb 3 | Tues Feb 10 | Fri Feb 13 | [Solutions](solutions/astr201-hw2-solutions.qmd) |
 | [Homework 1](astr201-hw1.qmd) | Jan 27 | Tues Feb 3 | Fri Feb 6 | [Solutions](solutions/astr201-hw1-solutions.qmd) |

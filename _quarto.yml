@@ -65,7 +65,7 @@ website:
   announcement:
     icon: info-circle
     dismissable: true
-    content: "**Welcome to Spring 2026!** Start with the [Syllabus](/course-info/syllabus.qmd) and [Schedule](/course-info/schedule.qmd). Try the [interactive demos](https://astrobytes-edu.github.io/astr101-sp26/demos/). **HW4 posted:** See the [Homework](/homework/index.qmd) page — due Tuesday Feb 24."
+    content: "**Welcome to Spring 2026!** Start with the [Syllabus](/course-info/syllabus.qmd) and [Schedule](/course-info/schedule.qmd). Try the [interactive demos](https://astrobytes-edu.github.io/astr101-sp26/demos/). **HW4 solutions posted:** See the [Homework](/homework/index.qmd) page — grade memo due Friday Feb 27."
     type: primary
     position: below-navbar
   navbar:
@@ -172,6 +172,7 @@ website:
         contents:
           - homework/index.qmd
           - homework/astr201-hw4.qmd
+          - homework/solutions/astr201-hw4-solutions.qmd
           - homework/astr201-hw3.qmd
           - homework/solutions/astr201-hw3-solutions.qmd
           - homework/astr201-hw2.qmd
