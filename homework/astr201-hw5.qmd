@@ -1,0 +1,248 @@
+---
+title: "Homework 5"
+subtitle: "Masses from Motion + Magnitudes/HR Synthesis (Midterm 1 Review)"
+author: "Dr. Anna Rosen"
+course: ASTR 201
+module: "Modules 1–2 cumulative review (emphasis: Module 2 Lectures 4–5)"
+lectures: "Module 2 Lectures 4–5 + cumulative Modules 1–2 review"
+math-level: symbolic_with_interpretation
+draft: false
+estimated-time: "4–6 hours"
+due: "Tuesday, March 3, 2026 at 11:59 pm"
+grade-memo-due: "Friday, March 6, 2026 at 11:59 pm"
+submission: "Canvas; upload a single clearly scanned PDF or a legible PDF export"
+format:
+  html:
+    toc: true
+  pdf:
+    toc: false
+    geometry: margin=1in
+    fontsize: 11pt
+---
+
+{{< hwmeta >}}
+
+## Learning Objectives
+
+- Use binary-star dynamics to infer stellar masses from observables.
+- Connect radial velocity amplitudes to mass ratio and interpret what is directly measured versus inferred.
+- Apply the magnitude system and distance modulus to move between apparent brightness, absolute brightness, and distance.
+- Use ratio-based stellar scalings to connect mass, luminosity, and main-sequence lifetime.
+- Synthesize multiple observables into a coherent observable → model → inference chain.
+
+## Concept Throughline
+
+- **You do not measure stellar mass directly.** You infer it from motion.
+- **Brightness is not luminosity.** Distance and logarithmic magnitudes matter.
+- **The HR diagram is a map of physics, not just a plot.**
+- **Scaling + sanity checks** should guide every quantitative step.
+
+## Prerequisites
+
+- Module 1 tools: unit handling, scaling, interpretation checks
+- Kepler/Newton orbital reasoning from Module 1 and Module 2
+- Doppler/radial velocity basics
+- Logarithms and scientific notation
+
+## Relevant Sources (Module-Based)
+
+- [Module 2 (reading): The Last Piece — Weighing Stars](https://astrobytes-edu.github.io/astr201-sp26/modules/module-02/readings/lecture-04-weighing-stars-reading.html)
+- [Module 2 (reading): The HR Diagram — Finding Patterns, Needing Models](https://astrobytes-edu.github.io/astr201-sp26/modules/module-02/readings/lecture-05-hr-diagram-reading.html)
+- [Module 1 review: Gravity and Orbits](https://astrobytes-edu.github.io/astr201-sp26/modules/module-01/readings/lecture-03-gravity-and-orbits.html)
+- [Module 1 review: Light as Information](https://astrobytes-edu.github.io/astr201-sp26/modules/module-01/readings/lecture-04-light-as-information.html)
+
+::: {.callout-note}
+**Before you start:** Review the [Homework Guidelines](hw-tips.qmd) for required format and tools.
+:::
+
+::: {.callout-tip}
+**HW5 note:** This is your last pre-midterm assignment. Tool hints are not shown. Choose methods deliberately and include one-line sanity checks.
+:::
+
+::: {.callout-note}
+Use these constants and relations unless a problem states otherwise:
+
+- Solar-unit Kepler form (for binary total mass):
+  $$
+  \frac{M_1 + M_2}{M_\odot} = \frac{\left(a/\text{AU}\right)^3}{\left(P/\text{yr}\right)^2}
+  $$
+- SB2 radial-velocity amplitude relation:
+  $$
+  \frac{M_2}{M_1} = \frac{K_1}{K_2}
+  $$
+- Distance modulus:
+  $$
+  m - M = 5\log_{10}\!\left(\frac{d}{10\,\text{pc}}\right)
+  $$
+- Main-sequence scaling (approx.):
+  $$
+  \frac{L}{L_\odot} \approx \left(\frac{M}{M_\odot}\right)^{3.5}
+  $$
+- Lifetime scaling (approx.):
+  $$
+  t_{\text{MS}} \propto \frac{M}{L} \propto M^{-2.5}, \quad t_{\odot} \approx 10\,\text{Gyr}
+  $$
+:::
+
+::: {.callout-note}
+**Required reporting format:**
+
+- Every numeric answer must include units.
+- Use scientific notation where appropriate.
+- Include a one-line sanity check for each problem.
+:::
+
+::: {.callout-tip}
+**Sanity-check scalings:**
+
+- $M_{\text{tot}} \propto a^3/P^2$
+- $K_1/K_2 = M_2/M_1$
+- $m - M$ increases with distance
+- $L \propto M^{3.5}$ and $t_{\text{MS}} \propto M^{-2.5}$
+:::
+
+---
+
+## Problems (10 total)
+
+### Part A — Masses from Motion + Magnitudes
+
+<!-- Problem: Conceptual / Connection / O→M→I / Tools: Model-Inversion, Uncertainty/Assumptions / ⭐ -->
+### Problem 1 — Why “Weighing a Star” Is an Inference
+
+A student says: “Astronomers can’t really know stellar masses because nobody can put a star on a scale.”
+
+- (a) Identify one direct observable used to infer stellar mass in binaries.
+- (b) Name the physical model that turns that observable into mass.
+- (c) In 2–4 sentences, explain why this is still a valid measurement in scientific practice.
+
+---
+
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Scaling/Ratio / ⭐⭐ -->
+### Problem 2 — Total Mass from a Visual Binary
+
+A visual binary has orbital period $P = 8.0\,\text{yr}$ and semi-major axis $a = 4.0\,\text{AU}$.
+
+- (a) Compute the total system mass $(M_1 + M_2)$ in solar masses.
+- (b) If the two stars have equal mass, what is each mass?
+- (c) Is this system total mass larger or smaller than the Sun’s mass? Give a one-line interpretation.
+
+---
+
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Force/Balance, Scaling/Ratio / ⭐⭐ -->
+### Problem 3 — Mass Ratio from SB2 Velocities
+
+For a double-lined spectroscopic binary (SB2), you measure radial-velocity amplitudes:
+
+- $K_1 = 30\,\text{km/s}$
+- $K_2 = 45\,\text{km/s}$
+
+The total mass is known from independent orbital data to be $M_1 + M_2 = 3.0\,M_\odot$.
+
+- (a) Compute the mass ratio $M_2/M_1$.
+- (b) Solve for $M_1$ and $M_2$ in solar masses.
+- (c) Which star is more massive, and how can you tell from the velocity amplitudes?
+
+---
+
+<!-- Problem: Conceptual / Connection / O→M→I / Tools: Uncertainty/Assumptions / ⭐⭐ -->
+### Problem 4 — Inclination and the Hidden-Mass Problem
+
+Two binaries have identical measured periods and identical radial-velocity amplitudes, but one system is eclipsing and the other is not.
+
+- (a) Why does the eclipsing system usually allow a better mass determination?
+- (b) What is the role of orbital inclination in turning observed radial velocity into true orbital speed?
+- (c) Explain why a nearly face-on system can hide large true masses.
+
+---
+
+<!-- Problem: Synthesis / Connection / O→M→I / Tools: Scaling/Ratio, Model-Inversion / ⭐⭐⭐ -->
+<!-- Challenge: yes -->
+### Problem 5 — Required Capstone: Eclipsing SB2 Full Inference Chain
+
+::: {.callout-note}
+**Required capstone:** This is the longest problem on HW5 and is intentionally integrative.
+:::
+
+An eclipsing SB2 system has:
+
+- Period: $P = 2.00\,\text{yr}$
+- Semi-major axis: $a = 2.00\,\text{AU}$
+- Velocity amplitudes: $K_A = 40\,\text{km/s}$ and $K_B = 20\,\text{km/s}$
+
+Assume both stars are main-sequence and use $L/L_\odot \approx (M/M_\odot)^{3.5}$.
+
+- (a) Compute $M_A + M_B$.
+- (b) Compute the mass ratio and then $M_A$ and $M_B$.
+- (c) Which star is more massive? Which star moves faster in orbit?
+- (d) Estimate the luminosity ratio $L_B/L_A$.
+- (e) In 3–5 sentences, summarize the full observable → model → inference chain used in this problem, including at least one assumption.
+
+---
+
+<!-- Problem: Conceptual / Connection / O→M→I / Tools: Model-Inversion, Uncertainty/Assumptions / ⭐ -->
+### Problem 6 — Apparent vs. Absolute Magnitude Misconception
+
+A student says: “Star X has $m=4$ and star Y has $m=9$, so star X is intrinsically brighter.”
+
+- (a) Explain why this conclusion is not always valid.
+- (b) State what additional quantity you need to compare intrinsic brightness.
+- (c) In one sentence, define apparent magnitude and absolute magnitude.
+
+---
+
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Scaling/Ratio / ⭐⭐ -->
+### Problem 7 — Distance Modulus Practice
+
+- (a) A star has $m = 11.2$ and $M = 1.2$. Compute its distance in parsecs.
+- (b) A cluster is at $d = 250\,\text{pc}$. A member star has apparent magnitude $m = 14.0$. Compute its absolute magnitude $M$.
+- (c) Two stars differ by 5.0 magnitudes in apparent magnitude. By what factor do their observed fluxes differ?
+
+---
+
+### Part B — HR Synthesis + Cumulative Midterm Bridge
+
+<!-- Problem: Synthesis / Connection / O→M→I / Tools: Data/Graph, Model-Inversion / ⭐⭐ -->
+### Problem 8 — Main-Sequence Fitting by Magnitude Offset
+
+A reference cluster at $d_{\text{ref}} = 100\,\text{pc}$ has a calibrated main sequence.
+A target cluster’s main sequence is shifted fainter by $\Delta m = +3.0$ mag at the same colors.
+
+- (a) Use distance-modulus reasoning to compute $d_{\text{target}}/d_{\text{ref}}$.
+- (b) Compute $d_{\text{target}}$ in parsecs.
+- (c) If uncorrected extinction adds $0.5$ mag of dimming, would your distance estimate from part (b) be too large or too small? Explain briefly.
+
+---
+
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Scaling/Ratio / ⭐⭐ -->
+### Problem 9 — Bridge to Module 3: Mass, Luminosity, and Lifetime
+
+Use the main-sequence scalings:
+$$
+\frac{L}{L_\odot} \approx \left(\frac{M}{M_\odot}\right)^{3.5},
+\qquad
+\frac{t_{\text{MS}}}{t_\odot} \approx \left(\frac{M}{M_\odot}\right)^{-2.5}
+$$
+with $t_\odot = 10\,\text{Gyr}$.
+
+- (a) Estimate the main-sequence lifetimes of a $2.0\,M_\odot$ star and a $5.0\,M_\odot$ star.
+- (b) A cluster’s turnoff mass is about $2.0\,M_\odot$. Estimate the cluster age.
+- (c) Why does this scaling imply that very massive stars are rare in old clusters?
+
+---
+
+<!-- Problem: Synthesis / Connection / O→M→I / Tools: Model-Inversion, Data/Graph, Uncertainty/Assumptions / ⭐⭐ -->
+### Problem 10 — Cumulative Inference: One System, Multiple Models
+
+You observe a binary system in a cluster and measure:
+
+- Orbital period: $P = 4.0\,\text{yr}$
+- Semi-major axis: $a = 4.0\,\text{AU}$
+- Component velocity amplitudes: $K_1 = 25\,\text{km/s}$, $K_2 = 20\,\text{km/s}$
+- Cluster distance modulus: $m - M = 10.0$
+- Combined apparent magnitude of the binary: $m = 8.0$
+
+- (a) Compute the total mass and the individual masses.
+- (b) Compute the combined absolute magnitude of the binary.
+- (c) In 3–6 sentences, describe what is measured directly versus inferred in this workflow.
+- (d) Name one additional observation that would reduce uncertainty in the physical interpretation, and explain why.

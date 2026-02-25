@@ -34,7 +34,7 @@ execute:
 ## Start Here
 
 - **Where to find things:** check Canvas + the course website (links above).
-- **Weekly cadence:** homework due **Mon 11:59 pm**; grade memo due **Wed 11:59 pm**.
+- **Weekly cadence:** homework due **Tue 11:59 pm**; grade memo due **Fri 11:59 pm**.
 - **Exams:** closed-note/closed-book; calculator allowed (no phones); formula sheet provided.
 - **Getting help:** see [Getting Help (Office Hours)](#sec-getting-help). Before emailing, check this syllabus and recent Canvas announcements.
 :::
@@ -167,13 +167,13 @@ Homework builds quantitative fluency and model-based reasoning. Expect multi-ste
 
 **Submission workflow (two-stage):**
 
-1. **Homework Solutions — due Monday 11:59 pm PT (Canvas)**  
+1. **Homework Solutions — due Tuesday 11:59 pm PT (Canvas)**  
    - Must be uploaded as **one single, readable PDF** (not a photo dump).  
    - Organize clearly. Show you work. Label final answers.  
-   - **No late submissions:** Instructor solutions will be posted **Tuesday morning**, so late work cannot be accepted.  
+   - **No late submissions:** Instructor solutions will be posted **Wednesday morning**, so late work cannot be accepted.  
    - **Lowest homework score will be dropped** (to cover one off-week or emergency).
 
-2. **Self-Assessment + Reflection (“Grade Memo”) — due Wednesday 11:59 pm PT (Canvas)**  
+2. **Self-Assessment + Reflection (“Grade Memo”) — due Friday 11:59 pm PT (Canvas)**  
    - You will **self-assess (self-grade)** your work using the **detailed homework rubric** and the posted solutions/guidance.  
    - You will submit a brief **grade memo** that includes:
      - what you got right (and why),
@@ -186,7 +186,7 @@ Homework builds quantitative fluency and model-based reasoning. Expect multi-ste
    - **Vague memos** (e.g., “I need to study more”) will not earn full credit unless they include a **specific error diagnosis** and a **concrete next-step habit**.
 
 **How your homework is graded (Instructor 0–5 score):**  
-I will evaluate your **combined submission** (Monday solutions + Wednesday grade memo) and assign an overall score from **0–5**. Homework is graded primarily on **completion, professionalism, and learning behaviors**, not just final correctness. “Professionalism” here means your work is readable, logically organized, shows steps and units, and reflects honest effort. Your grade memo is graded on the quality of your self-assessment, reflection, and evidence of growth.
+I will evaluate your **combined submission** (Tuesday solutions + Friday grade memo) and assign an overall score from **0–5**. Homework is graded primarily on **completion, professionalism, and learning behaviors**, not just final correctness. “Professionalism” here means your work is readable, logically organized, shows steps and units, and reflects honest effort. Your grade memo is graded on the quality of your self-assessment, reflection, and evidence of growth.
 
 | Instructor Score | What it means |
 |-|----|

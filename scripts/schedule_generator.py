@@ -18,6 +18,16 @@ from datetime import datetime, timedelta
 from pathlib import Path
 
 
+def _coerce_date(value) -> datetime:
+    """Return a datetime for YYYY-MM-DD strings or date/datetime objects."""
+    if isinstance(value, datetime):
+        return value
+    # yaml.safe_load may return datetime.date for ISO dates
+    if hasattr(value, "year") and hasattr(value, "month") and hasattr(value, "day"):
+        return datetime(value.year, value.month, value.day)
+    return datetime.strptime(str(value), "%Y-%m-%d")
+
+
 def load_schedule_data(path: str = "data/schedule.yml") -> dict:
     """Load schedule configuration from YAML."""
     with open(path, "r") as f:
@@ -41,13 +51,13 @@ def get_lecture_dates(semester_start: str, days: list[str], num_lectures: int,
     day_map = {"Mon": 0, "Tue": 1, "Wed": 2, "Thu": 3, "Fri": 4, "Sat": 5, "Sun": 6}
     lecture_days = [day_map[d] for d in days]
 
-    start = datetime.strptime(semester_start, "%Y-%m-%d")
+    start = _coerce_date(semester_start)
 
     # Build list of break dates
     break_dates = set()
     if breaks:
         for brk in breaks:
-            brk_start = datetime.strptime(brk["date"], "%Y-%m-%d")
+            brk_start = _coerce_date(brk["date"])
             for i in range(brk.get("duration", 1)):
                 break_dates.add(brk_start + timedelta(days=i))
 
@@ -85,7 +95,7 @@ def generate_schedule(config_path: str = "data/schedule.yml") -> list[dict]:
     # Build schedule
     schedule = []
     date_idx = 0
-    start_date = datetime.strptime(config["semester_start"], "%Y-%m-%d")
+    start_date = _coerce_date(config["semester_start"])
 
     for module in config["modules"]:
         for lecture in module["lectures"]:
@@ -104,21 +114,23 @@ def generate_schedule(config_path: str = "data/schedule.yml") -> list[dict]:
                 })
                 date_idx += 1
 
-    # Add homework due dates
+    # Add homework due dates (Tuesday) and grade memo due dates (following Friday)
     hw_schedule = []
     for hw in config.get("homework", []):
-        # Homework due Monday of given week
+        # Homework due Tuesday of given week
         week_start = start_date + timedelta(weeks=hw["week"] - 1)
-        # Find Monday of that week
-        days_to_monday = (7 - week_start.weekday()) % 7
-        if week_start.weekday() == 0:
+        # Find Tuesday of that week
+        days_to_tuesday = (1 - week_start.weekday()) % 7
+        if week_start.weekday() == 1:
             due_date = week_start
         else:
-            due_date = week_start + timedelta(days=days_to_monday)
+            due_date = week_start + timedelta(days=days_to_tuesday)
+        grade_memo_due = due_date + timedelta(days=3)  # following Friday
 
         hw_schedule.append({
             "week": hw["week"],
             "date": due_date,
+            "grade_memo_due": grade_memo_due,
             "title": hw["title"],
             "type": "homework"
         })
@@ -151,17 +163,18 @@ def format_schedule_table(schedule: list[dict], include_reading: bool = True) ->
 
 def format_homework_table(hw_schedule: list[dict]) -> str:
     """Format homework schedule as Markdown table."""
-    lines = ["| Week | Due Date | Assignment |", "|:--:|:--|:--|"]
+    lines = ["| Week | Due Date | Grade Memo Due | Assignment |", "|:--:|:--|:--|:--|"]
     for hw in hw_schedule:
-        date_str = hw["date"].strftime("%a %b %d")
-        lines.append(f"| {hw['week']} | {date_str} | {hw['title']} |")
+        due_date_str = hw["date"].strftime("%a %b %d")
+        memo_date_str = hw["grade_memo_due"].strftime("%a %b %d")
+        lines.append(f"| {hw['week']} | {due_date_str} | {memo_date_str} | {hw['title']} |")
     return "\n".join(lines)
 
 
 def get_week_dates(week_num: int, config_path: str = "data/schedule.yml") -> tuple[datetime, datetime]:
     """Get start and end dates for a given week number."""
     config = load_schedule_data(config_path)
-    start = datetime.strptime(config["semester_start"], "%Y-%m-%d")
+    start = _coerce_date(config["semester_start"])
     week_start = start + timedelta(weeks=week_num - 1)
     # Adjust to Monday
     week_start = week_start - timedelta(days=week_start.weekday())

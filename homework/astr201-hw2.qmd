@@ -9,7 +9,7 @@ math-level: symbolic_with_interpretation
 draft: false
 estimated-time: "4–6 hours"
 due: "Tuesday, February 10, 2026 at 11:59 pm"
-grade-memo-due: "Thursday, February 12, 2026 at 11:59 pm"
+grade-memo-due: "Friday, February 13, 2026 at 11:59 pm"
 submission: "Canvas; upload a single clearly scanned PDF or a legible PDF export"
 format:
   html:

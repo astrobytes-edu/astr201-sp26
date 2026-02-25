@@ -1,0 +1,444 @@
+---
+title: "Homework 5 Solutions"
+subtitle: "Masses from Motion + Magnitudes/HR Synthesis (Midterm 1 Review)"
+author: "Dr. Anna Rosen"
+date: "2026-03-04"
+description: "Solutions to Homework 5."
+draft: true
+course: ASTR 201
+module: "Modules 1–2 cumulative review (emphasis: Module 2 Lectures 4–5)"
+---
+
+::: {.callout-note}
+**Student note:** These are model solutions written to show reasoning, units, and checks. Your solutions can be shorter if your setup and logic are correct.
+
+**Grade memo note:** Use these to write your reflection (what you got right, what broke, and what you will do differently next time).
+:::
+
+---
+
+## Part A — Masses from Motion + Magnitudes
+
+## Problem 1 — Why “Weighing a Star” Is an Inference
+
+<!-- Problem: Conceptual / Connection / O→M→I / Tools: Model-Inversion, Uncertainty/Assumptions / ⭐ -->
+
+**Restatement:** Explain how stellar masses are determined without direct weighing.
+
+**Key insight:** Mass is inferred from dynamical observables (positions, periods, radial velocities) through Newton/Kepler models.
+
+**Answer:**
+
+- (a) Example direct observable: orbital period, angular separation, or radial-velocity amplitude from spectral-line Doppler shifts.
+- (b) Physical model: Newtonian gravity + Kepler’s laws.
+- (c) This is still measurement because we directly measure observables with instruments and use a tested physical law to map those observables to mass. In science, “measured” often means model-mediated inference, not literal direct contact. The critical check is whether the model is valid for the system and whether uncertainties are tracked.
+
+**Common misconception:** “Inferred” means “guessed.” In reality, inferred quantities can be tightly constrained and highly reliable.
+
+---
+
+## Problem 2 — Total Mass from a Visual Binary
+
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Scaling/Ratio / ⭐⭐ -->
+
+**Given:** $P = 8.0\,\text{yr}$, $a = 4.0\,\text{AU}$.
+
+**Find:** $M_1 + M_2$, then each mass if equal.
+
+**Equation:**
+$$
+\frac{M_1 + M_2}{M_\odot} = \frac{\left(a/\text{AU}\right)^3}{\left(P/\text{yr}\right)^2}
+$$
+
+**Steps:**
+
+**(a)**
+$$
+\frac{M_1 + M_2}{M_\odot} = \frac{4.0^3}{8.0^2} = \frac{64}{64} = 1.0
+$$
+
+$$
+\boxed{M_1 + M_2 = 1.0\,M_\odot}
+$$
+
+**(b)** Equal masses:
+$$
+M_1 = M_2 = \frac{1.0\,M_\odot}{2} = 0.50\,M_\odot
+$$
+
+$$
+\boxed{M_1 = M_2 = 0.50\,M_\odot}
+$$
+
+**(c)** The total mass is equal to the Sun’s mass.
+
+**Unit check:** $(a/\text{AU})$ and $(P/\text{yr})$ are dimensionless; result is in solar masses. $\checkmark$
+
+**Sanity check:** $a$ and $P$ were chosen so $a^3 = P^2$; a total mass near $1\,M_\odot$ is expected. $\checkmark$
+
+---
+
+## Problem 3 — Mass Ratio from SB2 Velocities
+
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Force/Balance, Scaling/Ratio / ⭐⭐ -->
+
+**Given:** $K_1 = 30\,\text{km/s}$, $K_2 = 45\,\text{km/s}$, $M_1 + M_2 = 3.0\,M_\odot$.
+
+**Find:** $M_2/M_1$, then $M_1$, $M_2$.
+
+**Equation:**
+$$
+\frac{M_2}{M_1} = \frac{K_1}{K_2}
+$$
+
+**Steps:**
+
+**(a)**
+$$
+\frac{M_2}{M_1} = \frac{30}{45} = \frac{2}{3} = 0.667
+$$
+
+$$
+\boxed{\frac{M_2}{M_1} = 0.667}
+$$
+
+**(b)** Let $M_2 = 0.667\,M_1$. Then:
+$$
+M_1 + M_2 = M_1 + 0.667M_1 = 1.667M_1 = 3.0\,M_\odot
+$$
+$$
+M_1 = \frac{3.0}{1.667}M_\odot = 1.8\,M_\odot
+$$
+$$
+M_2 = 3.0 - 1.8 = 1.2\,M_\odot
+$$
+
+$$
+\boxed{M_1 = 1.8\,M_\odot,\quad M_2 = 1.2\,M_\odot}
+$$
+
+**(c)** Star 1 is more massive. The more massive component has the smaller orbital speed/amplitude.
+
+**Unit check:** $K_1/K_2$ is dimensionless; masses remain in $M_\odot$. $\checkmark$
+
+**Sanity check:** Since $K_1 < K_2$, star 1 should be more massive; $1.8 > 1.2$ is consistent. $\checkmark$
+
+---
+
+## Problem 4 — Inclination and the Hidden-Mass Problem
+
+<!-- Problem: Conceptual / Connection / O→M→I / Tools: Uncertainty/Assumptions / ⭐⭐ -->
+
+**Restatement:** Explain why inclination controls mass precision in spectroscopic binaries.
+
+**Key insight:** Spectroscopy measures line-of-sight velocity ($v\sin i$), not full orbital speed.
+
+**Answer:**
+
+- (a) Eclipsing systems are near edge-on ($i \approx 90^\circ$), so $\sin i \approx 1$ and the true orbital speeds are close to measured radial speeds. This collapses a major degeneracy.
+- (b) Inclination enters because observed RV is $v_r = v\sin i$. You need $i$ to recover $v$ and therefore mass.
+- (c) In a nearly face-on system, $\sin i$ is small, so observed RV amplitudes can be small even when true orbital speeds (and masses) are large. Without $i$, masses can be severely underestimated.
+
+**Common misconception:** Small measured RV amplitudes always mean low mass. They can also mean low inclination.
+
+---
+
+## Problem 5 — Required Capstone: Eclipsing SB2 Full Inference Chain
+
+<!-- Problem: Synthesis / Connection / O→M→I / Tools: Scaling/Ratio, Model-Inversion / ⭐⭐⭐ -->
+
+**Restatement:** Use $P$, $a$, and SB2 velocity amplitudes to infer component masses and relative luminosities.
+
+**Key elements:**
+
+- Use Kepler solar-unit form for total mass
+- Use $K$ ratio for mass ratio
+- Solve the two-equation system for $M_A$, $M_B$
+- Convert mass ratio to luminosity ratio with $L \propto M^{3.5}$
+- Clearly separate measured observables from inferred quantities
+
+**Sample response:**
+
+**(a) Total mass**
+$$
+\frac{M_A + M_B}{M_\odot} = \frac{\left(2.00\right)^3}{\left(2.00\right)^2} = \frac{8}{4} = 2.00
+$$
+
+$$
+\boxed{M_A + M_B = 2.00\,M_\odot}
+$$
+
+**(b) Mass ratio and individual masses**
+$$
+\frac{M_B}{M_A} = \frac{K_A}{K_B} = \frac{40}{20} = 2.0
+$$
+So $M_B = 2M_A$. Then:
+$$
+M_A + M_B = M_A + 2M_A = 3M_A = 2.00\,M_\odot
+$$
+$$
+M_A = \frac{2.00}{3}\,M_\odot = 0.667\,M_\odot,
+\qquad
+M_B = 1.333\,M_\odot
+$$
+
+$$
+\boxed{M_A = 0.667\,M_\odot,\quad M_B = 1.333\,M_\odot}
+$$
+
+**(c)** Star B is more massive, and star A moves faster ($K_A > K_B$).
+
+**(d) Luminosity ratio**
+$$
+\frac{L_B}{L_A} \approx \left(\frac{M_B}{M_A}\right)^{3.5} = 2.0^{3.5} \approx 11.3
+$$
+
+$$
+\boxed{\frac{L_B}{L_A} \approx 11}
+$$
+
+So B should dominate the total luminosity.
+
+**(e) Observable → model → inference chain:**
+We directly observe $P$, $a$, and Doppler amplitudes $K_A$, $K_B$. Kepler’s law maps $(P,a)$ to total mass, and center-of-mass dynamics maps $K_A/K_B$ to mass ratio. Combining those gives individual masses. Then the main-sequence scaling $L\propto M^{3.5}$ gives luminosity ratio. Key assumptions include Newtonian two-body dynamics, reliable orbital parameter extraction, and that both stars are main-sequence stars so the adopted mass-luminosity scaling applies.
+
+**Sanity check:** The more massive star should move more slowly, and the ratio $K_A/K_B=2$ implies $M_B/M_A=2$, which matches the solved masses. $\checkmark$
+
+**Grading guidance:** Full credit requires all links in the chain (total mass, mass ratio, component masses, luminosity ratio, and one explicit assumption).
+
+---
+
+## Problem 6 — Apparent vs. Absolute Magnitude Misconception
+
+<!-- Problem: Conceptual / Connection / O→M→I / Tools: Model-Inversion, Uncertainty/Assumptions / ⭐ -->
+
+**Restatement:** Correct a misuse of apparent magnitude for intrinsic brightness claims.
+
+**Key insight:** Apparent magnitude depends on both luminosity and distance; intrinsic brightness requires absolute magnitude or luminosity.
+
+**Answer:**
+
+- (a) The statement is not always valid because $m$ measures how bright a star appears from Earth, not how much power it emits.
+- (b) You need distance (or directly absolute magnitude $M$) to compare intrinsic brightness.
+- (c) Apparent magnitude $m$ is observed brightness at Earth; absolute magnitude $M$ is the magnitude a source would have at $10\,\text{pc}$.
+
+**Common misconception:** Brighter-looking stars are always intrinsically brighter.
+
+---
+
+## Problem 7 — Distance Modulus Practice
+
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Scaling/Ratio / ⭐⭐ -->
+
+**Given:**
+
+- (a) $m = 11.2$, $M = 1.2$
+- (b) $d = 250\,\text{pc}$, $m = 14.0$
+- (c) Magnitude difference $\Delta m = 5.0$
+
+**Find:** distance, absolute magnitude, and flux ratio.
+
+**Equation:**
+$$
+m - M = 5\log_{10}\!\left(\frac{d}{10\,\text{pc}}\right)
+$$
+
+**Steps:**
+
+**(a)**
+$$
+11.2 - 1.2 = 10.0 = 5\log_{10}\!\left(\frac{d}{10\,\text{pc}}\right)
+$$
+$$
+\log_{10}\!\left(\frac{d}{10\,\text{pc}}\right)=2.0
+\Rightarrow
+\frac{d}{10\,\text{pc}}=10^2=100
+\Rightarrow d=1000\,\text{pc}
+$$
+
+$$
+\boxed{d = 1.0\times10^3\,\text{pc}}
+$$
+
+**(b)**
+$$
+m - M = 5\log_{10}\!\left(\frac{250}{10}\right)=5\log_{10}(25)=5(1.39794)=6.99
+$$
+$$
+M = m - (m-M)=14.0-6.99=7.01
+$$
+
+$$
+\boxed{M \approx 7.0}
+$$
+
+**(c)** Magnitude-flux relation:
+$$
+\Delta m = -2.5\log_{10}\!\left(\frac{F_2}{F_1}\right)
+$$
+For $\Delta m=5.0$:
+$$
+\frac{F_1}{F_2} = 10^{5/2.5}=10^2=100
+$$
+
+$$
+\boxed{\text{A 5-mag difference corresponds to a factor of }100\text{ in flux.}}
+$$
+
+**Unit check:** Distance modulus argument uses a distance ratio (dimensionless). $\checkmark$
+
+**Sanity check:** Larger $m-M$ means farther distance; $m-M=10$ giving $1000\,\text{pc}$ is consistent. $\checkmark$
+
+---
+
+## Part B — HR Synthesis + Cumulative Midterm Bridge
+
+## Problem 8 — Main-Sequence Fitting by Magnitude Offset
+
+<!-- Problem: Synthesis / Connection / O→M→I / Tools: Data/Graph, Model-Inversion / ⭐⭐ -->
+
+**Restatement:** Use a vertical magnitude shift in matched main sequences to infer distance ratio and distance.
+
+**Key elements:**
+
+- Use $\Delta m = 5\log_{10}(d_t/d_r)$ when intrinsic sequence is assumed same
+- Convert ratio to distance
+- Explain extinction bias direction
+
+**Sample response:**
+
+**(a)**
+$$
+\Delta m = 5\log_{10}\!\left(\frac{d_{\text{target}}}{d_{\text{ref}}}\right)
+\Rightarrow
+3.0 = 5\log_{10}\!\left(\frac{d_{\text{target}}}{d_{\text{ref}}}\right)
+$$
+$$
+\log_{10}\!\left(\frac{d_{\text{target}}}{d_{\text{ref}}}\right)=0.6
+\Rightarrow
+\frac{d_{\text{target}}}{d_{\text{ref}}}=10^{0.6}=3.98
+$$
+
+$$
+\boxed{\frac{d_{\text{target}}}{d_{\text{ref}}}\approx3.98}
+$$
+
+**(b)**
+$$
+d_{\text{target}} = 3.98\times100\,\text{pc}=398\,\text{pc}
+$$
+
+$$
+\boxed{d_{\text{target}}\approx4.0\times10^2\,\text{pc}}
+$$
+
+**(c)** Extinction makes stars appear fainter, increasing the observed magnitude offset. If uncorrected, this mimics larger distance, so the inferred distance is too large.
+
+**Sanity check:** Positive magnitude shift should mean farther target cluster; ratio $>1$ confirms this. $\checkmark$
+
+**Grading guidance:** Full credit requires correct ratio math and correct extinction-bias direction.
+
+---
+
+## Problem 9 — Bridge to Module 3: Mass, Luminosity, and Lifetime
+
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Scaling/Ratio / ⭐⭐ -->
+
+**Given:**
+$$
+\frac{t_{\text{MS}}}{t_\odot} \approx \left(\frac{M}{M_\odot}\right)^{-2.5},
+\qquad t_\odot=10\,\text{Gyr}
+$$
+
+**Find:** Lifetimes for $2.0\,M_\odot$ and $5.0\,M_\odot$, plus age interpretation.
+
+**Steps:**
+
+**(a)** For $2.0\,M_\odot$:
+$$
+\frac{t_{\text{MS}}}{10\,\text{Gyr}} = 2.0^{-2.5}=0.1768
+\Rightarrow
+t_{\text{MS}}=1.77\,\text{Gyr}
+$$
+
+For $5.0\,M_\odot$:
+$$
+\frac{t_{\text{MS}}}{10\,\text{Gyr}} = 5.0^{-2.5}=0.0179
+\Rightarrow
+t_{\text{MS}}=0.179\,\text{Gyr}
+$$
+
+$$
+\boxed{t_{\text{MS}}(2M_\odot)\approx1.8\,\text{Gyr},\quad t_{\text{MS}}(5M_\odot)\approx0.18\,\text{Gyr}}
+$$
+
+**(b)** If turnoff mass is about $2.0\,M_\odot$, cluster age is about the $2.0\,M_\odot$ main-sequence lifetime:
+
+$$
+\boxed{\text{Age}\approx1.8\,\text{Gyr}}
+$$
+
+**(c)** Massive stars burn fuel much faster and leave the main sequence quickly, so old clusters no longer contain many high-mass main-sequence stars.
+
+**Unit check:** Lifetime ratio is dimensionless; multiplying by $10\,\text{Gyr}$ returns time units. $\checkmark$
+
+**Sanity check:** Higher mass gives shorter lifetime; $0.18\,\text{Gyr} < 1.8\,\text{Gyr} < 10\,\text{Gyr}$ is correct ordering. $\checkmark$
+
+---
+
+## Problem 10 — Cumulative Inference: One System, Multiple Models
+
+<!-- Problem: Synthesis / Connection / O→M→I / Tools: Model-Inversion, Data/Graph, Uncertainty/Assumptions / ⭐⭐ -->
+
+**Restatement:** Combine orbital, RV, and photometric information to infer masses and intrinsic brightness, and identify uncertainty-reducing follow-up.
+
+**Key elements:**
+
+- Kepler total mass from $P,a$
+- Mass ratio from $K_1,K_2$
+- Absolute magnitude from distance modulus
+- Explicit measured vs inferred separation
+- Reasonable follow-up observation with justification
+
+**Sample response:**
+
+**(a) Total and individual masses**
+$$
+\frac{M_1+M_2}{M_\odot}=\frac{4.0^3}{4.0^2}=\frac{64}{16}=4.0
+\Rightarrow
+M_1+M_2=4.0\,M_\odot
+$$
+
+$$
+\frac{M_2}{M_1}=\frac{K_1}{K_2}=\frac{25}{20}=1.25
+$$
+So $M_2=1.25M_1$ and:
+$$
+M_1+1.25M_1=2.25M_1=4.0\,M_\odot
+\Rightarrow
+M_1=1.78\,M_\odot,
+\quad M_2=2.22\,M_\odot
+$$
+
+$$
+\boxed{M_1\approx1.78\,M_\odot,\quad M_2\approx2.22\,M_\odot}
+$$
+
+**(b) Combined absolute magnitude**
+$$
+M = m - (m-M) = 8.0 - 10.0 = -2.0
+$$
+
+$$
+\boxed{M_{\text{combined}}=-2.0}
+$$
+
+**(c) Measured vs inferred:**
+Measured directly are $P$, $a$, $K_1$, $K_2$, and apparent magnitude $m$ (plus the cluster modulus from prior analysis). Using Kepler/Newton, we infer total mass from $P$ and $a$. Using center-of-mass dynamics, we infer mass ratio from $K_1/K_2$, then individual masses. Using the distance modulus relation, we infer intrinsic brightness as absolute magnitude. Each step is model-dependent but testable, and each has uncertainty.
+
+**(d) Follow-up observation:**
+A strong follow-up is eclipse photometry (or other inclination constraint), because it reduces geometric uncertainty and enables tighter component-property inference (masses/radii/luminosities) rather than only system-level estimates.
+
+**Sanity check:** The larger-mass component should have smaller velocity amplitude; $M_2>M_1$ and $K_2<K_1$ are consistent. $\checkmark$
+
+**Grading guidance:** Full credit requires coherent chain logic, not just numerical answers.

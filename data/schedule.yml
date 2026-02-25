@@ -126,17 +126,23 @@ modules:
 
 # Homework schedule (computed from week numbers)
 homework:
-  - week: 2
-    title: "HW 1: Scaling & Units"
   - week: 3
-    title: "HW 2: Kepler & Newton"
+    title: "HW 1: Tools of the Trade + Gravity & Orbits"
+  - week: 4
+    title: "HW 2: Gravity & Orbits II + Light as Information"
   - week: 5
-    title: "HW 3: Parallax & Radiation"
+    title: "HW 3: Parallax + Surface Flux & Radiation Inference"
+  - week: 6
+    title: "HW 4: Surface Flux & Colors + Spectra & Composition"
   - week: 7
-    title: "HW 4: Spectra & H-R"
+    title: "HW 5: Masses from Motion + Magnitudes/HR Synthesis (Midterm 1 Review)"
   - week: 9
-    title: "HW 5: Stellar Structure"
-  - week: 11
-    title: "HW 6: Stellar Evolution"
+    title: "HW 6: Stellar Structure I — Hydrostatic Equilibrium + Energy Transport"
+  - week: 10
+    title: "HW 7: Stellar Structure II — Fusion Ignition + Main-Sequence Scalings"
+  - week: 12
+    title: "HW 8: Stellar Evolution + Compact Remnants (Midterm 2 Prep)"
   - week: 14
-    title: "HW 7: Galaxies & Cosmology"
+    title: "HW 9: Galaxies I — ISM, Star Formation, and Galaxy Structure"
+  - week: 15
+    title: "HW 10: Cosmology Synthesis — Hubble Law, Expansion, Big Bang"
