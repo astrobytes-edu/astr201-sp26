@@ -25,6 +25,9 @@ Concept-Throughline:
 math-level: symbolic_with_interpretation
 mode: Draft
 prerequisites: "Lectures 1–4 (Module 2 — distance, flux, spectra, masses), Lecture 4 (Module 1 — light), Stefan-Boltzmann law, algebra, logarithms"
+format:
+  html:
+    mermaid: {}
 ---
 
 ## Learning Objectives
@@ -226,13 +229,51 @@ $$d \approx 3{,}981 \times 10~\text{pc} \approx 4.0 \times 10^4~\text{pc} = 40~\
 ::: {.callout-note collapse="true"}
 ## Solutions
 
-1. $m - M = 0 = 5\log_{10}(d/10~\text{pc})$. So $\log_{10}(d/10) = 0$, meaning $d/10 = 1$, giving $d = 10~\text{pc}$. (By definition — this is where $m = M$.)
+1. Start from the distance modulus:
 
-2. $m - M = 5\log_{10}(1000/10) = 5\log_{10}(100) = 5 \times 2 = 10$. So $M = m - 10 = 10.0 - 10.0 = 0.0$.
+   $$
+   m - M = 0 = 5\log_{10}\!\left(\frac{d}{10~\text{pc}}\right)
+   $$
 
-3. At $10~\text{pc}$: $m = M = +4.83$ (by definition). At $100~\text{pc}$: $m - M = 5\log_{10}(100/10) = 5$, so $m = 4.83 + 5 = 9.83$. Since the naked-eye limit is $m \approx 6$, the Sun at $100~\text{pc}$ would *not* be visible without binoculars — it would be nearly $4~\text{mag}$ too faint.
+   $$
+   \log_{10}\!\left(\frac{d}{10~\text{pc}}\right) = 0 \Rightarrow d = 10~\text{pc}
+   $$
 
-4. Same $M$, so $\Delta m = m_A - m_B = 5\log_{10}(d_A/10) - 5\log_{10}(d_B/10) = 5\log_{10}(d_A/d_B) = 5\log_{10}(10) = 5~\text{mag}$. Star A appears $5~\text{mag}$ fainter — a factor of $100\times$ dimmer, consistent with the inverse-square law: $(10)^2 = 100$.
+   By definition, this is where $m = M$.
+
+2. Compute the modulus, then solve for $M$:
+
+   $$
+   m - M = 5\log_{10}\!\left(\frac{1000}{10}\right) = 5\log_{10}(100) = 10
+   $$
+
+   $$
+   M = m - 10 = 10.0 - 10.0 = 0.0
+   $$
+
+3. Evaluate the two distances:
+
+   $$
+   d = 10~\text{pc} \Rightarrow m = M = +4.83
+   $$
+
+   $$
+   d = 100~\text{pc} \Rightarrow m - M = 5\log_{10}(10) = 5,\quad m = 4.83 + 5 = 9.83
+   $$
+
+   Since the naked-eye limit is $m \approx 6$, the Sun at $100~\text{pc}$ would not be visible without binoculars.
+
+4. Compare equal-luminosity stars at different distances:
+
+   $$
+   \Delta m = 5\log_{10}\!\left(\frac{d_A}{d_B}\right) = 5\log_{10}(10) = 5~\text{mag}
+   $$
+
+   Star A appears $5~\text{mag}$ fainter, which is a factor of $100\times$ dimmer:
+
+   $$
+   \left(\frac{d_A}{d_B}\right)^2 = 10^2 = 100
+   $$
 :::
 :::
 
@@ -293,6 +334,7 @@ The **observer's HR diagram** (also called a **color-magnitude diagram** or CMD)
 - **Horizontal axis:** Spectral type (O B A F G K M) or, equivalently, **color index** $B - V$ — with hot blue stars on the *left* and cool red stars on the *right*. (Temperature *decreases* from left to right — another astronomical convention.)
 
 **Crucially:** Neither axis requires any physical theory. Spectral type is a direct classification from line patterns. Absolute magnitude is computed from apparent magnitude and distance (parallax). This diagram is pure *measurement*.
+Observable → Model → Inference: we measure $m$ and spectral type, use the distance modulus to model $M$, then infer structure from how stars populate the diagram.
 
 ### What the Diagram Shows
 
@@ -374,9 +416,15 @@ A complete stellar classification includes both spectral type and luminosity cla
 ### Same Patterns, Physical Axes
 
 The observer's HR diagram uses observational quantities: absolute magnitude $M_V$ and spectral type (or color index $B-V$). Theorists prefer **physical quantities**: luminosity $L$ (in $L_\odot$) and effective temperature $T_{\text{eff}}$ (in K). These are related to the observational quantities through calibrations:
+This is the same structure on calibrated axes: observables in Part 2, physical quantities in Part 3.
 
 - **$M_V \to L$:** Absolute magnitude converts to luminosity via the magnitude-luminosity relation
 - **Spectral type $\to$ $T_{\text{eff}}$:** Each spectral subtype corresponds to a temperature (e.g., G2 $\to$ $5{,}800~\text{K}$, M0 $\to$ $3{,}850~\text{K}$)
+
+$$
+M - M_\odot = -2.5 \log_{10}\!\left(\frac{L}{L_\odot}\right)
+$$
+(Ignoring bolometric corrections here.)
 
 The theorist's HR diagram plots $\log(L/L_\odot)$ on the vertical axis and $\log T_{\text{eff}}$ on the horizontal axis — with temperature *decreasing* to the right (by convention, matching the observer's diagram).
 
@@ -461,11 +509,45 @@ $$\frac{R}{R_\odot} = \sqrt{1{,}770} = 42$$
 ::: {.callout-note collapse="true"}
 ## Solutions
 
-1. Lines of constant $R$ slope **upward to the left** — hotter temperature at fixed radius means higher luminosity ($L \propto T^4$ at fixed $R$). On the reversed horizontal axis, this appears as a line going from lower-right to upper-left.
+1. At fixed radius, use the scaling:
 
-2. $\left(\frac{R}{R_\odot}\right)^2 = \frac{L/L_\odot}{(T/T_\odot)^4} = \frac{0.01}{(2 \times 10^4/5{,}800)^4} = \frac{0.01}{(3.45)^4} = \frac{0.01}{141} = 7.1 \times 10^{-5}$. So $R/R_\odot = \sqrt{7.1 \times 10^{-5}} = 0.0084 \approx 0.01\,R_\odot$. The white dwarf is roughly Earth-sized ($R_\oplus \approx 0.009\,R_\odot$). $\checkmark$
+   $$
+   L \propto T^4
+   $$
 
-3. Using Stefan-Boltzmann: $L/L_\odot = (R/R_\odot)^2 (T/T_\odot)^4 = (1)^2 (2 \times 10^4/5{,}800)^4 = (3.45)^4 \approx 141\,L_\odot$. This hypothetical star would sit *above and to the left* of the Sun on the HR diagram — hot and moderately luminous. No real main-sequence star has exactly this combination: actual B-type stars at ${\sim}2 \times 10^4~\text{K}$ have $R \sim 4\text{–}7\,R_\odot$ and $L \sim 10^3\text{–}10^4\,L_\odot$, much more luminous than $141\,L_\odot$. Our hypothetical would be a peculiar, undersized object — a useful thought experiment, not a real star.
+   So lines of constant $R$ slope upward to the left: hotter means more luminous, and the reversed temperature axis makes that direction appear from lower-right to upper-left.
+
+2. Start from the ratio form:
+
+   $$
+   \left(\frac{R}{R_\odot}\right)^2 = \frac{L/L_\odot}{(T/T_\odot)^4}
+   $$
+
+   $$
+   \left(\frac{R}{R_\odot}\right)^2
+   = \frac{0.01}{(2 \times 10^4/5{,}800)^4}
+   = \frac{0.01}{(3.45)^4}
+   = \frac{0.01}{141}
+   = 7.1 \times 10^{-5}
+   $$
+
+   $$
+   \frac{R}{R_\odot} = \sqrt{7.1 \times 10^{-5}} = 0.0084 \approx 0.01\,R_\odot
+   $$
+
+   The white dwarf is roughly Earth-sized ($R_\oplus \approx 0.009\,R_\odot$). $\checkmark$
+
+3. Use Stefan-Boltzmann in solar units:
+
+   $$
+   \frac{L}{L_\odot}
+   = \left(\frac{R}{R_\odot}\right)^2\left(\frac{T}{T_\odot}\right)^4
+   = (1)^2\left(\frac{2 \times 10^4}{5{,}800}\right)^4
+   = (3.45)^4
+   \approx 141
+   $$
+
+   So this star would be hot and moderately luminous, above and to the left of the Sun on the HR diagram. Real B-type main-sequence stars near ${\sim}2 \times 10^4~\text{K}$ are usually much more luminous because they also have larger radii, so this remains a useful thought experiment rather than a typical star.
 :::
 :::
 
@@ -515,7 +597,7 @@ The main sequence is not a random band — it is the **locus of hydrogen-burning
 The HR diagram is a projection of a higher-dimensional stellar structure space onto two observable axes; mass is the hidden coordinate that orders the projection.
 
 ::: {.callout-important title="Connection: Why This Matters"}
-The fact that the main sequence is a mass sequence has a profound implication: **every main-sequence star of a given mass has essentially the same luminosity and temperature.** A $1\,M_\odot$ star is always ${\sim}1\,L_\odot$ and ${\sim}5{,}800~\text{K}$. A $10\,M_\odot$ star is always ${\sim}3{,}000\,L_\odot$ and ${\sim}2.5 \times 10^4~\text{K}$.
+The fact that the main sequence is a mass sequence has a profound implication: **to first order, main-sequence stars of a given mass and similar composition have nearly the same luminosity and temperature.** A $1\,M_\odot$ star is typically ${\sim}1\,L_\odot$ and ${\sim}5{,}800~\text{K}$. A $10\,M_\odot$ star is typically ${\sim}3{,}000\,L_\odot$ and ${\sim}2.5 \times 10^4~\text{K}$.
 
 This means that if you know a main-sequence star's spectral type, you know its luminosity — and from the distance modulus, you can calculate its distance. This technique is called **spectroscopic parallax** (a misnomer — it has nothing to do with parallax, but it gives distances from spectra). It extends distance measurement far beyond the reach of geometric parallax.
 :::
@@ -570,7 +652,7 @@ This schematic is a map-reading aid, not a precision plot. Follow each arrow as 
 
 **Axis convention reminder:** Luminosity up; temperature decreases to the right (hot left, cool right).
 
-```mermaid
+```{mermaid}
 flowchart LR
   subgraph one["1 M☉"]
     A1["Protostar contraction"] --> A2["Main sequence"] --> A3["Red giant"] --> A4["Planetary nebula"] --> A5["White dwarf cooling"]
