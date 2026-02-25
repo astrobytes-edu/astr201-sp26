@@ -2,7 +2,7 @@
 title: "Lecture 5: The HR Diagram — Finding Patterns, Needing Models"
 subtitle: "Every star has an address — and mass writes the zip code"
 author: "Dr. Anna Rosen"
-date: "2026-02-26"
+date: "2026-02-25"
 description: "The Hertzsprung-Russell diagram is the most important single diagram in all of astrophysics. By plotting stellar luminosity against surface temperature for thousands of stars, we discover striking patterns — the main sequence, the giant branch, the white dwarf sequence. But the diagram also raises questions that observation alone cannot answer: why do these patterns exist? Why is the main sequence a mass sequence? The answers require physics — and that is the work of Module 3."
 draft: false
 categories: [hr-diagram, stellar-classification, magnitudes, luminosity-class, main-sequence, stellar-evolution]
@@ -26,6 +26,18 @@ math-level: symbolic_with_interpretation
 mode: Draft
 prerequisites: "Lectures 1–4 (Module 2 — distance, flux, spectra, masses), Lecture 4 (Module 1 — light), Stefan-Boltzmann law, algebra, logarithms"
 ---
+
+<style>
+.hr-reading-table-scroll {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.hr-reading-table-scroll > table {
+  min-width: 44rem;
+}
+</style>
 
 ## Learning Objectives
 
@@ -226,45 +238,65 @@ $$d \approx 3{,}981 \times 10~\text{pc} \approx 4.0 \times 10^4~\text{pc} = 40~\
 ::: {.callout-note collapse="true"}
 ## Solutions
 
-1. Start from the distance modulus:
+1. **Step 1 — Write the distance modulus with the known values.**
 
    $$
-   m - M = 0 = 5\log_{10}\!\left(\frac{d}{(10~\text{pc})}\right)
+   m - M = 5.0 - 5.0 = 0
    $$
 
    $$
-   \log_{10}\!\left(\frac{d}{(10~\text{pc})}\right) = 0 \Rightarrow d = 10~\text{pc}
+   0 = 5\log_{10}\!\left(d / (10~\text{pc})\right)
+   $$
+
+   **Step 2 — Solve for distance.**
+
+   $$
+   \log_{10}\!\left(d / (10~\text{pc})\right) = 0
+   $$
+
+   $$
+   d / (10~\text{pc}) = 10^0 = 1 \Rightarrow d = 10~\text{pc}
    $$
 
    By definition, this is where $m = M$.
 
-2. Compute the modulus, then solve for $M$:
+2. **Step 1 — Compute the distance modulus at 1,000 pc.**
 
    $$
    m - M = 5\log_{10}\!\left(\frac{1000~\text{pc}}{10~\text{pc}}\right) = 5\log_{10}(100) = 10
    $$
 
+   **Step 2 — Solve for the absolute magnitude.**
+
    $$
    M = m - 10 = 10.0 - 10.0 = 0.0
    $$
 
-3. Evaluate the two distances:
+3. **Step 1 — Evaluate the 10 pc case.**
 
    $$
    d = 10~\text{pc} \Rightarrow m = M = +4.83
    $$
 
+   **Step 2 — Evaluate the 100 pc case.**
+
    $$
-   d = 100~\text{pc} \Rightarrow m - M = 5\log_{10}(10) = 5,\quad m = 4.83 + 5 = 9.83
+   d = 100~\text{pc} \Rightarrow m - M = 5\log_{10}\!\left(\frac{100~\text{pc}}{10~\text{pc}}\right) = 5\log_{10}(10) = 5
+   $$
+
+   $$
+   m = 4.83 + 5 = 9.83
    $$
 
    Since the naked-eye limit is $m \approx 6$, the Sun at $100~\text{pc}$ would not be visible without binoculars.
 
-4. Compare equal-luminosity stars at different distances:
+4. **Step 1 — Compare equal-luminosity stars using the distance ratio.**
 
    $$
    \Delta m = 5\log_{10}\!\left(\frac{d_A}{d_B}\right) = 5\log_{10}(10) = 5~\text{mag}
    $$
+
+   **Step 2 — Interpret in flux units.**
 
    Star A appears $5~\text{mag}$ fainter, which is a factor of $100\times$ dimmer:
 
@@ -506,7 +538,7 @@ $$\frac{R}{R_\odot} = \sqrt{1{,}770} = 42$$
 ::: {.callout-note collapse="true"}
 ## Solutions
 
-1. At fixed radius, use the scaling:
+1. **Step 1 — Use fixed-radius scaling.**
 
    $$
    L \propto T^4
@@ -514,22 +546,36 @@ $$\frac{R}{R_\odot} = \sqrt{1{,}770} = 42$$
 
    So lines of constant $R$ slope upward to the left: hotter means more luminous, and the reversed temperature axis makes that direction appear from lower-right to upper-left.
 
-2. Start from the ratio form:
+2. **Step 1 — Start from Stefan-Boltzmann in solar ratios.**
 
    $$
-   \left(\frac{R}{R_\odot}\right)^2 = \frac{L/L_\odot}{(T/T_\odot)^4}
+   \left(\frac{L}{L_\odot}\right) = \left(\frac{R}{R_\odot}\right)^2 \left(\frac{T}{T_\odot}\right)^4
    $$
+
+   **Step 2 — Isolate the squared radius ratio by dividing by the temperature-ratio term.**
 
    $$
    \left(\frac{R}{R_\odot}\right)^2
-   = \frac{0.01}{(2 \times 10^4/5{,}800)^4}
-   = \frac{0.01}{(3.45)^4}
-   = \frac{0.01}{141}
-   = 7.1 \times 10^{-5}
+   = \frac{L/L_\odot}{(T/T_\odot)^4}
+   = \frac{0.01}{(2 \times 10^4 / 5{,}800)^4}
    $$
 
+   **Step 3 — Evaluate the temperature ratio and fourth power.**
+
    $$
-   \frac{R}{R_\odot} = \sqrt{7.1 \times 10^{-5}} = 0.0084 \approx 0.01\,R_\odot
+   \frac{T}{T_\odot} = \frac{2 \times 10^4}{5{,}800} \approx 3.45,\qquad \left(\frac{T}{T_\odot}\right)^4 \approx 141
+   $$
+
+   **Step 4 — Compute the squared radius ratio.**
+
+   $$
+   \left(\frac{R}{R_\odot}\right)^2 = \frac{0.01}{141} = 7.1 \times 10^{-5}
+   $$
+
+   **Step 5 — Take the square root.**
+
+   $$
+   \frac{R}{R_\odot} = \sqrt{7.1 \times 10^{-5}} \approx 8.4 \times 10^{-3} \approx 0.01\,R_\odot
    $$
 
    The white dwarf is roughly Earth-sized ($R_\oplus \approx 0.009\,R_\odot$). $\checkmark$
@@ -573,7 +619,7 @@ Commit to an answer before reading on.
 
 Here is the payoff from Lecture 4. When you label main-sequence stars by their mass (from binary star measurements), a beautiful pattern appears: **mass increases monotonically from lower-right to upper-left along the main sequence.**
 
-::: {.table-responsive}
+::: {.table-responsive .hr-reading-table-scroll}
 | Position on MS | Spectral Type | Mass ($M_\odot$) | $L$ ($L_\odot$) | $T_{\text{eff}}$ (K) |
 |---------------|--------------|------------------|-----------------|----------------------|
 | Lower right | M5 | $0.1$ | $0.001$ | $3{,}000$ |
@@ -736,7 +782,7 @@ The HR diagram is a projection of stellar structure onto observable axes, ordere
 
 ### Main-Sequence Properties by Spectral Type
 
-::: {.table-responsive}
+::: {.table-responsive .hr-reading-table-scroll}
 | Spectral Type | $T_{\text{eff}}$ (K) | Mass ($M_\odot$) | Radius ($R_\odot$) | $L$ ($L_\odot$) | $M_V$ | Main-Seq Lifetime |
 |---|---|---|---|---|---|---|
 | O5 | $4.2 \times 10^4$ | $40$ | $12$ | $5 \times 10^5$ | $-5.7$ | ${\sim}4.5~\text{Myr}$ |
