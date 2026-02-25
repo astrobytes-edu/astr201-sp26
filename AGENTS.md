@@ -48,7 +48,8 @@ At the start of any session in this repo, load the ASTR201 teaching skills; keep
 
 Load with:
 
-`~/.codex/superpowers/.codex/superpowers-codex use-skill <skill-name>`
+Superpowers are discovered from `~/.agents/skills/`.
+Ensure the symlink exists: `~/.agents/skills/superpowers -> ~/.codex/superpowers/skills/`.
 
 Optional one-command helper (auto-loads the course lecture-writing skill for this repo):
 `~/.codex/bin/lecture-writing`
