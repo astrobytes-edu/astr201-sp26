@@ -57,6 +57,7 @@ project:
     - homework/solutions/*.qmd
     - "!homework/solutions/astr201-hw5-solutions.qmd"
     - exams/*.qmd
+    - "!exams/_prep/**"
     - explore/*.qmd
   brand: _brand.yml
 
