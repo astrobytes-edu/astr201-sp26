@@ -553,6 +553,13 @@ figures:
     credit: "ASTR 201 (generated)"
     module: 2
 
+  hr-evolutionary-tracks-schematic:
+    path: /assets/images/module-02/week-06/hr-evolutionary-tracks-schematic.svg
+    caption: "**What to notice:** This static schematic shows two evolutionary pathways on HR-diagram axes (luminosity up, temperature decreasing to the right): an approximately 1-solar-mass track from protostar contraction to main sequence to red giant to planetary-nebula/white-dwarf cooling, and an approximately 10-solar-mass track from main sequence to supergiant to core-collapse supernova with neutron-star/black-hole endpoints."
+    alt: "Static HR diagram schematic with labeled phases and arrows. Blue track for about 1 solar mass: protostar contraction, main sequence, red giant, planetary nebula, and white dwarf cooling. Red track for about 10 solar masses: main sequence, supergiant, core-collapse supernova, then neutron star or black hole."
+    credit: "ASTR 201 (generated)"
+    module: 2
+
   binary-star-visual:
     path: /assets/images/module-02/week-06/visual-binary-gemini.png
     caption: "**What to notice:** Two stars orbit their common center of mass (×). The heavier star (yellow-white) traces a *smaller* orbit ($a_1$); the lighter star (orange) swings wide ($a_2$). Ghosted positions at different epochs show the decades of patient observation needed to map the orbit. With the period $P$ and physical separation $a = a_1 + a_2$ (which requires knowing the distance), Kepler III yields the total mass."

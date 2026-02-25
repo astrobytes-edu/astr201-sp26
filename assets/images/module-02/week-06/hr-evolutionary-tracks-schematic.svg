@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Schematic HR diagram evolutionary tracks</title>
+  <desc id="desc">Static schematic HR diagram with luminosity increasing upward and temperature decreasing to the right. Two tracks are shown: approximately 1 solar mass and approximately 10 solar masses, with labeled phases and direction arrows.</desc>
+  <defs>
+    <marker id="arrow-blue" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#1d4ed8"/>
+    </marker>
+    <marker id="arrow-red" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#b91c1c"/>
+    </marker>
+    <style>
+      .axis { stroke:#111827; stroke-width:3; }
+      .tick { stroke:#374151; stroke-width:2; }
+      .label { font: 28px 'Helvetica Neue', Arial, sans-serif; fill:#111827; }
+      .small { font: 22px 'Helvetica Neue', Arial, sans-serif; fill:#111827; }
+      .track1 { fill:none; stroke:#1d4ed8; stroke-width:6; marker-end:url(#arrow-blue); }
+      .track2 { fill:none; stroke:#b91c1c; stroke-width:6; marker-end:url(#arrow-red); }
+      .phase1 { font: 20px 'Helvetica Neue', Arial, sans-serif; fill:#1e3a8a; }
+      .phase2 { font: 20px 'Helvetica Neue', Arial, sans-serif; fill:#7f1d1d; }
+      .panel { fill:#f9fafb; stroke:#d1d5db; stroke-width:2; }
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="1200" height="760" fill="#ffffff"/>
+  <rect x="70" y="70" width="1060" height="620" class="panel"/>
+
+  <line x1="170" y1="630" x2="170" y2="140" class="axis"/>
+  <line x1="170" y1="630" x2="1040" y2="630" class="axis"/>
+
+  <line x1="170" y1="510" x2="182" y2="510" class="tick"/>
+  <line x1="170" y1="390" x2="182" y2="390" class="tick"/>
+  <line x1="170" y1="270" x2="182" y2="270" class="tick"/>
+  <line x1="170" y1="630" x2="310" y2="630" class="tick"/>
+  <line x1="170" y1="630" x2="500" y2="630" class="tick"/>
+  <line x1="170" y1="630" x2="690" y2="630" class="tick"/>
+  <line x1="170" y1="630" x2="880" y2="630" class="tick"/>
+
+  <text x="96" y="360" transform="rotate(-90 96 360)" class="label">Luminosity (up)</text>
+  <text x="420" y="685" class="label">Temperature decreases to the right (hot left, cool right)</text>
+
+  <text x="190" y="170" class="small">hot / blue</text>
+  <text x="900" y="170" class="small">cool / red</text>
+
+  <path d="M 310 470 C 350 430, 380 395, 420 350" class="track1"/>
+  <path d="M 420 350 C 480 355, 560 385, 650 445" class="track1"/>
+  <path d="M 650 445 C 730 500, 780 555, 815 590" class="track1"/>
+  <path d="M 815 590 C 770 560, 730 520, 695 475" class="track1"/>
+
+  <text x="295" y="500" class="phase1">Protostar contraction</text>
+  <text x="420" y="338" class="phase1">Main sequence (about 1 M_sun)</text>
+  <text x="655" y="438" class="phase1">Red giant</text>
+  <text x="815" y="614" class="phase1">Planetary nebula</text>
+  <text x="675" y="468" class="phase1">White dwarf cooling</text>
+
+  <path d="M 360 300 C 430 250, 500 205, 565 185" class="track2"/>
+  <path d="M 565 185 C 665 185, 760 225, 845 290" class="track2"/>
+  <path d="M 845 290 C 915 340, 960 385, 995 430" class="track2"/>
+
+  <text x="355" y="292" class="phase2">Main sequence (about 10 M_sun)</text>
+  <text x="850" y="286" class="phase2">Supergiant</text>
+  <text x="995" y="432" class="phase2">Core-collapse SN</text>
+
+  <path d="M 995 430 C 955 470, 925 505, 900 545" class="track2"/>
+  <path d="M 995 430 C 1020 475, 1040 525, 1055 580" class="track2"/>
+  <text x="865" y="568" class="phase2">Neutron star</text>
+  <text x="1015" y="610" class="phase2">Black hole</text>
+
+  <text x="175" y="95" class="label">HR Diagram Evolutionary Tracks (Schematic)</text>
+</svg>

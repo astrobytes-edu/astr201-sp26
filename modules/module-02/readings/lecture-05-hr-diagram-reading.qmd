@@ -25,9 +25,6 @@ Concept-Throughline:
 math-level: symbolic_with_interpretation
 mode: Draft
 prerequisites: "Lectures 1–4 (Module 2 — distance, flux, spectra, masses), Lecture 4 (Module 1 — light), Stefan-Boltzmann law, algebra, logarithms"
-format:
-  html:
-    mermaid: {}
 ---
 
 ## Learning Objectives
@@ -188,8 +185,8 @@ where:
 
 **Key sanity checks:**
 
-- At $d = 10~\text{pc}$: $m - M = 5\log_{10}(10/10) = 0$, so $m = M$. $\checkmark$ (Definition of absolute magnitude.)
-- At $d = 100~\text{pc}$: $m - M = 5\log_{10}(100/10) = 5\log_{10}(10) = 5$. So the star appears $5~\text{mag}$ fainter than at $10~\text{pc}$, i.e., $100\times$ fainter — consistent with inverse-square scaling. $\checkmark$
+- At $d = 10~\text{pc}$: $m - M = 5\log_{10}\!\left(\frac{10~\text{pc}}{10~\text{pc}}\right) = 0$, so $m = M$. $\checkmark$ (Definition of absolute magnitude.)
+- At $d = 100~\text{pc}$: $m - M = 5\log_{10}\!\left(\frac{100~\text{pc}}{10~\text{pc}}\right) = 5\log_{10}(10) = 5$. So the star appears $5~\text{mag}$ fainter than at $10~\text{pc}$, i.e., $100\times$ fainter — consistent with inverse-square scaling. $\checkmark$
 - At $d = 1{,}000~\text{pc}$: $m - M = 10$. The star is $10^4\times$ fainter. $\checkmark$
 
 ::: {.callout-note}
@@ -205,11 +202,11 @@ $$m - M = 14.0 - (-4.0) = 18.0~\text{mag}$$
 
 **Step 2 — Solve for distance**
 
-$$18.0 = 5\log_{10}\!\left(\frac{d}{10~\text{pc}}\right)$$
+$$18.0 = 5\log_{10}\!\left(\frac{d}{(10~\text{pc})}\right)$$
 
-$$\log_{10}\!\left(\frac{d}{10~\text{pc}}\right) = \frac{18.0}{5} = 3.6$$
+$$\log_{10}\!\left(\frac{d}{(10~\text{pc})}\right) = \frac{18.0}{5} = 3.6$$
 
-$$\frac{d}{10~\text{pc}} = 10^{3.6} \approx 3{,}981$$
+$$\frac{d}{(10~\text{pc})} = 10^{3.6} \approx 3{,}981$$
 
 $$d \approx 3{,}981 \times 10~\text{pc} \approx 4.0 \times 10^4~\text{pc} = 40~\text{kpc}$$
 
@@ -232,11 +229,11 @@ $$d \approx 3{,}981 \times 10~\text{pc} \approx 4.0 \times 10^4~\text{pc} = 40~\
 1. Start from the distance modulus:
 
    $$
-   m - M = 0 = 5\log_{10}\!\left(\frac{d}{10~\text{pc}}\right)
+   m - M = 0 = 5\log_{10}\!\left(\frac{d}{(10~\text{pc})}\right)
    $$
 
    $$
-   \log_{10}\!\left(\frac{d}{10~\text{pc}}\right) = 0 \Rightarrow d = 10~\text{pc}
+   \log_{10}\!\left(\frac{d}{(10~\text{pc})}\right) = 0 \Rightarrow d = 10~\text{pc}
    $$
 
    By definition, this is where $m = M$.
@@ -244,7 +241,7 @@ $$d \approx 3{,}981 \times 10~\text{pc} \approx 4.0 \times 10^4~\text{pc} = 40~\
 2. Compute the modulus, then solve for $M$:
 
    $$
-   m - M = 5\log_{10}\!\left(\frac{1000}{10}\right) = 5\log_{10}(100) = 10
+   m - M = 5\log_{10}\!\left(\frac{1000~\text{pc}}{10~\text{pc}}\right) = 5\log_{10}(100) = 10
    $$
 
    $$
@@ -395,13 +392,13 @@ A complete stellar classification includes both spectral type and luminosity cla
 ::: {.callout-note collapse="true"}
 ## Solutions
 
-1. **Upper-left** = hot + luminous (O/B supergiants). **Lower-right** = cool + faint (M dwarfs).
+1. **Step 1 — Read the axes.** **Upper-left** = hot + luminous (O/B supergiants). **Lower-right** = cool + faint (M dwarfs).
 
-2. **K5 III** = giant. It's cooler than the Sun (K is cooler than G in the OBAFGKM sequence).
+2. **Step 2 — Decode the class label.** **K5 III** = giant. It's cooler than the Sun (K is cooler than G in the OBAFGKM sequence).
 
-3. Star B (class III, giant) is more luminous. Both are at ${\sim}5{,}800~\text{K}$, but the giant has a much larger radius, so $L = 4\pi R^2 \sigma T^4$ gives a much higher luminosity.
+3. **Step 3 — Compare stars at fixed temperature.** Star B (class III, giant) is more luminous. Both are at ${\sim}5{,}800~\text{K}$, but the giant has a much larger radius, so $L = 4\pi R^2 \sigma T^4$ gives a much higher luminosity.
 
-4. Surface gravity: dwarfs are compact (small $R$, high surface gravity $g = GM/R^2$), so their atmospheric pressure is high, broadening spectral lines. Giants are extended (large $R$, low $g$), so their atmospheric pressure is low, producing narrower lines.
+4. **Step 4 — Connect line width to gravity.** Surface gravity: dwarfs are compact (small $R$, high surface gravity $g = GM/R^2$), so their atmospheric pressure is high, broadening spectral lines. Giants are extended (large $R$, low $g$), so their atmospheric pressure is low, producing narrower lines.
 :::
 :::
 
@@ -424,7 +421,7 @@ This is the same structure on calibrated axes: observables in Part 2, physical q
 $$
 M - M_\odot = -2.5 \log_{10}\!\left(\frac{L}{L_\odot}\right)
 $$
-(Ignoring bolometric corrections here.)
+(Treat V-band as a proxy for bolometric here.)
 
 The theorist's HR diagram plots $\log(L/L_\odot)$ on the vertical axis and $\log T_{\text{eff}}$ on the horizontal axis — with temperature *decreasing* to the right (by convention, matching the observer's diagram).
 
@@ -555,7 +552,7 @@ $$\frac{R}{R_\odot} = \sqrt{1{,}770} = 42$$
 **Lines of constant radius now overlay the map.** Stefan-Boltzmann connects $L$, $R$, and $T$, so fixing $R$ draws a diagonal line on the theorist's HR diagram. You can *read* a star's radius from its position: giants at $10\text{–}100\,R_\odot$, white dwarfs at ${\sim}0.01\,R_\odot$. The map now encodes three physical properties — luminosity, temperature, and radius — even though only two are plotted.
 :::
 
-Part 2 built a map from measurements alone: magnitudes, colors, spectral classes, and distances assembled into structure. Part 3 changes the game by overlaying explicit physics relationships on that map. Radius lines from Stefan-Boltzmann turn clustered points into constrained physical states. This is the epistemic hinge of the reading: we move from **classification** to **explanation**, without discarding the measurement backbone.
+Part 2 built a map from measurements alone: magnitudes, colors, spectral classes, and distances assembled into structure. Part 3 added radius and told us size, but not what orders stars along the main sequence. To explain that ordering, we now need the hidden parameter that sets both luminosity and temperature: mass.
 
 ---
 
@@ -576,6 +573,7 @@ Commit to an answer before reading on.
 
 Here is the payoff from Lecture 4. When you label main-sequence stars by their mass (from binary star measurements), a beautiful pattern appears: **mass increases monotonically from lower-right to upper-left along the main sequence.**
 
+::: {.table-responsive}
 | Position on MS | Spectral Type | Mass ($M_\odot$) | $L$ ($L_\odot$) | $T_{\text{eff}}$ (K) |
 |---------------|--------------|------------------|-----------------|----------------------|
 | Lower right | M5 | $0.1$ | $0.001$ | $3{,}000$ |
@@ -585,6 +583,7 @@ Here is the payoff from Lecture 4. When you label main-sequence stars by their m
 | Upper left | A0 | $2.5$ | $40$ | $9{,}900$ |
 | | B0 | $15$ | $3 \times 10^4$ | $3 \times 10^4$ |
 | | O5 | $40$ | $5 \times 10^5$ | $4.2 \times 10^4$ |
+:::
 
 Read this as a syllogism, not a description.
 Premise 1: Along the main sequence, luminosity and temperature change monotonically from lower right to upper left.
@@ -652,17 +651,7 @@ This schematic is a map-reading aid, not a precision plot. Follow each arrow as 
 
 **Axis convention reminder:** Luminosity up; temperature decreases to the right (hot left, cool right).
 
-```{mermaid}
-flowchart LR
-  subgraph one["1 M☉"]
-    A1["Protostar contraction"] --> A2["Main sequence"] --> A3["Red giant"] --> A4["Planetary nebula"] --> A5["White dwarf cooling"]
-  end
-  subgraph ten["10 M☉"]
-    B1["Main sequence"] --> B2["Supergiant"] --> B3["Core-collapse supernova"]
-    B3 --> B4["Neutron star"]
-    B3 --> B5["Black hole"]
-  end
-```
+{{< fig hr-evolutionary-tracks-schematic >}}
 
 Here is the life story of a star like the Sun, traced on the HR diagram:
 
@@ -747,9 +736,10 @@ The HR diagram is a projection of stellar structure onto observable axes, ordere
 
 ### Main-Sequence Properties by Spectral Type
 
+::: {.table-responsive}
 | Spectral Type | $T_{\text{eff}}$ (K) | Mass ($M_\odot$) | Radius ($R_\odot$) | $L$ ($L_\odot$) | $M_V$ | Main-Seq Lifetime |
 |---|---|---|---|---|---|---|
-| O5 | $4.2 \times 10^4$ | $40$ | $12$ | $5 \times 10^5$ | $-5.7$ | ${\sim}1~\text{Myr}$ |
+| O5 | $4.2 \times 10^4$ | $40$ | $12$ | $5 \times 10^5$ | $-5.7$ | ${\sim}4.5~\text{Myr}$ |
 | B0 | $3 \times 10^4$ | $15$ | $7$ | $3 \times 10^4$ | $-4.0$ | ${\sim}10~\text{Myr}$ |
 | A0 | $9{,}900$ | $2.5$ | $2.5$ | $40$ | $+0.6$ | ${\sim}1~\text{Gyr}$ |
 | F0 | $7{,}200$ | $1.6$ | $1.5$ | $6.5$ | $+2.7$ | ${\sim}3~\text{Gyr}$ |
@@ -757,6 +747,9 @@ The HR diagram is a projection of stellar structure onto observable axes, ordere
 | K0 | $5{,}300$ | $0.8$ | $0.85$ | $0.4$ | $+5.9$ | ${\sim}20~\text{Gyr}$ |
 | M0 | $3{,}850$ | $0.5$ | $0.6$ | $0.08$ | $+8.8$ | ${\sim}60~\text{Gyr}$ |
 | M5 | $3{,}000$ | $0.1$ | $0.15$ | $0.001$ | $+12.3$ | $> 100~\text{Gyr}$ |
+:::
+
+*Order-of-magnitude only; values depend on metallicity, rotation, and mass loss.*
 
 ---
 
@@ -851,7 +844,7 @@ The HR diagram is a projection of stellar structure onto observable axes, ordere
 
 1. **The magnitude system** is a logarithmic brightness scale where 5 magnitudes = a factor of 100 in flux. Absolute magnitude $M$ removes the distance factor, placing all stars at a standard $10~\text{pc}$.
 
-2. **The distance modulus** ($m - M = 5\log_{10}(d/10~\text{pc})$) connects observed brightness, intrinsic brightness, and distance — it is the inverse-square law in logarithmic form.
+2. **The distance modulus** ($m - M = 5\log_{10}(d/(10~\text{pc}))$) connects observed brightness, intrinsic brightness, and distance — it is the inverse-square law in logarithmic form.
 
 3. **The observer's HR diagram** ($M_V$ vs. spectral type) is pure measurement — no theory needed. It reveals three structures: the main sequence, the giant branch, and the white dwarf sequence.
 
@@ -871,37 +864,9 @@ The HR diagram is a projection of stellar structure onto observable axes, ordere
 
 **Inference:** From photometry alone, we determine each star's luminosity, temperature, and radius. The HR diagram reveals that stars are not randomly distributed — they cluster into a main sequence (a mass sequence), a giant branch (evolved stars with bloated envelopes), and a white dwarf sequence (dead stellar cores). Mass, which does not appear on either axis, organizes the entire pattern. The diagram is simultaneously a classification tool, a mass map, and an evolution chart — and the patterns it reveals are the questions that Module 3 must answer.
 
-```{mermaid}
-graph TD
-  O1["Observables: photometry (m, colors)"]
-  O2["Observables: spectroscopy (spectral type)"]
-  O3["Observables: parallax (distance)"]
-  T1["Transform: distance modulus (m → M)"]
-  T2["Transform: calibration (spectral type/color → T_eff)"]
-  T3["Transform: magnitude-luminosity link (M ↔ L)"]
-  H1["HR representation: observer CMD (M_V vs color/spectral type)"]
-  H2["HR representation: theorist HRD (L vs T_eff)"]
-  H3["Physics overlay: radius lines (Stefan-Boltzmann)"]
-  I1["Inferences: radius estimates"]
-  I2["Inferences: main sequence as mass sequence (Lecture 4 link)"]
-  I3["Inferences: evolutionary interpretation (tracks)"]
-  I4["Epistemic outcome: pattern demands physics → Module 3"]
-
-  O1 --> T1
-  O3 --> T1
-  O1 --> T2
-  O2 --> T2
-  T1 --> T3
-  T3 --> H1
-  T2 --> H1
-  T2 --> H2
-  T3 --> H2
-  H2 --> H3
-  H1 --> I1
-  H2 --> I1
-  H3 --> I1
-  I1 --> I2 --> I3 --> I4
-```
+1. **Observables:** photometry, spectroscopy, and parallax supply $m$, color/spectral type, and distance.
+2. **Models/Transforms:** distance modulus and calibrations map those measurements to $M$, $L$, and $T_{\text{eff}}$.
+3. **Inferences:** HR structure reveals radius trends, the mass-ordered main sequence, and evolutionary pathways.
 
 ::: {.callout-note title="Watch: Gaia Builds the HR Diagram from Real Data"}
 The ESA's Gaia spacecraft has measured parallaxes, colors, and magnitudes for over a billion stars — the largest stellar census ever assembled. This animation shows how Gaia's raw observations of FGKM-type stars are transformed into physical properties (temperature and luminosity) and plotted on the HR diagram. Every step you've learned in this reading — distance modulus, color-to-temperature calibration, apparent-to-absolute magnitude — is happening here at industrial scale.
