@@ -79,6 +79,10 @@ They expected scatter.
 They found structure.
 :::
 
+::: {.fragment .mt-2 .text-center .text-sm}
+The question today is not *what* the HR diagram looks like — it's [**why the universe prefers order over randomness.**]{.rn rn-type="box" rn-color="#ff6b6b"}
+:::
+
 ::: {.notes}
 0–1 min. Let this sit for 5 seconds. "When Hertzsprung and Russell plotted luminosity against temperature for hundreds of stars, they expected a random spray — every star is different, after all. Instead, they found highways, clusters, sequences. That pattern is one of the most important discoveries in all of astrophysics."
 :::
@@ -194,19 +198,13 @@ The magnitude system is built on $\log_{10}$. Three properties do all the work:
 :::
 
 <details>
-<summary><strong>Deep Dive (Optional): Properties of Log Laws</strong></summary>
+<summary><strong>Optional: 20-Second Log Refresher</strong></summary>
 
 ::: {.text-sm .mt-1}
-| Law | Rule | Use in this lecture |
-|-----|------|----------------------|
-| Product law | $\log(AB) = \log A + \log B$ | Split numbers into easy factors (for example, $200 = 2 \times 100$) |
-| Quotient law | $\log(A/B) = \log A - \log B$ | Convert distance and flux ratios into differences |
-| Power law | $\log(A^n) = n\log A$ | Explain why inverse-square and $T^4$ become simple coefficients |
-| Inverse rule | $\log(10^x) = x$ and $10^{\log x} = x$ | Move between exponent form and log form in distance modulus steps |
-:::
-
-::: {.text-sm}
-**Quick reminders:** In this course, $\log$ means $\log_{10}$. Numbers between $0$ and $1$ have negative logs. Keep ratios in the same order as the equation.
+- Product: $\log(AB)=\log A+\log B$
+- Ratio: $\log(A/B)=\log A-\log B$
+- Power: $\log(A^n)=n\log A$
+- Anchor: $\log_{10}(2)\approx 0.3$
 :::
 </details>
 
@@ -412,6 +410,23 @@ A star has apparent magnitude $m = 5.0$ and absolute magnitude $M = 5.0$. How fa
 
 ---
 
+## Synthesis Check: Luminosity vs Distance {.quiz-question background-color="#1a1a2e"}
+
+Star A is $100\times$ more luminous than Star B, but Star A is also $10\times$ farther away.
+
+How do their apparent magnitudes compare?
+
+- Star A appears $5~\text{mag}$ brighter
+- [They appear equally bright ($\Delta m = 0$) — flux scales as $L/d^2$, so $100/(10^2)=1$]{.correct}
+- Star A appears $5~\text{mag}$ fainter
+- Cannot determine without spectral type
+
+::: {.notes}
+~16 min. Give 20–30 seconds. This is the integration checkpoint before the HR diagram: inverse-square scaling plus magnitude intuition in one step.
+:::
+
+---
+
 ## {.center}
 
 ::: {.r-fit-text}
@@ -529,6 +544,26 @@ Neither axis requires theory — this is pure measurement.
 
 ---
 
+## Axis Anchor (Do Not Forget) {background-color="#1a1a2e"}
+
+::: {.r-fit-text}
+Hotter $\leftarrow$
+:::
+
+::: {.r-fit-text}
+Brighter $\uparrow$
+:::
+
+::: {.fragment .text-center .mt-2}
+Every confusion about the HR diagram starts with forgetting one of these arrows.
+:::
+
+::: {.notes}
+~20 min. Make students say the arrows out loud: "Hotter left. Brighter up."
+:::
+
+---
+
 ## Watch: Building an HR Diagram from Cluster Data
 
 {{< video https://www.youtube.com/embed/HWQslu4S5eQ width="100%" height="82%" >}}
@@ -571,6 +606,10 @@ Look at the HR diagram. Stars are NOT randomly scattered — they cluster into d
 The [**labeled regions**]{.rn rn-type="underline" rn-color="#4ecdc4"} are not arbitrary — each corresponds to a physical class of stars with distinct sizes, luminosities, and evolutionary states.
 :::
 
+::: {.fragment .text-sm}
+If stars were arbitrary collections of gas, there would be no reason for a narrow diagonal band to exist. Something is constraining their internal structure.
+:::
+
 ::: {.notes}
 ~21–22 min. "This annotated version shows the named regions explicitly. Main sequence dominates; giants and supergiants occupy the upper right; white dwarfs huddle in the lower left. Every region has a physical explanation."
 :::
@@ -606,7 +645,7 @@ Cool ($T \sim 3{,}000\text{–}5{,}000~\text{K}$) but luminous ($100\text{–}10
 
 Stefan-Boltzmann demands [**enormous radii**]{.rn rn-type="underline" rn-color="#ff6b6b"}: $R \sim 10\text{–}100\,R_\odot$.
 
-A red giant could swallow Mercury's orbit.
+A red giant's photosphere could extend halfway to Mercury's orbit.
 :::
 :::
 
@@ -772,6 +811,12 @@ At fixed $R$, this is a **straight line** with slope $4$ on the $\log L$ – $\l
 
 . . .
 
+::: {.fragment .text-sm .mt-1}
+Notice the steepness: at fixed radius, a $0.1$ dex increase in $\log T$ gives a $0.4$ dex increase in $\log L$.
+:::
+
+. . .
+
 ::: {.text-sm}
 - *Scaling:* Double $T$ at fixed $R$ → $L$ increases by $2^4 = 16\times$ (steep!)
 - *Shifting $R$:* Larger $R$ moves the line **up** (brighter at every $T$)
@@ -927,6 +972,10 @@ From Lecture 4: more massive main-sequence stars are more luminous ($L \propto M
 Mass increases [**monotonically**]{.rn rn-type="underline" rn-color="#ff6b6b"} from lower-right to upper-left. Mass — which does not appear on either axis — organizes the entire structure.
 :::
 
+::: {.fragment .text-sm .text-center}
+Nothing on the axes says "mass." Yet mass organizes the entire pattern — the signature of a hidden variable.
+:::
+
 ::: {.notes}
 ~39–40 min. "A factor of 400 in mass produces a factor of $5 \times 10^8$ in luminosity and a factor of $10^5$ in lifetime. The main sequence is not a random band — it's a mass sequence."
 :::
@@ -971,6 +1020,10 @@ For main-sequence stars, this is an empirical scaling (not an exact law): the ex
 $$d = 10^{(m - M)/5 + 1}~\text{pc}$$
 
 **Distance from a spectrum — no parallax needed.** This extends the distance ladder far beyond Lecture 1's geometric parallax.
+:::
+
+::: {.fragment .text-sm .mt-1}
+This works cleanly for main-sequence stars; giants and white dwarfs break the one-to-one spectral-type-to-luminosity mapping.
 :::
 
 ::: {.fragment .text-sm .text-muted .mt-1}
@@ -1133,6 +1186,10 @@ A star cluster formed all at once, $100~\text{Myr}$ ago. All stars started on th
 *30 seconds alone → 1 minute with a neighbor → share out*
 :::
 
+::: {.fragment .mt-2 .text-sm}
+The main sequence does not end because stars get old in place. It turns off because the most massive stars have already evolved away.
+:::
+
 ::: {.notes}
 ~48–50 min. TPS. At $100~\text{Myr}$: set $10 \times M^{-2.5} = 0.1~\text{Gyr}$, so $M^{-2.5} = 0.01$, $M = 10^{0.8} \approx 6\,M_\odot$. Stars above ${\sim}6\,M_\odot$ (early B-type) have left. Turnoff at early B. A $10~\text{Myr}$ cluster: turnoff at ${\sim}20\,M_\odot$ (O-type). "The turnoff point is a clock — it tells you the cluster's age."
 :::
@@ -1187,6 +1244,10 @@ A star cluster formed all at once, $100~\text{Myr}$ ago. All stars started on th
 5. **The main sequence is a mass sequence** — organized by $L \propto M^{3.5}$
 6. **The HR diagram is an evolution diagram** — stars move; mass determines the path
 7. **Patterns demand physics** — Module 3 explains why the main sequence exists
+:::
+
+::: {.fragment .text-center .mt-2}
+**Mass is invisible — but decisive.**
 :::
 
 ::: {.notes}
