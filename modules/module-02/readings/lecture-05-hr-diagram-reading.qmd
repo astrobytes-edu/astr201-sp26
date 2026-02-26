@@ -939,6 +939,12 @@ The HR diagram is a projection of stellar structure onto observable axes, ordere
 2. **Models/Transforms:** distance modulus and calibrations map those measurements to $M$, $L$, and $T_{\text{eff}}$.
 3. **Inferences:** HR structure reveals radius trends, the mass-ordered main sequence, and evolutionary pathways.
 
+::: {.callout-note title="Watch: Constructing an HR Diagram for a Globular Cluster"}
+This short Hubble visualization shows how a cluster HR diagram is constructed from observations and why the turnoff point is such a powerful age diagnostic.
+
+{{< video https://www.youtube.com/embed/HWQslu4S5eQ >}}
+:::
+
 ::: {.callout-note title="Watch: Gaia Builds the HR Diagram from Real Data"}
 The ESA's Gaia spacecraft has measured parallaxes, colors, and magnitudes for over a billion stars — the largest stellar census ever assembled. This animation shows how Gaia's raw observations of FGKM-type stars are transformed into physical properties (temperature and luminosity) and plotted on the HR diagram. Every step you've learned in this reading — distance modulus, color-to-temperature calibration, apparent-to-absolute magnitude — is happening here at industrial scale.
 

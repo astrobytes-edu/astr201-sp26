@@ -529,6 +529,20 @@ Neither axis requires theory — this is pure measurement.
 
 ---
 
+## Watch: Building an HR Diagram from Cluster Data
+
+{{< video https://www.youtube.com/embed/HWQslu4S5eQ width="100%" height="82%" >}}
+
+::: {.fragment .text-sm .mt-1}
+What to notice: a cluster's stars do not land randomly. The main sequence, giant branch, and turnoff structure emerge from data and then demand a physical model.
+:::
+
+::: {.notes}
+~20–21 min. 45–60 second clip. "This is the measurement pipeline in motion: many stars, one system, one age, one composition trend, and a coherent HR pattern. The turnoff is the age clock."
+:::
+
+---
+
 ## Predict: Name the Structures {background-color="#1a1a2e"}
 
 Look at the HR diagram. Stars are NOT randomly scattered — they cluster into distinct regions.
@@ -935,6 +949,10 @@ Mass increases [**monotonically**]{.rn rn-type="underline" rn-color="#ff6b6b"} f
 $L \propto M^{3.5}$ [**explains**]{.rn rn-type="underline" rn-color="#4ecdc4"} the main sequence: mass sets core temperature → nuclear burning rate → luminosity and surface temperature. The scatter is real — but the trend is tight.
 :::
 
+::: {.fragment .text-sm .text-muted .mt-1}
+For main-sequence stars, this is an empirical scaling (not an exact law): the exponent varies with mass range and stellar structure, but the monotonic trend is robust.
+:::
+
 ::: {.notes}
 ~40–41 min. Quick callback. Left: idealized power law. Right: real binary-star measurements. "The scatter comes from metallicity differences, evolutionary state, and measurement uncertainty — but the power law is unmistakable."
 :::
@@ -1021,6 +1039,20 @@ This motion is not random — it is the response of a self-gravitating system to
 
 ::: {.notes}
 ~44–45 min. "Stars don't wander randomly — each track is the response of gravity, thermodynamics, and nuclear burning acting together. When core hydrogen runs out, the core contracts, releasing gravitational energy that expands the envelope. The main sequence contains 90% of all stars because that's where stars spend 90% of their *time*."
+:::
+
+---
+
+## Mass Sets the Pace of Evolution
+
+{{< img hr-evolutionary-tracks-mass-timescale >}}
+
+::: {.fragment .mt-1 .text-sm}
+High-mass stars peel away from the main sequence quickly; low-mass stars linger for billions of years. Same diagram, different clocks.
+:::
+
+::: {.notes}
+~45 min. Use this to bridge from "stars move" to "mass determines path and pace." Point to short high-mass timescales vs long low-mass timescales.
 :::
 
 ---

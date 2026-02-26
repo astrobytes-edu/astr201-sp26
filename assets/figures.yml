@@ -560,6 +560,12 @@ figures:
     credit: "ASTR 201 (generated)"
     module: 2
 
+  hr-evolutionary-tracks-mass-timescale:
+    path: /assets/images/module-02/week-06/17_06_Figure_hr.jpg
+    caption: "**What to notice:** Evolution off the main sequence depends strongly on mass and timescale. High-mass stars evolve quickly (short arrows/times), while low-mass stars evolve slowly (long times). The same HR space encodes both pathway and pace."
+    alt: "HR diagram with luminosity on the vertical axis and surface temperature on the horizontal axis, showing the main sequence and overlaid evolutionary tracks for stars of different masses from about 0.5 to 15 solar masses. Arrows and labels indicate approximate evolution timescales, highlighting that higher-mass stars evolve much faster than lower-mass stars."
+    module: 2
+
   binary-star-visual:
     path: /assets/images/module-02/week-06/visual-binary-gemini.png
     caption: "**What to notice:** Two stars orbit their common center of mass (×). The heavier star (yellow-white) traces a *smaller* orbit ($a_1$); the lighter star (orange) swings wide ($a_2$). Ghosted positions at different epochs show the decades of patient observation needed to map the orbit. With the period $P$ and physical separation $a = a_1 + a_2$ (which requires knowing the distance), Kepler III yields the total mass."
