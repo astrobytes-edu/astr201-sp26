@@ -76,3 +76,4 @@ jobs:
             ^https://www\.cambridge\.org/9781009618007.*$
             ^https://shopaztecs\.com/.*$
             ^https://www\.esa\.int/Science_Exploration/Space_Science/Cosmic_Microwave_Background_CMB_radiation$
+            ^https://www\.eso\.org/public/videos/?$
