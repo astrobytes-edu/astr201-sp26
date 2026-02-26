@@ -193,6 +193,23 @@ The magnitude system is built on $\log_{10}$. Three properties do all the work:
 ~5 min. Quick refresher — most students have seen these rules but may not have used them recently. "If logs are rusty, memorize three rules: products become sums, ratios become differences, powers become multipliers. That's all you need for the rest of today."
 :::
 
+<details>
+<summary><strong>Deep Dive (Optional): Properties of Log Laws</strong></summary>
+
+::: {.text-sm .mt-1}
+| Law | Rule | Use in this lecture |
+|-----|------|----------------------|
+| Product law | $\log(AB) = \log A + \log B$ | Split numbers into easy factors (for example, $200 = 2 \times 100$) |
+| Quotient law | $\log(A/B) = \log A - \log B$ | Convert distance and flux ratios into differences |
+| Power law | $\log(A^n) = n\log A$ | Explain why inverse-square and $T^4$ become simple coefficients |
+| Inverse rule | $\log(10^x) = x$ and $10^{\log x} = x$ | Move between exponent form and log form in distance modulus steps |
+:::
+
+::: {.text-sm}
+**Quick reminders:** In this course, $\log$ means $\log_{10}$. Numbers between $0$ and $1$ have negative logs. Keep ratios in the same order as the equation.
+:::
+</details>
+
 ---
 
 ## Logarithms in Action: Key Values

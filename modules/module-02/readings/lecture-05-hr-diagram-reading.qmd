@@ -94,6 +94,31 @@ Try the naive thing first: a linear brightness plot with Proxima, Betelgeuse, an
 
 We need a logarithmic ruler: the **magnitude system** — the last measurement tool before we can build the HR diagram.
 
+::: {.callout-note collapse="true" title="Deep Dive (Optional): Properties of Log Laws"}
+## Log survival kit (base-10)
+
+In this module, `log` means $\log_{10}$ unless stated otherwise.
+
+| Law | Rule | How you will use it |
+|-----|------|----------------------|
+| Product law | $\log(AB) = \log A + \log B$ | Break numbers into easy factors, like $200 = 2 \times 100$ |
+| Quotient law | $\log(A/B) = \log A - \log B$ | Convert ratios into differences (magnitude and distance modulus) |
+| Power law | $\log(A^n) = n\log A$ | Understand why squared or fourth-power scalings become coefficients |
+| Inverse rule | $\log(10^x) = x$ and $10^{\log x} = x$ | Move between log form and exponent form when solving for distance |
+
+Useful anchor values:
+
+\[
+\log_{10}(1)=0,\quad \log_{10}(10)=1,\quad \log_{10}(100)=2,\quad \log_{10}(0.1)=-1
+\]
+
+Common traps:
+
+1. Using $\ln$ rules when the equation uses $\log_{10}$.
+2. Forgetting that numbers between $0$ and $1$ have negative logs.
+3. Reversing ratios (which flips the sign).
+:::
+
 ### Why Not Just Use Luminosity?
 
 You already know how to measure a star's luminosity in physical units: $L$ in $\text{erg}\,\text{s}^{-1}$, or in solar luminosities $L_\odot$. So why do astronomers still use magnitudes — logarithmic, inverted (brighter = *smaller* number), and historically odd?
