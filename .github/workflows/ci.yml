@@ -77,3 +77,5 @@ jobs:
             ^https://shopaztecs\.com/.*$
             ^https://www\.esa\.int/Science_Exploration/Space_Science/Cosmic_Microwave_Background_CMB_radiation$
             ^https://www\.eso\.org/public/videos/?$
+            ^https://www\.esa\.int/Science_Exploration/Space_Science/Gaia/?$
+            ^https://cas\.sdss\.org/dr18/VisualTools/quickobj/?$
