@@ -566,7 +566,7 @@ Every confusion about the HR diagram starts with forgetting one of these arrows.
 
 ## Watch: Building an HR Diagram from Cluster Data
 
-{{< video https://www.youtube.com/embed/HWQslu4S5eQ width="100%" height="82%" >}}
+{{< video https://www.youtube.com/embed/1JPDN8qoRjs width="100%" height="82%" >}}
 
 ::: {.fragment .text-sm .mt-1}
 What to notice: a cluster's stars do not land randomly. The main sequence, giant branch, and turnoff structure emerge from data and then demand a physical model.

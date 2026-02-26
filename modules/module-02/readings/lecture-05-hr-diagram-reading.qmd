@@ -942,7 +942,7 @@ The HR diagram is a projection of stellar structure onto observable axes, ordere
 ::: {.callout-note title="Watch: Constructing an HR Diagram for a Globular Cluster"}
 This short Hubble visualization shows how a cluster HR diagram is constructed from observations and why the turnoff point is such a powerful age diagnostic.
 
-{{< video https://www.youtube.com/embed/HWQslu4S5eQ >}}
+{{< video https://www.youtube.com/embed/1JPDN8qoRjs >}}
 :::
 
 ::: {.callout-note title="Watch: Gaia Builds the HR Diagram from Real Data"}
