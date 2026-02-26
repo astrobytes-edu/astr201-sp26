@@ -214,11 +214,11 @@ $$m - M = 14.0 - (-4.0) = 18.0~\text{mag}$$
 
 **Step 2 — Solve for distance**
 
-$$18.0 = 5\log_{10}\!\left(\frac{d}{(10~\text{pc})}\right)$$
+$$18.0 = 5\log_{10}\!\left(\frac{d}{10\,\mathrm{pc}}\right)$$
 
-$$\log_{10}\!\left(\frac{d}{(10~\text{pc})}\right) = \frac{18.0}{5} = 3.6$$
+$$\log_{10}\!\left(\frac{d}{10\,\mathrm{pc}}\right) = \frac{18.0}{5} = 3.6$$
 
-$$\frac{d}{(10~\text{pc})} = 10^{3.6} \approx 3{,}981$$
+$$\frac{d}{10\,\mathrm{pc}} = 10^{3.6} \approx 3{,}981$$
 
 $$d \approx 3{,}981 \times 10~\text{pc} \approx 4.0 \times 10^4~\text{pc} = 40~\text{kpc}$$
 
@@ -245,17 +245,17 @@ $$d \approx 3{,}981 \times 10~\text{pc} \approx 4.0 \times 10^4~\text{pc} = 40~\
    $$
 
    $$
-   0 = 5\log_{10}\!\left(d / (10~\text{pc})\right)
+   0 = 5\log_{10}\!\left(\frac{d}{10\,\mathrm{pc}}\right)
    $$
 
    **Step 2 — Solve for distance.**
 
    $$
-   \log_{10}\!\left(d / (10~\text{pc})\right) = 0
+   \log_{10}\!\left(\frac{d}{10\,\mathrm{pc}}\right) = 0
    $$
 
    $$
-   d / (10~\text{pc}) = 10^0 = 1 \Rightarrow d = 10~\text{pc}
+   \frac{d}{10\,\mathrm{pc}} = 10^0 = 1 \Rightarrow d = 10~\text{pc}
    $$
 
    By definition, this is where $m = M$.
@@ -890,7 +890,7 @@ The HR diagram is a projection of stellar structure onto observable axes, ordere
 
 1. **The magnitude system** is a logarithmic brightness scale where 5 magnitudes = a factor of 100 in flux. Absolute magnitude $M$ removes the distance factor, placing all stars at a standard $10~\text{pc}$.
 
-2. **The distance modulus** ($m - M = 5\log_{10}(d/(10~\text{pc}))$) connects observed brightness, intrinsic brightness, and distance — it is the inverse-square law in logarithmic form.
+2. **The distance modulus** ($m - M = 5\log_{10}\!\left(\frac{d}{10\,\mathrm{pc}}\right)$) connects observed brightness, intrinsic brightness, and distance — it is the inverse-square law in logarithmic form.
 
 3. **The observer's HR diagram** ($M_V$ vs. spectral type) is pure measurement — no theory needed. It reveals three structures: the main sequence, the giant branch, and the white dwarf sequence.
 

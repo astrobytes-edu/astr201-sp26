@@ -70,9 +70,10 @@ Use these constants and relations unless a problem states otherwise:
   $$
   \frac{M_2}{M_1} = \frac{K_1}{K_2}
   $$
+  Reminder: the more massive star has the smaller radial-velocity amplitude ($K$).
 - Distance modulus:
   $$
-  m - M = 5\log_{10}\!\left(\frac{d}{10\,\text{pc}}\right)
+  m - M = 5\log_{10}\!\left(\frac{d}{10\,\mathrm{pc}}\right)
   $$
 - Main-sequence scaling (approx.):
   $$
@@ -171,6 +172,7 @@ An eclipsing SB2 system has:
 - Velocity amplitudes: $K_A = 40\,\text{km/s}$ and $K_B = 20\,\text{km/s}$
 
 Assume both stars are main-sequence and use $L/L_\odot \approx (M/M_\odot)^{3.5}$.
+Assume $a$ is the true semi-major axis (not a projected/angular separation).
 
 - (a) Compute $M_A + M_B$.
 - (b) Compute the mass ratio and then $M_A$ and $M_B$.

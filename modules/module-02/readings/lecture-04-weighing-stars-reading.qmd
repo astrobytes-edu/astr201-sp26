@@ -748,6 +748,7 @@ Each lecture in Module 2 has added one link. The chain is now complete:
 
 <!-- Problem: Conceptual / Connection / O→M→I / Tools: Model-Inversion / ⭐ -->
 1. ⭐ **Which star moves more?** In a spectroscopic binary, Star A has radial velocity amplitude $K_A = 30~\text{km/s}$ and Star B has $K_B = 90~\text{km/s}$.
+   - Reminder: the more massive star has the smaller radial-velocity amplitude ($K$).
    - (a) Which star is more massive? Explain using the center-of-mass condition ($M_1 a_1 = M_2 a_2$).
    - (b) What is the mass ratio $M_A/M_B$?
    - (c) If you could watch this system as a visual binary, which star would trace the larger orbit on the sky?
@@ -778,6 +779,7 @@ Each lecture in Module 2 has added one link. The chain is now complete:
    - Orbital period: $P = 10.0~\text{days} = 8.64 \times 10^5~\text{s}$
    - Star 1 velocity amplitude: $K_1 = 40~\text{km/s} = 4.0 \times 10^6~\text{cm/s}$
    - Star 2 velocity amplitude: $K_2 = 120~\text{km/s} = 1.2 \times 10^7~\text{cm/s}$
+   - Reminder: the more massive star has the smaller radial-velocity amplitude ($K$).
 
    (a) Determine the mass ratio $M_1/M_2$ from the velocity ratio. Which star is more massive?
    (b) Calculate the total orbital separation $a=\frac{(K_1 + K_2)P}{2\pi}$. Express in cm and then in AU.
@@ -801,6 +803,7 @@ Each lecture in Module 2 has added one link. The chain is now complete:
 
 <!-- Problem: Synthesis / Connection / O→M→I / Tools: Scaling/Ratio, Model-Inversion, Unit-Conversion / ⭐⭐ -->
 9. ⭐⭐ **From velocities to fate.** You observe a double-lined spectroscopic binary with $P = 2.0~\text{yr}$ and velocity amplitudes $K_1 = 15~\text{km/s}$, $K_2 = 45~\text{km/s}$. Assume $i = 90^\circ$.
+   - Reminder: the more massive star has the smaller radial-velocity amplitude ($K$).
    - (a) Determine the mass ratio and the total orbital separation in AU. (Hint: use $a\sin i=\frac{(K_1 + K_2)P}{2\pi}$, converting km/s to AU/yr if helpful, or work in CGS.)
    - (b) Calculate the total mass in solar masses using the solar-unit form of Kepler III.
    - (c) Solve for the individual masses $M_1$ and $M_2$.
