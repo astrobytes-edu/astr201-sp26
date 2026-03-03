@@ -7,6 +7,7 @@ _site-instructor/
 
 # Instructor-only resources (not for students)
 docs/instructor-resources/
+exams/_prep/
 
 # Claude Code / MCP configs
 .claude/

@@ -1,0 +1,15 @@
+---
+title: "Formula Sheet — Midterm 1"
+subtitle: "Modules 1 & 2 · CGS Units"
+author: "Dr. Anna Rosen"
+date: "2026-03-03"
+description: "Two-page formula sheet provided with Midterm 1."
+draft: false
+format:
+  html:
+    toc: false
+---
+
+This is the formula sheet you will receive with Midterm 1. It covers Modules 1 and 2 in CGS units.
+
+[**Download Formula Sheet (PDF)**](FormulaSheet-Midterm1-SP26.pdf){.btn .btn-primary}

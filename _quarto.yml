@@ -186,6 +186,8 @@ website:
       - section: "Exams"
         contents:
           - exams/index.qmd
+          - text: "Formula Sheet — Midterm 1"
+            href: handouts/formula-sheets/FormulaSheet-Midterm1-SP26.pdf
 
       - section: "Handouts"
         contents:
