@@ -55,7 +55,6 @@ project:
     - modules/module-*/readings/*.qmd
     - homework/*.qmd
     - homework/solutions/*.qmd
-    - "!homework/solutions/astr201-hw5-solutions.qmd"
     - exams/*.qmd
     - "!exams/_prep/**"
     - explore/*.qmd
@@ -174,6 +173,7 @@ website:
         contents:
           - homework/index.qmd
           - homework/astr201-hw5.qmd
+          - homework/solutions/astr201-hw5-solutions.qmd
           - homework/astr201-hw4.qmd
           - homework/solutions/astr201-hw4-solutions.qmd
           - homework/astr201-hw3.qmd
