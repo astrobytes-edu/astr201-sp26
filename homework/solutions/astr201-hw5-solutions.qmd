@@ -4,7 +4,7 @@ subtitle: "Masses from Motion + Magnitudes/HR Synthesis (Midterm 1 Review)"
 author: "Dr. Anna Rosen"
 date: "2026-03-04"
 description: "Solutions to Homework 5."
-draft: true
+draft: false
 course: ASTR 201
 module: "Modules 1–2 cumulative review (emphasis: Module 2 Lectures 4–5)"
 ---
