@@ -33,6 +33,8 @@ module: "Modules 1–2 cumulative review (emphasis: Module 2 Lectures 4–5)"
 - (b) Physical model: Newtonian gravity + Kepler’s laws.
 - (c) This is still measurement because we directly measure observables with instruments and use a tested physical law to map those observables to mass. In science, “measured” often means model-mediated inference, not literal direct contact. The critical check is whether the model is valid for the system and whether uncertainties are tracked.
 
+**Sanity check:** If independent observables (imaging orbit + RV curve) give consistent masses, the inference is behaving like a reliable measurement. $\checkmark$
+
 **Common misconception:** “Inferred” means “guessed.” In reality, inferred quantities can be tightly constrained and highly reliable.
 
 ---
@@ -139,6 +141,8 @@ $$
 - (b) Inclination enters because observed RV is $v_r = v\sin i$. You need $i$ to recover $v$ and therefore mass.
 - (c) In a nearly face-on system, $\sin i$ is small, so observed RV amplitudes can be small even when true orbital speeds (and masses) are large. Without $i$, masses can be severely underestimated.
 
+**Sanity check:** Keeping the same true orbital speed but decreasing $i$ must decrease measured $v_r$; that is exactly what the $\sin i$ factor predicts. $\checkmark$
+
 **Common misconception:** Small measured RV amplitudes always mean low mass. They can also mean low inclination.
 
 ---
@@ -161,7 +165,11 @@ $$
 
 **(a) Total mass**
 $$
-\frac{M_A + M_B}{M_\odot} = \frac{\left(2.00\right)^3}{\left(2.00\right)^2} = \frac{8}{4} = 2.00
+\frac{M_A + M_B}{M_\odot}
+= \frac{\left(2.00\,\text{AU}/1\,\text{AU}\right)^3}{\left(2.00\,\text{yr}/1\,\text{yr}\right)^2}
+= \frac{(2.00)^3}{(2.00)^2}
+= \frac{8}{4}
+= 2.00
 $$
 
 $$
@@ -170,7 +178,9 @@ $$
 
 **(b) Mass ratio and individual masses**
 $$
-\frac{M_B}{M_A} = \frac{K_A}{K_B} = \frac{40}{20} = 2.0
+\frac{M_B}{M_A} = \frac{K_A}{K_B}
+= \frac{40\,\text{km/s}}{20\,\text{km/s}}
+= 2.0
 $$
 So $M_B = 2M_A$. Then:
 $$
@@ -202,6 +212,8 @@ So B should dominate the total luminosity.
 **(e) Observable → model → inference chain:**
 We directly observe $P$, $a$, and Doppler amplitudes $K_A$, $K_B$. Kepler’s law maps $(P,a)$ to total mass, and center-of-mass dynamics maps $K_A/K_B$ to mass ratio. Combining those gives individual masses. Then the main-sequence scaling $L\propto M^{3.5}$ gives luminosity ratio. Key assumptions include Newtonian two-body dynamics, reliable orbital parameter extraction, and that both stars are main-sequence stars so the adopted mass-luminosity scaling applies.
 
+**Unit check:** $(a/\text{AU})$, $(P/\text{yr})$, and $(K_A/K_B)$ are dimensionless ratios, so the Kepler and mass-ratio outputs are dimensionless until we multiply by $M_\odot$. The luminosity ratio $L_B/L_A$ is dimensionless. $\checkmark$
+
 **Sanity check:** The more massive star should move more slowly, and the ratio $K_A/K_B=2$ implies $M_B/M_A=2$, which matches the solved masses. $\checkmark$
 
 **Grading guidance:** Full credit requires all links in the chain (total mass, mass ratio, component masses, luminosity ratio, and one explicit assumption).
@@ -221,6 +233,8 @@ We directly observe $P$, $a$, and Doppler amplitudes $K_A$, $K_B$. Kepler’s la
 - (a) The statement is not always valid because $m$ measures how bright a star appears from Earth, not how much power it emits.
 - (b) You need distance (or directly absolute magnitude $M$) to compare intrinsic brightness.
 - (c) Apparent magnitude $m$ is observed brightness at Earth; absolute magnitude $M$ is the magnitude a source would have at $10\,\text{pc}$.
+
+**Sanity check:** A nearby low-luminosity star can appear brighter than a distant high-luminosity star, so apparent brightness alone cannot rank intrinsic power. $\checkmark$
 
 **Common misconception:** Brighter-looking stars are always intrinsically brighter.
 
@@ -269,7 +283,7 @@ M = m - (m-M)=14.0-6.99=7.01
 $$
 
 $$
-\boxed{M \approx 7.0}
+\boxed{M \approx 7.0\,\text{mag}}
 $$
 
 **(c)** Magnitude-flux relation:
@@ -282,7 +296,7 @@ $$
 $$
 
 $$
-\boxed{\text{A 5-mag difference corresponds to a factor of }100\text{ in flux.}}
+\boxed{\text{A 5-mag difference corresponds to a factor of }100\text{ in observed flux; the brighter (smaller-}m\text{) star has }100\times\text{ more flux.}}
 $$
 
 **Unit check:** Distance modulus argument uses a distance ratio (dimensionless). $\checkmark$
@@ -333,6 +347,8 @@ $$
 $$
 
 **(c)** Extinction makes stars appear fainter, increasing the observed magnitude offset. If uncorrected, this mimics larger distance, so the inferred distance is too large.
+
+**Unit check:** $\Delta m$ (mag) maps to $\log_{10}(d_{\text{target}}/d_{\text{ref}})$, so only a dimensionless distance ratio can appear inside the logarithm. Multiplying that ratio by $d_{\text{ref}}$ returns parsecs. $\checkmark$
 
 **Sanity check:** Positive magnitude shift should mean farther target cluster; ratio $>1$ confirms this. $\checkmark$
 
@@ -404,13 +420,20 @@ $$
 
 **(a) Total and individual masses**
 $$
-\frac{M_1+M_2}{M_\odot}=\frac{4.0^3}{4.0^2}=\frac{64}{16}=4.0
+\frac{M_1+M_2}{M_\odot}
+=\frac{(4.0\,\text{AU}/1\,\text{AU})^3}{(4.0\,\text{yr}/1\,\text{yr})^2}
+=\frac{4.0^3}{4.0^2}
+=\frac{64}{16}
+=4.0
 \Rightarrow
 M_1+M_2=4.0\,M_\odot
 $$
 
 $$
-\frac{M_2}{M_1}=\frac{K_1}{K_2}=\frac{25}{20}=1.25
+\frac{M_2}{M_1}
+=\frac{K_1}{K_2}
+=\frac{25\,\text{km/s}}{20\,\text{km/s}}
+=1.25
 $$
 So $M_2=1.25M_1$ and:
 $$
@@ -430,14 +453,16 @@ M = m - (m-M) = 8.0 - 10.0 = -2.0
 $$
 
 $$
-\boxed{M_{\text{combined}}=-2.0}
+\boxed{M_{\text{combined}}=-2.0\,\text{mag}}
 $$
 
 **(c) Measured vs inferred:**
-Measured directly are $P$, $a$, $K_1$, $K_2$, and apparent magnitude $m$ (plus the cluster modulus from prior analysis). Using Kepler/Newton, we infer total mass from $P$ and $a$. Using center-of-mass dynamics, we infer mass ratio from $K_1/K_2$, then individual masses. Using the distance modulus relation, we infer intrinsic brightness as absolute magnitude. Each step is model-dependent but testable, and each has uncertainty.
+Measured directly are $P$, $a$, $K_1$, $K_2$, and apparent magnitude $m$. The cluster distance modulus used here is an inferred intermediate from prior photometric modeling (not a raw direct observable). Using Kepler/Newton, we infer total mass from $P$ and $a$. Using center-of-mass dynamics, we infer mass ratio from $K_1/K_2$, then individual masses. Using the distance modulus relation, we infer intrinsic brightness as absolute magnitude. Each step is model-dependent but testable, and each has uncertainty.
 
 **(d) Follow-up observation:**
 A strong follow-up is eclipse photometry (or other inclination constraint), because it reduces geometric uncertainty and enables tighter component-property inference (masses/radii/luminosities) rather than only system-level estimates.
+
+**Unit check:** Kepler and RV steps use dimensionless ratios to return masses in $M_\odot$; the distance-modulus subtraction returns magnitude units (mag). $\checkmark$
 
 **Sanity check:** The larger-mass component should have smaller velocity amplitude; $M_2>M_1$ and $K_2<K_1$ are consistent. $\checkmark$
 
