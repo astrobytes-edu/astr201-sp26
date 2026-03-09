@@ -12,6 +12,7 @@ exams/_prep/
 # Claude Code / MCP configs
 .claude/
 .playwright-mcp/
+.serena/
 
 # Temporary test files
 _test-*
