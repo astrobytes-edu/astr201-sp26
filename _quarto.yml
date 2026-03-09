@@ -163,7 +163,47 @@ website:
 
       - section: "Module 3: Stellar Structure & Evolution"
         href: modules/module-03/index.qmd
-        contents: []
+        contents:
+          - section: "Lecture 1: Ages & Lifetimes"
+            contents:
+              - text: "Reading"
+                href: modules/module-03/readings/lecture-01-ages-lifetimes.qmd
+          - section: "Lecture 2: Hydrostatic Equilibrium"
+            contents:
+              - text: "Reading"
+                href: modules/module-03/readings/lecture-02-hydrostatic-equilibrium.qmd
+          - section: "Lecture 3: Nuclear Fusion"
+            contents:
+              - text: "Reading"
+                href: modules/module-03/readings/lecture-03-nuclear-fusion.qmd
+          - section: "Lecture 4: Radiation Transport"
+            contents:
+              - text: "Reading"
+                href: modules/module-03/readings/lecture-04-radiation-transport.qmd
+          - section: "Lecture 5: Stellar Structure & Scalings"
+            contents:
+              - text: "Reading"
+                href: modules/module-03/readings/lecture-05-stellar-structure-scalings.qmd
+          - section: "Lecture 6: Mass Limits"
+            contents:
+              - text: "Reading"
+                href: modules/module-03/readings/lecture-06-mass-limits.qmd
+          - section: "Lecture 7: Low-Mass Evolution"
+            contents:
+              - text: "Reading"
+                href: modules/module-03/readings/lecture-07-low-mass-evolution.qmd
+          - section: "Lecture 8: Degeneracy & Chandrasekhar"
+            contents:
+              - text: "Reading"
+                href: modules/module-03/readings/lecture-08-degeneracy-chandrasekhar.qmd
+          - section: "Lecture 9: High-Mass Evolution & Supernovae"
+            contents:
+              - text: "Reading"
+                href: modules/module-03/readings/lecture-09-high-mass-evolution-supernovae.qmd
+          - section: "Lecture 10: Neutron Stars & Black Holes"
+            contents:
+              - text: "Reading"
+                href: modules/module-03/readings/lecture-10-neutron-stars-black-holes.qmd
 
       - section: "Module 4: Galaxies & Cosmology"
         href: modules/module-04/index.qmd
@@ -186,6 +226,8 @@ website:
       - section: "Exams"
         contents:
           - exams/index.qmd
+          - text: "Midterm 1 Solutions"
+            href: exams/astr201-Midterm1-solutions.pdf
           - text: "Formula Sheet — Midterm 1"
             href: handouts/formula-sheets/FormulaSheet-Midterm1-SP26.pdf
 
