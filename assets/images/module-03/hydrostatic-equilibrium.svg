@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="650" viewBox="0 0 1000 650" role="img" aria-labelledby="title desc">
+  <title id="title">Hydrostatic equilibrium in a star</title>
+  <desc id="desc">A simplified stellar cross section showing an inward gravitational pull balanced by an outward pressure gradient.</desc>
+  <defs>
+    <linearGradient id="starGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffeaa7"/>
+      <stop offset="55%" stop-color="#f6b93b"/>
+      <stop offset="100%" stop-color="#e17055"/>
+    </linearGradient>
+    <marker id="arrowBlue" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L10,3 L0,6 Z" fill="#0f4c81"/>
+    </marker>
+    <marker id="arrowRed" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L10,3 L0,6 Z" fill="#c44536"/>
+    </marker>
+  </defs>
+
+  <rect width="1000" height="650" fill="#f7f4ea"/>
+  <circle cx="330" cy="325" r="215" fill="url(#starGlow)" stroke="#d35400" stroke-width="5"/>
+  <circle cx="330" cy="325" r="95" fill="#fff3cd" opacity="0.9" stroke="#f39c12" stroke-width="3"/>
+  <text x="330" y="312" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="28" font-weight="700" fill="#6b3e26">Hot core</text>
+  <text x="330" y="348" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="22" fill="#6b3e26">high pressure</text>
+
+  <path d="M190 205 C150 170, 115 150, 80 135" fill="none" stroke="#c44536" stroke-width="10" marker-end="url(#arrowRed)"/>
+  <path d="M470 205 C510 170, 545 150, 580 135" fill="none" stroke="#c44536" stroke-width="10" marker-end="url(#arrowRed)"/>
+  <path d="M470 445 C510 480, 545 500, 580 515" fill="none" stroke="#c44536" stroke-width="10" marker-end="url(#arrowRed)"/>
+  <path d="M190 445 C150 480, 115 500, 80 515" fill="none" stroke="#c44536" stroke-width="10" marker-end="url(#arrowRed)"/>
+
+  <text x="80" y="120" font-family="Helvetica, Arial, sans-serif" font-size="24" font-weight="700" fill="#8e2f23">Pressure gradient</text>
+  <text x="80" y="148" font-family="Helvetica, Arial, sans-serif" font-size="20" fill="#8e2f23">pushes outward</text>
+
+  <path d="M755 150 C700 185, 640 230, 560 275" fill="none" stroke="#0f4c81" stroke-width="10" marker-end="url(#arrowBlue)"/>
+  <path d="M755 500 C700 465, 640 420, 560 375" fill="none" stroke="#0f4c81" stroke-width="10" marker-end="url(#arrowBlue)"/>
+  <path d="M870 325 C810 325, 720 325, 560 325" fill="none" stroke="#0f4c81" stroke-width="10" marker-end="url(#arrowBlue)"/>
+
+  <text x="770" y="120" font-family="Helvetica, Arial, sans-serif" font-size="24" font-weight="700" fill="#0f4c81">Gravity</text>
+  <text x="770" y="148" font-family="Helvetica, Arial, sans-serif" font-size="20" fill="#0f4c81">pulls inward</text>
+
+  <rect x="610" y="215" width="310" height="170" rx="18" fill="#fffdf7" stroke="#d8c9a7" stroke-width="3"/>
+  <text x="765" y="255" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="26" font-weight="700" fill="#3d3d3d">Hydrostatic equilibrium</text>
+  <text x="635" y="295" font-family="Helvetica, Arial, sans-serif" font-size="20" fill="#3d3d3d">At each radius inside the star:</text>
+  <text x="635" y="330" font-family="Helvetica, Arial, sans-serif" font-size="20" fill="#3d3d3d">outward pressure force</text>
+  <text x="635" y="357" font-family="Helvetica, Arial, sans-serif" font-size="20" fill="#3d3d3d">balances inward gravity.</text>
+  <text x="635" y="395" font-family="Helvetica, Arial, sans-serif" font-size="20" font-weight="700" fill="#3d3d3d">No net collapse, no net expansion.</text>
+
+  <text x="500" y="600" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="24" fill="#5c4b3b">A stable star survives because two opposing trends balance everywhere inside it.</text>
+</svg>

@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="760" viewBox="0 0 1100 760" role="img" aria-labelledby="title desc">
+  <title id="title">The proton-proton chain</title>
+  <desc id="desc">A flowchart showing the three main steps of the proton-proton chain and the net conversion of four protons into helium-4.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3.5" orient="auto">
+      <path d="M0,0 L10,3.5 L0,7 Z" fill="#4a4a4a"/>
+    </marker>
+    <style>
+      .box { fill:#fffdf7; stroke:#c8b89a; stroke-width:3; rx:18; }
+      .step { font: 700 24px Helvetica, Arial, sans-serif; fill:#3f3328; }
+      .body { font: 20px Helvetica, Arial, sans-serif; fill:#3f3328; }
+      .small { font: 18px Helvetica, Arial, sans-serif; fill:#5a4d42; }
+    </style>
+  </defs>
+
+  <rect width="1100" height="760" fill="#f7f4ea"/>
+  <text x="550" y="60" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="34" font-weight="700" fill="#3f3328">The proton-proton chain</text>
+  <text x="550" y="95" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="22" fill="#5a4d42">Hydrogen fusion in Sun-like stars</text>
+
+  <rect x="100" y="140" width="270" height="150" class="box"/>
+  <text x="235" y="180" text-anchor="middle" class="step">Step 1</text>
+  <text x="235" y="220" text-anchor="middle" class="body">p + p → d + e<tspan baseline-shift="super">+</tspan> + ν<tspan baseline-shift="sub">e</tspan></text>
+  <text x="235" y="255" text-anchor="middle" class="small">slow step</text>
+  <text x="235" y="280" text-anchor="middle" class="small">requires weak interaction</text>
+
+  <rect x="415" y="140" width="270" height="150" class="box"/>
+  <text x="550" y="180" text-anchor="middle" class="step">Step 2</text>
+  <text x="550" y="220" text-anchor="middle" class="body">d + p → ³He + γ</text>
+  <text x="550" y="255" text-anchor="middle" class="small">fast strong-force reaction</text>
+  <text x="550" y="280" text-anchor="middle" class="small">builds helium-3</text>
+
+  <rect x="730" y="140" width="270" height="150" class="box"/>
+  <text x="865" y="180" text-anchor="middle" class="step">Step 3</text>
+  <text x="865" y="220" text-anchor="middle" class="body">³He + ³He → ⁴He + 2p</text>
+  <text x="865" y="255" text-anchor="middle" class="small">returns two protons</text>
+  <text x="865" y="280" text-anchor="middle" class="small">completes the chain</text>
+
+  <line x1="370" y1="215" x2="415" y2="215" stroke="#4a4a4a" stroke-width="5" marker-end="url(#arrow)"/>
+  <line x1="685" y1="215" x2="730" y2="215" stroke="#4a4a4a" stroke-width="5" marker-end="url(#arrow)"/>
+
+  <rect x="180" y="390" width="740" height="220" class="box" fill="#fff8dd"/>
+  <text x="550" y="445" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="30" font-weight="700" fill="#3f3328">Net result</text>
+  <text x="550" y="500" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="28" fill="#3f3328">4p → ⁴He + 2e<tspan baseline-shift="super">+</tspan> + 2ν<tspan baseline-shift="sub">e</tspan> + energy</text>
+  <text x="550" y="545" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="24" fill="#5a4d42">About 26.7 MeV released per completed chain</text>
+  <text x="550" y="585" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="21" fill="#5a4d42">The neutrinos escape. Most of the remaining energy stays behind as heat and radiation.</text>
+
+  <rect x="335" y="640" width="430" height="70" rx="16" fill="#f1ede0" stroke="#d7ccb4" stroke-width="2"/>
+  <text x="550" y="683" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="21" fill="#3f3328">Why stars live so long: Step 1 is slow because it needs both tunneling and the weak force.</text>
+</svg>

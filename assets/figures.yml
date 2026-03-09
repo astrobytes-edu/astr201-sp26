@@ -620,19 +620,19 @@ figures:
   # ==============================================================
 
   hydrostatic-equilibrium:
-    path: /assets/images/module-03/hydrostatic-equilibrium.png
+    path: /assets/images/module-03/hydrostatic-equilibrium.svg
     caption: "Hydrostatic equilibrium balances gravity and pressure"
     alt: "Diagram showing pressure gradient opposing gravitational force in a star"
     module: 3
 
   pp-chain:
-    path: /assets/images/module-03/pp-chain.png
+    path: /assets/images/module-03/pp-chain.svg
     caption: "The proton-proton chain converts hydrogen to helium"
     alt: "Diagram of nuclear fusion reactions in the solar core"
     module: 3
 
   stellar-endpoints:
-    path: /assets/images/module-03/stellar-endpoints.png
+    path: /assets/images/module-03/stellar-endpoints.svg
     caption: "Stellar remnants depend on initial mass"
     alt: "Chart showing white dwarf, neutron star, and black hole formation by mass"
     module: 3

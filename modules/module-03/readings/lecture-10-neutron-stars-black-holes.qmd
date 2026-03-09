@@ -4,7 +4,7 @@ subtitle: "When even neutron degeneracy fails — gravity wins completely"
 author: "Dr. Anna Rosen"
 date: "2026-03-26"
 description: "When electron degeneracy fails, neutron degeneracy takes over — producing the densest objects in the universe that still have a surface. And when neutron degeneracy fails, nothing can stop gravity. The result is a black hole — an object defined by the curvature of spacetime itself. This reading introduces neutron star physics, the Tolman-Oppenheimer-Volkoff limit, the Schwarzschild radius, and takes the first step into general relativity. The Gravity Scoreboard reaches its final entry."
-draft: true
+draft: false
 categories: [neutron-stars, black-holes, pulsars, general-relativity, schwarzschild-radius, event-horizon, gravitational-waves]
 course: ASTR 201
 module: "3 - Stellar Structure & Evolution"

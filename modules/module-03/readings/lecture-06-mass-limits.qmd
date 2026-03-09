@@ -4,7 +4,7 @@ subtitle: "Why can't a star be any mass it wants?"
 author: "Dr. Anna Rosen"
 date: "2026-03-19"
 description: "Stars can't be arbitrarily small or arbitrarily large. Quantum mechanics sets the floor: below ~0.08 solar masses, electron degeneracy halts contraction before the core reaches fusion temperatures. Radiation sets the ceiling: above ~100–150 solar masses, radiation pressure and mass loss push stars toward the Eddington limit. This reading introduces the Heisenberg uncertainty principle and shows how fundamental physics constrains the stellar mass range."
-draft: true
+draft: false
 categories: [mass-limits, brown-dwarfs, eddington-limit, heisenberg-uncertainty, quantum-mechanics, stellar-mass-function]
 course: ASTR 201
 module: "3 - Stellar Structure & Evolution"

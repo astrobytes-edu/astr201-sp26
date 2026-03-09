@@ -4,7 +4,7 @@ subtitle: "How does fusion energy escape from the core to the surface?"
 author: "Dr. Anna Rosen"
 date: "2026-03-17"
 description: "Fusion energy is released in the Sun's core, but that energy takes of order 10^5 years to diffuse to the surface. The culprit is opacity: stellar interiors are so dense and opaque that photons scatter and are re-created an enormous number of times before the energy escapes. This reading introduces opacity, mean free path, the random walk, radiative diffusion, and radiation pressure — the physics of how energy moves through a star."
-draft: true
+draft: false
 categories: [radiation-transport, opacity, random-walk, mean-free-path, radiation-pressure]
 course: ASTR 201
 module: "3 - Stellar Structure & Evolution"

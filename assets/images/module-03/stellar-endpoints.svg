@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Stellar endpoints by mass</title>
+  <desc id="desc">A mass-based roadmap from brown dwarfs to white dwarfs, neutron stars, and black holes.</desc>
+  <defs>
+    <style>
+      .label { font: 700 24px Helvetica, Arial, sans-serif; fill:#2f2f2f; }
+      .body { font: 19px Helvetica, Arial, sans-serif; fill:#3b3b3b; }
+      .small { font: 17px Helvetica, Arial, sans-serif; fill:#5b5b5b; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="760" fill="#f7f4ea"/>
+  <text x="600" y="60" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="34" font-weight="700" fill="#2f2f2f">Stellar endpoints depend mainly on mass</text>
+  <text x="600" y="95" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="22" fill="#5b5b5b">Approximate ranges for isolated single-star evolution</text>
+
+  <line x1="120" y1="170" x2="1080" y2="170" stroke="#4d4d4d" stroke-width="6"/>
+  <line x1="200" y1="150" x2="200" y2="190" stroke="#4d4d4d" stroke-width="5"/>
+  <line x1="440" y1="150" x2="440" y2="190" stroke="#4d4d4d" stroke-width="5"/>
+  <line x1="760" y1="150" x2="760" y2="190" stroke="#4d4d4d" stroke-width="5"/>
+  <text x="120" y="140" class="body">Initial mass</text>
+  <text x="200" y="220" text-anchor="middle" class="body">0.08 M☉</text>
+  <text x="440" y="220" text-anchor="middle" class="body">8 M☉</text>
+  <text x="760" y="220" text-anchor="middle" class="body">25 M☉</text>
+  <text x="1080" y="220" text-anchor="middle" class="body">very massive</text>
+
+  <rect x="90" y="270" width="210" height="260" rx="22" fill="#d8ecff" stroke="#6aa0d8" stroke-width="3"/>
+  <text x="195" y="320" text-anchor="middle" class="label">Brown dwarf</text>
+  <text x="195" y="360" text-anchor="middle" class="body">No sustained H fusion</text>
+  <text x="195" y="400" text-anchor="middle" class="body">Cools and fades</text>
+  <text x="195" y="455" text-anchor="middle" class="small">Support:</text>
+  <text x="195" y="485" text-anchor="middle" class="small">electron degeneracy</text>
+
+  <rect x="330" y="270" width="290" height="260" rx="22" fill="#fff2c9" stroke="#d6a94d" stroke-width="3"/>
+  <text x="475" y="320" text-anchor="middle" class="label">White dwarf</text>
+  <text x="475" y="360" text-anchor="middle" class="body">Low-mass stars shed envelopes</text>
+  <text x="475" y="400" text-anchor="middle" class="body">C/O core remains</text>
+  <text x="475" y="455" text-anchor="middle" class="small">Support:</text>
+  <text x="475" y="485" text-anchor="middle" class="small">electron degeneracy</text>
+  <text x="475" y="515" text-anchor="middle" class="small">M<tspan baseline-shift="sub">core</tspan> &lt; 1.4 M☉</text>
+
+  <rect x="650" y="270" width="250" height="260" rx="22" fill="#ffd9cc" stroke="#d97b5f" stroke-width="3"/>
+  <text x="775" y="320" text-anchor="middle" class="label">Neutron star</text>
+  <text x="775" y="360" text-anchor="middle" class="body">Core-collapse supernova</text>
+  <text x="775" y="400" text-anchor="middle" class="body">City-sized remnant</text>
+  <text x="775" y="455" text-anchor="middle" class="small">Support:</text>
+  <text x="775" y="485" text-anchor="middle" class="small">neutron degeneracy</text>
+  <text x="775" y="515" text-anchor="middle" class="small">up to the TOV limit</text>
+
+  <rect x="930" y="270" width="180" height="260" rx="22" fill="#d9d4f2" stroke="#7a6bb0" stroke-width="3"/>
+  <text x="1020" y="320" text-anchor="middle" class="label">Black hole</text>
+  <text x="1020" y="370" text-anchor="middle" class="body">Collapse continues</text>
+  <text x="1020" y="410" text-anchor="middle" class="body">No surface</text>
+  <text x="1020" y="455" text-anchor="middle" class="small">Defined by an</text>
+  <text x="1020" y="485" text-anchor="middle" class="small">event horizon</text>
+
+  <text x="600" y="620" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="24" fill="#3b3b3b">Mass loss, metallicity, and binaries shift the boundaries, but the support physics sets the remnant classes.</text>
+</svg>

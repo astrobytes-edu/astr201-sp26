@@ -4,7 +4,7 @@ subtitle: "Why does L ∝ M^3.5? The four equations that determine everything."
 author: "Dr. Anna Rosen"
 date: "2026-03-19"
 description: "For main-sequence stars of similar composition, mass is the dominant control parameter. In this reading, we assemble the four stellar structure equations — mass conservation, hydrostatic equilibrium, energy transport, and energy generation — and show how they combine to produce the leading-order scaling relations behind the main sequence. We also discover when radiative transport fails and convection takes over, explaining why low-mass and high-mass stars have opposite internal structures."
-draft: true
+draft: false
 categories: [stellar-structure, scaling-relations, ODEs, convection, main-sequence, schwarzschild-criterion]
 course: ASTR 201
 module: "3 - Stellar Structure & Evolution"

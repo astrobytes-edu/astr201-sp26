@@ -4,7 +4,7 @@ subtitle: "When hydrogen runs out, why does a star swell before it shrinks?"
 author: "Dr. Anna Rosen"
 date: "2026-03-19"
 description: "When a low-mass star exhausts its core hydrogen, gravity's long-delayed victory begins — but the path is counterintuitive. The core contracts and heats up while the envelope swells to 100× its original size, creating a red giant. Helium ignites through the triple-alpha process, building carbon and oxygen — the atoms of organic chemistry. After shedding its outer layers as a planetary nebula, the star's bare core remains: a white dwarf the size of Earth, held up by electron degeneracy pressure. This reading follows the journey and introduces the second chapter of cosmic nucleosynthesis."
-draft: true
+draft: false
 categories: [stellar-evolution, red-giants, helium-burning, triple-alpha, white-dwarfs, planetary-nebulae, nucleosynthesis]
 course: ASTR 201
 module: "3 - Stellar Structure & Evolution"

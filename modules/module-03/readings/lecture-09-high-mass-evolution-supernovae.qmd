@@ -4,7 +4,7 @@ subtitle: "Massive stars build iron cores and then catastrophically collapse. Wh
 author: "Dr. Anna Rosen"
 date: "2026-03-26"
 description: "Massive stars race through successive nuclear burning stages — each shorter than the last — building an onion-shell structure of elements from hydrogen to iron. When the iron core exceeds the Chandrasekhar limit, electron degeneracy fails and the core collapses in less than a second, triggering a supernova. The explosion scatters elements into interstellar space and creates conditions for neutron capture, synthesizing elements beyond iron. This reading completes the nucleosynthesis story and reveals that your body is made of stellar ash."
-draft: true
+draft: false
 categories: [high-mass-evolution, supernovae, core-collapse, nucleosynthesis, iron-peak, r-process, onion-shell]
 course: ASTR 201
 module: "3 - Stellar Structure & Evolution"
