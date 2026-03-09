@@ -1,0 +1,3 @@
+$$
+P_\text{rad} = \frac{aT^4}{3}
+$$ {#eq-radiation-pressure}

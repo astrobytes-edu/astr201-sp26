@@ -1,0 +1,3 @@
+$$
+3\,{^4\text{He}} \rightarrow {^{12}\text{C}} + \gamma
+$$ {#eq-triple-alpha}

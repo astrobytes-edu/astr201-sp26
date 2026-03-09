@@ -1,0 +1,3 @@
+$$
+\frac{\tau_\text{nuc}}{\tau_{\text{nuc},\odot}} \approx \left(\frac{M}{M_\odot}\right)^{-2.5}
+$$ {#eq-lifetime-scaling}

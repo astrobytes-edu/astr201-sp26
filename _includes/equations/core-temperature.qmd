@@ -1,0 +1,3 @@
+$$
+T_c \sim \frac{\mu G M m_p}{k_B R}
+$$ {#eq-core-temperature}

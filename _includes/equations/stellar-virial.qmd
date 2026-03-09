@@ -1,0 +1,3 @@
+$$
+2 K_\text{th} + U_\text{grav} = 0
+$$ {#eq-stellar-virial}

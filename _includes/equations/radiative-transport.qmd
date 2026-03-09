@@ -1,0 +1,3 @@
+$$
+\frac{dT}{dr} = -\frac{3\kappa\rho}{16\sigma T^3}\frac{L(r)}{4\pi r^2}
+$$ {#eq-radiative-transport}

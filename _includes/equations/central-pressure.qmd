@@ -1,0 +1,3 @@
+$$
+P_c \sim \frac{GM^2}{R^4}
+$$ {#eq-central-pressure-estimate}

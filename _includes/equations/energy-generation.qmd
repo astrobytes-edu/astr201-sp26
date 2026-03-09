@@ -1,0 +1,3 @@
+$$
+\frac{dL}{dr} = 4\pi r^2 \rho\,\varepsilon(r)
+$$ {#eq-energy-generation}

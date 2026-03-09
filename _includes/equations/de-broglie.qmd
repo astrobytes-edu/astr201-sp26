@@ -1,0 +1,3 @@
+$$
+\lambda_\text{dB} = \frac{h}{p} = \frac{h}{mv}
+$$ {#eq-de-broglie}

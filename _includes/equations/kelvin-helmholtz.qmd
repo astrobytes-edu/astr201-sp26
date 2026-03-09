@@ -1,0 +1,3 @@
+$$
+\tau_\text{KH} \sim \frac{GM^2}{RL}
+$$ {#eq-kelvin-helmholtz}

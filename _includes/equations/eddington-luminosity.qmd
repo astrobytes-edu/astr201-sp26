@@ -1,0 +1,3 @@
+$$
+L_\text{Edd} = \frac{4\pi G M c}{\kappa}
+$$ {#eq-eddington-luminosity}

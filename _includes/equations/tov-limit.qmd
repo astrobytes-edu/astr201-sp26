@@ -1,0 +1,3 @@
+$$
+M_\text{TOV} \approx 2.0\text{--}2.5\,M_\odot
+$$ {#eq-tov-limit}

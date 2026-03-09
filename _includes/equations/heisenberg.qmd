@@ -1,0 +1,3 @@
+$$
+\Delta x \cdot \Delta p \geq \frac{\hbar}{2}
+$$ {#eq-heisenberg}

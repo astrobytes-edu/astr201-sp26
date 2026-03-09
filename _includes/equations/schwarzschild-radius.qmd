@@ -1,0 +1,3 @@
+$$
+R_s = \frac{2GM}{c^2}
+$$ {#eq-schwarzschild-radius}

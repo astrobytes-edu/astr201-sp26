@@ -1,0 +1,3 @@
+$$
+L \propto \frac{M^3}{\kappa}
+$$ {#eq-lum-mass-scaling}

@@ -1,0 +1,3 @@
+$$
+M_\text{HBMM} \approx 0.08\,M_\odot \approx 80\,M_\text{Jupiter}
+$$ {#eq-hydrogen-burning-minimum}

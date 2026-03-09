@@ -1,0 +1,3 @@
+$$
+\frac{dM}{dr} = 4\pi r^2 \rho(r)
+$$ {#eq-mass-conservation}

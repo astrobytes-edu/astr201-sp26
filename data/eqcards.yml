@@ -287,3 +287,253 @@ magnitude_flux:
   assumptions:
     - "Same photometric band (same wavelength filter)"
     - "Pogson's definition: 5 magnitudes = factor of 100 in flux"
+
+# ===== Module 3: Stellar Structure & Evolution =====
+
+dynamical_timescale:
+  predicts: "Given mean density $\\bar{\\rho}$, it predicts the timescale for gravitational rearrangement."
+  depends: "Scales as $\\tau_\\text{dyn} \\propto \\bar{\\rho}^{-1/2}$. Denser objects respond faster."
+  says: "If pressure support were removed, gravity would collapse the star in roughly this time. The Sun's dynamical time is ~50 minutes."
+  assumptions:
+    - "Uniform density approximation (order-of-magnitude estimate)"
+    - "Free-fall timescale — actual collapse is modified by pressure response"
+
+kelvin_helmholtz:
+  predicts: "Given $M$, $R$, and $L$, it predicts how long gravitational contraction alone could power the star."
+  depends: "Scales as $\\tau_\\text{KH} \\propto M^2/(RL)$. More massive = more gravitational energy; more luminous = faster depletion."
+  says: "The time a star could shine by slowly contracting — converting gravitational potential energy to radiation. For the Sun, ~30 Myr."
+  assumptions:
+    - "Only energy source is gravitational contraction"
+    - "Luminosity stays approximately constant during contraction"
+    - "Order-of-magnitude: uses $E_\\text{grav} \\sim GM^2/R$"
+
+nuclear_timescale:
+  predicts: "Given $M$ and $L$, it predicts how long nuclear fusion can sustain the star's luminosity."
+  depends: "Scales as $\\tau_\\text{nuc} \\propto M/L$. Using $L \\propto M^{3.5}$: $\\tau_\\text{nuc} \\propto M^{-2.5}$."
+  says: "Fuel divided by burn rate. The Sun's nuclear lifetime is ~10 Gyr. Massive stars live much shorter lives because L grows faster than M."
+  assumptions:
+    - "Hydrogen fusion with efficiency $\\varepsilon \\approx 0.007$"
+    - "Only core fraction $f \\approx 0.10$ participates in fusion"
+    - "Luminosity approximately constant during main-sequence phase"
+
+lifetime_scaling:
+  predicts: "Given a star's mass relative to the Sun, it predicts its main-sequence lifetime relative to the Sun's."
+  depends: "Scales as $\\tau \\propto M^{-2.5}$. Doubling the mass reduces lifetime by $2^{2.5} \\approx 5.7\\times$."
+  says: "Massive stars burn fast and die young. A $10\\,M_\\odot$ star lives only ~30 Myr; a $0.1\\,M_\\odot$ star outlasts the universe."
+  assumptions:
+    - "Star is on the main sequence (core hydrogen burning)"
+    - "Uses $L \\propto M^{3.5}$ (exponent varies somewhat with mass range)"
+
+hydrostatic_equilibrium:
+  predicts: "Given the local density $\\rho$, enclosed mass $M(r)$, and radius $r$, it predicts the pressure gradient $dP/dr$."
+  depends: "The pressure must decrease outward ($dP/dr < 0$) at a rate set by the local gravitational acceleration."
+  says: "At every radius inside a star, the pressure gradient exactly balances the weight of the overlying gas. This is the foundational equation of stellar structure."
+  assumptions:
+    - "The star is in mechanical equilibrium (no net acceleration)"
+    - "Spherical symmetry"
+    - "Departures corrected on $\\tau_\\text{dyn}$ (minutes for the Sun)"
+
+central_pressure:
+  predicts: "Given $M$ and $R$, it estimates the central pressure $P_c$ of a star."
+  depends: "Scales as $P_c \\propto M^2/R^4$."
+  says: "A dimensional estimate from hydrostatic equilibrium — the pressure at the center must support all overlying layers."
+  assumptions:
+    - "Uniform density approximation"
+    - "Order-of-magnitude estimate (actual $P_c$ is ~20× higher for the Sun due to central concentration)"
+
+stellar_virial:
+  predicts: "The relationship between total thermal energy $K_\\text{th}$ and gravitational potential energy $U_\\text{grav}$ in a star."
+  depends: "$K_\\text{th} = -U_\\text{grav}/2$. Total energy $E = U_\\text{grav}/2 < 0$ (bound)."
+  says: "In equilibrium, half the gravitational energy goes to thermal motion, half is radiated away. Losing energy makes the star *hotter* (negative heat capacity)."
+  assumptions:
+    - "Star is in hydrostatic equilibrium"
+    - "Ideal gas (non-relativistic particles)"
+    - "Time-averaged or in quasi-static equilibrium"
+
+core_temperature:
+  predicts: "Given $M$ and $R$, it estimates the core temperature $T_c$ of a star."
+  depends: "Scales as $T_c \\propto M/R$. Using $R \\propto M^{0.8}$: $T_c \\propto M^{0.2}$ (weak mass dependence)."
+  says: "Gravity sets the core temperature — deeper potential wells require higher temperatures for pressure support. For the Sun: $T_c \\sim 15$ MK."
+  assumptions:
+    - "Ideal gas in the core"
+    - "Virial theorem applies"
+    - "Uses the mean molecular weight $\\mu$ to connect thermal energy per particle to pressure support"
+    - "Order-of-magnitude estimate: real stellar structure adds order-unity corrections from central concentration and composition gradients"
+
+de_broglie:
+  predicts: "Given a particle's momentum $p$ (or mass $m$ and velocity $v$), it predicts the particle's quantum wavelength."
+  depends: "Scales as $\\lambda \\propto 1/p$. Heavier or faster particles have shorter wavelengths."
+  says: "Every particle has a wave nature. When $\\lambda_\\text{dB}$ is comparable to nuclear distances (~$10^{-13}$ cm), quantum effects dominate — enabling tunneling through barriers."
+  assumptions:
+    - "Non-relativistic ($v \\ll c$)"
+    - "Single particle (not a composite system)"
+
+pp_chain_net:
+  predicts: "The net products and energy released when four protons fuse to helium."
+  depends: "Requires conditions: $T \\gtrsim 10$ MK, $\\rho \\gtrsim 100$ g/cm³."
+  says: "Four hydrogen nuclei become one helium-4 nucleus plus two positrons, two neutrinos, and 26.7 MeV of energy. The mass deficit (0.7%) becomes radiation."
+  assumptions:
+    - "Dominant pathway in stars with $M \\lesssim 1.3\\,M_\\odot$"
+    - "CNO cycle dominates for more massive (hotter) stars"
+    - "Rate limited by Step 1 (requires weak force + tunneling)"
+
+mass_energy:
+  predicts: "Given a mass deficit $\\Delta m$, it predicts the energy released."
+  depends: "Scales as $E \\propto \\Delta m$. The constant $c^2$ is enormous: $9 \\times 10^{20}$ erg/g."
+  says: "Mass and energy are equivalent. The 0.7% mass deficit in hydrogen fusion powers every main-sequence star."
+  assumptions:
+    - "Special relativity"
+    - "$\\Delta m$ is the difference between reactant and product rest masses"
+
+# --- Reading 4: Radiation Transport ---
+
+mean_free_path:
+  predicts: "Given opacity $\\kappa$ and density $\\rho$, it predicts the average distance a photon travels between interactions."
+  depends: "Scales as $\\ell \\propto 1/(\\kappa\\rho)$. Higher density or opacity means shorter steps."
+  says: "The photon's 'step size' in its random walk through the star. In the solar core, $\\ell \\approx 0.02~\\text{cm}$ — a photon barely moves before scattering again."
+  assumptions:
+    - "Homogeneous medium (locally uniform $\\kappa$ and $\\rho$)"
+    - "Opacity $\\kappa$ includes all interaction processes (scattering + absorption)"
+
+random_walk:
+  predicts: "Given step size $\\ell$ and number of steps $N$, it predicts the net displacement $d$."
+  depends: "Scales as $d \\propto \\sqrt{N}$. To double the distance, you need four times as many steps."
+  says: "Random walks are devastatingly inefficient. Energy released in the solar core is carried outward through roughly $10^{25}$ photon interactions, so the diffusion time is of order $10^5$ years, not seconds."
+  assumptions:
+    - "Each step is independent and random in direction"
+    - "Constant step size (uniform medium)"
+    - "Three-dimensional random walk (the $\\sqrt{N}$ result holds in any dimension)"
+
+radiative_diffusion_luminosity:
+  predicts: "Given the opacity $\\kappa$, density $\\rho$, temperature profile $T(r)$, and radius $r$, it predicts the luminosity carried outward by radiative diffusion."
+  depends: "Scales as $L \\propto r^2 c\\,|d(aT^4)/dr|/(\\kappa\\rho)$. Steeper temperature gradients or lower opacity allow faster energy flow."
+  says: "This is the energy-flow version of the random walk. Photons still move at $c$ between interactions, but the net outward luminosity is throttled by opacity and the temperature gradient."
+  assumptions:
+    - "Radiation is the dominant transport mechanism (not convection)"
+    - "Diffusion approximation (photon mean free path $\\ll r$)"
+    - "Local thermodynamic equilibrium"
+
+radiation_pressure:
+  predicts: "Given temperature $T$, it predicts the pressure exerted by a radiation field in thermal equilibrium."
+  depends: "Scales as $P_\\text{rad} \\propto T^4$. Doubling the temperature increases radiation pressure by $16\\times$."
+  says: "Radiation exerts pressure because photons carry momentum. At low $T$, this is negligible compared to gas pressure. At high $T$ (massive star cores), radiation pressure dominates and sets the maximum stellar mass."
+  assumptions:
+    - "Thermal equilibrium (blackbody radiation)"
+    - "Isotropic radiation field"
+
+eddington_luminosity:
+  predicts: "Given stellar mass $M$ and opacity $\\kappa$, it predicts the maximum luminosity a star can sustain in hydrostatic equilibrium."
+  depends: "Scales as $L_\\text{Edd} \\propto M/\\kappa$. More massive stars tolerate higher luminosities."
+  says: "When radiation force on the gas rivals gravity, stars approach a luminosity ceiling. Near that regime, radiation pressure and mass loss strongly reshape the structure and help set the upper stellar-mass scale."
+  assumptions:
+    - "Spherically symmetric"
+    - "Electron-scattering opacity dominates ($\\kappa \\approx 0.34~\\text{cm}^2/\\text{g}$)"
+    - "Steady state (no time-dependent effects)"
+
+# --- Reading 5: Stellar Structure & Scalings ---
+
+mass_conservation:
+  predicts: "Given the density profile $\\rho(r)$, it determines how enclosed mass $M(r)$ grows with radius."
+  depends: "Scales as $dM/dr \\propto r^2 \\rho$. Larger shells at greater radii contribute more mass per unit thickness."
+  says: "This is geometry, not physics — mass enclosed increases as you add spherical shells. It is one of the four stellar structure equations."
+  assumptions:
+    - "Spherical symmetry"
+    - "No mass loss or gain (steady state)"
+
+radiative_transport:
+  predicts: "Given opacity $\\kappa$, density $\\rho$, temperature $T$, and luminosity $L(r)$, it determines the temperature gradient $dT/dr$."
+  depends: "Scales as $|dT/dr| \\propto \\kappa \\rho L / (T^3 r^2)$. Higher opacity or luminosity steepens the temperature gradient."
+  says: "Energy flows from hot center to cool surface by radiative diffusion. If the required temperature gradient is too steep, convection takes over (Schwarzschild criterion)."
+  assumptions:
+    - "Energy transported by radiation (not convection)"
+    - "Local thermodynamic equilibrium"
+    - "Diffusion approximation (photon mean free path $\\ll$ stellar radius)"
+
+energy_generation:
+  predicts: "Given the nuclear energy generation rate $\\varepsilon(r)$ and density $\\rho(r)$, it determines how luminosity $L(r)$ increases with radius."
+  depends: "Scales as $dL/dr \\propto r^2 \\rho \\varepsilon$. Luminosity grows only in regions where nuclear reactions occur."
+  says: "The luminosity you see at the surface equals the total nuclear energy generated in the core. Outside the core, $\\varepsilon = 0$ and luminosity is constant."
+  assumptions:
+    - "Steady state (nuclear timescale $\\gg$ dynamical timescale)"
+    - "Spherical symmetry"
+    - "No significant neutrino losses (for pp-chain, ~2% lost to neutrinos)"
+
+lum_mass_scaling:
+  predicts: "Given stellar mass $M$ and opacity $\\kappa$, it predicts the luminosity from dimensional analysis of the stellar structure equations."
+  depends: "Scales as $L \\propto M^3/\\kappa$. With Kramers' opacity: $L \\propto M^{3.5}\\text{--}M^4$."
+  says: "The stellar structure equations explain why the observed main-sequence mass-luminosity relation is so steep. For stars of similar composition, mass is the dominant control parameter."
+  assumptions:
+    - "Main-sequence star (core hydrogen burning)"
+    - "Radiative energy transport (not convective)"
+    - "Constant opacity gives $L \\propto M^3$; realistic opacity steepens to $\\sim M^{3.5}$"
+
+# --- Reading 6: Mass Limits ---
+
+heisenberg:
+  predicts: "Given the uncertainty in position $\\Delta x$, it predicts the minimum uncertainty in momentum $\\Delta p$ (or vice versa)."
+  depends: "Scales as $\\Delta p \\propto 1/\\Delta x$. Halving the confinement doubles the minimum momentum."
+  says: "Confining a particle to a smaller region forces it to have larger momentum — and therefore larger kinetic energy. This is the origin of degeneracy pressure: gravity confines electrons, but confinement creates pressure that resists further compression."
+  assumptions:
+    - "Fundamental quantum mechanical relation — no approximations"
+    - "$\\hbar/2$ is the minimum product; actual uncertainties may be larger"
+    - "Applies to any conjugate pair (position-momentum, energy-time)"
+
+hydrogen_burning_minimum:
+  predicts: "The minimum mass for sustained hydrogen fusion."
+  depends: "Set by when electron degeneracy halts contraction before core reaches $T \\sim 3 \\times 10^6$ K."
+  says: "Below $\\sim 0.08\\,M_\\odot$, electron degeneracy halts contraction before the core reaches hydrogen-fusion temperatures. Objects below this limit are brown dwarfs."
+  assumptions:
+    - "Solar composition (hydrogen-rich)"
+    - "Detailed value depends on opacity, composition, and equation of state"
+    - "Scales with fundamental constants: $\\hbar$, $c$, $G$, $m_p$, $\\alpha_\\text{EM}$"
+
+# --- Reading 7: Low-Mass Evolution ---
+
+triple_alpha:
+  predicts: "Three helium-4 nuclei fuse to form one carbon-12 nucleus plus a gamma-ray photon."
+  depends: "Requires $T \\gtrsim 10^8$ K and $\\rho \\gtrsim 10^4$ g/cm³. Rate scales as $\\varepsilon_{3\\alpha} \\propto T^{40}$."
+  says: "The only way to bridge the mass-5 and mass-8 gaps in nuclear stability. Requires a specific nuclear resonance in $^{12}$C (the Hoyle state at 7.65 MeV) — without which carbon would be exceedingly rare and carbon-based life impossible."
+  assumptions:
+    - "Occurs in red giant cores and horizontal branch stars"
+    - "Two-step process: $2\\alpha \\rightarrow\\ ^8$Be (unstable) + $\\alpha \\rightarrow\\ ^{12}$C"
+    - "Competes with alpha capture: $^{12}$C + $\\alpha \\rightarrow\\ ^{16}$O"
+
+# --- Reading 8: Degeneracy Pressure & Chandrasekhar ---
+
+degeneracy_pressure:
+  predicts: "Given electron number density $n_e$, it predicts the pressure from quantum confinement (Pauli exclusion)."
+  depends: "Scales as $P \\propto n_e^{5/3}$ (non-relativistic). No temperature dependence."
+  says: "Compressing fermions forces them into higher momentum states (Pauli exclusion + Heisenberg uncertainty). The resulting pressure exists even at $T = 0$ — fundamentally different from thermal pressure. This is what holds up white dwarfs."
+  assumptions:
+    - "Non-relativistic electrons ($p_F \\ll m_e c$)"
+    - "Fully degenerate gas ($T \\ll T_F$)"
+    - "Relativistic regime: $P \\propto n_e^{4/3}$ (softer — leads to Chandrasekhar limit)"
+
+chandrasekhar_mass:
+  predicts: "The maximum mass of a white dwarf supported by electron degeneracy pressure."
+  depends: "Built from four fundamental constants: $\\hbar$, $c$, $G$, $m_p$. Independent of temperature and radius; the exact value also depends on composition through the electron fraction $Y_e$."
+  says: "Above $1.44\\,M_\\odot$ for a C/O white dwarf, relativistic electrons cannot generate enough degeneracy pressure to balance gravity. Stable white-dwarf solutions disappear in the idealized model. This is the dividing line between white dwarfs and neutron stars/black holes."
+  assumptions:
+    - "Relativistic electron degeneracy pressure"
+    - "Cold equation of state (temperature-independent)"
+    - "Exact value depends on $Y_e$: $M_\\text{Ch} = 5.83\\,Y_e^2\\,M_\\odot \\approx 1.44\\,M_\\odot$ for $Y_e = 0.5$ (C/O)"
+
+wd_mass_radius:
+  predicts: "Given a white dwarf's mass, it predicts the radius (inversely)."
+  depends: "Scales as $R \\propto M^{-1/3}$. More massive white dwarfs are smaller."
+  says: "The opposite of ordinary objects: adding mass shrinks the star because stronger gravity compresses the degenerate electrons harder. This trend holds for non-relativistic white dwarfs and breaks down near the Chandrasekhar limit."
+  assumptions:
+    - "Non-relativistic regime (well below Chandrasekhar limit)"
+    - "Zero-temperature (degenerate) equation of state"
+    - "Breaks down as $M \\rightarrow M_\\text{Ch}$ (relativistic corrections)"
+
+# --- Reading 10: Neutron Stars & Black Holes ---
+
+tov_limit:
+  predicts: "The maximum mass of a neutron star supported by neutron degeneracy pressure."
+  depends: "Depends on the equation of state of nuclear matter at supra-nuclear density — currently uncertain."
+  says: "Above $\\sim 2\\text{--}2.5\\,M_\\odot$, no known force can resist gravity. The collapse produces a black hole. The analogue of the Chandrasekhar limit for neutron stars."
+  assumptions:
+    - "General relativistic hydrostatic equilibrium (TOV equation)"
+    - "Cold nuclear matter equation of state (uncertain above nuclear density)"
+    - "Most massive observed NS: $2.08 \\pm 0.07\\,M_\\odot$ (PSR J0740+6620)"

@@ -1,0 +1,3 @@
+$$
+R_\text{WD} \propto M^{-1/3}
+$$ {#eq-wd-mass-radius}

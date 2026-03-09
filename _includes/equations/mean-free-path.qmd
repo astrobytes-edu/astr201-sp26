@@ -1,0 +1,3 @@
+$$
+\ell = \frac{1}{\kappa\,\rho}
+$$ {#eq-mean-free-path}

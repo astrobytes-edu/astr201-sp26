@@ -1,0 +1,3 @@
+$$
+4\,{}^1\text{H} \rightarrow {}^4\text{He} + 2\,e^+ + 2\,\nu_e + \gamma
+$$ {#eq-pp-chain-net}

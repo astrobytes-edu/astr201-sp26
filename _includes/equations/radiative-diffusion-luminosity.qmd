@@ -1,0 +1,3 @@
+$$
+L(r) = -\frac{4\pi r^2 c}{3\kappa\rho}\frac{d(aT^4)}{dr}
+$$ {#eq-radiative-diffusion-luminosity}

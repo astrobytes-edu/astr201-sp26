@@ -1,0 +1,3 @@
+$$
+\frac{dP}{dr} = -\frac{G\,M(r)\,\rho(r)}{r^2}
+$$ {#eq-hydrostatic-equilibrium}

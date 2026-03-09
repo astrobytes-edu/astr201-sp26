@@ -1,0 +1,3 @@
+$$
+\tau_\text{dyn} \sim \frac{1}{\sqrt{G\bar{\rho}}}
+$$ {#eq-dynamical-timescale}

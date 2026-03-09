@@ -205,3 +205,185 @@ magnitude-flux:
   anchor: "eq-magnitude-flux"
   include: "_includes/equations/magnitude-flux.qmd"
   card: "magnitude_flux"
+
+# ===== Module 3: Stellar Structure & Evolution =====
+
+dynamical-timescale:
+  title: "Dynamical timescale"
+  anchor: "eq-dynamical-timescale"
+  include: "_includes/equations/dynamical-timescale.qmd"
+  card: "dynamical_timescale"
+
+kelvin-helmholtz:
+  title: "Kelvin-Helmholtz (thermal) timescale"
+  anchor: "eq-kelvin-helmholtz"
+  include: "_includes/equations/kelvin-helmholtz.qmd"
+  card: "kelvin_helmholtz"
+
+nuclear-timescale:
+  title: "Nuclear timescale"
+  anchor: "eq-nuclear-timescale"
+  include: "_includes/equations/nuclear-timescale.qmd"
+  card: "nuclear_timescale"
+
+lifetime-scaling:
+  title: "Main-sequence lifetime scaling"
+  anchor: "eq-lifetime-scaling"
+  include: "_includes/equations/lifetime-scaling.qmd"
+  card: "lifetime_scaling"
+
+hydrostatic-equilibrium:
+  title: "Hydrostatic equilibrium"
+  anchor: "eq-hydrostatic-equilibrium"
+  include: "_includes/equations/hydrostatic-equilibrium.qmd"
+  card: "hydrostatic_equilibrium"
+
+central-pressure:
+  title: "Central pressure estimate"
+  anchor: "eq-central-pressure-estimate"
+  include: "_includes/equations/central-pressure.qmd"
+  card: "central_pressure"
+
+stellar-virial:
+  title: "Virial theorem (stellar)"
+  anchor: "eq-stellar-virial"
+  include: "_includes/equations/stellar-virial.qmd"
+  card: "stellar_virial"
+
+core-temperature:
+  title: "Core temperature estimate"
+  anchor: "eq-core-temperature"
+  include: "_includes/equations/core-temperature.qmd"
+  card: "core_temperature"
+
+de-broglie:
+  title: "de Broglie wavelength"
+  anchor: "eq-de-broglie"
+  include: "_includes/equations/de-broglie.qmd"
+  card: "de_broglie"
+
+pp-chain-net:
+  title: "Proton-proton chain (net reaction)"
+  anchor: "eq-pp-chain-net"
+  include: "_includes/equations/pp-chain-net.qmd"
+  card: "pp_chain_net"
+
+mass-energy:
+  title: "Mass-energy equivalence (fusion)"
+  anchor: "eq-mass-energy"
+  include: "_includes/equations/mass-energy.qmd"
+  card: "mass_energy"
+
+# --- Reading 4: Radiation Transport ---
+
+mean-free-path:
+  title: "Photon mean free path"
+  anchor: "eq-mean-free-path"
+  include: "_includes/equations/mean-free-path.qmd"
+  card: "mean_free_path"
+
+random-walk:
+  title: "Random walk distance"
+  anchor: "eq-random-walk"
+  include: "_includes/equations/random-walk.qmd"
+  card: "random_walk"
+
+radiative-diffusion-luminosity:
+  title: "Radiative diffusion luminosity"
+  anchor: "eq-radiative-diffusion-luminosity"
+  include: "_includes/equations/radiative-diffusion-luminosity.qmd"
+  card: "radiative_diffusion_luminosity"
+
+radiation-pressure:
+  title: "Radiation pressure"
+  anchor: "eq-radiation-pressure"
+  include: "_includes/equations/radiation-pressure.qmd"
+  card: "radiation_pressure"
+
+eddington-luminosity:
+  title: "Eddington luminosity"
+  anchor: "eq-eddington-luminosity"
+  include: "_includes/equations/eddington-luminosity.qmd"
+  card: "eddington_luminosity"
+
+# --- Reading 5: Stellar Structure & Scalings ---
+
+mass-conservation:
+  title: "Mass conservation (stellar structure)"
+  anchor: "eq-mass-conservation"
+  include: "_includes/equations/mass-conservation.qmd"
+  card: "mass_conservation"
+
+radiative-transport:
+  title: "Radiative transport equation"
+  anchor: "eq-radiative-transport"
+  include: "_includes/equations/radiative-transport.qmd"
+  card: "radiative_transport"
+
+energy-generation:
+  title: "Energy generation equation"
+  anchor: "eq-energy-generation"
+  include: "_includes/equations/energy-generation.qmd"
+  card: "energy_generation"
+
+lum-mass-scaling:
+  title: "Luminosity-mass scaling (derived)"
+  anchor: "eq-lum-mass-scaling"
+  include: "_includes/equations/lum-mass-scaling.qmd"
+  card: "lum_mass_scaling"
+
+# --- Reading 6: Mass Limits ---
+
+heisenberg:
+  title: "Heisenberg uncertainty principle"
+  anchor: "eq-heisenberg"
+  include: "_includes/equations/heisenberg.qmd"
+  card: "heisenberg"
+
+hydrogen-burning-minimum:
+  title: "Hydrogen-burning minimum mass"
+  anchor: "eq-hydrogen-burning-minimum"
+  include: "_includes/equations/hydrogen-burning-minimum.qmd"
+  card: "hydrogen_burning_minimum"
+
+# --- Reading 7: Low-Mass Evolution ---
+
+triple-alpha:
+  title: "Triple-alpha process"
+  anchor: "eq-triple-alpha"
+  include: "_includes/equations/triple-alpha.qmd"
+  card: "triple_alpha"
+
+# --- Reading 8: Degeneracy Pressure & Chandrasekhar ---
+
+degeneracy-pressure:
+  title: "Electron degeneracy pressure (non-relativistic)"
+  anchor: "eq-degeneracy-pressure"
+  include: "_includes/equations/degeneracy-pressure.qmd"
+  card: "degeneracy_pressure"
+
+chandrasekhar-mass:
+  title: "Chandrasekhar mass"
+  anchor: "eq-chandrasekhar-mass"
+  include: "_includes/equations/chandrasekhar-mass.qmd"
+  card: "chandrasekhar_mass"
+
+wd-mass-radius:
+  title: "White dwarf mass-radius relation"
+  anchor: "eq-wd-mass-radius"
+  include: "_includes/equations/wd-mass-radius.qmd"
+  card: "wd_mass_radius"
+
+# --- Reading 10: Neutron Stars & Black Holes ---
+
+tov-limit:
+  title: "Tolman-Oppenheimer-Volkoff limit"
+  anchor: "eq-tov-limit"
+  include: "_includes/equations/tov-limit.qmd"
+  card: "tov_limit"
+
+schwarzschild-radius:
+  title: "Schwarzschild radius"
+  anchor: "eq-schwarzschild-radius"
+  include: "_includes/equations/schwarzschild-radius.qmd"
+  card: "schwarzschild_radius"
