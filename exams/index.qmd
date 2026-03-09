@@ -7,7 +7,7 @@ draft: false
 
 | Exam | Topics | Date | Solutions |
 |------|--------|------|-----------|
-| Midterm 1 | Modules 1-2 | TBD | *Posted after exam* |
+| Midterm 1 | Modules 1-2 | March 5, 2026 | [Solutions](astr201-Midterm1-solutions.pdf) |
 | Midterm 2 | Modules 2-3 | TBD | *Posted after exam* |
 | Final | Comprehensive | Finals Week | *Posted after exam* |
 
