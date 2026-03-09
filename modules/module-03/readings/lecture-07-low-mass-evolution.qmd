@@ -1,0 +1,525 @@
+---
+title: "Lecture 7: After the Main Sequence — Low-Mass Evolution and White Dwarfs"
+subtitle: "When hydrogen runs out, why does a star swell before it shrinks?"
+author: "Dr. Anna Rosen"
+date: "2026-03-19"
+description: "When a low-mass star exhausts its core hydrogen, gravity's long-delayed victory begins — but the path is counterintuitive. The core contracts and heats up while the envelope swells to 100× its original size, creating a red giant. Helium ignites through the triple-alpha process, building carbon and oxygen — the atoms of organic chemistry. After shedding its outer layers as a planetary nebula, the star's bare core remains: a white dwarf the size of Earth, held up by electron degeneracy pressure. This reading follows the journey and introduces the second chapter of cosmic nucleosynthesis."
+draft: true
+categories: [stellar-evolution, red-giants, helium-burning, triple-alpha, white-dwarfs, planetary-nebulae, nucleosynthesis]
+course: ASTR 201
+module: "3 - Stellar Structure & Evolution"
+learning-objectives:
+  - Explain why the core contracts and the envelope expands when core hydrogen is exhausted
+  - Describe shell hydrogen burning and its role in driving red giant expansion
+  - Explain the triple-alpha process and why helium burning requires T ~ 100 MK
+  - Describe the helium flash in low-mass stars and why it occurs in degenerate cores
+  - Trace the path from asymptotic giant branch through planetary nebula to white dwarf
+  - Identify carbon and oxygen as the nucleosynthetic products of helium burning
+Concept-Throughline:
+  - When hydrogen runs out, the core contracts (virial theorem) — but this contraction is the beginning, not the end
+  - Shell burning inflates the envelope to red giant dimensions through a mechanism that is still not fully intuitive even to experts
+  - The triple-alpha process builds carbon from helium — every carbon atom in your body was forged in a red giant
+  - White dwarfs are the final state for stars below ~8 solar masses — dead cores held up by electron degeneracy pressure
+math-level: symbolic_with_interpretation
+mode: Draft
+prerequisites: "Virial theorem and core temperature (Reading 2), nuclear fusion and binding energy curve (Reading 3), stellar structure equations (Reading 5), degeneracy pressure concept (Reading 6)"
+---
+
+## Learning Objectives
+
+After completing this reading, you should be able to:
+
+1. **Explain** why the core contracts and the envelope expands when core hydrogen is exhausted
+2. **Describe** shell hydrogen burning and its role in driving red giant expansion
+3. **Explain** the triple-alpha process and why helium burning requires $T \sim 100~\text{MK}$
+4. **Describe** the helium flash in low-mass stars and why it occurs in degenerate cores
+5. **Trace** the evolutionary path: subgiant → red giant → horizontal branch → AGB → planetary nebula → white dwarf
+6. **Identify** carbon and oxygen as the nucleosynthetic products of helium burning (nucleosynthesis thread 2/3)
+
+## Concept Throughline
+
+> *For 10 billion years, the Sun has maintained a careful balance — nuclear fusion in the core fighting gravity's relentless pull. But hydrogen is finite. When the core fuel runs out, the balance breaks — and the Sun's response is the most counterintuitive event in stellar physics. The core, no longer generating energy, contracts and gets hotter (virial theorem). A shell of hydrogen ignites around the inert helium core. And the outer layers of the star — somehow — balloon outward by a factor of 100. The Sun will engulf Mercury, Venus, and possibly Earth. It will become a red giant. And in its dying core, helium nuclei will fuse into carbon — the element of life.*
+
+::: {.callout-note title="Reading Map — Choose Your Track"}
+
+**Track A (Core, ~30 min):** Read **Parts 1–6** in order — hydrogen exhaustion, red giant expansion, helium burning, planetary nebulae, white dwarfs, and the full low-mass evolutionary path. Skip any box marked *Enrichment*.
+
+**Track B (Full, ~40 min):** Read everything, including *Enrichment* boxes (mirror principle, why the helium flash is invisible, Type Ia supernovae). These deepen the physics and connect the interior story to observable remnants.
+
+*Both tracks cover all core learning objectives.*
+:::
+
+---
+
+## Part 1: The End of Hydrogen Burning
+
+::: {.callout-important}
+## The Big Idea
+
+**When core hydrogen is exhausted, the virial theorem guarantees that the core contracts and heats up.** This is not a failure — it's gravity reasserting itself, and it triggers a cascade of dramatic changes.
+:::
+
+The observational payoff comes later on the HR diagram. In star clusters, we do not merely see Sun-like stars vanish when they leave the main sequence. We see them move onto the subgiant branch, climb the red giant branch, settle into helium-burning phases, shed glowing nebulae, and end as white dwarfs. The puzzle for this reading is why one physical change — core hydrogen exhaustion — launches that entire sequence instead of simply making the star fade away.
+
+### What Happens When the Fuel Runs Out?
+
+On the main sequence, fusion balances gravity. The star is in both hydrostatic and thermal equilibrium — forces are balanced and energy production equals energy loss. When the hydrogen in the core is finally converted to helium (after $\tau_\text{nuc} \sim 10~\text{Gyr}$ for the Sun), the core loses its energy source.
+
+Without energy generation, the core can't maintain its temperature. The virial theorem ($2K_\text{th} + U_\text{grav} = 0$) tells us what happens next:
+
+1. **The core radiates energy** — photons carry energy outward from the still-hot (but no longer replenished) core
+2. **Total energy decreases** — the star loses energy to radiation
+3. **The core contracts** — since $E = U_\text{grav}/2 = -K_\text{th}$, losing energy means $|U_\text{grav}|$ increases (deeper potential well), so the core shrinks
+4. **The core gets hotter** — paradoxically, losing energy increases the thermal energy ($K_\text{th} = -U_\text{grav}/2$ increases as the potential well deepens). Negative heat capacity in action.
+
+This is the virial theorem's most dramatic consequence: **a star that loses energy responds by getting hotter.** We met this paradox in Reading 2 — now we see it in action.
+
+### The Inert Helium Core
+
+After main-sequence hydrogen burning, the core is nearly pure helium — the "ash" of hydrogen fusion. This helium core is:
+
+- **Hot:** $T \sim 10^7\text{–}10^8~\text{K}$
+- **Dense:** $\rho \sim 10^4\text{–}10^6~\text{g}/\text{cm}^3$ (and rising as it contracts)
+- **Inert:** Helium can't fuse at these temperatures. The Coulomb barrier between two $^4\text{He}$ nuclei ($Z = 2$, so $Z_1 Z_2 = 4$) is four times higher than between two protons ($Z_1 Z_2 = 1$). Helium fusion requires $T \gtrsim 10^8~\text{K}$ — we'll get there, but not yet.
+
+### Shell Hydrogen Burning
+
+{{< fig h-shell-burning-rgb >}}
+
+As the core contracts and heats, a remarkable thing happens at its boundary. Just outside the inert helium core sits a shell of hydrogen-rich gas that has never been hot enough for fusion. As the core contracts, this shell gets compressed and heated — and when it reaches $T \sim 10^7~\text{K}$, hydrogen fusion ignites in the shell.
+
+**Shell burning** is more intense than core burning was. The shell sits at the edge of a denser, hotter core than the main-sequence core was, and the burning occurs in a thin, concentrated layer. The luminosity from the shell actually *exceeds* the star's main-sequence luminosity.
+
+::: {.callout-tip}
+## Check Yourself
+
+During core hydrogen burning (the main sequence), the core gradually accumulates helium "ash." Why doesn't this helium fuse immediately?
+
+::: {.callout-note collapse="true"}
+## Solution
+
+Helium nuclei have $Z = 2$, so two helium nuclei repel each other with a Coulomb barrier proportional to $Z_1 Z_2 = 4$ — four times higher than the proton-proton barrier ($Z_1 Z_2 = 1$). The quantum tunneling probability drops exponentially with barrier height, so helium fusion requires much higher temperatures ($T \gtrsim 10^8~\text{K}$) than hydrogen fusion ($T \gtrsim 10^7~\text{K}$). During the main sequence, the core is "only" $\sim 1.5 \times 10^7~\text{K}$ — far too cool for helium fusion. The helium simply accumulates as inert ash until the core contracts enough to reach the necessary temperatures.
+:::
+:::
+
+---
+
+## Part 2: The Red Giant — Why Does the Star Swell?
+
+### The Counterintuitive Expansion
+
+Here is the most counterintuitive result in stellar evolution: **when the core contracts, the envelope expands.** The star swells from $\sim 1\,R_\odot$ to $\sim 100\text{–}200\,R_\odot$, becoming a red giant. Its surface temperature drops from $\sim 5{,}800~\text{K}$ to $\sim 3{,}500~\text{K}$ (hence "red"), while its luminosity increases by a factor of $\sim 100\text{–}1{,}000$ (the huge surface area more than compensates for the lower temperature).
+
+**Why does the envelope expand?** This is one of the most-asked questions in stellar astrophysics, and the honest answer is that a fully satisfying intuitive explanation is surprisingly difficult — it requires solving the stellar structure equations numerically. But we can identify the key mechanisms:
+
+1. **Shell burning dumps energy into the base of the envelope.** The hydrogen-burning shell produces more luminosity than the main-sequence core did, and this energy must be transported outward through the envelope.
+
+2. **The envelope can't transport the energy fast enough by radiation.** The opacity in the envelope is high (bound-free and free-free absorption dominate), so the radiative temperature gradient becomes very steep — steeper than the Schwarzschild criterion allows.
+
+3. **Convection takes over in the envelope.** The deep convective envelope carries energy efficiently, but the convective motions also *inflate* the envelope. The star finds a new equilibrium with a much larger radius.
+
+4. **The total energy budget shifts.** As the core contracts and releases gravitational energy, the virial theorem applied to the *whole star* allows some of that energy to go into expanding the envelope (doing work against gravity on the outer layers).
+
+The result: the Sun will eventually swell to $\sim 200\,R_\odot$, engulfing Mercury and Venus, and possibly reaching Earth's orbit.
+
+::: {.callout-note collapse="true" title="Enrichment: The Mirror Principle"}
+There's a heuristic called the **mirror principle** that captures the core-contracts-envelope-expands behavior: when the core shrinks, the envelope "mirrors" it by expanding, and vice versa. This is not a fundamental law — it can be violated in some evolutionary phases — but it works surprisingly well as a rule of thumb.
+
+The physical basis is the boundary pressure between core and envelope. When the core contracts, the pressure at the core-envelope boundary increases. The envelope responds by expanding to reduce its weight per unit area (lowering the pressure it exerts on the core). This is not a proof — the real argument requires the full stellar structure equations — but it captures the essence of why core contraction drives envelope expansion.
+:::
+
+### The Red Giant Branch
+
+{{< fig hr-post-ms-tracks >}}
+
+The star's evolution after core hydrogen exhaustion traces a dramatic path on the HR diagram:
+
+1. **Subgiant branch:** The star moves slightly to the right (cooler surface) and upward (higher luminosity) as shell burning begins
+2. **Red giant branch (RGB):** The star ascends nearly vertically — luminosity increases dramatically while $T_\text{eff}$ stays roughly constant at $\sim 3{,}500\text{–}4{,}500~\text{K}$. The Hayashi limit (the coolest temperature a convective star can have in equilibrium) sets this near-constant temperature.
+3. **The tip of the RGB:** Luminosity reaches $\sim 2{,}000\text{–}3{,}000\,L_\odot$ for a solar-mass star. The core temperature finally reaches $\sim 10^8~\text{K}$ — and helium ignites.
+
+::: {.callout-tip}
+## Check Yourself
+
+A star with $L = 1{,}000\,L_\odot$ and $T_\text{eff} = 3{,}500~\text{K}$ is on the red giant branch. What is its radius compared to the Sun? (Use the Stefan-Boltzmann law: $L = 4\pi R^2 \sigma T_\text{eff}^4$.)
+
+::: {.callout-note collapse="true"}
+## Solution
+
+Take the ratio with solar values:
+
+$$
+\frac{L}{L_\odot} = \left(\frac{R}{R_\odot}\right)^2 \left(\frac{T_\text{eff}}{T_{\text{eff},\odot}}\right)^4
+$$
+
+$$
+1{,}000 = \left(\frac{R}{R_\odot}\right)^2 \left(\frac{3{,}500}{5{,}800}\right)^4 = \left(\frac{R}{R_\odot}\right)^2 \times 0.133
+$$
+
+$$
+\left(\frac{R}{R_\odot}\right)^2 = \frac{1{,}000}{0.133} \approx 7{,}500
+$$
+
+$$
+\frac{R}{R_\odot} \approx 87
+$$
+
+The red giant is $\sim 87$ times the Sun's current radius. If placed at the Sun's position, it would extend past Mercury's orbit ($\sim 83\,R_\odot$) and nearly to Venus ($\sim 155\,R_\odot$). This is a star that was once roughly solar-sized — now it fills a substantial fraction of the inner solar system.
+:::
+:::
+
+---
+
+## Part 3: Helium Burning — The Triple-Alpha Process
+
+### Why Three Helium Nuclei?
+
+When the core reaches $T \sim 10^8~\text{K}$, helium fusion finally becomes possible. But there's a problem: there is no stable nucleus with mass number $A = 5$ or $A = 8$. This means:
+
+- $^4\text{He} + ^1\text{H} \rightarrow\, ^5\text{Li}$ — **unstable**, decays in $\sim 10^{-22}~\text{s}$
+- $^4\text{He} + ^4\text{He} \rightarrow\, ^8\text{Be}$ — **unstable**, decays in $\sim 10^{-16}~\text{s}$
+
+The instability at $A = 5$ and $A = 8$ is a **bottleneck** in nucleosynthesis. Nature cannot build heavier elements by simply adding one particle at a time to helium. The only way forward is to fuse *three* helium nuclei nearly simultaneously:
+
+{{< include ../../../_includes/equations/triple-alpha.qmd >}}
+
+{{< eqrefcard triple-alpha >}}
+
+This is the **triple-alpha process** (each $^4\text{He}$ nucleus is an alpha particle, so three alphas → carbon-12).
+
+{{< fig triple-alpha-process >}}
+
+### How the Triple-Alpha Works
+
+The process occurs in two steps, happening in extremely rapid succession:
+
+**Step 1:** Two helium nuclei fuse to form beryllium-8:
+
+$$
+{^4\text{He}} + {^4\text{He}} \rightleftharpoons {^8\text{Be}}
+$$
+
+$^8\text{Be}$ is unstable — it decays back into two helium nuclei in $\sim 10^{-16}~\text{s}$. But at the extreme temperatures and densities of the helium core ($T \sim 10^8~\text{K}$, $\rho \sim 10^4~\text{g}/\text{cm}^3$), a tiny equilibrium population of $^8\text{Be}$ exists at any moment.
+
+**Step 2:** Before the $^8\text{Be}$ decays, a third helium nucleus collides with it:
+
+$$
+{^8\text{Be}} + {^4\text{He}} \rightarrow {^{12}\text{C}}^* \rightarrow {^{12}\text{C}} + \gamma
+$$
+
+The $^{12}\text{C}^*$ is an excited state of carbon-12. For this step to proceed fast enough to be astrophysically relevant, there *must* be a nuclear resonance — an excited state of $^{12}\text{C}$ at precisely the right energy ($\sim 7.65~\text{MeV}$ above ground state) to enhance the reaction rate.
+
+### The Hoyle Prediction
+
+In 1953, Fred Hoyle realized that without such a resonance, the triple-alpha process would be far too slow to produce the observed abundance of carbon in the universe. He *predicted* that $^{12}\text{C}$ must have an excited state at $\sim 7.65~\text{MeV}$ — and challenged nuclear physicists to find it. They did, in experiments at Caltech's Kellogg Radiation Laboratory later that year.
+
+::: {.callout-note title="Observable → Model → Inference" .omi}
+**Observable:** Carbon is the fourth most abundant element in the universe (after H, He, O) and the backbone of organic chemistry.
+
+**Model:** Triple-alpha process in red giant cores; requires a specific nuclear resonance in $^{12}\text{C}$ (the Hoyle state).
+
+**Inference:** The existence of carbon — and therefore carbon-based life — depends on a nuclear physics detail: an excited state at $7.65~\text{MeV}$ in $^{12}\text{C}$. If this state didn't exist, the universe would have almost no carbon, and life as we know it would be impossible. This is one of the most striking examples of the connection between nuclear physics and astrophysics.
+:::
+
+### After Carbon: Alpha Capture
+
+Once carbon-12 is produced, some of it captures an additional helium nucleus:
+
+$$
+{^{12}\text{C}} + {^4\text{He}} \rightarrow {^{16}\text{O}} + \gamma
+$$
+
+This **alpha capture** reaction competes with the triple-alpha process, and the balance between the two determines the carbon-to-oxygen ratio in the final core. The exact ratio depends sensitively on nuclear reaction rates that are still being refined by laboratory experiments — one of the few cases where stellar evolution predictions depend on *unsolved problems* in nuclear physics.
+
+The energy released per triple-alpha reaction:
+
+$$
+E = \Delta m \, c^2 = (3 \times 4.002602 - 12.000000)~\text{u} \times 931.5~\text{MeV/u} = 7.275~\text{MeV}
+$$
+
+This is $\sim 7.3~\text{MeV}$ per carbon nucleus produced — compared to $26.7~\text{MeV}$ per helium nucleus from hydrogen burning. Helium burning produces less energy per reaction *and* consumes fuel faster (because the luminosity of a helium-burning star is much higher). This is why helium burning lasts a much shorter time than hydrogen burning.
+
+::: {.callout-note title="Nucleosynthesis Thread (2 of 3)"}
+**Reading 3:** $\text{H} \rightarrow \text{He}$ (pp-chain, main sequence)
+
+**This reading:** $\text{He} \rightarrow \text{C} \rightarrow \text{O}$ (triple-alpha + alpha capture, red giant)
+
+**Reading 9:** $\text{C} \rightarrow \ldots \rightarrow \text{Fe}$ + beyond Fe via r-process (massive stars, supernovae)
+
+**Every carbon atom in your DNA was once inside a dying red giant star.** Oxygen is also produced by alpha capture during helium burning, though the largest oxygen yields come from more massive stars later in the stellar life cycle. The periodic table is being constructed inside stars, one fusion stage at a time.
+:::
+
+::: {.callout-tip}
+## Check Yourself
+
+The triple-alpha process has an *extremely* steep temperature dependence: $\varepsilon_{3\alpha} \propto T^{40}$ (compared to $\varepsilon_\text{pp} \propto T^4$ for the pp-chain). What are the consequences of this steep dependence for the stellar structure?
+
+::: {.callout-note collapse="true"}
+## Solution
+
+With $\varepsilon \propto T^{40}$, even tiny temperature changes produce enormous changes in energy generation. The consequences are:
+
+1. **Energy generation is confined to a tiny region** — only the very center of the core, where $T$ is highest, contributes significantly. The energy-generating region is much smaller than for hydrogen burning.
+
+2. **The core is convective** — the energy is dumped into such a small volume that the temperature gradient becomes extremely steep, violating the Schwarzschild criterion. Convection mixes the helium-burning core, bringing fresh helium fuel inward and distributing newly made carbon throughout the convective zone.
+
+3. **The thermostat is very sensitive** — the steep temperature dependence means small perturbations in $T$ cause large changes in energy output, which the star must accommodate by adjusting its structure. This contributes to the thermal pulse instability on the AGB (Part 4).
+:::
+:::
+
+---
+
+## Part 4: The Helium Flash and Beyond
+
+### Degenerate Ignition: The Helium Flash
+
+For stars with $M \lesssim 2\,M_\odot$, something dramatic happens when helium ignites in the core. By the time the core reaches $\sim 10^8~\text{K}$, the density has climbed to $\sim 10^6~\text{g}/\text{cm}^3$ — and the core has become **electron-degenerate** (the phenomenon introduced in Reading 6).
+
+In a degenerate gas, pressure depends on *density*, not temperature. This breaks the stellar thermostat:
+
+- **Normal core:** Temperature rises → pressure rises → core expands → temperature drops → rate decreases. (Negative feedback — stable.)
+- **Degenerate core:** Temperature rises → pressure *unchanged* (degeneracy doesn't depend on $T$) → no expansion → temperature rises further → rate increases explosively. (Positive feedback — **runaway!**)
+
+The result is the **helium flash** — a thermonuclear runaway in the degenerate core. For a brief period (seconds to minutes), the energy generation rate in the core is enormous — comparable to the luminosity of the entire Milky Way ($\sim 10^{11}\,L_\odot$). But this energy doesn't reach the surface: it is absorbed by the overlying layers, lifting the degeneracy (heating the gas until it becomes non-degenerate) and re-establishing the normal thermal equilibrium.
+
+After the helium flash:
+
+1. The core is no longer degenerate — it's now a normal, hot, helium-burning core
+2. The star settles onto the **horizontal branch** (HB) — a stable phase of core helium burning with shell hydrogen burning, at $L \sim 50\,L_\odot$ and higher $T_\text{eff}$ than the RGB
+3. Helium burns steadily for $\sim 10^8~\text{yr}$ — about $1\%$ of the hydrogen-burning lifetime
+
+::: {.callout-note collapse="true" title="Enrichment: Why Is the Helium Flash Invisible?"}
+Despite releasing $\sim 10^{11}\,L_\odot$ of power for a few seconds, the helium flash is **not directly observable.** The energy is released deep in the core and is entirely absorbed by the surrounding stellar material before it can reach the surface. The overlying layers act as a calorimeter — they absorb the flash energy, heat up, expand, and lift the electron degeneracy. The star's surface luminosity actually *decreases* slightly during and after the helium flash as the star readjusts to its new configuration on the horizontal branch.
+
+This is a beautiful example of how stellar interiors can have violent, dramatic events that leave almost no direct surface signature. We infer the helium flash from stellar evolution models, from the observed properties of horizontal branch stars, and from the "gap" in the luminosity function of old stellar populations (no stars are observed *during* the flash because it's so brief).
+:::
+
+### The Asymptotic Giant Branch
+
+{{< fig agb-core-structure >}}
+
+After helium is exhausted in the core (leaving a core of carbon and oxygen), history repeats — at a higher level:
+
+1. **The C/O core contracts** — just as the He core contracted when H burning ended
+2. **Helium shell burning ignites** — a shell of helium burns around the inert C/O core
+3. **Hydrogen shell burning continues** — an outer shell of hydrogen still burns around the helium shell
+4. **The envelope expands again** — the star ascends the **asymptotic giant branch (AGB)**, reaching even higher luminosities ($\sim 10^4\,L_\odot$) and larger radii ($\sim 200\text{–}300\,R_\odot$) than on the first red giant branch
+
+The AGB phase is unstable. The two burning shells can't maintain simultaneous thermal equilibrium — they alternately strengthen and weaken in **thermal pulses** with a period of $\sim 10^4~\text{yr}$. During thermal pulses:
+
+- The helium shell ignites in brief, intense flashes
+- Convection dredges up carbon from the core to the surface (the **third dredge-up**)
+- The star loses mass through powerful stellar winds
+
+### Mass Loss and Planetary Nebulae
+
+AGB stars lose mass at prodigious rates — up to $10^{-4}\,M_\odot/\text{yr}$ — through radiation-driven winds and pulsation-driven ejection. Over $\sim 10^5~\text{yr}$, the star expels its entire hydrogen-rich envelope, exposing the hot C/O core.
+
+The exposed core, with $T_\text{eff} \sim 30{,}000\text{–}200{,}000~\text{K}$, emits intense ultraviolet radiation that ionizes the ejected gas, causing it to glow — creating a **planetary nebula.** (The name is a misnomer from William Herschel, who thought they resembled planet disks through small telescopes. They have nothing to do with planets.)
+
+Planetary nebulae are among the most beautiful objects in astronomy — shells and rings of glowing gas in red (hydrogen), blue-green (oxygen), and pink (nitrogen), sculpted by the interplay of fast and slow winds. They last only $\sim 10^4~\text{yr}$ before dispersing into the interstellar medium — a cosmic eyeblink — enriching it with carbon, nitrogen, and other elements produced during the star's life.
+
+::: {.callout-tip}
+## Check Yourself
+
+A $1\,M_\odot$ star ends its life with a core of $\sim 0.6\,M_\odot$ (the rest was ejected as a planetary nebula). Core helium burning lasts $\sim 10^8~\text{yr}$. Compare this to the hydrogen-burning lifetime ($\sim 10^{10}~\text{yr}$) and explain the ratio.
+
+::: {.callout-note collapse="true"}
+## Solution
+
+The ratio is $\tau_\text{He}/\tau_\text{H} \sim 10^8/10^{10} = 0.01$ — helium burning lasts only $\sim 1\%$ as long as hydrogen burning. Two factors explain this:
+
+1. **Less energy per reaction:** The triple-alpha process releases $\sim 7.3~\text{MeV}$ per $^{12}\text{C}$ produced, compared to $\sim 26.7~\text{MeV}$ per $^4\text{He}$ from pp-chain. The energy yield per unit mass is $\sim 10\%$ that of hydrogen burning.
+
+2. **Higher luminosity:** Helium-burning stars are on the horizontal branch at $L \sim 50\,L_\odot$, compared to $L \sim 1\,L_\odot$ on the main sequence. They burn fuel $\sim 50\times$ faster.
+
+Combined: $\tau_\text{He} \sim 0.1 \times (1/50) \times \tau_\text{H} \sim 0.002 \times \tau_\text{H}$, roughly matching the observed ratio. Each successive burning stage is shorter — a pattern that becomes even more dramatic in massive stars (Reading 9).
+:::
+:::
+
+---
+
+## Part 5: White Dwarfs — The Final State
+
+### What Remains
+
+After the planetary nebula phase, the exposed carbon-oxygen core is all that remains. It is:
+
+- **Small:** $R \sim R_\oplus \sim 6 \times 10^8~\text{cm}$ — about the size of Earth
+- **Dense:** $\rho \sim 10^6~\text{g}/\text{cm}^3$ — a teaspoon weighs $\sim 5$ tonnes
+- **Hot (initially):** $T_\text{eff} \sim 100{,}000~\text{K}$ at birth, cooling over billions of years
+- **No energy source:** No fusion — just residual thermal energy radiating away
+
+This is a **white dwarf.** It is held up by **electron degeneracy pressure** — the quantum mechanical pressure arising from the Heisenberg uncertainty principle that we introduced in Reading 6. Gravity squeezes the electrons into a tiny volume; the uncertainty principle gives them enormous momenta; those momenta exert pressure that balances gravity.
+
+### Key Properties
+
+White dwarfs obey a remarkable **mass-radius relation** — the opposite of what you'd expect from normal objects:
+
+{{< include ../../../_includes/equations/wd-mass-radius.qmd >}}
+
+{{< eqrefcard wd-mass-radius >}}
+
+**More massive white dwarfs are *smaller*, not larger.** This is because more mass means stronger gravity, which compresses the degenerate electron gas to higher density. The electrons must occupy smaller volumes (larger $\Delta p$, hence higher pressure) to maintain equilibrium.
+
+Typical white dwarf properties:
+
+| Property | Value |
+|:---------|:------|
+| Mass | $\sim 0.6\,M_\odot$ (typical) |
+| Radius | $\sim 0.01\,R_\odot \sim R_\oplus$ |
+| Density | $\sim 10^6~\text{g}/\text{cm}^3$ |
+| Surface gravity | $\sim 10^8~\text{cm}/\text{s}^2$ (300,000× Earth) |
+| $T_\text{eff}$ at birth | $\sim 100{,}000~\text{K}$ |
+| Cooling time to invisible | $\gtrsim 10^{10}~\text{yr}$ |
+
+### No Further Fusion
+
+Why doesn't the white dwarf burn its carbon and oxygen? The core temperature ($\sim 10^7\text{–}10^8~\text{K}$) is far below the $\sim 6 \times 10^8~\text{K}$ needed for carbon fusion. And since the core is degenerate, the thermostat is broken — if carbon somehow ignited, the temperature would rise without expansion (positive feedback), leading to a thermonuclear runaway. In fact, this is *exactly* what happens in **Type Ia supernovae** (see Enrichment below). But for isolated white dwarfs, the core simply cools.
+
+A white dwarf is a **dead star.** It generates no energy. It slowly radiates its residual thermal energy, cooling from white-hot to yellow to red to infrared to invisible over tens of billions of years — longer than the current age of the universe. The oldest white dwarfs we observe are still glowing at $T_\text{eff} \sim 3{,}000\text{–}4{,}000~\text{K}$, having been cooling for $\sim 10~\text{Gyr}$.
+
+::: {.callout-note collapse="true" title="Enrichment: Type Ia Supernovae — White Dwarfs That Explode"}
+
+If a white dwarf is in a binary system and accretes matter from a companion star, it can grow in mass. If it approaches the **Chandrasekhar limit** ($\sim 1.4\,M_\odot$ — Reading 8), the density and temperature in the interior rise to the point where carbon fusion ignites. In a degenerate gas, this is catastrophic: the thermostat is broken, and the nuclear burning is a runaway.
+
+The result is a **Type Ia supernova** — the complete thermonuclear destruction of the white dwarf. No remnant is left. The explosion produces $\sim 0.6\,M_\odot$ of radioactive $^{56}\text{Ni}$, which decays to $^{56}\text{Fe}$ and powers the supernova light curve.
+
+Type Ia supernovae are critical to cosmology because they are **standardizable candles** — their peak luminosity correlates with the rate at which they brighten and fade. This correlation was used to discover the **accelerating expansion of the universe** (Riess, Schmidt, & Perlmutter; Nobel Prize in Physics, 2011). We'll see more about this in Module 4.
+:::
+
+::: {.callout-tip}
+## Check Yourself
+
+A white dwarf has $M = 0.6\,M_\odot$ and $R = R_\oplus = 6.4 \times 10^8~\text{cm}$. Calculate its average density and compare to Earth's.
+
+::: {.callout-note collapse="true"}
+## Solution
+
+$$
+\bar{\rho} = \frac{M}{\frac{4}{3}\pi R^3} = \frac{0.6 \times 2.0 \times 10^{33}~\text{g}}{\frac{4}{3}\pi (6.4 \times 10^8~\text{cm})^3}
+$$
+
+$$
+= \frac{1.2 \times 10^{33}~\text{g}}{1.1 \times 10^{27}~\text{cm}^3} \approx 1.1 \times 10^6~\text{g}/\text{cm}^3
+$$
+
+Earth's average density is $\bar{\rho}_\oplus \approx 5.5~\text{g}/\text{cm}^3$, so the white dwarf is about $200{,}000$ times denser than Earth — despite being roughly the same size. A teaspoon of white dwarf material ($\sim 5~\text{cm}^3$) would weigh $\sim 5 \times 10^6~\text{g} = 5~\text{tonnes}$.
+
+This extreme density is what makes degeneracy pressure necessary — at these densities, the de Broglie wavelengths of electrons overlap (Reading 6), and quantum mechanics takes over from classical gas behavior.
+:::
+:::
+
+::: {.callout-tip}
+## Misconception Check
+
+If white dwarfs come from more massive stellar cores, shouldn't the more massive white dwarfs be *bigger* remnants?
+
+::: {.callout-note collapse="true"}
+## Solution
+
+That intuition works for ordinary gas-supported objects, but not for degenerate ones. In a white dwarf, extra mass means stronger gravity, which squeezes the electron gas harder. The electrons are forced into higher-momentum states, so the star settles into a **smaller, denser** equilibrium. The remnant is more massive, but the support mechanism is quantum pressure rather than ordinary thermal expansion.
+:::
+:::
+
+---
+
+## Part 6: The Complete Low-Mass Evolutionary Path
+
+### Putting It All Together
+
+The life story of a solar-mass star, from birth to death:
+
+| Phase | Duration | $L/L_\odot$ | $R/R_\odot$ | $T_\text{eff}$ (K) | Energy Source |
+|:------|:---------|:--------:|:--------:|:---------:|:-------------|
+| Main sequence | $\sim 10~\text{Gyr}$ | 1 | 1 | 5,800 | Core H → He |
+| Subgiant | $\sim 1~\text{Gyr}$ | 2–5 | 2–5 | 5,000 | Shell H → He |
+| Red giant branch | $\sim 0.5~\text{Gyr}$ | 10–3,000 | 10–200 | 3,500–4,500 | Shell H → He |
+| Helium flash | seconds | $10^{11}$ (core) | — | — | Core He → C (runaway) |
+| Horizontal branch | $\sim 0.1~\text{Gyr}$ | 50 | 10 | 5,000–20,000 | Core He + shell H |
+| AGB | $\sim 10~\text{Myr}$ | 1,000–10,000 | 200–300 | 3,000–3,500 | Shell He + shell H |
+| Planetary nebula | $\sim 10^4~\text{yr}$ | 1,000–10,000 | 0.01 (core) | 30,000–200,000 | Residual burning |
+| White dwarf | $> 10~\text{Gyr}$ | $10^{-4}\text{–}10^{-2}$ | 0.01 | 4,000–100,000 | Cooling (no source) |
+
+**Note the time compression:** the main sequence lasts $10~\text{Gyr}$, but everything after it takes only $\sim 1.5~\text{Gyr}$. The most dramatic evolutionary changes happen in the last $\sim 15\%$ of the star's life.
+
+::: {.callout-note title="Conservation Laws in Action"}
+| Conservation Law | Where It Acts |
+|:----------------|:-------------|
+| **Energy** | Virial theorem: core contraction converts gravitational PE to thermal KE; $E = \Delta mc^2$ in fusion |
+| **Momentum** | Hydrostatic equilibrium maintained (with adjustments) at every evolutionary phase |
+| **Baryon number** | $4p \rightarrow \text{He}$; $3\text{He} \rightarrow \text{C}$; $\text{C} + \text{He} \rightarrow \text{O}$: total nucleon count preserved |
+| **Lepton number** | Neutrinos emitted in pp-chain; positrons annihilate with electrons |
+| **Mass** | Total mass decreases only via radiation ($E/c^2$) and stellar winds |
+:::
+
+---
+
+## Reference Tables
+
+### Nucleosynthesis Products of Low-Mass Stars
+
+| Reaction | Process | Where | Products |
+|:---------|:--------|:------|:---------|
+| $4\text{H} \rightarrow \text{He}$ | pp-chain / CNO | Main sequence core | $^4\text{He}$ |
+| $3\text{He} \rightarrow \text{C}$ | Triple-alpha | Red giant / HB core | $^{12}\text{C}$ |
+| $\text{C} + \text{He} \rightarrow \text{O}$ | Alpha capture | Red giant / HB core | $^{16}\text{O}$ |
+| $\text{N}$ enrichment | CNO cycle (catalyst) | Shell burning | $^{14}\text{N}$ |
+
+### Symbol Legend
+
+| Symbol | Meaning | Units |
+|:------:|:--------|:------|
+| RGB | Red giant branch | — |
+| HB | Horizontal branch | — |
+| AGB | Asymptotic giant branch | — |
+| $\varepsilon_{3\alpha}$ | Triple-alpha energy generation rate | $\text{erg}\,\text{g}^{-1}\,\text{s}^{-1}$ |
+| $^{12}\text{C}^*$ | Hoyle state (excited carbon-12) | $E^* = 7.65~\text{MeV}$ |
+
+---
+
+## Summary: The Gentle Death of a Sun-Like Star
+
+The most important ideas from this reading:
+
+1. **Core hydrogen exhaustion triggers contraction** (virial theorem) — the core heats up while the envelope swells to red giant dimensions. Shell hydrogen burning drives the expansion.
+
+2. **Helium burns via the triple-alpha process** — three $^4\text{He} \rightarrow\, ^{12}\text{C}$, requiring $T \sim 10^8~\text{K}$ and a nuclear resonance (the Hoyle state) whose existence was predicted from the abundance of carbon in the universe.
+
+3. **Carbon and oxygen are products of helium burning** — carbon is made directly by the triple-alpha process, and oxygen is added by alpha capture. Low-mass helium-burning stars make both, while later massive-star evolution changes how much oxygen ends up in the interstellar medium.
+
+4. **White dwarfs are quantum-mechanical objects** — Earth-sized, supported by electron degeneracy pressure, cooling forever with no energy source. They represent the final state for all stars below $\sim 8\,M_\odot$.
+
+::: {.callout-note title="Gravity Scoreboard — Reading 7"}
+
+```
+┌──────────────────────────────────────────────────────┐
+│  Gravity Scoreboard — Reading 7                      │
+├──────────────────────────────────────────────────────┤
+│  Attacker:    Gravity                                │
+│  Former defender: Nuclear fusion (H → He exhausted)  │
+│  New defender:    Nuclear fusion (He → C, O)         │
+│  Duration:        ~100 Myr (1% of H-burning phase)  │
+│  Final state:     WHITE DWARF                        │
+│  What holds it up: Electron degeneracy pressure      │
+│  Status:          STALEMATE. Gravity compressed the  │
+│                   core to Earth-sized, but QM holds  │
+│                   the line. No more energy sources.  │
+│                   The star cools forever.             │
+│                                                      │
+│  But: Is degeneracy pressure invincible? → R8        │
+│  What if the WD mass exceeds a critical limit?       │
+│  Next: The Chandrasekhar limit → Reading 8           │
+└──────────────────────────────────────────────────────┘
+```
+
+For low-mass stars, gravity's final victory is gentle. The star sheds its envelope as a planetary nebula, and the core settles into a white dwarf — held up by electron degeneracy pressure. Gravity is balanced, but the star will never generate energy again. It slowly cools forever, fading from white to yellow to red to invisible over tens of billions of years. But is degeneracy pressure truly invincible? Is there a maximum mass for a white dwarf? In Reading 8, we discover that quantum mechanics imposes a devastating limit — the Chandrasekhar mass — above which even degeneracy pressure fails and gravity wins catastrophically.
+
+**Inference takeaway:** when we observe an Earth-sized stellar remnant cooling without fusion, the model points to a white dwarf supported by electron degeneracy pressure rather than by ordinary gas pressure.
+:::
+
+::: {.callout-tip}
+## Looking Ahead
+
+White dwarfs are held up by electron degeneracy pressure — quantum momentum from confinement (Reading 6). But there's a maximum mass for this trick. As a white dwarf approaches $\sim 1.4\,M_\odot$, the electrons become relativistic, the pressure softens, and no equilibrium exists. In Reading 8, we derive this **Chandrasekhar limit** from fundamental constants — $\hbar$, $c$, $G$, and $m_p$ — and discover one of the most elegant results in all of astrophysics. Above this limit, gravity wins, setting the stage for neutron stars and black holes.
+:::

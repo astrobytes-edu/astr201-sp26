@@ -1,0 +1,496 @@
+---
+title: "Lecture 9: The Death of Giants — High-Mass Evolution and Supernovae"
+subtitle: "Massive stars build iron cores and then catastrophically collapse. Why iron? Why collapse? And how does this build the rest of the periodic table?"
+author: "Dr. Anna Rosen"
+date: "2026-03-26"
+description: "Massive stars race through successive nuclear burning stages — each shorter than the last — building an onion-shell structure of elements from hydrogen to iron. When the iron core exceeds the Chandrasekhar limit, electron degeneracy fails and the core collapses in less than a second, triggering a supernova. The explosion scatters elements into interstellar space and creates conditions for neutron capture, synthesizing elements beyond iron. This reading completes the nucleosynthesis story and reveals that your body is made of stellar ash."
+draft: true
+categories: [high-mass-evolution, supernovae, core-collapse, nucleosynthesis, iron-peak, r-process, onion-shell]
+course: ASTR 201
+module: "3 - Stellar Structure & Evolution"
+learning-objectives:
+  - Describe onion-shell burning in massive stars and why each successive stage is shorter
+  - Explain why iron is the endpoint of fusion — the peak of the binding energy per nucleon curve
+  - Describe the sequence of events in a core-collapse supernova, from iron core formation to explosion
+  - Explain why 99% of the supernova energy is emitted as neutrinos
+  - Trace the nucleosynthetic origin of key elements in the periodic table back to specific stellar processes
+  - Explain how the r-process builds elements beyond iron through rapid neutron capture
+Concept-Throughline:
+  - Massive stars burn through successive fuels on an accelerating timescale — from millions of years (hydrogen) to less than a day (silicon)
+  - Iron is nuclear ash — the peak of binding energy per nucleon. Fusing iron costs energy rather than releasing it.
+  - When the iron core exceeds the Chandrasekhar limit, electron degeneracy fails catastrophically — the core collapses at ~0.25c in less than a second
+  - Supernovae scatter elements into the ISM and create conditions for r-process nucleosynthesis — building elements beyond iron that fusion alone cannot produce
+math-level: symbolic_with_interpretation
+mode: Draft
+prerequisites: "Binding energy per nucleon curve (Reading 3), Chandrasekhar limit (Reading 8), nuclear fusion and conservation laws (Reading 3), stellar structure equations (Reading 5)"
+---
+
+## Learning Objectives
+
+After completing this reading, you should be able to:
+
+1. **Describe** onion-shell burning in massive stars and explain why each successive stage is shorter
+2. **Explain** why iron is the endpoint of fusion using the binding energy per nucleon curve
+3. **Describe** the sequence of events in a core-collapse supernova
+4. **Explain** why $\sim 99\%$ of the supernova energy is emitted as neutrinos, not light
+5. **Trace** key elements (C, O, Si, Fe, Ca, Au) back to their nucleosynthetic origins
+6. **Explain** how the r-process builds elements beyond iron through rapid neutron capture
+
+## Concept Throughline
+
+> *A $25\,M_\odot$ star burns hydrogen for 7 million years. Helium for 500,000 years. Carbon for 600 years. Neon for 1 year. Oxygen for 6 months. Silicon for 1 day. Then — in less than a second — the iron core collapses, the star explodes as a supernova brighter than a billion suns, and every element the star ever built is flung into space. Some of those atoms will end up in new stars, new planets, and eventually new life. This is how the universe builds a periodic table — and why your body is, literally, made of stellar ash.*
+
+::: {.callout-note title="Reading Map — Choose Your Track"}
+
+**Track A (Core, ~30 min):** Read **Parts 1–5** in order — onion-shell burning, the iron catastrophe, core collapse, the explosion, and the nucleosynthesis capstone. Skip any box marked *Enrichment*.
+
+**Track B (Full, ~40 min):** Read everything, including *Enrichment* boxes (SN 1987A and r-process in neutron star mergers). These connect the core model to frontier observations.
+
+*Both tracks cover all core learning objectives.*
+:::
+
+---
+
+## Part 1: Onion-Shell Burning
+
+::: {.callout-important}
+## The Big Idea
+
+**Massive stars burn through nuclear fuels on an accelerating timescale.** Each successive fuel has a higher Coulomb barrier, requires higher temperatures, releases less energy per reaction, and is consumed at a higher luminosity. The result: an onion-shell structure with hydrogen on the outside and iron at the center.
+:::
+
+The observational clue is that supernovae are not just bright flashes. Their spectra reveal heavy elements, their remnants reveal expanding layered ejecta, and in one famous case a burst of neutrinos arrived before the light. This reading explains how those measurements point back to an iron core, a collapse, and an explosion that rearranges the periodic table.
+
+### After the Main Sequence: Massive Stars
+
+Low-mass stars ($M \lesssim 8\,M_\odot$) end as white dwarfs — they never get hot enough to burn carbon (Reading 7). But massive stars are different. Their larger gravitational potential wells compress the core to higher temperatures after helium exhaustion, igniting carbon fusion at $T \sim 6 \times 10^8~\text{K}$.
+
+{{< fig massive-star-hr-evolution >}}
+
+And they don't stop there. Each time a fuel is exhausted, the core contracts further (virial theorem), heats up, and ignites the next fuel. The star builds up a nested series of burning shells — like an onion, with the heaviest elements at the center:
+
+{{< fig onion-shell-burning >}}
+
+| Stage | Fuel → Product | $T_\text{ignition}$ | Duration ($25\,M_\odot$ star) |
+|:------|:--------------|:------|:-------|
+| 1. Hydrogen | $\text{H} \rightarrow \text{He}$ | $\sim 4 \times 10^7~\text{K}$ | $\sim 7 \times 10^6~\text{yr}$ |
+| 2. Helium | $\text{He} \rightarrow \text{C}, \text{O}$ | $\sim 2 \times 10^8~\text{K}$ | $\sim 5 \times 10^5~\text{yr}$ |
+| 3. Carbon | $\text{C} \rightarrow \text{Ne}, \text{Na}, \text{Mg}$ | $\sim 6 \times 10^8~\text{K}$ | $\sim 600~\text{yr}$ |
+| 4. Neon | $\text{Ne} \rightarrow \text{O}, \text{Mg}$ | $\sim 1.2 \times 10^9~\text{K}$ | $\sim 1~\text{yr}$ |
+| 5. Oxygen | $\text{O} \rightarrow \text{Si}, \text{S}$ | $\sim 1.5 \times 10^9~\text{K}$ | $\sim 6~\text{months}$ |
+| 6. Silicon | $\text{Si} \rightarrow \text{Fe}, \text{Ni}$ | $\sim 2.7 \times 10^9~\text{K}$ | $\sim 1~\text{day}$ |
+
+### Why Each Stage Is Shorter
+
+The accelerating timescale follows from two effects:
+
+1. **Less energy per reaction.** The binding energy curve (Reading 3) flattens as you approach iron. Carbon burning releases about $1/10$ the energy per unit mass that hydrogen burning does. Silicon burning releases even less.
+
+2. **Higher luminosity.** The star's neutrino luminosity increases dramatically in the later stages. Beyond carbon burning, most of the energy is carried away by neutrinos (which escape instantly) rather than photons. The neutrino luminosity in the silicon-burning stage exceeds $10^{45}~\text{erg}/\text{s}$ — comparable to the photon luminosity of the entire Milky Way.
+
+{{< fig neutrino-loss-table >}}
+
+{{< fig neutrino-vs-nuclear-energy >}}
+
+The combination — less fuel energy and faster burning — compresses each stage into a smaller fraction of the star's life:
+
+$$
+\frac{\tau_\text{Si}}{\tau_\text{H}} \sim \frac{1~\text{day}}{7 \times 10^6~\text{yr}} \sim 4 \times 10^{-10}
+$$
+
+Silicon burning lasts less than one-billionth of the hydrogen-burning lifetime.
+
+{{< fig core-evolution-Tc-rhoc >}}
+
+::: {.callout-tip}
+## Check Yourself
+
+Why does each successive burning stage require a higher ignition temperature?
+
+::: {.callout-note collapse="true"}
+## Solution
+
+Each successive fuel has nuclei with larger atomic number $Z$ — carbon ($Z = 6$), oxygen ($Z = 8$), silicon ($Z = 14$). The Coulomb barrier between two nuclei scales as $Z_1 Z_2$:
+
+$$
+E_\text{Coulomb} \propto \frac{Z_1 Z_2 e^2}{r}
+$$
+
+For carbon-carbon fusion: $Z_1 Z_2 = 36$ (vs. $Z_1 Z_2 = 1$ for proton-proton). The Coulomb barrier is therefore much higher, so the core must reach substantially higher temperatures before tunneling makes the reaction rate astrophysically significant.
+
+Even with quantum tunneling, the probability drops exponentially with barrier height, so each stage needs a substantially higher temperature to achieve a meaningful fusion rate. This is why the onion layers go inside-out: heavier elements require hotter conditions, and the hottest region is the center.
+:::
+:::
+
+---
+
+## Part 2: The Iron Catastrophe
+
+### Why Iron Is the End of the Line
+
+In Reading 3, we introduced the binding energy per nucleon curve. This curve rises steeply from hydrogen to helium, continues rising (more gradually) through carbon, oxygen, silicon, and peaks **around the iron/nickel group**.
+
+The curve has a peak because of the competition between the strong nuclear force (which binds nucleons together, favoring larger nuclei) and Coulomb repulsion (which pushes protons apart, penalizing larger nuclei). Around the iron/nickel group, these effects are balanced closely enough that fusion no longer gives you a useful energy payoff.
+
+This means:
+
+- **Fusing elements lighter than iron** → products are more tightly bound → energy is released ✓
+- **Fusing elements heavier than iron** → products are *less* tightly bound → energy is *consumed* ✗
+
+**Iron is the ash of nuclear burning.** Just as you can't burn ash in a fireplace, you can't extract energy by fusing iron. The fusion furnace has run out of fuel — permanently and irreversibly.
+
+### The Iron Core Grows
+
+During silicon burning (the final stage), the core accumulates iron-group elements (mainly $^{56}\text{Fe}$ and $^{56}\text{Ni}$). The iron core:
+
+- Grows in mass as silicon burns in a shell around it
+- Is supported by electron degeneracy pressure (just like a white dwarf!)
+- Gets hotter and denser as it grows
+
+The iron core is essentially a **white-dwarf-like degenerate core** embedded inside a massive star, with active nuclear burning shells around it. And just like a white dwarf, it has a maximum mass scale — the Chandrasekhar limit.
+
+{{< include ../../../_includes/equations/chandrasekhar-mass.qmd >}}
+
+{{< eqrefcard chandrasekhar-mass >}}
+
+When the iron core reaches $M_\text{core} \approx 1.4\,M_\odot$... the Chandrasekhar limit is exceeded. Electron degeneracy pressure fails. And gravity, patient for millions of years, wins catastrophically.
+
+::: {.callout-tip}
+## Check Yourself
+
+Why can't the star avoid the iron catastrophe by simply stopping fusion at silicon? What forces the star to keep burning?
+
+::: {.callout-note collapse="true"}
+## Solution
+
+The star has no choice. As long as there is fuel at the right temperature, fusion proceeds — it's a thermodynamic inevitability. The core temperature is set by the virial theorem ($T_c \propto M_\text{core}/R_\text{core}$), and the core is being compressed by the weight of the overlying envelope plus the inward push from the burning shells.
+
+The star can't "decide" to stop burning. As long as silicon exists at $T > 2.7 \times 10^9~\text{K}$, it fuses to iron. And since the core keeps contracting and heating (virial theorem), the temperature only goes up. The star is on a one-way track: it will burn silicon to iron, and the iron core will grow until it exceeds the Chandrasekhar limit. The catastrophe is thermodynamically inevitable.
+:::
+:::
+
+---
+
+## Part 3: Core Collapse
+
+::: {.callout-important}
+## The Big Idea
+
+**When the iron core exceeds the Chandrasekhar limit, it collapses in less than a second.** The inner core reaches nuclear density ($\sim 10^{14}~\text{g}/\text{cm}^3$), bounces, and launches a shock wave. The result is a core-collapse supernova.
+:::
+
+### The Collapse Sequence
+
+{{< fig core-collapse-sequence >}}
+
+The core collapse proceeds through a rapid cascade of events:
+
+**1. Electron capture ($\sim 10~\text{ms}$).** At the extreme densities of the collapsing core ($\rho > 10^{10}~\text{g}/\text{cm}^3$), electrons are captured by protons in iron nuclei:
+
+$$
+p + e^- \rightarrow n + \nu_e
+$$
+
+This **neutronization** converts protons to neutrons, removing the electrons that were providing degeneracy pressure. It also produces a burst of electron neutrinos ($\nu_e$). Each electron capture removes one unit of pressure support — accelerating the collapse. This is the ultimate positive feedback loop.
+
+**2. Iron photodisintegration ($\sim 100~\text{ms}$).** At $T \gtrsim 5 \times 10^9~\text{K}$, the thermal photons become energetic enough to shatter iron nuclei:
+
+$$
+{^{56}\text{Fe}} + \gamma \rightarrow 13\,{^4\text{He}} + 4\,n
+$$
+
+This is endothermic — it *absorbs* energy (about $124~\text{MeV}$ per iron nucleus). The energy that took millions of years of successive fusion to store is undone in milliseconds. The core loses thermal pressure support, accelerating the collapse further.
+
+**3. Free-fall collapse ($\sim 100~\text{ms}$).** With both electron degeneracy and thermal pressure removed, the core is in **free fall.** The collapse velocity reaches $\sim 0.25c$ ($75{,}000~\text{km}/\text{s}$). The inner core ($\sim 0.5\,M_\odot$) collapses from $\sim 1{,}000~\text{km}$ radius to $\sim 10~\text{km}$ radius — a factor of 100 in size — in about $100~\text{ms}$.
+
+Using the dynamical-timescale estimate from Reading 1:
+
+{{< include ../../../_includes/equations/dynamical-timescale.qmd >}}
+
+{{< eqrefcard dynamical-timescale >}}
+
+For $\rho \sim 10^{10}~\text{g}/\text{cm}^3$, this gives
+
+$$
+\tau_\text{collapse} \sim \tau_\text{dyn} \sim \frac{1}{\sqrt{6.67 \times 10^{-8} \times 10^{10}}} \sim 0.04~\text{s}
+$$
+
+**4. Core bounce ($t = 0$).** When the inner core reaches **nuclear density** ($\rho \sim 2.8 \times 10^{14}~\text{g}/\text{cm}^3$ — the density of an atomic nucleus), the strong nuclear force becomes repulsive at short range, and **neutron degeneracy pressure** halts the collapse. The inner core "bounces," sending a shock wave outward through the still-infalling outer core.
+
+**5. Stalled shock and neutrino revival ($\sim 100\text{–}500~\text{ms}$).** The outgoing shock wave loses energy by dissociating the iron nuclei it plows through. The shock stalls at $\sim 100\text{–}200~\text{km}$ radius. The leading model is neutrino heating: $\sim 3 \times 10^{53}~\text{erg}$ of neutrinos stream outward from the hot proto-neutron star, and even a few tenths of a percent of this energy deposited behind the shock can revive it.
+
+**6. Explosion ($\sim 1~\text{s}$).** The revived shock propagates through the outer layers of the star, heating, compressing, and ejecting them. The supernova explosion unbinds the envelope, scattering elements into interstellar space at $\sim 10{,}000\text{–}30{,}000~\text{km}/\text{s}$.
+
+### The Energy Budget
+
+The total gravitational energy released during core collapse is enormous:
+
+$$
+E_\text{grav} \sim \frac{GM_\text{core}^2}{R_\text{NS}} \sim \frac{6.67 \times 10^{-8} \times (1.4 \times 2 \times 10^{33})^2}{10^6} \sim 3 \times 10^{53}~\text{erg}
+$$
+
+This energy is distributed as follows:
+
+| Channel | Energy | Fraction |
+|:--------|:-------|:---------|
+| **Neutrinos** | $\sim 3 \times 10^{53}~\text{erg}$ | $\sim 99.7\%$ |
+| **Kinetic energy of ejecta** | $\sim 10^{51}~\text{erg}$ | $\sim 0.3\%$ |
+| **Photons (light)** | $\sim 10^{49}~\text{erg}$ | $\sim 0.003\%$ |
+
+**The most luminous optical event in the universe is a rounding error in the energy budget.** The real explosion is invisible — carried by neutrinos that escape in seconds, while the optical display takes weeks to reach peak brightness (powered by radioactive decay of $^{56}\text{Ni} \rightarrow ^{56}\text{Co} \rightarrow ^{56}\text{Fe}$).
+
+::: {.callout-tip}
+## Misconception Check
+
+If a supernova looks blindingly bright in the sky, doesn't that mean most of its energy must come out as light?
+
+::: {.callout-note collapse="true"}
+## Solution
+
+No. Human eyes and telescopes are far more sensitive to photons than to neutrinos, so the channel we notice most is not the channel that carries most of the energy. The light is what makes the event visible, but the collapse energy budget is dominated by neutrinos because they escape directly from the proto-neutron star. Optical brightness is a poor guide to the total explosion energy.
+:::
+:::
+
+::: {.callout-note collapse="true" title="Enrichment: SN 1987A — The Neutrino Confirmation"}
+
+On February 23, 1987, a supernova was detected in the Large Magellanic Cloud ($d \approx 50~\text{kpc}$) — the nearest supernova visible to the naked eye since Kepler's supernova of 1604. About three hours *before* the optical brightening was noticed, two neutrino detectors — Kamiokande II in Japan and IMB in Ohio — detected a burst of $\sim 20$ neutrinos arriving within a $\sim 13~\text{s}$ window.
+
+{{< fig sn1987a-before-after >}}
+
+Twenty neutrinos might not sound impressive, but the calculation is stunning. The total neutrino energy was $\sim 3 \times 10^{53}~\text{erg}$, emitted as $\sim 10^{58}$ neutrinos, passing through the Earth at a flux of $\sim 10^{10}~\text{neutrinos}/\text{cm}^2$. Neutrinos interact so weakly that the massive water detectors ($\sim 3{,}000$ tonnes) captured only $\sim 20$ out of $\sim 10^{16}$ that passed through them — a detection efficiency of $\sim 10^{-15}$.
+
+These 20 neutrinos confirmed the core-collapse theory: the energy, the timing, and the neutrino flavors all matched the predictions to within uncertainties. It remains one of the most important observations in astrophysics — the first direct detection of neutrinos from a supernova, confirming that $\sim 99\%$ of the energy is indeed carried by neutrinos.
+:::
+
+::: {.callout-tip}
+## Check Yourself
+
+The collapse of the iron core from $R \sim 1{,}000~\text{km}$ to $R \sim 10~\text{km}$ releases gravitational energy $\Delta E_\text{grav} \sim GM^2(1/R_f - 1/R_i)$. Show that the final term dominates and estimate the energy released for a $1.4\,M_\odot$ core.
+
+::: {.callout-note collapse="true"}
+## Solution
+
+Since $R_f = 10~\text{km} = 10^6~\text{cm}$ and $R_i = 1{,}000~\text{km} = 10^8~\text{cm}$:
+
+$$
+\frac{1}{R_f} - \frac{1}{R_i} = \frac{1}{10^6} - \frac{1}{10^8} = 10^{-6}(1 - 0.01) \approx 10^{-6}~\text{cm}^{-1}
+$$
+
+The $1/R_i$ term contributes only $1\%$ — the final radius dominates. The energy released:
+
+$$
+\Delta E \sim \frac{GM^2}{R_f} = \frac{6.67 \times 10^{-8} \times (2.8 \times 10^{33})^2}{10^6}
+$$
+
+$$
+= \frac{6.67 \times 10^{-8} \times 7.84 \times 10^{66}}{10^6} \approx 5 \times 10^{53}~\text{erg}
+$$
+
+This is $\sim 5 \times 10^{53}~\text{erg}$ — about $0.07\,M_\odot c^2$ — released in less than a second. For comparison, the Sun's total energy output over its entire $10~\text{Gyr}$ lifetime is $\sim 10^{51}~\text{erg}$. A supernova releases $\sim 500$ solar lifetimes' worth of energy in under a second.
+:::
+:::
+
+---
+
+## Part 4: Building the Periodic Table
+
+### Nucleosynthesis Capstone
+
+This is the payoff — the culmination of the nucleosynthesis thread that began in Reading 3. We can now trace every element in the periodic table to its stellar origin:
+
+| Elements | Process | Site | Reading |
+|:---------|:--------|:-----|:--------|
+| H, He (most) | Big Bang nucleosynthesis | Early universe | (Module 4) |
+| He (additional) | pp-chain, CNO cycle | MS stars | R3 |
+| C, O | Triple-alpha, alpha capture | Red giants | R7 |
+| Ne, Na, Mg | Carbon burning | Massive star cores | **R9** |
+| O, Mg (additional) | Neon burning | Massive star cores | **R9** |
+| Si, S | Oxygen burning | Massive star cores | **R9** |
+| Fe-group (Fe, Ni, Co) | Silicon burning | Massive star cores | **R9** |
+| Elements beyond Fe | r-process (rapid neutron capture) | Supernovae, NS mergers | **R9** |
+| Elements beyond Fe | s-process (slow neutron capture) | AGB stars | **R9** |
+
+{{< fig cosmic-abundances >}}
+
+### The r-Process: Beyond Iron
+
+Fusion cannot build elements beyond iron — it would cost energy. But neutron-rich explosive environments provide an alternative: **rapid neutron capture** (the r-process).
+
+Core-collapse supernovae were long treated as the likely site, because the post-bounce environment contains free neutrons and intense neutrino fluxes. Modern simulations, however, struggle to make ordinary supernova ejecta neutron-rich enough often enough. Current evidence points to **neutron star mergers as a dominant r-process source**, while supernovae may still contribute in some channels. In any case, the mechanism is the same: neutrons are captured faster than the nuclei can beta-decay, building very neutron-rich isotopes that later decay toward stable heavy elements:
+
+$$
+{^{A}\text{X}} + n \rightarrow {^{A+1}\text{X}} + \gamma \quad \text{(repeated many times, then } \beta^- \text{ decay)}
+$$
+
+The r-process produces roughly half of all elements heavier than iron, including:
+
+- **Gold** (Au, $Z = 79$) — valued since antiquity, forged in cataclysm
+- **Platinum** (Pt, $Z = 78$) — denser than lead, from the death of giants
+- **Uranium** (U, $Z = 92$) — powers nuclear reactors and provides radioactive clocks for dating the Earth
+
+::: {.callout-note collapse="true" title="Enrichment: r-Process in Neutron Star Mergers"}
+
+For decades, core-collapse supernovae were thought to be the primary site of the r-process. But modern simulations have struggled to produce the right conditions (enough neutrons, the right entropy) in supernovae alone. An alternative — and likely dominant — site was confirmed in 2017: **neutron star mergers.**
+
+On August 17, 2017, the LIGO/Virgo gravitational wave detectors observed the merger of two neutron stars (GW170817). Electromagnetic follow-up observations revealed a "kilonova" — an optical/infrared transient powered by the radioactive decay of r-process elements. The spectrum showed signatures of heavy elements including strontium, confirming that neutron star mergers produce r-process elements.
+
+The estimated r-process yield per merger event ($\sim 0.01\text{–}0.1\,M_\odot$ of heavy elements) multiplied by the merger rate ($\sim 10\text{–}1{,}000$ per Myr per galaxy) roughly accounts for the observed abundance of r-process elements in the Milky Way. Neutron star mergers are now considered the dominant source of gold, platinum, and uranium in the universe.
+
+**Your gold jewelry was forged in the collision of two city-sized balls of neutrons, each weighing more than the Sun.**
+:::
+
+### Your Body Is Stellar Ash
+
+We can now trace the origin of every major element in the human body:
+
+| Element | Mass fraction in body | Stellar origin |
+|:--------|:--------------------:|:--------------|
+| Hydrogen | 10% | Big Bang |
+| Oxygen | 65% | Helium burning, especially in massive stars, then dispersed by stellar winds and supernovae |
+| Carbon | 18% | Triple-alpha in helium-burning stars, then dispersed by winds and ejecta |
+| Nitrogen | 3% | CNO cycle processing in massive stars |
+| Calcium | 1.5% | Oxygen burning in massive star cores |
+| Phosphorus | 1% | Carbon/neon burning in massive stars |
+| Iron | 0.006% | Silicon burning in massive star cores |
+| Iodine | trace | s-process in AGB stars |
+| Gold | trace | r-process in neutron star mergers |
+
+**Aside from hydrogen (and some helium), nearly every atom in your body was manufactured in earlier generations of stars and stellar explosions before the Sun was born.** The calcium in your bones came from oxygen burning in massive stars. The iron in your blood came from silicon-burning products in stars' final days. The carbon in your DNA was forged by the triple-alpha process in helium-burning stars. You are, in a very literal sense, made of stellar ash.
+
+{{< fig chandra-periodic-table-origins >}}
+
+::: {.callout-note title="Observable → Model → Inference" .omi}
+**Observable:** The solar photosphere contains 67 elements heavier than helium, in specific relative abundances (e.g., the "solar abundance pattern").
+
+**Model:** Nucleosynthesis theory — Big Bang + stellar fusion (pp, CNO, triple-alpha, successive burning) + neutron capture (s-process, r-process) — predicts relative abundances.
+
+**Inference:** The predicted abundance pattern matches observations to remarkable precision across nearly the entire periodic table. The few discrepancies (e.g., lithium, beryllium, boron) are explained by additional processes (cosmic ray spallation). The periodic table is a record of stellar nucleosynthesis.
+:::
+
+::: {.callout-tip}
+## Check Yourself
+
+Elements like lithium, beryllium, and boron (Z = 3, 4, 5) are extremely *rare* in the universe compared to their neighbors carbon and oxygen. Why? (Hint: think about what happens to these elements inside stars.)
+
+::: {.callout-note collapse="true"}
+## Solution
+
+Lithium, beryllium, and boron are **destroyed** inside stars, not created. These light elements have low binding energies per nucleon and are easily broken apart (fissioned) by collisions with protons at stellar interior temperatures ($T > 10^6~\text{K}$). Any Li, Be, or B that enters a stellar core is quickly destroyed:
+
+$$
+{^7\text{Li}} + p \rightarrow 2\,{^4\text{He}}
+$$
+
+They are not produced in significant quantities by any stellar nucleosynthesis process (the mass-5 and mass-8 gaps block their formation in the main fusion chains). The small amounts that exist were primarily produced by **cosmic ray spallation** — high-energy cosmic rays hitting carbon and oxygen nuclei in the interstellar medium and chipping off fragments.
+
+This "Li-Be-B gap" in cosmic abundances is strong evidence for stellar nucleosynthesis theory — if elements were made in a single process, there would be no reason for these elements to be depleted. The depletion requires that most matter has been processed through stellar interiors.
+:::
+:::
+
+---
+
+## Part 5: Supernova Remnants and the Next Generation
+
+### What's Left Behind
+
+After the explosion, two things remain:
+
+1. **A compact remnant** — either a **neutron star** ($M_\text{core} \lesssim 2\text{–}3\,M_\odot$) or a **black hole** ($M_\text{core} \gtrsim 3\,M_\odot$). We'll study these in Reading 10.
+
+2. **A supernova remnant (SNR)** — the expanding shell of ejected material, rich in heavy elements, which sweeps up interstellar gas and glows in X-rays, optical, and radio for thousands of years. Famous examples: the Crab Nebula (SN 1054), Cassiopeia A (SN ~1680), and the Vela SNR.
+
+### Seeding the Next Generation
+
+Supernova remnants disperse into the interstellar medium over $\sim 10^5~\text{yr}$, enriching it with metals (astronomer's term for everything heavier than helium). This enriched gas eventually collapses into new molecular clouds, forming new stars and planetary systems.
+
+The Sun formed from gas that had been enriched by multiple generations of stellar nucleosynthesis. Its metallicity ($Z_\odot \approx 0.014$ — meaning about $1.4\%$ of its mass is elements heavier than helium) records the cumulative nucleosynthesis of $\sim 10~\text{Gyr}$ of Galactic chemical evolution. The Earth, which is overwhelmingly made of elements heavier than helium, condensed from gas and dust enriched by many earlier stellar winds and supernova ejecta.
+
+**Stars are born from the ashes of dead stars.** This is cosmic recycling on the grandest scale — and it means that the first generation of stars (formed from pure hydrogen and helium in the early universe) was fundamentally different from later generations. Those first stars — called **Population III** stars — had no metals, no planets, and likely no life. Everything that makes the universe interesting today was built inside stars that came after.
+
+---
+
+## Reference Tables
+
+### Burning Stages of a $25\,M_\odot$ Star
+
+| Stage | Fuel → Ash | $T$ (K) | $\rho$ (g/cm³) | Duration | Energy (MeV/nucleon) |
+|:------|:-----------|:--------|:------|:---------|:---------|
+| H | $\text{H} \rightarrow \text{He}$ | $4 \times 10^7$ | $5$ | $7 \times 10^6~\text{yr}$ | 6.7 |
+| He | $\text{He} \rightarrow \text{C,O}$ | $2 \times 10^8$ | $700$ | $5 \times 10^5~\text{yr}$ | 0.6 |
+| C | $\text{C} \rightarrow \text{Ne,Mg}$ | $6 \times 10^8$ | $2 \times 10^5$ | $600~\text{yr}$ | 0.5 |
+| Ne | $\text{Ne} \rightarrow \text{O,Mg}$ | $1.2 \times 10^9$ | $4 \times 10^6$ | $1~\text{yr}$ | 0.3 |
+| O | $\text{O} \rightarrow \text{Si,S}$ | $1.5 \times 10^9$ | $10^7$ | $6~\text{mo}$ | 0.5 |
+| Si | $\text{Si} \rightarrow \text{Fe}$ | $2.7 \times 10^9$ | $3 \times 10^7$ | $1~\text{day}$ | 0.2 |
+
+### Core-Collapse Supernova Energy Budget
+
+| Channel | Energy (erg) | Fraction | Timescale |
+|:--------|:-------------|:---------|:----------|
+| Neutrinos | $\sim 3 \times 10^{53}$ | $\sim 99.7\%$ | $\sim 10~\text{s}$ |
+| Kinetic (ejecta) | $\sim 10^{51}$ | $\sim 0.3\%$ | $\sim \text{days–months}$ |
+| Photons (light) | $\sim 10^{49}$ | $\sim 0.003\%$ | $\sim \text{weeks–months}$ |
+
+### Symbol Legend
+
+| Symbol | Meaning | Units |
+|:------:|:--------|:------|
+| $^{56}\text{Fe}$ | Iron-56 (most common iron isotope) | — |
+| $^{56}\text{Ni}$ | Nickel-56 (radioactive; decays to $^{56}\text{Fe}$) | $t_{1/2} = 6.1~\text{days}$ |
+| $\nu_e$ | Electron neutrino | — |
+| r-process | Rapid neutron capture process | — |
+| s-process | Slow neutron capture process | — |
+| SNR | Supernova remnant | — |
+
+---
+
+## Summary: Gravity's Most Violent Victory
+
+{{< fig stellar-endpoints >}}
+
+The most important ideas from this reading:
+
+1. **Massive stars burn through fuels on an accelerating timescale** — hydrogen to silicon, ending at iron. Each stage requires higher temperature, releases less energy, and lasts a shorter time. Silicon burning lasts about a day.
+
+2. **Iron-group nuclei mark the endpoint of energy-producing fusion** — the binding-energy curve peaks around iron and nickel. Once the core reaches this region, further fusion no longer helps. When the iron core exceeds the Chandrasekhar limit, electron degeneracy fails and the core collapses in $< 1~\text{s}$.
+
+3. **Core-collapse supernovae release $\sim 3 \times 10^{53}~\text{erg}$** — almost all of it as neutrinos, with only a few tenths of a percent in ejecta kinetic energy and a few thousandths of a percent in light. The optical display is spectacular, but it is not where most of the energy goes.
+
+4. **The periodic table is stellar ash** — hydrogen burning makes helium, helium burning makes carbon and oxygen, successive burning makes elements up to iron, and neutron capture (r-process and s-process) builds everything beyond. Your body is made of elements forged in stars that died before the Sun was born.
+
+::: {.callout-note title="Gravity Scoreboard — Reading 9"}
+
+```
+┌──────────────────────────────────────────────────────┐
+│  Gravity Scoreboard — Reading 9                      │
+├──────────────────────────────────────────────────────┤
+│  Attacker:    Gravity                                │
+│  Defenders (fallen):                                 │
+│    - Thermal pressure (fuel exhausted)               │
+│    - Electron degeneracy (Chandrasekhar exceeded)    │
+│  Status:      GRAVITY WINS — CATASTROPHICALLY.       │
+│               Iron core collapses in < 1 second.     │
+│               Energy: 3 × 10⁵³ erg (mostly ν).     │
+│                                                      │
+│  But: the collapse is not the end.                   │
+│    - The core bounces at nuclear density             │
+│    - NEUTRON DEGENERACY halts the collapse           │
+│    - If the core is too massive even for that...     │
+│      GRAVITY WINS COMPLETELY. → Black hole.          │
+│                                                      │
+│  The explosion scatters every element the star       │
+│  ever built — seeding the next generation.           │
+│  The periodic table is a record of gravity's battles.│
+│  Next: Neutron stars & black holes → Reading 10      │
+└──────────────────────────────────────────────────────┘
+```
+
+For massive stars, gravity's victory is catastrophic. When iron accumulates, fusion can't fight back. The core collapses in less than a second, and the explosion scatters every element the star ever built — seeding the next generation of stars and planets. But what stops the collapse? In Reading 10, we meet the neutron star (held up by neutron degeneracy pressure) and the black hole (where nothing stops the collapse), and take our first step into general relativity.
+
+**Inference takeaway:** when we observe a supernova remnant rich in heavy elements and a compact remnant at its center, the model points to a core that crossed the Chandrasekhar limit, collapsed on a dynamical timescale, and expelled previously synthesized material into the interstellar medium.
+:::
+
+::: {.callout-tip}
+## Looking Ahead
+
+The neutron star at the center of a supernova remnant is the densest object in the universe that still has a surface. In Reading 10, we'll explore its extreme properties — densities of $10^{14}~\text{g}/\text{cm}^3$ (a teaspoon weighs a billion tonnes), magnetic fields $10^{12}$ times Earth's, rotation periods of milliseconds — and discover that even neutron degeneracy has a limit. Above $\sim 2\text{–}3\,M_\odot$, no known force can resist gravity. The result is a black hole — an object where spacetime itself collapses. We'll introduce the Schwarzschild radius, the event horizon, and take our first step into Einstein's general relativity.
+:::

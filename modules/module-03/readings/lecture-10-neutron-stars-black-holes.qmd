@@ -1,0 +1,548 @@
+---
+title: "Lecture 10: The Final States — Neutron Stars and Black Holes"
+subtitle: "When even neutron degeneracy fails — gravity wins completely"
+author: "Dr. Anna Rosen"
+date: "2026-03-26"
+description: "When electron degeneracy fails, neutron degeneracy takes over — producing the densest objects in the universe that still have a surface. And when neutron degeneracy fails, nothing can stop gravity. The result is a black hole — an object defined by the curvature of spacetime itself. This reading introduces neutron star physics, the Tolman-Oppenheimer-Volkoff limit, the Schwarzschild radius, and takes the first step into general relativity. The Gravity Scoreboard reaches its final entry."
+draft: true
+categories: [neutron-stars, black-holes, pulsars, general-relativity, schwarzschild-radius, event-horizon, gravitational-waves]
+course: ASTR 201
+module: "3 - Stellar Structure & Evolution"
+learning-objectives:
+  - Describe the structure and extreme properties of neutron stars (density, magnetic fields, rotation)
+  - Explain pulsars as rotating neutron stars with misaligned magnetic axes (lighthouse model)
+  - State the TOV limit (~2–3 solar masses) and explain why it represents the maximum neutron star mass
+  - Calculate the Schwarzschild radius for a given mass
+  - Explain qualitatively why Newtonian gravity breaks down for compact objects and why general relativity is needed
+  - Describe observational evidence for neutron stars and black holes (pulsars, X-ray binaries, gravitational waves, EHT)
+Concept-Throughline:
+  - Neutron stars are quantum mechanical objects at nuclear density — city-sized, supported by neutron degeneracy pressure, spinning hundreds of times per second
+  - The TOV limit (~2–3 solar masses) is the neutron star analogue of the Chandrasekhar limit — above it, nothing in known physics can resist gravity
+  - General relativity replaces Newtonian gravity when v ~ c or when the Schwarzschild radius approaches the physical radius
+  - Black holes are not objects in space — they are features of spacetime itself, defined by the event horizon
+math-level: symbolic_with_interpretation
+mode: Draft
+prerequisites: "Chandrasekhar limit and degeneracy pressure (Reading 8), core-collapse supernovae (Reading 9), escape velocity (Module 2), conservation of angular momentum (Module 2)"
+---
+
+## Learning Objectives
+
+After completing this reading, you should be able to:
+
+1. **Describe** neutron star properties: mass, radius, density, magnetic field, rotation rate
+2. **Explain** pulsars as rotating neutron stars with the lighthouse model
+3. **State** the TOV limit ($\sim 2\text{–}3\,M_\odot$) and explain its physical meaning
+4. **Calculate** the Schwarzschild radius $R_s = 2GM/c^2$ for a given mass
+5. **Explain** qualitatively why general relativity replaces Newtonian gravity for compact objects
+6. **Describe** observational evidence for neutron stars and black holes
+
+## Concept Throughline
+
+> *We've followed gravity's battle against everything the universe can throw at it: thermal pressure, nuclear fusion, radiation pressure, electron degeneracy. Each defender has fallen — or been revealed to have limits. Now we reach the endgame. Neutron degeneracy pressure holds at the core of neutron stars — the densest objects with surfaces, where a teaspoon weighs a billion tonnes and the surface gravity is $2 \times 10^{14}$ times Earth's. But even this last defense has a limit. Above $\sim 2\text{–}3\,M_\odot$, no known force in nature can resist gravity. The result is a black hole: not an object in space, but a feature of spacetime itself, where gravity doesn't just win — it redefines the arena.*
+
+::: {.callout-note title="Reading Map — Choose Your Track"}
+
+**Track A (Core, ~30 min):** Read **Parts 1–5** in order — neutron star properties, pulsars, the TOV limit, black hole basics, and observational evidence. Skip any box marked *Enrichment*.
+
+**Track B (Full, ~40 min):** Read everything, including the *Enrichment* box on gravitational redshift. This deepens the connection between compact objects and spacetime curvature.
+
+*Both tracks cover all core learning objectives.*
+:::
+
+---
+
+## Part 1: Neutron Stars — Nuclear Density Objects
+
+::: {.callout-important}
+## The Big Idea
+
+**A neutron star is an atomic nucleus the size of a city.** It contains $\sim 1.4\,M_\odot$ in a sphere of radius $\sim 10~\text{km}$, at the density of nuclear matter. It is held up by neutron degeneracy pressure — the same quantum mechanical effect that supports white dwarfs, but now applied to neutrons instead of electrons.
+:::
+
+We do not start this story from theory alone. We observe millisecond radio pulses, X-ray binaries with compact accretors, gravitational-wave mergers, and horizon-scale images around supermassive dark objects. The puzzle is to explain what kind of remnants can produce those measurements. Neutron stars and black holes are the model answer.
+
+::: {.callout-note title="Observable → Model → Inference" .omi}
+**Observable:** Pulsars produce pulses with periods from milliseconds to seconds, and those periods are stable enough to act like cosmic clocks.
+
+**Model:** A rotating, magnetized neutron star with a misaligned magnetic axis produces lighthouse-like beams. The pulse period measures the rotation period, and the short period implies a compact object with radius of order tens of kilometers, not a normal star.
+
+**Inference:** The observed pulses require a tiny, dense stellar remnant. Pulsars are our earliest and clearest evidence that neutron stars are real objects in nature, not just mathematical endpoints of collapse calculations.
+:::
+
+### Formation
+
+In Reading 9, we saw that during core-collapse supernovae:
+
+1. The iron core exceeds the Chandrasekhar limit
+2. Electron capture converts protons to neutrons: $p + e^- \rightarrow n + \nu_e$
+3. The core collapses to nuclear density ($\rho \sim 2.8 \times 10^{14}~\text{g}/\text{cm}^3$)
+4. **Neutron degeneracy pressure** halts the collapse (aided by the repulsive core of the nuclear force at very short range)
+
+The result is a neutron star — a ball of $\sim 10^{57}$ neutrons, with a thin crust of heavy nuclei and a liquid interior that may contain exotic states of matter (hyperons, quark-gluon plasma).
+
+{{< fig core-collapse-neutrino-schematic >}}
+
+### Extreme Properties
+
+| Property | Neutron Star | Comparison |
+|:---------|:-------------|:-----------|
+| Mass | $1.4\text{–}2.0\,M_\odot$ | $\sim$ Sun's mass |
+| Radius | $\sim 10~\text{km}$ | $\sim$ a city |
+| Density | $\sim 5 \times 10^{14}~\text{g}/\text{cm}^3$ | $\sim$ atomic nucleus |
+| Surface gravity | $\sim 2 \times 10^{14}~\text{cm}/\text{s}^2$ | $\sim 2 \times 10^{11}\,g_\oplus$ |
+| Escape velocity | $\sim 0.5c$ ($150{,}000~\text{km}/\text{s}$) | Half the speed of light |
+| Magnetic field | $10^{12}\text{–}10^{15}~\text{G}$ | $10^{8}\text{–}10^{11} \times B_\oplus$ |
+| Rotation period | $\sim 0.001\text{–}10~\text{s}$ | Up to 716 Hz |
+
+### The Density Calculation
+
+A teaspoon ($\sim 5~\text{cm}^3$) of neutron star material would weigh:
+
+$$
+m = \rho \times V = 5 \times 10^{14}~\text{g}/\text{cm}^3 \times 5~\text{cm}^3 = 2.5 \times 10^{15}~\text{g} = 2.5 \times 10^9~\text{kg}
+$$
+
+That's $2.5$ billion tonnes — roughly the mass of a $1~\text{km}$ asteroid — in a teaspoon. If you placed this teaspoon on Earth's surface, it would punch through the crust and sink to the center.
+
+{{< fig ns-cross-section >}}
+
+### Why So Fast? Conservation of Angular Momentum
+
+Neutron stars spin incredibly fast — up to $\sim 716$ rotations per second (PSR J1748-2446ad). This is a direct consequence of **conservation of angular momentum** from Module 2:
+
+$$
+L = I\omega = \text{constant} \quad \Rightarrow \quad I_1 \omega_1 = I_2 \omega_2
+$$
+
+For a uniform sphere, $I = \frac{2}{5}MR^2$, so:
+
+$$
+\frac{\omega_2}{\omega_1} = \frac{R_1^2}{R_2^2}
+$$
+
+If the Sun ($R_1 = 7 \times 10^{10}~\text{cm}$, rotation period $P_1 \approx 25~\text{days}$) collapsed to neutron star dimensions ($R_2 = 10^6~\text{cm}$):
+
+$$
+\frac{P_1}{P_2} = \frac{R_1^2}{R_2^2} = \left(\frac{7 \times 10^{10}}{10^6}\right)^2 = 4.9 \times 10^9
+$$
+
+$$
+P_2 = \frac{25~\text{days}}{4.9 \times 10^9} = \frac{2.16 \times 10^6~\text{s}}{4.9 \times 10^9} \approx 4.4 \times 10^{-4}~\text{s}
+$$
+
+A rotation period of $\sim 0.4~\text{ms}$ — over 2,000 rotations per second. The actual Sun rotates slowly and would lose angular momentum during collapse, but the calculation illustrates why neutron stars spin so fast: conservation of angular momentum during a factor-of-$10^5$ contraction in radius amplifies the rotation rate by a factor of $10^{10}$.
+
+::: {.callout-tip}
+## Check Yourself
+
+The same angular momentum argument explains why neutron stars have such extreme magnetic fields. If the Sun's magnetic field is $\sim 1~\text{G}$ and magnetic flux is conserved ($\Phi = B \times \pi R^2 = \text{constant}$), estimate the magnetic field of the resulting neutron star.
+
+::: {.callout-note collapse="true"}
+## Solution
+
+Magnetic flux conservation:
+
+$$
+B_1 R_1^2 = B_2 R_2^2 \quad \Rightarrow \quad B_2 = B_1 \left(\frac{R_1}{R_2}\right)^2
+$$
+
+$$
+B_2 = 1~\text{G} \times \left(\frac{7 \times 10^{10}}{10^6}\right)^2 = 4.9 \times 10^9~\text{G}
+$$
+
+This gives $B \sim 5 \times 10^9~\text{G}$ — already enormous. Observed neutron star fields are $10^{12}\text{–}10^{15}~\text{G}$, even stronger, suggesting additional magnetic field amplification during the collapse (dynamo processes in the turbulent proto-neutron star). The strongest-field neutron stars (**magnetars**, $B \sim 10^{15}~\text{G}$) have fields so intense that they can deform the neutron star crust, triggering "starquakes" and gamma-ray flares.
+:::
+:::
+
+---
+
+## Part 2: Pulsars — Cosmic Lighthouses
+
+### Discovery
+
+In 1967, graduate student Jocelyn Bell Burnell and her supervisor Antony Hewish discovered a radio source emitting regular pulses with a period of $1.337~\text{s}$, stable to $\sim 1$ part in $10^7$. The regularity was so precise that they initially labeled it "LGM-1" (Little Green Men). The source — now called PSR B1919+21 — was the first known **pulsar**.
+
+### The Lighthouse Model
+
+A pulsar is a rapidly rotating neutron star with a strong magnetic field whose magnetic axis is misaligned with the rotation axis. Charged particles are accelerated along the magnetic field lines near the magnetic poles, producing beams of radiation (radio, and sometimes X-rays or gamma rays). As the neutron star rotates, these beams sweep through space like a lighthouse:
+
+{{< fig ns-types-nasa >}}
+
+- If the beam sweeps across Earth, we see a pulse each rotation period
+- If the beam misses Earth, the neutron star is invisible as a pulsar (but still exists)
+
+The pulse period equals the rotation period: $P = 2\pi/\omega$. Periods range from $\sim 1.4~\text{ms}$ (the fastest millisecond pulsars) to $\sim 10~\text{s}$ (the slowest). Pulsars slowly spin down as they lose rotational energy to magnetic dipole radiation:
+
+$$
+\dot{E}_\text{rot} = I\omega\dot{\omega} \propto B^2 \omega^4 R^6
+$$
+
+The spin-down rate gives us the magnetic field strength and the pulsar's age. Young pulsars (like the Crab pulsar, born in SN 1054) spin fast ($P = 33~\text{ms}$); old pulsars spin slowly.
+
+::: {.callout-tip}
+## Check Yourself
+
+The Crab pulsar has a period of $P = 33.5~\text{ms}$ and is spinning down at a rate $\dot{P} = 4.21 \times 10^{-13}~\text{s/s}$. Estimate its age assuming it was born spinning infinitely fast.
+
+::: {.callout-note collapse="true"}
+## Solution
+
+If the spin-down rate has been approximately constant, the age is:
+
+$$
+\tau = \frac{P}{2\dot{P}} = \frac{0.0335}{2 \times 4.21 \times 10^{-13}} \approx 4.0 \times 10^{10}~\text{s} \approx 1{,}260~\text{yr}
+$$
+
+The Crab Nebula is the remnant of a supernova recorded by Chinese astronomers in 1054 CE — about $970$ years ago. Our estimate ($1{,}260~\text{yr}$) is in the right ballpark. The discrepancy arises because the spin-down rate is not exactly constant (it decreases as the pulsar slows) and because we assumed the birth period was zero. This "characteristic age" $\tau = P/(2\dot{P})$ is a standard estimate used for pulsars.
+:::
+:::
+
+---
+
+## Part 3: The TOV Limit — The End of Neutron Degeneracy
+
+### Another Maximum Mass
+
+Just as white dwarfs have a maximum mass (the Chandrasekhar limit, $1.4\,M_\odot$), neutron stars have a maximum mass — the **Tolman-Oppenheimer-Volkoff (TOV) limit.**
+
+The physics is analogous:
+
+| | White Dwarf | Neutron Star |
+|:--|:-----------|:------------|
+| Support mechanism | Electron degeneracy | Neutron degeneracy |
+| When it fails | Electrons go relativistic | Neutrons go relativistic |
+| Maximum mass | $1.44\,M_\odot$ (Chandrasekhar) | $\sim 2\text{–}3\,M_\odot$ (TOV) |
+| What's left above limit | Neutron star | **Black hole** |
+
+The TOV limit is less precisely known than the Chandrasekhar limit because:
+
+1. The equation of state of matter at nuclear density is not fully understood (the strong force at these densities is extremely difficult to calculate)
+2. General relativity must be used instead of Newtonian gravity (gravity is strong enough that spacetime curvature matters)
+3. Exotic states of matter (quark-gluon plasma, hyperons) may appear at these densities
+
+Current best estimates place the TOV limit at:
+
+{{< include ../../../_includes/equations/tov-limit.qmd >}}
+
+{{< eqrefcard tov-limit >}}
+
+The most massive securely measured neutron stars sit just above $2\,M_\odot$, showing that the true limit must be at least this high and helping constrain the still-uncertain equation of state.
+
+{{< fig ns-mass-distribution >}}
+
+### Above the TOV Limit
+
+If a stellar core exceeds the TOV limit — roughly $2\text{–}3\,M_\odot$ — no known force in physics can halt the collapse. Not thermal pressure (no energy source). Not electron degeneracy (already exceeded at $1.4\,M_\odot$). Not neutron degeneracy (exceeded at the TOV limit). Not the strong nuclear force (already contributing at nuclear density).
+
+**Gravity wins. Completely.**
+
+The core collapses without limit, forming a **black hole.**
+
+---
+
+## Part 4: Black Holes — Where Gravity Wins
+
+::: {.callout-important}
+## The Big Idea
+
+**A black hole is not an object in space — it is a region of spacetime from which nothing, not even light, can escape.** It is defined by the **event horizon**: the boundary beyond which the escape velocity exceeds $c$.
+:::
+
+{{< fig warped-spacetime-bh >}}
+
+### The Schwarzschild Radius: A Newtonian Preview
+
+We can get the right answer for the size of a black hole using a Newtonian argument (which, remarkably, gives the same result as general relativity, though for different reasons).
+
+The escape velocity from the surface of a mass $M$ at radius $R$ is:
+
+$$
+v_\text{esc} = \sqrt{\frac{2GM}{R}}
+$$
+
+Set $v_\text{esc} = c$ (the speed of light) and solve for $R$. The result is the Schwarzschild radius:
+
+{{< include ../../../_includes/equations/schwarzschild-radius.qmd >}}
+
+{{< eqrefcard schwarzschild-radius >}}
+
+This is the **Schwarzschild radius** — the radius at which the escape velocity equals the speed of light. For any mass compressed within its Schwarzschild radius, nothing can escape — not matter, not light, not information.
+
+### Worked Example: Schwarzschild Radii
+
+For the Sun:
+
+$$
+R_{s,\odot} = \frac{2 \times 6.67 \times 10^{-8} \times 2.0 \times 10^{33}}{(3.0 \times 10^{10})^2} = \frac{2.67 \times 10^{26}}{9.0 \times 10^{20}} \approx 3.0 \times 10^5~\text{cm} = 3.0~\text{km}
+$$
+
+For Earth:
+
+$$
+R_{s,\oplus} = \frac{2 \times 6.67 \times 10^{-8} \times 6.0 \times 10^{27}}{9.0 \times 10^{20}} \approx 0.89~\text{cm}
+$$
+
+To turn the Sun into a black hole, you'd need to compress its entire mass into a sphere of radius $3~\text{km}$. To turn Earth into a black hole: $0.89~\text{cm}$ — smaller than a marble.
+
+The Schwarzschild radius scales linearly with mass:
+
+$$
+R_s = 3.0~\text{km} \times \left(\frac{M}{M_\odot}\right)
+$$
+
+A $10\,M_\odot$ black hole has $R_s = 30~\text{km}$. The supermassive black hole at the center of the Milky Way (Sagittarius A*, $M \approx 4 \times 10^6\,M_\odot$) has $R_s \approx 1.2 \times 10^7~\text{km} \approx 0.08~\text{AU}$ — about $1/5$ of Mercury's orbital radius.
+
+::: {.callout-tip}
+## Check Yourself
+
+A neutron star has $M = 1.4\,M_\odot$ and $R = 10~\text{km}$. Calculate the ratio $R_s/R$ and explain what this tells us about the importance of general relativity.
+
+::: {.callout-note collapse="true"}
+## Solution
+
+$$
+R_s = 3.0~\text{km} \times 1.4 = 4.2~\text{km}
+$$
+
+$$
+\frac{R_s}{R} = \frac{4.2}{10} = 0.42
+$$
+
+The Schwarzschild radius is $42\%$ of the physical radius. This is *enormous* — for comparison, $R_s/R_\odot = 3~\text{km}/7 \times 10^5~\text{km} = 4 \times 10^{-6}$ for the Sun, and $R_s/R_\oplus \sim 10^{-9}$ for Earth.
+
+When $R_s/R$ is a significant fraction of unity, general relativity is essential — Newtonian gravity is no longer accurate. A neutron star's surface gravity, spacetime curvature, and light propagation all require GR to describe correctly. Photons emitted from the surface are gravitationally redshifted by $\sim 30\%$ before reaching a distant observer. Time runs measurably slower on the neutron star surface. These are not tiny corrections — they are dominant effects.
+:::
+:::
+
+### Why General Relativity?
+
+The Newtonian escape velocity argument gives the right answer for $R_s$, but for the wrong reason. In Newtonian gravity, you *could* (in principle) throw a ball upward faster than $c$ — there's no speed limit. The ball would escape. Newtonian gravity says nothing special happens at $R_s$.
+
+**General relativity changes the picture fundamentally.** Einstein's theory says:
+
+1. **Nothing can travel faster than $c$** — this is absolute, not just a practical limit
+2. **Mass and energy curve spacetime** — gravity is not a force but the curvature of the arena in which everything moves
+3. **At $R_s$, spacetime is curved strongly enough that all future-directed paths staying inside the horizon move inward** — including light rays
+
+Inside the event horizon, moving to smaller radius is no longer an avoidable choice in the way it is outside. That is the qualitative reason the horizon is a point of no return.
+
+### Properties of Black Holes
+
+The **no-hair theorem** states that a black hole in equilibrium is completely described by just three numbers:
+
+1. **Mass** ($M$) — determines the Schwarzschild radius
+2. **Spin** ($J$) — angular momentum; real black holes rotate (Kerr black holes)
+3. **Charge** ($Q$) — electric charge; astrophysically negligible
+
+Everything else — the chemical composition, the history of what fell in, whether it was made of antimatter or regular matter — is lost behind the event horizon. Black holes have no "hair" (no distinguishing features beyond $M$, $J$, $Q$).
+
+::: {.callout-note collapse="true" title="Enrichment: Gravitational Redshift Near a Neutron Star"}
+
+A photon climbing out of a gravitational well loses energy — its wavelength increases. Near a compact object, this **gravitational redshift** is:
+
+$$
+\frac{\lambda_\text{obs}}{\lambda_\text{emit}} = \frac{1}{\sqrt{1 - R_s/R}}
+$$
+
+For a neutron star with $R_s/R = 0.42$:
+
+$$
+\frac{\lambda_\text{obs}}{\lambda_\text{emit}} = \frac{1}{\sqrt{1 - 0.42}} = \frac{1}{\sqrt{0.58}} \approx 1.31
+$$
+
+A photon emitted at $\lambda = 500~\text{nm}$ (green) would be observed at $\lambda = 655~\text{nm}$ (red) — shifted by $31\%$. This is not a Doppler shift (the neutron star isn't moving away); it's a stretching of spacetime itself.
+
+At the event horizon ($R = R_s$), the redshift becomes infinite — a photon emitted exactly at the horizon is redshifted to zero energy. This is another way to see why nothing escapes a black hole: any signal from the horizon arrives infinitely redshifted, carrying zero energy. The event horizon is the surface of infinite gravitational redshift.
+:::
+
+::: {.callout-tip}
+## Misconception Check
+
+If an astronaut crossed the event horizon of a large black hole, would they hit a hard surface there?
+
+::: {.callout-note collapse="true"}
+## Solution
+
+No. The event horizon is not a material surface. It is a boundary in spacetime: the place beyond which no signal can escape to distant observers. For a sufficiently large black hole, an astronaut could cross the horizon without encountering a wall at that location, though tidal forces deeper in would eventually become fatal.
+:::
+:::
+
+---
+
+## Part 5: Observational Evidence
+
+### How Do We Know They're Real?
+
+Neither neutron stars nor black holes can be observed directly in isolation (black holes by definition; neutron stars because they're tiny and faint). But indirect evidence is overwhelming:
+
+#### Neutron Stars
+
+| Evidence | What we see | What it tells us |
+|:---------|:-----------|:-----------------|
+| **Pulsars** | Periodic radio/X-ray pulses ($P = 0.001\text{–}10~\text{s}$) | Rotating object with $R \lesssim cP/(2\pi) \sim 10~\text{km}$ |
+| **Pulsar glitches** | Sudden spin-up events | Solid crust over fluid interior (starquakes) |
+| **X-ray binaries** | X-ray emission from accreting NS | Accretion onto a compact surface (unlike BH) |
+| **Gravitational waves** | GW170817 (NS-NS merger) | Mass, radius constraints from waveform |
+| **Thermal emission** | Surface X-rays ($T \sim 10^6~\text{K}$) | Confirms small, hot surface |
+
+#### Black Holes
+
+| Evidence | What we see | What it tells us |
+|:---------|:-----------|:-----------------|
+| **X-ray binaries** | Accretion disk X-rays; no surface emission | Compact object with no surface (unlike NS) |
+| **Mass function** | Companion star orbits → $M > 3\,M_\odot$ | Too massive for NS → must be BH |
+| **Gravitational waves** | GW150914 (BH-BH merger, LIGO 2015) | $36 + 29 = 62\,M_\odot$; $3\,M_\odot c^2$ radiated as GW |
+| **Event Horizon Telescope** | Shadow of M87* (2019), Sgr A* (2022) | Light ring matches GR prediction for $4 \times 10^6\,M_\odot$ BH |
+| **Stellar orbits** | S-stars orbiting Sgr A* | Keplerian orbits → $4 \times 10^6\,M_\odot$ in $< 100~\text{AU}$ |
+
+{{< fig cygnus-x1-accretion >}}
+
+::: {.callout-note title="Observable → Model → Inference" .omi}
+**Observable:** LIGO detected gravitational waves from the merger of two black holes (GW150914): two objects with $M_1 = 36\,M_\odot$ and $M_2 = 29\,M_\odot$ spiraling together and merging into a single $62\,M_\odot$ black hole.
+
+**Model:** General relativity predicts the gravitational wave signal — frequency, amplitude, and waveform — from the inspiral, merger, and ringdown of two black holes.
+
+**Inference:** The observed waveform matched the GR prediction to exquisite precision. The "missing" $3\,M_\odot$ ($= 36 + 29 - 62$) was radiated as gravitational wave energy: $E = 3\,M_\odot c^2 \approx 5 \times 10^{54}~\text{erg}$ — released in $\sim 0.2~\text{s}$. For that brief moment, the source was more luminous (in gravitational waves) than all the stars in the observable universe combined.
+:::
+
+::: {.callout-tip}
+## Check Yourself
+
+The supermassive black hole at the center of the Milky Way (Sgr A*) has $M \approx 4 \times 10^6\,M_\odot$. Calculate its Schwarzschild radius and compare to the Sun's radius and Earth's orbital radius.
+
+::: {.callout-note collapse="true"}
+## Solution
+
+$$
+R_s = 3.0~\text{km} \times 4 \times 10^6 = 1.2 \times 10^7~\text{km}
+$$
+
+Compared to the Sun's radius: $R_s/(R_\odot) = 1.2 \times 10^7 / 7 \times 10^5 \approx 17$. The event horizon of Sgr A* is about $17$ solar radii — a large star could fit inside it comfortably.
+
+Compared to Earth's orbit: $R_s/(1~\text{AU}) = 1.2 \times 10^7 / 1.5 \times 10^8 = 0.08$. The event horizon is about $0.08~\text{AU}$ — roughly $1/5$ of Mercury's orbital radius.
+
+Despite containing 4 million solar masses, the event horizon is only $\sim 17$ solar radii across. This is because $R_s \propto M$, while the volume scales as $R_s^3 \propto M^3$. The average density *inside* the event horizon is $\bar{\rho} = 3M/(4\pi R_s^3) \propto M^{-2}$. Supermassive black holes have *lower* average density inside their horizons than stellar-mass ones. For Sgr A*: $\bar{\rho} \sim 10^3~\text{g}/\text{cm}^3$ — less dense than the Sun's core.
+:::
+:::
+
+---
+
+## Part 6: The Gravity Scoreboard — Final Entry
+
+### The Complete Picture
+
+We can now map the entire landscape of stellar remnants:
+
+| Initial mass | Final remnant | Mass limit | Support mechanism |
+|:-------------|:-------------|:-----------|:-----------------|
+| $M \lesssim 0.08\,M_\odot$ | Brown dwarf (not a star) | — | Electron degeneracy (no fusion) |
+| $0.08 \lesssim M/M_\odot \lesssim 8$ | **White dwarf** | $M_\text{core} < 1.4\,M_\odot$ | Electron degeneracy |
+| $8 \lesssim M/M_\odot \lesssim 25$ | **Neutron star** | $1.4 \lesssim M_\text{core}/M_\odot \lesssim 2.5$ | Neutron degeneracy |
+| $M \gtrsim 25\,M_\odot$ | **Black hole** | $M_\text{core} \gtrsim 2.5\,M_\odot$ | Nothing — gravity wins |
+
+The boundaries between these outcomes depend on mass loss during the star's life, metallicity, and binary interactions, so the initial mass thresholds are approximate. But the physical limits — $M_\text{Ch} = 1.4\,M_\odot$ and $M_\text{TOV} \approx 2\text{–}2.5\,M_\odot$ — are set by fundamental physics.
+
+### Gravity's Opponents — A Summary
+
+| Opponent | What it does | When it loses |
+|:---------|:-------------|:-------------|
+| **Thermal pressure** | Pushes outward (gas, radiation) | Fuel exhausted; cooling |
+| **Nuclear fusion** | Replenishes thermal energy | H → He → C → ... → Fe; iron is the end |
+| **Radiation pressure** | Opposes gravity in massive stars | Sets upper mass limit ($\sim 150\,M_\odot$) |
+| **Electron degeneracy** | QM pressure at $T = 0$ | Electrons go relativistic at $1.4\,M_\odot$ |
+| **Neutron degeneracy** | QM pressure at nuclear density | Neutrons go relativistic at $\sim 2.5\,M_\odot$ |
+| **???** | Nothing known | **Gravity wins. Black hole.** |
+
+---
+
+## Reference Tables
+
+{{< fig compact-object-scale >}}
+
+### Compact Objects at a Glance
+
+| Property | White Dwarf | Neutron Star | Black Hole |
+|:---------|:-----------|:-------------|:-----------|
+| Mass | $\lesssim 1.4\,M_\odot$ | $1.4\text{–}2.5\,M_\odot$ | $\gtrsim 3\,M_\odot$ (stellar) |
+| Radius | $\sim R_\oplus$ ($\sim 6{,}000~\text{km}$) | $\sim 10~\text{km}$ | $R_s = 3\,M/M_\odot~\text{km}$ |
+| Density | $\sim 10^6~\text{g}/\text{cm}^3$ | $\sim 10^{14}~\text{g}/\text{cm}^3$ | No single material density; no surface |
+| $R_s/R$ | $\sim 10^{-4}$ | $\sim 0.4$ | 1 (at horizon) |
+| Support | $e^-$ degeneracy | $n$ degeneracy + nuclear | None |
+| Surface? | Yes (solid) | Yes (crust) | No (event horizon) |
+
+### Symbol Legend
+
+| Symbol | Meaning | CGS Units |
+|:------:|:--------|:----------|
+| $R_s$ | Schwarzschild radius | $\text{cm}$ or km |
+| $M_\text{TOV}$ | Tolman-Oppenheimer-Volkoff limit | $\sim 2\text{–}2.5\,M_\odot$ |
+| $P$ | Pulsar period | s |
+| $\dot{P}$ | Period derivative (spin-down rate) | $\text{s}/\text{s}$ (dimensionless) |
+| $\Phi$ | Magnetic flux | $\text{G}\cdot\text{cm}^2$ |
+| $\omega$ | Angular velocity | $\text{rad}/\text{s}$ |
+
+---
+
+## Summary: Gravity Wins
+
+The most important ideas from this reading:
+
+1. **Neutron stars are nuclear-density objects** — $1.4\,M_\odot$ in $10~\text{km}$ radius, spinning up to hundreds of times per second, with magnetic fields $10^{12}$ times Earth's. They are held up by neutron degeneracy pressure — the last stand of quantum mechanics against gravity.
+
+2. **The TOV limit ($\sim 2\text{–}2.5\,M_\odot$)** is the neutron star analogue of the Chandrasekhar limit. Above it, no known force can resist gravity.
+
+3. **Black holes are defined by the Schwarzschild radius** $R_s = 2GM/c^2$ — the event horizon beyond which nothing escapes. They are not objects *in* space but features *of* spacetime.
+
+4. **Observational evidence is overwhelming** — pulsars, X-ray binaries, gravitational waves (LIGO), and direct imaging (EHT) have confirmed the existence of both neutron stars and black holes.
+
+::: {.callout-note title="Gravity Scoreboard — FINAL"}
+
+```
+┌──────────────────────────────────────────────────────┐
+│  Gravity Scoreboard — FINAL                          │
+├──────────────────────────────────────────────────────┤
+│                                                      │
+│  Gravity has won.                                    │
+│                                                      │
+│  For black holes, there is no force in nature that   │
+│  can fight back. Spacetime itself collapses. The     │
+│  event horizon is the point of no return — not       │
+│  because of a wall or a surface, but because the     │
+│  geometry of spacetime points only inward.           │
+│                                                      │
+│  FINAL SCORES:                                       │
+│  ──────────────────────────────────────────           │
+│  M < 0.08 M☉:   No fusion. Brown dwarf. (QM floor)  │
+│  0.08–8 M☉:     Fusion → WD. Gravity held off by    │
+│                  electron degeneracy. (1.4 M☉ cap)   │
+│  8–25 M☉:       Supernova → NS. Gravity held off    │
+│                  by neutron degeneracy. (2.5 M☉ cap) │
+│  > 25 M☉:       Supernova → BH. Gravity wins.       │
+│                  No defense. No appeal. No escape.   │
+│  ──────────────────────────────────────────           │
+│                                                      │
+│  But the story isn't over.                           │
+│                                                      │
+│  The elements built during the fight — H, He, C, O,  │
+│  Fe, Au, U — seed new stars, new planets, and        │
+│  eventually... us.                                   │
+│                                                      │
+│  The periodic table is a record of gravity's battles.│
+│  Every atom heavier than hydrogen was forged in a    │
+│  star. Every atom heavier than iron required a star  │
+│  to die. You are the universe's way of looking back  │
+│  at the stars that made you.                         │
+│                                                      │
+└──────────────────────────────────────────────────────┘
+```
+:::
+
+**Inference takeaway:** if observations require a compact dark remnant more massive than any stable neutron star, with no detectable surface and horizon-scale behavior matching GR, the model points to a black hole.
+
+::: {.callout-tip}
+## Looking Ahead
+
+Module 3 has taken us from stellar timescales to black holes — from the question "how old is the Sun?" to "what happens when spacetime itself collapses?" We've seen how four fundamental forces, three quantum mechanical principles, and one relentless attacker (gravity) determine the entire life cycle of stars and build the periodic table.
+
+In Module 4, we zoom out from individual stars to the galaxies that contain them, and ultimately to the universe as a whole. We'll discover that the universe is expanding (Hubble's law), that it began in a hot, dense state (the Big Bang), and that the same physics that governs stellar interiors — nuclear fusion, radiation, gravity — also shaped the first three minutes of cosmic history, when hydrogen and helium were forged from a sea of quarks and leptons. The story of stars is the story of the universe.
+:::

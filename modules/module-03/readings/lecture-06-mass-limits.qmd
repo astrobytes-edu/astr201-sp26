@@ -1,0 +1,528 @@
+---
+title: "Lecture 6: The Boundaries of Stardom — Mass Limits"
+subtitle: "Why can't a star be any mass it wants?"
+author: "Dr. Anna Rosen"
+date: "2026-03-19"
+description: "Stars can't be arbitrarily small or arbitrarily large. Quantum mechanics sets the floor: below ~0.08 solar masses, electron degeneracy halts contraction before the core reaches fusion temperatures. Radiation sets the ceiling: above ~100–150 solar masses, radiation pressure and mass loss push stars toward the Eddington limit. This reading introduces the Heisenberg uncertainty principle and shows how fundamental physics constrains the stellar mass range."
+draft: true
+categories: [mass-limits, brown-dwarfs, eddington-limit, heisenberg-uncertainty, quantum-mechanics, stellar-mass-function]
+course: ASTR 201
+module: "3 - Stellar Structure & Evolution"
+learning-objectives:
+  - Explain why there is a minimum mass for hydrogen fusion (~0.08 solar masses) using quantum confinement and electron degeneracy
+  - State the Heisenberg uncertainty principle and explain how confining particles to small spaces gives them momentum
+  - Explain why there is a maximum stellar mass (~100–150 solar masses) set by the Eddington luminosity
+  - Describe what brown dwarfs are and why they fail to sustain hydrogen fusion
+  - Calculate the Eddington luminosity for a given stellar mass and compare it to the actual luminosity
+  - Explain how both mass limits depend on fundamental constants of nature
+Concept-Throughline:
+  - Gravity can only build stars within a narrow mass range — quantum mechanics sets the floor, radiation sets the ceiling
+  - The Heisenberg uncertainty principle says confining particles to small spaces gives them large momenta — and therefore pressure, even at zero temperature
+  - The minimum stellar mass is set by quantum effects — electron degeneracy can halt contraction before hydrogen fusion ignites
+  - The Eddington limit marks where radiation force becomes comparable to gravity, so very massive stars develop strong winds and an upper mass scale
+math-level: symbolic_with_interpretation
+mode: Draft
+prerequisites: "de Broglie wavelength (Reading 3), Eddington luminosity and radiation pressure (Reading 4), mass-luminosity relation L ∝ M^3.5 (Reading 5), core temperature estimate T_c ∝ M/R (Reading 2)"
+---
+
+## Learning Objectives
+
+After completing this reading, you should be able to:
+
+1. **Explain** why there is a minimum mass for hydrogen fusion ($\sim 0.08\,M_\odot$) using quantum confinement and electron degeneracy
+2. **State** the Heisenberg uncertainty principle and explain how confining particles gives them momentum
+3. **Explain** why there is a maximum stellar mass ($\sim 100\text{–}150\,M_\odot$) set by the Eddington luminosity
+4. **Describe** what brown dwarfs are and why they fail to sustain hydrogen fusion
+5. **Calculate** the Eddington luminosity and compare it to a main-sequence luminosity estimate
+6. **Explain** how both mass limits depend on fundamental constants of nature
+
+## Concept Throughline
+
+> *The main sequence has edges.* You can't build a star of any mass — nature imposes two boundaries, each enforced by different physics. At the **bottom**, quantum mechanics prevents continued contraction before the core gets hot enough for sustained fusion. At the **top**, radiation becomes so important that the most massive stars drive extreme winds and approach a luminosity ceiling. Both limits depend on fundamental constants, which means the range of stellar masses is written into the laws of physics.
+
+::: {.callout-note title="Reading Map — Choose Your Track"}
+
+**Track A (Core, ~25 min):** Read **Parts 1–5** in order — the minimum mass, Heisenberg uncertainty, maximum mass, and the stellar mass range. Skip any box marked *Enrichment*.
+
+**Track B (Full, ~35 min):** Read everything, including the enrichment boxes on brown dwarfs and pair-instability supernovae. These topics connect to Readings 7–10.
+
+*Both tracks cover all core learning objectives.*
+:::
+
+---
+
+## Part 1: The Mystery at the Bottom
+
+::: {.callout-important}
+## The Big Idea
+
+**The minimum stellar mass is set by quantum mechanics, not by a failure of gravity.** Below $\sim 0.08\,M_\odot$, electron degeneracy halts contraction before the core reaches sustained hydrogen-fusion temperatures.
+:::
+
+Observationally, the main sequence ends near $\sim 0.08\,M_\odot$. Below that boundary, we find **brown dwarfs**: objects that form like stars but cool and fade instead of sustaining hydrogen fusion. The puzzle is not whether gravity tries to compress them. It does. The puzzle is why gravity *fails* before fusion ignition.
+
+### Why Can't Small Stars Get Hot Enough?
+
+In Reading 2, we derived the core temperature estimate from the virial theorem:
+
+{{< include ../../../_includes/equations/core-temperature.qmd >}}
+
+{{< eqrefcard core-temperature >}}
+
+At first glance, this seems to say that any mass can reach any temperature — just make $R$ small enough. A contracting protostar should get hotter and hotter until fusion ignites. And indeed, for solar-mass stars, this works: gravitational contraction heats the core to $\sim 15~\text{MK}$ and fusion begins.
+
+But there's a hidden assumption: we treated the gas as classical particles — tiny billiard balls with well-defined positions and velocities. This works beautifully for the Sun, where the interparticle spacing is much larger than the particles' quantum wavelengths. But as the star contracts and the density rises, the particles get squeezed closer and closer together. Eventually, a fundamental limit of quantum mechanics kicks in.
+
+### The de Broglie Wavelength Revisited
+
+In Reading 3, we introduced the de Broglie wavelength — the quantum wavelength associated with any particle:
+
+{{< include ../../../_includes/equations/de-broglie.qmd >}}
+
+{{< eqrefcard de-broglie >}}
+
+For a particle with thermal energy $\frac{1}{2}mv^2 \sim \frac{3}{2}k_BT$, the typical velocity is $v \sim \sqrt{3k_BT/m}$, and the de Broglie wavelength becomes:
+
+$$
+\lambda_\text{dB} \sim \frac{h}{\sqrt{3mk_BT}}
+$$
+
+At the Sun's core ($T_c \sim 1.5 \times 10^7~\text{K}$), the de Broglie wavelength of a proton is:
+
+$$
+\lambda_\text{dB} \sim \frac{6.63 \times 10^{-27}~\text{erg}\cdot\text{s}}{\sqrt{3 \times 1.67 \times 10^{-24}~\text{g} \times 1.38 \times 10^{-16}~\text{erg}/\text{K} \times 1.5 \times 10^7~\text{K}}} \sim 3 \times 10^{-10}~\text{cm}
+$$
+
+The average interparticle spacing in the solar core is:
+
+$$
+d \sim n^{-1/3} \sim \left(\frac{\rho}{m_p}\right)^{-1/3} \sim \left(\frac{150~\text{g}/\text{cm}^3}{1.67 \times 10^{-24}~\text{g}}\right)^{-1/3} \sim 2 \times 10^{-9}~\text{cm}
+$$
+
+So in the Sun, $\lambda_\text{dB} \sim 3 \times 10^{-10}~\text{cm} \ll d \sim 2 \times 10^{-9}~\text{cm}$ — the quantum wavelength is about $7\times$ smaller than the particle spacing. The particles "fit" comfortably as classical objects. Quantum mechanics plays a role in nuclear reactions (tunneling), but the *gas behavior* is classical.
+
+This proton calculation is an **intuition check**, not the actual brown-dwarf support mechanism. Brown dwarfs are supported by **electron degeneracy pressure**. Because electrons are much lighter than protons, they acquire much larger quantum wavelengths and become degenerate first.
+
+### When Quantum Effects Take Over
+
+Now imagine a lower-mass object — say $0.05\,M_\odot$ — trying to contract toward fusion ignition. As it contracts:
+
+- $\rho$ increases, so the interparticle spacing $d \propto \rho^{-1/3}$ *decreases*
+- $T$ increases (virial theorem), so $\lambda_\text{dB} \propto T^{-1/2}$ *decreases* — but more slowly than $d$
+
+Eventually, the **electron** de Broglie wavelength becomes comparable to the electron spacing. At that point, the gas is no longer classical. Electron wavefunctions overlap, and quantum mechanics fundamentally changes the gas's behavior.
+
+**The critical condition:**
+
+$$
+\lambda_{\text{dB},e} \sim n_e^{-1/3}
+$$
+
+When this condition is reached, the electrons become **degenerate** — a state where quantum mechanical effects dominate the pressure. We'll explore degeneracy pressure fully in Reading 8, but the key insight is this: *degenerate matter resists further compression even without any thermal energy.* Quantum mechanics generates pressure at zero temperature.
+
+::: {.callout-tip}
+## Check Yourself
+
+In the Sun's core, we found $\lambda_\text{dB}/d \sim 1/7$. Why does this ratio tell us the solar core is safely classical? What would happen if a star contracted enough that $\lambda_\text{dB}/d \sim 1$?
+
+::: {.callout-note collapse="true"}
+## Solution
+
+When $\lambda_\text{dB} \ll d$, each particle's wavefunction is much smaller than the space between particles — the particles behave as localized, classical objects that don't "know" about each other's quantum states. This is the regime where the ideal gas law ($P = nk_BT$) works perfectly.
+
+When $\lambda_\text{dB} \sim d$, the wavefunctions overlap. The particles can no longer be treated as independent classical objects. Quantum mechanics — specifically the **Pauli exclusion principle** (Reading 8) — demands that no two identical fermions (electrons, protons) can occupy the same quantum state. This generates a new kind of pressure (**degeneracy pressure**) that resists further compression, even at zero temperature. The ideal gas law breaks down and must be replaced by quantum statistics.
+:::
+:::
+
+---
+
+## Part 2: The Heisenberg Uncertainty Principle
+
+### Confinement Creates Momentum
+
+The de Broglie wavelength argument tells us *when* quantum effects matter. But *why* does confining particles generate pressure? The answer is one of the deepest results in quantum mechanics: the **Heisenberg uncertainty principle**.
+
+{{< include ../../../_includes/equations/heisenberg.qmd >}}
+
+{{< eqrefcard heisenberg >}}
+
+where $\Delta x$ is the uncertainty in position, $\Delta p$ is the uncertainty in momentum, and $\hbar = h/(2\pi) = 1.055 \times 10^{-27}~\text{erg}\cdot\text{s}$ is the reduced Planck constant.
+
+**What this says:** You cannot simultaneously know a particle's exact position and exact momentum. The more precisely you confine a particle (smaller $\Delta x$), the larger its momentum uncertainty ($\Delta p$) must be — and therefore the faster the particle moves.
+
+This is not a limitation of measurement technology. It is a fundamental property of nature. A particle confined to a region of size $\Delta x$ *must have* a minimum momentum of:
+
+$$
+p_\text{min} \sim \frac{\hbar}{\Delta x}
+$$
+
+And therefore a minimum kinetic energy:
+
+$$
+E_\text{min} \sim \frac{p_\text{min}^2}{2m} \sim \frac{\hbar^2}{2m(\Delta x)^2}
+$$
+
+### Why This Matters for Stars
+
+In a dense stellar core, the interparticle spacing $d \sim n^{-1/3}$ sets the confinement scale. If you try to squeeze particles closer together ($\Delta x \sim d$ decreasing), the uncertainty principle forces their momenta up:
+
+$$
+p \sim \frac{\hbar}{d} \sim \hbar\,n^{1/3}
+$$
+
+These fast-moving particles exert pressure — *even if the temperature is zero.* This is **degeneracy pressure**, a fundamentally quantum mechanical effect with no classical analogue.
+
+The critical insight: **gravity tries to compress the star, but compression creates quantum momentum, which creates pressure that resists further compression.** There's a natural equilibrium point where gravitational squeezing balances quantum resistance.
+
+::: {.callout-note title="Connection: Building the QM Toolkit"}
+We are building quantum mechanics step by step across Module 3:
+
+| Reading | QM Concept | Stellar Application |
+|:--------|:-----------|:-------------------|
+| R3 (Fusion) | Wave-particle duality, de Broglie $\lambda$ | Tunneling through the Coulomb barrier |
+| **R6 (This reading)** | **Heisenberg uncertainty principle** | **Minimum stellar mass; confinement → momentum** |
+| R8 (Chandrasekhar) | Pauli exclusion principle | Degeneracy pressure; maximum white dwarf mass |
+
+Each reading builds on the previous one. By Reading 8, you'll have the three QM pillars needed to understand the endpoints of stellar evolution.
+:::
+
+### Worked Example: Zero-Point Energy of a Confined Electron
+
+Suppose an electron is confined to a box of size $\Delta x = 10^{-8}~\text{cm}$ (roughly atomic scale, $\sim 1~\text{\AA}$). What is its minimum kinetic energy?
+
+From the uncertainty principle:
+
+$$
+p_\text{min} \sim \frac{\hbar}{\Delta x} = \frac{1.055 \times 10^{-27}~\text{erg}\cdot\text{s}}{10^{-8}~\text{cm}} = 1.055 \times 10^{-19}~\text{g}\,\text{cm}/\text{s}
+$$
+
+$$
+E_\text{min} \sim \frac{p_\text{min}^2}{2m_e} = \frac{(1.055 \times 10^{-19})^2}{2 \times 9.11 \times 10^{-28}} \sim 6 \times 10^{-12}~\text{erg} \sim 4~\text{eV}
+$$
+
+This is the **zero-point energy** — the minimum kinetic energy an electron must have when confined to atomic scales. It's comparable to the binding energy of hydrogen ($13.6~\text{eV}$), which is not a coincidence: the size of atoms is *set* by the balance between Coulomb attraction (pulling the electron inward) and quantum confinement energy (resisting compression). The same physics operates in white dwarfs — but at much higher densities, with far more dramatic consequences.
+
+::: {.callout-tip}
+## Check Yourself
+
+If you squeeze the box to half its size ($\Delta x \rightarrow \Delta x/2$), what happens to the minimum kinetic energy?
+
+::: {.callout-note collapse="true"}
+## Solution
+
+$E_\text{min} \propto 1/(\Delta x)^2$, so halving the box size *quadruples* the kinetic energy:
+
+$$
+E_\text{min}' = \frac{\hbar^2}{2m(\Delta x/2)^2} = 4 \times \frac{\hbar^2}{2m(\Delta x)^2} = 4\,E_\text{min}
+$$
+
+This is why degeneracy pressure rises so steeply with density — squeezing particles closer gives them much more momentum. And it's why quantum mechanics can halt gravitational collapse: the more gravity compresses, the harder quantum pressure pushes back.
+:::
+:::
+
+---
+
+## Part 3: The Minimum Stellar Mass
+
+### The Physical Argument
+
+For a collapsing gas cloud to become a hydrogen-burning star, its core must reach $T_c \sim 3 \times 10^6~\text{K}$ — the minimum temperature for pp-chain fusion to sustain energy losses. (This is lower than the Sun's $15~\text{MK}$ because fusion rates have a steep temperature dependence — even a slow trickle of fusion at $3~\text{MK}$ can sustain a very low-luminosity star.)
+
+As the protostar contracts, the virial theorem tells us the core heats up: $T_c \propto M/R$. But contraction also increases the density, and eventually the electrons become degenerate. Once that happens, the gas behaves differently:
+
+1. **Pressure no longer depends on temperature.** Degeneracy pressure is set by density, not $T$. So adding heat doesn't increase pressure — the star can't expand in response to heating.
+2. **Contraction halts.** Degeneracy pressure balances gravity at a specific radius, regardless of temperature.
+3. **The core may never get hot enough.** If degeneracy kicks in *before* the core reaches $\sim 3 \times 10^6~\text{K}$, the star is stuck — it has a cold, dense, quantum-pressure-supported core that will never achieve sustained fusion.
+
+### The Critical Mass
+
+The hydrogen-burning minimum mass (HBMM) depends on when degeneracy sets in relative to the fusion ignition temperature. Detailed calculations give:
+
+{{< include ../../../_includes/equations/hydrogen-burning-minimum.qmd >}}
+
+{{< eqrefcard hydrogen-burning-minimum >}}
+
+Objects below this mass are called **brown dwarfs** — failed stars that glow faintly from residual gravitational contraction energy (Kelvin-Helmholtz) and possibly brief deuterium burning, but never achieve sustained hydrogen fusion.
+
+### Why 0.08 Solar Masses?
+
+The minimum mass can be estimated by asking: at what mass does the **electron degeneracy pressure** equal the pressure needed for fusion ignition? The argument involves matching degeneracy pressure (which rises steeply with density) to the gravitational pressure needed to keep heating the core. The exact coefficient requires detailed modeling, but the scale depends on fundamental constants: quantum mechanics through $\hbar$, gravity through $G$, and microphysics through particle masses and electromagnetic interactions.
+
+**The minimum stellar mass is not a coincidence of astrophysics — it is built into the laws of physics.**
+
+::: {.callout-note title="Observable → Model → Inference" .omi}
+**Observable:** The faintest, coolest main-sequence stars have spectral type ~L0, $T_\text{eff} \sim 2{,}000~\text{K}$, and $L \sim 10^{-4}\,L_\odot$. Below this, objects cool and fade over time (brown dwarfs).
+
+**Model:** Virial theorem ($T_c \propto M/R$) + quantum degeneracy (Heisenberg uncertainty: confinement → pressure at $T = 0$).
+
+**Inference:** The boundary between stars and brown dwarfs at $\sim 0.08\,M_\odot$ marks where degeneracy halts contraction before fusion ignition. The minimum stellar mass is a prediction of quantum mechanics applied to self-gravitating gas.
+:::
+
+::: {.callout-tip}
+## Check Yourself
+
+Brown dwarfs with masses $0.013\text{–}0.08\,M_\odot$ briefly burn **deuterium** ($^2\text{H} + ^1\text{H} \rightarrow {^3\text{He}} + \gamma$) but not hydrogen. Why is the deuterium-burning threshold lower than the hydrogen-burning threshold?
+
+::: {.callout-note collapse="true"}
+## Solution
+
+Deuterium fusion has a lower Coulomb barrier than the pp-chain's first step. In the pp-chain, two protons must fuse — both are positively charged, and one must convert to a neutron via the weak force (the slowest step). In deuterium burning, a proton fuses with a deuteron (one proton + one neutron). The Coulomb barrier is the same charge ($Z_1 Z_2 = 1$), but the reduced mass is different and the strong force reaction ($^2\text{H} + p$) doesn't require the weak force — it's purely an electromagnetic + strong interaction.
+
+The deuterium-burning threshold is $T \sim 10^6~\text{K}$ vs. $\sim 3 \times 10^6~\text{K}$ for sustained hydrogen burning. Objects between $\sim 13\,M_\text{Jupiter}$ ($0.013\,M_\odot$) and $\sim 80\,M_\text{Jupiter}$ ($0.08\,M_\odot$) can burn their initial deuterium supply (which is tiny — $\sim 2 \times 10^{-5}$ by mass from Big Bang nucleosynthesis) but can't sustain pp-chain hydrogen fusion.
+:::
+:::
+
+::: {.callout-note collapse="true" title="Enrichment: Brown Dwarfs — The 'Failed Stars'"}
+
+Brown dwarfs occupy a fascinating middle ground between stars and giant planets:
+
+| Property | Brown Dwarf ($0.05\,M_\odot$) | Low-mass Star ($0.1\,M_\odot$) | Jupiter |
+|:---------|:------------------------------|:-------------------------------|:--------|
+| Core H fusion? | No | Yes | No |
+| D burning? | Yes (briefly) | Yes (early) | No |
+| Energy source | Gravitational contraction | Nuclear fusion | Gravitational contraction |
+| Luminosity | $\sim 10^{-5}\,L_\odot$ (fading) | $\sim 10^{-3}\,L_\odot$ (stable) | $\sim 10^{-9}\,L_\odot$ |
+| $T_\text{eff}$ | $\sim 1{,}000~\text{K}$ (cooling) | $\sim 3{,}000~\text{K}$ (stable) | $\sim 130~\text{K}$ |
+| Fate | Cools forever | Burns for trillions of yr | Cools forever |
+
+Brown dwarfs were predicted theoretically in the 1960s but not discovered until 1995 (Gliese 229B, detected in the infrared). They are extremely common — possibly as numerous as stars — but very difficult to detect because they are so faint. Modern infrared surveys (e.g., the James Webb Space Telescope) have revealed that brown dwarfs bridge the gap between the smallest stars and the largest planets, with some brown dwarfs having atmospheres with clouds of iron and silicate droplets.
+:::
+
+---
+
+## Part 4: The Maximum Stellar Mass
+
+::: {.callout-important}
+## The Big Idea
+
+**The maximum stellar mass is set by radiation pressure, not by a failure of gravity.** Above roughly $\sim 100\text{–}150\,M_\odot$, stars approach the Eddington regime, where radiation pressure and powerful winds make further stable growth difficult.
+:::
+
+{{< fig eta-carinae-hubble >}}
+
+### The Eddington Limit Revisited
+
+In Reading 4, we introduced the Eddington luminosity — the maximum luminosity a star can sustain in hydrostatic equilibrium:
+
+{{< include ../../../_includes/equations/eddington-luminosity.qmd >}}
+
+{{< eqrefcard eddington-luminosity >}}
+
+For electron-scattering opacity ($\kappa \approx 0.34~\text{cm}^2/\text{g}$), this gives:
+
+$$
+\frac{L_\text{Edd}}{L_\odot} \approx 3.8 \times 10^4 \left(\frac{M}{M_\odot}\right)
+$$
+
+The Eddington luminosity scales **linearly** with mass: $L_\text{Edd} \propto M$.
+
+### Why There's a Maximum Mass
+
+For moderate-mass main-sequence stars, the luminosity follows the mass-luminosity relation from Reading 5:
+
+{{< include ../../../_includes/equations/mass-luminosity.qmd >}}
+
+{{< eqrefcard mass-luminosity >}}
+
+If you **naively extrapolate** that moderate-mass trend, luminosity rises much faster than the Eddington limit:
+
+| $M/M_\odot$ | Naive $L/L_\odot$ ($\propto M^{3.5}$) | $L_\text{Edd}/L_\odot$ ($\propto M$) | Naive $L/L_\text{Edd}$ |
+|:--------:|:--------:|:--------:|:--------:|
+| 1 | 1 | $3.8 \times 10^4$ | $2.6 \times 10^{-5}$ |
+| 10 | $3{,}200$ | $3.8 \times 10^5$ | $8.4 \times 10^{-3}$ |
+| 50 | $8.8 \times 10^5$ | $1.9 \times 10^6$ | 0.46 |
+| 100 | $10^7$ | $3.8 \times 10^6$ | 2.6 |
+
+This table is useful because it shows **why an upper limit appears at all**. But it is not the full answer. At the highest masses, the mass-luminosity relation flattens, radiation pressure reshapes the interior, and the star responds by driving powerful **radiation-driven winds** that strip mass from the surface.
+
+### Finding the Maximum Mass
+
+The crossover occurs when $L = L_\text{Edd}$:
+
+$$
+\left(\frac{M}{M_\odot}\right)^{3.5} = 3.8 \times 10^4 \left(\frac{M}{M_\odot}\right)
+$$
+
+$$
+\left(\frac{M}{M_\odot}\right)^{2.5} = 3.8 \times 10^4
+$$
+
+$$
+\frac{M}{M_\odot} = (3.8 \times 10^4)^{1/2.5} = (3.8 \times 10^4)^{0.4} \approx 100
+$$
+
+So a naive crossover estimate gives $M_\text{max} \sim 100\,M_\odot$. In practice, stars up to $\sim 150\text{–}200\,M_\odot$ have been observed (for example R136a1 in the Large Magellanic Cloud, with a birth mass near $170\,M_\odot$), because the mass-luminosity relation flattens at very high masses and the Eddington limit is not an absolute wall. The useful lesson is not that stars instantly explode at $100\,M_\odot$, but that radiation increasingly constrains the structure and drives strong mass loss.
+
+::: {.callout-tip}
+## Check Yourself
+
+The most massive known star, R136a1, has a current mass of $\sim 170\,M_\odot$ and a luminosity of $\sim 4 \times 10^6\,L_\odot$. Calculate its Eddington ratio $L/L_\text{Edd}$ and explain why it hasn't been blown apart.
+
+::: {.callout-note collapse="true"}
+## Solution
+
+$$
+L_\text{Edd} = 3.8 \times 10^4 \times 170\,L_\odot = 6.5 \times 10^6\,L_\odot
+$$
+
+$$
+\frac{L}{L_\text{Edd}} = \frac{4 \times 10^6}{6.5 \times 10^6} \approx 0.6
+$$
+
+R136a1 is at $\sim 60\%$ of its Eddington limit — close, but not exceeding it. This is consistent with the star surviving, though it experiences strong radiation-driven mass loss. Its birth mass was likely higher ($\sim 250\text{–}300\,M_\odot$), with decades of mass loss having already stripped substantial material. The key subtlety: the simple $L \propto M^{3.5}$ relation overestimates luminosities at very high masses. The actual mass-luminosity relation flattens (closer to $L \propto M^{1\text{–}2}$) near the Eddington limit, because radiation pressure modifies the star's internal structure.
+:::
+:::
+
+### Why the Maximum Mass is Also Set by Constants
+
+Just as the minimum mass depends on fundamental constants, so does the maximum mass. The Eddington limit comes from balancing radiation force ($L\kappa/(4\pi r^2 c)$) against gravity ($GM/r^2$), so the upper-mass scale depends on gravity through $G$, on relativity through $c$, and on opacity physics through $\kappa$ (which in hot stars is tied to electron scattering).
+
+::: {.callout-note collapse="true" title="Enrichment: Beyond the Eddington Limit — Pair-Instability Supernovae"}
+
+Very massive stars ($M \gtrsim 130\,M_\odot$ at the end of their lives) face an even more dramatic fate. In their extremely hot cores ($T \gtrsim 10^9~\text{K}$), photons become energetic enough to spontaneously create electron-positron pairs ($\gamma \rightarrow e^+ + e^-$). This process *removes* photons that were providing radiation pressure support. The core partially collapses, triggers explosive oxygen and silicon burning, and the resulting thermonuclear explosion can be powerful enough to completely obliterate the star — leaving *no remnant at all.*
+
+These **pair-instability supernovae** are predicted to be among the most energetic explosions in the universe, outshining entire galaxies for weeks. They may have been common among the first generation of stars (which formed from pristine hydrogen and helium, with no metals to increase opacity and drive winds). Several candidate events have been observed (e.g., SN 2007bi), though confirmation remains challenging.
+
+This is another case where quantum mechanics (pair creation from $E = mc^2$) has dramatic astrophysical consequences — a theme that runs through all of Module 3.
+:::
+
+---
+
+## Part 5: The Stellar Mass Range
+
+{{< fig mass-limits-spectrum >}}
+
+### Nature's Sweet Spot
+
+Putting the minimum and maximum together:
+
+$$
+0.08\,M_\odot \lesssim M_\star \lesssim 150\,M_\odot
+$$
+
+This is a factor of $\sim 2{,}000$ in mass — which sounds like a lot, but consider:
+
+- The range of planetary masses spans a factor of $\sim 6{,}000$ (Mercury to Jupiter)
+- The range of galaxy masses spans a factor of $\sim 10^{6}$
+- The range of atomic masses spans a factor of $\sim 240$
+
+Stars occupy a remarkably narrow mass range, and both boundaries are set by fundamental physics:
+
+| Boundary | Physics | Mechanism |
+|:---------|:--------|:----------|
+| **Minimum** ($\sim 0.08\,M_\odot$) | Quantum mechanics | Degeneracy halts contraction before fusion ignition |
+| **Maximum** ($\sim 150\,M_\odot$) | Radiation pressure | Stars approach the Eddington regime, drive strong winds, and struggle to grow further |
+
+### The Mass Function: How Many Stars of Each Mass?
+
+Not all stellar masses are equally likely. The **initial mass function (IMF)** — the distribution of birth masses — is observed to follow approximately:
+
+$$
+\frac{dN}{dM} \propto M^{-2.35}
+$$
+
+This is the **Salpeter IMF** (Edwin Salpeter, 1955), and it works best as the **high-mass slope**. The full IMF flattens at lower masses, but the qualitative lesson is the same: **low-mass stars vastly outnumber high-mass stars.**
+
+| Mass range | Birth abundance |
+|:-----------|:----------------|
+| Low-mass red dwarfs | Very common |
+| Solar-mass stars | Common |
+| Massive O/B stars | Rare |
+| Extreme $> 50\,M_\odot$ stars | Very rare |
+
+The universe overwhelmingly favors making small stars — which, combined with their long lifetimes, means the most common stellar residents of the galaxy are faint, cool red dwarfs.
+
+::: {.callout-tip}
+## Check Yourself
+
+Using the Salpeter IMF ($dN/dM \propto M^{-2.35}$), estimate how many $10\,M_\odot$ stars form for every one $100\,M_\odot$ star.
+
+::: {.callout-note collapse="true"}
+## Solution
+
+The ratio of stars at two different masses is:
+
+$$
+\frac{N(10\,M_\odot)}{N(100\,M_\odot)} \sim \left(\frac{10}{100}\right)^{-2.35} = 10^{2.35} \approx 220
+$$
+
+For every star born at $100\,M_\odot$, roughly $220$ stars are born at $10\,M_\odot$. This steep falloff explains why O and B stars are so rare despite being the most luminous and dramatic — the mass function strongly disfavors them.
+:::
+:::
+
+---
+
+## Reference Tables
+
+### Mass Limits at a Glance
+
+| Quantity | Value | Physical Origin |
+|:---------|:------|:---------------|
+| Minimum H-burning mass | $\sim 0.08\,M_\odot$ ($\sim 80\,M_\text{Jupiter}$) | Quantum degeneracy halts contraction |
+| Deuterium-burning limit | $\sim 0.013\,M_\odot$ ($\sim 13\,M_\text{Jupiter}$) | Lower Coulomb barrier for D+H |
+| Eddington luminosity | $L_\text{Edd} \approx 3.8 \times 10^4 (M/M_\odot)\,L_\odot$ | Radiation force = gravity |
+| Maximum stellar mass | $\sim 100\text{–}150\,M_\odot$ | Radiation pressure and winds become dominant near the Eddington regime |
+| Salpeter IMF slope | $dN/dM \propto M^{-2.35}$ | Empirical (origin debated) |
+
+### Symbol Legend
+
+| Symbol | Meaning | CGS Units |
+|:------:|:--------|:----------|
+| $\Delta x$ | Position uncertainty | cm |
+| $\Delta p$ | Momentum uncertainty | $\text{g}\,\text{cm}/\text{s}$ |
+| $\hbar$ | Reduced Planck constant ($h/2\pi$) | $1.055 \times 10^{-27}~\text{erg}\cdot\text{s}$ |
+| $\alpha_\text{EM}$ | Fine-structure constant ($e^2/\hbar c$) | $1/137$ (dimensionless) |
+| $\sigma_T$ | Thomson cross-section | $6.65 \times 10^{-25}~\text{cm}^2$ |
+| $d$ | Interparticle spacing ($\sim n^{-1/3}$) | cm |
+| $\lambda_\text{dB}$ | de Broglie wavelength | cm |
+
+---
+
+## Summary: Gravity's Playground Has Walls
+
+The most important ideas from this reading:
+
+1. **Quantum mechanics sets the minimum stellar mass** — below $\sim 0.08\,M_\odot$, **electron degeneracy** halts contraction before the core reaches fusion temperatures. Objects below this limit are brown dwarfs: slowly cooling, never truly shining.
+
+2. **The Heisenberg uncertainty principle** ($\Delta x \cdot \Delta p \geq \hbar/2$) means confining particles to small spaces gives them momentum — and therefore pressure. This is the origin of degeneracy pressure, which we'll explore fully in Reading 8.
+
+3. **Radiation pressure sets the maximum stellar mass** — above $\sim 100\text{–}150\,M_\odot$, stars approach the Eddington regime, the simple $L \propto M^{3.5}$ scaling breaks down, and strong winds make further growth difficult.
+
+4. **Both limits are built from fundamental constants** — the mass range of stars is not accidental but encoded in $\hbar$, $c$, $G$, and $m_p$. The universe permits stars only in a narrow sweet spot where quantum mechanics allows fusion and radiation allows stability.
+
+::: {.callout-note title="Gravity Scoreboard — Reading 6"}
+
+```
+┌──────────────────────────────────────────────────────┐
+│  Gravity Scoreboard — Reading 6                      │
+├──────────────────────────────────────────────────────┤
+│  Attacker:    Gravity                                │
+│  Defender:    Thermal pressure (nuclear fusion)       │
+│  Referee:     Quantum mechanics + radiation pressure  │
+│  Status:      CONSTRAINED. Gravity can only build    │
+│               stars within 0.08–150 M☉.             │
+│               Too small → electron degeneracy        │
+│               prevents fusion. Too large →           │
+│               radiation and winds limit growth.      │
+│                                                      │
+│  New weapon:  Degeneracy pressure — quantum          │
+│               momentum from confinement. Works even  │
+│               at T = 0. We've met it briefly, but    │
+│               it will become gravity's final         │
+│               opponent (Readings 7-8).               │
+│  Takeaway:    The lower limit is set by electron     │
+│               degeneracy; the upper limit by the     │
+│               Eddington regime and mass loss.        │
+│  Next:        What happens when hydrogen runs out?   │
+│               → Reading 7                            │
+└──────────────────────────────────────────────────────┘
+```
+
+We've now mapped the boundaries of the main sequence. But what happens when a star within that range *runs out of fuel?* Fusion has been gravity's opponent for billions of years. When hydrogen is exhausted, the star must find a new defender — or gravity wins. In Reading 7, we follow low-mass stars through their dramatic death: the red giant phase, helium burning, planetary nebulae, and the white dwarf graveyard.
+:::
+
+::: {.callout-tip}
+## Looking Ahead
+
+When hydrogen fusion ends, the core contracts (virial theorem!), heats up, and ignites helium burning via the triple-alpha process. But the path is counterintuitive — the star simultaneously *swells* to $100\times$ its original size while its core *shrinks* to Earth-sized. In Reading 7, we'll follow low-mass stars through this dramatic transformation and meet the white dwarf — a dead stellar core held up by the very degeneracy pressure we introduced in this reading.
+:::
