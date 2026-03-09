@@ -637,6 +637,227 @@ figures:
     alt: "Chart showing white dwarf, neutron star, and black hole formation by mass"
     module: 3
 
+  force-gravity:
+    path: /assets/images/module-03/Gravitational_Final-NASA.png
+    caption: "**Gravity** — the weakest force, but infinite in range and always attractive. Mass curves spacetime, creating the 'dents' that draw objects together."
+    alt: "NASA infographic showing Earth and Moon creating dents in a spacetime grid, illustrating how mass warps the fabric of spacetime"
+    credit: "NASA"
+    module: 3
+
+  force-electromagnetic:
+    path: /assets/images/module-03/Electromagnetic_Force_Final-NASA.png
+    caption: "**Electromagnetic force** — holds atoms together and creates the Coulomb barrier that resists nuclear fusion in stellar cores."
+    alt: "NASA infographic showing a hydrogen atom with a proton and electron bound by the electromagnetic force"
+    credit: "NASA"
+    module: 3
+
+  force-strong:
+    path: /assets/images/module-03/Strong_Force_Final-NASA.png
+    caption: "**Strong nuclear force** — the strongest force in nature, but acts only at nuclear distances (~10⁻¹³ cm). It binds quarks into protons and neutrons, and binds nucleons into nuclei."
+    alt: "NASA infographic showing a proton and neutron composed of up and down quarks held together by the strong nuclear force"
+    credit: "NASA"
+    module: 3
+
+  force-weak:
+    path: /assets/images/module-03/Weak_Force_Final-NASA.png
+    caption: "**Weak nuclear force** — enables transmutation between particle types. In beta decay, a down quark converts to an up quark, turning a neutron into a proton (or vice versa). This is the bottleneck reaction in the pp-chain."
+    alt: "NASA infographic showing the weak force converting an up quark to a down quark inside a proton, transforming it into a neutron via beta decay"
+    credit: "NASA"
+    module: 3
+
+  warped-spacetime-bh:
+    path: /assets/images/module-03/webb-STScI-blackholes-warped-spacetime.png
+    caption: "Artist's concept of a black hole with an accretion disk. Matter spiraling inward is heated to extreme temperatures, glowing brightly. The black hole's gravity warps the surrounding spacetime so strongly that even light paths are bent — the glowing ring behind the black hole is visible above and below because spacetime curves light around it."
+    alt: "Artist rendering of a supermassive black hole surrounded by a bright orange accretion disk, with light paths visibly warped by extreme spacetime curvature near the event horizon"
+    credit: "NASA/STScI"
+    module: 3
+
+  # ── Generated figures (assets/scripts/make_module03_figures.py) ──
+
+  timescale-hierarchy:
+    path: /assets/images/module-03/timescale-hierarchy.png
+    caption: "**The three stellar timescales** span enormous ranges: the dynamical timescale (~50 min) sets how fast gravity acts, the Kelvin-Helmholtz timescale (~15 Myr) sets how long thermal energy lasts, and the nuclear timescale (~10 Gyr) sets the main-sequence lifetime. Each is separated by many orders of magnitude."
+    alt: "Logarithmic bar chart comparing the Sun's three fundamental timescales: dynamical (50 minutes), thermal Kelvin-Helmholtz (15 million years), and nuclear (10 billion years), separated by factors of 10^11 and 700 respectively"
+    credit: "ASTR 201 (generated)"
+    module: 3
+
+  binding-energy-curve:
+    path: /assets/images/module-03/binding-energy-curve.png
+    caption: "**Binding energy per nucleon** peaks at iron-56 — the most stable nucleus. Fusion of elements lighter than iron (left, cyan) releases energy by climbing the curve. Fission of elements heavier than iron (right, purple) releases energy by descending it. Iron is nuclear ash: no energy can be extracted by either process."
+    alt: "Plot of binding energy per nucleon in MeV versus mass number A, showing key isotopes from hydrogen to uranium. The curve rises steeply through helium-4, carbon-12, and oxygen-16, peaks near iron-56 at 8.8 MeV, then gradually declines. Colored regions indicate nucleosynthesis stages: pp-chain, helium burning, and successive burning in massive stars."
+    credit: "ASTR 201 (generated)"
+    module: 3
+
+  random-walk:
+    path: /assets/images/module-03/random-walk.png
+    caption: "**A photon's random walk** through the solar interior. Left: a simulated 2,000-step random walk shows how scattering produces a tangled path. The net displacement is only √N × ℓ — far less than the total path length. Right: the real numbers for the Sun — ~10²⁴ scatterings, ~170,000 years from core to surface, versus 2.3 seconds in a straight line."
+    alt: "Two-panel figure. Left panel shows a colorful simulated random walk of 2000 steps with start point, end point, and net displacement arrow. Right panel lists key numbers: mean free path 1 cm, 10^24 scatterings, diffusion time 170,000 years, straight-line time 2.3 seconds."
+    credit: "ASTR 201 (generated)"
+    module: 3
+
+  stellar-structure-zones:
+    path: /assets/images/module-03/stellar-structure-zones.png
+    caption: "**The structural reversal** between low-mass and high-mass stars. Low-mass stars (like the Sun) have radiative cores and convective envelopes. High-mass stars have the opposite: convective cores and radiative envelopes. The transition occurs near ~1.5 M☉, driven by the temperature sensitivity of the CNO cycle."
+    alt: "Side-by-side cross-sections of a low-mass star (radiative core, convective envelope) and a high-mass star (convective core, radiative envelope), with transport mechanisms indicated by arrows and circular patterns"
+    credit: "ASTR 201 (generated)"
+    module: 3
+
+  mass-limits-spectrum:
+    path: /assets/images/module-03/mass-limits-spectrum.png
+    caption: "**The stellar mass spectrum** with its quantum floor and radiation ceiling. Below ~0.08 M☉, degeneracy pressure halts contraction before the core reaches fusion temperature — these are brown dwarfs. Above ~150 M☉, radiation pressure exceeds gravity (Eddington limit) and tears the star apart. The IMF (Salpeter slope dN/dM ∝ M⁻²·³⁵) shows that low-mass stars vastly outnumber high-mass ones."
+    alt: "Plot showing the initial mass function as relative number versus log stellar mass, with vertical dashed lines marking the hydrogen-burning minimum at 0.08 solar masses and the Eddington limit at 150 solar masses. Brown dwarf and hydrogen-burning star regions are shaded. Key objects (Jupiter, M dwarf, Sun, Sirius, Spica) are marked."
+    credit: "ASTR 201 (generated)"
+    module: 3
+
+  onion-shell-burning:
+    path: /assets/images/module-03/onion-shell-burning.png
+    caption: "**Onion-shell structure** of a 25 M☉ star moments before core collapse. Each concentric shell burns a different fuel at a higher temperature, on a dramatically shorter timescale. Hydrogen burning lasts millions of years; silicon burning lasts about one day. The inert iron core at the center is nuclear ash — when it exceeds the Chandrasekhar limit, collapse is inevitable."
+    alt: "Concentric colored circles representing burning shells of a massive star from outside in: hydrogen (blue), helium (cyan), carbon (green), neon (yellow), oxygen (orange), silicon (red), and iron core (dark red). Each shell is labeled with fuel, temperature, and burning duration."
+    credit: "ASTR 201 (generated)"
+    module: 3
+
+  wd-mass-radius:
+    path: /assets/images/module-03/wd-mass-radius.png
+    caption: "**White dwarf mass-radius relation.** More massive white dwarfs are *smaller* — the counter-intuitive result of R ∝ M⁻¹/³ from degeneracy pressure. The full relativistic curve (solid) plunges to R = 0 at the Chandrasekhar limit (1.44 M☉), where electron degeneracy can no longer support the star. Beyond this mass, gravity wins."
+    alt: "Plot of white dwarf radius in Earth radii versus mass in solar masses, showing non-relativistic power law R proportional to M^(-1/3) as dashed line and full relativistic curve dropping to zero radius at the Chandrasekhar limit of 1.44 solar masses. Sirius B and a typical white dwarf are marked."
+    credit: "ASTR 201 (generated)"
+    module: 3
+
+  compact-object-scale:
+    path: /assets/images/module-03/compact-object-scale.png
+    caption: "**Size comparison of compact objects.** Earth and a typical white dwarf are similar in size (~6,000 km radius), but the white dwarf packs ~0.6 M☉ into that volume. A neutron star is ~600× smaller (~10 km radius) with ~1.4 M☉. A stellar-mass black hole's Schwarzschild radius is comparable to the neutron star — but it has no surface at all."
+    alt: "Four objects shown to approximate scale: Earth (6,371 km), white dwarf (6,000 km, 0.6 solar masses), neutron star (10 km, 1.4 solar masses), and black hole (Schwarzschild radius 8.9 km, 3 solar masses). Densities labeled for each."
+    credit: "ASTR 201 (generated)"
+    module: 3
+
+  # ── Existing images added to registry ──────────────────────────
+
+  # R3: Nuclear Fusion
+  standard-model-particles:
+    path: /assets/images/module-03/DOE-standard-model.png
+    caption: "**The Standard Model of particle physics** organizes all known fundamental particles. Quarks (orange) make up protons and neutrons via the strong force. Leptons (green) include the electron and three types of neutrino. Bosons (blue) carry the forces: photons (EM), gluons (strong), W/Z bosons (weak), and the Higgs. Stellar physics uses all four forces — gravity is not included in the Standard Model because it is described by general relativity."
+    alt: "Circular diagram of the Standard Model showing quarks (up, down, charm, strange, top, bottom) in orange, leptons (electron, muon, tau, and their neutrinos) in green, force-carrying bosons (photon, gluon, W, Z) in blue, and the Higgs boson in purple at center."
+    credit: "DOE/Fermilab"
+    module: 3
+
+  # R6: Mass Limits
+  eta-carinae-hubble:
+    path: /assets/images/module-03/Hubble_EtaCarinae.jpeg
+    caption: "**Eta Carinae** — one of the most massive and luminous stars in the Milky Way (~100–150 M☉, ~5 × 10⁶ L☉). It sits at the Eddington limit, where radiation pressure nearly overwhelms gravity. The bipolar Homunculus Nebula was ejected during the 'Great Eruption' of the 1840s, when the star briefly became the second-brightest star in the sky. This is what happens when a star pushes against the maximum mass ceiling."
+    alt: "Hubble Space Telescope image of Eta Carinae showing a brilliant central star surrounded by two large bipolar lobes of ejected gas and dust (the Homunculus Nebula), glowing in orange-white with fainter red nebulosity extending outward."
+    credit: "NASA/ESA/HST; Processing: Judy Schmidt"
+    module: 3
+
+  # R7: Low-Mass Evolution
+  hr-post-ms-tracks:
+    path: /assets/images/module-03/hrpostmainsuntrack.jpg
+    caption: "**Evolutionary tracks off the main sequence** for stars of different masses. A solar-mass star ascends the Red Giant Branch (RGB), undergoes the helium flash, moves to the Horizontal Branch (HB), climbs the Asymptotic Giant Branch (AGB), and ends as a white dwarf. More massive stars (5, 10 M☉) take wider loops through the supergiant region. The labeled phases (RGB, HB, AGB) correspond to the physical stages described in this reading."
+    alt: "HR diagram with absolute magnitude on vertical axis and color index on horizontal axis, showing evolutionary tracks for approximately 1, 5, and 10 solar mass stars. The Sun's position is marked on the main sequence. Blue arrows trace each track through labeled phases: Red Giant Branch, Horizontal Branch, Asymptotic Giant Branch, and white dwarf region."
+    module: 3
+
+  h-shell-burning-rgb:
+    path: /assets/images/module-03/hshellburningsml.jpg
+    caption: "**Hydrogen shell burning on the Red Giant Branch.** When core hydrogen is exhausted, a shell of hydrogen burns around the inert helium core. The helium ash accumulates, growing the core mass. Meanwhile, the enormous energy output from the shell drives the outer envelope to expand and cool — the star becomes a red giant. The expanded, cool, hydrogen-rich outer envelope is hundreds of times larger than the tiny burning region at its heart."
+    alt: "Cross-section diagram of a red giant star showing a small blue helium-rich core at center, a red hydrogen-burning shell surrounding it with arrows showing helium being deposited into the core, and a vastly larger expanded orange outer envelope. Labels indicate increased radiation pressure driving the expansion."
+    module: 3
+
+  agb-core-structure:
+    path: /assets/images/module-03/carbonshell_AGB.jpeg
+    caption: "**Internal structure of an AGB star** (close-up of the core region for a ~1 M☉ star). The inert carbon-oxygen core sits at the center, surrounded by a helium-burning shell, a helium layer, and an outer hydrogen-burning shell. The entire core structure fits inside a region smaller than the Earth, while the stellar envelope extends to ~1–1.5 AU. Not to scale."
+    alt: "Cutaway diagram showing the layered core of an Asymptotic Giant Branch star: a dark carbon-oxygen core at center with no fusion, surrounded by a blue helium-burning shell, a helium layer, and an outer red hydrogen-burning shell. An inset shows the full AGB star with radius labeled as approximately 1 to 1.5 AU."
+    module: 3
+
+  triple-alpha-process:
+    path: /assets/images/module-03/3Alpha_Process.png
+    caption: "**The triple-alpha process** — how stars build carbon from helium. Two ⁴He nuclei fuse to form unstable ⁸Be, which normally decays in ~10⁻¹⁶ s. But at the extreme densities and temperatures of helium burning (~10⁸ K), a third ⁴He captures onto ⁸Be before it decays, producing stable ¹²C and releasing gamma rays. Fred Hoyle predicted the nuclear resonance state that makes this reaction possible — from the mere *existence* of carbon in the universe."
+    alt: "Diagram showing the triple-alpha reaction in three steps: two helium-4 nuclei (each with 2 protons and 2 neutrons) collide to form beryllium-8, which then captures a third helium-4 to produce carbon-12 and gamma rays. Protons shown in red, neutrons in gray."
+    module: 3
+
+  # R9: High-Mass Evolution & Supernovae
+  massive-star-hr-evolution:
+    path: /assets/images/module-03/MassiveStar_Evolution_HR.jpeg
+    caption: "**Evolutionary tracks of massive stars** (9, 25, 40, and 85 M☉) on the HR diagram. All begin on the upper main sequence and evolve rightward toward lower temperatures as they become supergiants. The tracks loop back and forth as successive nuclear burning stages ignite and exhaust. The most massive stars stay at nearly constant luminosity — their cores are so hot that the luminosity is set by the Eddington limit, not by the details of nuclear burning."
+    alt: "HR diagram with dark background showing the main sequence as a luminous diagonal band from lower-right to upper-left. Colored evolutionary tracks for 9, 25, 40, and 85 solar mass stars extend rightward from the main sequence into the red supergiant region, with looping paths indicating different burning phases. The Sun is labeled near the middle of the main sequence."
+    module: 3
+
+  neutrino-loss-table:
+    path: /assets/images/module-03/NeutrinoLoss_Table.png
+    caption: "**Evolution of a 15 M☉ star** from hydrogen burning to iron core collapse. Each successive burning stage is shorter, hotter, and denser. The key column is the last one: **neutrino losses** (in solar luminosities). By carbon burning, neutrino losses exceed the photon luminosity. By silicon burning, the neutrino luminosity is ~10¹¹ L☉ — a million times brighter in neutrinos than in light. This is *why* the advanced stages are so short: the star is hemorrhaging energy through neutrinos that escape freely."
+    alt: "Table titled 'Evolution of a 15-solar-mass star' with columns for burning stage, timescale, fuel, ash, core temperature (in billions of kelvin), core density (in grams per cubic centimeter), photon luminosity (in solar units), and neutrino losses (in solar units). Timescales shrink from 11 million years for hydrogen to about 1 second for iron core collapse, while neutrino losses grow from 1,800 to greater than 3.6 times 10 to the 15 solar luminosities."
+    module: 3
+
+  neutrino-vs-nuclear-energy:
+    path: /assets/images/module-03/LnuT.png
+    caption: "**Why advanced burning stages are so short-lived.** This plot shows energy generation rate (from nuclear burning) and energy loss rate (from neutrino emission) versus core temperature. At low temperatures, nuclear energy generation exceeds neutrino losses — the star can burn steadily. But neutrino losses rise steeply with temperature. By carbon and neon burning (~0.8–1 × 10⁹ K), neutrinos carry away energy faster than nuclear reactions can generate it. The star must burn its fuel at an accelerating rate just to maintain thermal equilibrium — a losing race that ends at iron."
+    alt: "Log-log plot of energy generation and loss rates (erg per gram per second) versus core temperature (billions of kelvin). Diagonal lines show nuclear energy generation for carbon, neon, oxygen, and silicon burning. A thick curve shows neutrino loss rate rising steeply with temperature. The neutrino curve crosses the nuclear burning curves near 1 billion kelvin, indicating that beyond this temperature neutrino losses dominate."
+    module: 3
+
+  core-evolution-Tc-rhoc:
+    path: /assets/images/module-03/Tc_rhoc_25Msun.png
+    caption: "**The core's journey through burning stages**, shown as central temperature versus central density for 15 M☉ and 25 M☉ stars. Each labeled point (H, He, C, O, Si, Fe) marks the ignition of a new fuel. The track climbs steadily toward higher temperatures and densities — each new fuel demands more extreme conditions. The near-vertical jump at Fe marks core collapse, when the iron core exceeds the Chandrasekhar limit and no further nuclear burning can halt the contraction."
+    alt: "Plot of log central temperature (kelvin) versus log central density (grams per cubic centimeter) showing evolutionary tracks for 15 and 25 solar mass stars. Both tracks start at lower left during hydrogen burning and climb to upper right through helium, carbon, oxygen, silicon, and iron core collapse, with each burning stage labeled."
+    module: 3
+
+  core-collapse-sequence:
+    path: /assets/images/module-03/Core_collapse.png
+    caption: "**The six stages of core-collapse supernova** — from iron core to explosion. (a) Onion-shell structure with iron core. (b) Core collapses as iron photodisintegrates. (c) Inner core reaches nuclear density and bounces. (d) Bounce launches a shock wave (red circle), but the shock stalls. (e) Neutrino heating revives the shock. (f) Shock breaks through — supernova explosion ejects the envelope. The entire sequence from (b) to (f) takes less than one second."
+    alt: "Six-panel sequence showing core-collapse supernova stages. Panel a: onion shell structure. Panel b: inward-pointing arrows showing collapse. Panel c: continued collapse with proto-neutron star forming. Panel d: red circle showing stalled shock with outward and inward arrows. Panel e: neutrino-heated region reviving the shock. Panel f: expanding red circle showing the explosion propagating outward."
+    module: 3
+
+  sn1987a-before-after:
+    path: /assets/images/module-03/aat_sn1987a_lbl.jpeg
+    caption: "**Supernova 1987A** — before and after. Left: the bright supernova in the Large Magellanic Cloud, visible to the naked eye in February 1987. Right: the same field before the explosion, with the blue supergiant progenitor star (Sanduleak −69° 202) marked by the arrow. SN 1987A was the closest supernova observed since Kepler's supernova in 1604, and the first from which neutrinos were detected — confirming the core-collapse mechanism."
+    alt: "Side-by-side images from the Anglo-Australian Observatory. Left panel shows a very bright star (SN 1987A) dominating the field in the Large Magellanic Cloud. Right panel shows the same field before the explosion with an arrow pointing to the faint blue progenitor star."
+    credit: "Anglo-Australian Observatory"
+    module: 3
+
+  cosmic-abundances:
+    path: /assets/images/module-03/17_15_Figure_Anno.jpg
+    caption: "**Cosmic abundances** — the fingerprint of nucleosynthesis. The sawtooth pattern is not random: even-numbered elements (C, O, Ne, Mg, Si, Fe) are far more abundant than their odd-numbered neighbors because they are built by alpha capture (adding ⁴He nuclei). The iron peak near atomic number 26 marks the most stable nuclei. Elements heavier than iron are rare because making them *costs* energy rather than releasing it — they require neutron capture processes (s-process and r-process)."
+    alt: "Log-linear plot of relative abundance (atoms per hydrogen atom) versus atomic number from 1 to 50. Hydrogen and helium dominate at top. Abundances generally decrease with atomic number but show a sawtooth pattern where even-numbered elements are peaks. Labels identify hydrogen, helium, carbon, oxygen, neon, magnesium, silicon, sulfur, argon, calcium, iron, and nickel. Annotations note that even-numbered elements made by helium capture are common, and elements heavier than iron are rare because energy is required to make them."
+    credit: "Pearson Education (2017)"
+    module: 3
+
+  chandra-periodic-table-origins:
+    path: /assets/images/module-03/Chandra_PeriodicTable.jpeg
+    caption: "**Your body is stellar ash.** This periodic table is color-coded by nucleosynthesis origin: Big Bang (H, He), dying low-mass stars (C, N), exploding massive stars (O, Si, Fe), merging neutron stars (Au, Pt), and cosmic ray fission (Li, Be, B). The human body is ~73% hydrogen (Big Bang), ~16.5% oxygen (massive stars), ~9.5% carbon (low-mass stars), and ~1% everything else. Every atom heavier than hydrogen was forged inside a star."
+    alt: "Periodic table on dark background color-coded by element origin: Big Bang fusion (hydrogen and helium), dying low-mass stars (carbon, nitrogen), exploding massive stars (oxygen, silicon, iron group), merging neutron stars (gold, platinum, uranium), and exploding white dwarfs. A human silhouette at right shows body composition: 73 percent hydrogen, 16.5 percent oxygen, 9.5 percent carbon, 1 percent other elements."
+    credit: "NASA/CXC/SAO"
+    module: 3
+
+  # R10: Neutron Stars & Black Holes
+  core-collapse-neutrino-schematic:
+    path: /assets/images/module-03/TypeII_CoreCollapse_Schematic.png
+    caption: "**Anatomy of a core-collapse supernova** at ~0.5 seconds after bounce. The proto-neutron star (~40 km radius) radiates neutrinos in all directions. Within 50 km, neutrinos *cool* the material (neutrino emission dominates). Between 50–100 km, neutrinos *heat* the material (neutrino absorption dominates) — this is the 'gain region' where the stalled shock is revived. High-entropy convective plumes carry heated material outward, helping push the shock to larger radii."
+    alt: "Schematic cross-section of a core-collapse supernova showing concentric regions: a yellow proto-neutron star at center (~40 km radius), a neutrino cooling region (40–50 km) with labeled reactions, a neutrino gain/heating region (50–100 km), a stalled accretion shock, and infalling material at the outer edge. Hot neutrinos stream outward from the proto-neutron star. Entropy-driven convective plumes are shown between the gain region and the shock."
+    module: 3
+
+  ns-cross-section:
+    path: /assets/images/module-03/Neutron_star_cross_section.png
+    caption: "**Internal structure of a neutron star.** The outer crust (0.3–0.5 km) contains ions and electrons at densities of 0.3–0.5 ρ₀ (where ρ₀ ≈ 2.8 × 10¹⁴ g/cm³ is nuclear density). The inner crust (1–2 km) has neutron-rich nuclei immersed in a sea of free neutrons. The outer core (~9 km) is a neutron-proton Fermi liquid. The inner core (0–3 km) is so dense that the equation of state is unknown — it may contain exotic matter such as a quark-gluon plasma."
+    alt: "Cutaway diagram of a neutron star showing four concentric layers: a thin brown outer crust (0.3 to 0.5 km, ions and electrons), a pink inner crust (1 to 2 km, electrons, neutrons, nuclei), a light pink outer core (~9 km, neutron-proton Fermi liquid), and a central inner core (0 to 3 km, possibly quark-gluon plasma). Density labels in units of nuclear density are shown for each layer."
+    module: 3
+
+  ns-types-nasa:
+    path: /assets/images/module-03/NASA_NeutronStars.jpeg
+    caption: "**Three types of neutron stars.** Magnetars have extraordinarily strong magnetic fields (~10¹⁵ G, a trillion times Earth's). Pulsars emit beams of radiation from their magnetic poles; as the star rotates, the beams sweep across our line of sight like a lighthouse. Some neutron stars are both magnetar and pulsar. About 3,000 pulsars have been discovered, but only ~30 magnetars — they may represent a brief evolutionary phase."
+    alt: "NASA JPL infographic on dark background showing three panels: Magnetar (left) with intense magnetic field lines, Pulsar (center) with twin beams of radiation sweeping from magnetic poles misaligned with the rotation axis, and Magnetar plus Pulsar (right) combining both properties. Each panel includes a brief description and illustration."
+    credit: "NASA/JPL-Caltech"
+    module: 3
+
+  ns-mass-distribution:
+    path: /assets/images/module-03/NeutronStarDistribution_2013.jpeg
+    caption: "**Measured neutron star masses** from binary pulsar systems. Most cluster tightly around 1.3–1.5 M☉ — strikingly close to the Chandrasekhar limit of 1.4 M☉. The vertical lines mark the mean and standard deviation. The tight clustering is not a coincidence: it reflects the physics of core collapse, where the iron core mass at the moment of collapse is set by electron degeneracy and the Chandrasekhar limit. A few neutron stars have been found with masses ~2 M☉, pushing the upper limit of neutron degeneracy pressure."
+    alt: "Two-panel plot of measured neutron star masses with horizontal error bars. Top panel shows neutron star-white dwarf binary systems; bottom panel shows double neutron star systems. Most masses cluster between 1.2 and 1.5 solar masses, with vertical dashed lines indicating the mean near 1.35 solar masses. A few outliers extend to about 2 solar masses."
+    module: 3
+
+  cygnus-x1-accretion:
+    path: /assets/images/module-03/Black_hole_Cygnus_X-1.jpg
+    caption: "**Cygnus X-1** — the first strong black hole candidate. A stellar-mass black hole (~21 M☉) accretes gas from its blue supergiant companion star (HDE 226868). The infalling matter forms a swirling accretion disk heated to millions of kelvin, producing intense X-ray emission. Relativistic jets emerge perpendicular to the disk. The black hole itself is invisible — we infer its existence from the X-ray luminosity and the orbital dynamics of the companion."
+    alt: "Artist's rendering of the Cygnus X-1 system showing a large blue supergiant star on the right with gas streaming toward a black hole on the left. The gas forms a glowing orange-red accretion disk spiraling inward, with narrow blue-white jets shooting perpendicular to the disk from near the black hole."
+    credit: "NASA/CXC"
+    module: 3
+
   # ==============================================================
   # Module 4: Galaxies & Cosmology
   # ==============================================================
