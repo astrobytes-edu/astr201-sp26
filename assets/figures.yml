@@ -726,7 +726,7 @@ figures:
   timescales-vs-mass:
     path: /assets/images/module-03/timescales-vs-mass.png
     caption: "**How the three stellar clocks change with mass.** Using solar-normalized main-sequence scalings, the dynamical timescale changes only weakly, while the Kelvin-Helmholtz and nuclear timescales shrink steeply for massive stars. **What to notice:** the Sun is the anchor, but the hierarchy remains huge across the whole main sequence."
-    alt: "Dark-theme log-log plot of stellar timescale versus stellar mass in solar units, with three labeled curves for the dynamical, Kelvin-Helmholtz, and nuclear timescales, a marked Sun point, and a dashed age-of-the-universe reference line."
+    alt: "White-background log-log plot of stellar timescale versus stellar mass in solar units, with labeled curves for the dynamical, Kelvin-Helmholtz, and nuclear timescales, a marked Sun point, and a dashed age-of-the-universe reference line."
     credit: "ASTR 201 (generated)"
     module: 3
 

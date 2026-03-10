@@ -1,12 +1,12 @@
 ---
 # Design system note:
-# - Use the standard ASTR 201 Reveal backbone and module slide theme; no lecture-local styling layer.
-# - Match the established module-01/module-02/module-03 slide language: title background image, bg-muted utility blocks, standard columns, and quiz slides.
-# - Preserve the stronger content arc and progressive reveal while keeping layouts comfortably within the viewport.
+# - Full white slide canvas with direct-on-slide content: no boxed panels, no card styling, no background photos.
+# - Use a minimal editorial hierarchy: dark text, restrained teal emphasis, large result lines, and generous spacing.
+# - Keep fragments frequent so the reasoning unfolds from observation to physical model to inference.
 # Changelog:
-# - Restored the house slide style and removed the lecture-specific styling experiment.
-# - Kept the stronger clock/fuel/burn-rate/turnoff content structure and added fragments across the reasoning sequence.
-# - Split the M-dwarf worked example into setup/result slides to keep the deck usable and unclipped.
+# - Rebuilt the deck onto a white-slide lecture style and removed panel-style formatting.
+# - Reduced density on the main overflow slides and converted key results to large emphasis lines.
+# - Removed the duplicate E = mc^2 infographic and kept one cleaner fusion-budget explanation slide.
 title: "Lecture 1: The Clock Is Ticking — Stellar Ages and Lifetimes"
 subtitle: "How long do stars live, and how do we know?"
 author: "Dr. Anna Rosen"
@@ -17,17 +17,16 @@ metadata-files:
   - _metadata.yml
 format:
   revealjs:
-    smaller: true
     footer: "ASTR 201 • Module 3, Lecture 1"
     chalkboard: true
     fig-align: center
     html-math-method: mathjax
+    css: lecture-01-ages-lifetimes.css
     title-slide-attributes:
-      data-background-image: "/assets/images/common/cosmic-cliffs-jwst.png"
-      data-background-opacity: "0.45"
+      data-background-color: "#ffffff"
     pointer:
       key: "q"
-      color: "#5dbfbf"
+      color: "#2f7f78"
       pointerSize: 18
       alwaysVisible: true
     spotlight:
@@ -55,36 +54,37 @@ execute:
 ## Same Birth Date, Different Fates
 
 :::: {.columns}
-::: {.column width="58%"}
+::: {.column width="60%"}
 {{< img gaia-hr-diagram width="100%" >}}
 :::
 
-::: {.column width="42%"}
-::: {.bg-muted .p-2 .text-sm}
-**Opening puzzle**
+::: {.column width="40%"}
+One cluster.
 
-- One cluster, one birth event
-- The highest-mass stars disappear first
+One birth event.
 
+::: {.fragment}
+Why do the highest-mass stars vanish first?
+:::
+
+::: {.fragment}
 $$
 \tau_{\text{MS}} \propto M^{-2.5}
 $$
-
-What physical competition makes that steep scaling inevitable?
 :::
 :::
 ::::
 
 ::: notes
-Use the Gaia diagram as the observational anchor. Raise the puzzle, but do not solve it here.
+Open with the observational mystery, not the answer.
 :::
 
 ---
 
-## Commit to a Prediction {.quiz-question background-color="#1a1a2e"}
+## Commit to a Prediction {.quiz-question .prompt-slide}
 
-A $10\,M_\odot$ star has about $10\times$ the Sun's fuel but about
-$3000\times$ the Sun's luminosity.
+A $10\,M_\odot$ star has about $10\times$ the Sun's fuel
+but about $3000\times$ the Sun's luminosity.
 
 Its lifetime should be:
 
@@ -93,73 +93,47 @@ Its lifetime should be:
 - [about $300\times$ shorter]{.correct}
 - impossible to predict without a full stellar model
 
-::: {.fragment .mt-2 .text-center .text-sm}
+::: {.fragment .mini-note}
 Target idea: lifetime = available energy / burn rate.
 :::
 
-::: notes
-Make them commit before the formal scaling.
+---
+
+## Today’s Targets
+
+::: {.incremental}
+- explain lifetime as **fuel versus burn rate**
+- compare the **three stellar clocks**
+- use mass-luminosity scaling for **main-sequence lifetime**
+- explain why **turnoff measures cluster age**
 :::
 
 ---
 
-## Today's Targets
+## Today’s Roadmap
 
-By the end of class, you should be able to:
-
-::: {.incremental .text-sm}
-- explain stellar lifetime as **fuel versus burn rate**
-- compare the **dynamical**, **thermal**, and **nuclear** timescales
-- use mass-luminosity scaling to estimate a **main-sequence lifetime**
-- explain why the **main-sequence turnoff** measures cluster age
-:::
-
-::: notes
-Keep this brisk and readable.
-:::
-
----
-
-## Today's Roadmap {background-image="/assets/images/common/cosmic-cliffs-jwst.png" background-opacity="0.25"}
-
-::: {.bg-muted .p-2 .text-sm}
-1. **The puzzle** — one cluster, different stellar fates  
-2. **Three stellar clocks** — dynamical, thermal, nuclear  
-3. **The Kelvin problem** — why gravity alone fails  
-4. **The nuclear clock** — why massive stars die young  
-5. **The age tool** — how turnoff dates a cluster
-:::
-
-::: notes
-Use this as a quick orientation slide.
+::: {.incremental}
+1. puzzle
+2. three clocks
+3. Kelvin problem
+4. nuclear clock
+5. turnoff age tool
 :::
 
 ---
 
 ## From Measurement to Inference
 
-::: {.bg-muted .p-2 .text-sm}
 $$
-\text{Observable}
+\text{turnoff in HR diagram}
 \;\longrightarrow\;
-\text{Model}
+\text{stellar lifetime model}
 \;\longrightarrow\;
-\text{Inference}
+\text{cluster age}
 $$
-:::
 
-::: {.incremental .mt-2 .text-sm}
-- **Observable:** the turnoff in a cluster HR diagram
-- **Model:** stellar lifetime depends strongly on mass
-- **Inference:** the turnoff mass gives the cluster age
-:::
-
-::: {.fragment .mt-2 .text-center}
-Astronomy still works by **observe → model → infer**.
-:::
-
-::: notes
-Keep the course throughline explicit.
+::: {.fragment .takeaway}
+Observe → model → infer
 :::
 
 ---
@@ -170,77 +144,72 @@ Keep the course throughline explicit.
 Every Star Is a Clock
 :::
 
-::: {.fragment .mt-2}
-Its mass sets both the **fuel supply** and the **burn rate**.
+::: {.fragment .center-note}
+Mass sets the fuel supply.
 :::
 
-::: notes
-This is the conceptual hinge.
+::: {.fragment .center-note}
+Mass sets the burn rate.
 :::
 
 ---
 
 ## The Lifetime Logic
 
-::: {.r-fit-text}
-Lifetime $\sim \frac{\text{available energy}}{\text{luminosity}}$
+$$
+\tau
+\sim
+\frac{\text{fuel}}{\text{burn rate}}
+$$
+
+::: {.fragment .center-note}
+More mass → more fuel
 :::
 
-::: {.incremental .mt-2}
-- More mass means **more fuel**
-- More mass also means **much higher luminosity**
+::: {.fragment .center-note}
+More mass → MUCH higher luminosity
 :::
 
-::: {.fragment .mt-2 .bg-muted .p-2 .text-sm}
-**Burn rate wins.** Massive stars die young because luminosity rises faster than fuel supply.
-:::
-
-::: notes
-Pause here and say the sentence out loud.
+::: {.fragment .takeaway}
+Burn rate wins.
 :::
 
 ---
 
 ## Why Normalize to the Sun?
 
-::: {.bg-muted .p-2 .text-sm}
+:::: {.columns}
+::: {.column width="50%"}
 **Ratio method**
 
-1. Write the star equation.
-2. Write the solar equation.
+1. Write the star form.
+2. Write the solar form.
 3. Divide.
-4. Let the constants cancel.
-5. Interpret the remaining ratios.
+4. Constants cancel.
+5. Read the ratios.
 :::
 
-::: {.fragment .mt-2 .bg-muted .p-2 .text-sm}
-**Small example**
+::: {.column width="50%"}
+::: {.fragment}
+**Example**
 
-If
-$$
-\frac{M}{M_\odot} = 2
-\qquad \text{and} \qquad
-\frac{L}{L_\odot} = 10,
-$$
+A star with $M = 2\,M_\odot$ and $L = 10\,L_\odot$ gives
 
-then
 $$
 \frac{\tau_{\text{nuc}}}{\tau_{\text{nuc},\odot}}
 \approx
 \frac{2}{10}
-= 0.2.
+= 0.2
 $$
 
-Twice the fuel does not beat a ten-times faster burn rate.
+20% of the solar lifetime.
 :::
-
-::: notes
-Stacked layout to keep the example calm and unclipped.
 :::
+::::
 
 ---
 
-## Clock 1: How Fast Could Gravity Rearrange a Star?
+## Clock 1: Dynamical Response
 
 :::: {.columns}
 ::: {.column width="56%"}
@@ -248,23 +217,13 @@ Stacked layout to keep the example calm and unclipped.
 :::
 
 ::: {.column width="44%"}
-::: {.bg-muted .p-2 .text-sm}
-**Read it like a sentence**
-
+::: {.incremental .text-sm}
 - structural response clock
-- depends mainly on **mean density**
+- set mainly by **mean density**
 - **not** the age of the star
 :::
 :::
 ::::
-
-::: {.fragment .mt-2 .text-center .text-sm}
-Gravity rearranges stars quickly.
-:::
-
-::: notes
-Emphasize that this is a response time, not a lifetime.
-:::
 
 ---
 
@@ -274,21 +233,18 @@ $$
 \bar{\rho} = \frac{3M}{4\pi R^3}
 $$
 
-::: {.incremental .text-sm .mt-2}
-- At fixed mass, a smaller radius means a larger mean density.
-- Larger mean density means a shorter dynamical timescale.
+::: {.fragment .center-note}
+smaller radius at fixed mass → larger density
 :::
 
-::: notes
-This slide justifies the density language before the ratio form.
+::: {.fragment .center-note}
+larger density → shorter dynamical time
 :::
 
 ---
 
-## Solar-Normalized Form: The Dynamical Clock
+## Solar-Normalized Dynamical Clock
 
-:::: {.columns}
-::: {.column width="58%"}
 $$
 \frac{\tau_{\text{dyn}}}{\tau_{\text{dyn},\odot}}
 =
@@ -297,73 +253,119 @@ $$
 \left(\frac{M}{M_\odot}\right)^{-1/2}
 \left(\frac{R}{R_\odot}\right)^{3/2}
 $$
-:::
 
-::: {.column width="42%"}
-::: {.bg-muted .p-2 .text-sm}
-**What changed?**
-
-- $G$ cancels in the ratio
-- denser stars respond faster
-- if $\bar{\rho}=4\bar{\rho}_\odot$, then $\tau_{\text{dyn}}=0.5\,\tau_{\text{dyn},\odot}$
-:::
-:::
-::::
-
-::: notes
-The physical point is density, not algebra.
+::: {.fragment .mini-note}
+$G$ cancels, so the ratio keeps only the physics that changes from star to star.
 :::
 
 ---
 
 ## For the Sun, the Response Time Is Shockingly Short
 
-::: {.r-fit-text}
-$\tau_{\text{dyn},\odot} \approx 3 \times 10^3\,\text{s} \approx 50\,\text{min}$
+::: {.result-line}
+$$
+\tau_{\text{dyn},\odot} \approx 3 \times 10^3\,\text{s}
+$$
 :::
 
-::: {.fragment .mt-2 .bg-muted .p-2 .text-sm}
-Structural imbalances get corrected on **human**, not geologic, timescales.
+::: {.result-big}
+50 minutes
 :::
 
-::: notes
-Let the surprise land.
-:::
-
----
-
-## Clock 2: How Long Could Gravity Alone Power the Sun?
-
-:::: {.columns}
-::: {.column width="56%"}
-{{< include ../../../_includes/equations/kelvin-helmholtz.qmd >}}
-:::
-
-::: {.column width="44%"}
-::: {.bg-muted .p-2 .text-sm}
-**What it is saying**
-
-- gravity supplies a finite energy reservoir
-- luminosity spends that reservoir
-- the answer is only **tens of Myr**
-:::
-:::
-::::
-
-::: {.fragment .mt-2 .text-center .text-sm}
-Gravity helps support a star, but it cannot power the Sun for billions of years.
-:::
-
-::: notes
-This sets up Kelvin's failed answer.
+::: {.fragment .takeaway}
+Structural imbalances get corrected very quickly.
 :::
 
 ---
 
-## Solar-Normalized Form: The Thermal Clock
+## Clock 2 Setup: The Gravitational Energy Reservoir
 
-:::: {.columns}
-::: {.column width="58%"}
+$$
+E_{\text{grav}} \sim \frac{GM^2}{R}
+$$
+
+::: {.fragment .center-note}
+More mass → deeper gravitational well
+:::
+
+::: {.fragment .center-note}
+Larger radius → weaker binding
+:::
+
+::: {.fragment .takeaway}
+This is the energy gravity can release if the star contracts.
+:::
+
+---
+
+## Luminosity Is the Energy Loss Rate
+
+$$
+L = \frac{\Delta E}{\Delta t}
+$$
+
+::: {.fragment .center-note}
+Luminosity is power.
+:::
+
+::: {.fragment .center-note}
+It tells us how fast the star is losing energy.
+:::
+
+::: {.fragment}
+$$
+\text{timescale}
+\sim
+\frac{\text{available energy}}{\text{energy loss rate}}
+$$
+:::
+
+---
+
+## Clock 2: The Kelvin-Helmholtz Timescale
+
+::: {.fragment}
+$$
+\tau_\text{KH}
+\sim
+\frac{E_{\text{grav}}}{L}
+$$
+:::
+
+::: {.fragment}
+$$
+\tau_\text{KH}
+\sim
+\frac{GM^2}{RL}
+$$
+:::
+
+::: {.fragment .takeaway}
+Gravity-only lifetime = gravitational reservoir / luminosity.
+:::
+
+---
+
+## For the Sun, Gravity Lasts Only
+
+::: {.result-line}
+$$
+\tau_{\text{KH},\odot} \approx 3 \times 10^7\,\text{yr}
+$$
+:::
+
+::: {.result-big}
+30 million years
+:::
+
+::: {.fragment .takeaway}
+Gravity alone cannot power the Sun for billions of years.
+:::
+
+---
+
+## Solar-Normalized Thermal Clock
+
 $$
 \frac{\tau_{\text{KH}}}{\tau_{\text{KH},\odot}}
 =
@@ -371,60 +373,42 @@ $$
 \left(\frac{R}{R_\odot}\right)^{-1}
 \left(\frac{L}{L_\odot}\right)^{-1}
 $$
-:::
 
-::: {.column width="42%"}
-::: {.bg-muted .p-2 .text-sm}
-**What changed?**
-
-- more mass gives more binding energy
-- larger radius weakens the binding
-- larger luminosity spends the reservoir faster
-:::
-:::
-::::
-
-::: notes
-Same ratio logic, new reservoir.
+::: {.incremental .mini-list}
+- more mass → more binding energy
+- larger radius → weaker binding
+- larger luminosity → faster spending
 :::
 
 ---
 
-## Quick Check: Burn Rate Still Matters {.quiz-question background-color="#1a1a2e"}
+## Quick Check: Burn Rate Still Matters {.quiz-question .prompt-slide}
 
-Keep $M$ and $R$ fixed, but double the luminosity $L$.
+Keep $M$ and $R$ fixed, but double $L$.
 
 The Kelvin-Helmholtz timescale becomes:
 
 - [half as long]{.correct}
 - twice as long
 - unchanged
-- impossible to tell from the equation
-
-::: notes
-Same reservoir, faster spending.
-:::
+- impossible to tell
 
 ---
 
 ## The Kelvin Problem
 
-::: {.bg-muted .p-2}
 Kelvin's model gave the Sun only **tens of Myr**.
+
+::: {.incremental .center-note}
+Geology needed much more time.
 :::
 
-::: {.incremental .mt-2}
-- geology required a much older Earth
-- biology required a much older Earth
-- the contradiction meant the model was missing a deeper energy source
+::: {.fragment .center-note}
+Biology needed much more time.
 :::
 
-::: {.fragment .mt-2 .text-center}
-[**The model was missing a deeper energy source.**]{.rn rn-type="box" rn-color="#ff6b6b"}
-:::
-
-::: notes
-Keep the tension sharp.
+::: {.fragment .takeaway}
+The model was missing a deeper energy source.
 :::
 
 ---
@@ -438,55 +422,31 @@ Keep the tension sharp.
 ::: {.incremental .text-sm}
 - careful energy bookkeeping
 - gravity really does release energy
-- the thermal clock is physically real
 :::
 :::
 
 ::: {.column width="50%"}
-**Why Kelvin still failed**
+**Why Kelvin failed**
 
 ::: {.incremental .text-sm}
-- the Sun needed a far larger reservoir
-- gravity alone was too small
+- the reservoir was too small
 - fusion supplied the missing budget
 :::
 :::
 ::::
 
-::: notes
-Distinguish incomplete physics from bad calculation.
-:::
-
 ---
 
 ## Why $E = mc^2$ Changes the Budget
 
-{{< img emc2-stellar-power width="88%" >}}
-
-::: {.fragment .mt-2 .bg-muted .p-2 .text-sm}
-Fusion taps **rest-mass energy**, not just thermal or chemical energy.
-:::
-
-::: notes
-Teach from the image, not from a paragraph.
-:::
-
----
-
-## The Missing-Mass Picture
+{{< img emc2-stellar-power width="86%" >}}
 
 $$
 \Delta E = \Delta m\,c^2
 $$
 
-{{< img emc2-stellar-power width="70%" >}}
-
-::: {.fragment .mt-2 .bg-muted .p-2 .text-sm}
-Four protons begin the story, one helium nucleus ends it, and the small missing mass leaves as usable energy.
-:::
-
-::: notes
-Same figure, slower explanation.
+::: {.fragment .mini-note}
+Fusion taps rest-mass energy, not just thermal or chemical energy.
 :::
 
 ---
@@ -499,9 +459,7 @@ Same figure, slower explanation.
 :::
 
 ::: {.column width="44%"}
-::: {.bg-muted .p-2 .text-sm}
-**Why this clock is different**
-
+::: {.incremental .text-sm}
 - $\varepsilon$: fusion efficiency
 - $f_M$: accessible fuel fraction
 - $L$: burn rate
@@ -509,104 +467,104 @@ Same figure, slower explanation.
 :::
 ::::
 
-::: {.fragment .mt-2 .text-center .text-sm}
-Now the Sun can last **billions**, not millions, of years.
-:::
-
-::: notes
-Keep the notation light.
+::: {.fragment .takeaway}
+Now the Sun can last billions of years.
 :::
 
 ---
 
-## Solar-Normalized Form: The Nuclear Clock
+## Full Normalized Nuclear Clock
 
-:::: {.columns}
-::: {.column width="58%"}
 $$
+\begin{aligned}
 \frac{\tau_{\text{nuc}}}{\tau_{\text{nuc},\odot}}
-\approx
+\approx\;&
 \left(\frac{\varepsilon}{\varepsilon_\odot}\right)
 \left(\frac{f_M}{f_{M,\odot}}\right)
-\left(\frac{M}{M_\odot}\right)
+\left(\frac{M}{M_\odot}\right) \\
+&\times
 \left(\frac{L}{L_\odot}\right)^{-1}
+\end{aligned}
 $$
 
-::: {.fragment}
+::: {.fragment .mini-note}
+$\varepsilon$ is similar for H $\rightarrow$ He fusion, but $f_M$ can vary.
+:::
+
+---
+
+## Solar-Normalized Nuclear Clock
+
 $$
-\text{For similar H-burning stars:}\qquad
 \frac{\tau_{\text{nuc}}}{\tau_{\text{nuc},\odot}}
 \approx
 \left(\frac{M}{M_\odot}\right)
 \left(\frac{L}{L_\odot}\right)^{-1}
 $$
-:::
+
+::: {.fragment .center-note}
+Fuel in the numerator
 :::
 
-::: {.column width="42%"}
-::: {.bg-muted .p-2 .text-sm}
-**What changed?**
-
-- $\varepsilon$ is roughly the same for H $\rightarrow$ He fusion
-- $f_M$ is approximate and can vary
-- the dominant competition is still **fuel / burn rate**
+::: {.fragment .center-note}
+Burn rate in the denominator
 :::
-:::
-::::
 
-::: notes
-Useful simplification, not exact.
+::: {.fragment .takeaway}
+The core competition is still fuel / burn rate.
+:::
+
+---
+
+## For the Sun, the Nuclear Clock Is
+
+::: {.result-line}
+$$
+\tau_{\text{nuc},\odot} \approx 10^{10}\,\text{yr}
+$$
+:::
+
+::: {.result-big}
+10 billion years
+:::
+
+::: {.fragment .takeaway}
+That is why fusion solves Kelvin's age problem.
 :::
 
 ---
 
 ## Worked Example: A Fully Convective M Dwarf
 
-::: {.bg-muted .p-2 .text-sm}
-**Idealized setup**
-
 $$
-\frac{M}{M_\odot} = 0.2,
-\qquad
-\frac{L}{L_\odot} \approx (0.2)^{3.5} \approx 0.008,
-\qquad
-\frac{f_M}{f_{M,\odot}} \approx 10
+\begin{aligned}
+\frac{M}{M_\odot} &= 0.2 \\
+\frac{L}{L_\odot} &\approx (0.2)^{3.5} \approx 0.008 \\
+\frac{f_M}{f_{M,\odot}} &\approx 10
+\end{aligned}
 $$
-:::
 
-::: {.fragment .mt-2 .text-sm}
-- very low luminosity means a very slow burn rate
-- full convection makes a much larger fuel fraction accessible
-:::
-
-::: notes
-Setup slide only.
+::: {.fragment .mini-note}
+Low luminosity means slow burning, and full convection opens more fuel.
 :::
 
 ---
 
-## M Dwarf Lifetime: The Result
+## M-Dwarf Lifetime: The Result
 
+::: {.result-line}
 $$
 \frac{\tau_{\text{nuc}}}{\tau_{\text{nuc},\odot}}
-\approx
-10 \times 0.2 \times (0.008)^{-1}
 \approx 250
 $$
-
-::: {.fragment}
-$$
-\tau_{\text{nuc}}
-\approx 250\,\tau_{\text{nuc},\odot}
-$$
 :::
 
-::: {.fragment .mt-2 .bg-muted .p-2 .text-sm}
+::: {.result-big}
+$\tau_{\text{M-dwarf}} \approx 250\,\tau_\odot$
+:::
+
+::: {.fragment .takeaway}
 Low-mass stars can outlive the current universe by orders of magnitude.
-:::
-
-::: notes
-Let the payoff land.
 :::
 
 ---
@@ -615,64 +573,57 @@ Let the payoff land.
 
 ::: {.fragment}
 $$
-\tau \sim \frac{\text{fuel}}{\text{burn rate}} \sim \frac{M}{L}
+\tau \sim \frac{\text{fuel}}{\text{burn rate}}
+$$
+:::
+
+::: {.fragment}
+$$
+\tau \sim \frac{M}{L}
 $$
 :::
 
 ::: {.fragment}
 $$
 L \propto M^{3.5}
-$$
-:::
-
-::: {.fragment}
-$$
-\therefore
+\qquad \Rightarrow \qquad
 \tau \propto M^{-2.5}
 $$
-:::
-
-::: notes
-This should feel clean and satisfying.
 :::
 
 ---
 
 ## Why Massive Stars Die Young
 
-::: {.r-fit-text}
-$\frac{\tau_{\text{MS}}}{\tau_{\text{MS},\odot}} \approx \left(\frac{M}{M_\odot}\right)^{-2.5}$
+$$
+\frac{\tau_{\text{MS}}}{\tau_{\text{MS},\odot}}
+\approx
+\left(\frac{M}{M_\odot}\right)^{-2.5}
+$$
+
+::: {.fragment .center-note}
+More mass → more fuel
 :::
 
-::: {.incremental .mt-2}
-- More mass does mean more fuel.
-- But luminosity rises even faster.
-- Extra fuel cannot keep up with the extra burn rate.
+::: {.fragment .center-note}
+More mass → MUCH higher luminosity
 :::
 
-::: notes
-Translate the scaling into meaning.
+::: {.fragment .takeaway}
+Extra fuel does not keep up.
 :::
 
 ---
 
 ## The Scaling That Explains the HR Diagram
 
-::: {.text-sm}
+::: {.clean-table}
 | Mass | Main-sequence lifetime |
-| --- | --- |
-| $0.3\,M_\odot$ | much longer than the age of the universe |
+|:---:|:---:|
+| $0.3\,M_\odot$ | longer than the age of the universe |
 | $1\,M_\odot$ | $\sim 10\,\text{Gyr}$ |
 | $2\,M_\odot$ | $\sim 2\,\text{Gyr}$ |
 | $10\,M_\odot$ | $\sim 30\,\text{Myr}$ |
-:::
-
-::: {.fragment .mt-2 .bg-muted .p-2 .text-sm}
-The upper main sequence empties first because the bright stars race through their nuclear fuel.
-:::
-
-::: notes
-Pause on the $10\,M_\odot$ case.
 :::
 
 ---
@@ -681,110 +632,69 @@ Pause on the $10\,M_\odot$ case.
 
 {{< img timescales-vs-mass width="96%" >}}
 
-::: {.fragment .mt-2 .bg-muted .p-2 .text-sm}
-The hierarchy remains huge across the main sequence, even as the thermal and nuclear clocks shrink for massive stars.
-:::
-
-::: notes
-Use the Sun as the anchor.
+::: {.fragment .mini-note}
+The hierarchy remains huge even as the thermal and nuclear clocks shrink for massive stars.
 :::
 
 ---
 
 ## The Three Clocks, Side by Side
 
-:::: {.columns}
-::: {.column width="62%"}
-{{< img timescale-hierarchy width="100%" >}}
-:::
+{{< img timescale-hierarchy width="92%" >}}
 
-::: {.column width="38%"}
-::: {.fragment .bg-muted .p-2 .text-sm}
+::: {.fragment .takeaway}
 $$
 \tau_{\text{dyn}} \ll \tau_{\text{KH}} \ll \tau_{\text{nuc}}
 $$
-
-Stars stay in near-equilibrium because the structural clock is tiny compared with the energy-supply clocks.
-:::
-:::
-::::
-
-::: notes
-This is the clean synthesis slide for the three timescales.
 :::
 
 ---
 
 ## Turnoff Is an Age Clock
 
-{{< img hr-evolutionary-tracks-mass-timescale width="78%" >}}
+{{< img hr-evolutionary-tracks-mass-timescale width="82%" >}}
 
-::: {.fragment .mt-2 .text-center}
+::: {.fragment .takeaway}
 The most massive star still on the main sequence sets the cluster age.
 :::
 
-::: notes
-This is the conceptual destination.
-:::
-
 ---
 
-## Think-Pair-Share: Date the Cluster {.quiz-question background-color="#1a1a2e"}
+## Think-Pair-Share: Date the Cluster {.quiz-question .prompt-slide}
 
 A cluster still contains a blue main-sequence star of about $10\,M_\odot$.
 
-1. Predict the cluster age scale.  
-2. Explain your reasoning in one sentence.  
-3. What would a much older cluster already be missing?
+1. Predict the age scale.
+2. Explain your reasoning.
+3. What would an older cluster already be missing?
 
-::: {.fragment .mt-2 .bg-muted .p-2 .text-sm}
-Target idea: the cluster must be younger than about $30\,\text{Myr}$.
-:::
-
-::: notes
-Use this as the application checkpoint.
+::: {.fragment .mini-note}
+Target idea: younger than about $30\,\text{Myr}$.
 :::
 
 ---
 
-## Summary: What This Lecture Added
+## Summary
 
-:::: {.columns}
-::: {.column width="50%"}
-::: {.incremental .text-sm}
-1. **Stars are clocks** — lifetime is fuel divided by burn rate  
-2. **Three timescales matter** — dynamical, thermal, and nuclear
-:::
-:::
-
-::: {.column width="50%"}
-::: {.incremental .text-sm}
-3. **Fusion sets the true lifetime** — gravity alone is not enough  
-4. **Turnoff turns the HR diagram into a timeline**
-:::
-:::
-::::
-
-::: notes
-Close without re-lecturing.
+::: {.incremental}
+- stars are clocks
+- three timescales matter
+- fusion sets the true lifetime
+- turnoff turns the HR diagram into a timeline
 :::
 
 ---
 
 ## Looking Ahead
 
-::: {.r-fit-text}
+::: {.result-line}
 If the Sun would collapse in about 50 minutes without support,
 :::
 
-::: {.fragment .r-fit-text}
+::: {.fragment .result-big}
 what is actually holding it up?
 :::
 
-::: {.fragment .mt-2}
-Next time: **hydrostatic equilibrium**.
-:::
-
-::: notes
-Handoff to Lecture 2.
+::: {.fragment .mini-note}
+Next time: hydrostatic equilibrium
 :::
