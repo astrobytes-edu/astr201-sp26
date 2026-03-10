@@ -1,0 +1,426 @@
+---
+title: "Lecture 2: The Balancing Act — Hydrostatic Equilibrium"
+subtitle: "What holds a star up against its own gravity?"
+author: "Dr. Anna Rosen"
+date: "2026-03-10"
+description: "A lecture-first synthesis of hydrostatic equilibrium: the short dynamical timescale, pressure versus pressure gradient, the shell-force balance, central pressure, the virial theorem, and core temperature."
+draft: false
+metadata-files:
+  - _metadata.yml
+format:
+  revealjs:
+    smaller: true
+    footer: "ASTR 201 • Module 3, Lecture 2"
+    chalkboard: true
+    fig-align: center
+    html-math-method: mathjax
+    title-slide-attributes:
+      data-background-image: "/assets/images/common/cosmic-cliffs-jwst.png"
+      data-background-opacity: "0.45"
+    pointer:
+      key: "q"
+      color: "#5dbfbf"
+      pointerSize: 18
+      alwaysVisible: true
+    spotlight:
+      size: 80
+      fadeInAndOut: 150
+      toggleSpotlightOnMouseDown: true
+      initialPresentationMode: true
+    quiz:
+      shuffleOptions: true
+      defaultCorrect: "✓ Right — the outward force comes from the pressure difference across a layer."
+      defaultIncorrect: "✗ Focus on what happens on the two sides of a shell."
+revealjs-plugins:
+  - pointer
+  - spotlight
+  - attribution
+  - quiz
+filters:
+  - roughnotation
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+## {background-image="/assets/images/common/noirlab-nightsky-mosaic.jpg" background-opacity="0.2"}
+
+::: {.r-fit-text}
+Without support, the Sun should collapse in about 50 minutes.
+:::
+
+::: {.fragment .mt-2 .text-center}
+So what has kept it stable for 4.6 billion years?
+:::
+
+::: {.notes}
+0-2 min. Direct callback to Lecture 1. The hook is the short dynamical timescale.
+:::
+
+---
+
+## Pressure Is Not Enough
+
+{{< img hydrostatic-equilibrium width="72%" >}}
+
+::: {.fragment .mt-2}
+The outward force comes from a **pressure gradient**:
+the gas below a layer must push harder than the gas above it.
+:::
+
+::: {.notes}
+2-4 min. This is the locked second slide. Say it explicitly: equal pressure on both sides gives no net support.
+:::
+
+---
+
+## Today's Targets
+
+By the end of class, you should be able to:
+
+::: {.incremental .text-sm}
+- explain why a star needs a **pressure gradient**, not just pressure
+- interpret the equation of **hydrostatic equilibrium**
+- estimate how central pressure scales with $M$ and $R$
+- use the **virial theorem** to connect gravity and thermal energy
+- explain why losing energy can make a star get **hotter**
+:::
+
+::: {.notes}
+4-5 min. Keep the emphasis on physical meaning first, equations second.
+:::
+
+---
+
+## Today's Roadmap {background-image="/assets/images/common/cosmic-cliffs-jwst.png" background-opacity="0.25"}
+
+::: {.bg-muted .p-2 .text-sm}
+1. **The support problem** — why equal pressure does not help  
+2. **The shell argument** — force balance inside a star  
+3. **The master equation** — hydrostatic equilibrium  
+4. **How much pressure?** — estimating the solar core  
+5. **Why contraction heats** — virial theorem and core temperature
+:::
+
+::: {.notes}
+5-6 min. This lets students know we are moving from intuition to equation to consequences.
+:::
+
+---
+
+## The Swimming Pool Analogy
+
+::: {.incremental}
+- water pressure is larger at the bottom than at the top
+- why? each deeper layer supports more overlying weight
+- a star works the same way: deeper layers must support more stellar mass
+:::
+
+::: {.fragment .mt-2}
+[**Support comes from a difference across a layer, not from an absolute number.**]{.rn rn-type="box" rn-color="#4ecdc4"}
+:::
+
+::: {.notes}
+6-8 min. Use this to get buy-in before the shell derivation.
+:::
+
+---
+
+## Build the Force Balance
+
+Consider a thin shell at radius $r$ with thickness $dr$.
+
+:::: {.columns}
+::: {.column width="50%"}
+**Gravity**
+
+- pulls inward
+- depends on enclosed mass $M(r)$
+- acts on shell mass $\rho A\,dr$
+:::
+
+::: {.column width="50%"}
+**Pressure difference**
+
+- bottom face pushes out
+- top face pushes in
+- net force is outward only if pressure decreases with radius
+:::
+::::
+
+::: {.notes}
+8-10 min. This slide is the verbal setup for the equation. Keep the symbols tied to the picture.
+:::
+
+---
+
+## The Master Balance Law
+
+{{< include ../../../_includes/equations/hydrostatic-equilibrium.qmd >}}
+{{< eqrefcard hydrostatic-equilibrium >}}
+
+::: {.fragment .text-sm .mt-2}
+- **Left side:** how quickly pressure changes outward  
+- **Right side:** the local weight per unit volume  
+- **Sign:** negative, because pressure must fall as you move outward
+:::
+
+::: {.notes}
+10-14 min. Read it in plain English: pressure must drop outward at exactly the rate needed to support the overlying weight.
+:::
+
+---
+
+## Quick Check: What If the Gradient Were Wrong? {.quiz-question}
+
+If $dP/dr = 0$ everywhere inside a star, the star would:
+
+- expand rapidly
+- [collapse on the dynamical timescale]{.correct}
+- remain stable because pressure is still present
+- become cooler but keep the same size
+
+::: {.notes}
+14-15 min. This separates "pressure exists" from "pressure supports."
+:::
+
+---
+
+## How Much Pressure Does the Core Need?
+
+{{< include ../../../_includes/equations/central-pressure.qmd >}}
+{{< eqrefcard central-pressure >}}
+
+::: {.fragment .text-sm .mt-2}
+- **Scaling story:** more mass means more weight to support  
+- **Smaller radius:** same mass packed tighter needs much larger central pressure  
+- **Assumption:** order-of-magnitude estimate, not a detailed solar model
+:::
+
+::: {.notes}
+15-19 min. This is the first big payoff from hydrostatic equilibrium.
+:::
+
+---
+
+## Solar Core Pressure: Order of Magnitude
+
+::: {.r-fit-text}
+$P_c \sim \frac{GM_\odot^2}{R_\odot^4} \approx 10^{16}~\text{dyn cm}^{-2}$
+:::
+
+::: {.incremental .mt-2}
+- about **10 billion atmospheres**
+- high enough that ordinary everyday intuition stops helping
+- still only an estimate; real solar models give an even larger central pressure
+:::
+
+::: {.notes}
+19-21 min. The number matters less than the scale and the dependence on compactness.
+:::
+
+---
+
+## Gravity and Thermal Energy Are Linked
+
+{{< include ../../../_includes/equations/stellar-virial.qmd >}}
+{{< eqrefcard stellar-virial >}}
+
+::: {.fragment .text-sm .mt-2}
+- gravity makes the star **bound**, so $U_\text{grav}$ is negative  
+- thermal motion keeps the gas from collapsing completely  
+- the virial theorem says these are not independent bookkeeping categories
+:::
+
+::: {.notes}
+21-25 min. This is the conceptual bridge from force balance to energy balance.
+:::
+
+---
+
+## The Strange Result: Negative Heat Capacity
+
+::: {.incremental}
+- a star radiates energy away
+- gravity makes it contract a little
+- contraction increases particle speeds
+- the core temperature rises even while the star is losing energy
+:::
+
+::: {.fragment .mt-2}
+Self-gravitating systems do the opposite of a coffee cup on your desk.
+:::
+
+::: {.notes}
+25-28 min. This is the conceptual payoff of the lecture. Pause here and let it feel weird.
+:::
+
+---
+
+## From Gravity to Core Temperature
+
+{{< include ../../../_includes/equations/core-temperature.qmd >}}
+{{< eqrefcard core-temperature >}}
+
+::: {.fragment .text-sm .mt-2}
+- **Depends on:** mass, radius, and mean molecular weight  
+- **Prediction for the Sun:** order $10^7~\text{K}$  
+- **Meaning:** gravity can make the core hot enough for fusion to matter
+:::
+
+::: {.notes}
+28-31 min. This is the "we can estimate the solar core without going inside" moment.
+:::
+
+---
+
+## Why 15 Million K Matters
+
+:::: {.columns}
+::: {.column width="50%"}
+**What we used**
+
+- gravity
+- pressure balance
+- thermal motion
+:::
+
+::: {.column width="50%"}
+**What we have not used yet**
+
+- nuclear reaction details
+- tunneling
+- the proton-proton chain
+:::
+::::
+
+::: {.fragment .mt-2 .bg-muted .p-2 .text-sm}
+That is the setup for the next lecture: once the core is hot enough, how does fusion actually happen?
+:::
+
+::: {.notes}
+31-33 min. Make the transition explicit. Students should feel that hydrostatic equilibrium prepares the ground for fusion.
+:::
+
+---
+
+## Observable -> Model -> Inference
+
+:::: {.columns}
+::: {.column width="52%"}
+| Step | This lecture |
+|------|--------------|
+| **Observable** | A star stays roughly steady for billions of years |
+| **Model** | Pressure gradient balances gravity |
+| **Inference** | The core must be dense, high-pressure, and hot |
+:::
+
+::: {.column width="48%"}
+::: {.bg-muted .p-2 .text-sm}
+We never "see" the solar core directly.
+
+We infer it from the physics required to keep the Sun standing.
+:::
+:::
+::::
+
+::: {.notes}
+33-35 min. Bring the course throughline back to the surface.
+:::
+
+---
+
+## Think-Pair-Share: Compactness Wins
+
+Two stars have the same mass, but Star B has half the radius of Star A.
+
+1. Which star needs the larger central pressure?  
+2. Which star should have the hotter core?  
+3. What feature of the equations tells you that?
+
+::: {.fragment .mt-2 .bg-muted .p-2 .text-sm}
+Target idea: the more compact star needs much larger support and therefore a hotter, denser interior.
+:::
+
+::: {.notes}
+35-38 min. This is the synthesis checkpoint for the 50-minute core.
+:::
+
+---
+
+## Summary: What Hydrostatic Equilibrium Gives Us
+
+::: {.incremental .text-sm}
+1. **Stars need a pressure gradient** — equal pressure on both sides does nothing  
+2. **Hydrostatic equilibrium is the master balance law** for stellar structure  
+3. **Central pressure scales with compactness** — same mass, smaller radius means larger $P_c$  
+4. **Virial balance links gravity and heat** — contraction raises temperature  
+5. **The solar core must be hot** — enough to set up nuclear fusion
+:::
+
+::: {.notes}
+38-40 min. This is the clean stopping point for the shorter version.
+:::
+
+---
+
+## Looking Ahead
+
+::: {.r-fit-text}
+Gravity can make the core hot enough.
+:::
+
+::: {.fragment .mt-2}
+Next question: **how do protons actually fuse when they repel each other?**
+:::
+
+::: {.notes}
+40-41 min. Hand off to Lecture 3: nuclear fusion.
+:::
+
+---
+
+## {.center}
+
+::: {.r-fit-text}
+Optional Expansion
+:::
+
+*Use these if we want the slower derivation or a fuller pressure story.*
+
+---
+
+## Optional: Shell Derivation in One More Step
+
+For a shell of area $A$ and thickness $dr$:
+
+$$
+F_\text{pressure} = [P(r) - P(r+dr)]A \approx -\frac{dP}{dr}A\,dr
+$$
+
+$$
+F_\text{grav} = -\frac{G M(r)\rho A\,dr}{r^2}
+$$
+
+Set $F_\text{pressure} + F_\text{grav} = 0$ to recover hydrostatic equilibrium.
+
+::: {.notes}
+Optional derivation slide for a class that wants the force balance written out explicitly.
+:::
+
+---
+
+## Optional: Why White Dwarfs Need Enormous Support
+
+::: {.bg-muted .p-2}
+Keep the same mass, shrink the radius by a huge factor, and the required central pressure skyrockets.
+:::
+
+::: {.fragment .mt-2}
+That is why later in Module 3 ordinary gas pressure stops being enough, and degeneracy pressure has to take over.
+:::
+
+::: {.notes}
+Optional forward-looking bridge to the stellar remnants lectures.
+:::
