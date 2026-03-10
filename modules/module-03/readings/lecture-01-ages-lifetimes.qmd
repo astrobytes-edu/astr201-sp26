@@ -317,6 +317,55 @@ $$
 
 **Sanity check:** $10~\text{Gyr}$ is about twice the current age of the Sun ($4.6~\text{Gyr}$). The Sun is roughly halfway through its hydrogen-burning lifetime. This is consistent with solar models and with the age of the Earth from radiometric dating. ✓
 
+### Why Normalize to the Sun?
+
+Students often make lifetime problems harder than they need to be by plugging in constants from scratch every time. Usually the cleaner move is to **normalize to the Sun**. That means you write the equation for the star, write the same equation for the Sun, and divide. The constants cancel, and the answer comes out as a dimensionless comparison to a star you already know.
+
+For the nuclear timescale, this looks like:
+
+$$
+\frac{\tau_\text{nuc}}{\tau_{\text{nuc},\odot}}
+\approx
+\left(\frac{\varepsilon}{\varepsilon_\odot}\right)
+\left(\frac{f_M}{f_{M,\odot}}\right)
+\left(\frac{M}{M_\odot}\right)
+\left(\frac{L}{L_\odot}\right)^{-1}
+$$
+
+For similar hydrogen-burning stars, $\varepsilon$ is the same and the first factor is 1. If you are doing a rough scaling comparison and the accessible fuel fraction is also similar, this simplifies to:
+
+$$
+\frac{\tau_\text{nuc}}{\tau_{\text{nuc},\odot}}
+\approx
+\left(\frac{M}{M_\odot}\right)
+\left(\frac{L}{L_\odot}\right)^{-1}
+$$
+
+This is why normalization is so useful: the left side is dimensionless, the right side is dimensionless, and the answer is immediately interpretable. A value of $0.2$ means "one-fifth of the Sun's lifetime." A value of $5$ means "five times the Sun's lifetime."
+
+### Quick Ratio Example
+
+Suppose a star has $M = 2\,M_\odot$ and $L = 10\,L_\odot$. Then
+
+$$
+\frac{\tau_\text{nuc}}{\tau_{\text{nuc},\odot}}
+\approx
+\left(\frac{2\,M_\odot}{M_\odot}\right)
+\left(\frac{10\,L_\odot}{L_\odot}\right)^{-1}
+=
+\frac{2}{10}
+=
+0.2
+$$
+
+So the star's main-sequence lifetime is about $0.2$ times the Sun's:
+
+$$
+\tau_\text{nuc} \approx 0.2 \times 10~\text{Gyr} \approx 2~\text{Gyr}
+$$
+
+Notice the math grammar here: the scaling factor $0.2$ is dimensionless, and the units appear **at the end** of the final expression.
+
 ### The Scaling That Explains Everything
 
 Now here's where the mass-luminosity relation — the crown jewel of Module 2 — pays off. For main-sequence stars, $L \propto M^{3.5}$. Substituting into the nuclear timescale gives:
@@ -340,6 +389,47 @@ This is one of the most important scaling relations in all of astrophysics. Let'
 
 One caveat matters here: this is a **main-sequence scaling estimate**, not a universal law of nature. The exponent in the mass-luminosity relation changes somewhat with stellar mass, and the accessible fuel fraction is not exactly the same for every star. The scaling is still powerful because it gets the right qualitative story and the right order of magnitude.
 
+### Worked Example: Why M Dwarfs Live So Long
+
+Now let's use the ratio method for one of the most important qualitative results in stellar evolution: **low-mass M dwarfs can live for trillions of years**.
+
+Take an idealized fully convective M dwarf with
+
+$$
+\frac{M}{M_\odot} = 0.2
+\qquad \text{and} \qquad
+\frac{L}{L_\odot} \approx (0.2)^{3.5} \approx 0.008
+$$
+
+For a fully convective star, most of the hydrogen can eventually be mixed through the whole star rather than being trapped outside the core. That means the accessible fuel fraction can be much larger than in the Sun. A simple order-of-magnitude comparison is:
+
+$$
+\frac{f_M}{f_{M,\odot}} \approx \frac{1}{0.1} = 10
+$$
+
+Then the solar-normalized nuclear lifetime is
+
+$$
+\frac{\tau_\text{nuc}}{\tau_{\text{nuc},\odot}}
+\approx
+\left(\frac{f_M}{f_{M,\odot}}\right)
+\left(\frac{M}{M_\odot}\right)
+\left(\frac{L}{L_\odot}\right)^{-1}
+\approx
+10 \times 0.2 \times (0.008)^{-1}
+\approx 250
+$$
+
+So the star's main-sequence lifetime is
+
+$$
+\tau_\text{nuc} \approx 250 \times 10~\text{Gyr} \approx 2.5 \times 10^{12}~\text{yr}
+$$
+
+That is about **2.5 trillion years** — far longer than the current age of the universe. This is why the faintest red dwarfs are the Galaxy's long-term survivors.
+
+This number should not be treated as an exact prediction for every low-mass star. The mass-luminosity exponent changes at low mass, and real stellar models include more detailed microphysics. But the conclusion is robust: **the lowest-mass stars live enormously longer than Sun-like stars.**
+
 ::: {.callout-tip}
 ## Check Yourself
 
@@ -351,7 +441,7 @@ A star in a young cluster has spectral type B2 (corresponding to $M \approx 10\,
 If a $10\,M_\odot$ star is still on the main sequence, the cluster must be younger than the nuclear timescale of a $10\,M_\odot$ star:
 
 $$
-\tau_\text{nuc} \approx 10~\text{Gyr} \times \left(\frac{10}{1}\right)^{-2.5} \approx 10~\text{Gyr} \times 3.2 \times 10^{-3} \approx 32~\text{Myr}
+\tau_\text{nuc} \approx 10 \times \left(\frac{10}{1}\right)^{-2.5}~\text{Gyr} \approx 10 \times 3.2 \times 10^{-3}~\text{Gyr} \approx 32~\text{Myr}
 $$
 
 The cluster is younger than $\sim 30~\text{Myr}$. In fact, this is exactly how astronomers date star clusters: find the most massive star still on the main sequence, and the cluster's age is approximately that star's nuclear timescale. This technique is called the **main-sequence turnoff**.

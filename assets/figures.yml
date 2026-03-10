@@ -619,6 +619,13 @@ figures:
   # Module 3: Stellar Structure & Evolution
   # ==============================================================
 
+  gaia-hr-diagram:
+    path: /assets/images/module-03/Gaia_s_Hertzsprung-Russell_diagram.jpg
+    caption: "**Gaia's Hertzsprung-Russell diagram.** Millions of stars trace the main sequence, giant branch, and white dwarf sequence. **What to notice:** a coeval stellar population will lose its highest-mass main-sequence stars first, so the turnoff point acts like a clock."
+    alt: "Gaia Hertzsprung-Russell diagram showing a dense bright main sequence running diagonally, a giant branch above it, and a white dwarf sequence below, with axes for color, temperature, absolute magnitude, and luminosity."
+    credit: "ESA/Gaia"
+    module: 3
+
   hydrostatic-equilibrium:
     path: /assets/images/module-03/hydrostatic-equilibrium.svg
     caption: "Hydrostatic equilibrium balances gravity and pressure"
@@ -711,8 +718,15 @@ figures:
 
   timescale-hierarchy:
     path: /assets/images/module-03/timescale-hierarchy.png
-    caption: "**The three stellar timescales** span enormous ranges: the dynamical timescale (~50 min) sets how fast gravity acts, the Kelvin-Helmholtz timescale (~15 Myr) sets how long thermal energy lasts, and the nuclear timescale (~10 Gyr) sets the main-sequence lifetime. Each is separated by many orders of magnitude."
-    alt: "Logarithmic bar chart comparing the Sun's three fundamental timescales: dynamical (50 minutes), thermal Kelvin-Helmholtz (15 million years), and nuclear (10 billion years), separated by factors of 10^11 and 700 respectively"
+    caption: "**The three stellar timescales** span enormous ranges: the dynamical timescale (~50 min) sets how fast gravity acts, the Kelvin-Helmholtz timescale (~30 Myr) sets how long thermal energy lasts, and the nuclear timescale (~10 Gyr) sets the main-sequence lifetime. Each is separated by many orders of magnitude."
+    alt: "Logarithmic bar chart comparing the Sun's three fundamental timescales: dynamical (50 minutes), thermal Kelvin-Helmholtz (30 million years), and nuclear (10 billion years), with large factor comparisons between each pair."
+    credit: "ASTR 201 (generated)"
+    module: 3
+
+  timescales-vs-mass:
+    path: /assets/images/module-03/timescales-vs-mass.png
+    caption: "**How the three stellar clocks change with mass.** Using solar-normalized main-sequence scalings, the dynamical timescale changes only weakly, while the Kelvin-Helmholtz and nuclear timescales shrink steeply for massive stars. **What to notice:** the Sun is the anchor, but the hierarchy remains huge across the whole main sequence."
+    alt: "Dark-theme log-log plot of stellar timescale versus stellar mass in solar units, with three labeled curves for the dynamical, Kelvin-Helmholtz, and nuclear timescales, a marked Sun point, and a dashed age-of-the-universe reference line."
     credit: "ASTR 201 (generated)"
     module: 3
 

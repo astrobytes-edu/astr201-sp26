@@ -319,7 +319,7 @@ def make_timescale_hierarchy():
     """
     Logarithmic comparison of the three fundamental stellar timescales.
 
-    τ_dyn ~ 50 min, τ_KH ~ 15 Myr, τ_nuc ~ 10 Gyr for the Sun.
+    τ_dyn ~ 50 min, τ_KH ~ 30 Myr, τ_nuc ~ 10 Gyr for the Sun.
     The enormous separation is the key pedagogical point.
     """
     fig, ax = plt.subplots(figsize=(12, 6), dpi=200)
@@ -335,11 +335,11 @@ def make_timescale_hierarchy():
             "note": "If pressure vanished,\nthe Sun collapses in ~50 min",
         },
         r"$\tau_{\rm KH}$": {
-            "value_s": 4.7e14,  # ~15 Myr
-            "label": "~15 Myr",
+            "value_s": 9.5e14,  # ~30 Myr
+            "label": "~30 Myr",
             "desc": "Thermal\n(Kelvin-Helmholtz)",
             "color": ACCENT_ORANGE,
-            "note": "Without fusion, the Sun\ncools and shrinks in ~15 Myr",
+            "note": "Without fusion, the Sun\ncools and shrinks in ~30 Myr",
         },
         r"$\tau_{\rm nuc}$": {
             "value_s": 3.2e17,  # ~10 Gyr
@@ -404,25 +404,25 @@ def make_timescale_hierarchy():
     # Separation arrows
     mid_y = 1.5
     ax.annotate(
-        "", xy=(np.log10(4.7e14), mid_y + 0.15),
+        "", xy=(np.log10(9.5e14), mid_y + 0.15),
         xytext=(np.log10(3000), mid_y + 0.15),
         arrowprops=dict(arrowstyle="<->", color=ACCENT_YELLOW, lw=1.5),
     )
     ax.text(
-        (np.log10(3000) + np.log10(4.7e14)) / 2, mid_y + 0.25,
-        r"$\times\, 10^{11}$", fontsize=11, color=ACCENT_YELLOW,
+        (np.log10(3000) + np.log10(9.5e14)) / 2, mid_y + 0.25,
+        r"$\times\, 3\times 10^{11}$", fontsize=11, color=ACCENT_YELLOW,
         ha="center", fontweight="bold",
     )
 
     mid_y2 = 0.5
     ax.annotate(
         "", xy=(np.log10(3.2e17), mid_y2 + 0.15),
-        xytext=(np.log10(4.7e14), mid_y2 + 0.15),
+        xytext=(np.log10(9.5e14), mid_y2 + 0.15),
         arrowprops=dict(arrowstyle="<->", color=ACCENT_YELLOW, lw=1.5),
     )
     ax.text(
-        (np.log10(4.7e14) + np.log10(3.2e17)) / 2, mid_y2 + 0.25,
-        r"$\times\, 700$", fontsize=11, color=ACCENT_YELLOW,
+        (np.log10(9.5e14) + np.log10(3.2e17)) / 2, mid_y2 + 0.25,
+        r"$\times\, 300$", fontsize=11, color=ACCENT_YELLOW,
         ha="center", fontweight="bold",
     )
 
@@ -450,7 +450,106 @@ def make_timescale_hierarchy():
 
 
 # ═════════════════════════════════════════════════════════════
-# Figure 4: Onion-Shell Burning Structure
+# Figure 4: Stellar Timescales vs Mass
+# Used in: L1/R1 (Ages & Lifetimes)
+# ═════════════════════════════════════════════════════════════
+def make_timescales_vs_mass():
+    """
+    Solar-normalized stellar timescales across the main sequence.
+
+    Uses simple main-sequence scaling laws:
+    - R ∝ M^0.8
+    - L ∝ M^3.5
+
+    This lets students see how each timescale changes with mass while
+    keeping the Sun as the anchor.
+    """
+    masses = np.logspace(-1, 1.15, 400)  # 0.1 to ~14 M_sun
+
+    # Main-sequence scaling relations (order-of-magnitude)
+    radii = masses**0.8
+    luminosities = masses**3.5
+
+    # Solar anchors
+    tau_dyn_sun_yr = 50 / (60 * 24 * 365.25)  # 50 min in years
+    tau_kh_sun_yr = 3.0e7
+    tau_nuc_sun_yr = 1.0e10
+
+    # Ratio-method scalings relative to the Sun
+    tau_dyn = tau_dyn_sun_yr * masses**(-0.5) * radii**1.5
+    tau_kh = tau_kh_sun_yr * masses**2 * radii**(-1) * luminosities**(-1)
+    tau_nuc = tau_nuc_sun_yr * masses * luminosities**(-1)
+
+    fig, ax = plt.subplots(figsize=(12, 7), dpi=200)
+    apply_dark_style(fig, ax)
+
+    ax.set_xscale("log")
+    ax.set_yscale("log")
+
+    ax.plot(masses, tau_dyn, color=ACCENT_CYAN, linewidth=3, label=r"$\tau_{\rm dyn}$")
+    ax.plot(masses, tau_kh, color=ACCENT_ORANGE, linewidth=3, label=r"$\tau_{\rm KH}$")
+    ax.plot(masses, tau_nuc, color=ACCENT_RED, linewidth=3, label=r"$\tau_{\rm nuc}$")
+
+    # Solar anchor
+    ax.plot(1, tau_dyn_sun_yr, "o", color=ACCENT_CYAN, markersize=8,
+            markeredgecolor="white", markeredgewidth=1.0, zorder=5)
+    ax.plot(1, tau_kh_sun_yr, "o", color=ACCENT_ORANGE, markersize=8,
+            markeredgecolor="white", markeredgewidth=1.0, zorder=5)
+    ax.plot(1, tau_nuc_sun_yr, "o", color=ACCENT_RED, markersize=8,
+            markeredgecolor="white", markeredgewidth=1.0, zorder=5)
+    ax.text(1.08, 1.25e10, "Sun", color=TEXT_COLOR, fontsize=11, fontweight="bold")
+
+    # Universe age reference
+    age_universe = 1.38e10
+    ax.axhline(age_universe, color=ACCENT_YELLOW, linestyle="--", linewidth=1.5, alpha=0.7)
+    ax.text(0.11, age_universe * 1.1, "Age of the universe", color=ACCENT_YELLOW,
+            fontsize=10, fontweight="bold", va="bottom")
+
+    # Curve labels
+    ax.text(0.16, 2e-4, r"$\tau_{\rm dyn} \propto M^{0.7}$",
+            color=ACCENT_CYAN, fontsize=12, fontweight="bold")
+    ax.text(0.16, 2.5e8, r"$\tau_{\rm KH} \propto M^{-2.3}$",
+            color=ACCENT_ORANGE, fontsize=12, fontweight="bold")
+    ax.text(2.0, 2e9, r"$\tau_{\rm nuc} \propto M^{-2.5}$",
+            color=ACCENT_RED, fontsize=12, fontweight="bold")
+
+    # Example masses
+    example_masses = [0.5, 1.0, 2.0, 10.0]
+    for m in example_masses:
+        ax.axvline(m, color=GRID_COLOR, linewidth=0.8, alpha=0.6, linestyle=":")
+        ax.text(m, 7e-6, rf"${m:g}\,M_\odot$", color=MUTED_TEXT, fontsize=9,
+                ha="center", va="top", rotation=90)
+
+    note = (
+        "Order-of-magnitude main-sequence scalings\n"
+        r"used here: $R \propto M^{0.8}$ and $L \propto M^{3.5}$"
+    )
+    ax.text(
+        0.98, 0.03, note,
+        transform=ax.transAxes, ha="right", va="bottom",
+        fontsize=9, color=MUTED_TEXT,
+        bbox=dict(boxstyle="round,pad=0.35", facecolor=DARK_BG,
+                  edgecolor=GRID_COLOR, alpha=0.9),
+    )
+
+    ax.set_xlabel(r"Stellar Mass ($M/M_\odot$)", fontsize=14)
+    ax.set_ylabel("Timescale (yr)", fontsize=14)
+    ax.set_xlim(0.1, 14.5)
+    ax.set_ylim(1e-6, 5e11)
+    ax.set_title("How the Three Stellar Clocks Change with Mass",
+                 fontsize=18, fontweight="bold", pad=14)
+    ax.legend(loc="upper right", frameon=True, facecolor=PANEL_BG,
+              edgecolor=GRID_COLOR, labelcolor=TEXT_COLOR, fontsize=11)
+
+    fig.tight_layout()
+    fig.savefig(OUTPUT_DIR / "timescales-vs-mass.png",
+                facecolor=DARK_BG, bbox_inches="tight")
+    plt.close(fig)
+    print("  ✓ timescales-vs-mass.png")
+
+
+# ═════════════════════════════════════════════════════════════
+# Figure 5: Onion-Shell Burning Structure
 # Used in: R9 (High-Mass Evolution & Supernovae)
 # ═════════════════════════════════════════════════════════════
 def make_onion_shell():
@@ -1050,6 +1149,7 @@ def main():
     make_binding_energy_curve()
     make_random_walk()
     make_timescale_hierarchy()
+    make_timescales_vs_mass()
     make_onion_shell()
     make_wd_mass_radius()
     make_compact_object_scale()
