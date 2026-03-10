@@ -66,12 +66,6 @@ One birth event.
 ::: {.fragment}
 Why do the highest-mass stars vanish first?
 :::
-
-::: {.fragment}
-$$
-\tau_{\text{MS}} \propto M^{-2.5}
-$$
-:::
 :::
 ::::
 
@@ -102,10 +96,10 @@ Target idea: lifetime = available energy / burn rate.
 ## Today’s Targets
 
 ::: {.incremental}
-- explain lifetime as **fuel versus burn rate**
-- compare the **three stellar clocks**
-- use mass-luminosity scaling for **main-sequence lifetime**
-- explain why **turnoff measures cluster age**
+- lifetime = fuel / burn rate
+- three stellar clocks
+- estimate lifetime from scaling
+- turnoff gives cluster age
 :::
 
 ---
@@ -587,7 +581,7 @@ $$
 :::
 
 ::: {.fragment .result-big}
-$\tau_{\text{M-dwarf}} \approx 250\,\tau_\odot$
+250 $\tau_\odot$
 :::
 
 ::: {.fragment .takeaway}
@@ -613,7 +607,11 @@ $$
 ::: {.fragment}
 $$
 L \propto M^{3.5}
-\qquad \Rightarrow \qquad
+$$
+:::
+
+::: {.fragment}
+$$
 \tau \propto M^{-2.5}
 $$
 :::
