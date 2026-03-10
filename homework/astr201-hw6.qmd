@@ -1,0 +1,103 @@
+---
+title: "Homework 6"
+subtitle: "Quantum Mechanics, Stellar Alchemy, and a Trailblazer"
+author: "Dr. Anna Rosen"
+course: ASTR 201
+module: "Module 3 (bridge)"
+lectures: "Module 3 Lectures 1–3 (ages, equilibrium, fusion)"
+draft: false
+due: "Tuesday, March 17, 2026 at 11:59 pm"
+submission: "Canvas; upload a single PDF"
+format:
+  html:
+    toc: true
+  pdf:
+    toc: false
+    geometry: margin=1in
+    fontsize: 11pt
+---
+
+{{< hwmeta >}}
+
+## What is this?
+
+This homework is different. No equations, no calculations, no unit checks. Instead, you're going to watch a documentary, listen to a podcast, and write about what you noticed — what surprised you, what connected to things we've been learning, and what made you think.
+
+The goal here is simple: **have fun with the physics.** The quantum mechanics you've been learning in Module 3 — tunneling, uncertainty, degeneracy — these ideas are genuinely wild. And the story of how we figured out what stars are made of is one of the best detective stories in science. This homework is your chance to sit with that for a bit.
+
+There are guiding prompts below, but they're just that — **guides, not a checklist.** You don't have to answer every one. Write about whatever grabbed you. If something made you excited, confused, angry, or curious — write about that. The prompts are there to help if you're staring at a blank page, not to box you in.
+
+**Be real. Be specific. Have fun with it.**
+
+::: {.callout-tip title="Format"}
+- **Length:** ~500–800 words total across both parts. Say what you need to say — this is a soft target, not a hard limit.
+- **Tone:** Informal. First person. Write like you're talking to a friend who's also taking this class.
+- **No grade memo** for this assignment — this *is* the reflection.
+- **Scope:** Engage with **both** the documentary and the podcast. A roughly balanced split is recommended, but it doesn't need to be exactly 50/50.
+:::
+
+---
+
+## Part 1 — Watch: *Decoding the Universe: Quantum*
+
+**PBS NOVA documentary (~55 min)**
+
+[Watch here (free on PBS)](https://www.pbs.org/wgbh/nova/video/decoding-the-universe-quantum/)
+
+This documentary covers the history and ideas of quantum mechanics — the same physics we've already started using to understand how stars work. In the first part of Module 3, you've already seen quantum tunneling make fusion possible (Reading 3), and later in the module we'll return to uncertainty and degeneracy as tools for understanding stellar mass limits and stellar remnants. This documentary puts those ideas in their broader context.
+
+If the PBS link gives you trouble, use the caption/transcript options on the video page if available, and email me if you still can't access it so I can give you an alternative path.
+
+### Some things you might write about (all optional)
+
+- **Connections to stars.** Did anything in the documentary click with what we've covered in Module 3? The documentary talks about quantum tunneling, wave-particle duality, and uncertainty — we've used all of these to explain how stars work. Did seeing them in a different context change how you think about them?
+
+- **What surprised you.** Was there a moment where you thought "wait, really?" What was it, and why did it catch you off guard?
+
+- **What's still weird.** Quantum mechanics *is* weird. If something in the documentary still doesn't sit right with you — or if you left with more questions than answers — that's worth writing about. What's the thing you most want to understand better?
+
+---
+
+## Part 2 — Listen: *The Highest of All Ceilings*
+
+**Lost Women of Science podcast (~40 min)**
+
+[Listen here](https://www.lostwomenofscience.org/podcast-episodes/best-of-the-highest-of-all-ceilings-astronomer-cecilia-payne-gaposchkin)
+
+Cecilia Payne-Gaposchkin figured out what stars are made of. In her 1925 PhD thesis — at age 25 — she used stellar spectra (the same spectroscopy tools you learned in Module 2) to show that stars are overwhelmingly hydrogen and helium. Her thesis advisor, Henry Norris Russell, told her she was wrong and pressured her to downplay her result. Four years later, Russell published the same conclusion and got the credit. Payne's thesis has been called "the most brilliant PhD thesis ever written in astronomy."
+
+This podcast tells her story.
+
+If the audio link gives you trouble or you need a transcript for accessibility, check the episode page first and then email me if access is still a problem.
+
+### Some things you might write about (all optional)
+
+- **Evidence vs. authority.** Payne had strong spectroscopic evidence — the same kind of data we worked with in Module 2 (absorption lines, spectral classification, OBAFGKM). Her data pointed clearly to hydrogen dominance. Why wasn't that enough? What does it take for evidence to win when it contradicts what experts believe?
+
+- **The science itself.** Payne's insight was that the pattern in stellar spectra (the OBAFGKM sequence) reflects *temperature*, not *composition*. That's a profound realization. Does hearing her story change how you think about the spectral classification tools we've been using?
+
+- **Barriers and breakthroughs (optional).** Payne worked in an era when women couldn't hold faculty positions at Harvard, couldn't eat in the faculty dining room, and had their work credited to male supervisors. She persisted anyway and eventually became Harvard's first female tenured professor in astronomy. If you want to reflect on what the field nearly lost — and what it means that stories like hers are only now being widely told — this is a good place to do it. (This prompt is entirely optional.)
+
+---
+
+## One last question
+
+After watching and listening — **did any of this get you excited to learn about stars?** If so, what specifically? If not, that's okay too — tell me why. I'm genuinely curious.
+
+This isn't a trick question and there's no wrong answer. I chose these particular pieces of media because I think the physics is thrilling and the history is important. But I want to know if that lands for you. Your honest reaction helps me teach better.
+
+---
+
+## How this is graded
+
+Same philosophy as the Growth Memos: **specificity and genuine engagement**, not polish.
+
+| Score | What it means |
+|:-----:|:-------------|
+| **5** | Thoughtful and specific. You engaged with the material and connected it to the course. Your writing feels genuine. |
+| **4** | Good overall, but one part is thin or generic. |
+| **3** | Surface-level. Mostly summary without personal engagement or course connections. |
+| **2–1** | Minimal effort. Doesn't engage with the media or the prompts. |
+| **0** | Not submitted. |
+
+You will **not** be graded on grammar, spelling, or writing quality. Write in whatever voice feels natural. The only thing that matters is that you actually watched, actually listened, and actually thought about it.

@@ -5,5 +5,7 @@ A **growth mindset** is the belief that intelligence, abilities, and talents can
 
 In {{< meta params.course-code >}}, you'll encounter challenging concepts that may initially seem overwhelming. **This is normal and expected: it means you're learning.**
 
+In practice, that means revisiting mistakes, reworking hard problems, asking questions when you're stuck, and giving yourself time to improve instead of treating confusion as failure.
+
 Trust the process, embrace the challenge, and discover that you're capable of doing hard things.
 :::

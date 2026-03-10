@@ -1,0 +1,117 @@
+---
+title: "Growth Memo 1"
+subtitle: "Reflect, celebrate, and plan — after Midterm 1"
+author: "Dr. Anna Rosen"
+date: "2026-03-09"
+course: ASTR 201
+draft: false
+format:
+  html:
+    toc: false
+    number-sections: false
+---
+
+## What is this?
+
+A Growth Memo is a short reflection on how things are going. You just took your first midterm — now take 30–45 minutes to think about it. What went well? What didn't? What are you going to do about it?
+
+**This is not a formal essay.** Think of it as a journal entry, a brain dump, a letter to yourself. Write in whatever voice feels natural — bullet points, stream of consciousness, full paragraphs, whatever works. You will **not** be graded on grammar, spelling, or polish. You will be graded on specificity, evidence, and the seriousness of your reflection.
+
+## Why we do this
+
+Here's the thing: **your score on one exam is a snapshot, not a verdict.** It tells you where you are right now — not where you'll end up. The students who improve the most over a semester aren't the ones who got the highest score on the first exam. They're the ones who looked carefully at what happened, figured out *why*, and changed something concrete.
+
+That's what this memo is for. Not to make you feel bad. Not to perform self-improvement for a grade. Just to pause, look at the evidence, and make a plan.
+
+Research on learning is pretty clear on this: students who reflect on their exam performance and adjust their study strategies **do better on later exams**. This isn't hand-waving — it's measured. The technical term is *metacognition* (thinking about how you think), and it's one of the strongest predictors of academic improvement. Growth Memos are sometimes called "exam wrappers" in the education literature, and they work.
+
+Sometimes this kind of reflection feels clarifying. Sometimes it feels uncomfortable, frustrating, or unexpectedly encouraging. All of those reactions are normal. The point is not to judge yourself — it's to notice patterns clearly enough that you can change something useful.
+
+::: {.callout-tip title="Growth Mindset — The Short Version"}
+Your ability in this course is not fixed. Struggling with material doesn't mean you're bad at physics — it means you're learning physics. Every expert was once a beginner who kept going.
+
+The goal isn't perfection. The goal is *improvement*. If you can look at your Midterm 1 and honestly identify one or two things to change, and then actually change them, you're doing exactly what this course is designed for.
+:::
+
+---
+
+## The Reflection
+
+Respond to the prompts below. Aim for **~400–600 words total** across all sections. Be specific — "I need to study more" doesn't count. "I kept dropping units in multi-step calculations and it cost me on Q3 and Q5" does.
+
+### 1. Celebrate your wins
+
+Start here. What went well on Midterm 1? What are you proud of — even if it's small? Did you nail a particular concept, manage your time well, or finally understand something that had been confusing?
+
+Don't skip this part. It matters.
+
+### 2. What surprised you?
+
+Was there anything on the exam that caught you off guard — good or bad? A topic you thought you understood but didn't? A problem that turned out easier than expected? A time management issue you didn't anticipate?
+
+### 3. Where did things break?
+
+Be honest and specific. Look at the problems you lost points on and try to diagnose *why*. Some common patterns:
+
+- **Units:** forgot to convert, dropped units mid-calculation, didn't check dimensions
+- **Algebra:** wrong rearrangement, dropped a sign, arithmetic error
+- **Concept:** applied the wrong model, confused two similar ideas, missed an assumption
+- **Interpretation:** got a number but didn't connect it to the physical meaning
+- **Time/pacing:** spent too long on one problem, ran out of time on others
+
+You don't have to use these categories — they're just prompts to help you think. The point is to identify **patterns**, not just individual mistakes. If the same type of error showed up multiple times, that's a pattern worth naming.
+
+### 4. What's your plan?
+
+Pick **1–2 concrete things** you'll do differently for the next unit. Be specific enough that you could actually check whether you did them. For example:
+
+- "After every calculation, I'll write the units at every step and check that the final answer has the right dimensions."
+- "I'll do timed practice problems once a week so I get faster at setting up equations."
+- "I'll go to office hours when I'm confused instead of re-reading my notes for the third time."
+
+Vague plans ("study more," "try harder") are not plans. A good plan answers: *what specifically will I do, when will I do it, and how will I know it's working?*
+
+### 5. Have the Grade Memos been useful?
+
+You've been writing weekly Grade Memos on your homework. Be candid: **are they helping you learn?** What's working about them? What isn't? Is there anything about the Grade Memo process you'd change?
+
+(I actually read these answers. Your feedback helps me improve the course.)
+
+### 6. AI reflection (brief)
+
+If you used AI tools (ChatGPT, NotebookLM, etc.) to study for Midterm 1:
+
+- What did you use, and what for?
+- Did it actually help? How do you know?
+
+If you didn't use AI tools: that's fine, just say so and briefly say why.
+
+---
+
+## Logistics
+
+| | |
+|:--|:--|
+| **Due** | Friday, March 13 at 11:59 PM on Canvas |
+| **Format** | PDF or Word document — whatever is easy |
+| **Length** | ~400–600 words (not a hard limit — say what you need to say) |
+| **Grading** | 0–5 scale (see below) |
+| **Weight** | Growth Memos are 10% of your final grade (3 memos, averaged) |
+
+### How it's graded
+
+This is graded on **specificity, evidence, and seriousness of reflection**, not on how well you did on the exam.
+
+| Score | What it means |
+|:-----:|:-------------|
+| **5** | Specific and evidence-based. You pointed to real evidence, named real patterns, and made a concrete plan. |
+| **4** | Strong overall, but one element is thin — maybe the plan is vague, or the wins section is skipped. |
+| **3** | Some insight, but too general. "I need to study more" without diagnosis or specifics. |
+| **2–1** | Minimal effort. Mostly summary, little reflection. |
+| **0** | Not submitted. |
+
+**You cannot lose points for having done poorly on the exam.** A student who scored 60% and writes a thoughtful, specific memo earns a 5. A student who scored 95% and writes "I did fine, no changes needed" without specifics earns a 3.
+
+---
+
+*Growth Memo 2 will come after Midterm 2. Growth Memo 3 will come before the final and will include a study plan.*

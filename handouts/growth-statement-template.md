@@ -1,7 +1,7 @@
 ---
-title: ASTR 201 — Growth Statement Template (GS1 / GS2 / GS3)
-subtitle: "Due: 2 days (Wednesday) after HW submission by 11:59 PM"
-author: "Instructor: Dr. Anna Rosen"
+title: "ASTR 201 — Growth Memo Template"
+subtitle: "A guide for your reflection — not a form to fill out"
+author: "Dr. Anna Rosen"
 format:
   pdf:
     toc: false
@@ -14,209 +14,125 @@ format:
     number-sections: false
 ---
 
-**Instructor:** Dr. Anna Rosen
-*(This template is intentionally structured so grading is consistent and your reflection is evidence-based.)*
+This template is here to help you write a thoughtful reflection, not to make you fill out a bureaucratic form. Use it as a guide — follow the sections, but write in your own voice. Bullet points, short paragraphs, stream of consciousness — whatever lets you be honest and specific.
+
+**Length target:** ~400–600 words total. Say what you need to say.
 
 ---
 
-## Header (fill in)
+## Your info
 
 * **Name:**
 * **RedID:**
-* **Section / Meeting time:**
-* **Growth Statement:** GS1 (after Midterm 1) / GS2 (after Midterm 2) / GS3 (pre-final)
-* **Date submitted:**
-* **Time spent writing this:** ~30–45 minutes (target)
-
-**Length target:** ~400–600 words total (concise + specific). Bullet points are welcome if they contain real substance.
+* **Growth Memo:** 1 (after Midterm 1) / 2 (after Midterm 2) / 3 (pre-final)
+* **Date:**
 
 ---
 
-## 0) Quick checklist (required)
+## Before you submit — quick sanity check
 
-Check each box before you submit:
+Skim your memo and make sure you've done these things. If any are missing, your memo is probably too vague:
 
-* [ ] I referenced specific evidence (exam question numbers + what happened).
-* [ ] I identified my **top 2–3 recurring patterns** (not just “I need to study more”).
-* [ ] I wrote **2–3 concrete habits** I will implement, with “when → I will” plans.
-* [ ] I included a **verification plan** (how I’ll know it’s working).
-* [ ] I completed the **AI reflection** section (even if “no AI used”).
-
----
-
-## 1) Evidence Snapshot (required)
-
-Fill in **at least 3 rows**. Use Midterm/Homework/Practice as evidence.
-
-| Evidence item (e.g., “Midterm 1 Q4”) | What happened (1 sentence) | Error type(s)                                                          | What would have caught it?                                              |
-| ------------------------------------ | -------------------------- | ---------------------------------------------------------------------- | ----------------------------------------------------------------------- |
-|                                      |                            | units / algebra / concept / sign / assumptions / interpretation / time | units check / limiting case / diagram / reread prompt / sanity estimate |
-|                                      |                            |                                                                        |                                                                         |
-|                                      |                            |                                                                        |                                                                         |
-|                                      |                            |                                                                        |                                                                         |
+- [ ] You pointed to **specific evidence** (exam questions, HW problems, or practice where something went right or wrong).
+- [ ] You identified **1–3 patterns** — not just "I messed up" but *what kind* of errors keep showing up.
+- [ ] You wrote down **1–2 concrete things** you'll do differently — specific enough that you could actually check whether you did them.
+- [ ] You reflected on AI use (even if the answer is "I didn't use any").
 
 ---
 
-## 2) Pattern diagnosis (required)
+## 1) What went well
 
-Answer these questions **in complete sentences** (short is fine).
+Start with the good stuff. What are you proud of from this unit — a concept you nailed, a problem type you got comfortable with, a study habit that paid off? Be specific.
 
-**2.1 Top patterns (choose 2–3):**
-List your most common patterns as *specific behaviors*, not labels.
-
-* Pattern A:
-* Pattern B:
-* (Optional) Pattern C:
-
-**2.2 What triggers them?**
-When do these patterns show up most (time pressure, multi-step problems, conceptual questions, translating words → equations, etc.)?
-
-**2.3 What do they cost you?**
-Be specific: points, time, confidence, wrong physical conclusion, etc.
+This section matters. Recognizing what works is just as important as diagnosing what doesn't.
 
 ---
 
-## 3) Root cause (required)
+## 2) Where things broke — and why
 
-For **one** major pattern, do a short “why-chain.”
+Look at the problems where you lost points (on the exam, on homework, on practice). Try to figure out *what happened* — not just "I got it wrong" but *why* you got it wrong.
 
-**Pattern chosen:** ________
+Some common error patterns to look for:
 
-* Why did this happen?
-* Why *again*? (what habit/system causes it to repeat?)
-* What is the earliest moment you could intervene?
+| Pattern | What it looks like |
+|:--------|:-------------------|
+| **Units** | Dropped units mid-calculation, forgot a conversion, answer has wrong dimensions |
+| **Algebra** | Wrong rearrangement, dropped a minus sign, arithmetic slip |
+| **Concept** | Used the wrong equation or model, confused two similar ideas |
+| **Sign/direction** | Doppler sign wrong, energy sign flipped, vector direction off |
+| **Assumptions** | Didn't check whether an approximation applied |
+| **Interpretation** | Got a number but couldn't explain what it means physically |
+| **Time/pacing** | Spent too long on one problem, ran out of time on others |
 
-*(This is not therapy; it’s debugging.)*
+You don't have to use these exact categories. They're just here to help you be specific. The goal is to notice **patterns** — if the same kind of mistake shows up more than once, that's worth naming.
 
----
-
-## 4) What actually worked (required)
-
-List **2 strategies** that *did* help you learn this unit. Each must be tied to evidence.
-
-* Strategy 1: What I did + evidence it worked (e.g., “I did timed practice twice; pacing improved on Q2/Q5”).
-* Strategy 2: What I did + evidence it worked.
-
----
-
-## 5) Intervention plan (required: 2–3 habits)
-
-Write **2–3** habits in this exact “implementation intention” format:
-
-### Habit 1
-
-* **When I…** (specific moment)
-* **I will…** (specific action)
-* **Because…** (1 sentence: what error it prevents)
-* **Verification:** how I’ll check this worked (units? checklist? score pattern? time log?)
-
-### Habit 2
-
-* **When I…**
-* **I will…**
-* **Because…**
-* **Verification:**
-
-### (Optional) Habit 3
-
-* **When I…**
-* **I will…**
-* **Because…**
-* **Verification:**
+**Dig one level deeper on your biggest pattern.** Ask yourself: *why does this keep happening?* Not "because I'm bad at math" — that's a label, not a cause. Something like "I jump straight to the equation without writing down what I know and what I'm solving for, so I lose track of units and assumptions." That's a cause, and it points directly to a fix.
 
 ---
 
-## 6) Study plan (required for GS3; optional for GS1/GS2)
+## 3) What you'll do differently
 
-### GS1/GS2 (optional)
+Pick **1–2 concrete habits** for the next unit. A good habit is specific enough that you could check whether you actually did it.
 
-One week plan (2–4 bullets). What will you do differently *starting this week*?
+For each one, try to answer:
 
-### GS3 (required: pre-final plan)
-
-Write a concrete plan for the **7 days before the final**:
-
-* **What topics will you practice each day?**
-* **What will you do for retrieval practice?** (self-testing, blank-page recall, timed problems)
-* **What will you do to simulate exam conditions?** (timed set, no notes, then review)
-* **What will you do for error review?** (rework missed problems; checklist)
-
-*(A plan you can actually execute beats a plan you admire.)*
+- **What will I do?** (the specific action)
+- **When will I do it?** (the trigger — "when I start a multi-step problem," "after every calculation," "every Tuesday evening")
+- **How will I know it's working?** (the check — fewer unit errors, finishing the exam with time to spare, etc.)
 
 ---
 
-## 7) Learning reflection (required, brief)
+## 4) Study plan (optional for Memos 1 & 2; required for Memo 3)
 
-Answer **all**:
+**Memos 1 & 2:** If you want to sketch a quick plan for the next few weeks, go for it. A few bullets is fine.
 
-1. What did you learn about **how you learn** in this unit?
-2. What surprised you about your performance (good or bad)?
-3. What’s one thing you’re proud of improving (even if you’re not “there” yet)?
+**Memo 3 (pre-final):** Write a concrete plan for the **7 days before the final**. Include: what you'll practice each day, how you'll test yourself (not just re-read — actually retrieve from memory), and how you'll simulate exam conditions at least once.
 
----
-
-## 8) AI reflection (required)
-
-Even if you didn’t use AI, complete this section.
-
-**8.1 Did you use AI tools for studying this unit?** Yes / No
-
-If **No**:
-
-* Why not? (1–2 sentences)
-
-If **Yes** (check all that apply):
-
-* [ ] Course NotebookLM Notebook (course-grounded)
-* [ ] ASTR 201 Socratic Tutor (Custom GPT)
-* [ ] Other: ________
-
-**8.2 What did you use AI for?** (check all that apply)
-
-* [ ] Clarifying concepts from notes/readings
-* [ ] Generating practice questions (not assigned homework)
-* [ ] Unit checks / sanity checks / limiting cases
-* [ ] Socratic hints (questions that guided my reasoning)
-* [ ] Planning study schedule
-* [ ] Other: ________
-
-**8.3 Verification:** Describe one time you *verified* an AI output (units, notes, re-derivation, etc.).
-**8.4 Next time:** One specific way you’ll improve your AI use next unit.
+A plan you can actually follow beats a plan that looks impressive on paper.
 
 ---
 
-# Appendix A — “Bad vs Good” examples (what earns full credit)
+## 5) Learning reflection
 
-## A1) Pattern diagnosis
+A few sentences on any of these:
 
-**Bad:** “I make dumb mistakes. I need to study more.”
-**Good:** “Under time pressure, I skip writing assumptions and jump into equations. On Midterm 1 Q4 I used the right formula but applied it outside its assumptions, which led to a wrong physical conclusion. The fix is to write assumptions before equations every time.”
-
-## A2) Intervention plan
-
-**Bad:** “I will be more careful and check my work.”
-**Good:** “When I finish a multi-step problem, I will spend 60 seconds doing a unit check and one limiting-case check (e.g., what happens if distance doubles?). This would have caught my Q2 scaling error because the trend was physically backwards.”
-
-## A3) Study plan
-
-**Bad:** “I’ll review the notes and do practice.”
-**Good:** “Mon/Wed/Fri: timed 30-minute mixed problem set (no notes). Tues/Thurs: rework missed problems and write a 5-item checklist of my recurring errors. Weekend: one full-length practice set under exam timing, then redo every missed problem from scratch.”
-
-## A4) AI reflection
-
-**Bad:** “I used ChatGPT to help.”
-**Good:** “I used the Socratic Tutor to quiz me on Doppler sign conventions and it refused to give answers until I committed. I verified by checking against the course notes and by testing limiting cases (approaching vs receding). Next time, I’ll write my own first-pass explanation before asking for hints.”
+- What did you learn about *how you learn* in this unit?
+- What surprised you about your performance — good or bad?
+- What's one thing you're proud of, even if you're not where you want to be yet?
 
 ---
 
-# Appendix B — Error type menu (use this language)
+## 6) AI reflection
 
-* **Units** (dimensional mismatch, missing conversions)
-* **Algebra** (symbol manipulation, dropped minus signs, wrong rearrangement)
-* **Concept/model** (wrong principle, wrong regime, wrong physical model)
-* **Sign/direction** (Doppler sign, vector direction, energy sign)
-* **Assumptions** (circular orbit assumed, blackbody assumed, neglecting opacity, etc.)
-* **Interpretation** (got a number but didn’t connect it to the physical story)
-* **Time/pacing** (ran out of time, didn’t allocate effort well)
+Even if you didn't use AI, say so briefly — no judgment either way.
+
+If you did use AI tools (ChatGPT, NotebookLM, etc.):
+
+- What did you use, and what for?
+- Did it actually help you learn, or did it mostly give you answers?
+- Describe one time you checked whether the AI was right (and how).
+- Anything you'd do differently next time?
 
 ---
+
+## What "good" looks like — a few examples
+
+These are just to calibrate. You don't have to match them exactly.
+
+**Identifying patterns:**
+
+> *Not this:* "I make careless mistakes and need to study more."
+>
+> *More like this:* "Under time pressure, I skip writing down my knowns/unknowns and jump straight to equations. On Midterm Q4, I used the right formula but applied it to the wrong regime — I assumed a circular orbit when the problem said elliptical. If I'd written down my assumptions first, I would have caught it."
+
+**Making a plan:**
+
+> *Not this:* "I'll be more careful and check my work."
+>
+> *More like this:* "After finishing every multi-step problem, I'll spend 60 seconds checking: (1) do the units work out? (2) what happens in a limiting case? This would have caught my Q2 error — my answer said flux *increases* with distance, which is physically backwards."
+
+**AI reflection:**
+
+> *Not this:* "I used ChatGPT to help."
+>
+> *More like this:* "I used ChatGPT to quiz me on Doppler conventions. I asked it to make me predict the sign before showing the answer, which forced me to think. I verified against the course notes afterward. Next time I'll try writing my own explanation first before asking for hints."
