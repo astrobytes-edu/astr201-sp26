@@ -1,24 +1,59 @@
-/* Lecture-local deck skin for Module 3 Lecture 1.
-   Uses the shared Reveal backbone unchanged and only adds slide-specific
-   layout/tone utilities for the white-background lifetime deck. */
+/* Lecture-local editorial skin for Module 3 Lecture 1.
+   Keeps the shared Reveal backbone intact and removes dashboard/card styling. */
 
 .reveal {
-  --life-bg: #fbfcfe;
-  --life-bg-soft: #f3f8fb;
-  --life-panel: #f7f9fc;
-  --life-panel-strong: #eef5f4;
+  --life-bg: #ffffff;
+  --life-bg-soft: #fbfefd;
   --life-ink: #1f2937;
-  --life-heading: #22324d;
+  --life-heading: #1f2e4b;
   --life-accent: #2f7f78;
-  --life-accent-soft: rgba(47, 127, 120, 0.12);
-  --life-border: rgba(34, 50, 77, 0.14);
-  --life-shadow: 0 20px 42px rgba(32, 45, 72, 0.08);
-  --life-muted: #5f6b7a;
+  --life-accent-soft: rgba(47, 127, 120, 0.08);
+  --life-rule: rgba(47, 127, 120, 0.28);
+  --life-muted: #677487;
 }
 
 .reveal .slides section {
-  background: linear-gradient(180deg, var(--life-bg) 0%, #ffffff 100%);
+  background: var(--life-bg);
   color: var(--life-ink);
+}
+
+.reveal #title-slide.quarto-title-block {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  padding: 1.8rem 2.35rem 1.2rem;
+  background: var(--life-bg);
+  border-top: 6px solid var(--life-accent);
+}
+
+.reveal #title-slide h1 {
+  max-width: 11ch;
+  font-size: 1.72em;
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  color: var(--life-heading);
+  margin-bottom: 0.32rem;
+}
+
+.reveal #title-slide .subtitle,
+.reveal #title-slide p.subtitle {
+  max-width: 18ch;
+  color: var(--life-accent);
+  font-size: 0.82em;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.reveal #title-slide .quarto-title-author,
+.reveal #title-slide .date,
+.reveal #title-slide .quarto-title-affiliation,
+.reveal #title-slide .author,
+.reveal #title-slide .quarto-title-author-name {
+  color: var(--life-muted);
+  font-size: 0.52em;
+  letter-spacing: 0.01em;
 }
 
 .reveal h1,
@@ -29,11 +64,8 @@
 }
 
 .reveal h2 {
+  font-size: 1.08em;
   margin-bottom: 0.5rem;
-}
-
-.reveal strong {
-  color: var(--life-heading);
 }
 
 .reveal p,
@@ -43,45 +75,13 @@
   color: var(--life-ink);
 }
 
-.reveal #title-slide.quarto-title-block {
-  display: flex !important;
-  flex-direction: column;
-  justify-content: center;
-  text-align: left;
-  padding: 2.2rem 2.4rem 1.4rem;
-  background:
-    linear-gradient(135deg, rgba(47, 127, 120, 0.09) 0%, rgba(47, 127, 120, 0.02) 38%, rgba(255, 255, 255, 0.96) 38%),
-    linear-gradient(180deg, var(--life-bg) 0%, #ffffff 100%);
+.reveal p,
+.reveal li {
+  line-height: 1.28;
 }
 
-.reveal #title-slide h1 {
-  max-width: 11ch;
-  font-size: 1.8em;
-  margin-bottom: 0.35rem;
-}
-
-.reveal #title-slide .subtitle,
-.reveal #title-slide p.subtitle {
-  max-width: 18ch;
-  color: var(--life-accent);
-  font-size: 0.88em;
-  font-weight: 600;
-  line-height: 1.2;
-  margin-bottom: 1.1rem;
-}
-
-.reveal #title-slide .quarto-title-author,
-.reveal #title-slide .date,
-.reveal #title-slide .quarto-title-affiliation,
-.reveal #title-slide .author,
-.reveal #title-slide .quarto-title-author-name {
-  color: var(--life-muted);
-  font-size: 0.55em;
-  letter-spacing: 0.01em;
-}
-
-.reveal #title-slide .quarto-title-author {
-  font-weight: 600;
+.reveal strong {
+  color: var(--life-heading);
 }
 
 .reveal .footer,
@@ -92,11 +92,20 @@
 .reveal .kicker,
 .reveal .clock-kicker {
   color: var(--life-accent);
-  font-size: 0.52em;
+  font-size: 0.5em;
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.35rem;
+}
+
+.reveal .layout-2col {
+  gap: 1.7rem;
+  align-items: start;
+}
+
+.reveal .figure-slide .layout-2col {
+  grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
 }
 
 .reveal .figure-shell,
@@ -117,94 +126,36 @@
 .reveal .derivation-card,
 .reveal .table-shell,
 .reveal .summary-card,
-.reveal .look-ahead-card {
-  background: rgba(255, 255, 255, 0.96);
-  border: 1px solid var(--life-border);
-  border-radius: 24px;
-  box-shadow: var(--life-shadow);
-}
-
-.reveal .figure-shell {
-  padding: 0.8rem;
-}
-
-.reveal .plot-shell {
-  padding: 0.6rem;
+.reveal .look-ahead-card,
+.reveal .idea-shell {
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0;
+  min-height: 0;
 }
 
 .reveal .figure-shell img {
-  border-radius: 18px;
+  display: block;
+  margin: 0 auto;
+  max-height: 54vh;
+  object-fit: contain;
+}
+
+.reveal .plot-shell img {
+  max-height: 56vh;
 }
 
 .reveal .figure-note,
 .reveal .media-credit {
   color: var(--life-muted) !important;
-  font-size: 0.55em;
-  line-height: 1.3;
+  font-size: 0.54em;
+  line-height: 1.28;
 }
 
 .reveal .figure-note {
-  margin-top: 0.45rem;
-}
-
-.reveal .prompt-shell,
-.reveal .mystery-card,
-.reveal .ratio-card,
-.reveal .example-card,
-.reveal .meaning-card,
-.reveal .compact-card,
-.reveal .result-card,
-.reveal .comparison-card,
-.reveal .stage-card,
-.reveal .derivation-card,
-.reveal .table-shell,
-.reveal .summary-card,
-.reveal .look-ahead-card {
-  padding: 0.9rem 1.05rem;
-}
-
-.reveal .mystery-card {
-  border-top: 5px solid var(--life-accent);
-}
-
-.reveal .prompt-slide .slides section,
-.reveal .slides section.prompt-slide {
-  background: linear-gradient(180deg, #f4fbfa 0%, #ffffff 100%);
-}
-
-.reveal .prompt-shell {
-  border: 2px solid rgba(47, 127, 120, 0.35);
-  font-size: 1.02em;
-  line-height: 1.18;
-}
-
-.reveal .prompt-slide ul {
-  list-style: none;
-  margin: 0.8rem 0 0;
-  padding: 0;
-  display: grid;
-  gap: 0.52rem;
-}
-
-.reveal .prompt-slide ul > li {
-  background: rgba(255, 255, 255, 0.96);
-  border: 1px solid var(--life-border);
-  border-radius: 18px;
-  box-shadow: 0 12px 28px rgba(32, 45, 72, 0.05);
-  margin: 0;
-  padding: 0.62rem 0.8rem;
-}
-
-.reveal .prompt-support,
-.reveal .prompt-steps {
-  color: var(--life-muted);
-  font-size: 0.72em;
-  line-height: 1.32;
-}
-
-.reveal .prompt-steps {
-  margin-top: 0.7rem;
-  padding-left: 1rem;
+  margin-top: 0.32rem;
 }
 
 .reveal .outcome-grid,
@@ -212,16 +163,14 @@
 .reveal .pipeline-grid,
 .reveal .logic-grid,
 .reveal .comparison-grid,
-.reveal .two-stage-grid,
 .reveal .summary-grid {
   display: grid;
-  gap: 0.8rem;
+  gap: 0.7rem 1.3rem;
 }
 
 .reveal .outcome-grid,
 .reveal .logic-grid,
 .reveal .comparison-grid,
-.reveal .two-stage-grid,
 .reveal .summary-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
@@ -235,19 +184,17 @@
 }
 
 .reveal .outcome-card,
+.reveal .roadmap-step,
 .reveal .pipeline-card,
 .reveal .logic-card,
-.reveal .roadmap-step,
-.reveal .summary-card {
-  padding: 0.85rem 0.95rem;
-  min-height: 5.2rem;
+.reveal .comparison-card,
+.reveal .summary-card,
+.reveal .compact-card {
+  border-top: 2px solid var(--life-rule);
+  padding-top: 0.32rem;
 }
 
 .reveal .roadmap-step {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
   font-weight: 600;
 }
 
@@ -255,137 +202,135 @@
 .reveal .pipeline-card strong {
   display: block;
   color: var(--life-accent);
-  font-size: 0.58em;
+  font-size: 0.56em;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  margin-bottom: 0.28rem;
+  margin-bottom: 0.18rem;
 }
 
 .reveal .pipeline-card {
   position: relative;
-  padding: 0.95rem 1rem;
 }
 
 .reveal .pipeline-card:not(:last-child)::after {
   content: "→";
   position: absolute;
-  right: -0.62rem;
-  top: 50%;
-  transform: translateY(-50%);
+  right: -0.82rem;
+  top: 0.08rem;
   color: var(--life-accent);
-  font-size: 1.15em;
+  font-size: 0.95em;
   font-weight: 700;
 }
 
 .reveal .idea-shell {
-  padding: 1.2rem 0.8rem 0.8rem;
   text-align: center;
+  padding-top: 0.45rem;
 }
 
 .reveal .idea-line {
   color: var(--life-heading);
-  font-size: 1.32em;
+  font-size: 1.26em;
   font-weight: 700;
-  line-height: 1.06;
+  line-height: 1.05;
   letter-spacing: -0.03em;
 }
 
 .reveal .idea-line-soft {
   color: var(--life-accent);
-  font-size: 0.62em;
-  letter-spacing: 0.12em;
+  font-size: 0.58em;
   text-transform: uppercase;
-  margin: 0.4rem 0;
+  letter-spacing: 0.14em;
+  margin: 0.34rem 0;
 }
 
-.reveal .equation-hero {
-  background: rgba(255, 255, 255, 0.97);
-  border: 1px solid var(--life-border);
-  border-radius: 30px;
-  box-shadow: var(--life-shadow);
-  padding: 1rem 1.3rem 0.85rem;
-  margin-bottom: 0.8rem;
+.reveal .equation-hero,
+.reveal .equation-focus,
+.reveal .derivation-card,
+.reveal .result-card {
+  text-align: center;
+  max-width: 16rem;
+  margin: 0.25rem auto 0.45rem;
 }
 
 .reveal .equation-hero .math.display,
-.reveal .equation-focus .math.display,
-.reveal .derivation-card .math.display,
-.reveal .result-card .math.display,
-.reveal .stage-card .math.display {
-  font-size: 1.18em;
+.reveal .equation-focus .math.display {
+  font-size: 1.05em;
   margin: 0.18rem 0;
 }
 
-.reveal .equation-focus {
-  padding: 0.8rem 1rem 0.72rem;
+.reveal .result-card .math.display,
+.reveal .derivation-card .math.display {
+  font-size: 1.12em;
+  margin: 0.2rem 0;
 }
 
-.reveal .compact-equation {
-  max-width: 18rem;
-  margin-left: auto;
-  margin-right: auto;
+.reveal .solar-note,
+.reveal .prompt-support,
+.reveal .prompt-steps,
+.reveal .next-tag {
+  color: var(--life-muted);
+  font-size: 0.68em;
+  line-height: 1.28;
 }
 
 .reveal .solar-note {
-  color: var(--life-muted);
-  font-size: 0.64em;
-  line-height: 1.28;
-  margin-top: 0.45rem;
+  text-align: center;
+  margin-bottom: 0.25rem;
 }
 
-.reveal .meaning-card ul,
-.reveal .compact-card ul {
-  margin-bottom: 0;
+.reveal .prompt-slide .slides section,
+.reveal .slides section.prompt-slide {
+  background: var(--life-bg-soft);
+}
+
+.reveal .prompt-shell {
+  padding-top: 0.45rem;
+  border-top: 2px solid var(--life-rule);
+  font-size: 1em;
+  line-height: 1.18;
+  max-width: 14.5rem;
+}
+
+.reveal .prompt-slide ul {
+  list-style: none;
+  margin: 0.72rem 0 0;
+  padding: 0;
+}
+
+.reveal .prompt-slide ul > li {
+  border-bottom: 1px solid rgba(31, 41, 55, 0.09);
+  margin: 0;
+  padding: 0.38rem 0 0.48rem;
+}
+
+.reveal .prompt-steps {
+  margin-top: 0.55rem;
+  padding-left: 1rem;
 }
 
 .reveal .takeaway-banner {
-  margin-top: 0.65rem;
-  padding: 0.5rem 0.78rem;
-  border-left: 6px solid var(--life-accent);
-  border-radius: 16px;
-  background: linear-gradient(90deg, var(--life-accent-soft) 0%, rgba(47, 127, 120, 0.02) 100%);
-  color: var(--life-heading);
+  margin-top: 0.55rem;
+  padding-top: 0.36rem;
+  border-top: 1.5px solid var(--life-rule);
+  color: var(--life-accent);
   font-weight: 600;
-  line-height: 1.2;
-}
-
-.reveal .ratio-card ol {
-  margin-bottom: 0;
-}
-
-.reveal .comparison-card,
-.reveal .stage-card,
-.reveal .summary-card {
-  min-height: 7rem;
-}
-
-.reveal .result-card {
-  text-align: center;
-}
-
-.reveal .tight-result {
-  padding-top: 1.1rem;
-  padding-bottom: 1.1rem;
+  line-height: 1.22;
 }
 
 .reveal .summary-strip {
-  margin-top: 0.7rem;
-}
-
-.reveal .summary-strip ul {
-  margin-bottom: 0;
+  margin-top: 0.45rem;
 }
 
 .reveal .mass-table table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 0.82em;
+  font-size: 0.78em;
 }
 
 .reveal .mass-table th,
 .reveal .mass-table td {
-  border-bottom: 1px solid rgba(34, 50, 77, 0.1);
-  padding: 0.52rem 0.65rem;
+  border-bottom: 1px solid rgba(31, 41, 55, 0.08);
+  padding: 0.45rem 0.55rem;
   text-align: left;
 }
 
@@ -396,53 +341,44 @@
 
 .reveal .mass-table tbody tr:last-child td {
   border-bottom: 0;
-  color: var(--life-heading);
-  font-weight: 700;
 }
 
 .reveal .look-ahead-card {
   text-align: center;
-  padding: 1.1rem 1.25rem;
-  font-size: 1.02em;
-  line-height: 1.2;
+  max-width: 16rem;
+  margin: 0.3rem auto 0;
 }
 
 .reveal .next-tag {
-  margin-top: 0.7rem;
-  color: var(--life-accent);
-  font-size: 0.74em;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  margin-top: 0.5rem;
   text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
 }
 
-.reveal .summary-card {
-  line-height: 1.25;
-}
-
-.reveal .summary-card strong {
-  display: block;
-  margin-bottom: 0.24rem;
+.reveal .clock-slide .layout-2col,
+.reveal .ratio-slide .layout-2col,
+.reveal .synthesis-slide .layout-2col {
+  grid-template-columns: 1fr;
+  gap: 0.45rem;
 }
 
 @media (max-width: 1100px) {
+  .reveal .figure-slide .layout-2col,
+  .reveal .outcome-grid,
   .reveal .roadmap-track,
   .reveal .pipeline-grid,
-  .reveal .outcome-grid,
   .reveal .logic-grid,
   .reveal .comparison-grid,
-  .reveal .two-stage-grid,
   .reveal .summary-grid {
     grid-template-columns: 1fr;
   }
 
   .reveal .pipeline-card:not(:last-child)::after {
     content: "↓";
+    left: 0;
     right: auto;
-    left: 50%;
     top: auto;
-    bottom: -0.65rem;
-    transform: translateX(-50%);
+    bottom: -0.55rem;
   }
 }
