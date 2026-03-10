@@ -4,6 +4,10 @@ subtitle: "Weeks 8–12 | How stars work and how they die"
 draft: false
 page-layout: article
 listing:
+  - id: module-lectures
+    contents: "slides/*.qmd"
+    template: ../../assets/templates/lecture-card.ejs
+    sort: "date"
   - id: module-readings
     contents: "readings/*.qmd"
     template: ../../assets/templates/reading-card.ejs
@@ -25,6 +29,13 @@ By the end of this module, you will be able to:
 - Derive main-sequence scaling relations
 - Describe the evolutionary paths of low- and high-mass stars
 - Calculate the Chandrasekhar limit for white dwarfs
+
+## Lectures
+
+::: {.lecture-grid}
+::: {#module-lectures}
+:::
+:::
 
 ## Lecture Readings
 

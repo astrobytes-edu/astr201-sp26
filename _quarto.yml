@@ -166,10 +166,14 @@ website:
         contents:
           - section: "Lecture 1: Ages & Lifetimes"
             contents:
+              - text: "Slides"
+                href: modules/module-03/slides/lecture-01-ages-lifetimes.qmd
               - text: "Reading"
                 href: modules/module-03/readings/lecture-01-ages-lifetimes.qmd
           - section: "Lecture 2: Hydrostatic Equilibrium"
             contents:
+              - text: "Slides"
+                href: modules/module-03/slides/lecture-02-hydrostatic-equilibrium.qmd
               - text: "Reading"
                 href: modules/module-03/readings/lecture-02-hydrostatic-equilibrium.qmd
           - section: "Lecture 3: Nuclear Fusion"
