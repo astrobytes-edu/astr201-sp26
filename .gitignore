@@ -33,6 +33,8 @@ _test-*
 **/*.out
 **/*.bbl
 **/*.blg
+handouts/grade-memo-template.pdf
+handouts/growth-statement-template.pdf
 
 **/*.quarto_ipynb
 
