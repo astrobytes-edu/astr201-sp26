@@ -400,10 +400,12 @@ The most important ideas from this reading:
 │  Status:      BALANCED — for now. The pressure        │
 │               gradient exactly cancels gravity at     │
 │               every radius. But maintaining this      │
-│               pressure requires a hot core (T ~ 15   │
-│               MK), and maintaining that temperature   │
-│               requires an energy source. Without one, │
-│               the star cools on τ_KH ~ 30 Myr.       │
+│               pressure requires a hot core of about   │
+│               15 MK, and maintaining that             │
+│               temperature requires an energy source.  │
+│               Without one, the star cools on the      │
+│               Kelvin-Helmholtz timescale of about     │
+│               30 Myr.                                 │
 │  Retrieval:   Pressure alone is not enough; the      │
 │               pressure must decrease outward.         │
 │  The problem: What keeps the core hot?                │

@@ -313,7 +313,8 @@ nuclear_timescale:
   says: "Fuel divided by burn rate. The Sun's nuclear lifetime is ~10 Gyr. Massive stars live much shorter lives because L grows faster than M."
   assumptions:
     - "Hydrogen fusion with efficiency $\\varepsilon \\approx 0.007$"
-    - "Only core fraction $f \\approx 0.10$ participates in fusion"
+    - "Only accessible core fraction $f_M \\approx 0.10$ participates in fusion for a Sun-like star"
+    - "The accessible fuel fraction $f_M$ is not universal; it varies with stellar mass and internal mixing"
     - "Luminosity approximately constant during main-sequence phase"
 
 lifetime_scaling:

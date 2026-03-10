@@ -672,6 +672,41 @@ figures:
     credit: "NASA/STScI"
     module: 3
 
+  anatomy-of-the-sun:
+    path: /assets/images/module-03/anatomy-of-the-sun.png
+    caption: "**Anatomy of the Sun.** This labeled cutaway distinguishes the core, radiative zone, convection zone, photosphere, chromosphere, and corona. **What to notice:** the fusion-powered core occupies only the central region; the visible surface is far from where the energy is generated."
+    alt: "Annotated cutaway of the Sun showing the core, radiative zone, convection zone, photosphere, chromosphere, transition region, and corona, with temperature labels for the atmospheric layers and callouts to magnetic activity."
+    credit: "NotebookLM-generated schematic"
+    module: 3
+
+  emc2-stellar-power:
+    path: /assets/images/module-03/e-mc2-infographic.png
+    caption: "**How $E = mc^2$ powers stars.** Four protons fuse into a helium-4 nucleus with a small mass deficit; that missing mass becomes energy in photons, neutrinos, and heat. **What to notice:** the efficiency is tiny ($\\varepsilon \\approx 0.007$), but the factor of $c^2$ makes the usable energy reservoir enormous compared with chemical burning."
+    alt: "Infographic showing four protons entering fusion, a helium-4 nucleus as output, a small missing mass turned into energy via E equals m c squared, and comparison panels contrasting stellar fusion with chemical burning."
+    credit: "NotebookLM-generated schematic"
+    module: 3
+
+  fusion-quantum-tunneling:
+    path: /assets/images/module-03/fusion-quantum-tunneling.png
+    caption: "**Quantum tunneling makes stellar fusion possible.** The Sun's core temperature is far below the classical barrier-crossing requirement, but the wave nature of protons gives a nonzero tunneling probability. **What to notice:** hydrostatic equilibrium gets the core hot enough to matter, and quantum mechanics does the rest."
+    alt: "Infographic with a cutaway star on the left showing a 17 million kelvin solar core, and a zoomed microscopic view on the right showing protons with wave-like fuzziness tunneling through an electrostatic repulsion barrier to fuse."
+    credit: "NotebookLM-generated schematic"
+    module: 3
+
+  stellar-stability-hse:
+    path: /assets/images/module-03/stellar-stability-hse.png
+    caption: "**Stellar stability as a tug-of-war with a thermostat.** Gravity pulls inward while hot gas pressure pushes outward. **What to notice:** the balance is not static; if pressure support drops, contraction heats the core and raises the fusion rate, helping restore equilibrium."
+    alt: "Cutaway schematic of the Sun with inward blue gravity arrows and outward orange pressure arrows, plus callouts explaining hydrostatic equilibrium and the stellar thermostat effect."
+    credit: "NotebookLM-generated schematic"
+    module: 3
+
+  stellar-tug-of-war-hse:
+    path: /assets/images/module-03/stellar-tug-of-war-hse.png
+    caption: "**Hydrostatic equilibrium in cross-section.** The figure contrasts inward gravitational compression with outward pressure support and labels the core, envelope, and atmosphere. **What to notice:** equilibrium is local and layer-by-layer, not a single force acting at the surface."
+    alt: "Cutaway star diagram with curved arrows labeled gravity and pressure, labeled layers including atmosphere and radiative-convective envelopes, and side panels describing main-sequence stability, red giant expansion, and compact remnants."
+    credit: "NotebookLM-generated schematic"
+    module: 3
+
   # ── Generated figures (assets/scripts/make_module03_figures.py) ──
 
   timescale-hierarchy:

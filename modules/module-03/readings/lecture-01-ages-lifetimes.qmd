@@ -233,18 +233,39 @@ Nuclear fusion converts about $0.7\%$ of the hydrogen rest-mass energy into radi
 How much more energy is available from **core hydrogen fusion** than from gravitational contraction? Compare the accessible nuclear reservoir to the gravitational reservoir:
 
 $$
-\frac{E_\text{nuc}}{E_\text{grav}} \sim \frac{\varepsilon f M c^2}{GM^2/R} = \frac{\varepsilon f c^2 R}{GM}
+\frac{E_\text{nuc}}{E_\text{grav}} \sim \frac{\varepsilon f_M M c^2}{GM^2/R} = \frac{\varepsilon f_M c^2 R}{GM}
 $$
 
-For the Sun ($\varepsilon \approx 0.007$, $f \approx 0.10$, $R_\odot$, $M_\odot$):
+Here $f_M M$ means the **accessible fuel mass** for main-sequence hydrogen burning: $M$ is the total stellar mass, and $f_M$ is the fraction of that mass that actually participates in core fusion. For a Sun-like star, a useful estimate is $f_M \approx 0.10$, but this is not universal.
 
 $$
-\frac{E_\text{nuc}}{E_\text{grav}} \sim \frac{(0.007)(0.10)(3 \times 10^{10})^2 (7 \times 10^{10})}{(6.674 \times 10^{-8})(2 \times 10^{33})} \sim \frac{4.4 \times 10^{28}}{1.3 \times 10^{26}} \approx 300
+\frac{E_\text{nuc}}{E_\text{grav}} \sim
+\frac{(0.007)(0.10)\left(3.0 \times 10^{10}~\text{cm}/\text{s}\right)^2 \left(7.0 \times 10^{10}~\text{cm}\right)}
+{\left(6.674 \times 10^{-8}~\text{cm}^3~\text{g}^{-1}~\text{s}^{-2}\right)\left(2.0 \times 10^{33}~\text{g}\right)}
 $$
+
+$$
+\sim
+\frac{(0.007)(0.10)\left(9.0 \times 10^{20}~\text{cm}^2/\text{s}^2\right)\left(7.0 \times 10^{10}~\text{cm}\right)}
+\left(1.33 \times 10^{26}~\text{cm}^3/\text{s}^2\right)
+$$
+
+$$
+\sim
+\frac{4.4 \times 10^{28}~\text{cm}^3/\text{s}^2}
+{1.33 \times 10^{26}~\text{cm}^3/\text{s}^2}
+\approx 3.3 \times 10^2
+$$
+
+**Units check:** The ratio is dimensionless. On the top, $c^2 R$ has units $(\text{cm}^2/\text{s}^2)(\text{cm}) = \text{cm}^3/\text{s}^2$. On the bottom, $GM$ has units $(\text{cm}^3~\text{g}^{-1}~\text{s}^{-2})(\text{g}) = \text{cm}^3/\text{s}^2$. The units cancel. ✓
 
 The accessible nuclear reservoir exceeds the gravitational reservoir by a factor of $\sim 300$. That is why the Sun's nuclear lifetime is hundreds of times longer than the Kelvin-Helmholtz timescale: nuclear burning extends the Sun's lifetime from $\sim 30~\text{Myr}$ to $\sim 10~\text{Gyr}$.
 
-This ratio, $\varepsilon f c^2 R / (GM)$, is essentially comparing the usable nuclear energy per baryon to the gravitational binding energy per baryon. It is not a direct measurement of the relative strengths of the forces themselves; it is a comparison of the energy reservoirs available inside a star.
+::: {.callout-warning}
+For the Sun, $f_M \approx 0.10$ is a useful back-of-the-envelope estimate. But $f_M$ can vary with stellar mass and internal mixing. Massive stars often mix more of their interior into the burning region than low-mass stars, so treat $f_M$ as an approximate **main-sequence scaling parameter**, not a universal constant.
+:::
+
+This ratio, $\varepsilon f_M c^2 R / (GM)$, is essentially comparing the usable nuclear energy per baryon to the gravitational binding energy per baryon. It is not a direct measurement of the relative strengths of the forces themselves; it is a comparison of the energy reservoirs available inside a star.
 :::
 
 ::: {.callout-tip}
@@ -267,12 +288,12 @@ The lesson: when observations contradict your best physical model, the model may
 
 ### How Long Can a Star Burn Hydrogen?
 
-Nuclear fusion converts a fraction $\varepsilon \approx 0.007$ (about $0.7\%$) of the rest-mass energy of hydrogen into radiation. Not all of the star's mass is available for fusion — only the core hydrogen participates, roughly $\sim 10\%$ of the total mass for a Sun-like star. Dividing that accessible nuclear reservoir by the luminosity gives the **nuclear timescale**:
+Nuclear fusion converts a fraction $\varepsilon \approx 0.007$ (about $0.7\%$) of the rest-mass energy of hydrogen into radiation. Not all of the star's mass is available for fusion — only the core hydrogen participates, roughly $\sim 10\%$ of the total mass for a Sun-like star. We label that accessible fuel fraction $f_M$, so the actual mass available to burn is $f_M M$. Dividing that accessible nuclear reservoir by the luminosity gives the **nuclear timescale**:
 
 {{< include ../../../_includes/equations/nuclear-timescale.qmd >}}
 {{< eqrefcard nuclear-timescale >}}
 
-In this equation, $\varepsilon \approx 0.007$ is the mass-to-energy conversion efficiency for hydrogen fusion, $f \approx 0.10$ is the fraction of the star's mass available as fuel, $M$ is the star's total mass, and $c = 3.0 \times 10^{10}~\text{cm}/\text{s}$ is the speed of light. The equation is meant for **main-sequence hydrogen burning**, not for every possible stellar phase.
+In this equation, $\varepsilon \approx 0.007$ is the mass-to-energy conversion efficiency for hydrogen fusion, $f_M \approx 0.10$ is the fraction of the star's mass available as fuel for a Sun-like main-sequence star, $M$ is the star's total mass, and $c = 3.0 \times 10^{10}~\text{cm}/\text{s}$ is the speed of light. The equation is meant for **main-sequence hydrogen burning**, not for every possible stellar phase, and the exact value of $f_M$ can vary with stellar mass and internal mixing.
 
 ### Worked Example: The Sun's Nuclear Lifetime
 
@@ -401,7 +422,7 @@ The hierarchy spans a factor of $\sim 10^{10}$ from fastest to slowest. This eno
 |:----------|:-------:|:----------------|:---------:|
 | Dynamical $\tau_\text{dyn}$ | $\sim 1/\sqrt{G\bar{\rho}}$ | Free-fall time; how fast gravity rearranges matter | $\sim 50~\text{min}$ |
 | Thermal $\tau_\text{KH}$ | $\sim GM^2/(RL)$ | Time to radiate stored gravitational energy | $\sim 30~\text{Myr}$ |
-| Nuclear $\tau_\text{nuc}$ | $\sim \varepsilon f Mc^2/L$ | Time to exhaust nuclear fuel | $\sim 10~\text{Gyr}$ |
+| Nuclear $\tau_\text{nuc}$ | $\sim \varepsilon f_M Mc^2/L$ | Time to exhaust nuclear fuel | $\sim 10~\text{Gyr}$ |
 
 ### Symbol Legend
 
@@ -414,7 +435,7 @@ The hierarchy spans a factor of $\sim 10^{10}$ from fastest to slowest. This eno
 | $L$ | Luminosity | $\text{erg}/\text{s}$ (or $L_\odot = 3.8 \times 10^{33}~\text{erg}/\text{s}$) |
 | $c$ | Speed of light | $3.0 \times 10^{10}~\text{cm}/\text{s}$ |
 | $\varepsilon$ | Nuclear mass-energy conversion efficiency | Dimensionless ($\approx 0.007$ for H→He) |
-| $f$ | Fraction of mass available as fuel | Dimensionless ($\approx 0.10$) |
+| $f_M$ | Accessible fuel fraction, so $f_M M$ is the mass that actually burns | Dimensionless ($\approx 0.10$ for a Sun-like star) |
 
 ---
 
@@ -441,8 +462,9 @@ The most important ideas from this reading:
 │  Status:      UNKNOWN — gravity has been pulling on  │
 │               the Sun for 4.6 Gyr. Something has     │
 │               been fighting back. We now know the    │
-│               fight has a clock (τ_nuc ~ 10 Gyr),    │
-│               but we don't yet know WHO is fighting. │
+│               fight has a nuclear clock of about     │
+│               10 Gyr, but we do not yet know WHO    │
+│               is fighting.                           │
 │  Retrieval:   If a cluster still has blue turnoff    │
 │               stars, it must be young.               │
 │  Next battle: What holds a star up? → Reading 2      │

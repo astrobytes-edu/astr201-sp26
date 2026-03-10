@@ -127,6 +127,16 @@ By the end of class, you should be able to:
 
 ---
 
+## Visual Intuition: The Stellar Tug-of-War
+
+{{< img stellar-tug-of-war-hse width="88%" >}}
+
+::: {.notes}
+8-9 min. Use this as the bridge from the pool analogy to the shell argument. Stress that hydrostatic equilibrium is local and layer-by-layer, not a single force acting only at the surface.
+:::
+
+---
+
 ## Build the Force Balance
 
 Consider a thin shell at radius $r$ with thickness $dr$.
@@ -157,17 +167,26 @@ Consider a thin shell at radius $r$ with thickness $dr$.
 
 ## The Master Balance Law
 
+:::: {.columns}
+::: {.column width="54%"}
 {{< include ../../../_includes/equations/hydrostatic-equilibrium.qmd >}}
-{{< eqrefcard hydrostatic-equilibrium >}}
-
-::: {.fragment .text-sm .mt-2}
-- **Left side:** how quickly pressure changes outward  
-- **Right side:** the local weight per unit volume  
-- **Sign:** negative, because pressure must fall as you move outward
 :::
 
+::: {.column width="46%"}
+::: {.bg-muted .p-2 .text-sm}
+**Read it like a sentence**
+
+- **$P$** is pressure and **$\rho$** is density
+- **$M(r)$** is the mass enclosed inside radius $r$
+- left side: how pressure changes outward
+- right side: the local weight per unit volume
+- negative sign: pressure must fall as radius increases
+:::
+:::
+::::
+
 ::: {.notes}
-10-14 min. Read it in plain English: pressure must drop outward at exactly the rate needed to support the overlying weight.
+10-14 min. Read it in plain English: pressure must drop outward at exactly the rate needed to support the overlying weight. Assumptions: spherical symmetry and no strong acceleration.
 :::
 
 ---
@@ -189,14 +208,23 @@ If $dP/dr = 0$ everywhere inside a star, the star would:
 
 ## How Much Pressure Does the Core Need?
 
+:::: {.columns}
+::: {.column width="54%"}
 {{< include ../../../_includes/equations/central-pressure.qmd >}}
-{{< eqrefcard central-pressure >}}
-
-::: {.fragment .text-sm .mt-2}
-- **Scaling story:** more mass means more weight to support  
-- **Smaller radius:** same mass packed tighter needs much larger central pressure  
-- **Assumption:** order-of-magnitude estimate, not a detailed solar model
 :::
+
+::: {.column width="46%"}
+::: {.bg-muted .p-2 .text-sm}
+**Scaling story**
+
+- **$P_c$** is central pressure
+- **$M$** is stellar mass and **$R$** is stellar radius
+- more mass means more weight to support
+- smaller radius means much stronger compression
+- this is an order-of-magnitude estimate, not a full stellar model
+:::
+:::
+::::
 
 ::: {.notes}
 15-19 min. This is the first big payoff from hydrostatic equilibrium.
@@ -207,7 +235,7 @@ If $dP/dr = 0$ everywhere inside a star, the star would:
 ## Solar Core Pressure: Order of Magnitude
 
 ::: {.r-fit-text}
-$P_c \sim \frac{GM_\odot^2}{R_\odot^4} \approx 10^{16}~\text{dyn cm}^{-2}$
+$P_c \sim \frac{GM_\odot^2}{R_\odot^4} \approx 10^{16}~\text{dyn}/\text{cm}^2$
 :::
 
 ::: {.incremental .mt-2}
@@ -224,14 +252,23 @@ $P_c \sim \frac{GM_\odot^2}{R_\odot^4} \approx 10^{16}~\text{dyn cm}^{-2}$
 
 ## Gravity and Thermal Energy Are Linked
 
+:::: {.columns}
+::: {.column width="50%"}
 {{< include ../../../_includes/equations/stellar-virial.qmd >}}
-{{< eqrefcard stellar-virial >}}
-
-::: {.fragment .text-sm .mt-2}
-- gravity makes the star **bound**, so $U_\text{grav}$ is negative  
-- thermal motion keeps the gas from collapsing completely  
-- the virial theorem says these are not independent bookkeeping categories
 :::
+
+::: {.column width="50%"}
+::: {.bg-muted .p-2 .text-sm}
+**What makes this deep**
+
+- **$K_\text{th}$** is total thermal energy
+- **$U_\text{grav}$** is gravitational potential energy
+- gravity binds the star, so $U_\text{grav}<0$
+- thermal motion resists collapse
+- the theorem links the energy budget to the force balance
+:::
+:::
+::::
 
 ::: {.notes}
 21-25 min. This is the conceptual bridge from force balance to energy balance.
@@ -260,14 +297,23 @@ Self-gravitating systems do the opposite of a coffee cup on your desk.
 
 ## From Gravity to Core Temperature
 
+:::: {.columns}
+::: {.column width="54%"}
 {{< include ../../../_includes/equations/core-temperature.qmd >}}
-{{< eqrefcard core-temperature >}}
-
-::: {.fragment .text-sm .mt-2}
-- **Depends on:** mass, radius, and mean molecular weight  
-- **Prediction for the Sun:** order $10^7~\text{K}$  
-- **Meaning:** gravity can make the core hot enough for fusion to matter
 :::
+
+::: {.column width="46%"}
+::: {.bg-muted .p-2 .text-sm}
+**Why this matters**
+
+- **$\mu$** is mean molecular weight
+- **$m_p$** is the proton mass and **$k_B$** is Boltzmann's constant
+- depends on mass, radius, and composition
+- gives the Sun a core temperature of order $10^7~\text{K}$
+- shows that gravity alone can prepare the conditions for fusion
+:::
+:::
+::::
 
 ::: {.notes}
 28-31 min. This is the "we can estimate the solar core without going inside" moment.
@@ -301,6 +347,16 @@ That is the setup for the next lecture: once the core is hot enough, how does fu
 
 ::: {.notes}
 31-33 min. Make the transition explicit. Students should feel that hydrostatic equilibrium prepares the ground for fusion.
+:::
+
+---
+
+## Where in the Sun Is the Engine?
+
+{{< img anatomy-of-the-sun width="86%" >}}
+
+::: {.notes}
+33-34 min. Point out how small the core is compared with the whole star. This helps students separate the fusion engine from the layers that transport and emit the energy.
 :::
 
 ---
@@ -351,13 +407,22 @@ Target idea: the more compact star needs much larger support and therefore a hot
 
 ## Summary: What Hydrostatic Equilibrium Gives Us
 
+:::: {.columns}
+::: {.column width="50%"}
 ::: {.incremental .text-sm}
 1. **Stars need a pressure gradient** — equal pressure on both sides does nothing  
 2. **Hydrostatic equilibrium is the master balance law** for stellar structure  
-3. **Central pressure scales with compactness** — same mass, smaller radius means larger $P_c$  
+3. **Central pressure scales with compactness** — same mass, smaller radius means larger $P_c$
+:::
+:::
+
+::: {.column width="50%"}
+::: {.incremental .text-sm}
 4. **Virial balance links gravity and heat** — contraction raises temperature  
 5. **The solar core must be hot** — enough to set up nuclear fusion
 :::
+:::
+::::
 
 ::: {.notes}
 38-40 min. This is the clean stopping point for the shorter version.
@@ -377,6 +442,16 @@ Next question: **how do protons actually fuse when they repel each other?**
 
 ::: {.notes}
 40-41 min. Hand off to Lecture 3: nuclear fusion.
+:::
+
+---
+
+## Preview: Hydrostatic Balance Is Not the Whole Story
+
+{{< img fusion-quantum-tunneling width="82%" >}}
+
+::: {.notes}
+Preview slide. The left side connects directly to today's lecture; the right side previews why classical physics fails and quantum tunneling is required.
 :::
 
 ---
@@ -423,4 +498,14 @@ That is why later in Module 3 ordinary gas pressure stops being enough, and dege
 
 ::: {.notes}
 Optional forward-looking bridge to the stellar remnants lectures.
+:::
+
+---
+
+## Optional: The Stellar Thermostat
+
+{{< img stellar-stability-hse width="88%" >}}
+
+::: {.notes}
+Optional visual summary of the thermostat idea: contraction raises temperature and fusion rate, which helps restore pressure support.
 :::

@@ -167,17 +167,24 @@ Lifetime $\sim \frac{\text{available energy}}{\text{luminosity}}$
 
 ## Clock 1: How Fast Could Gravity Rearrange a Star?
 
+:::: {.columns}
+::: {.column width="54%"}
 {{< include ../../../_includes/equations/dynamical-timescale.qmd >}}
-{{< eqrefcard dynamical-timescale >}}
-
-::: {.fragment .text-sm .mt-2}
-- **What it predicts:** how quickly a star responds if pressure support fails  
-- **Depends on:** mean density, not luminosity  
-- **Hidden assumption:** gravity is acting without a compensating pressure response
 :::
 
+::: {.column width="46%"}
+::: {.bg-muted .p-2 .text-sm}
+**Read it like a sentence**
+
+- predicts the star's **response time**
+- depends on **mean density**, not brightness
+- applies if pressure support fails and gravity gets to act freely
+:::
+:::
+::::
+
 ::: {.notes}
-10-12 min. Read the equation like a sentence. This is not the Sun's age; it is the Sun's response time.
+10-12 min. Read the equation like a sentence. This is not the Sun's age; it is the Sun's response time. Units check: $[G\bar{\rho}] = \text{s}^{-2}$, so the inverse square root gives seconds.
 :::
 
 ---
@@ -220,17 +227,24 @@ $\tau_{\text{dyn},\odot} \sim 3 \times 10^3~\text{s} \approx 50~\text{min}$
 
 ## Clock 2: How Long Could Gravity Alone Power the Sun?
 
+:::: {.columns}
+::: {.column width="56%"}
 {{< include ../../../_includes/equations/kelvin-helmholtz.qmd >}}
-{{< eqrefcard kelvin-helmholtz >}}
-
-::: {.fragment .text-sm .mt-2}
-- **Idea:** available gravitational energy divided by luminosity  
-- **Prediction for the Sun:** only tens of millions of years  
-- **Historical stakes:** this was Lord Kelvin's best answer before nuclear physics
 :::
 
+::: {.column width="44%"}
+::: {.bg-muted .p-2 .text-sm}
+**What it is saying**
+
+- gravity gives a finite energy reservoir
+- luminosity spends that reservoir
+- for the Sun, gravity alone lasts only **tens of Myr**
+:::
+:::
+::::
+
 ::: {.notes}
-13-16 min. This is the bridge from timescale logic to a major historical failure.
+13-16 min. This is the bridge from timescale logic to a major historical failure. Assumption: gravitational contraction is the only power source.
 :::
 
 ---
@@ -272,30 +286,73 @@ Kelvin's answer for the Sun was only about **20-30 Myr**.
 
 ---
 
-## Clock 3: The True Main-Sequence Clock
+## Why $E = mc^2$ Changes the Budget
 
-{{< include ../../../_includes/equations/nuclear-timescale.qmd >}}
-{{< eqrefcard nuclear-timescale >}}
-
-::: {.fragment .text-sm .mt-2}
-- **Fuel:** only a fraction of the star's mass is available for core hydrogen burning  
-- **Energy source:** mass converted to energy through fusion  
-- **Why this matters:** now the Sun can shine for billions of years, not millions
-:::
+{{< img emc2-stellar-power width="88%" >}}
 
 ::: {.notes}
-20-23 min. Stress that we are not doing nuclear reaction details yet; we only need the energy-accounting idea.
+20-22 min. Use the pointer to highlight the tiny mass deficit and the comparison table. The slide is busy, so teach from the image rather than asking students to read every label. The big message: fusion taps rest-mass energy, not a merely thermal or chemical reservoir.
+:::
+
+---
+
+## Clock 3: The True Main-Sequence Clock
+
+:::: {.columns}
+::: {.column width="56%"}
+{{< include ../../../_includes/equations/nuclear-timescale.qmd >}}
+:::
+
+::: {.column width="44%"}
+::: {.bg-muted .p-2 .text-sm}
+**Why this clock is different**
+
+- **$\varepsilon$**: fusion efficiency (about $0.007$)
+- **$f_M$**: accessible fuel fraction for main-sequence burning
+- **$L$**: luminosity, the rate the star spends energy
+- fusion converts mass to energy
+- only the accessible core fuel participates
+- now the Sun can last **billions**, not millions, of years
+:::
+:::
+::::
+
+::: {.notes}
+20-23 min. Stress that we are not doing nuclear reaction details yet; we only need the energy-accounting idea. Mention that $f_M$ is an approximate accessible fuel fraction, not a universal constant.
+:::
+
+---
+
+## Why Massive Stars Die Young
+
+:::: {.columns}
+::: {.column width="54%"}
+{{< include ../../../_includes/equations/lifetime-scaling.qmd >}}
+:::
+
+::: {.column width="46%"}
+::: {.bg-muted .p-2 .text-sm}
+**Interpretation**
+
+- **$\tau$** here means main-sequence lifetime
+- **$M$** is measured relative to the Sun in this scaling form
+- lifetime scales steeply downward with mass
+- extra fuel does **not** keep up with the extra luminosity
+- this is why the upper main sequence empties out first
+:::
+:::
+::::
+
+::: {.notes}
+23-25 min. This is the compact mathematical statement of the lecture's main idea.
 :::
 
 ---
 
 ## The Scaling That Explains the HR Diagram
 
-{{< include ../../../_includes/equations/lifetime-scaling.qmd >}}
-{{< eqrefcard lifetime-scaling >}}
-
 :::: {.columns}
-::: {.column width="48%"}
+::: {.column width="50%"}
 ::: {.text-sm}
 | Mass | MS lifetime |
 |------|-------------|
@@ -306,7 +363,7 @@ Kelvin's answer for the Sun was only about **20-30 Myr**.
 :::
 :::
 
-::: {.column width="52%"}
+::: {.column width="50%"}
 ::: {.bg-muted .p-2 .text-sm}
 More mass gives you more fuel, but luminosity rises even faster.
 
@@ -316,20 +373,26 @@ That is why O and B stars are bright, rare, and short-lived.
 ::::
 
 ::: {.notes}
-23-27 min. This is the core quantitative payoff. Pause on the 10-solar-mass example because students remember dramatic ratios.
+25-27 min. This is the core quantitative payoff. Pause on the 10-solar-mass example because students remember dramatic ratios.
 :::
 
 ---
 
 ## The Three Clocks, Side by Side
 
-{{< fig timescale-hierarchy >}}
+:::: {.columns}
+::: {.column width="62%"}
+{{< img timescale-hierarchy width="100%" >}}
+:::
 
-::: {.fragment .mt-2}
+::: {.column width="38%"}
+::: {.fragment .bg-muted .p-2 .text-sm}
 The huge separation
 $\tau_\text{dyn} \ll \tau_\text{KH} \ll \tau_\text{nuc}$
-is why stars can be treated as slowly evolving equilibrium objects.
+is why stars behave like slowly evolving equilibrium objects rather than violent explosions all the time.
 :::
+:::
+::::
 
 ::: {.notes}
 27-29 min. This is the conceptual synthesis slide for the whole timescale story.
@@ -371,13 +434,22 @@ Target idea: the cluster must be younger than about $30~\text{Myr}$, because the
 
 ## Summary: What This Lecture Added
 
+:::: {.columns}
+::: {.column width="50%"}
 ::: {.incremental .text-sm}
 1. **Stars are clocks** — lifetime is energy supply divided by luminosity  
 2. **Three timescales matter** — dynamical, thermal, and nuclear  
-3. **Kelvin's model failed honestly** — gravity alone was not enough  
+3. **Kelvin's model failed honestly** — gravity alone was not enough
+:::
+:::
+
+::: {.column width="50%"}
+::: {.incremental .text-sm}
 4. **Fusion sets the true lifetime** — and massive stars die young  
 5. **Turnoff dates clusters** — the HR diagram becomes a timeline
 :::
+:::
+::::
 
 ::: {.notes}
 36-38 min. This is the core ending for the 50-minute version.
@@ -435,6 +507,16 @@ Optional Expansion
 
 ::: {.notes}
 Optional historical expansion. Good if the class is responding well to the "science changes when evidence pushes it" theme.
+:::
+
+---
+
+## Optional: The Missing-Mass Picture
+
+{{< img emc2-stellar-power width="86%" >}}
+
+::: {.notes}
+Optional revisit if students want a slower visual explanation of how a tiny mass deficit can sustain billions of years of luminosity.
 :::
 
 ---
