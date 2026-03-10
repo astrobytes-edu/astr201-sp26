@@ -13,45 +13,45 @@ format:
 
 ## What is this?
 
-A Growth Memo is a short reflection on how things are going. You just took your first midterm — now take 30–45 minutes to think about it. What went well? What didn't? What are you going to do about it?
+A Growth Memo is a short reflection on how things are going. You just took your first midterm, and you've also been building a record through your homework, Grade Memos, and study habits. Now take 30–45 minutes to look at that bigger picture. What went well? What didn't? What patterns are showing up? What are you going to do about them?
 
 **This is not a formal essay.** Think of it as a journal entry, a brain dump, a letter to yourself. Write in whatever voice feels natural — bullet points, stream of consciousness, full paragraphs, whatever works. You will **not** be graded on grammar, spelling, or polish. You will be graded on specificity, evidence, and the seriousness of your reflection.
 
 ## Why we do this
 
-Here's the thing: **your score on one exam is a snapshot, not a verdict.** It tells you where you are right now — not where you'll end up. The students who improve the most over a semester aren't the ones who got the highest score on the first exam. They're the ones who looked carefully at what happened, figured out *why*, and changed something concrete.
+Here's the thing: **one exam score or one homework set is a snapshot, not a verdict.** It tells you where you are right now — not where you'll end up. The students who improve the most over a semester aren't just the ones who got the highest score early. They're the ones who looked carefully at the evidence, figured out *why* things went the way they did, and changed something concrete.
 
-That's what this memo is for. Not to make you feel bad. Not to perform self-improvement for a grade. Just to pause, look at the evidence, and make a plan.
+That's what this memo is for. Not to make you feel bad. Not to perform self-improvement for a grade. Just to pause, look at the evidence from your midterm, homework, Grade Memos, and study habits, and make a plan.
 
-Research on learning is pretty clear on this: students who reflect on their exam performance and adjust their study strategies **do better on later exams**. This isn't hand-waving — it's measured. The technical term is *metacognition* (thinking about how you think), and it's one of the strongest predictors of academic improvement. Growth Memos are sometimes called "exam wrappers" in the education literature, and they work.
+Research on learning is pretty clear on this: students who reflect on their performance and adjust their study strategies **do better later on**. This isn't hand-waving — it's measured. The technical term is *metacognition* (thinking about how you think), and it's one of the strongest predictors of academic improvement. Growth Memos are sometimes called "exam wrappers" in the education literature, but in practice they work best when you use more than just the exam as evidence.
 
 Sometimes this kind of reflection feels clarifying. Sometimes it feels uncomfortable, frustrating, or unexpectedly encouraging. All of those reactions are normal. The point is not to judge yourself — it's to notice patterns clearly enough that you can change something useful.
 
 ::: {.callout-tip title="Growth Mindset — The Short Version"}
 Your ability in this course is not fixed. Struggling with material doesn't mean you're bad at physics — it means you're learning physics. Every expert was once a beginner who kept going.
 
-The goal isn't perfection. The goal is *improvement*. If you can look at your Midterm 1 and honestly identify one or two things to change, and then actually change them, you're doing exactly what this course is designed for.
+The goal isn't perfection. The goal is *improvement*. If you can look across Midterm 1, your homework, and your study habits, honestly identify one or two things to change, and then actually change them, you're doing exactly what this course is designed for.
 :::
 
 ---
 
 ## The Reflection
 
-Respond to the prompts below. Aim for **~400–600 words total** across all sections. Be specific — "I need to study more" doesn't count. "I kept dropping units in multi-step calculations and it cost me on Q3 and Q5" does.
+Respond to the prompts below. Aim for **~400–600 words total** across all sections. Use the midterm, your homework, your Grade Memos, and your study habits as evidence. Be specific — "I need to study more" doesn't count. "I kept dropping units in multi-step calculations and it cost me on Q3, HW5, and a couple of my Grade Memo corrections" does.
 
 ### 1. Celebrate your wins
 
-Start here. What went well on Midterm 1? What are you proud of — even if it's small? Did you nail a particular concept, manage your time well, or finally understand something that had been confusing?
+Start here. What went well in this unit? What are you proud of — even if it's small? Did you nail a particular concept on the midterm, improve on a homework pattern, manage your time better, or finally understand something that had been confusing?
 
 Don't skip this part. It matters.
 
 ### 2. What surprised you?
 
-Was there anything on the exam that caught you off guard — good or bad? A topic you thought you understood but didn't? A problem that turned out easier than expected? A time management issue you didn't anticipate?
+Was there anything in the midterm, homework, or your study process that caught you off guard — good or bad? A topic you thought you understood but didn't? A problem type that turned out easier than expected? A time management issue you didn't anticipate?
 
 ### 3. Where did things break?
 
-Be honest and specific. Look at the problems you lost points on and try to diagnose *why*. Some common patterns:
+Be honest and specific. Look at the places where things went wrong — on the midterm, on homework, in your Grade Memos, or in your study routines — and try to diagnose *why*. Some common patterns:
 
 - **Units:** forgot to convert, dropped units mid-calculation, didn't check dimensions
 - **Algebra:** wrong rearrangement, dropped a sign, arithmetic error
@@ -71,9 +71,11 @@ Pick **1–2 concrete things** you'll do differently for the next unit. Be speci
 
 Vague plans ("study more," "try harder") are not plans. A good plan answers: *what specifically will I do, when will I do it, and how will I know it's working?*
 
+If you did well overall, don't stop at "I did fine." Ask yourself where you can get sharper: more efficient under time pressure, more consistent with units and assumptions, better at explaining your reasoning, or better at catching mistakes before you turn work in.
+
 ### 5. Have the Grade Memos been useful?
 
-You've been writing weekly Grade Memos on your homework. Be candid: **are they helping you learn?** What's working about them? What isn't? Is there anything about the Grade Memo process you'd change?
+You've been writing weekly Grade Memos on your homework. Be candid: **are they helping you learn?** Have they helped you identify recurring issues or things to work on? What's working about them? What isn't? Is there anything about the Grade Memo process you'd change?
 
 (I actually read these answers. Your feedback helps me improve the course.)
 
@@ -104,13 +106,13 @@ This is graded on **specificity, evidence, and seriousness of reflection**, not 
 
 | Score | What it means |
 |:-----:|:-------------|
-| **5** | Specific and evidence-based. You pointed to real evidence, named real patterns, and made a concrete plan. |
+| **5** | Specific and evidence-based. You pointed to real evidence from the midterm, homework, Grade Memos, or study habits, named real patterns, and made a concrete plan. |
 | **4** | Strong overall, but one element is thin — maybe the plan is vague, or the wins section is skipped. |
 | **3** | Some insight, but too general. "I need to study more" without diagnosis or specifics. |
 | **2–1** | Minimal effort. Mostly summary, little reflection. |
 | **0** | Not submitted. |
 
-**You cannot lose points for having done poorly on the exam.** A student who scored 60% and writes a thoughtful, specific memo earns a 5. A student who scored 95% and writes "I did fine, no changes needed" without specifics earns a 3.
+**You cannot lose points for having done poorly on the exam.** A student who scored 60% and writes a thoughtful, specific memo earns a 5. A student who scored 95% and writes "I did fine, no changes needed" without specifics earns a 3. Strong students still have real reflection work to do: efficiency, precision, explanation quality, and long-term habits all matter.
 
 ---
 

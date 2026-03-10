@@ -16,6 +16,8 @@ format:
 
 This template is here to help you write a thoughtful reflection, not to make you fill out a bureaucratic form. Use it as a guide — follow the sections, but write in your own voice. Bullet points, short paragraphs, stream of consciousness — whatever lets you be honest and specific.
 
+Growth Memos are a metacognition tool: they help you notice how you learn, where things are starting to work, and where a small change could make the next exam or homework cycle go better. Sometimes that reflection feels clarifying. Sometimes it feels uncomfortable, frustrating, or unexpectedly encouraging. All of that is normal. The point is not to judge yourself — it's to notice patterns clearly enough to change something useful.
+
 **Length target:** ~400–600 words total. Say what you need to say.
 
 ---
@@ -33,16 +35,18 @@ This template is here to help you write a thoughtful reflection, not to make you
 
 Skim your memo and make sure you've done these things. If any are missing, your memo is probably too vague:
 
-- [ ] You pointed to **specific evidence** (exam questions, HW problems, or practice where something went right or wrong).
+- [ ] You pointed to **specific evidence** (exam questions, HW problems, Grade Memos, or practice where something went right or wrong).
 - [ ] You identified **1–3 patterns** — not just "I messed up" but *what kind* of errors keep showing up.
 - [ ] You wrote down **1–2 concrete things** you'll do differently — specific enough that you could actually check whether you did them.
 - [ ] You reflected on AI use (even if the answer is "I didn't use any").
+
+If this is for class credit, remember what earns full credit: **specificity, evidence, and seriousness of reflection**. You are not being graded on polish, and you are not being graded on how well you performed.
 
 ---
 
 ## 1) What went well
 
-Start with the good stuff. What are you proud of from this unit — a concept you nailed, a problem type you got comfortable with, a study habit that paid off? Be specific.
+Start with the good stuff. What are you proud of from this unit — a concept you nailed, a problem type you got comfortable with, a study habit that paid off, or a homework pattern that improved? Be specific.
 
 This section matters. Recognizing what works is just as important as diagnosing what doesn't.
 
@@ -50,7 +54,7 @@ This section matters. Recognizing what works is just as important as diagnosing 
 
 ## 2) Where things broke — and why
 
-Look at the problems where you lost points (on the exam, on homework, on practice). Try to figure out *what happened* — not just "I got it wrong" but *why* you got it wrong.
+Look at the places where you lost points or got stuck (on the exam, on homework, in Grade Memos, or in practice). Try to figure out *what happened* — not just "I got it wrong" but *why* you got it wrong.
 
 Some common error patterns to look for:
 
@@ -73,6 +77,8 @@ You don't have to use these exact categories. They're just here to help you be s
 ## 3) What you'll do differently
 
 Pick **1–2 concrete habits** for the next unit. A good habit is specific enough that you could check whether you actually did it.
+
+If you did well overall, don't default to "nothing." Strong students still have useful next steps: getting faster under time pressure, becoming more consistent, writing clearer explanations, or catching mistakes earlier.
 
 For each one, try to answer:
 
@@ -99,6 +105,8 @@ A few sentences on any of these:
 - What did you learn about *how you learn* in this unit?
 - What surprised you about your performance — good or bad?
 - What's one thing you're proud of, even if you're not where you want to be yet?
+- Have the Grade Memos helped you identify recurring issues or useful habits? If so, how?
+- What emotional pattern did you notice: confidence, frustration, avoidance, relief, momentum? What do you want to do with that information?
 
 ---
 
