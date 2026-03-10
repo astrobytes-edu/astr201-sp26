@@ -182,30 +182,46 @@ Burn rate wins.
 ::: {.column width="50%"}
 **Ratio method**
 
-1. Write the star form.
-2. Write the solar form.
+1. Write the star equation.
+2. Write the solar equation.
 3. Divide.
-4. Constants cancel.
-5. Read the ratios.
+4. Cancel shared units.
+5. Read the scaling.
 :::
 
 ::: {.column width="50%"}
 ::: {.fragment}
-**Example**
+**Given:** $M = 2\,M_\odot$, $L = 10\,L_\odot$
+:::
 
-A star with $M = 2\,M_\odot$ and $L = 10\,L_\odot$ gives
-
-$$
-\frac{\tau_{\text{nuc}}}{\tau_{\text{nuc},\odot}}
-\approx
-\frac{2}{10}
-= 0.2
-$$
-
-20% of the solar lifetime.
+::: {.fragment}
+**Want:** $\dfrac{\tau_{\text{nuc}}}{\tau_{\text{nuc},\odot}}$
 :::
 :::
 ::::
+
+---
+
+## Solar-Normalized Example: Show the Algebra
+
+::: {.fragment}
+$$
+\frac{\tau_{\text{nuc}}}{\tau_{\text{nuc},\odot}}
+\approx
+\left(\frac{2\,\cancel{M_\odot}}{1\,\cancel{M_\odot}}\right)
+\left(\frac{10\,\cancel{L_\odot}}{1\,\cancel{L_\odot}}\right)^{-1}
+$$
+:::
+
+::: {.fragment}
+$$
+= 2 \times 10^{-1} = 0.2
+$$
+:::
+
+::: {.fragment .takeaway}
+This star gets only 20% of the Sun's main-sequence lifetime.
+:::
 
 ---
 
@@ -536,30 +552,41 @@ That is why fusion solves Kelvin's age problem.
 
 ## Worked Example: A Fully Convective M Dwarf
 
-$$
-\begin{aligned}
-\frac{M}{M_\odot} &= 0.2 \\
-\frac{L}{L_\odot} &\approx (0.2)^{3.5} \approx 0.008 \\
-\frac{f_M}{f_{M,\odot}} &\approx 10
-\end{aligned}
-$$
+::: {.fragment}
+**Given:** $M = 0.2\,M_\odot$, $L \approx 0.008\,L_\odot$
+:::
+
+::: {.fragment}
+**Given:** $f_M \approx 10\,f_{M,\odot}$ for a fully convective star
+:::
+
+::: {.fragment}
+**Want:** $\dfrac{\tau_{\text{nuc}}}{\tau_{\text{nuc},\odot}}$
+:::
 
 ::: {.fragment .mini-note}
-Low luminosity means slow burning, and full convection opens more fuel.
+Set up the ratios first so the algebra has somewhere to go.
 :::
 
 ---
 
 ## M-Dwarf Lifetime: The Result
 
-::: {.result-line}
+::: {.fragment}
 $$
+\begin{aligned}
 \frac{\tau_{\text{nuc}}}{\tau_{\text{nuc},\odot}}
-\approx 250
+&\approx
+\left(\frac{\cancel{\varepsilon}}{\cancel{\varepsilon_\odot}}\right)
+\left(\frac{10\,\cancel{f_{M,\odot}}}{1\,\cancel{f_{M,\odot}}}\right)
+\left(\frac{0.2\,\cancel{M_\odot}}{1\,\cancel{M_\odot}}\right)
+\left(\frac{0.008\,\cancel{L_\odot}}{1\,\cancel{L_\odot}}\right)^{-1} \\
+&= 10 \times 0.2 \times \frac{1}{0.008} \approx 250
+\end{aligned}
 $$
 :::
 
-::: {.result-big}
+::: {.fragment .result-big}
 $\tau_{\text{M-dwarf}} \approx 250\,\tau_\odot$
 :::
 
