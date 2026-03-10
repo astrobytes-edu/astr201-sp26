@@ -322,7 +322,7 @@ def make_timescale_hierarchy():
     τ_dyn ~ 50 min, τ_KH ~ 30 Myr, τ_nuc ~ 10 Gyr for the Sun.
     The enormous separation is the key pedagogical point.
     """
-    fig, ax = plt.subplots(figsize=(12, 6), dpi=200)
+    fig, ax = plt.subplots(figsize=(13, 6.5), dpi=220)
     apply_dark_style(fig, ax)
 
     # Timescales in seconds
@@ -375,30 +375,30 @@ def make_timescale_hierarchy():
                 linewidth=1.5, zorder=3)
 
         # Marker at end
-        ax.plot(log_val, y, "D", color=data["color"], markersize=12,
+        ax.plot(log_val, y, "D", color=data["color"], markersize=14,
                 markeredgecolor="white", markeredgewidth=1, zorder=5)
 
         # Symbol label (left)
-        ax.text(-0.8, y, symbol, fontsize=18, color=data["color"],
+        ax.text(-0.8, y, symbol, fontsize=20, color=data["color"],
                 fontweight="bold", ha="right", va="center")
 
         # Description (far left)
-        ax.text(-3.2, y, data["desc"], fontsize=10, color=data["color"],
+        ax.text(-3.2, y, data["desc"], fontsize=12, color=data["color"],
                 ha="right", va="center", alpha=0.8)
 
         # Value label (on bar)
-        ax.text(log_val + 0.3, y, data["label"], fontsize=13,
+        ax.text(log_val + 0.35, y, data["label"], fontsize=15,
                 color=data["color"], fontweight="bold", va="center")
 
         # Note (right side)
-        ax.text(log_val + 0.3, y - 0.25, data["note"], fontsize=8,
+        ax.text(log_val + 0.35, y - 0.25, data["note"], fontsize=10,
                 color=MUTED_TEXT, va="top")
 
     # Reference lines
     for val_s, label, color in references:
         log_val = np.log10(val_s)
         ax.axvline(log_val, color=color, linewidth=0.5, alpha=0.3, linestyle="--")
-        ax.text(log_val, 2.7, label, fontsize=7, color=color,
+        ax.text(log_val, 2.72, label, fontsize=9, color=color,
                 ha="center", va="bottom", alpha=0.6, rotation=45)
 
     # Separation arrows
@@ -410,7 +410,7 @@ def make_timescale_hierarchy():
     )
     ax.text(
         (np.log10(3000) + np.log10(9.5e14)) / 2, mid_y + 0.25,
-        r"$\times\, 3\times 10^{11}$", fontsize=11, color=ACCENT_YELLOW,
+        r"$\times\, 3\times 10^{11}$", fontsize=12, color=ACCENT_YELLOW,
         ha="center", fontweight="bold",
     )
 
@@ -422,15 +422,15 @@ def make_timescale_hierarchy():
     )
     ax.text(
         (np.log10(9.5e14) + np.log10(3.2e17)) / 2, mid_y2 + 0.25,
-        r"$\times\, 300$", fontsize=11, color=ACCENT_YELLOW,
+        r"$\times\, 300$", fontsize=12, color=ACCENT_YELLOW,
         ha="center", fontweight="bold",
     )
 
-    ax.set_xlabel(r"$\log_{10}$(time / seconds)", fontsize=13)
+    ax.set_xlabel(r"$\log_{10}$(time / seconds)", fontsize=15)
     ax.set_xlim(-1, 19)
     ax.set_ylim(-0.6, 3.2)
     ax.set_yticks([])
-    ax.set_title("Three Timescales of the Sun", fontsize=18,
+    ax.set_title("Three Timescales of the Sun", fontsize=20,
                  fontweight="bold", pad=15)
 
     # Subtitle
@@ -438,7 +438,7 @@ def make_timescale_hierarchy():
         0.5, 1.03,
         r"$\tau_{\rm dyn} \ll \tau_{\rm KH} \ll \tau_{\rm nuc}$"
         "  —  separated by many orders of magnitude",
-        transform=ax.transAxes, fontsize=11, color=MUTED_TEXT,
+        transform=ax.transAxes, fontsize=12, color=MUTED_TEXT,
         ha="center", va="bottom",
     )
 
@@ -480,44 +480,44 @@ def make_timescales_vs_mass():
     tau_kh = tau_kh_sun_yr * masses**2 * radii**(-1) * luminosities**(-1)
     tau_nuc = tau_nuc_sun_yr * masses * luminosities**(-1)
 
-    fig, ax = plt.subplots(figsize=(12, 7), dpi=200)
+    fig, ax = plt.subplots(figsize=(12.8, 7.4), dpi=220)
     apply_dark_style(fig, ax)
 
     ax.set_xscale("log")
     ax.set_yscale("log")
 
-    ax.plot(masses, tau_dyn, color=ACCENT_CYAN, linewidth=3, label=r"$\tau_{\rm dyn}$")
-    ax.plot(masses, tau_kh, color=ACCENT_ORANGE, linewidth=3, label=r"$\tau_{\rm KH}$")
-    ax.plot(masses, tau_nuc, color=ACCENT_RED, linewidth=3, label=r"$\tau_{\rm nuc}$")
+    ax.plot(masses, tau_dyn, color=ACCENT_CYAN, linewidth=3.4, label=r"$\tau_{\rm dyn}$")
+    ax.plot(masses, tau_kh, color=ACCENT_ORANGE, linewidth=3.4, label=r"$\tau_{\rm KH}$")
+    ax.plot(masses, tau_nuc, color=ACCENT_RED, linewidth=3.4, label=r"$\tau_{\rm nuc}$")
 
     # Solar anchor
-    ax.plot(1, tau_dyn_sun_yr, "o", color=ACCENT_CYAN, markersize=8,
+    ax.plot(1, tau_dyn_sun_yr, "o", color=ACCENT_CYAN, markersize=10,
             markeredgecolor="white", markeredgewidth=1.0, zorder=5)
-    ax.plot(1, tau_kh_sun_yr, "o", color=ACCENT_ORANGE, markersize=8,
+    ax.plot(1, tau_kh_sun_yr, "o", color=ACCENT_ORANGE, markersize=10,
             markeredgecolor="white", markeredgewidth=1.0, zorder=5)
-    ax.plot(1, tau_nuc_sun_yr, "o", color=ACCENT_RED, markersize=8,
+    ax.plot(1, tau_nuc_sun_yr, "o", color=ACCENT_RED, markersize=10,
             markeredgecolor="white", markeredgewidth=1.0, zorder=5)
-    ax.text(1.08, 1.25e10, "Sun", color=TEXT_COLOR, fontsize=11, fontweight="bold")
+    ax.text(1.08, 1.25e10, "Sun", color=TEXT_COLOR, fontsize=12, fontweight="bold")
 
     # Universe age reference
     age_universe = 1.38e10
-    ax.axhline(age_universe, color=ACCENT_YELLOW, linestyle="--", linewidth=1.5, alpha=0.7)
+    ax.axhline(age_universe, color=ACCENT_YELLOW, linestyle="--", linewidth=1.8, alpha=0.8)
     ax.text(0.11, age_universe * 1.1, "Age of the universe", color=ACCENT_YELLOW,
-            fontsize=10, fontweight="bold", va="bottom")
+            fontsize=11, fontweight="bold", va="bottom")
 
     # Curve labels
     ax.text(0.16, 2e-4, r"$\tau_{\rm dyn} \propto M^{0.7}$",
-            color=ACCENT_CYAN, fontsize=12, fontweight="bold")
+            color=ACCENT_CYAN, fontsize=13, fontweight="bold")
     ax.text(0.16, 2.5e8, r"$\tau_{\rm KH} \propto M^{-2.3}$",
-            color=ACCENT_ORANGE, fontsize=12, fontweight="bold")
+            color=ACCENT_ORANGE, fontsize=13, fontweight="bold")
     ax.text(2.0, 2e9, r"$\tau_{\rm nuc} \propto M^{-2.5}$",
-            color=ACCENT_RED, fontsize=12, fontweight="bold")
+            color=ACCENT_RED, fontsize=13, fontweight="bold")
 
     # Example masses
     example_masses = [0.5, 1.0, 2.0, 10.0]
     for m in example_masses:
         ax.axvline(m, color=GRID_COLOR, linewidth=0.8, alpha=0.6, linestyle=":")
-        ax.text(m, 7e-6, rf"${m:g}\,M_\odot$", color=MUTED_TEXT, fontsize=9,
+        ax.text(m, 7e-6, rf"${m:g}\,M_\odot$", color=MUTED_TEXT, fontsize=10,
                 ha="center", va="top", rotation=90)
 
     note = (
@@ -527,19 +527,17 @@ def make_timescales_vs_mass():
     ax.text(
         0.98, 0.03, note,
         transform=ax.transAxes, ha="right", va="bottom",
-        fontsize=9, color=MUTED_TEXT,
+        fontsize=10, color=MUTED_TEXT,
         bbox=dict(boxstyle="round,pad=0.35", facecolor=DARK_BG,
                   edgecolor=GRID_COLOR, alpha=0.9),
     )
 
-    ax.set_xlabel(r"Stellar Mass ($M/M_\odot$)", fontsize=14)
-    ax.set_ylabel("Timescale (yr)", fontsize=14)
+    ax.set_xlabel(r"Stellar Mass ($M/M_\odot$)", fontsize=15)
+    ax.set_ylabel("Timescale (yr)", fontsize=15)
     ax.set_xlim(0.1, 14.5)
     ax.set_ylim(1e-6, 5e11)
     ax.set_title("How the Three Stellar Clocks Change with Mass",
-                 fontsize=18, fontweight="bold", pad=14)
-    ax.legend(loc="upper right", frameon=True, facecolor=PANEL_BG,
-              edgecolor=GRID_COLOR, labelcolor=TEXT_COLOR, fontsize=11)
+                 fontsize=20, fontweight="bold", pad=14)
 
     fig.tight_layout()
     fig.savefig(OUTPUT_DIR / "timescales-vs-mass.png",
