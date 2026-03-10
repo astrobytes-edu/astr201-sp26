@@ -23,7 +23,8 @@ format:
     html-math-method: mathjax
     css: lecture-01-ages-lifetimes.css
     title-slide-attributes:
-      data-background-color: "#ffffff"
+      data-background-image: "/assets/images/common/cosmic-cliffs-jwst.png"
+      data-background-opacity: "0.30"
     pointer:
       key: "q"
       color: "#2f7f78"

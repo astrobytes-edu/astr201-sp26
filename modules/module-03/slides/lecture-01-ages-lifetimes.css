@@ -4,11 +4,12 @@
 }
 
 .reveal #title-slide.quarto-title-block {
-  background: #ffffff !important;
+  background: rgba(255, 255, 255, 0.84) !important;
   color: #22324d !important;
   text-align: left;
   padding: 2rem 2.4rem 1.6rem;
   border-top: 6px solid #2f7f78;
+  backdrop-filter: blur(2px);
 }
 
 .reveal #title-slide h1 {
@@ -86,6 +87,34 @@
 
 .reveal .prompt-slide h2 {
   color: #2f7f78 !important;
+}
+
+.reveal .quiz-question .option-button,
+.reveal .quiz-question .option-button span,
+.reveal .quiz-question .option-button .math,
+.reveal .quiz-question .option-button .mjx-chtml,
+.reveal .quiz-question .option-button .mjx-char {
+  color: #f5f8fc !important;
+}
+
+.reveal .quiz-question .option-button {
+  background-color: #3d4f64;
+}
+
+.reveal .quiz-question .option-button:hover {
+  background-color: #486078;
+}
+
+.reveal .quiz-question .option-button.selected {
+  background-color: #2f7f78;
+}
+
+.reveal .quiz-question .option-button.correct {
+  background-color: #3b8f64;
+}
+
+.reveal .quiz-question .option-button.incorrect {
+  background-color: #a34a42;
 }
 
 .reveal .center-note {
