@@ -216,6 +216,7 @@ website:
       - section: "Homework"
         contents:
           - homework/index.qmd
+          - homework/astr201-hw6.qmd
           - homework/astr201-hw5.qmd
           - homework/solutions/astr201-hw5-solutions.qmd
           - homework/astr201-hw4.qmd
@@ -238,6 +239,7 @@ website:
       - section: "Handouts"
         contents:
           - handouts/index.qmd
+          - handouts/growth-memo-1.qmd
 
       - section: "Explore"
         contents:

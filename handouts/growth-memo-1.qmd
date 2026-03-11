@@ -2,7 +2,7 @@
 title: "Growth Memo 1"
 subtitle: "Reflect, celebrate, and plan — after Midterm 1"
 author: "Dr. Anna Rosen"
-date: "2026-03-09"
+date: "2026-03-10"
 course: ASTR 201
 draft: false
 format:
@@ -14,6 +14,8 @@ format:
 ## What is this?
 
 A Growth Memo is a short reflection on how things are going. You just took your first midterm, and you've also been building a record through your homework, Grade Memos, and study habits. Now take 30–45 minutes to look at that bigger picture. What went well? What didn't? What patterns are showing up? What are you going to do about them?
+
+You should write this **after you get your graded Midterm 1 back** so you can use the actual exam as evidence, not just your memory of how it felt.
 
 **This is not a formal essay.** Think of it as a journal entry, a brain dump, a letter to yourself. Write in whatever voice feels natural — bullet points, stream of consciousness, full paragraphs, whatever works. You will **not** be graded on grammar, spelling, or polish. You will be graded on specificity, evidence, and the seriousness of your reflection.
 
@@ -94,7 +96,7 @@ If you didn't use AI tools: that's fine, just say so and briefly say why.
 
 | | |
 |:--|:--|
-| **Due** | Friday, March 13 at 11:59 PM on Canvas |
+| **Due** | Tuesday, March 17 at 11:59 PM on Canvas |
 | **Format** | PDF or Word document — whatever is easy |
 | **Length** | ~400–600 words (not a hard limit — say what you need to say) |
 | **Grading** | 0–5 scale (see below) |

@@ -6,7 +6,7 @@ draft: false
 ## Assignments
 
 ::: {.callout-tip}
-**Current cycle:** [Homework 6](astr201-hw6.qmd) posts Wednesday, March 11, 2026 and is due Tuesday, March 17, 2026 at 11:59 pm. [Growth Memo 1](../handouts/growth-memo-1.qmd) also posts Wednesday, March 11, 2026 and is due Friday, March 13, 2026 at 11:59 pm. [Homework 5 solutions](solutions/astr201-hw5-solutions.qmd) are now posted.
+**Current cycle:** [Homework 6](astr201-hw6.qmd) posts Tuesday, March 10, 2026 and is due Tuesday, March 17, 2026 at 11:59 pm. [Growth Memo 1](../handouts/growth-memo-1.qmd) also posts Tuesday, March 10, 2026 and is due Tuesday, March 17, 2026 at 11:59 pm. [Homework 5 solutions](solutions/astr201-hw5-solutions.qmd) are now posted.
 :::
 
 | Assignment | Posted | Due | Grade Memo Due | Solutions |
@@ -15,8 +15,8 @@ draft: false
 | Homework 9: Galaxies I — ISM, Star Formation, and Galaxy Structure | Wed Apr 15 | Tues Apr 21 | Fri Apr 24 | — |
 | Homework 8: Stellar Evolution + Compact Remnants (Midterm 2 Prep) | Wed Apr 1 | Tues Apr 7 | Fri Apr 10 | — |
 | Homework 7: Stellar Structure II — Fusion Ignition + Main-Sequence Scalings | Wed Mar 18 | Tues Mar 24 | Fri Mar 27 | — |
-| [Homework 6](astr201-hw6.qmd): Quantum Mechanics, Stellar Alchemy, and a Trailblazer | Wed Mar 11 | Tues Mar 17 | — | — |
-| [Growth Memo 1](../handouts/growth-memo-1.qmd): Reflect, celebrate, and plan | Wed Mar 11 | Fri Mar 13 | — | — |
+| [Homework 6](astr201-hw6.qmd): Quantum Mechanics, Stellar Alchemy, and a Trailblazer | Tues Mar 10 | Tues Mar 17 | — | — |
+| [Growth Memo 1](../handouts/growth-memo-1.qmd): Reflect, celebrate, and plan | Tues Mar 10 | Tues Mar 17 | — | — |
 | [Homework 5](astr201-hw5.qmd) | Wed Feb 25 | Tues Mar 3 | Fri Mar 6 | [Solutions](solutions/astr201-hw5-solutions.qmd) |
 | [Homework 4](astr201-hw4.qmd) | Wed Feb 18 | Tues Feb 24 | Fri Feb 27 | [Solutions](solutions/astr201-hw4-solutions.qmd) |
 | [Homework 3](astr201-hw3.qmd) | Wed Feb 11 | Tues Feb 17 | Fri Feb 20 | [Solutions](solutions/astr201-hw3-solutions.qmd) |
