@@ -66,7 +66,7 @@ website:
   announcement:
     icon: info-circle
     dismissable: true
-    content: "**Welcome to Spring 2026!** Start with the [Syllabus](/course-info/syllabus.qmd) and [Schedule](/course-info/schedule.qmd). Try the [interactive demos](https://astrobytes-edu.github.io/astr101-sp26/demos/). **HW5 posted:** See the [Homework](/homework/index.qmd) page — due Tuesday Mar 3; grade memo due Friday Mar 6."
+    content: "**Current cycle:** [Homework 6](/homework/astr201-hw6.qmd) and [Growth Memo 1](/handouts/growth-memo-1.qmd) are now posted. Both are due Tuesday, March 17 at 11:59 pm. See the [Homework](/homework/index.qmd) page for details."
     type: primary
     position: below-navbar
   navbar:
@@ -217,6 +217,7 @@ website:
         contents:
           - homework/index.qmd
           - homework/astr201-hw6.qmd
+          - handouts/growth-memo-1.qmd
           - homework/astr201-hw5.qmd
           - homework/solutions/astr201-hw5-solutions.qmd
           - homework/astr201-hw4.qmd
@@ -235,11 +236,6 @@ website:
             href: exams/astr201-Midterm1-solutions.pdf
           - text: "Formula Sheet — Midterm 1"
             href: handouts/formula-sheets/FormulaSheet-Midterm1-SP26.pdf
-
-      - section: "Handouts"
-        contents:
-          - handouts/index.qmd
-          - handouts/growth-memo-1.qmd
 
       - section: "Explore"
         contents:
