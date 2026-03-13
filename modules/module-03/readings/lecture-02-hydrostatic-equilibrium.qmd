@@ -10,6 +10,7 @@ course: ASTR 201
 module: "3 - Stellar Structure & Evolution"
 learning-objectives:
   - Explain why a star needs an outward force to prevent gravitational collapse and identify thermal pressure as the primary source
+  - Distinguish thermal gas pressure, radiation pressure, and degeneracy pressure as different sources of support inside stars
   - Derive and interpret the equation of hydrostatic equilibrium as a force balance between gravity and the pressure gradient
   - Apply the virial theorem to relate a star's total thermal energy to its gravitational potential energy
   - Estimate a star's central temperature from its mass and radius using the virial theorem
@@ -31,12 +32,13 @@ prerequisites: "Gravitational potential energy, Newton's law of gravity, pressur
 After completing this reading, you should be able to:
 
 1. **Explain** why a star needs a pressure gradient (not just pressure) to resist gravitational collapse
-2. **Derive and interpret** the equation of hydrostatic equilibrium: $\frac{dP}{dr} = -\rho g = -\frac{G M(r) \rho}{r^2}$
-3. **Apply** the virial theorem ($2K_\text{th} + U_\text{grav} = 0$) to relate thermal and gravitational energy
-4. **Estimate** a star's central temperature: $T_c \sim \frac{\mu G M m_p}{k_B R}$
-5. **Explain** why gravity alone predicts a stellar core temperature of order $10^7~\text{K}$ for the Sun
-6. **Explain** why a self-gravitating system has negative heat capacity — it gets *hotter* as it loses energy
-7. **Connect** hydrostatic equilibrium to the dynamical timescale: departures are corrected on $\tau_\text{dyn} \sim$ minutes
+2. **Distinguish** thermal gas pressure, radiation pressure, and degeneracy pressure as different sources of support inside stars
+3. **Derive and interpret** the equation of hydrostatic equilibrium: $\frac{dP}{dr} = -\rho g = -\frac{G M(r) \rho}{r^2}$
+4. **Apply** the virial theorem ($2K_\text{th} + U_\text{grav} = 0$) to relate thermal and gravitational energy
+5. **Estimate** a star's central temperature: $T_c \sim \frac{\mu G M m_p}{k_B R}$
+6. **Explain** why gravity alone predicts a stellar core temperature of order $10^7~\text{K}$ for the Sun
+7. **Explain** why a self-gravitating system has negative heat capacity — it gets *hotter* as it loses energy
+8. **Connect** hydrostatic equilibrium to the dynamical timescale: departures are corrected on $\tau_\text{dyn} \sim$ minutes
 
 ## Concept Throughline
 
@@ -44,9 +46,9 @@ After completing this reading, you should be able to:
 
 ::: {.callout-note title="Reading Map — Choose Your Track"}
 
-**Track A (Core, ~25 min):** Read **Parts 1–5** in order. Skip any box marked *Enrichment*. This covers hydrostatic equilibrium, the virial theorem, core temperature estimation, and negative heat capacity.
+**Track A (Core, ~30 min):** Read **Parts 1–5** in order. Skip any box marked *Enrichment*. This covers hydrostatic equilibrium, the main sources of pressure in stars, the virial theorem, core temperature estimation, and negative heat capacity.
 
-**Track B (Full, ~35 min):** Read everything, including the warning, OMI, and reference sections. There are no separate enrichment boxes in this draft, so the full track mainly asks you to linger on the worked estimates and the counterintuitive energy argument.
+**Track B (Full, ~40 min):** Read everything, including the warning, OMI, and reference sections. There are no separate enrichment boxes in this draft, so the full track mainly asks you to linger on the pressure-source discussion, the worked estimates, and the counterintuitive energy argument.
 
 *Both tracks cover all core learning objectives.*
 :::
@@ -92,6 +94,70 @@ You've experienced a pressure gradient before: at the bottom of a swimming pool,
 ## Answer
 
 The water pressure increases with depth because each layer must support the weight of all the water above it. A star works the same way: the gas pressure increases toward the center because each layer must support the weight of all the stellar material above it. The deeper you go, the more weight there is to support, so the higher the pressure must be.
+:::
+:::
+
+### Types of Pressure in Stars
+
+To say that "pressure supports a star" raises a deeper question: **what physical process creates that pressure in the first place?** In ordinary stars like the Sun, the answer begins with the random thermal motions of particles. In hotter and more massive stars, trapped radiation also contributes. Much later in the course, when we discuss white dwarfs and stellar remnants, we will meet a third kind of support that comes from quantum mechanics rather than temperature.
+
+#### Thermal Gas Pressure: Momentum from Particle Collisions
+
+Start from first principles. A gas is made of particles moving in many directions. When those particles strike a surface, they bounce and transfer momentum. Pressure is the rate of momentum transfer per unit area. Faster particles hit harder; more particles per cubic centimeter hit more often. That is why heating a gas or compressing it both raise its pressure.
+
+For a thermal gas, this idea is summarized by the ideal-gas pressure law:
+
+$$
+P_\text{gas} = n k_B T = \frac{\rho k_B T}{\mu m_p}
+$$
+
+Let's unpack the symbols:
+- **$P_\text{gas}$** is the thermal gas pressure, in $\text{dyn}/\text{cm}^2$
+- **$n$** is the number density, in particles per $\text{cm}^3$
+- **$k_B$** is Boltzmann's constant
+- **$T$** is the temperature
+- **$\rho$** is the mass density, in $\text{g}/\text{cm}^3$
+- **$\mu m_p$** is the average mass per particle
+
+What this equation is saying is simple but powerful: at fixed density, a hotter gas pushes harder; at fixed temperature, a denser gas pushes harder. This is the pressure source we usually mean when we say a main-sequence star is supported by "pressure."
+
+#### Radiation Pressure: Momentum from Light
+
+Photons also carry momentum, even though they have no mass. If photons are trapped inside a star and scatter again and again off particles, they push on the gas and on any surface you imagine inside the star. That push is called **radiation pressure**.
+
+Deep inside a star, matter and radiation exchange energy so rapidly that each small region is close to **local thermal equilibrium**. A radiation field in thermal equilibrium has a blackbody spectrum, so the blackbody energy density is
+
+$$
+u_\text{rad} = a T^4
+$$
+
+where $a$ is the radiation constant. Because an isotropic bath of photons pushes equally in all directions, the associated radiation pressure is
+
+$$
+P_\text{rad} = \frac{1}{3}u_\text{rad} = \frac{1}{3}a T^4
+$$
+
+This is where the blackbody connection matters. Blackbody radiation does not just tell us what spectrum a hot object emits; it also tells us how much energy is stored in the radiation field. Hotter radiation fields have much larger energy densities, and because photons carry momentum, that means much larger radiation pressure. The steep $T^4$ dependence is the clue: radiation pressure grows much faster with temperature than gas pressure does.
+
+For a star like the Sun, **thermal gas pressure does most of the supporting work**. In very massive, very hot stars, radiation pressure becomes much more important.
+
+::: {.callout-note title="Spoiler for Later: Degeneracy Pressure"}
+There is a third major pressure source in stellar astrophysics: **degeneracy pressure**. Unlike thermal gas pressure, it does not come from particles being hot. It comes from quantum mechanics, specifically the Pauli exclusion principle, which prevents identical fermions from all occupying the same low-energy state. That is the pressure support that matters in white dwarfs and neutron stars. For now, the key point is that not all stellar pressure is thermal.
+:::
+
+::: {.callout-tip}
+## Check Yourself
+
+Suppose the density stays the same but the temperature doubles. How does the thermal gas pressure change? How does the radiation pressure change? Which pressure source becomes relatively more important in a hotter star?
+
+::: {.callout-note collapse="true"}
+## Solution
+
+For thermal gas pressure, $P_\text{gas} \propto T$ at fixed density, so doubling $T$ doubles the gas pressure.
+
+For radiation pressure, $P_\text{rad} \propto T^4$, so doubling $T$ multiplies the radiation pressure by $2^4 = 16$.
+
+This means radiation pressure becomes relatively more important as stars get hotter. That is why it matters most in very hot, very massive stars, even though thermal gas pressure dominates in the Sun.
 :::
 :::
 
@@ -316,7 +382,7 @@ This is good news for fusion because nuclear fusion requires extremely high temp
 
 ### Connecting Pressure to Temperature
 
-For an ideal gas (which is an excellent approximation for stellar interiors), the pressure, density, and temperature are related by:
+For an ideal gas, the thermal gas pressure we introduced earlier is related to density and temperature by:
 
 $$
 P = \frac{\rho k_B T}{\mu m_p}
@@ -470,6 +536,24 @@ This near-constancy of core temperature is important: it means all main-sequence
 :::
 
 ---
+
+## Synthesis: The Stellar Reasoning Ladder
+
+Before reading the summary, step back and look at the logic chain we have built. Each rung uses one physical idea to infer the next:
+
+```{mermaid}
+flowchart TD
+  G["Gravity<br/>g(r) = GM(r)/r^2"]
+  H["Hydrostatic Equilibrium<br/>dP/dr = -rho g"]
+  C["Central Pressure Scale<br/>P_c ~ GM^2/R^4"]
+  V["Virial Theorem<br/>2K_th + U_grav = 0"]
+  T["Core Temperature Scale<br/>T_c ~ mu G M m_p / (k_B R)"]
+  F["Fusion Threshold<br/>T_c ~ 10^7 K enables H fusion"]
+
+  G --> H --> C --> V --> T --> F
+```
+
+This is the real payoff of stellar structure. Starting from gravity alone, and adding only force balance, energy balance, and a thermal-gas model, we reach a striking conclusion: stars naturally develop hot cores. Fusion is not an arbitrary extra ingredient pasted onto stars later. Gravity itself drives the star to the temperature scale where fusion becomes possible.
 
 ## Reference Tables
 
