@@ -313,9 +313,9 @@ Now we apply the small-angle formula to the most direct distance-measurement tec
 ::: {.callout-tip title="Play First: Parallax Interactive"}
 Before reading the derivation, spend 90 seconds with the interactive demo below. Move the star closer and farther, and watch how the parallax angle changes. Then continue reading — the math will make more sense.
 
-<iframe src="https://astrobytes-edu.github.io/cosmic-playground/exhibits/parallax-distance/" width="100%" height="450" style="border:1px solid #e5e7eb; border-radius:8px;"></iframe>
+<iframe src="https://astrobytes-edu.github.io/astr101-sp26/demos/parallax-distance/" width="100%" height="450" style="border:1px solid #e5e7eb; border-radius:8px;"></iframe>
 
-*If the demo doesn't load above, [open it in a new tab](https://astrobytes-edu.github.io/cosmic-playground/exhibits/parallax-distance/).*
+*If the demo doesn't load above, [open it in a new tab](https://astrobytes-edu.github.io/astr101-sp26/demos/parallax-distance/).*
 :::
 
 ### The Parallax Angle

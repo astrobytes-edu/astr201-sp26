@@ -146,9 +146,9 @@ A **visual binary** is a pair of stars close enough to us (and far enough apart 
 
 ::: {layout-ncol=2}
 
-![Hubble Space Telescope image of Sirius A and Sirius B in the same field, showing their extreme brightness contrast.](/assets/images/module-02/week-06/Sirius_A_and_B_Hubble_photo.jpg){fig-alt="Hubble Space Telescope image of the Sirius binary. Sirius A is saturated with strong diffraction spikes, while Sirius B appears as a faint white dwarf offset to the lower left; the contrast shows why Sirius B is difficult to see beside Sirius A."}
+{{< img sirius-ab-hubble >}}
 
-![Astrometric orbit of Sirius B around Sirius A traced from decades of position measurements.](/assets/images/module-02/week-06/sirius-orbit.jpg){fig-alt="Astrometric orbit plot for Sirius B. Labeled epoch positions trace an elongated ellipse around Sirius A, letting astronomers measure the orbital period and semimajor axis used for dynamical mass estimates."}
+{{< img sirius-ab-orbit >}}
 
 :::
 

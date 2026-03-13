@@ -1110,6 +1110,20 @@ High-mass stars peel away from the main sequence quickly; low-mass stars linger 
 
 ---
 
+## Even Arrival to the Main Sequence Depends on Mass
+
+{{< img hr-pre-main-sequence-tracks >}}
+
+::: {.fragment .mt-1 .text-sm}
+High-mass protostars reach the main sequence quickly; low-mass stars can spend tens of millions of years contracting toward it. Mass sets the evolutionary clock before stable fusion even begins.
+:::
+
+::: {.notes}
+~45 min. Optional enrichment if time. Use this only to reinforce that mass dependence starts before the main-sequence phase, not after it.
+:::
+
+---
+
 ## Mass Determines the Path
 
 :::: {.columns}

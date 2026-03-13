@@ -378,6 +378,10 @@ You would not get a tight, temperature-ordered main-sequence band. Stars of simi
 - These are conventions; the physics is in the patterns.
 :::
 
+If the observer's HR diagram still feels abstract, orient yourself with a more old-school map first. The classic version below labels familiar stars directly, so you can see the geography before translating it into the stripped-down data view used by modern color-magnitude diagrams.
+
+{{< fig hr-diagram-overview-classic >}}
+
 ### Building the Diagram
 
 {{< fig hr-diagram-observer >}}
@@ -724,6 +728,18 @@ This schematic is a map-reading aid, not a precision plot. Follow each arrow as 
 
 {{< fig hr-evolutionary-tracks-schematic >}}
 
+If you want a closer read on pace as well as direction, the enrichment figures below unpack the generic schematic into one view where timescale changes with mass and one view that follows a Sun-like star through its post-main-sequence landmarks.
+
+::: {.callout-note collapse="true" title="Enrichment: Reading More Detailed Evolution Tracks"}
+{{< fig hr-evolutionary-tracks-mass-timescale >}}
+
+{{< fig hr-evolution-solar-track-detailed >}}
+
+Even the trip *onto* the main sequence is mass-dependent. Massive protostars contract quickly; low-mass protostars spend much longer descending toward the hydrogen-burning sequence that will dominate most of their lives.
+
+{{< fig hr-pre-main-sequence-tracks >}}
+:::
+
 Here is the life story of a star like the Sun, traced on the HR diagram:
 
 1. **Birth:** The star forms from a collapsing gas cloud and contracts toward the main sequence. It starts cool and luminous (upper right) and moves down and to the left.
@@ -739,6 +755,10 @@ Each transition corresponds to a new balance (or imbalance) between gravity and 
 Core contraction heats the interior because gravitational potential energy is converted into thermal energy. Envelope expansion then lowers surface temperature even while total luminosity may rise. Motion on the HR diagram is the surface trace of that interior energy redistribution.
 
 A massive star ($10\,M_\odot$) follows a similar but faster and more dramatic path — it spends only ${\sim}20~\text{Myr}$ on the main sequence, becomes a supergiant, and may end its life in a core-collapse supernova rather than a planetary nebula.
+
+The point is not just that massive stars end differently. The HR diagram shows that increasing mass changes the *entire route* through the upper part of the diagram, not merely the final remnant.
+
+{{< fig hr-evolution-massive-star-tracks >}}
 
 **The key insight:** **Mass determines the path.** A low-mass star evolves slowly along one track; a high-mass star races along a different, more dramatic track. The HR diagram is not just a map of *where stars are now* — it's a map of *where stars go as they age*, with mass as the control parameter.
 Mass determines both the path and the timescale.

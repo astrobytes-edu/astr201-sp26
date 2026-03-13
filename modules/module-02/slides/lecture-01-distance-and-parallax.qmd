@@ -410,7 +410,7 @@ Parallax
 
 Before we derive anything, explore the interactive demo:
 
-<iframe src="https://astrobytes-edu.github.io/cosmic-playground/exhibits/parallax-distance/" width="100%" height="420" style="border:1px solid #e5e7eb; border-radius:8px;"></iframe>
+<iframe src="https://astrobytes-edu.github.io/astr101-sp26/demos/parallax-distance/" width="100%" height="420" style="border:1px solid #e5e7eb; border-radius:8px;"></iframe>
 
 ::: {.incremental}
 - Move the star closer and farther — watch the parallax angle change
@@ -418,7 +418,7 @@ Before we derive anything, explore the interactive demo:
 :::
 
 ::: {.fragment .mt-2}
-Now let's derive *why* this works. → [Full-screen demo](https://astrobytes-edu.github.io/cosmic-playground/exhibits/parallax-distance/)
+Now let's derive *why* this works. → [Full-screen demo](https://astrobytes-edu.github.io/astr101-sp26/demos/parallax-distance/)
 :::
 
 ::: {.notes}

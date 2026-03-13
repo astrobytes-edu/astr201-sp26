@@ -326,6 +326,10 @@ The classic mnemonic: **"Oh Be A Fine Guy/Girl, Kiss Me."**
 
 The breakthrough came when Cecilia Payne-Gaposchkin showed in her 1925 PhD thesis — arguably the most important doctoral dissertation in the history of astronomy — that stars are overwhelmingly composed of hydrogen and helium, and that the spectral sequence is fundamentally a **temperature sequence**, not a composition sequence. This was so radical that her advisor, Henry Norris Russell, initially urged caution (he later acknowledged she was right). The composition of stars is remarkably uniform (about $74\%$ hydrogen, $25\%$ helium, $1\text{–}2\%$ heavier elements by mass). What changes along the sequence is not *what atoms are present* but *which quantum states those atoms occupy* — and that depends on temperature.
 
+Before you read the sequence as letters in a table, look at the sky the way an observer does first: stars already announce that they are not thermally identical. A real star field shows blue-white stars, yellow stars, and orange-red stars sharing the same patch of sky. Spectroscopy explains *why* those colors differ, but the diversity is visible before any prism or grating enters the story.
+
+{{< fig week04-colors-of-stars-hubble >}}
+
 {{< fig obafgkm-spectra >}}
 
 | Spectral Type | Color | Temperature Range | Main-Sequence Prevalence | Dominant Spectral Features | Example |
@@ -537,7 +541,7 @@ We'll use MK classifications extensively when we build the full H–R diagram in
 
 You've experienced the Doppler effect with sound: an ambulance siren rises in pitch as it approaches and drops as it recedes. Light does the same thing. When a light source moves toward or away from an observer, the observed wavelength shifts.
 
-{{< fig doppler-shift-exoplanet >}}
+{{< fig jwst-doppler-shift >}}
 
 If a source has **radial velocity** $v_r$ (positive = receding, negative = approaching), the observed wavelength $\lambda_{\text{obs}}$ relates to the laboratory rest wavelength $\lambda_0$ by:
 

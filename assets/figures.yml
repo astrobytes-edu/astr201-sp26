@@ -531,6 +531,13 @@ figures:
     credit: "NOAA JetStream"
     module: 2
 
+  week04-colors-of-stars-hubble:
+    path: /assets/images/module-02/week-04/colors-of-stars-nasa-esa-hubble.webp
+    caption: "**What to notice:** Real star fields are not monochrome. Even before we spread starlight into spectra, blue-white and orange-red stars tell us that stellar surfaces come in different temperature regimes."
+    alt: "Dense star field image with a bright cluster near the center and many stars of different apparent colors, including blue-white, yellow, and red-orange stars scattered across the frame."
+    credit: "NASA/ESA/Hubble"
+    module: 2
+
   # Week 06: Weighing Stars + HR Diagram
   mass-luminosity-plot:
     path: /assets/images/module-02/week-06/mass-luminosity-relation.png
@@ -544,6 +551,12 @@ figures:
     caption: "**What to notice:** The observer's HR diagram plots absolute magnitude $M_V$ against color index $(B-V)$. Three structures stand out: the main sequence (diagonal band, 90% of stars), the giant branch (upper right, cool but luminous), and white dwarfs (lower left, hot but faint). No theory is needed to build this diagram — it's pure measurement."
     alt: "Color-magnitude diagram with absolute visual magnitude on the vertical axis (brighter at top) and B-V color index on the horizontal axis (blue-hot on left, red-cool on right). Hundreds of points form a diagonal main sequence from upper-left to lower-right, a clump of giants in the upper-right, scattered supergiants at the top, and white dwarfs in the lower-left. The Sun is marked at B-V = 0.65, M_V = 4.83. Spectral type labels O B A F G K M appear across the top."
     credit: "ASTR 201 (generated)"
+    module: 2
+
+  hr-diagram-overview-classic:
+    path: /assets/images/module-02/week-06/HR-Diagram-Overview.jpg
+    caption: "**What to notice:** Even a classic labeled HR diagram shows the same three geographies immediately: the main sequence, the cool luminous giant/supergiant region, and the hot faint white dwarf region. Named stars make the map feel physical rather than abstract."
+    alt: "Classic Hertzsprung-Russell diagram with luminosity on the vertical axis and surface temperature on the horizontal axis, labeled with spectral classes O through M and representative stars such as Spica, Rigel, Betelgeuse, the Sun, Sirius B, Procyon B, and Proxima Centauri in the main sequence, giant, and white dwarf regions."
     module: 2
 
   hr-diagram-theorist:
@@ -564,6 +577,24 @@ figures:
     path: /assets/images/module-02/week-06/17_06_Figure_hr.jpg
     caption: "**What to notice:** Evolution off the main sequence depends strongly on mass and timescale. High-mass stars evolve quickly (short arrows/times), while low-mass stars evolve slowly (long times). The same HR space encodes both pathway and pace."
     alt: "HR diagram with luminosity on the vertical axis and surface temperature on the horizontal axis, showing the main sequence and overlaid evolutionary tracks for stars of different masses from about 0.5 to 15 solar masses. Arrows and labels indicate approximate evolution timescales, highlighting that higher-mass stars evolve much faster than lower-mass stars."
+    module: 2
+
+  hr-evolution-solar-track-detailed:
+    path: /assets/images/module-02/week-06/17_08_Figure.jpg
+    caption: "**What to notice:** A Sun-like star does not leave the main sequence in one jump. The track bends through subgiant and red-giant phases, then loops through a helium-burning stage before ending as a white dwarf after the planetary-nebula phase."
+    alt: "HR diagram showing a detailed evolutionary path for a solar-mass star from the main sequence to subgiant, red giant, helium-core-fusion star, planetary nebula, and white dwarf, with side cutaways labeling the changing fusion shells and inert core structure."
+    module: 2
+
+  hr-evolution-massive-star-tracks:
+    path: /assets/images/module-02/week-06/17_13_Figure.jpg
+    caption: "**What to notice:** High-mass stars follow distinct tracks by mass, but all of them race through the upper HR diagram far faster than Sun-like stars. Larger mass means hotter starting point, shorter lifetime, and a more dramatic supergiant evolution."
+    alt: "HR diagram with several massive-star evolutionary tracks labeled by stellar mass, including about 9, 25, 40, and 85 solar masses, showing their motion away from the upper main sequence through luminous supergiant phases."
+    module: 2
+
+  hr-pre-main-sequence-tracks:
+    path: /assets/images/module-02/week-06/HR-PMS.jpg
+    caption: "**What to notice:** Mass sets the clock even before stable hydrogen burning begins. High-mass protostars reach the main sequence quickly, while low-mass stars spend much longer contracting toward it."
+    alt: "HR diagram with pre-main-sequence tracks labeled by stellar mass from about 0.5 to 15 solar masses, with arrows and timescales showing that higher-mass stars move onto the main sequence much faster than lower-mass stars."
     module: 2
 
   binary-star-visual:
@@ -1171,6 +1202,13 @@ figures:
     alt: "Star with orbiting exoplanet showing how spectral lines shift: blueshifted when star moves toward viewer, neutral when perpendicular, redshifted when moving away. Three spectra shown for comparison."
     credit: "JWST/STScI"
     module: 1
+
+  jwst-doppler-shift:
+    path: /assets/images/module-02/jwst-doppler-shift.png
+    caption: "**What to notice:** The same spectral lines slide left for blueshift and right for redshift. Even tiny wavelength shifts let us infer line-of-sight motion and detect an orbiting companion."
+    alt: "Diagram of a star with an orbiting exoplanet and three corresponding spectra labeled blueshift, neutral, and redshift, showing the same absorption lines moving to shorter or longer wavelengths as the star moves toward or away from the viewer."
+    credit: "JWST/STScI"
+    module: 2
 
   # Betelgeuse Size Comparison
   betelgeuse-size:

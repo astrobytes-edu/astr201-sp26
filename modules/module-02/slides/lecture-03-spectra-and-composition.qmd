@@ -884,7 +884,7 @@ The Doppler Shift
 
 :::: {.columns}
 ::: {.column width="55%"}
-{{< img doppler-shift-exoplanet >}}
+{{< img jwst-doppler-shift >}}
 :::
 ::: {.column width="45%"}
 ::: {.text-sm}
