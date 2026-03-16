@@ -34,15 +34,28 @@ After completing this reading, you should be able to:
 1. **Explain** why a star needs a pressure gradient (not just pressure) to resist gravitational collapse
 2. **Distinguish** thermal gas pressure, radiation pressure, and degeneracy pressure as different sources of support inside stars
 3. **Derive and interpret** the equation of hydrostatic equilibrium: $\frac{dP}{dr} = -\rho g = -\frac{G M(r) \rho}{r^2}$
-4. **Apply** the virial theorem ($2K_\text{th} + U_\text{grav} = 0$) to relate thermal and gravitational energy
+4. **Apply** the virial theorem ($2K_{\mathrm{th}} + U_{\mathrm{grav}} = 0$) to relate thermal and gravitational energy
 5. **Estimate** a star's central temperature: $T_c \sim \frac{\mu G M m_p}{k_B R}$
-6. **Explain** why gravity alone predicts a stellar core temperature of order $10^7~\text{K}$ for the Sun
+6. **Explain** why gravity alone predicts a stellar core temperature of order $10^7\,\mathrm{K}$ for the Sun
 7. **Explain** why a self-gravitating system has negative heat capacity — it gets *hotter* as it loses energy
-8. **Connect** hydrostatic equilibrium to the dynamical timescale: departures are corrected on $\tau_\text{dyn} \sim$ minutes
+8. **Connect** hydrostatic equilibrium to the dynamical timescale: departures are corrected on $\tau_{\mathrm{dyn}} \sim$ minutes
+
+:::{.callout-note title="Math Grammar Convention"}
+In this reading, we will carefully distinguish three kinds of mathematical statements:
+
+- \(=\) means an equality within a stated model or definition
+- \(\approx\) means numerically approximately equal
+- \(\sim\) means “scales like” or “is of order”
+- \(\propto\) means “is proportional to”
+
+We will also carry **units explicitly** in all worked examples. In astrophysics, unit tracking is not optional bookkeeping; it is part of the reasoning.
+:::
 
 ## Concept Throughline
 
-> *Gravity never stops pulling. For a star to survive, something must push back — not uniformly, but with a force that increases toward the center, where the weight of overlying material is greatest.* That something is a pressure gradient, and the condition that pressure exactly balances gravity at every point inside the star is called **hydrostatic equilibrium**. This single balance — encoded in one equation — is the foundation of all stellar structure theory. Combined with the virial theorem and the ideal-gas picture, it lets us estimate a solar core temperature of order $10^7~\text{K}$ — about $15$ million kelvin. No nuclear physics required — just gravity and thermodynamics.
+Gravity never stops pulling inward. For a star to survive, something must push back — not uniformly, but with a force that increases toward the center, where the weight of the overlying material is greatest. That something is a **pressure gradient**, and the condition that pressure exactly balances gravity at every point inside the star is called **hydrostatic equilibrium**.
+
+This force balance is the foundation of stellar structure theory. Combined with the virial theorem and the ideal-gas picture, it lets us estimate a solar core temperature of order \(10^7\,\mathrm{K}\), or about \(15\,\mathrm{MK}\). No nuclear reaction physics is needed to estimate this temperature scale — only gravity, force balance, energy balance, and the thermal behavior of gas.
 
 ::: {.callout-note title="Reading Map — Choose Your Track"}
 
@@ -55,10 +68,8 @@ After completing this reading, you should be able to:
 
 ---
 
-::: {.callout-important}
-## The Big Idea
-
-**A star is held up by a pressure gradient, not just pressure.** The pressure must increase toward the center — rising from essentially zero at the surface to enormous values in the core — to support the weight of every overlying layer. This balance, called hydrostatic equilibrium, is the master equation of stellar physics. It tells us that a star's internal structure is completely determined by the battle between gravity pulling inward and pressure pushing outward.
+:::{.callout-important title="The Big Idea"}
+A star is held up by a **pressure gradient**, not just by pressure. The pressure must increase toward the center — rising from essentially zero at the surface to enormous values in the core — so that each layer can support the weight of the material above it. This balance, called **hydrostatic equilibrium**, is the foundational force-balance equation of stellar structure.
 :::
 
 ---
@@ -67,7 +78,7 @@ After completing this reading, you should be able to:
 
 ### A Deceptively Simple Question
 
-In Reading 1, you calculated the Sun's dynamical timescale: $\tau_\text{dyn} \sim 50~\text{min}$. If gravity were the only force acting, the Sun would collapse in less than an hour. Yet the Sun has been shining for $4.6~\text{Gyr}$ — about $4 \times 10^{13}$ dynamical times. Somehow it maintains an almost perfect balance between inward pull and outward support.
+In Reading 1, you calculated the Sun's dynamical timescale: $\tau_{\mathrm{dyn}} \sim 50\,\mathrm{min}$. If gravity were the only force acting, the Sun would collapse in less than an hour. Yet the Sun has been shining for $4.6\,\mathrm{Gyr}$ — about $4 \times 10^{13}$ dynamical times. Somehow it maintains an almost perfect balance between inward pull and outward support.
 
 What force opposes gravity? The answer is **pressure** — specifically, the pressure of the hot gas inside the star. But saying "pressure holds the star up" is not quite right, and understanding *why* requires some care.
 
@@ -79,11 +90,15 @@ Imagine a thin shell of gas at some radius $r$ inside a star. This shell feels g
 
 If the pressure were the same everywhere inside the star, the inward and outward pressure forces on the shell would exactly cancel, and gravity would win unopposed. For pressure to resist gravity, the pressure *below* the shell must exceed the pressure *above* it. In other words, it's not pressure itself that matters — it's the **pressure gradient**, the rate at which pressure changes with position.
 
-::: {.callout-note title="Principle — Pressure vs. Force"}
-Uniform pressure cannot move anything. If the pressure is the same on both sides of a surface, the forces cancel. Pressure produces a net force only when it varies with position, which is why **pressure gradients**, not pressure by itself, support stars against gravity.
-:::
+This is the key insight: it is the **pressure gradient**,
+\[
+\frac{dP}{dr},
+\]
+not the pressure \(P\) by itself, that provides the outward force.
 
-This is the key insight: **it is the pressure gradient $dP/dr$ — not the pressure $P$ — that provides the outward force.**
+:::{.callout-note title="Principle — Pressure vs. Force"}
+Uniform pressure cannot move anything. If the pressure is the same on both sides of a surface, the forces cancel. Pressure produces a net force only when it varies with position, which is why **pressure gradients**, not pressure alone, support stars against gravity.
+:::
 
 ::: {.callout-tip}
 ## Think First
@@ -94,6 +109,12 @@ You've experienced a pressure gradient before: at the bottom of a swimming pool,
 ## Answer
 
 The water pressure increases with depth because each layer must support the weight of all the water above it. A star works the same way: the gas pressure increases toward the center because each layer must support the weight of all the stellar material above it. The deeper you go, the more weight there is to support, so the higher the pressure must be.
+:::
+
+:::{.callout-tip title="Micro-checkpoint"}
+If pressure were extremely large but exactly uniform everywhere inside a star, would it support the star against gravity?
+
+**Answer:** No. Uniform pressure produces equal forces in opposite directions, so the net pressure force on a shell is zero. Only a pressure gradient can produce a net outward force.
 :::
 :::
 
@@ -106,40 +127,34 @@ To say that "pressure supports a star" raises a deeper question: **what physical
 Start from first principles. A gas is made of particles moving in many directions. When those particles strike a surface, they bounce and transfer momentum. Pressure is the rate of momentum transfer per unit area. Faster particles hit harder; more particles per cubic centimeter hit more often. That is why heating a gas or compressing it both raise its pressure.
 
 For a thermal gas, this idea is summarized by the ideal-gas pressure law:
+\[
+P_{\mathrm{gas}} = n k_B T = \frac{\rho k_B T}{\mu m_p}.
+\]
 
-$$
-P_\text{gas} = n k_B T = \frac{\rho k_B T}{\mu m_p}
-$$
+Here:
+- \(P_{\mathrm{gas}}\) is the thermal gas pressure, in \(\mathrm{dyn\,cm^{-2}}\)
+- \(n\) is the number density, in particles per \(\mathrm{cm^3}\)
+- \(k_B\) is Boltzmann’s constant
+- \(T\) is the temperature, in \(\mathrm{K}\)
+- \(\rho\) is the mass density, in \(\mathrm{g\,cm^{-3}}\)
+- \(\mu m_p\) is the average mass per particle
 
-Let's unpack the symbols:
-- **$P_\text{gas}$** is the thermal gas pressure, in $\text{dyn}/\text{cm}^2$
-- **$n$** is the number density, in particles per $\text{cm}^3$
-- **$k_B$** is Boltzmann's constant
-- **$T$** is the temperature
-- **$\rho$** is the mass density, in $\text{g}/\text{cm}^3$
-- **$\mu m_p$** is the average mass per particle
-
-What this equation is saying is simple but powerful: at fixed density, a hotter gas pushes harder; at fixed temperature, a denser gas pushes harder. This is the pressure source we usually mean when we say a main-sequence star is supported by "pressure."
+This equation says something physically simple but powerful: at fixed density, a hotter gas pushes harder; at fixed temperature, a denser gas pushes harder. In ordinary stars like the Sun, this thermal gas pressure is the main source of support against gravity.
 
 #### Radiation Pressure: Momentum from Light
 
 Photons also carry momentum, even though they have no mass. If photons are trapped inside a star and scatter again and again off particles, they push on the gas and on any surface you imagine inside the star. That push is called **radiation pressure**.
 
-Deep inside a star, matter and radiation exchange energy so rapidly that each small region is close to **local thermal equilibrium**. A radiation field in thermal equilibrium has a blackbody spectrum, so the blackbody energy density is
+A radiation field in local thermal equilibrium has a blackbody energy density
+\[
+u_{\mathrm{rad}} = aT^4,
+\]
+where \(a\) is the radiation constant. Because an isotropic bath of photons pushes equally in all directions, the associated radiation pressure is
+\[
+P_{\mathrm{rad}} = \frac{1}{3}u_{\mathrm{rad}} = \frac{1}{3}aT^4.
+\]
 
-$$
-u_\text{rad} = a T^4
-$$
-
-where $a$ is the radiation constant. Because an isotropic bath of photons pushes equally in all directions, the associated radiation pressure is
-
-$$
-P_\text{rad} = \frac{1}{3}u_\text{rad} = \frac{1}{3}a T^4
-$$
-
-This is where the blackbody connection matters. Blackbody radiation does not just tell us what spectrum a hot object emits; it also tells us how much energy is stored in the radiation field. Hotter radiation fields have much larger energy densities, and because photons carry momentum, that means much larger radiation pressure. The steep $T^4$ dependence is the clue: radiation pressure grows much faster with temperature than gas pressure does.
-
-For a star like the Sun, **thermal gas pressure does most of the supporting work**. In very massive, very hot stars, radiation pressure becomes much more important.
+The key clue is the steep temperature dependence: \(P_{\mathrm{rad}} \propto T^4\). Radiation pressure grows much faster with temperature than thermal gas pressure does. For a star like the Sun, thermal gas pressure dominates. In very hot, very massive stars, radiation pressure becomes much more important.
 
 ::: {.callout-note title="Spoiler for Later: Degeneracy Pressure"}
 There is a third major pressure source in stellar astrophysics: **degeneracy pressure**. Unlike thermal gas pressure, it does not come from particles being hot. It comes from quantum mechanics, specifically the Pauli exclusion principle, which prevents identical fermions from all occupying the same low-energy state. That is the pressure support that matters in white dwarfs and neutron stars. For now, the key point is that not all stellar pressure is thermal.
@@ -153,11 +168,14 @@ Suppose the density stays the same but the temperature doubles. How does the the
 ::: {.callout-note collapse="true"}
 ## Solution
 
-For thermal gas pressure, $P_\text{gas} \propto T$ at fixed density, so doubling $T$ doubles the gas pressure.
+For thermal gas pressure, \(P_{\mathrm{gas}} \propto T\) at fixed density, so doubling \(T\) doubles the gas pressure.
 
-For radiation pressure, $P_\text{rad} \propto T^4$, so doubling $T$ multiplies the radiation pressure by $2^4 = 16$.
+For radiation pressure, \(P_{\mathrm{rad}} \propto T^4\), so doubling \(T\) gives
+\[
+P_{\mathrm{rad,new}} = 2^4 P_{\mathrm{rad,old}} = 16\,P_{\mathrm{rad,old}}.
+\]
 
-This means radiation pressure becomes relatively more important as stars get hotter. That is why it matters most in very hot, very massive stars, even though thermal gas pressure dominates in the Sun.
+So radiation pressure increases much more rapidly with temperature than gas pressure does. That is why radiation pressure becomes relatively more important in hotter stars, even though thermal gas pressure dominates in the Sun.
 :::
 :::
 
@@ -171,42 +189,71 @@ Consider a thin shell of gas at radius $r$ inside a star, with thickness $dr$, d
 
 Two forces act on this shell in the radial direction:
 
-**Gravity** pulls the shell inward:
+Pressure pushes on the shell from both sides. The pressure on the inner face is \(P(r)\), pushing outward, and the pressure on the outer face is \(P(r+dr)\), pushing inward. The net pressure force is therefore
+\[
+F_{\mathrm{pressure}} = P(r)A - P(r+dr)A.
+\]
 
-$$
-F_\text{grav} = -\frac{G\,M(r)\,dm}{r^2} = -\frac{G\,M(r)\,\rho\,A\,dr}{r^2}
-$$
+Using the first-order Taylor expansion
+\[
+P(r+dr) \approx P(r) + \frac{dP}{dr}\,dr,
+\]
+we get
+\[
+F_{\mathrm{pressure}} \approx -\frac{dP}{dr}A\,dr.
+\]
 
-where $M(r)$ is the total mass contained within radius $r$ (by Newton's shell theorem, only the mass interior to the shell matters).
+The minus sign matters physically: because pressure decreases outward, \(\frac{dP}{dr} < 0\), so the net pressure force points outward.
 
-**Pressure difference** pushes the shell outward. The net pressure force is the difference between the pressure on the bottom face ($P(r)$, pushing outward) and the pressure on the top face ($P(r+dr)$, pushing inward):
+Gravity pulls the shell inward:
+\[
+F_{\mathrm{grav}} = -\frac{G M(r)\,dm}{r^2}
+= -\frac{G M(r)\,\rho A\,dr}{r^2},
+\]
+where \(M(r)\) is the mass enclosed within radius \(r\).
 
-$$
-F_\text{pressure} = [P(r) - P(r+dr)] \times A = -\frac{dP}{dr}\,dr \times A
-$$
+For hydrostatic equilibrium, the shell has no radial acceleration, so the net force must vanish:
+\[
+F_{\mathrm{pressure}} + F_{\mathrm{grav}} = 0.
+\]
 
-For the shell to remain in equilibrium ($F_\text{net} = 0$, no acceleration), these forces must balance:
+Substituting the expressions above gives
+\[
+-\frac{dP}{dr}A\,dr = \frac{G M(r)\,\rho A\,dr}{r^2}.
+\]
 
-$$
--\frac{dP}{dr}\,A\,dr = -\frac{G\,M(r)\,\rho\,A\,dr}{r^2}
-$$
-
-Dividing both sides by $A\,dr$ gives the master balance law for stellar structure:
-
-{{< include ../../../_includes/equations/hydrostatic-equilibrium.qmd >}}
-{{< eqrefcard hydrostatic-equilibrium >}}
-
-This is the **equation of hydrostatic equilibrium** — the single most important equation in stellar structure theory.
-
-**Plain-language reading:** Every layer of gas must support the weight of all the material above it. The pressure must therefore increase inward at exactly the rate needed to hold up that weight.
+Dividing by \(A\,dr\) yields the equation of hydrostatic equilibrium:
+\[
+\frac{dP}{dr} = -\frac{G M(r)\rho(r)}{r^2}.
+\]
 
 ### Reading the Equation
 
-The left side, $dP/dr$, tells you how quickly pressure changes as you move outward. It must be negative: pressure is highest near the center and falls toward the surface. The right side is the local weight of the gas per unit volume, because $GM(r)/r^2$ is the gravitational acceleration at radius $r$ and multiplying by $\rho$ turns that into a weight density.
+The left-hand side,
+\[
+\frac{dP}{dr},
+\]
+tells you how quickly pressure changes as you move outward. Inside a normal star, it must be negative:
+\[
+\frac{dP}{dr} < 0,
+\]
+which means pressure is highest near the center and decreases toward the surface.
 
-Read as a sentence, the equation says this: **at every radius inside the star, pressure must fall outward at exactly the rate needed to support the weight of the layers above.** If the pressure fell too slowly, gravity would win and the gas would sink inward. If it fell too quickly, the gas would be pushed outward. Hydrostatic equilibrium is therefore a **local** balance: each layer supports its own overlying weight, which is why pressure does not simply blow the whole star apart. At the surface ($r = R$), the pressure drops to nearly zero; at the center ($r = 0$), it reaches its maximum value $P_c$.
+The right-hand side,
+\[
+-\frac{G M(r)\rho(r)}{r^2},
+\]
+is the local weight per unit volume. The factor
+\[
+g(r) = \frac{G M(r)}{r^2}
+\]
+is the gravitational acceleration at radius \(r\), and multiplying by \(\rho(r)\) gives the weight density \(\rho g\).
 
-**This is a differential equation (an ODE).** It relates the pressure at one radius to the conditions (mass, density) at that same radius. To solve it, you'd need to know how density varies with radius — which requires additional equations. The full set of stellar structure equations is the subject of Reading 5.
+Read as a sentence, the equation says: **at every radius inside the star, the pressure must decrease outward at exactly the rate needed to support the weight of the overlying gas**.
+
+This is a local force-balance law. If the pressure fell too slowly with radius, gravity would win and the gas would move inward. If it fell too quickly, the gas would be pushed outward. At the surface, \(P\) drops to nearly zero; at the center, it reaches its maximum value \(P_c\).
+
+This is a differential equation, meaning it relates how pressure changes with radius to the local conditions inside the star. To solve for the full structure \(P(r)\), \(\rho(r)\), and \(M(r)\), we need additional equations. That fuller system is the subject of Reading 5.
 
 ::: {.callout-tip}
 ## Check Yourself
@@ -216,11 +263,23 @@ The equation of hydrostatic equilibrium says $dP/dr < 0$ everywhere inside a sta
 ::: {.callout-note collapse="true"}
 ## Solution
 
-If $dP/dr > 0$ (pressure increasing outward), the pressure gradient would push the gas *inward* — in the same direction as gravity. Both forces would pull inward, and the star would collapse at that location.
+If
+\[
+\frac{dP}{dr} > 0,
+\]
+then pressure would increase outward. In that case, the pressure gradient force would point inward, in the same direction as gravity. The gas would be driven inward even more strongly.
 
-If $dP/dr = 0$ (uniform pressure), there would be no net pressure force on any shell. Gravity would be unopposed, and the star would collapse on the dynamical timescale ($\tau_\text{dyn} \sim$ minutes).
+If
+\[
+\frac{dP}{dr} = 0,
+\]
+then the pressure would be uniform, so the pressure forces on a shell would cancel exactly. Gravity would be unopposed, and the star would collapse on the dynamical timescale.
 
-For hydrostatic equilibrium, we *need* $dP/dr < 0$ everywhere — pressure must decrease outward so that the net pressure force pushes gas outward to balance gravity.
+For hydrostatic equilibrium, we require
+\[
+\frac{dP}{dr} < 0
+\]
+everywhere inside the star: pressure must decrease outward so that the net pressure force points outward and balances gravity.
 :::
 :::
 
@@ -230,84 +289,109 @@ For hydrostatic equilibrium, we *need* $dP/dr < 0$ everywhere — pressure must 
 
 ### A Scaling Argument
 
-We can't solve the hydrostatic equilibrium equation without knowing $\rho(r)$ and $M(r)$, but we can estimate the central pressure using dimensional reasoning.
+We cannot solve the hydrostatic equilibrium equation exactly without knowing the full internal profiles \(\rho(r)\) and \(M(r)\), but we can estimate the central pressure using a scaling argument.
 
-Replace the derivative $dP/dr$ with the **typical pressure change across the star**, $\Delta P / \Delta r$, where $\Delta P \sim P_c - 0 = P_c$ (pressure drop from center to surface) and $\Delta r \sim R$ (the star's radius):
+Across the star, the pressure changes from roughly \(P_c\) at the center to nearly \(0\) at the surface, over a distance of order \(R\). So we write
+\[
+\frac{dP}{dr} \sim \frac{\Delta P}{\Delta r} \sim \frac{P_c}{R}.
+\]
 
-$$
-\frac{P_c}{R} \sim \frac{G M \bar{\rho}}{R^2}
-$$
+For an order-of-magnitude estimate, also replace \(M(r)\) by the total mass \(M\) and \(\rho(r)\) by the mean density
+\[
+\bar{\rho} \sim \frac{M}{R^3}.
+\]
 
-Using $\bar{\rho} \sim M/R^3$:
+Then hydrostatic equilibrium gives
+\[
+\frac{P_c}{R} \sim \frac{G M \bar{\rho}}{R^2}.
+\]
 
-{{< include ../../../_includes/equations/central-pressure.qmd >}}
-{{< eqrefcard central-pressure >}}
+Substituting \(\bar{\rho} \sim M/R^3\) gives
+\[
+P_c \sim \frac{G M^2}{R^4}.
+\]
 
-### Worked Example: The Sun's Central Pressure
+This is a scaling estimate, not an exact solution. It tells us how the required central pressure depends on stellar mass and radius.
 
-Insert the solar values in CGS units:
+### Worked Example: The Sun’s Central Pressure
 
-$$
-P_c \sim \frac{G M_\odot^2}{R_\odot^4}
-$$
+We use the scaling relation
+\[
+P_c \sim \frac{G M_\odot^2}{R_\odot^4}.
+\]
 
-and keep the units attached to each quantity at every step:
+Insert solar values in CGS units:
+\[
+G = 6.674\times10^{-8}\,\mathrm{cm^3\,g^{-1}\,s^{-2}},
+\]
+\[
+M_\odot = 2.0\times10^{33}\,\mathrm{g},
+\]
+\[
+R_\odot = 7.0\times10^{10}\,\mathrm{cm}.
+\]
 
-$$
-\begin{aligned}
-P_c
-&\sim
-\frac{
-\left(6.674 \times 10^{-8}~\text{cm}^3\,\text{g}^{-1}\,\text{s}^{-2}\right)
-\left(2.0 \times 10^{33}~\text{g}\right)^2
-}{
-\left(7.0 \times 10^{10}~\text{cm}\right)^4
-} \\
-&=
-\frac{
-\left(6.674 \times 10^{-8}~\text{cm}^3\,\text{g}^{-1}\,\text{s}^{-2}\right)
-\left(4.0 \times 10^{66}~\text{g}^2\right)
-}{
-2.40 \times 10^{43}~\text{cm}^4
-} \\
-&=
-\frac{
-2.67 \times 10^{59}~\text{cm}^3\,\text{g}\,\text{s}^{-2}
-}{
-2.40 \times 10^{43}~\text{cm}^4
-} \\
-&=
-1.1 \times 10^{16}~\text{g}\,\text{cm}^{-1}\,\text{s}^{-2} \\
-&=
-1.1 \times 10^{16}~\text{dyn}/\text{cm}^2
-\end{aligned}
-$$
+Substitute:
+\[
+P_c \sim
+\frac{(6.674\times10^{-8}\,\mathrm{cm^3\,g^{-1}\,s^{-2}})
+(2.0\times10^{33}\,\mathrm{g})^2}
+{(7.0\times10^{10}\,\mathrm{cm})^4}.
+\]
 
-Here the unit cancellation is:
+Now evaluate the powers:
+\[
+(2.0\times10^{33}\,\mathrm{g})^2 = 4.0\times10^{66}\,\mathrm{g^2},
+\]
+\[
+(7.0\times10^{10}\,\mathrm{cm})^4 \approx 2.4\times10^{43}\,\mathrm{cm^4}.
+\]
 
-$$
-\left[\frac{G M^2}{R^4}\right]
-=
-\left(\frac{\text{cm}^3}{\text{g}\,\text{s}^2}\right)
-\left(\text{g}^2\right)
-\left(\frac{1}{\text{cm}^4}\right)
-=
-\frac{\text{g}}{\text{cm}\,\text{s}^2}
-=
-\text{dyn}/\text{cm}^2
-$$
+So
+\[
+P_c \sim
+\frac{(6.674\times10^{-8})(4.0\times10^{66})}{2.4\times10^{43}}
+\,\mathrm{cm^3\,g^{-1}\,s^{-2}\,g^2\,cm^{-4}}.
+\]
 
-**Sanity check:** Detailed solar models give $P_c \approx 2.5 \times 10^{17}~\text{dyn}/\text{cm}^2$ — our estimate is low by a factor of $\sim 20$, which is expected because we used mean density rather than the much higher central density. Being within a factor of $\sim 20$ from a dimensional estimate is a success in astrophysics.
+Numerically,
+\[
+P_c \sim 1.1\times10^{16}\,\mathrm{g\,cm^{-1}\,s^{-2}}.
+\]
 
-To convert that to atmospheres, use $1~\text{atm} = 1.013 \times 10^6~\text{dyn}/\text{cm}^2$:
+To rewrite this in pressure units, use
+\[
+1\,\mathrm{dyn} = 1\,\mathrm{g\,cm\,s^{-2}}.
+\]
+Therefore,
+\[
+1\,\mathrm{g\,cm^{-1}\,s^{-2}} = 1\,\mathrm{dyn\,cm^{-2}},
+\]
+so
+\[
+P_c \sim 1.1\times10^{16}\,\mathrm{dyn\,cm^{-2}}.
+\]
 
-$$
-1.1 \times 10^{16}~\text{dyn}/\text{cm}^2
-\left(\frac{1~\text{atm}}{1.013 \times 10^6~\text{dyn}/\text{cm}^2}\right)
-\approx 1.1 \times 10^{10}~\text{atm}
-$$
+To convert to atmospheres, use
+\[
+1\,\mathrm{atm} = 1.013\times10^6\,\mathrm{dyn\,cm^{-2}}.
+\]
 
-So the Sun's central pressure is about 10 billion times Earth's atmospheric pressure.
+Then
+\[
+P_c \sim
+\frac{1.1\times10^{16}\,\mathrm{dyn\,cm^{-2}}}
+{1.013\times10^6\,\mathrm{dyn\,cm^{-2}\,atm^{-1}}}
+\approx 1.1\times10^{10}\,\mathrm{atm}.
+\]
+
+So the Sun’s central pressure is about **10 billion atmospheres**.
+
+Detailed solar models give
+\[
+P_{c,\odot} \approx 2.5\times10^{17}\,\mathrm{dyn\,cm^{-2}},
+\]
+so this simple estimate is low by about a factor of \(20\). That is expected, because the Sun is centrally concentrated rather than uniform in density.
 
 ::: {.callout-tip}
 ## Misconception Check
@@ -317,7 +401,21 @@ Suppose two stars have the same mass, but Star B has half the radius of Star A. 
 ::: {.callout-note collapse="true"}
 ## Answer
 
-Star B needs the larger central pressure. The estimate says $P_c \propto M^2/R^4$, so cutting the radius in half increases the required central pressure by a factor of $2^4 = 16$. The key idea is that hydrostatic support depends on **how concentrated** the mass is, not just on how much mass there is.
+Star B needs the larger central pressure. From the scaling relation
+\[
+P_c \sim \frac{G M^2}{R^4},
+\]
+holding the mass fixed gives
+\[
+P_c \propto \frac{1}{R^4}.
+\]
+
+If Star B has half the radius of Star A, then
+\[
+\frac{P_{c,B}}{P_{c,A}} = \left(\frac{R_A}{R_B}\right)^4 = \left(\frac{1}{1/2}\right)^4 = 2^4 = 16.
+\]
+
+So Star B needs about \(16\) times the central pressure. The key idea is that hydrostatic support depends not just on how much mass a star has, but on how tightly that mass is concentrated.
 :::
 :::
 
@@ -327,36 +425,55 @@ Star B needs the larger central pressure. The estimate says $P_c \propto M^2/R^4
 
 ### Energy Balance in Self-Gravitating Systems
 
-Hydrostatic equilibrium describes **force balance** inside a star. The virial theorem describes **energy balance** in that same self-gravitating system.
+Hydrostatic equilibrium is a **force-balance** statement: it tells us how pressure gradients balance gravity at each radius inside the star.
 
-In Module 1, you encountered the virial theorem for orbits: $2\langle K \rangle + \langle U \rangle = 0$. The same theorem applies to a self-gravitating gas — with a profound twist.
+The virial theorem is an **energy-balance** statement: it relates the star’s total thermal energy to its gravitational potential energy.
 
-For a star in hydrostatic equilibrium, the virial theorem states:
+For a star in hydrostatic equilibrium, the virial theorem gives
 
 {{< include ../../../_includes/equations/stellar-virial.qmd >}}
 {{< eqrefcard stellar-virial >}}
 
-where $K_\text{th}$ is the total thermal (kinetic) energy of all the gas particles inside the star and $U_\text{grav}$ is the gravitational potential energy of the star (negative, since the star is bound).
+where \(K_{\mathrm{th}}\) is the total thermal energy of the gas and \(U_{\mathrm{grav}}\) is the gravitational potential energy of the bound star.
 
-This means $K_\text{th} = -\frac{1}{2} U_\text{grav}$. Since $U_\text{grav} < 0$, the thermal energy is positive (as expected) and equals half the magnitude of the gravitational energy.
+Rearranging gives
+\[
+K_{\mathrm{th}} = -\frac{1}{2}U_{\mathrm{grav}}.
+\]
 
-**The total energy** of the star is:
+Since \(U_{\mathrm{grav}} < 0\), the thermal energy is positive, as it must be.
 
-$$
-E_\text{total} = K_\text{th} + U_\text{grav} = -\frac{1}{2}U_\text{grav} + U_\text{grav} = \frac{1}{2}U_\text{grav} < 0
-$$
+The total energy is
+\[
+E_{\mathrm{tot}} = K_{\mathrm{th}} + U_{\mathrm{grav}}
+= -\frac{1}{2}U_{\mathrm{grav}} + U_{\mathrm{grav}}
+= \frac{1}{2}U_{\mathrm{grav}} < 0.
+\]
 
-The total energy is negative — the star is gravitationally bound. This makes physical sense: you'd have to add energy to unbind it.
+A negative total energy means the star is gravitationally bound: energy must be added to unbind it.
 
 ### The Negative Heat Capacity Paradox
 
-Here's where things get strange. Suppose a star *loses* energy by radiating from its surface (as all stars do). Its total energy $E_\text{total}$ becomes more negative. Since $E_\text{total} = \frac{1}{2}U_\text{grav}$, this means $U_\text{grav}$ becomes more negative — the star contracts.
+Here is the strange part. A star radiates energy from its surface, so its total energy decreases:
+\[
+E_{\mathrm{tot}} \rightarrow \text{more negative}.
+\]
 
-But from the virial theorem, $K_\text{th} = -\frac{1}{2}U_\text{grav}$. If $U_\text{grav}$ becomes more negative, $K_\text{th}$ *increases*. More thermal energy means a higher temperature.
+Because
+\[
+E_{\mathrm{tot}} = \frac{1}{2}U_{\mathrm{grav}},
+\]
+this means \(U_{\mathrm{grav}}\) also becomes more negative. In physical terms, the star contracts.
 
-**The star gets hotter by losing energy.** This is called **negative heat capacity** — a hallmark of self-gravitating systems.
+But the virial theorem says
+\[
+K_{\mathrm{th}} = -\frac{1}{2}U_{\mathrm{grav}}.
+\]
+So if \(U_{\mathrm{grav}}\) becomes more negative, \(K_{\mathrm{th}}\) becomes larger. More thermal energy means higher particle speeds and a higher temperature.
 
-The causal chain is worth reading slowly: the star radiates energy $\rightarrow$ its total energy decreases $\rightarrow$ gravity pulls it into a smaller configuration $\rightarrow$ particles move faster $\rightarrow$ the temperature rises. This is completely opposite to everyday experience (a hot cup of coffee loses heat and cools down), and it arises because the gravitational potential energy reservoir is so large that contraction releases more energy than the star radiates.
+So the star gets **hotter as it loses energy**. This is called **negative heat capacity**, and it is a hallmark of self-gravitating systems.
+
+In an ordinary system, energy loss lowers the temperature. In a self-gravitating system, energy loss leads to contraction, and contraction raises the typical particle speeds.
 
 ::: {.callout-warning title="This Is Counterintuitive — But It's Real"}
 In everyday life, losing energy makes things cooler. In self-gravitating systems, losing energy makes things *hotter*. This is not a mathematical trick — it is the physical mechanism by which protostars heat up as they contract, eventually reaching core temperatures high enough to ignite nuclear fusion. The negative heat capacity of gravity is how stars are *born*.
@@ -370,9 +487,19 @@ A protostar (a star that hasn't yet started nuclear fusion) is slowly contractin
 ::: {.callout-note collapse="true"}
 ## Solution
 
-As the protostar radiates energy, it contracts. The virial theorem says $K_\text{th} = -U_\text{grav}/2$, and contraction makes $U_\text{grav}$ more negative, so $K_\text{th}$ increases. This means the core temperature *rises*.
+As the protostar radiates energy, its total energy becomes more negative, so gravity pulls it into a smaller configuration. The virial theorem,
+\[
+K_{\mathrm{th}} = -\frac{1}{2}U_{\mathrm{grav}},
+\]
+then tells us that as the gravitational energy becomes more negative, the thermal energy increases.
 
-This is good news for fusion because nuclear fusion requires extremely high temperatures ($\sim 15~\text{MK}$ for hydrogen fusion). The protostar starts cold, but gravitational contraction steadily heats its core. Eventually, the core temperature reaches the threshold for fusion ignition — and the star "turns on." This is exactly the Kelvin-Helmholtz contraction phase we discussed in Reading 1, operating on a timescale $\tau_\text{KH} \sim 30~\text{Myr}$ for a solar-mass star.
+That means the core temperature rises with time.
+
+This is exactly why gravitational contraction is good news for fusion: hydrogen fusion requires core temperatures of order
+\[
+10^7\,\mathrm{K} \approx 10\,\mathrm{MK}.
+\]
+A protostar begins too cool for fusion, but contraction steadily heats the core until fusion can ignite.
 :::
 :::
 
@@ -382,134 +509,161 @@ This is good news for fusion because nuclear fusion requires extremely high temp
 
 ### Connecting Pressure to Temperature
 
-For an ideal gas, the thermal gas pressure we introduced earlier is related to density and temperature by:
+For an ideal gas,
+\[
+P = \frac{\rho k_B T}{\mu m_p},
+\]
+where:
+- \(P\) is the gas pressure
+- \(\rho\) is the mass density
+- \(T\) is the temperature
+- \(k_B = 1.38\times10^{-16}\,\mathrm{erg\,K^{-1}}\) is Boltzmann’s constant
+- \(m_p = 1.67\times10^{-24}\,\mathrm{g}\) is the proton mass
+- \(\mu\) is the mean molecular weight, with \(\mu \approx 0.6\) for ionized solar-composition gas
 
-$$
-P = \frac{\rho k_B T}{\mu m_p}
-$$
+To estimate the core temperature, we combine the hydrostatic pressure scale with the ideal-gas picture. The cleanest version keeps \(\mu\) explicit: each particle effectively carries mass \(\mu m_p\), so the thermal energy per particle must be large enough to help support the star against gravity.
 
-where $k_B = 1.38 \times 10^{-16}~\text{erg}/\text{K}$ is Boltzmann's constant, $T$ is the temperature, $\mu$ is the mean molecular weight (dimensionless; $\mu \approx 0.6$ for ionized solar-composition gas), and $m_p = 1.67 \times 10^{-24}~\text{g}$ is the proton mass.
+This leads to the temperature scale
+\[
+\frac{3}{2}k_B T_c \sim \frac{G M \mu m_p}{R},
+\]
+or equivalently,
+\[
+T_c \sim \frac{\mu G M m_p}{k_B R}.
+\]
 
-We can estimate the core temperature by combining this with our central pressure estimate. The cleanest version keeps the mean molecular weight $\mu$ explicit: each particle effectively carries mass $\mu m_p$, so the thermal energy per particle is compared to the gravitational energy per particle for that same average mass.
+This is still an order-of-magnitude estimate, not a full stellar structure solution. But it captures the key point: **gravity alone predicts a stellar core temperature of order \(10^7\,\mathrm{K}\)**.
 
-$$
-\frac{3}{2} k_B T_c \sim \frac{G M \mu m_p}{R}
-$$
+### Worked Example: The Sun’s Core Temperature
 
-Solving for the temperature scale gives:
+We use
+\[
+T_c \sim \frac{\mu G M_\odot m_p}{k_B R_\odot}.
+\]
 
-{{< include ../../../_includes/equations/core-temperature.qmd >}}
-{{< eqrefcard core-temperature >}}
+Insert values in CGS units:
+\[
+\mu \approx 0.6,
+\]
+\[
+G = 6.674\times10^{-8}\,\mathrm{cm^3\,g^{-1}\,s^{-2}},
+\]
+\[
+M_\odot = 2.0\times10^{33}\,\mathrm{g},
+\]
+\[
+m_p = 1.67\times10^{-24}\,\mathrm{g},
+\]
+\[
+k_B = 1.38\times10^{-16}\,\mathrm{erg\,K^{-1}},
+\]
+\[
+R_\odot = 7.0\times10^{10}\,\mathrm{cm}.
+\]
 
-This is still an order-of-magnitude argument. We are not solving the full stellar structure equations; we are estimating the temperature scale demanded by gravity.
+Substitute:
+\[
+T_c \sim
+\frac{(0.6)(6.674\times10^{-8}\,\mathrm{cm^3\,g^{-1}\,s^{-2}})
+(2.0\times10^{33}\,\mathrm{g})
+(1.67\times10^{-24}\,\mathrm{g})}
+{(1.38\times10^{-16}\,\mathrm{erg\,K^{-1}})
+(7.0\times10^{10}\,\mathrm{cm})}.
+\]
 
-This is the payoff of the whole reading: **gravity alone predicts a core temperature of order $10^7~\text{K}$, which is exactly the scale required for nuclear fusion.**
-
-### Worked Example: The Sun's Core Temperature
-
-Again, insert the solar values in CGS units:
-
-$$
-T_c \sim \frac{\mu G M_\odot m_p}{k_B R_\odot}
-$$
-
-$$
-\begin{aligned}
-T_c
-&\sim
-\frac{
-(0.6)
-\left(6.674 \times 10^{-8}~\text{cm}^3\,\text{g}^{-1}\,\text{s}^{-2}\right)
-\left(2.0 \times 10^{33}~\text{g}\right)
-\left(1.67 \times 10^{-24}~\text{g}\right)
-}{
-\left(1.38 \times 10^{-16}~\text{erg}\,\text{K}^{-1}\right)
-\left(7.0 \times 10^{10}~\text{cm}\right)
-} \\
-&=
-\frac{
-1.34 \times 10^{2}~\text{cm}^3\,\text{g}\,\text{s}^{-2}
-}{
-9.66 \times 10^{-6}~\text{erg}\,\text{cm}\,\text{K}^{-1}
-} \\
-&=
-1.4 \times 10^7~
-\frac{
-\text{cm}^2\,\text{g}\,\text{s}^{-2}
-}{
-\text{erg}
-}~\text{K} \\
-&=
-1.4 \times 10^7~\text{K}
-\end{aligned}
-$$
-
-$$
-\boxed{T_{c,\odot} \approx 1.4 \times 10^{7}~\text{K}}
-$$
-
-This is now in the right solar ballpark. Detailed solar models give $T_c \approx 1.5 \times 10^7~\text{K}$, so our stripped-down estimate is already surprisingly good.
-
-**Why isn't it exact?** We still used an order-of-magnitude balance rather than the full stellar structure equations. Real stars are centrally concentrated, have composition gradients, and do not behave like a uniform sphere. The correct lesson is not "the estimate failed." The correct lesson is: **gravity and the ideal-gas picture alone already demand a core temperature of order $10^7~\text{K}$.**
-
-The units work because
-
-$$
-\left[\frac{\mu G M m_p}{k_B R}\right]
+The unit cancellation is
+\[
+\frac{\mathrm{cm^3\,g^{-1}\,s^{-2}\,g\,g}}
+{\mathrm{erg\,K^{-1}\,cm}}
 =
-\frac{
-\left(\frac{\text{cm}^3}{\text{g}\,\text{s}^2}\right)
-\left(\text{g}\right)\left(\text{g}\right)
-}{
-\left(\frac{\text{erg}}{\text{K}}\right)\left(\text{cm}\right)
-}
-=
-\frac{\text{cm}^2\,\text{g}\,\text{s}^{-2}}{\text{erg}}~\text{K}
-=
-\text{K}
-$$
+\frac{\mathrm{g\,cm^2\,s^{-2}}}{\mathrm{erg}}\,\mathrm{K}
+= \mathrm{K},
+\]
+because \(1\,\mathrm{erg} = 1\,\mathrm{g\,cm^2\,s^{-2}}\).
 
-because $1~\text{erg} = 1~\text{g}\,\text{cm}^2\,\text{s}^{-2}$.
+Numerically,
+\[
+T_c \sim 1.4\times10^7\,\mathrm{K}.
+\]
 
-To convert kelvin to megakelvin, use $1~\text{MK} = 10^6~\text{K}$:
+To convert kelvin to megakelvin, use
+\[
+1\,\mathrm{MK} = 10^6\,\mathrm{K}.
+\]
 
-$$
-1.4 \times 10^7~\text{K}
-\left(\frac{1~\text{MK}}{10^6~\text{K}}\right)
-= 14~\text{MK}
-$$
+So
+\[
+T_c \sim \frac{1.4\times10^7\,\mathrm{K}}{10^6\,\mathrm{K\,MK^{-1}}}
+= 14\,\mathrm{MK}.
+\]
+
+Detailed solar models give
+\[
+T_{c,\odot} \approx 1.5\times10^7\,\mathrm{K} \approx 15\,\mathrm{MK},
+\]
+so this stripped-down estimate is already in the correct solar ballpark.
+
+The physical lesson matters more than the exact coefficient: gravity and the ideal-gas picture alone already demand a core temperature of order \(10^7\,\mathrm{K}\).
 
 ::: {.callout-note title="Observable → Model → Inference" .omi}
-**Observable:** The Sun's mass ($M_\odot = 2.0 \times 10^{33}~\text{g}$) and radius ($R_\odot = 7.0 \times 10^{10}~\text{cm}$) — both measured from binary orbits and angular size + distance.
+**Observable:** The Sun's mass ($M_\odot = 2.0 \times 10^{33}\,\mathrm{g}$) and radius ($R_\odot = 7.0 \times 10^{10}\,\mathrm{cm}$) — both measured from binary orbits and angular size + distance.
 
 **Model:** Hydrostatic equilibrium + virial theorem + ideal gas law → a core temperature scale $T_c \sim \mu G M m_p / (k_B R)$.
 
-**Inference:** $T_c \sim 10^7~\text{K}$. The Sun's core is about 15 million kelvin — hot enough for nuclear fusion. We predicted this from nothing but gravity and thermodynamics, with no knowledge of nuclear physics. This is remarkable: the *temperature* needed for fusion is set by *gravity*.
+**Inference:** $T_c \sim 10^7\,\mathrm{K}$. The Sun's core is about 15 million kelvin — hot enough for nuclear fusion. We predicted this from nothing but gravity and thermodynamics, with no knowledge of nuclear physics. This is remarkable: the *temperature* needed for fusion is set by *gravity*.
 :::
 
 ### What This Temperature Means
 
-A core temperature of $\sim 1.5 \times 10^7~\text{K}$ (often written as $15~\text{MK}$, where $1~\text{MK} = 10^6~\text{K}$) corresponds to an average thermal energy per particle of:
+A core temperature of
+\[
+T_c \approx 1.5\times10^7\,\mathrm{K}
+\]
+corresponds to an average thermal energy per particle of
+\[
+\frac{3}{2}k_B T_c.
+\]
 
-$$
-\begin{aligned}
+Substitute values:
+\[
 \frac{3}{2}k_B T_c
-&\approx \frac{3}{2}(1.38 \times 10^{-16}~\text{erg}/\text{K})(1.5 \times 10^7~\text{K}) \\
-&\approx 3.1 \times 10^{-9}~\text{erg}
-\end{aligned}
-$$
+=
+\frac{3}{2}(1.38\times10^{-16}\,\mathrm{erg\,K^{-1}})
+(1.5\times10^7\,\mathrm{K}).
+\]
 
-Now convert from ergs to electron-volts using $1~\text{keV} = 1.602 \times 10^{-9}~\text{erg}$:
+Numerically,
+\[
+\frac{3}{2}k_B T_c \approx 3.1\times10^{-9}\,\mathrm{erg}.
+\]
 
-$$
-3.1 \times 10^{-9}~\text{erg}
-\left(\frac{1~\text{keV}}{1.602 \times 10^{-9}~\text{erg}}\right)
-\approx 1.9~\text{keV}
-$$
+To convert to electron-volts, use
+\[
+1\,\mathrm{keV} = 1.602\times10^{-9}\,\mathrm{erg}.
+\]
 
-This is about $2~\text{keV}$ — in the X-ray regime. Every particle in the solar core has X-ray-scale energies. At these temperatures, all atoms are fully ionized — the solar interior is a plasma of free protons, electrons, and helium nuclei.
+Then
+\[
+\frac{3}{2}k_B T_c
+\approx
+\frac{3.1\times10^{-9}\,\mathrm{erg}}
+{1.602\times10^{-9}\,\mathrm{erg\,keV^{-1}}}
+\approx 1.9\,\mathrm{keV}.
+\]
 
-The question is: **is $2~\text{keV}$ enough energy for two protons to fuse?** The answer is *no* — not classically. The Coulomb barrier between two protons is about $1~\text{MeV}$, roughly 500 times larger than the typical thermal energy. That mismatch is enormous: classical thermal motion alone should fail badly. So how does fusion happen at "only" $15~\text{MK}$? The answer requires quantum mechanics — and that is the subject of Reading 3.
+So the typical particle energy in the solar core is about
+\[
+2\,\mathrm{keV},
+\]
+which is in the X-ray energy range.
+
+At these temperatures, atoms are fully ionized, so the solar core is a plasma of free electrons, protons, and helium nuclei.
+
+But this still is not enough thermal energy to overcome the proton-proton Coulomb barrier classically. That barrier is of order
+\[
+1\,\mathrm{MeV} = 10^3\,\mathrm{keV},
+\]
+hundreds of times larger than the typical thermal energy in the solar core. So classical thermal motion alone should not allow fusion. The missing ingredient is quantum tunneling, which is the subject of Reading 3.
 
 ::: {.callout-tip}
 ## Check Yourself
@@ -519,20 +673,47 @@ Using the scaling $T_c \propto M/R$ and the main-sequence mass-radius relation $
 ::: {.callout-note collapse="true"}
 ## Solution
 
-$$
-T_c \propto \frac{M}{R} \propto \frac{M}{M^{0.8}} = M^{0.2}
-$$
+Using
+\[
+T_c \propto \frac{M}{R}
+\]
+and the main-sequence mass-radius relation
+\[
+R \propto M^{0.8},
+\]
+we get
+\[
+T_c \propto \frac{M}{M^{0.8}} = M^{0.2}.
+\]
 
-Core temperature increases weakly with mass — roughly as $M^{0.2}$. For a $10\,M_\odot$ star:
+So core temperature increases only weakly with stellar mass.
 
-$$
-\frac{T_{c,10}}{T_{c,\odot}} \approx 10^{0.2} \approx 1.6
-$$
+For a \(10\,M_\odot\) star,
+\[
+\frac{T_{c,10}}{T_{c,\odot}} \approx 10^{0.2} \approx 1.6.
+\]
 
-A $10\,M_\odot$ star's core is about $60\%$ hotter than the Sun's — roughly $24~\text{MK}$ vs. $15~\text{MK}$. The core temperature varies surprisingly *little* across the main sequence, because more massive stars are also larger ($R \propto M^{0.8}$), which partially compensates.
+So a \(10\,M_\odot\) star has a core temperature only about \(60\%\) higher than the Sun’s:
+\[
+T_{c,10} \approx 1.6 \times 15\,\mathrm{MK} \approx 24\,\mathrm{MK}.
+\]
 
-This near-constancy of core temperature is important: it means all main-sequence stars burn hydrogen at broadly similar core temperatures. The dramatic luminosity differences across the main sequence come from stellar structure and from how sensitively nuclear reaction rates respond to even modest temperature changes — not from core temperature increasing by orders of magnitude.
+This is an important result. Core temperature varies surprisingly little across the main sequence, because more massive stars are also larger. The enormous luminosity differences across the main sequence come not from core temperatures differing by orders of magnitude, but from stellar structure and from the strong temperature sensitivity of nuclear reaction rates.
 :::
+:::
+
+:::{.callout-important title="Common Misconceptions"}
+1. **“Pressure holds the star up.”**  
+Not quite. A **pressure gradient** holds the star up.
+
+2. **“If the pressure is huge, the star must expand.”**  
+Not necessarily. Large pressure on both sides of a layer can still cancel. What matters is the pressure difference across the layer.
+
+3. **“More massive stars must have enormously hotter cores.”**  
+Not by much. On the main sequence, the core temperature scales only weakly with mass:
+\[
+T_c \propto M^{0.2}.
+\]
 :::
 
 ---
@@ -561,45 +742,60 @@ This is the real payoff of stellar structure. Starting from gravity alone, and a
 
 | Quantity | Scaling / Formula | Sun Value |
 |:---------|:-----------------|:---------:|
-| Central pressure | $P_c \sim GM^2/R^4$ | $\sim 10^{16}~\text{dyn}/\text{cm}^2$ |
-| Core temperature | $T_c \sim \mu GM m_p/(k_B R)$ | $\sim 1.5 \times 10^{7}~\text{K}$ |
-| Core thermal energy/particle | $\frac{3}{2}k_B T_c$ | $\sim 2~\text{keV}$ |
-| Virial relation | $2K_\text{th} = -U_\text{grav}$ | — |
+| Central pressure | $P_c \sim GM^2/R^4$ | $\sim 10^{16}\,\mathrm{dyn\,cm^{-2}}$ |
+| Core temperature | $T_c \sim \mu GM m_p/(k_B R)$ | $\sim 1.5 \times 10^{7}\,\mathrm{K}$ |
+| Core thermal energy/particle | $\frac{3}{2}k_B T_c$ | $\sim 2\,\mathrm{keV}$ |
+| Virial relation | $2K_{\mathrm{th}} = -U_{\mathrm{grav}}$ | — |
 
 ### Symbol Legend
 
 | Symbol | Meaning | CGS Units |
 |:------:|:--------|:----------|
-| $P$ | Gas pressure | $\text{dyn}/\text{cm}^2$ ($= \text{g}\,\text{cm}^{-1}\,\text{s}^{-2}$) |
-| $\rho$ | Mass density | $\text{g}/\text{cm}^3$ |
+| $P$ | Gas pressure | $\mathrm{dyn\,cm^{-2}}$ ($= \mathrm{g\,cm^{-1}\,s^{-2}}$) |
+| $\rho$ | Mass density | $\mathrm{g\,cm^{-3}}$ |
 | $M(r)$ | Mass enclosed within radius $r$ | g |
-| $g(r)$ | Local gravitational acceleration | $\text{cm}/\text{s}^2$ |
-| $k_B$ | Boltzmann constant | $1.38 \times 10^{-16}~\text{erg}/\text{K}$ |
-| $m_p$ | Proton mass | $1.67 \times 10^{-24}~\text{g}$ |
+| $g(r)$ | Local gravitational acceleration | $\mathrm{cm\,s^{-2}}$ |
+| $k_B$ | Boltzmann constant | $1.38 \times 10^{-16}\,\mathrm{erg\,K^{-1}}$ |
+| $m_p$ | Proton mass | $1.67 \times 10^{-24}\,\mathrm{g}$ |
 | $\mu$ | Mean molecular weight | Dimensionless ($\approx 0.6$ for ionized solar gas) |
-| $K_\text{th}$ | Total thermal energy of the star | erg |
-| $U_\text{grav}$ | Gravitational potential energy of the star | erg (negative) |
+| $K_{\mathrm{th}}$ | Total thermal energy of the star | erg |
+| $U_{\mathrm{grav}}$ | Gravitational potential energy of the star | erg (negative) |
 
 ### Conservation Laws at Work
 
 | Conservation Law | Where It Appears | What It Constrains |
 |:----------------|:----------------|:------------------|
 | Momentum conservation | Hydrostatic equilibrium ($dP/dr = -\rho g$) | Force balance at every radius — net force on each shell is zero |
-| Energy conservation | Virial theorem ($2K_\text{th} + U_\text{grav} = 0$) | Relationship between thermal and gravitational energy in equilibrium |
+| Energy conservation | Virial theorem ($2K_{\mathrm{th}} + U_{\mathrm{grav}} = 0$) | Relationship between thermal and gravitational energy in equilibrium |
 
 ---
 
 ## Summary: Gravity vs. Pressure — Round 1
 
-The most important ideas from this reading:
+The most important ideas from this reading are:
 
-1. **Hydrostatic equilibrium** ($dP/dr = -\rho g$) is the foundational equation of stellar structure — it says the pressure gradient at every radius exactly balances the weight of the overlying gas.
+- **Hydrostatic equilibrium**
+  \[
+  \frac{dP}{dr} = -\rho g
+  \]
+  is the foundational force-balance equation of stellar structure. It says that the pressure gradient at each radius exactly balances the local weight of the overlying gas.
 
-2. **The virial theorem** ($2K_\text{th} + U_\text{grav} = 0$) connects thermal energy to gravitational energy and predicts **negative heat capacity** — contracting stars get *hotter*, not cooler.
+- **The virial theorem**
+  \[
+  2K_{\mathrm{th}} + U_{\mathrm{grav}} = 0
+  \]
+  connects thermal energy to gravitational energy and explains why self-gravitating systems have negative heat capacity: as they lose energy, they contract and get hotter.
 
-3. **The core temperature** of a star can be estimated from just its mass and radius: $T_c \sim \mu GM m_p/(k_B R) \sim 10^7~\text{K}$ for the Sun. This is hot enough for nuclear fusion — but only because of quantum tunneling (Reading 3).
+- The core temperature of a star can be estimated from its mass and radius:
+  \[
+  T_c \sim \frac{\mu G M m_p}{k_B R}.
+  \]
+  For the Sun, this gives
+  \[
+  T_c \sim 10^7\,\mathrm{K} \approx 15\,\mathrm{MK}.
+  \]
 
-4. **Stars are dynamically stable** — any departure from hydrostatic equilibrium is corrected on $\tau_\text{dyn} \sim$ minutes, which is why stars appear perfectly steady over human timescales.
+- Stars are dynamically stable: departures from hydrostatic equilibrium are corrected on the dynamical timescale, which is only minutes for the Sun.
 
 ::: {.callout-note title="Gravity Scoreboard — Reading 2"}
 
@@ -625,11 +821,22 @@ The most important ideas from this reading:
 └──────────────────────────────────────────────────────┘
 ```
 
-We've identified gravity's opponent: the thermal pressure gradient. But this defense has a cost — the hot core radiates energy, and without a power source, the star would cool and contract in $\sim 30~\text{Myr}$. Something must replenish the thermal energy. That something is nuclear fusion — and understanding how protons fuse at "only" $15~\text{MK}$ (when the Coulomb barrier demands $\sim 10~\text{GK}$) requires *all four fundamental forces of nature*. That's the subject of Reading 3.
+We've identified gravity's opponent: the thermal pressure gradient. But this defense has a cost — the hot core radiates energy, and without a power source, the star would cool and contract in $\sim 30\,\mathrm{Myr}$. Something must replenish the thermal energy. That something is nuclear fusion — and understanding how protons fuse at "only" $15\,\mathrm{MK}$ (when the Coulomb barrier demands $\sim 10\,\mathrm{GK}$) requires *all four fundamental forces of nature*. That's the subject of Reading 3.
+:::
+
+:::{.callout-tip title="Retrieval Practice — 60 Seconds"}
+Without looking back, try to answer these from memory:
+
+- Why does a star require a pressure gradient rather than just pressure?
+- What does \(\frac{dP}{dr} < 0\) mean physically?
+- What force balance does hydrostatic equilibrium describe?
+- What energy balance does the virial theorem describe?
+- Why does a contracting protostar get hotter?
+- Why does gravity alone predict a stellar core temperature of order \(10^7\,\mathrm{K}\)?
 :::
 
 ::: {.callout-tip}
 ## Looking Ahead
 
-Hydrostatic equilibrium tells us *what* holds a star up (pressure gradient) and *how hot* the core must be ($\sim 15~\text{MK}$). But it doesn't tell us *what keeps the core hot*. The answer — nuclear fusion — requires physics beyond gravity and thermodynamics. In Reading 3, we'll introduce all four fundamental forces, encounter quantum tunneling for the first time, and discover how stars convert mass to energy via $E = mc^2$. The nuclear energy source is what transforms a slowly contracting ball of gas into a stable, long-lived star.
+Hydrostatic equilibrium tells us *what* holds a star up (pressure gradient) and *how hot* the core must be ($\sim 15\,\mathrm{MK}$). But it doesn't tell us *what keeps the core hot*. The answer — nuclear fusion — requires physics beyond gravity and thermodynamics. In Reading 3, we'll introduce all four fundamental forces, encounter quantum tunneling for the first time, and discover how stars convert mass to energy via $E = mc^2$. The nuclear energy source is what transforms a slowly contracting ball of gas into a stable, long-lived star.
 :::
