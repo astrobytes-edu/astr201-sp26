@@ -2,7 +2,7 @@
 title: "Growth Memo 1"
 subtitle: "Reflect, celebrate, and plan — after Midterm 1"
 author: "Dr. Anna Rosen"
-date: "2026-03-10"
+date: "2026-03-15"
 course: ASTR 201
 draft: false
 format:
@@ -96,7 +96,7 @@ If you didn't use AI tools: that's fine, just say so and briefly say why.
 
 | | |
 |:--|:--|
-| **Due** | Tuesday, March 17 at 11:59 PM on Canvas |
+| **Due** | Friday, March 20 at 11:59 PM on Canvas |
 | **Format** | PDF or Word document — whatever is easy |
 | **Length** | ~400–600 words (not a hard limit — say what you need to say) |
 | **Grading** | 0–5 scale (see below) |
