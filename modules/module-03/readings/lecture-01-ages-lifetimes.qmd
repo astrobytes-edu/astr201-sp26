@@ -32,7 +32,7 @@ After completing this reading, you should be able to:
 1. **Identify** the three fundamental stellar timescales (dynamical, thermal, nuclear) and explain what physical process each describes
 2. **Estimate** the dynamical timescale $\tau_\text{dyn} \sim 1/\sqrt{G\bar{\rho}}$ from a star's mean density
 3. **Calculate** the Kelvin-Helmholtz timescale $\tau_\text{KH} \sim GM^2/(RL)$ and explain why it fails as the Sun's age
-4. **Derive** the nuclear timescale $\tau_\text{nuc} \sim \varepsilon Mc^2/L$ and explain why massive stars live shorter lives
+4. **Derive** the nuclear timescale $\tau_\text{nuc} \sim \varepsilon f_M Mc^2/L$ and explain why massive stars live shorter lives
 5. **Describe** the historical Kelvin-Helmholtz controversy and how nuclear physics resolved it
 6. **Use** scaling relations to compare lifetimes: $\tau_\text{nuc} \propto M^{-2.5}$
 
@@ -54,7 +54,7 @@ After completing this reading, you should be able to:
 ::: {.callout-important}
 ## The Big Idea
 
-**A star's lifetime is set by two numbers: how much fuel it has and how fast it burns it.** Mass determines both — more massive stars have more fuel but burn it *far* faster (because $L \propto M^{3.5}$). The result is a steep inverse relationship: $\tau_\text{nuc} \propto M^{-2.5}$. A $10\,M_\odot$ star lives only $\sim 30~\text{Myr}$ — about $1/300$ of the Sun's nuclear lifetime. This single scaling relation explains why O and B stars are rare, why star-forming regions glow blue, and why the Galaxy's oldest stars are all low-mass. Understanding *why* requires understanding what powers stars — and that is the story of Module 3.
+**A star's lifetime is set by two numbers: how much fuel it has and how fast it burns it.** Mass determines both — more massive stars have more fuel, but their luminosities rise even faster (roughly $L \propto M^{3.5}$), so they burn through that fuel much more quickly. The result is a steep inverse relationship: $\tau_\text{nuc} \propto M^{-2.5}$. A $10\,M_\odot$ star lives only $\sim 30~\text{Myr}$ — about $1/300$ of the Sun's nuclear lifetime. This single scaling relation explains why O and B stars are rare, why star-forming regions glow blue, and why the Galaxy's oldest stars are all low-mass. Understanding *why* requires understanding what powers stars — and that is the story of Module 3.
 :::
 
 ---
@@ -68,6 +68,8 @@ In Module 2, you built the Hertzsprung-Russell diagram piece by piece — measur
 But the HR diagram is a snapshot — a single frame from a movie you haven't seen. It shows where stars *are*, not how they *got there* or where they're *going*. When you look at a star cluster, you see stars of different masses all born at the same time. The massive ones are already gone from the main sequence (they've evolved into giants or exploded), while the low-mass ones are still happily burning hydrogen. That difference in lifetime is the first clue that mass controls a star's fate.
 
 That cluster pattern is also our first age indicator. If the most massive star still on the main sequence is only about $2\,M_\odot$, the cluster must be old enough for $10\,M_\odot$ stars to have already died. If a bright blue $10\,M_\odot$ star is still on the main sequence, the cluster must be young. The observational clue is the **main-sequence turnoff**; the job of this reading is to build the physics that turns that clue into an age.
+
+This is the central inference of the reading: observe a turnoff mass, map that mass to a nuclear lifetime, and infer the cluster age.
 
 {{< fig cluster-turnoff-clock >}}
 
@@ -111,6 +113,14 @@ For the Kelvin-Helmholtz timescale, the "something stored" is the star's gravita
 The dynamical timescale is the odd one out. It is not "energy divided by luminosity." Instead, it is set by how quickly gravity can rearrange matter, so it depends on the star's mean density.
 :::
 
+| Timescale | Question it answers |
+|---|---|
+| $ \tau_{\rm dyn} $ | How fast would gravity rearrange the star if pressure support failed? |
+| $ \tau_{\rm KH} $ | How long could the star shine if gravity were its only long-term energy source? |
+| $ \tau_{\rm nuc} $ | How long can nuclear fusion sustain the star’s luminosity? |
+
+This is the core logic of the reading: three different physical processes, three different clocks.
+
 ### The Dynamical Timescale: How Fast Could a Star Collapse?
 
 Imagine you could suddenly "turn off" all the internal pressure holding a star up. How long would it take the star to collapse under its own gravity?
@@ -122,25 +132,67 @@ This is the **dynamical timescale** $\tau_\text{dyn}$ — the characteristic tim
 
 Here $G = 6.674 \times 10^{-8}~\text{cm}^3~\text{g}^{-1}~\text{s}^{-2}$ is Newton's gravitational constant and $\bar{\rho}$ is the star's mean density. The equation is not predicting what a healthy star is doing right now. It is predicting how fast gravity would win **if** pressure support suddenly failed.
 
+More exact free-fall calculations introduce numerical factors of order unity; here we care about the scaling and physical meaning.
+
 ### Worked Example: The Sun's Dynamical Timescale
 
-The Sun's mean density is $\bar{\rho}_\odot \approx 1.4~\text{g}/\text{cm}^3$ (about 1.4 times the density of water). Plugging in:
+The Sun’s mean density is
+$$
+\bar{\rho}_\odot \approx 1.4\,\mathrm{g\,cm^{-3}},
+$$
+about 1.4 times the density of water. Using
+$$
+\tau_{\rm dyn} \sim \frac{1}{\sqrt{G\bar{\rho}}},
+$$
+we get
+$$
+\tau_{\rm dyn,\odot}
+\sim
+\frac{1}{\sqrt{(6.674\times10^{-8}\,\mathrm{cm^3\,g^{-1}\,s^{-2}})(1.4\,\mathrm{g\,cm^{-3}})}}.
+$$
 
+First multiply inside the square root:
 $$
-\tau_\text{dyn} \sim \frac{1}{\sqrt{G\bar{\rho}_\odot}} = \frac{1}{\sqrt{(6.674 \times 10^{-8}~\text{cm}^3~\text{g}^{-1}~\text{s}^{-2})(1.4~\text{g}/\text{cm}^3)}}
-$$
-
-$$
-\tau_\text{dyn} \sim \frac{1}{\sqrt{9.3 \times 10^{-8}~\text{s}^{-2}}} \sim \frac{1}{3.1 \times 10^{-4}~\text{s}^{-1}} \approx 3{,}200~\text{s} \approx 50~\text{min}
-$$
-
-$$
-\boxed{\tau_{\text{dyn},\odot} \approx 50~\text{min}}
+G\bar{\rho}_\odot
+\approx
+9.3\times10^{-8}\,\mathrm{s^{-2}}.
 $$
 
-**Sanity check:** The Sun's dynamical timescale is about an hour. If you removed all pressure support, the Sun would collapse in under an hour. Since the Sun is clearly *not* collapsing, something must be holding it up. That something is pressure — and understanding the balance between gravity and pressure is the subject of the next reading.
+Now take the square root:
+$$
+\sqrt{G\bar{\rho}_\odot}
+\approx
+3.1\times10^{-4}\,\mathrm{s^{-1}}.
+$$
 
-**Units check:** $[G\bar{\rho}] = \text{cm}^3~\text{g}^{-1}~\text{s}^{-2} \times \text{g}/\text{cm}^3 = \text{s}^{-2}$. Taking the inverse square root gives seconds. ✓
+So
+$$
+\tau_{\rm dyn,\odot}
+\sim
+\frac{1}{3.1\times10^{-4}\,\mathrm{s^{-1}}}
+\approx
+3.2\times10^3\,\mathrm{s}
+\approx
+50\,\mathrm{min}.
+$$
+
+Thus,
+$$
+\tau_{\rm dyn,\odot} \approx 50\,\mathrm{min}.
+$$
+
+Sanity check: if pressure support were suddenly removed, the Sun would collapse on a timescale of about an hour. Since the Sun is clearly not collapsing, something must be holding it up. That something is pressure — and understanding that balance is the subject of the next reading.
+
+Units check:
+$$
+[G\bar{\rho}]
+=
+\left[\mathrm{cm^3\,g^{-1}\,s^{-2}}\right]
+\left[\mathrm{g\,cm^{-3}}\right]
+=
+\mathrm{s^{-2}}.
+$$
+Taking the inverse square root gives seconds. ✓
 
 ::: {.callout-tip}
 ## Check Yourself
@@ -150,21 +202,48 @@ A white dwarf has roughly the mass of the Sun ($M \approx M_\odot$) but the radi
 ::: {.callout-note collapse="true"}
 ## Solution
 
-Mean density scales as $\bar{\rho} \propto M/R^3$. With $M \approx M_\odot$ and $R \approx 0.009\,R_\odot$:
-
+Mean density scales as
 $$
-\frac{\bar{\rho}_\text{WD}}{\bar{\rho}_\odot} \approx \frac{M_\odot / (0.009\,R_\odot)^3}{M_\odot/R_\odot^3} = \frac{1}{(0.009)^3} \approx 1.4 \times 10^6
-$$
-
-So $\bar{\rho}_\text{WD} \approx 1.4 \times 10^6 \times 1.4~\text{g}/\text{cm}^3 \approx 2 \times 10^6~\text{g}/\text{cm}^3$ — about two million times denser than water.
-
-The dynamical timescale scales as $\tau_\text{dyn} \propto 1/\sqrt{\bar{\rho}}$:
-
-$$
-\tau_\text{dyn,WD} \approx \frac{50~\text{min}}{\sqrt{1.4 \times 10^6}} \approx \frac{50~\text{min}}{1{,}200} \approx 2.5~\text{s}
+\bar{\rho} \propto \frac{M}{R^3}.
 $$
 
-A white dwarf's dynamical timescale is about 3 seconds. If its pressure support failed, it would collapse almost instantly. This extreme density is a preview of the physics we'll explore when we study stellar remnants later in Module 3.
+With $M \approx M_\odot$ and $R \approx 0.009\,R_\odot$,
+$$
+\frac{\bar{\rho}_{\rm WD}}{\bar{\rho}_\odot}
+\approx
+\frac{M_\odot/(0.009\,R_\odot)^3}{M_\odot/R_\odot^3}
+=
+\frac{1}{(0.009)^3}
+\approx 1.4\times10^6.
+$$
+
+So
+$$
+\bar{\rho}_{\rm WD}
+\approx
+(1.4\times10^6)(1.4\,\mathrm{g\,cm^{-3}})
+\approx
+2\times10^6\,\mathrm{g\,cm^{-3}}.
+$$
+
+That is about two million times denser than water.
+
+The dynamical timescale scales as
+$$
+\tau_{\rm dyn} \propto \bar{\rho}^{-1/2},
+$$
+so
+$$
+\tau_{{\rm dyn,WD}}
+\approx
+\frac{50\,\mathrm{min}}{\sqrt{1.4\times10^6}}
+\approx
+\frac{50\,\mathrm{min}}{1200}
+\approx
+2.5\,\mathrm{s}.
+$$
+
+A white dwarf’s dynamical timescale is only a few seconds. If its pressure support failed, it would collapse almost instantly. This extreme density is a preview of the compact-object physics we will study later in Module 3.
 :::
 :::
 
@@ -180,7 +259,7 @@ $$
 \tau \sim \frac{\text{energy reservoir}}{\text{energy-loss rate}}.
 $$
 
-For the Kelvin-Helmholtz timescale, the relevant reservoir is the star's **gravitational binding-energy reservoir**. In order of magnitude, a self-gravitating star has
+For the Kelvin-Helmholtz timescale, the relevant reservoir is the star's **gravitational binding-energy reservoir**. As an order-of-magnitude estimate, a self-gravitating star has
 
 $$
 |E| \sim \frac{GM^2}{R}.
@@ -294,42 +373,63 @@ The resolution came in the early 20th century, after the discovery of radioactiv
 Nuclear fusion converts about $0.7\%$ of the hydrogen rest-mass energy into radiation — and that $0.7\%$ of $Mc^2$ is enormous compared to the gravitational energy $GM^2/R$.
 
 ::: {.callout-note title="Enrichment: The Ratio That Changed Everything" collapse="true"}
-How much more energy is available from **core hydrogen fusion** than from gravitational contraction? Compare the accessible nuclear reservoir to the gravitational reservoir:
-
+How much more energy is available from core hydrogen fusion than from gravitational contraction? Compare the accessible nuclear reservoir to the gravitational reservoir:
 $$
-\frac{E_\text{nuc}}{E_\text{grav}} \sim \frac{\varepsilon f_M M c^2}{GM^2/R} = \frac{\varepsilon f_M c^2 R}{GM}
-$$
-
-Here $f_M M$ means the **accessible fuel mass** for main-sequence hydrogen burning: $M$ is the total stellar mass, and $f_M$ is the fraction of that mass that actually participates in core fusion. For a Sun-like star, a useful estimate is $f_M \approx 0.10$, but this is not universal.
-
-$$
-\frac{E_\text{nuc}}{E_\text{grav}} \sim
-\frac{(0.007)(0.10)\left(3.0 \times 10^{10}~\text{cm}/\text{s}\right)^2 \left(7.0 \times 10^{10}~\text{cm}\right)}
-{\left(6.674 \times 10^{-8}~\text{cm}^3~\text{g}^{-1}~\text{s}^{-2}\right)\left(2.0 \times 10^{33}~\text{g}\right)}
-$$
-
-$$
+\frac{E_{\rm nuc}}{E_{\rm grav}}
 \sim
-\frac{(0.007)(0.10)\left(9.0 \times 10^{20}~\text{cm}^2/\text{s}^2\right)\left(7.0 \times 10^{10}~\text{cm}\right)}
-\left(1.33 \times 10^{26}~\text{cm}^3/\text{s}^2\right)
+\frac{\epsilon f_M M c^2}{GM^2/R}
+=
+\frac{\epsilon f_M c^2 R}{GM}.
 $$
 
+Here $f_M M$ is the accessible fuel mass for main-sequence hydrogen burning: $M$ is the total stellar mass, and $f_M$ is the fraction of that mass that actually participates in core fusion. For a Sun-like star, a useful estimate is $f_M \approx 0.10$, but this is not universal.
+
+Now substitute solar values:
 $$
+\frac{E_{\rm nuc}}{E_{\rm grav}}
 \sim
-\frac{4.4 \times 10^{28}~\text{cm}^3/\text{s}^2}
-{1.33 \times 10^{26}~\text{cm}^3/\text{s}^2}
-\approx 3.3 \times 10^2
+\frac{(0.007)(0.10)(3.0\times10^{10}\,\mathrm{cm\,s^{-1}})^2(7.0\times10^{10}\,\mathrm{cm})}
+{(6.674\times10^{-8}\,\mathrm{cm^3\,g^{-1}\,s^{-2}})(2.0\times10^{33}\,\mathrm{g})}.
 $$
 
-**Units check:** The ratio is dimensionless. On the top, $c^2 R$ has units $(\text{cm}^2/\text{s}^2)(\text{cm}) = \text{cm}^3/\text{s}^2$. On the bottom, $GM$ has units $(\text{cm}^3~\text{g}^{-1}~\text{s}^{-2})(\text{g}) = \text{cm}^3/\text{s}^2$. The units cancel. ✓
+Using
+$$
+(3.0\times10^{10}\,\mathrm{cm\,s^{-1}})^2
+=
+9.0\times10^{20}\,\mathrm{cm^2\,s^{-2}},
+$$
+the numerator is
+$$
+(0.007)(0.10)(9.0\times10^{20})(7.0\times10^{10})
+\approx
+4.4\times10^{28}\,\mathrm{cm^3\,s^{-2}}.
+$$
 
-The accessible nuclear reservoir exceeds the gravitational reservoir by a factor of $\sim 300$. That is why the Sun's nuclear lifetime is hundreds of times longer than the Kelvin-Helmholtz timescale: nuclear burning extends the Sun's lifetime from $\sim 30~\text{Myr}$ to $\sim 10~\text{Gyr}$.
+The denominator is
+$$
+GM_\odot
+\approx
+(6.674\times10^{-8})(2.0\times10^{33})
+\approx
+1.33\times10^{26}\,\mathrm{cm^3\,s^{-2}}.
+$$
 
-::: {.callout-warning}
-For the Sun, $f_M \approx 0.10$ is a useful back-of-the-envelope estimate. But $f_M$ can vary with stellar mass and internal mixing. Massive stars often mix more of their interior into the burning region than low-mass stars, so treat $f_M$ as an approximate **main-sequence scaling parameter**, not a universal constant.
-:::
+So
+$$
+\frac{E_{\rm nuc}}{E_{\rm grav}}
+\approx
+\frac{4.4\times10^{28}}{1.33\times10^{26}}
+\approx
+3.3\times10^2.
+$$
 
-This ratio, $\varepsilon f_M c^2 R / (GM)$, is essentially comparing the usable nuclear energy per baryon to the gravitational binding energy per baryon. It is not a direct measurement of the relative strengths of the forces themselves; it is a comparison of the energy reservoirs available inside a star.
+Units check: the ratio is dimensionless. The numerator has units $\mathrm{cm^3\,s^{-2}}$ and the denominator has the same units, so they cancel. ✓
+
+Result: the accessible nuclear reservoir exceeds the gravitational reservoir by a factor of about $300$. That is why the Sun’s nuclear lifetime is hundreds of times longer than the Kelvin-Helmholtz timescale: nuclear burning extends the Sun’s lifetime from $\sim 30\,\mathrm{Myr}$ to $\sim 10\,\mathrm{Gyr}$.
+
+For the Sun, $f_M \approx 0.10$ is a useful back-of-the-envelope estimate. But $f_M$ can vary with stellar mass and internal mixing. Massive stars often mix more of their interior into the burning region than low-mass stars, so treat $f_M$ as an approximate main-sequence scaling parameter, not a universal constant.
+
+This ratio, $\epsilon f_M c^2 R/(GM)$, compares usable nuclear energy per unit mass to gravitational binding energy per unit mass inside a star; it is not a statement about the relative strengths of the forces themselves.
 :::
 
 ::: {.callout-tip}
@@ -501,6 +601,22 @@ This number should not be treated as an exact prediction for every low-mass star
 ::: {.callout-tip}
 ## Check Yourself
 
+True or false: A more massive star should live longer because it contains more hydrogen fuel. Explain.
+
+::: {.callout-note collapse="true"}
+## Solution
+
+False. A more massive star does contain more total fuel, but its luminosity increases much faster than its mass. Roughly,
+$$
+\tau_{\rm nuc} \propto \frac{M}{L} \propto M^{-2.5},
+$$
+so increasing mass shortens the lifetime. Mass helps by increasing the fuel reservoir, but luminosity wins harder by increasing the burn rate even more.
+:::
+:::
+
+::: {.callout-tip}
+## Check Yourself
+
 A star in a young cluster has spectral type B2 (corresponding to $M \approx 10\,M_\odot$). It is still on the main sequence. What can you conclude about the cluster's age?
 
 ::: {.callout-note collapse="true"}
@@ -525,6 +641,8 @@ The cluster is younger than $\sim 30~\text{Myr}$. In fact, this is exactly how a
 {{< fig timescale-hierarchy >}}
 
 For the Sun, the three timescales span an enormous range:
+
+Each one answers a different physical question: mechanical response, thermal depletion, and fuel exhaustion.
 
 | Timescale | Symbol | Value (Sun) | Physical Process |
 |:----------|:------:|:-----------:|:----------------|

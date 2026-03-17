@@ -756,14 +756,14 @@ figures:
 
   timescales-vs-mass:
     path: /assets/images/module-03/timescales-vs-mass.png
-    caption: "**What to notice:** the hierarchy $\\tau_{\\rm dyn} \\ll \\tau_{\\rm KH} \\ll \\tau_{\\rm nuc}$ survives across the main sequence. Massive stars still adjust quickly, but their thermal and nuclear clocks shrink drastically. Low-mass and high-mass caveat bands remind students where simple scaling laws bend."
+    caption: "**What to notice:** the hierarchy $ \\tau_{\\rm dyn} \\ll \\tau_{\\rm KH} \\ll \\tau_{\\rm nuc} $ survives across the main sequence. Massive stars still adjust quickly, but their thermal and nuclear clocks shrink drastically. Low-mass and high-mass caveat bands remind us where simple scaling laws bend."
     alt: "Generated white-background log-log plot of stellar timescale versus stellar mass in solar units, with three labeled curves for dynamical, Kelvin-Helmholtz, and nuclear timescales, a marked Sun point, a dashed age-of-the-universe line, and shaded caveat bands at low and high mass."
     credit: "ASTR 201 (generated)"
     module: 3
 
   main-sequence-lifetime-vs-mass:
     path: /assets/images/module-03/main-sequence-lifetime-vs-mass.png
-    caption: "**What to notice:** the naive $\\tau \\propto M^{-2.5}$ guide captures the broad trend, but real low-mass stars live even longer because they access more of their fuel, while very massive-star lifetimes are longer than a blind high-mass extrapolation would predict."
+    caption: "**What to notice:** the naive $ \\tau \\propto M^{-2.5} $ guide captures the broad trend, but real low-mass stars live even longer because they access more of their fuel, while very massive-star lifetimes are longer than a blind high-mass extrapolation would predict."
     alt: "Generated white-background log-log plot of main-sequence lifetime versus stellar mass showing a solid piecewise lifetime model, a dashed naive M to the minus 2.5 guide, a Sun marker, an age-of-the-universe line, and shaded caveat regions for fully convective low-mass stars and very massive stars."
     credit: "ASTR 201 (generated)"
     module: 3

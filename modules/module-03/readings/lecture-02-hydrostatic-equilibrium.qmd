@@ -131,15 +131,16 @@ $$
 P_{\text{gas}} = n k_B T = \frac{\rho k_B T}{\mu m_p}.
 $$
 
-Here:
-- $P_{\text{gas}}$ is the thermal gas pressure, in $\mathrm{dyn\,cm^{-2}}$
-- $n$ is the number density, in particles per $\mathrm{cm^3}$
-- $k_B$ is Boltzmann’s constant
-- $T$ is the temperature, in $\mathrm{K}$
-- $\rho$ is the mass density, in $\mathrm{g\,cm^{-3}}$
-- $m_p$ is the proton mass
-- $\mu$ is the mean molecular weight
-- $\mu m_p$ is the mean mass per particle
+| Symbol | Meaning |
+|---|---|
+| $P_{\text{gas}}$ | thermal gas pressure, in $\mathrm{dyn\,cm^{-2}}$ |
+| $n$ | number density, in particles per $\mathrm{cm^3}$ |
+| $k_B$ | Boltzmann’s constant |
+| $T$ | temperature, in $\mathrm{K}$ |
+| $\rho$ | mass density, in $\mathrm{g\,cm^{-3}}$ |
+| $m_p$ | proton mass |
+| $\mu$ | mean molecular weight |
+| $\mu m_p$ | mean mass per particle |
 
 This equation says something physically simple but powerful: at fixed density, a hotter gas pushes harder; at fixed temperature, a denser gas pushes harder. In ordinary stars like the Sun, this thermal gas pressure is the main source of support against gravity.
 
@@ -220,7 +221,7 @@ $$
 F_P \approx -A\frac{dP}{dr}\,dr.
 $$
 
-The minus sign matters physically: because pressure decreases outward, $\frac{dP}{dr} < 0$, so the net pressure force points outward.
+Because pressure decreases outward, $dP/dr < 0$, so the pressure-gradient force points outward. The minus sign ensures the direction of the force is physically correct.
 
 Gravity pulls the shell inward. If $g(r)$ is the local gravitational acceleration, then
 $$
@@ -322,27 +323,34 @@ everywhere inside the star: pressure must decrease outward so that the net press
 
 We cannot solve the hydrostatic equilibrium equation exactly without knowing the full internal profiles $\rho(r)$ and $M(r)$, but we can estimate the central pressure using a scaling argument.
 
-Across the star, the pressure changes from roughly $P_c$ at the center to nearly $0$ at the surface, over a distance of order $R$. So we write
+Replace local quantities with global scales. We are not solving for the full profile; we are estimating the pressure scale the star must reach in order to support itself.
+
+**Step 1: Approximate the gradient.** Across the star, the pressure changes from roughly $P_c$ at the center to nearly $0$ at the surface, over a distance of order $R$. So we write
 $$
 \frac{dP}{dr} \sim \frac{\Delta P}{\Delta r} \sim \frac{P_c}{R}.
 $$
 
-For an order-of-magnitude estimate, replace $M(r)$ by the total mass $M$ and $\rho(r)$ by the mean density
+**Step 2: Substitute density.** For an order-of-magnitude estimate, replace $M(r)$ by the total mass $M$ and use mean density:
 $$
-\bar{\rho} \sim \frac{M}{R^3}.
+\rho \sim \frac{M}{R^3}.
 $$
 
 Then hydrostatic equilibrium gives
 $$
-\frac{P_c}{R} \sim \frac{G M \bar{\rho}}{R^2}.
+\frac{P_c}{R} \sim \frac{G M \rho}{R^2}.
 $$
 
-Substituting $\bar{\rho} \sim M/R^3$ gives
+Now substitute $\rho \sim M/R^3$:
+$$
+\frac{P_c}{R} \sim \frac{G M}{R^2}\frac{M}{R^3}.
+$$
+
+**Step 3: Solve the scaling.** Multiply both sides by $R$:
 $$
 P_c \sim \frac{G M^2}{R^4}.
 $$
 
-This is a scaling estimate, not an exact solution. It tells us how the required central pressure depends on stellar mass and radius.
+**Step 4: Interpret the result.** This is a scaling estimate, not an exact solution. It tells us how the required central pressure depends on stellar mass and radius: more compact stars require higher pressure. Holding the mass fixed while shrinking the radius drives the needed support sharply upward because $P_c \propto R^{-4}$.
 
 ::: {.callout-note title="Optional Precision Note"}
 If you model the star as a uniform-density sphere and solve more carefully, you get the same scaling,
@@ -358,23 +366,12 @@ but with a numerical prefactor. The power of the scaling argument is that it cap
 
 ### Worked Example: The Sun’s Central Pressure
 
-We use the scaling relation
+Equation:
 $$
 P_c \sim \frac{G M_\odot^2}{R_\odot^4}.
 $$
 
-Insert solar values in CGS units:
-$$
-G = 6.674\times10^{-8}\,\mathrm{cm^3\,g^{-1}\,s^{-2}},
-$$
-$$
-M_\odot = 2.0\times10^{33}\,\mathrm{g},
-$$
-$$
-R_\odot = 7.0\times10^{10}\,\mathrm{cm}.
-$$
-
-Substitute:
+Substitution:
 $$
 P_c \sim
 \frac{(6.674\times10^{-8}\,\mathrm{cm^3\,g^{-1}\,s^{-2}})
@@ -382,7 +379,7 @@ P_c \sim
 {(7.0\times10^{10}\,\mathrm{cm})^4}.
 $$
 
-Now evaluate the powers:
+Evaluate the powers:
 $$
 (2.0\times10^{33}\,\mathrm{g})^2 = 4.0\times10^{66}\,\mathrm{g^2},
 $$
@@ -390,7 +387,7 @@ $$
 (7.0\times10^{10}\,\mathrm{cm})^4 \approx 2.4\times10^{43}\,\mathrm{cm^4}.
 $$
 
-So
+Evaluate the coefficients:
 $$
 P_c \sim
 \frac{(6.674\times10^{-8})(4.0\times10^{66})}{2.4\times10^{43}}
@@ -402,7 +399,7 @@ $$
 P_c \sim 1.1\times10^{16}\,\mathrm{g\,cm^{-1}\,s^{-2}}.
 $$
 
-To rewrite this in pressure units, use
+Convert units:
 $$
 1\,\mathrm{dyn} = 1\,\mathrm{g\,cm\,s^{-2}}.
 $$
@@ -415,7 +412,7 @@ $$
 P_c \sim 1.1\times10^{16}\,\mathrm{dyn\,cm^{-2}}.
 $$
 
-To convert to atmospheres, use
+Now convert to atmospheres:
 $$
 1\,\mathrm{atm} = 1.013\times10^6\,\mathrm{dyn\,cm^{-2}}.
 $$
@@ -428,7 +425,12 @@ P_c \sim
 \approx 1.1\times10^{10}\,\mathrm{atm}.
 $$
 
-So the Sun’s central pressure is about **10 billion atmospheres**.
+Final answer with interpretation:
+$$
+P_c \sim 1.1\times10^{16}\,\mathrm{dyn\,cm^{-2}} \approx 1.1\times10^{10}\,\mathrm{atm}.
+$$
+
+So the Sun’s central pressure is about **10 billion atmospheres**. This is the pressure scale gravity demands in order to support the weight of the overlying solar interior.
 
 Detailed solar models give
 $$
@@ -486,6 +488,8 @@ $$
 
 Since $U_{\text{grav}} < 0$, the thermal energy is positive, as it must be.
 
+When gravitational energy changes, roughly half increases the thermal energy of the gas and half is radiated away.
+
 The total energy is
 $$
 E_{\text{tot}} = K_{\text{th}} + U_{\text{grav}}
@@ -528,6 +532,8 @@ Here is the logic chain in plain language:
 
 In an ordinary system, energy loss lowers the temperature. In a self-gravitating system, energy loss leads to contraction, and contraction raises the typical particle speeds.
 
+Gravity couples energy loss to contraction, and contraction increases particle speeds. That is why losing energy makes the star hotter.
+
 {{< fig virial-energy-partition >}}
 
 ::: {.callout-warning title="This Is Counterintuitive — But It's Real"}
@@ -558,6 +564,18 @@ A protostar begins too cool for fusion, but contraction steadily heats the core 
 :::
 :::
 
+::: {.callout-tip}
+## Check Yourself
+
+True or false: If a star loses energy, it must cool.
+
+::: {.callout-note collapse="true"}
+## Solution
+
+False — due to negative heat capacity, losing energy causes contraction, which raises temperature.
+:::
+:::
+
 ---
 
 ## Part 5: Estimating the Core Temperature
@@ -568,14 +586,7 @@ For an ideal gas,
 $$
 P_{\text{gas}} = \frac{\rho k_B T}{\mu m_p},
 $$
-where:
-- $P_{\text{gas}}$ is the thermal gas pressure
-- $\rho$ is the mass density
-- $T$ is the temperature
-- $k_B = 1.38\times10^{-16}\,\mathrm{erg\,K^{-1}}$ is Boltzmann’s constant
-- $m_p = 1.67\times10^{-24}\,\mathrm{g}$ is the proton mass
-- $\mu$ is the mean molecular weight, with $\mu \approx 0.6$ for ionized solar-composition gas
-- $\mu m_p$ is therefore the mean mass per particle
+where $P_{\text{gas}}$ is the thermal gas pressure, $\rho$ is the mass density, $T$ is the temperature, $k_B = 1.38\times10^{-16}\,\mathrm{erg\,K^{-1}}$ is Boltzmann’s constant, $m_p = 1.67\times10^{-24}\,\mathrm{g}$ is the proton mass, and $\mu$ is the mean molecular weight. For ionized solar-composition gas, $\mu \approx 0.6$, so $\mu m_p$ is the mean mass per particle.
 
 To estimate the core temperature, we combine the hydrostatic pressure scale with the ideal-gas picture. This is an order-of-magnitude argument, so we will use the central pressure scale from Part 3 and the mean density scale for the stellar interior.
 
@@ -614,6 +625,8 @@ $$
 T_c \sim \frac{\mu G M m_p}{k_B R}.
 $$
 
+This is one of the deepest results in stellar astrophysics: gravity alone sets the temperature scale required for fusion.
+
 This is still an order-of-magnitude estimate, not a full stellar structure solution. But it captures the key point: **gravity alone predicts a stellar core temperature of order $10^7\,\mathrm{K}$**.
 
 ::: {.callout-note title="What This Equation Is Saying"}
@@ -624,32 +637,12 @@ The combination $GM/R$ is the gravitational potential scale per unit mass. The c
 
 ### Worked Example: The Sun’s Core Temperature
 
-We use
+Equation:
 $$
 T_c \sim \frac{\mu G M_\odot m_p}{k_B R_\odot}.
 $$
 
-Insert values in CGS units:
-$$
-\mu \approx 0.6,
-$$
-$$
-G = 6.674\times10^{-8}\,\mathrm{cm^3\,g^{-1}\,s^{-2}},
-$$
-$$
-M_\odot = 2.0\times10^{33}\,\mathrm{g},
-$$
-$$
-m_p = 1.67\times10^{-24}\,\mathrm{g},
-$$
-$$
-k_B = 1.38\times10^{-16}\,\mathrm{erg\,K^{-1}},
-$$
-$$
-R_\odot = 7.0\times10^{10}\,\mathrm{cm}.
-$$
-
-Substitute:
+Substitution:
 $$
 T_c \sim
 \frac{(0.6)(6.674\times10^{-8}\,\mathrm{cm^3\,g^{-1}\,s^{-2}})
@@ -659,7 +652,7 @@ T_c \sim
 (7.0\times10^{10}\,\mathrm{cm})}.
 $$
 
-First evaluate the numerator:
+Evaluate the powers and grouped factors:
 $$
 (0.6)(6.674\times10^{-8})(2.0\times10^{33})(1.67\times10^{-24})
 \approx 1.34\times10^2\,\mathrm{cm^3\,s^{-2}}.
@@ -671,7 +664,7 @@ $$
 \approx 9.66\times10^{-6}\,\mathrm{erg\,K^{-1}\,cm}.
 $$
 
-The unit cancellation is
+Check the units:
 $$
 \frac{\mathrm{cm^3\,g^{-1}\,s^{-2}\,g\,g}}
 {\mathrm{erg\,K^{-1}\,cm}}
@@ -687,7 +680,7 @@ T_c \sim \frac{1.34\times10^2}{9.66\times10^{-6}}\,\mathrm{K}
 \approx 1.4\times10^7\,\mathrm{K}.
 $$
 
-To convert kelvin to megakelvin, use
+Convert kelvin to megakelvin:
 $$
 1\,\mathrm{MK} = 10^6\,\mathrm{K}.
 $$
@@ -696,6 +689,11 @@ Then
 $$
 T_c \sim \frac{1.4\times10^7\,\mathrm{K}}{10^6\,\mathrm{K\,MK^{-1}}}
 = 14\,\mathrm{MK}.
+$$
+
+Final answer with interpretation:
+$$
+T_c \sim 1.4\times10^7\,\mathrm{K} \approx 14\,\mathrm{MK}.
 $$
 
 Detailed solar models give
@@ -819,6 +817,14 @@ $$
 :::
 
 ---
+
+| Step | Physics | What it determines |
+|------|--------|-------------------|
+| Gravity | $g(r)$ | inward pull |
+| Hydrostatic equilibrium | $dP/dr$ | pressure gradient |
+| Pressure scaling | $P_c$ | central pressure |
+| Ideal gas | $P \leftrightarrow T$ | temperature |
+| Virial theorem | $K, U$ | energy balance |
 
 ## Synthesis: The Stellar Reasoning Ladder
 
