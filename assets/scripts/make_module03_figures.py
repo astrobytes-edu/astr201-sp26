@@ -2,8 +2,10 @@
 """
 Generate pedagogical figures for ASTR 201 Module 3: Stellar Structure & Evolution.
 
-Produces publication-quality, dark-themed figures matching the NASA infographic
-aesthetic used elsewhere in the module. All physics is in CGS/solar units.
+The Lecture 1-3 figures are optimized for dual use in white lecture slides and
+Quarto readings. The later-module figures retain the darker infographic style
+already used elsewhere in Module 3. All physics is in CGS/solar units unless
+the plotted axis explicitly uses a derived convenience unit such as MeV or fm.
 
 Usage:
     uv run python assets/scripts/make_module03_figures.py
@@ -48,6 +50,24 @@ SLIDE_GOLD = "#b2871b"
 
 OUTPUT_DIR = Path(__file__).resolve().parent.parent / "images" / "module-03"
 
+# ─────────────────────────────────────────────────────────────
+# Physical constants (CGS unless otherwise noted)
+# ─────────────────────────────────────────────────────────────
+G_CGS = 6.674e-8
+K_B_CGS = 1.380649e-16
+M_P_CGS = 1.6726219e-24
+H_CGS = 6.62607015e-27
+C_CGS = 2.99792458e10
+M_SUN_CGS = 1.98847e33
+R_SUN_CGS = 6.957e10
+L_SUN_CGS = 3.828e33
+YEAR_S = 3.15576e7
+KEV_TO_ERG = 1.602176634e-9
+MEV_TO_ERG = 1.602176634e-6
+E2_MEV_FM = 1.4399764
+T_CORE_SUN = 1.5e7
+MU_SOLAR_IONIZED = 0.6
+
 
 def apply_dark_style(fig, ax):
     """Apply consistent dark styling to a figure and axes."""
@@ -78,145 +98,200 @@ def apply_slide_style(fig, ax):
     ax.grid(True, color=SLIDE_GRID, linewidth=0.8, alpha=0.9)
 
 
+def finalize_slide_axes(ax, grid=True):
+    """Apply the standard slide-axis treatment to an existing axes."""
+    ax.set_facecolor(SLIDE_BG)
+    ax.tick_params(colors=SLIDE_TEXT, which="both", labelsize=11)
+    ax.xaxis.label.set_color(SLIDE_TEXT)
+    ax.yaxis.label.set_color(SLIDE_TEXT)
+    ax.title.set_color(SLIDE_TEXT)
+    for side in ("top", "right"):
+        ax.spines[side].set_visible(False)
+    for side in ("left", "bottom"):
+        ax.spines[side].set_color(SLIDE_GRID)
+        ax.spines[side].set_linewidth(1.0)
+    ax.grid(grid, color=SLIDE_GRID, linewidth=0.8, alpha=0.9)
+
+
+def save_slide_figure(fig, filename):
+    """Save a white-background figure into the module-03 image directory."""
+    fig.savefig(OUTPUT_DIR / filename, facecolor=SLIDE_BG, bbox_inches="tight")
+    plt.close(fig)
+    print(f"  ✓ {filename}")
+
+
+def solar_main_sequence_luminosity(mass_solar):
+    """
+    Approximate main-sequence luminosity in solar units.
+
+    Uses common piecewise pedagogical fits:
+    - very low mass: L = 0.23 M^2.3
+    - Sun-like:      L = M^4
+    - massive:       L ∝ M^3.5
+    - very massive:  luminosity growth flattens relative to the naive law
+    """
+    mass = np.asarray(mass_solar, dtype=float)
+    luminosity = np.empty_like(mass)
+
+    low = mass < 0.43
+    mid = (mass >= 0.43) & (mass < 2.0)
+    high = (mass >= 2.0) & (mass < 20.0)
+    very_high = mass >= 20.0
+
+    luminosity[low] = 0.23 * mass[low] ** 2.3
+    luminosity[mid] = mass[mid] ** 4.0
+    luminosity[high] = 1.5 * mass[high] ** 3.5
+    luminosity[very_high] = 1.5 * 20.0 ** 3.5 * (mass[very_high] / 20.0) ** 1.8
+    return luminosity
+
+
+def solar_main_sequence_radius(mass_solar):
+    """Approximate main-sequence radius in solar units."""
+    mass = np.asarray(mass_solar, dtype=float)
+    radius = np.empty_like(mass)
+
+    low = mass < 1.5
+    high = ~low
+
+    radius[low] = mass[low] ** 0.8
+    continuity = 1.5 ** (0.8 - 0.57)
+    radius[high] = continuity * mass[high] ** 0.57
+    return radius
+
+
+def accessible_fuel_fraction(mass_solar):
+    """
+    Crude accessible-hydrogen fraction for main-sequence lifetime estimates.
+
+    This is pedagogical, not a stellar-evolution code:
+    - very low mass fully convective stars can access a large fraction
+    - Sun-like stars access only the core
+    - massive stars burn a smaller fraction before leaving the MS
+    """
+    mass = np.asarray(mass_solar, dtype=float)
+    fraction = np.empty_like(mass)
+    fraction[mass < 0.35] = 0.70
+    fraction[(mass >= 0.35) & (mass < 1.5)] = 0.12
+    fraction[mass >= 1.5] = 0.08
+    return fraction
+
+
+def solar_normalized_timescales(mass_solar):
+    """Return main-sequence timescales in years for a mass grid."""
+    mass = np.asarray(mass_solar, dtype=float)
+    radius = solar_main_sequence_radius(mass)
+    luminosity = solar_main_sequence_luminosity(mass)
+    fuel_fraction = accessible_fuel_fraction(mass)
+    fuel_fraction_sun = accessible_fuel_fraction(np.array([1.0]))[0]
+
+    tau_dyn_sun = 50.0 / (60.0 * 24.0 * 365.25)
+    tau_kh_sun = 3.0e7
+    tau_nuc_sun = 1.0e10
+
+    tau_dyn = tau_dyn_sun * np.sqrt(radius**3 / mass)
+    tau_kh = tau_kh_sun * mass**2 / (radius * luminosity)
+    tau_nuc = tau_nuc_sun * (fuel_fraction / fuel_fraction_sun) * mass / luminosity
+    tau_nuc_naive = tau_nuc_sun * mass ** (-2.5)
+
+    return {
+        "radius": radius,
+        "luminosity": luminosity,
+        "fuel_fraction": fuel_fraction,
+        "tau_dyn": tau_dyn,
+        "tau_kh": tau_kh,
+        "tau_nuc": tau_nuc,
+        "tau_nuc_naive": tau_nuc_naive,
+    }
+
+
+def approximate_turnoff_mass(target_age_yr, masses=None):
+    """Invert the pedagogical lifetime curve to estimate the turnoff mass."""
+    if masses is None:
+        masses = np.logspace(np.log10(0.12), np.log10(20.0), 2000)
+    lifetimes = solar_normalized_timescales(masses)["tau_nuc"]
+    return masses[np.argmin(np.abs(np.log10(lifetimes) - np.log10(target_age_yr)))]
+
+
 # ═════════════════════════════════════════════════════════════
 # Figure 1: Binding Energy per Nucleon
 # Used in: R3 (Nuclear Fusion), R9 (High-Mass Evolution)
 # ═════════════════════════════════════════════════════════════
 def make_binding_energy_curve():
-    """
-    Binding energy per nucleon vs. mass number A.
-
-    Uses real nuclear data for key isotopes. The iron peak is the
-    central story: fusion releases energy LEFT of iron, fission
-    releases energy RIGHT of iron. Iron is nuclear ash.
-    """
-    # Real binding energy per nucleon data (MeV) for key isotopes
-    # Source: Nuclear physics tables (AME2020)
+    """Dual-use binding-energy curve with clear mass-energy interpretation."""
     isotopes = [
-        (1, 0.0, r"$^1$H", MUTED_TEXT),
-        (2, 1.112, r"$^2$H", MUTED_TEXT),
-        (3, 2.827, r"$^3$He", MUTED_TEXT),
-        (4, 7.074, r"$^4$He", ACCENT_CYAN),
-        (6, 5.333, r"$^6$Li", MUTED_TEXT),
-        (7, 5.606, r"$^7$Li", MUTED_TEXT),
-        (9, 6.463, r"$^9$Be", MUTED_TEXT),
-        (12, 7.680, r"$^{12}$C", ACCENT_GREEN),
-        (14, 7.476, r"$^{14}$N", MUTED_TEXT),
-        (16, 7.976, r"$^{16}$O", ACCENT_GREEN),
-        (20, 8.032, r"$^{20}$Ne", MUTED_TEXT),
-        (24, 8.261, r"$^{24}$Mg", MUTED_TEXT),
-        (28, 8.448, r"$^{28}$Si", ACCENT_ORANGE),
-        (32, 8.493, r"$^{32}$S", MUTED_TEXT),
-        (40, 8.551, r"$^{40}$Ca", MUTED_TEXT),
-        (56, 8.790, r"$^{56}$Fe", ACCENT_RED),
-        (58, 8.792, r"$^{58}$Ni", MUTED_TEXT),
-        (62, 8.794, r"$^{62}$Ni", MUTED_TEXT),
-        (80, 8.565, r"$^{80}$Se", MUTED_TEXT),
-        (107, 8.554, r"$^{107}$Ag", MUTED_TEXT),
-        (120, 8.505, r"$^{120}$Sn", MUTED_TEXT),
-        (138, 8.376, r"$^{138}$Ba", MUTED_TEXT),
-        (184, 7.999, r"$^{184}$W", MUTED_TEXT),
-        (197, 7.916, r"$^{197}$Au", ACCENT_YELLOW),
-        (208, 7.868, r"$^{208}$Pb", MUTED_TEXT),
+        (1, 0.0, r"$^1$H", SLIDE_MUTED),
+        (2, 1.112, r"$^2$H", SLIDE_MUTED),
+        (3, 2.827, r"$^3$He", SLIDE_MUTED),
+        (4, 7.074, r"$^4$He", SLIDE_TEAL),
+        (12, 7.680, r"$^{12}$C", SLIDE_ORANGE),
+        (16, 7.976, r"$^{16}$O", SLIDE_ORANGE),
+        (28, 8.448, r"$^{28}$Si", SLIDE_ORANGE),
+        (56, 8.790, r"$^{56}$Fe", SLIDE_ROSE),
+        (62, 8.794, r"$^{62}$Ni", SLIDE_MUTED),
+        (197, 7.916, r"$^{197}$Au", SLIDE_GOLD),
         (235, 7.591, r"$^{235}$U", ACCENT_PURPLE),
-        (238, 7.570, r"$^{238}$U", MUTED_TEXT),
     ]
 
-    A_vals = np.array([iso[0] for iso in isotopes])
-    BE_vals = np.array([iso[1] for iso in isotopes])
+    a_vals = np.array([row[0] for row in isotopes])
+    be_vals = np.array([row[1] for row in isotopes])
+    a_smooth = np.linspace(1, 240, 700)
+    be_smooth = np.interp(a_smooth, a_vals, be_vals)
 
-    fig, ax = plt.subplots(figsize=(12, 7), dpi=200)
-    apply_dark_style(fig, ax)
+    fig, ax = plt.subplots(figsize=(12.6, 7.1), dpi=220)
+    apply_slide_style(fig, ax)
 
-    # Smooth interpolation for the curve
-    from scipy.interpolate import make_interp_spline
-    A_smooth = np.linspace(1, 240, 500)
-    spl = make_interp_spline(A_vals, BE_vals, k=3)
-    BE_smooth = spl(A_smooth)
+    iron_mask = a_smooth <= 56
+    ax.plot(a_smooth[iron_mask], be_smooth[iron_mask], color=SLIDE_TEAL, linewidth=3.2)
+    ax.plot(a_smooth[~iron_mask], be_smooth[~iron_mask], color=ACCENT_PURPLE, linewidth=3.2)
 
-    # Color the curve: blue (fusion releases energy) left of Fe,
-    # purple (fission releases energy) right of Fe
-    fe_idx = np.argmin(np.abs(A_smooth - 56))
+    ax.axvspan(1, 56, color=SLIDE_TEAL, alpha=0.06, zorder=0)
+    ax.axvspan(56, 240, color=ACCENT_PURPLE, alpha=0.05, zorder=0)
 
-    ax.plot(A_smooth[:fe_idx+1], BE_smooth[:fe_idx+1],
-            color=ACCENT_CYAN, linewidth=2.5, zorder=3)
-    ax.plot(A_smooth[fe_idx:], BE_smooth[fe_idx:],
-            color=ACCENT_PURPLE, linewidth=2.5, zorder=3)
+    for a_num, binding, label, color in isotopes:
+        ax.plot(a_num, binding, "o", color=color, markersize=8.5,
+                markeredgecolor=SLIDE_BG, markeredgewidth=1.5, zorder=5)
 
-    # Plot key isotopes as points
-    for A, BE, label, color in isotopes:
-        marker_size = 8 if color != MUTED_TEXT else 5
-        ax.plot(A, BE, "o", color=color, markersize=marker_size,
-                markeredgecolor="white", markeredgewidth=0.5, zorder=5)
-
-    # Label key isotopes with offsets to avoid overlap
     label_offsets = {
-        1: (5, -12), 2: (5, -10), 4: (5, 5), 12: (-2, 7),
-        16: (5, 5), 28: (-2, -14), 56: (5, 5), 62: (7, -8),
-        197: (5, 5), 235: (-10, -14),
+        1: (6, -12), 4: (6, 6), 12: (6, 6), 16: (6, -10),
+        28: (6, -12), 56: (6, 8), 197: (6, 6), 235: (-18, -14),
     }
-    for A, BE, label, color in isotopes:
-        if A in label_offsets:
-            dx, dy = label_offsets[A]
-            fontsize = 12 if color != MUTED_TEXT else 9
-            ax.annotate(
-                label, (A, BE), xytext=(dx, dy),
-                textcoords="offset points", fontsize=fontsize,
-                color=color, fontweight="bold" if color != MUTED_TEXT else "normal",
-            )
+    for a_num, binding, label, color in isotopes:
+        if a_num in label_offsets:
+            dx, dy = label_offsets[a_num]
+            ax.annotate(label, (a_num, binding), xytext=(dx, dy),
+                        textcoords="offset points", fontsize=11,
+                        color=color, fontweight="bold")
 
-    # Iron peak annotation
-    ax.annotate(
-        "Iron peak\n(most stable nucleus)",
-        xy=(56, 8.79), xytext=(100, 9.2),
-        fontsize=12, color=ACCENT_RED, fontweight="bold",
-        arrowprops=dict(arrowstyle="->", color=ACCENT_RED, lw=1.5),
-        ha="center",
-    )
+    ax.annotate("Fusion of light nuclei\nmoves up this side",
+                xy=(14, 7.55), xytext=(38, 5.7),
+                fontsize=11, color=SLIDE_TEAL, fontweight="bold",
+                arrowprops=dict(arrowstyle="->", color=SLIDE_TEAL, lw=1.6))
+    ax.annotate("Beyond iron, fusion moves\ndown the curve and costs energy",
+                xy=(135, 8.35), xytext=(160, 6.4),
+                fontsize=11, color=ACCENT_PURPLE, fontweight="bold",
+                arrowprops=dict(arrowstyle="->", color=ACCENT_PURPLE, lw=1.6),
+                ha="center")
+    ax.annotate("Iron peak:\nmost tightly bound",
+                xy=(56, 8.79), xytext=(86, 9.08),
+                fontsize=11.5, color=SLIDE_ROSE, fontweight="bold",
+                arrowprops=dict(arrowstyle="->", color=SLIDE_ROSE, lw=1.6),
+                ha="center")
 
-    # Fusion / fission arrows
-    ax.annotate(
-        "", xy=(15, 3.5), xytext=(50, 3.5),
-        arrowprops=dict(arrowstyle="<-", color=ACCENT_CYAN, lw=2.5),
-    )
-    ax.text(32, 3.8, "FUSION releases energy",
-            fontsize=11, color=ACCENT_CYAN, ha="center", fontstyle="italic")
-    ax.text(32, 3.0, r"(climbing $\uparrow$ the curve)",
-            fontsize=9, color=ACCENT_CYAN, ha="center", alpha=0.8)
-
-    ax.annotate(
-        "", xy=(200, 3.5), xytext=(70, 3.5),
-        arrowprops=dict(arrowstyle="<-", color=ACCENT_PURPLE, lw=2.5),
-    )
-    ax.text(140, 3.8, "FISSION releases energy",
-            fontsize=11, color=ACCENT_PURPLE, ha="center", fontstyle="italic")
-    ax.text(140, 3.0, r"(descending $\downarrow$ the curve)",
-            fontsize=9, color=ACCENT_PURPLE, ha="center", alpha=0.8)
-
-    # Nucleosynthesis annotations
-    ax.axvspan(1, 4.5, alpha=0.05, color=ACCENT_CYAN, zorder=1)
-    ax.axvspan(4.5, 16.5, alpha=0.05, color=ACCENT_GREEN, zorder=1)
-    ax.axvspan(16.5, 56, alpha=0.05, color=ACCENT_ORANGE, zorder=1)
-
-    ax.text(2.5, 1.0, "pp-chain\n(main seq.)", fontsize=8,
-            color=ACCENT_CYAN, ha="center", alpha=0.7)
-    ax.text(10, 1.0, "He burning\n(red giant)", fontsize=8,
-            color=ACCENT_GREEN, ha="center", alpha=0.7)
-    ax.text(36, 1.0, "Successive\nburning\n(massive stars)", fontsize=8,
-            color=ACCENT_ORANGE, ha="center", alpha=0.7)
+    ax.text(0.02, 0.96,
+            "Higher binding energy per nucleon means lower total mass-energy.",
+            transform=ax.transAxes, fontsize=11, color=SLIDE_TEXT,
+            ha="left", va="top",
+            bbox=dict(boxstyle="round,pad=0.35", facecolor=SLIDE_PANEL, edgecolor=SLIDE_GRID))
 
     ax.set_xlabel("Mass Number, $A$", fontsize=14)
     ax.set_ylabel("Binding Energy per Nucleon (MeV)", fontsize=14)
-    ax.set_title("Binding Energy per Nucleon", fontsize=18,
-                 fontweight="bold", pad=15)
-    ax.set_xlim(0, 250)
-    ax.set_ylim(0, 9.5)
+    ax.set_xlim(0, 240)
+    ax.set_ylim(0, 9.4)
+    ax.set_title("Binding Energy per Nucleon and Why Fusion Releases Energy",
+                 fontsize=18.5, fontweight="bold", pad=14)
 
     fig.tight_layout()
-    fig.savefig(OUTPUT_DIR / "binding-energy-curve.png",
-                facecolor=DARK_BG, bbox_inches="tight")
-    plt.close(fig)
-    print("  ✓ binding-energy-curve.png")
+    save_slide_figure(fig, "binding-energy-curve.png")
 
 
 # ═════════════════════════════════════════════════════════════
@@ -343,125 +418,92 @@ def make_random_walk():
 # Used in: R1 (Ages & Lifetimes)
 # ═════════════════════════════════════════════════════════════
 def make_timescale_hierarchy():
-    """
-    Logarithmic comparison of the three fundamental stellar timescales.
-
-    τ_dyn ~ 50 min, τ_KH ~ 30 Myr, τ_nuc ~ 10 Gyr for the Sun.
-    The enormous separation is the key pedagogical point.
-    """
-    fig, ax = plt.subplots(figsize=(13, 6.4), dpi=220)
+    """Compare the Sun's three clocks and emphasize their physical meaning."""
+    fig, ax = plt.subplots(figsize=(13.2, 6.6), dpi=220)
     apply_slide_style(fig, ax)
 
-    # Timescales in seconds
-    timescales = {
-        r"$\tau_{\rm dyn}$": {
-            "value_s": 3000,  # ~50 min
+    timescales = [
+        {
+            "symbol": r"$\tau_{\rm dyn}$",
+            "value_s": 50.0 * 60.0,
             "label": "~50 min",
-            "desc": "Dynamical\n(free-fall)",
+            "desc": "Dynamical response",
+            "reservoir": "set by mean density",
             "color": SLIDE_TEAL,
-            "note": "pressure loss → collapse in ~50 min",
         },
-        r"$\tau_{\rm KH}$": {
-            "value_s": 9.5e14,  # ~30 Myr
+        {
+            "symbol": r"$\tau_{\rm KH}$",
+            "value_s": 3.0e7 * YEAR_S,
             "label": "~30 Myr",
-            "desc": "Thermal\n(Kelvin-Helmholtz)",
+            "desc": "Kelvin-Helmholtz cooling",
+            "reservoir": r"gravitational/thermal reservoir $\,/\,L$",
             "color": SLIDE_ORANGE,
-            "note": "no fusion → Sun fades in ~30 Myr",
         },
-        r"$\tau_{\rm nuc}$": {
-            "value_s": 3.2e17,  # ~10 Gyr
+        {
+            "symbol": r"$\tau_{\rm nuc}$",
+            "value_s": 1.0e10 * YEAR_S,
             "label": "~10 Gyr",
-            "desc": "Nuclear\n(main-sequence lifetime)",
+            "desc": "Hydrogen-burning lifetime",
+            "reservoir": r"fusion energy reservoir $\,/\,L$",
             "color": SLIDE_ROSE,
-            "note": "H fusion supports the Sun for ~10 Gyr",
         },
-    }
-
-    # Reference timescales for context
-    references = [
-        (3600, "1 hour", SLIDE_MUTED),
-        (3.15e7, "1 year", SLIDE_MUTED),
-        (3.15e7 * 1e6, "1 Myr", SLIDE_MUTED),
-        (3.15e7 * 1e9, "1 Gyr", SLIDE_MUTED),
-        (3.15e7 * 13.8e9, "Age of\nUniverse", SLIDE_GOLD),
     ]
 
+    references = [
+        (3600.0, "1 hour", SLIDE_MUTED),
+        (YEAR_S, "1 year", SLIDE_MUTED),
+        (1.0e6 * YEAR_S, "1 Myr", SLIDE_MUTED),
+        (1.0e9 * YEAR_S, "1 Gyr", SLIDE_MUTED),
+        (13.8e9 * YEAR_S, "Age of universe", SLIDE_GOLD),
+    ]
     y_positions = [2, 1, 0]
-    bar_height = 0.5
 
-    for i, (symbol, data) in enumerate(timescales.items()):
-        y = y_positions[i]
-        log_val = np.log10(data["value_s"])
-
-        ax.hlines(y, 0, log_val, color=data["color"], linewidth=8, alpha=0.16, zorder=2)
-        ax.hlines(y, 0, log_val, color=data["color"], linewidth=2.8, zorder=3)
-
-        ax.plot(log_val, y, "o", color=data["color"], markersize=10,
+    for y_val, data in zip(y_positions, timescales):
+        log_time = np.log10(data["value_s"])
+        ax.hlines(y_val, 0.0, log_time, color=data["color"], linewidth=10, alpha=0.18)
+        ax.hlines(y_val, 0.0, log_time, color=data["color"], linewidth=3.2)
+        ax.plot(log_time, y_val, "o", color=data["color"], markersize=11,
                 markeredgecolor=SLIDE_BG, markeredgewidth=1.8, zorder=5)
 
-        ax.text(-0.9, y, symbol, fontsize=18, color=data["color"],
+        ax.text(-0.7, y_val, data["symbol"], fontsize=18, color=data["color"],
                 fontweight="bold", ha="right", va="center")
-
-        ax.text(-3.0, y, data["desc"], fontsize=11, color=SLIDE_TEXT,
-                ha="right", va="center", alpha=0.8)
-
-        ax.text(log_val + 0.35, y, data["label"], fontsize=15,
+        ax.text(-3.6, y_val + 0.18, data["desc"], fontsize=12, color=SLIDE_TEXT,
+                ha="left", va="center", fontweight="bold")
+        ax.text(-3.6, y_val - 0.16, data["reservoir"], fontsize=10.2,
+                color=SLIDE_MUTED, ha="left", va="center")
+        ax.text(log_time + 0.35, y_val + 0.03, data["label"], fontsize=15,
                 color=data["color"], fontweight="bold", va="center",
                 path_effects=[pe.withStroke(linewidth=3, foreground=SLIDE_BG)])
 
-        ax.text(log_val + 0.35, y - 0.24, data["note"], fontsize=10,
-                color=SLIDE_MUTED, va="top")
+    for ref_time, label, color in references:
+        log_time = np.log10(ref_time)
+        ax.axvline(log_time, color=color, linewidth=0.95, alpha=0.7, linestyle=(0, (2, 3)))
+        ax.text(log_time, 2.7, label, fontsize=8.8, color=color, ha="center", va="bottom")
 
-    for val_s, label, color in references:
-        log_val = np.log10(val_s)
-        ax.axvline(log_val, color=color, linewidth=0.9, alpha=0.65, linestyle=(0, (2, 3)))
-        ax.text(log_val, 2.68, label, fontsize=8.5, color=color,
-                ha="center", va="bottom", alpha=0.95)
+    arrows = [
+        (np.log10(50.0 * 60.0), np.log10(3.0e7 * YEAR_S), 1.45, r"$\times 3\times10^{11}$"),
+        (np.log10(3.0e7 * YEAR_S), np.log10(1.0e10 * YEAR_S), 0.45, r"$\times 300$"),
+    ]
+    for x1, x2, y_val, label in arrows:
+        ax.annotate("", xy=(x2, y_val), xytext=(x1, y_val),
+                    arrowprops=dict(arrowstyle="<->", color=SLIDE_GOLD, lw=1.5))
+        ax.text((x1 + x2) / 2.0, y_val + 0.12, label, fontsize=11, color=SLIDE_GOLD,
+                ha="center", fontweight="bold")
 
-    mid_y = 1.5
-    ax.annotate(
-        "", xy=(np.log10(9.5e14), mid_y + 0.15),
-        xytext=(np.log10(3000), mid_y + 0.15),
-        arrowprops=dict(arrowstyle="<->", color=SLIDE_GOLD, lw=1.5),
-    )
-    ax.text(
-        (np.log10(3000) + np.log10(9.5e14)) / 2, mid_y + 0.25,
-        r"$\times\, 3\times 10^{11}$", fontsize=11, color=SLIDE_GOLD,
-        ha="center", fontweight="bold",
-    )
+    ax.text(0.5, 1.035,
+            r"$\tau_{\rm dyn} \ll \tau_{\rm KH} \ll \tau_{\rm nuc}$"
+            " because stars restore force balance much faster than they leak or burn energy.",
+            transform=ax.transAxes, fontsize=10.8, color=SLIDE_MUTED,
+            ha="center", va="bottom")
 
-    mid_y2 = 0.5
-    ax.annotate(
-        "", xy=(np.log10(3.2e17), mid_y2 + 0.15),
-        xytext=(np.log10(9.5e14), mid_y2 + 0.15),
-        arrowprops=dict(arrowstyle="<->", color=SLIDE_GOLD, lw=1.5),
-    )
-    ax.text(
-        (np.log10(9.5e14) + np.log10(3.2e17)) / 2, mid_y2 + 0.25,
-        r"$\times\, 300$", fontsize=11, color=SLIDE_GOLD,
-        ha="center", fontweight="bold",
-    )
-
-    ax.set_xlabel(r"$\log_{10}(\mathrm{time/s})$", fontsize=14)
-    ax.set_xlim(-1.1, 18.8)
+    ax.set_xlim(-4.2, 18.8)
     ax.set_ylim(-0.5, 3.0)
+    ax.set_xlabel(r"$\log_{10}(\mathrm{time/s})$", fontsize=14)
     ax.set_yticks([])
-    ax.set_title("Three Stellar Clocks for the Sun", fontsize=19,
-                 fontweight="bold", pad=15)
-
-    ax.text(
-        0.5, 1.03,
-        r"$\tau_{\rm dyn} \ll \tau_{\rm KH} \ll \tau_{\rm nuc}$"
-        "  —  separated by many orders of magnitude",
-        transform=ax.transAxes, fontsize=11, color=SLIDE_MUTED,
-        ha="center", va="bottom",
-    )
+    ax.set_title("Three Stellar Clocks for the Sun", fontsize=19, fontweight="bold", pad=15)
 
     fig.tight_layout()
-    fig.savefig(OUTPUT_DIR / "timescale-hierarchy.png",
-                facecolor=SLIDE_BG, bbox_inches="tight")
-    plt.close(fig)
-    print("  ✓ timescale-hierarchy.png")
+    save_slide_figure(fig, "timescale-hierarchy.png")
 
 
 # ═════════════════════════════════════════════════════════════
@@ -469,84 +511,57 @@ def make_timescale_hierarchy():
 # Used in: L1/R1 (Ages & Lifetimes)
 # ═════════════════════════════════════════════════════════════
 def make_timescales_vs_mass():
-    """
-    Solar-normalized stellar timescales across the main sequence.
+    """Plot the three stellar clocks with honest low- and high-mass caveats."""
+    masses = np.logspace(np.log10(0.1), np.log10(30.0), 600)
+    model = solar_normalized_timescales(masses)
 
-    Uses simple main-sequence scaling laws:
-    - R ∝ M^0.8
-    - L ∝ M^3.5
-
-    This lets students see how each timescale changes with mass while
-    keeping the Sun as the anchor.
-    """
-    masses = np.logspace(-1, 1.15, 400)  # 0.1 to ~14 M_sun
-
-    # Main-sequence scaling relations (order-of-magnitude)
-    radii = masses**0.8
-    luminosities = masses**3.5
-
-    # Solar anchors
-    tau_dyn_sun_yr = 50 / (60 * 24 * 365.25)  # 50 min in years
-    tau_kh_sun_yr = 3.0e7
-    tau_nuc_sun_yr = 1.0e10
-
-    # Ratio-method scalings relative to the Sun
-    tau_dyn = tau_dyn_sun_yr * masses**(-0.5) * radii**1.5
-    tau_kh = tau_kh_sun_yr * masses**2 * radii**(-1) * luminosities**(-1)
-    tau_nuc = tau_nuc_sun_yr * masses * luminosities**(-1)
-
-    fig, ax = plt.subplots(figsize=(12.4, 7.0), dpi=220)
+    fig, ax = plt.subplots(figsize=(12.5, 7.2), dpi=220)
     apply_slide_style(fig, ax)
-
     ax.set_xscale("log")
     ax.set_yscale("log")
 
-    ax.plot(masses, tau_dyn, color=SLIDE_TEAL, linewidth=3.0)
-    ax.plot(masses, tau_kh, color=SLIDE_ORANGE, linewidth=3.0)
-    ax.plot(masses, tau_nuc, color=SLIDE_ROSE, linewidth=3.0)
+    ax.plot(masses, model["tau_dyn"], color=SLIDE_TEAL, linewidth=3.0, label=r"$\tau_{\rm dyn}$")
+    ax.plot(masses, model["tau_kh"], color=SLIDE_ORANGE, linewidth=3.0, label=r"$\tau_{\rm KH}$")
+    ax.plot(masses, model["tau_nuc"], color=SLIDE_ROSE, linewidth=3.0, label=r"$\tau_{\rm nuc}$")
 
-    ax.plot(1, tau_dyn_sun_yr, "o", color=SLIDE_TEAL, markersize=8.5,
-            markeredgecolor=SLIDE_BG, markeredgewidth=1.5, zorder=5)
-    ax.plot(1, tau_kh_sun_yr, "o", color=SLIDE_ORANGE, markersize=8.5,
-            markeredgecolor=SLIDE_BG, markeredgewidth=1.5, zorder=5)
-    ax.plot(1, tau_nuc_sun_yr, "o", color=SLIDE_ROSE, markersize=8.5,
-            markeredgecolor=SLIDE_BG, markeredgewidth=1.5, zorder=5)
-    ax.text(1.08, 1.3e10, "Sun", color=SLIDE_TEXT, fontsize=11.5, fontweight="bold")
+    ax.axvspan(0.1, 0.35, color=SLIDE_TEAL, alpha=0.06, zorder=0)
+    ax.axvspan(15.0, 30.0, color=SLIDE_GOLD, alpha=0.06, zorder=0)
+    ax.text(0.14, 3.0e11, "low-mass caveat:\nfull convection\nextends lifetimes",
+            fontsize=9.8, color=SLIDE_TEAL, ha="left", va="top")
+    ax.text(16.3, 3.0e11, "high-mass caveat:\n$L(M)$ flattens,\nso lifetimes are longer\nthan naive extrapolation",
+            fontsize=9.6, color=SLIDE_GOLD, ha="left", va="top")
 
-    age_universe = 1.38e10
-    ax.axhline(age_universe, color=SLIDE_GOLD, linestyle=(0, (4, 3)), linewidth=1.6, alpha=0.85)
-    ax.text(8.6, age_universe * 1.08, "Age of the universe", color=SLIDE_GOLD,
-            fontsize=10.5, fontweight="bold", va="bottom")
+    ax.axhline(13.8e9, color=SLIDE_GOLD, linestyle=(0, (4, 3)), linewidth=1.6, alpha=0.9)
+    ax.text(30.0, 13.8e9 * 1.06, "age of universe", color=SLIDE_GOLD,
+            fontsize=10.4, fontweight="bold", ha="right", va="bottom")
 
-    ax.text(0.16, 2e-4, r"$\tau_{\rm dyn} \propto M^{0.7}$",
-            color=SLIDE_TEAL, fontsize=12, fontweight="bold")
-    ax.text(0.16, 2.5e8, r"$\tau_{\rm KH} \propto M^{-2.3}$",
-            color=SLIDE_ORANGE, fontsize=12, fontweight="bold")
-    ax.text(2.4, 2.3e9, r"$\tau_{\rm nuc} \propto M^{-2.5}$",
-            color=SLIDE_ROSE, fontsize=12, fontweight="bold")
+    for color, y_val in [(SLIDE_TEAL, model["tau_dyn"][np.argmin(np.abs(masses - 1.0))]),
+                         (SLIDE_ORANGE, model["tau_kh"][np.argmin(np.abs(masses - 1.0))]),
+                         (SLIDE_ROSE, model["tau_nuc"][np.argmin(np.abs(masses - 1.0))])]:
+        ax.plot(1.0, y_val, "o", color=color, markersize=8.5,
+                markeredgecolor=SLIDE_BG, markeredgewidth=1.4, zorder=5)
+    ax.text(1.08, 1.8e10, "Sun", color=SLIDE_TEXT, fontsize=11, fontweight="bold")
 
-    note = (
-        "Order-of-magnitude main-sequence scalings\n"
-        r"used here: $R \propto M^{0.8}$ and $L \propto M^{3.5}$"
-    )
-    ax.text(
-        0.98, 0.04, note,
-        transform=ax.transAxes, ha="right", va="bottom",
-        fontsize=9.6, color=SLIDE_MUTED,
-    )
+    ax.text(0.13, 2.2e-4, r"$\tau_{\rm dyn}$", color=SLIDE_TEAL, fontsize=12, fontweight="bold")
+    ax.text(0.13, 2.5e7, r"$\tau_{\rm KH}$", color=SLIDE_ORANGE, fontsize=12, fontweight="bold")
+    ax.text(4.2, 3.0e8, r"$\tau_{\rm nuc}$", color=SLIDE_ROSE, fontsize=12, fontweight="bold")
 
-    ax.set_xlabel(r"Stellar mass ($M/M_\odot$)", fontsize=14)
+    ax.text(0.98, 0.04,
+            "Order-of-magnitude main-sequence model: piecewise $L(M)$, approximate $R(M)$,\n"
+            "and a larger accessible-fuel fraction for fully convective low-mass stars.",
+            transform=ax.transAxes, ha="right", va="bottom",
+            fontsize=9.4, color=SLIDE_MUTED)
+
+    ax.set_xlabel(r"Stellar Mass ($M/M_\odot$)", fontsize=14)
     ax.set_ylabel("Timescale (yr)", fontsize=14)
-    ax.set_xlim(0.1, 14.5)
-    ax.set_ylim(1e-6, 5e11)
+    ax.set_xlim(0.1, 30.0)
+    ax.set_ylim(1.0e-6, 5.0e11)
     ax.set_title("How the Three Stellar Clocks Change with Mass",
                  fontsize=19, fontweight="bold", pad=12)
+    ax.legend(loc="lower left", frameon=False, fontsize=10.5)
 
     fig.tight_layout()
-    fig.savefig(OUTPUT_DIR / "timescales-vs-mass.png",
-                facecolor=SLIDE_BG, bbox_inches="tight")
-    plt.close(fig)
-    print("  ✓ timescales-vs-mass.png")
+    save_slide_figure(fig, "timescales-vs-mass.png")
 
 
 # ═════════════════════════════════════════════════════════════

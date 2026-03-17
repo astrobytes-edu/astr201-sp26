@@ -21,8 +21,16 @@ jobs:
 
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2.1.9
-        with:
-          tinytex: true
+
+      # Install TinyTeX without relying on Quarto's release lookup, which can 403 in CI.
+      - name: Set up TinyTeX
+        uses: r-lib/actions/setup-tinytex@v2
+
+      - name: Refresh tlmgr and install LaTeX packages for PDF
+        run: |
+          tlmgr option repository https://mirror.ctan.org/systems/texlive/tlnet
+          tlmgr update --self
+          tlmgr install titling
 
       - name: Set up Python
         uses: actions/setup-python@v5
