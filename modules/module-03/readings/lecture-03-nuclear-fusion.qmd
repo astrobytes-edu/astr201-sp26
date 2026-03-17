@@ -158,6 +158,8 @@ The Coulomb barrier ($\sim 1~\text{MeV}$) is therefore hundreds of times larger 
 
 Even accounting for the high-energy tail of the Maxwell-Boltzmann distribution, the fraction of protons with energy $\geq 1~\text{MeV}$ is:
 
+{{< fig maxwell-boltzmann-energies-barrier-tail >}}
+
 $$
 f \sim e^{-E_\text{barrier}/k_B T_c}
 \sim e^{-1.4~\text{MeV}/1.3~\text{keV}}
@@ -212,6 +214,8 @@ In 1924, Louis de Broglie proposed a revolutionary idea: every particle also beh
 
 Here $h = 6.626 \times 10^{-27}~\text{erg}\cdot\text{s}$ is Planck's constant, $p = mv$ is the particle's momentum, $m$ is its mass, and $v$ is its velocity. For everyday objects (a baseball, a person), $\lambda_\text{dB}$ is absurdly small — far smaller than any atom — so wave behavior is undetectable. But for protons in a stellar core, moving at thermal velocities, the de Broglie wavelength becomes far larger than the nuclear scale.
 
+{{< fig maxwell-boltzmann-speeds-solar-core >}}
+
 ### Worked Example: de Broglie Wavelength of a Solar Core Proton
 
 A proton in the solar core has a thermal energy of order a few $\text{keV}$. Using $E \approx 2~\text{keV}$ as a simple estimate:
@@ -253,11 +257,15 @@ Here is the quantum effect. A classical particle encountering a barrier higher t
 
 This is **quantum tunneling**: a particle passes through a barrier it classically could not overcome, simply because its wave function has a nonzero amplitude on the far side.
 
+{{< fig coulomb-barrier-and-tunneling >}}
+
 For proton-proton encounters in the solar core, the tunneling probability per collision is extraordinarily small:
 
 $$
 P_\text{tunnel} \sim 10^{-20}
 $$
+
+{{< fig gamow-window-cartoon >}}
 
 That means out of every $10^{20}$ proton-proton collisions, only *one* gets through the Coulomb barrier. This sounds hopeless — until you consider the conditions inside the core.
 
@@ -430,6 +438,8 @@ $$
 **Units check:** $[\text{g} \times \text{cm}^2/\text{s}^2] = \text{erg}$. ✓
 
 **Result:** Each complete pp-chain reaction releases $\approx 26.7~\text{MeV}$ of energy. Of this, about $0.5~\text{MeV}$ is carried away by neutrinos (which escape the star immediately) and about $26.2~\text{MeV}$ is deposited as heat and radiation in the solar interior.
+
+{{< fig fusion-energy-budget >}}
 
 | Quantity | Value | Meaning |
 |:---------|:-----:|:--------|

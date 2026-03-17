@@ -69,6 +69,8 @@ But the HR diagram is a snapshot — a single frame from a movie you haven't see
 
 That cluster pattern is also our first age indicator. If the most massive star still on the main sequence is only about $2\,M_\odot$, the cluster must be old enough for $10\,M_\odot$ stars to have already died. If a bright blue $10\,M_\odot$ star is still on the main sequence, the cluster must be young. The observational clue is the **main-sequence turnoff**; the job of this reading is to build the physics that turns that clue into an age.
 
+{{< fig cluster-turnoff-clock >}}
+
 ### The Module 3 Question
 
 In Module 2, you asked: *What can we measure about a star from its light?* Now we ask the deeper question:
@@ -94,6 +96,8 @@ Lifetime $\propto$ fuel / burn rate $\propto M / M^{3.5} = M^{-2.5}$. More massi
 ## Part 2: Three Timescales That Govern a Star
 
 Stars are governed by three fundamental timescales, each associated with a different physical process. Their hierarchy — which is shortest, which is longest — tells you what a star is doing at any given moment.
+
+{{< fig timescales-vs-mass >}}
 
 ::: {.callout-note title="Timescale Grammar"}
 A useful pattern in astrophysics is
@@ -437,6 +441,8 @@ Now here's where the mass-luminosity relation — the crown jewel of Module 2 �
 
 This is one of the most important scaling relations in all of astrophysics. Let's see what it predicts:
 
+{{< fig fuel-vs-burn-rate >}}
+
 | Star Mass ($M/M_\odot$) | Lifetime ($\tau_\text{nuc}$) | Comparison |
 |:---:|:---:|:---:|
 | $0.1$ | $\sim 3 \times 10^{12}~\text{yr}$ | Simple scaling only; still $\gg$ age of universe |
@@ -448,6 +454,8 @@ This is one of the most important scaling relations in all of astrophysics. Let'
 **The pattern is dramatic.** A $10\,M_\odot$ star has 10 times the fuel but burns it $10^{3.5} \approx 3{,}000$ times faster. Its lifetime is $10/3{,}000 \approx 1/300$ of the Sun's. A $0.1\,M_\odot$ red dwarf, on the other hand, has only $1/10$ the fuel but burns it $10^{3.5} \approx 3{,}000$ times slower — it will outlive the current age of the universe by a factor of a thousand.
 
 Two caveats matter here. At **low mass**, the luminosity scaling changes and fully convective stars can access a larger fraction of their hydrogen than the Sun can. That means the very lowest-mass stars can live even longer than the simple $M^{-2.5}$ estimate suggests. At **high mass**, the mass-luminosity relation also bends away from $L \propto M^{3.5}$, so blindly extrapolating the table to $50\,M_\odot$ or $100\,M_\odot$ would predict lifetimes that are too short. The scaling is still powerful because it gets the right qualitative story and the right order of magnitude across the broad middle of the main sequence.
+
+{{< fig main-sequence-lifetime-vs-mass >}}
 
 ### Worked Example: Why M Dwarfs Live So Long
 

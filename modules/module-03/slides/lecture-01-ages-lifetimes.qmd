@@ -171,6 +171,16 @@ Burn rate wins.
 
 ---
 
+## Fuel vs. Burn Rate
+
+{{< img fuel-vs-burn-rate width="92%" >}}
+
+::: {.fragment .mini-note}
+The accessible fuel supply rises with mass, but the luminosity rises much faster.
+:::
+
+---
+
 ## Why Normalize to the Sun?
 
 :::: {.columns}
@@ -643,14 +653,7 @@ Extra fuel does not keep up.
 
 ## The Scaling That Explains the HR Diagram
 
-::: {.clean-table}
-| Mass | Main-sequence lifetime |
-|:---:|:---:|
-| $0.3\,M_\odot$ | longer than the age of the universe |
-| $1\,M_\odot$ | $\sim 10\,\text{Gyr}$ |
-| $2\,M_\odot$ | $\sim 2\,\text{Gyr}$ |
-| $10\,M_\odot$ | $\sim 30\,\text{Myr}$ |
-:::
+{{< img main-sequence-lifetime-vs-mass width="96%" >}}
 
 ---
 
@@ -678,7 +681,7 @@ $$
 
 ## Turnoff Is an Age Clock
 
-{{< img hr-evolutionary-tracks-mass-timescale width="82%" >}}
+{{< img cluster-turnoff-clock width="96%" >}}
 
 ::: {.fragment .takeaway}
 The most massive star still on the main sequence sets the cluster age.

@@ -62,7 +62,7 @@ So what has kept it stable for 4.6 billion years?
 
 ## Pressure Is Not Enough
 
-{{< img hydrostatic-equilibrium width="72%" >}}
+{{< img pressure-vs-pressure-gradient width="88%" >}}
 
 ::: {.fragment .mt-2}
 The outward force comes from a **pressure gradient**:
@@ -129,7 +129,7 @@ By the end of class, you should be able to:
 
 ## Visual Intuition: The Stellar Tug-of-War
 
-{{< img stellar-tug-of-war-hse width="88%" >}}
+{{< img hydrostatic-shell-force-balance width="94%" >}}
 
 ::: {.notes}
 8-9 min. Use this as the bridge from the pool analogy to the shell argument. Stress that hydrostatic equilibrium is local and layer-by-layer, not a single force acting only at the surface.
@@ -295,6 +295,16 @@ Self-gravitating systems do the opposite of a coffee cup on your desk.
 
 ---
 
+## Energy Ledger for a Self-Gravitating Star
+
+{{< img virial-energy-partition width="96%" >}}
+
+::: {.notes}
+Use the left panel to lock the factor-of-two bookkeeping, then walk the right panel as the causal chain.
+:::
+
+---
+
 ## From Gravity to Core Temperature
 
 :::: {.columns}
@@ -317,6 +327,16 @@ Self-gravitating systems do the opposite of a coffee cup on your desk.
 
 ::: {.notes}
 28-31 min. This is the "we can estimate the solar core without going inside" moment.
+:::
+
+---
+
+## Core Temperature Changes Surprisingly Slowly with Mass
+
+{{< img core-temperature-scaling width="92%" >}}
+
+::: {.fragment .mini-note}
+More massive stars are hotter inside, but not by orders of magnitude.
 :::
 
 ---
@@ -448,7 +468,7 @@ Next question: **how do protons actually fuse when they repel each other?**
 
 ## Preview: Hydrostatic Balance Is Not the Whole Story
 
-{{< img fusion-quantum-tunneling width="82%" >}}
+{{< img coulomb-barrier-and-tunneling width="88%" >}}
 
 ::: {.notes}
 Preview slide. The left side connects directly to today's lecture; the right side previews why classical physics fails and quantum tunneling is required.

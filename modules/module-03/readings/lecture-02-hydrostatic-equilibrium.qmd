@@ -84,7 +84,7 @@ What force opposes gravity? The answer is **pressure** — specifically, the pre
 
 ### Pressure vs. Pressure *Gradient*
 
-{{< fig hydrostatic-equilibrium >}}
+{{< fig pressure-vs-pressure-gradient >}}
 
 Imagine a thin shell of gas at some radius $r$ inside a star. This shell feels gravity pulling it inward (toward the center) and pressure pushing it from both sides — inward from the gas above and outward from the gas below.
 
@@ -186,6 +186,8 @@ So radiation pressure increases much more rapidly with temperature than gas pres
 ## Part 2: The Equation of Hydrostatic Equilibrium
 
 ### Setting Up the Force Balance
+
+{{< fig hydrostatic-shell-force-balance >}}
 
 Consider a thin shell of gas at radius $r$ inside a star. Give the shell thickness $dr$, cross-sectional area $A$, and density $\rho(r)$. The shell mass is
 $$
@@ -349,6 +351,10 @@ P_c \propto \frac{G M^2}{R^4},
 $$
 but with a numerical prefactor. The power of the scaling argument is that it captures the physics without forcing us to solve the full stellar structure problem yet.
 :::
+
+{{< fig toy-star-radial-profiles >}}
+
+{{< fig central-pressure-scaling-grid >}}
 
 ### Worked Example: The Sun’s Central Pressure
 
@@ -522,6 +528,8 @@ Here is the logic chain in plain language:
 
 In an ordinary system, energy loss lowers the temperature. In a self-gravitating system, energy loss leads to contraction, and contraction raises the typical particle speeds.
 
+{{< fig virial-energy-partition >}}
+
 ::: {.callout-warning title="This Is Counterintuitive — But It's Real"}
 In everyday life, losing energy makes things cooler. In self-gravitating systems, losing energy makes things *hotter*. This is not a mathematical trick — it is the physical mechanism by which protostars heat up as they contract, eventually reaching core temperatures high enough to ignite nuclear fusion. The negative heat capacity of gravity is how stars are *born*.
 :::
@@ -611,6 +619,8 @@ This is still an order-of-magnitude estimate, not a full stellar structure solut
 ::: {.callout-note title="What This Equation Is Saying"}
 The combination $GM/R$ is the gravitational potential scale per unit mass. The combination $k_B T_c/(\mu m_p)$ is the thermal-energy scale per unit mass of the gas. Hydrostatic support requires these two scales to be comparable. That is why gravity fixes the core temperature scale.
 :::
+
+{{< fig core-temperature-scaling >}}
 
 ### Worked Example: The Sun’s Core Temperature
 

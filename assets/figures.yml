@@ -658,15 +658,15 @@ figures:
     module: 3
 
   hydrostatic-equilibrium:
-    path: /assets/images/module-03/hydrostatic-equilibrium.svg
-    caption: "Hydrostatic equilibrium balances gravity and pressure"
-    alt: "Diagram showing pressure gradient opposing gravitational force in a star"
+    path: /assets/images/module-03/hydrostatic-equilibrium.png
+    caption: "**What to notice:** hydrostatic equilibrium is local and layer-by-layer. The pressure gradient pushes outward on each shell while gravity pulls inward."
+    alt: "Generated star cross-section with a highlighted shell, outward pressure-gradient arrows from deeper layers, inward gravity arrows from outer layers, and labels showing that each shell supports the weight above it."
     module: 3
 
   pp-chain:
-    path: /assets/images/module-03/pp-chain.svg
-    caption: "The proton-proton chain converts hydrogen to helium"
-    alt: "Diagram of nuclear fusion reactions in the solar core"
+    path: /assets/images/module-03/pp-chain.png
+    caption: "**What to notice:** the proton-proton chain needs all four forces. Electromagnetism creates the barrier, tunneling permits close approach, the weak force throttles Step 1, and the strong force binds the products."
+    alt: "Generated reaction-flow diagram for the proton-proton chain showing proton-proton input, deuterium plus positron and neutrino in Step 1, helium-3 in Step 2, helium-4 plus two protons in Step 3, and force labels marking electromagnetic tunneling, weak conversion, and strong binding."
     module: 3
 
   stellar-endpoints:
@@ -749,22 +749,120 @@ figures:
 
   timescale-hierarchy:
     path: /assets/images/module-03/timescale-hierarchy.png
-    caption: "**The three stellar timescales** span enormous ranges: the dynamical timescale (~50 min) sets how fast gravity acts, the Kelvin-Helmholtz timescale (~30 Myr) sets how long thermal energy lasts, and the nuclear timescale (~10 Gyr) sets the main-sequence lifetime. Each is separated by many orders of magnitude."
-    alt: "Logarithmic bar chart comparing the Sun's three fundamental timescales: dynamical (50 minutes), thermal Kelvin-Helmholtz (30 million years), and nuclear (10 billion years), with large factor comparisons between each pair."
+    caption: "**What to notice:** the three stellar clocks are not just different; they are separated by enormous factors. The Kelvin-Helmholtz and nuclear timescales both follow the 'reservoir divided by luminosity' logic, while the dynamical clock is set by mean density."
+    alt: "White-background comparison plot for the Sun's three stellar timescales with labeled bars for dynamical response, Kelvin-Helmholtz cooling, and nuclear lifetime, plus reference markers for hour, year, Myr, Gyr, and the age of the universe."
     credit: "ASTR 201 (generated)"
     module: 3
 
   timescales-vs-mass:
     path: /assets/images/module-03/timescales-vs-mass.png
-    caption: "**How the three stellar clocks change with mass.** Using solar-normalized main-sequence scalings, the dynamical timescale changes only weakly, while the Kelvin-Helmholtz and nuclear timescales shrink steeply for massive stars. **What to notice:** the Sun is the anchor, but the hierarchy remains huge across the whole main sequence."
-    alt: "White-background log-log plot of stellar timescale versus stellar mass in solar units, with labeled curves for the dynamical, Kelvin-Helmholtz, and nuclear timescales, a marked Sun point, and a dashed age-of-the-universe reference line."
+    caption: "**What to notice:** the hierarchy $\\tau_{\\rm dyn} \\ll \\tau_{\\rm KH} \\ll \\tau_{\\rm nuc}$ survives across the main sequence. Massive stars still adjust quickly, but their thermal and nuclear clocks shrink drastically. Low-mass and high-mass caveat bands remind students where simple scaling laws bend."
+    alt: "Generated white-background log-log plot of stellar timescale versus stellar mass in solar units, with three labeled curves for dynamical, Kelvin-Helmholtz, and nuclear timescales, a marked Sun point, a dashed age-of-the-universe line, and shaded caveat bands at low and high mass."
+    credit: "ASTR 201 (generated)"
+    module: 3
+
+  main-sequence-lifetime-vs-mass:
+    path: /assets/images/module-03/main-sequence-lifetime-vs-mass.png
+    caption: "**What to notice:** the naive $\\tau \\propto M^{-2.5}$ guide captures the broad trend, but real low-mass stars live even longer because they access more of their fuel, while very massive-star lifetimes are longer than a blind high-mass extrapolation would predict."
+    alt: "Generated white-background log-log plot of main-sequence lifetime versus stellar mass showing a solid piecewise lifetime model, a dashed naive M to the minus 2.5 guide, a Sun marker, an age-of-the-universe line, and shaded caveat regions for fully convective low-mass stars and very massive stars."
+    credit: "ASTR 201 (generated)"
+    module: 3
+
+  cluster-turnoff-clock:
+    path: /assets/images/module-03/cluster-turnoff-clock.png
+    caption: "**What to notice:** coeval clusters lose their hottest, most massive main-sequence stars first. The turnoff mass moves downward with age, which is why the turnoff acts like a clock."
+    alt: "Three-panel schematic HR-style figure for 50 Myr, 700 Myr, and 6 Gyr star clusters showing the main sequence truncated at different turnoff masses and a short evolved branch peeling away from each turnoff point."
+    credit: "ASTR 201 (generated)"
+    module: 3
+
+  fuel-vs-burn-rate:
+    path: /assets/images/module-03/fuel-vs-burn-rate.png
+    caption: "**What to notice:** the accessible fuel reservoir increases with stellar mass, but the luminosity increases much faster. That is the visual reason massive stars die young."
+    alt: "Generated white-background log-log plot comparing accessible fuel reservoir and luminosity burn rate as functions of stellar mass, with labeled representative stars at 0.2, 1, and 10 solar masses."
+    credit: "ASTR 201 (generated)"
+    module: 3
+
+  pressure-vs-pressure-gradient:
+    path: /assets/images/module-03/pressure-vs-pressure-gradient.png
+    caption: "**What to notice:** uniform pressure produces no net support. Only when the lower side pushes harder than the upper side does a shell feel a net outward pressure force."
+    alt: "Two-panel didactic diagram comparing a gas shell with equal pressure on top and bottom to a gas shell with larger pressure below than above, alongside downward gravity arrows and net-force labels."
+    credit: "ASTR 201 (generated)"
+    module: 3
+
+  hydrostatic-shell-force-balance:
+    path: /assets/images/module-03/hydrostatic-shell-force-balance.png
+    caption: "**What to notice:** the hydrostatic equation comes directly from shell bookkeeping. Pressure on the inner face pushes outward, pressure on the outer face pushes inward, and gravity pulls the shell inward."
+    alt: "Generated shell-force diagram with a rectangular gas shell labeled by density rho, area A, and thickness dr, plus arrows and equations for the inner pressure force, outer pressure force, and inward gravitational force."
+    credit: "ASTR 201 (generated)"
+    module: 3
+
+  toy-star-radial-profiles:
+    path: /assets/images/module-03/toy-star-radial-profiles.png
+    caption: "**What to notice:** even a uniform-density toy star teaches the right qualitative lesson. Enclosed mass grows outward, gravity rises roughly linearly inside, and pressure must peak at the center."
+    alt: "Three-panel generated toy-model plot showing normalized enclosed mass, gravitational acceleration, and pressure as functions of fractional radius inside a uniform-density star."
+    credit: "ASTR 201 (generated)"
+    module: 3
+
+  central-pressure-scaling-grid:
+    path: /assets/images/module-03/central-pressure-scaling-grid.png
+    caption: "**What to notice:** central pressure depends strongly on compactness. Holding mass fixed while shrinking the radius drives the required support sharply upward because $P_c \\sim GM^2/R^4$."
+    alt: "Generated heatmap of logarithmic central pressure in dynes per square centimeter as a function of stellar mass and radius in solar units, with contour labels and a marked Sun point."
+    credit: "ASTR 201 (generated)"
+    module: 3
+
+  virial-energy-partition:
+    path: /assets/images/module-03/virial-energy-partition.png
+    caption: "**What to notice:** the virial theorem fixes the bookkeeping: $K_{\\rm th} = -\\tfrac{1}{2}U_{\\rm grav}$ and $E_{\\rm tot} < 0$. That is why a star can lose energy, contract, and still get hotter."
+    alt: "Two-panel generated figure with a virial energy ledger bar chart for gravitational, thermal, and total energy on the left and a causal chain from radiating energy to core heating on the right."
+    credit: "ASTR 201 (generated)"
+    module: 3
+
+  core-temperature-scaling:
+    path: /assets/images/module-03/core-temperature-scaling.png
+    caption: "**What to notice:** hydrostatic equilibrium sets a fusion-scale temperature for every main-sequence star, but the core temperature rises only modestly with mass because more massive stars are also larger."
+    alt: "Generated log-log plot of core temperature scale in megakelvin versus stellar mass, showing a hydrostatic scaling curve based on T proportional to M over R, a Sun point, and a dashed comparison for the unrealistic fixed-radius case."
+    credit: "ASTR 201 (generated)"
+    module: 3
+
+  maxwell-boltzmann-speeds-solar-core:
+    path: /assets/images/module-03/maxwell-boltzmann-speeds-solar-core.png
+    caption: "**What to notice:** 'hot' does not mean every proton moves at one speed. The solar-core protons follow a Maxwell-Boltzmann speed distribution with distinct most-probable, mean, and rms speeds."
+    alt: "Generated white-background plot of the normalized Maxwell-Boltzmann speed distribution for protons in the 15 million kelvin solar core, with vertical lines marking the most probable, mean, and rms speeds."
+    credit: "ASTR 201 (generated)"
+    module: 3
+
+  maxwell-boltzmann-energies-barrier-tail:
+    path: /assets/images/module-03/maxwell-boltzmann-energies-barrier-tail.png
+    caption: "**What to notice:** the Coulomb barrier sits far out in the Maxwell-Boltzmann tail. A few-keV thermal scale and a MeV barrier are so far apart that classical fusion is effectively impossible."
+    alt: "Generated semilog plot of the normalized Maxwell-Boltzmann proton energy distribution in the solar core, with labels for k_B T, three-halves k_B T, the 1.4 MeV Coulomb barrier, and the classically accessible tail region."
+    credit: "ASTR 201 (generated)"
+    module: 3
+
+  coulomb-barrier-and-tunneling:
+    path: /assets/images/module-03/coulomb-barrier-and-tunneling.png
+    caption: "**What to notice:** the Coulomb barrier is tall and wide, but not infinitely forbidden. The classically forbidden region is exactly the region quantum tunneling can penetrate."
+    alt: "Generated semilog separation-versus-potential plot for proton-proton fusion, showing Coulomb repulsion, a schematic total potential including the short-range nuclear attraction, a few-keV thermal-energy line, and the classically forbidden tunneling region."
+    credit: "ASTR 201 (generated)"
+    module: 3
+
+  gamow-window-cartoon:
+    path: /assets/images/module-03/gamow-window-cartoon.png
+    caption: "**What to notice:** low-energy collisions are common but tunnel poorly; high-energy collisions tunnel better but are rare. Fusion comes mostly from a narrow middle window."
+    alt: "Generated pedagogical plot showing a Maxwell factor, a tunneling factor, and their combined product versus collision energy, with a labeled Gamow-like peak."
     credit: "ASTR 201 (generated)"
     module: 3
 
   binding-energy-curve:
     path: /assets/images/module-03/binding-energy-curve.png
-    caption: "**Binding energy per nucleon** peaks at iron-56 — the most stable nucleus. Fusion of elements lighter than iron (left, cyan) releases energy by climbing the curve. Fission of elements heavier than iron (right, purple) releases energy by descending it. Iron is nuclear ash: no energy can be extracted by either process."
-    alt: "Plot of binding energy per nucleon in MeV versus mass number A, showing key isotopes from hydrogen to uranium. The curve rises steeply through helium-4, carbon-12, and oxygen-16, peaks near iron-56 at 8.8 MeV, then gradually declines. Colored regions indicate nucleosynthesis stages: pp-chain, helium burning, and successive burning in massive stars."
+    caption: "**What to notice:** moving upward on the binding-energy curve means moving to a lower total mass-energy. That is why fusion releases energy up to iron, while fusion beyond iron costs energy."
+    alt: "Generated binding-energy-per-nucleon plot versus mass number with highlighted isotopes from hydrogen through uranium, a labeled iron peak, and annotations marking the fusion-energy and fission-energy sides of the curve."
+    credit: "ASTR 201 (generated)"
+    module: 3
+
+  fusion-energy-budget:
+    path: /assets/images/module-03/fusion-energy-budget.png
+    caption: "**What to notice:** the pp-chain releases about $26.7\\,\\mathrm{MeV}$ per net reaction, but only about $0.5\\,\\mathrm{MeV}$ escapes in neutrinos. Almost all of the energy stays in the star and powers the luminosity."
+    alt: "Generated energy-budget figure for one net proton-proton-chain reaction, showing the mass deficit in amu, the total energy release in MeV, and a horizontal bar splitting the energy into a large retained component and a small neutrino-loss component."
     credit: "ASTR 201 (generated)"
     module: 3
 
