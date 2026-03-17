@@ -21,7 +21,7 @@ Concept-Throughline:
   - The pp-chain converts 4H → He + energy, with the mass deficit (0.7%) becoming radiation via E = mc²
   - Binding energy per nucleon peaks at iron — fusion releases energy only for elements lighter than iron (foreshadowing the iron catastrophe in massive stars)
 math-level: symbolic_with_interpretation
-mode: Draft
+mode: Refine
 prerequisites: "Core temperature estimate from Reading 2 (T_c ~ 15 MK, thermal energy ~ 2 keV), Coulomb's law (conceptual), E = mc² (conceptual), hydrogen energy levels from Module 1"
 ---
 
@@ -29,7 +29,7 @@ prerequisites: "Core temperature estimate from Reading 2 (T_c ~ 15 MK, thermal e
 
 After completing this reading, you should be able to:
 
-1. **Name** the four fundamental forces of nature and explain each one's role in stellar interiors
+1. **Explain** which of the four fundamental forces dominates each part of stellar fusion and why
 2. **Explain** why the Coulomb barrier prevents classical fusion at $T_c \sim 15~\text{MK}$ and how quantum tunneling resolves this
 3. **Calculate** the de Broglie wavelength $\lambda = h/p$ and explain its physical meaning
 4. **Describe** the proton-proton chain: $4\text{H} \rightarrow \text{He} + 2e^+ + 2\nu_e + \gamma$, identifying which force governs each step
@@ -39,6 +39,15 @@ After completing this reading, you should be able to:
 ## Concept Throughline
 
 > *The Sun's core is 15 million kelvin — but that's not hot enough.* Two protons repel each other with a Coulomb barrier of $\sim 1~\text{MeV}$, while the typical thermal energy at $15~\text{MK}$ is only $\sim 2~\text{keV}$ — a factor of 500 too low. Classically, fusion is impossible. And yet the Sun fuses $6 \times 10^{11}~\text{kg}$ of hydrogen every second. The resolution requires a radical idea from quantum mechanics: particles are also waves, and waves do not stop abruptly at barriers. Protons can *tunnel* through the Coulomb barrier — but even after tunneling, the first proton-proton reaction is throttled by the weak interaction. That combination, rare enough to be slow but common enough to power the Sun, is the physics that keeps every star alive.
+
+::: {.callout-note title="Causal Map of the Problem"}
+1. Gravity compresses the stellar core.
+2. The core becomes hot and dense.
+3. Protons still do not have enough classical energy to overcome Coulomb repulsion.
+4. Quantum tunneling allows rare close approaches.
+5. The weak interaction makes the first proton-proton reaction slow.
+6. The result is slow, steady fusion that can power a star for billions of years.
+:::
 
 ::: {.callout-note title="Reading Map — Choose Your Track"}
 
@@ -84,9 +93,11 @@ Everything in the universe — every interaction between every particle — is g
 
 {{< fig standard-model-particles >}}
 
-The numbers are striking. Gravity — the force that shapes the universe on large scales — is $10^{39}$ times weaker than the strong force. It matters in stars only because it is *cumulative* and *always attractive*: every particle pulls on every other particle, and there is no "antigravity" to cancel it out. With $\sim 10^{57}$ particles in the Sun, the cumulative effect of the weakest force creates the conditions needed for the strongest force to act.
+The numbers are striking, but treat them as order-of-magnitude comparisons rather than timeless universal labels. A force's importance depends not just on its strength, but also on its range and on the scale of the problem. Gravity — the force that shapes the universe on large scales — is vastly weaker than the strong force in a proton-proton encounter. It matters in stars because it is *cumulative* and *always attractive*: every particle pulls on every other particle, and there is no "antigravity" to cancel it out. With $\sim 10^{57}$ particles in the Sun, the cumulative effect of the weakest force creates the conditions needed for the strongest force to act.
 
 > **If nothing pushed back, gravity would keep compressing matter.** The story of stellar structure is the story of what resists that compression, and on what scales each force matters.
+
+A helpful way to organize stellar physics is scale by scale: gravity dominates globally, electromagnetism dominates charged-particle encounters and radiation, the strong force dominates once nuclei get extremely close, and the weak force controls rare particle-conversion steps.
 
 ::: {.callout-tip}
 ## Think First
@@ -114,28 +125,43 @@ $$
 E_\text{Coulomb}(r) = \frac{e^2}{r}
 $$
 
-where $e = 4.803 \times 10^{-10}~\text{esu}$ is the elementary charge (in CGS/Gaussian units).
+where $e = 4.803 \times 10^{-10}~\text{esu}$ is the elementary charge in CGS/Gaussian units. We will use this as an order-of-magnitude estimate of the barrier height at nuclear separation.
 
 At the nuclear distance $r \sim 1~\text{fm} = 10^{-13}~\text{cm}$:
 
 $$
-E_\text{barrier} \sim \frac{(4.803 \times 10^{-10})^2}{10^{-13}}~\text{erg} \approx 2.3 \times 10^{-6}~\text{erg} \approx 1.4~\text{MeV}
+E_\text{barrier} \sim \frac{e^2}{r}
+= \frac{(4.803 \times 10^{-10}~\text{esu})^2}{10^{-13}~\text{cm}}
+\approx 2.3 \times 10^{-6}~\text{erg}
+$$
+
+Now convert to mega-electron-volts:
+
+$$
+E_\text{barrier}
+\approx
+\frac{2.3 \times 10^{-6}~\text{erg}}{1.602 \times 10^{-6}~\text{erg/MeV}}
+\approx 1.4~\text{MeV}
 $$
 
 ### The Mismatch
 
-In Reading 2, we estimated the typical thermal energy per particle in the solar core:
+In Reading 2, we found that the thermal-energy scale per particle in the solar core is only a few $\text{keV}$. For order-of-magnitude comparisons, physicists often compare the barrier to either $k_B T$ or $\frac{3}{2}k_B T$. These differ only by a factor of $1.5$, which does not change the conclusion. Here we will use
 
 $$
-E_\text{thermal} = \frac{3}{2}k_B T_c \approx 2~\text{keV}
+k_B T_c \approx 1.3~\text{keV},
 $$
 
-The Coulomb barrier ($\sim 1~\text{MeV}$) is roughly **500 times larger** than the typical thermal energy ($\sim 2~\text{keV}$). Classically, a proton at $2~\text{keV}$ approaching another proton would be reflected by the Coulomb barrier long before reaching nuclear distances — like trying to roll a marble over a $500~\text{m}$ hill when you can only throw it $1~\text{m}$ high.
+and remember that the typical particle energies are of order a few $\text{keV}$.
+
+The Coulomb barrier ($\sim 1~\text{MeV}$) is therefore hundreds of times larger than the thermal-energy scale in the solar core. Classically, a proton with only a few $\text{keV}$ approaching another proton would be reflected by the Coulomb barrier long before reaching nuclear distances.
 
 Even accounting for the high-energy tail of the Maxwell-Boltzmann distribution, the fraction of protons with energy $\geq 1~\text{MeV}$ is:
 
 $$
-f \sim e^{-E_\text{barrier}/k_B T_c} \sim e^{-500} \sim 10^{-217}
+f \sim e^{-E_\text{barrier}/k_B T_c}
+\sim e^{-1.4~\text{MeV}/1.3~\text{keV}}
+\sim e^{-10^3}
 $$
 
 This is effectively zero. **Classically, fusion in the Sun is impossible.**
@@ -145,18 +171,31 @@ And yet the Sun fuses $\sim 6 \times 10^{11}~\text{kg}$ of hydrogen every second
 ::: {.callout-tip}
 ## Check Yourself
 
-The Coulomb barrier between two protons is $\sim 1~\text{MeV}$, but the typical thermal energy at $T_c \sim 15~\text{MK}$ is only $\sim 2~\text{keV}$. What temperature *would* be needed for classical thermal fusion (where typical particles have enough energy to overcome the barrier)?
+The Coulomb barrier between two protons is $\sim 1~\text{MeV}$, but the thermal-energy scale at $T_c \sim 15~\text{MK}$ is only of order $\text{keV}$. What temperature *would* be needed for a rough classical fusion estimate, where the thermal energy scale matches the barrier height?
 
 ::: {.callout-note collapse="true"}
 ## Solution
 
-Set $\frac{3}{2}k_B T = E_\text{barrier} \approx 1~\text{MeV} = 1.6 \times 10^{-6}~\text{erg}$:
+For a rough classical estimate, ask when the thermal energy scale would match the barrier height:
 
 $$
-T = \frac{2 E_\text{barrier}}{3 k_B} = \frac{2 \times 1.6 \times 10^{-6}~\text{erg}}{3 \times 1.38 \times 10^{-16}~\text{erg}/\text{K}} \approx 7.7 \times 10^{9}~\text{K} \approx 8~\text{GK}
+\frac{3}{2}k_B T \sim 1~\text{MeV}
 $$
 
-Classical fusion would require a core temperature of $\sim 8$ billion kelvin — about 500 times hotter than the Sun's actual core. No **main-sequence** star has a core this hot. Classical physics cannot explain ordinary stellar fusion. Quantum mechanics can.
+Using $1~\text{MeV} = 1.6 \times 10^{-6}~\text{erg}$,
+
+$$
+T \sim \frac{2(1.6 \times 10^{-6}~\text{erg})}{3(1.38 \times 10^{-16}~\text{erg/K})}
+\approx 7.7 \times 10^{9}~\text{K}
+$$
+
+So classical fusion would require a temperature of order
+
+$$
+10^{10}~\text{K},
+$$
+
+not $1.5 \times 10^{7}~\text{K}$. No **main-sequence** star has a core this hot. Classical physics cannot explain ordinary stellar fusion. Quantum mechanics can.
 :::
 :::
 
@@ -171,23 +210,42 @@ In 1924, Louis de Broglie proposed a revolutionary idea: every particle also beh
 {{< include ../../../_includes/equations/de-broglie.qmd >}}
 {{< eqrefcard de-broglie >}}
 
-Here $h = 6.626 \times 10^{-27}~\text{erg}\cdot\text{s}$ is Planck's constant, $p = mv$ is the particle's momentum, $m$ is its mass, and $v$ is its velocity. For everyday objects (a baseball, a person), $\lambda_\text{dB}$ is absurdly small — far smaller than any atom — so wave behavior is undetectable. But for protons in a stellar core, moving at thermal velocities, the de Broglie wavelength is comparable to nuclear distances.
+Here $h = 6.626 \times 10^{-27}~\text{erg}\cdot\text{s}$ is Planck's constant, $p = mv$ is the particle's momentum, $m$ is its mass, and $v$ is its velocity. For everyday objects (a baseball, a person), $\lambda_\text{dB}$ is absurdly small — far smaller than any atom — so wave behavior is undetectable. But for protons in a stellar core, moving at thermal velocities, the de Broglie wavelength becomes far larger than the nuclear scale.
 
 ### Worked Example: de Broglie Wavelength of a Solar Core Proton
 
-A proton in the solar core has thermal energy $E \sim \frac{3}{2} k_B T_c \sim 2~\text{keV} = 3.2 \times 10^{-9}~\text{erg}$. Its thermal velocity is:
+A proton in the solar core has a thermal energy of order a few $\text{keV}$. Using $E \approx 2~\text{keV}$ as a simple estimate:
 
 $$
-v = \sqrt{\frac{2E}{m_p}} = \sqrt{\frac{2 \times 3.2 \times 10^{-9}}{1.67 \times 10^{-24}}}~\text{cm}/\text{s} = \sqrt{3.8 \times 10^{15}}~\text{cm}/\text{s} \approx 6.2 \times 10^{7}~\text{cm}/\text{s}
+E \approx 2~\text{keV}
+= 2 \times 10^3~\text{eV}
+\times 1.602 \times 10^{-12}~\text{erg/eV}
+= 3.20 \times 10^{-9}~\text{erg}
 $$
 
-The de Broglie wavelength is:
+Its speed is then
 
 $$
-\lambda_\text{dB} = \frac{h}{m_p v} = \frac{6.626 \times 10^{-27}}{(1.67 \times 10^{-24})(6.2 \times 10^7)}~\text{cm} \approx 6.4 \times 10^{-11}~\text{cm}
+v = \sqrt{\frac{2E}{m_p}}
+= \sqrt{\frac{2(3.20 \times 10^{-9}~\text{erg})}{1.67 \times 10^{-24}~\text{g}}}
 $$
 
-Compare this to the nuclear distance $\sim 10^{-13}~\text{cm}$: the de Broglie wavelength is about $600$ times larger than the nucleus. The proton's "wave nature" extends well past the nuclear distance — it is *smeared out* over a region much larger than the Coulomb barrier.
+Using $1~\text{erg} = 1~\text{g cm}^2\text{s}^{-2}$,
+
+$$
+v = \sqrt{3.83 \times 10^{15}~\text{cm}^2\text{s}^{-2}}
+= 6.2 \times 10^7~\text{cm s}^{-1}
+$$
+
+Now compute the de Broglie wavelength:
+
+$$
+\lambda_\text{dB} = \frac{h}{m_p v}
+= \frac{6.626 \times 10^{-27}~\text{erg s}}{(1.67 \times 10^{-24}~\text{g})(6.2 \times 10^7~\text{cm s}^{-1})}
+\approx 6.4 \times 10^{-11}~\text{cm}
+$$
+
+Compare this to the nuclear distance $\sim 10^{-13}~\text{cm}$: the de Broglie wavelength is about $600$ times larger than the nuclear scale. The proton is described by a wavefunction with a nonzero amplitude across a region much larger than nuclear distances. In less formal language: the proton does not behave like a tiny hard ball with a perfectly sharp edge.
 
 ### What Is Tunneling?
 
@@ -207,6 +265,10 @@ That means out of every $10^{20}$ proton-proton collisions, only *one* gets thro
 
 The solar core has an enormous proton density, about $n \sim 10^{26}~\text{protons}/\text{cm}^3$, so proton-proton encounters happen constantly. Tunneling therefore produces many **close approaches** to nuclear distances even though the probability per collision is tiny.
 
+::: {.callout-warning title="Common Misconception"}
+Tunneling is **not** the same as successful fusion. Tunneling only allows close approach. To make stable deuterium, one proton must still change identity and become a neutron. That weak-interaction step is the real bottleneck.
+:::
+
 But this is the subtle point students often miss: a tunneled close approach is **not yet a completed pp fusion reaction**. To make deuterium, one proton must also convert into a neutron. That conversion requires the **weak interaction**, and it is much slower than the barrier-crossing step.
 
 The result is exactly what stars need. Tunneling makes fusion possible at all, while the weak-force bottleneck keeps the first pp reaction so slow that the Sun does not burn through its fuel in a few thousand years. The Sun's luminosity implies about
@@ -215,7 +277,7 @@ $$
 \frac{L_\odot}{26.7~\text{MeV}} \sim 9 \times 10^{37}
 $$
 
-complete pp-chain reactions per second across the whole star — enormous on human scales, but tiny compared with the total number of proton collisions in the core. **Quantum tunneling makes fusion possible; the weak interaction makes it slow enough for stars to live a long time.**
+complete pp-chain reactions per second across the whole star — enormous on human scales, but tiny compared with the total number of proton collisions in the core. Most proton collisions do nothing. A tiny fraction tunnel. An even tinier fraction complete the weak conversion needed for Step 1. **Quantum tunneling makes fusion possible; the weak interaction makes it slow enough for stars to live a long time.**
 
 ::: {.callout-warning title="This Is Genuinely Weird"}
 Tunneling has no classical analog. There is no little trapdoor through the barrier; the proton has a probability of being found on the other side because its wave function extends through the barrier. The proton does not go over the barrier or smash through it. It appears on the far side because quantum mechanics gives a nonzero amplitude there. This is one of the most counterintuitive results in physics.
@@ -267,9 +329,9 @@ $$
 {}^1\text{H} + {}^1\text{H} \rightarrow {}^2\text{H} + e^+ + \nu_e
 $$
 
-- **Electromagnetic force:** The two protons must tunnel through the Coulomb barrier (QM tunneling)
-- **Weak nuclear force:** One proton converts to a neutron ($p \rightarrow n + e^+ + \nu_e$) — this is beta-plus decay. Without the weak force, two protons cannot form a bound nucleus (there is no stable ${}^2\text{He}$).
-- **This step is the bottleneck** because it requires *both* tunneling (rare) *and* a weak interaction (slow). The average proton in the solar core waits $\sim 10^{9}~\text{yr}$ before successfully completing this step.
+- **Electromagnetic force:** The two protons must tunnel through the Coulomb barrier to get close enough for the strong force to matter.
+- **Weak nuclear force:** One proton converts to a neutron ($p \rightarrow n + e^+ + \nu_e$) — this is beta-plus decay. Without the weak force, two protons cannot form stable deuterium.
+- **This step is the bottleneck** because the close approach requires tunneling, but the actual conversion to deuterium requires the weak interaction. The weak-interaction part is what makes Step 1 so slow. The average proton in the solar core waits $\sim 10^{9}~\text{yr}$ before successfully completing this step.
 
 **Step 2: Deuterium + Proton → Helium-3** (fast)
 
@@ -332,17 +394,23 @@ Two protons alone cannot form a stable nucleus because there is no stable ${}^2\
 
 The energy released in fusion comes from a simple but profound fact: the products weigh less than the inputs.
 
-To keep the bookkeeping clean, we will use **atomic masses** in the table below rather than bare nuclear masses. That is standard here because the electron/positron accounting cancels cleanly in the net reaction, so atomic masses let us recover the correct $26.7~\text{MeV}$ release without carrying every electron mass term separately.
+To keep the bookkeeping clean, we will use **atomic masses** in the table below rather than bare nuclear masses. The unit will be the **atomic mass unit**, abbreviated **amu**, where
+
+$$
+1~\text{amu} = 1.661 \times 10^{-24}~\text{g}.
+$$
+
+An atomic mass unit is defined as one-twelfth of the mass of a neutral carbon-12 atom. We use atomic masses rather than bare nuclear masses because, for the net hydrogen-to-helium reaction, the electron/positron bookkeeping cancels cleanly. That lets us recover the correct net energy release without carrying each electron mass term explicitly.
 
 Compare the masses:
 
 | Particle | Mass (atomic mass units) |
 |:---------|:------------------------:|
-| 4 hydrogen-1 atoms ($4 \times {}^1\text{H}$) | $4 \times 1.00783 = 4.03132~\text{u}$ |
-| 1 helium-4 (${}^4\text{He}$) | $4.00260~\text{u}$ |
-| **Mass deficit** $\Delta m$ | $0.02872~\text{u}$ |
+| 4 hydrogen-1 atoms ($4 \times {}^1\text{H}$) | $4 \times 1.00783 = 4.03132~\text{amu}$ |
+| 1 helium-4 (${}^4\text{He}$) | $4.00260~\text{amu}$ |
+| **Mass deficit** $\Delta m$ | $0.02872~\text{amu}$ |
 
-The mass deficit is $\Delta m = 0.02872~\text{u}$, which is $0.02872/4.03132 \approx 0.71\%$ of the original mass. This "missing" mass has been converted to energy via Einstein's relation:
+The mass deficit is $\Delta m = 0.02872~\text{amu}$, which is $0.02872/4.03132 \approx 0.71\%$ of the original mass. This "missing" mass has been converted to energy via Einstein's relation:
 
 {{< include ../../../_includes/equations/mass-energy.qmd >}}
 {{< eqrefcard mass-energy >}}
@@ -352,7 +420,7 @@ The mass deficit is $\Delta m = 0.02872~\text{u}$, which is $0.02872/4.03132 \ap
 Converting the mass deficit to energy:
 
 $$
-\Delta m = 0.02872~\text{u} \times 1.661 \times 10^{-24}~\text{g}/\text{u} = 4.77 \times 10^{-26}~\text{g}
+\Delta m = 0.02872~\text{amu} \times 1.661 \times 10^{-24}~\text{g/amu} = 4.77 \times 10^{-26}~\text{g}
 $$
 
 $$
@@ -362,6 +430,12 @@ $$
 **Units check:** $[\text{g} \times \text{cm}^2/\text{s}^2] = \text{erg}$. ✓
 
 **Result:** Each complete pp-chain reaction releases $\approx 26.7~\text{MeV}$ of energy. Of this, about $0.5~\text{MeV}$ is carried away by neutrinos (which escape the star immediately) and about $26.2~\text{MeV}$ is deposited as heat and radiation in the solar interior.
+
+| Quantity | Value | Meaning |
+|:---------|:-----:|:--------|
+| Total energy released per net pp-chain | $\approx 26.7~\text{MeV}$ | From the mass deficit |
+| Carried off by neutrinos | $\approx 0.5~\text{MeV}$ | Escapes almost immediately |
+| Deposited as heat/radiation | $\approx 26.2~\text{MeV}$ | Powers the star |
 
 **Context:** $26.7~\text{MeV}$ per reaction may not sound like much, but consider: the Sun fuses $\sim 6 \times 10^{11}~\text{kg}$ of hydrogen per second. The mass deficit ($0.7\%$) means $\sim 4.3 \times 10^{9}~\text{kg}/\text{s}$ ($4.3$ million tonnes per second) is being converted to pure energy. This produces $L_\odot = 3.8 \times 10^{33}~\text{erg}/\text{s}$.
 
@@ -385,7 +459,7 @@ The Sun has burned about $4.4\%$ of its mass as hydrogen fuel. Since only the co
 
 Not all fusion reactions release energy. The key is the **binding energy per nucleon** — the amount of energy needed to disassemble a nucleus into its individual protons and neutrons.
 
-Light nuclei (hydrogen, helium, lithium) have relatively *low* binding energy per nucleon — their nucleons are loosely bound. When light nuclei fuse into heavier, more tightly bound nuclei, the products have *higher* binding energy per nucleon. The difference is released as energy.
+Light nuclei (hydrogen, helium, lithium) have relatively *low* binding energy per nucleon — their nucleons are loosely bound. When light nuclei fuse into heavier, more tightly bound nuclei, the products have *higher* binding energy per nucleon. Higher binding energy per nucleon means the nucleons are held more tightly together, so the assembled nucleus has lower total mass-energy than the separated particles. That lower mass is why energy is released.
 
 The trend is easier to see with a few anchor points:
 
@@ -405,6 +479,22 @@ But the binding energy per nucleon doesn't increase forever. It peaks at **iron-
 | Beyond Fe | Fusion (combining heavy nuclei) | **No** — products are *less* tightly bound; reaction is *endothermic* |
 
 **Iron is the end of the line for fusion energy.** Fusing nuclei heavier than iron *requires* energy input rather than releasing it. This seemingly minor fact has enormous consequences: it determines how massive stars die (Reading 9).
+
+::: {.callout-tip}
+## Causal Chain Check
+
+Put these in causal order: weak interaction, tunneling, helium formation, Coulomb repulsion, gravity-driven compression.
+
+::: {.callout-note collapse="true"}
+## Answer
+
+1. Gravity-driven compression heats and densifies the core.
+2. Coulomb repulsion creates the barrier between protons.
+3. Tunneling allows rare close approaches despite that barrier.
+4. The weak interaction enables the proton-to-neutron conversion in Step 1.
+5. Repeated pp-chain reactions eventually build helium.
+:::
+:::
 
 ::: {.callout-tip}
 ## Check Yourself
@@ -458,9 +548,9 @@ It also explains why massive stars have convective *cores*: the CNO cycle dumps 
 | $h$ | Planck's constant | $6.626 \times 10^{-27}~\text{erg}\cdot\text{s}$ |
 | $\lambda_\text{dB}$ | de Broglie wavelength | cm |
 | $e$ | Elementary charge | $4.803 \times 10^{-10}~\text{esu}$ |
-| $\Delta m$ | Mass deficit (reactants minus products) | g (or u) |
+| $\Delta m$ | Mass deficit (reactants minus products) | g (or amu) |
 | $\varepsilon$ | Mass-to-energy conversion efficiency | Dimensionless ($\approx 0.007$ for H→He) |
-| $u$ | Atomic mass unit | $1.661 \times 10^{-24}~\text{g}$ |
+| amu | Atomic mass unit, defined as $1/12$ of a neutral carbon-12 atom | $1.661 \times 10^{-24}~\text{g}$ |
 | $\text{eV}$ | Electron volt (energy unit) | $1.602 \times 10^{-12}~\text{erg}$ |
 | $\text{MeV}$ | Mega-electron volt | $1.602 \times 10^{-6}~\text{erg}$ |
 
