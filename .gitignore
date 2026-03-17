@@ -21,6 +21,13 @@ _test-*
 # Quarto outputs to _site/, so HTML in source dirs is accidental
 **/*.html
 **/*_files/
+site_libs/
+**/index-listing.json
+
+# Single-page Quarto/PDF outputs rendered into source directories
+course-info/*.pdf
+handouts/*.pdf
+homework/*.pdf
 
 # LaTeX build artifacts
 **/*.aux

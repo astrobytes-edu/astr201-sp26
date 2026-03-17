@@ -21,7 +21,7 @@ Concept-Throughline:
   - The Kelvin-Helmholtz controversy shows that observations can demand new physics — gravitational contraction was too short, forcing the discovery of nuclear energy
   - The nuclear timescale scales as τ ∝ M/L ∝ M^(-2.5), so massive stars burn fast and die young — a prediction confirmed by observations of star clusters
 math-level: symbolic_with_interpretation
-mode: Draft
+mode: Refine
 prerequisites: "Stefan-Boltzmann law, mass-luminosity relation (L ∝ M^3.5), HR diagram interpretation, gravitational potential energy, basic algebra and scientific notation"
 ---
 
@@ -95,6 +95,18 @@ Lifetime $\propto$ fuel / burn rate $\propto M / M^{3.5} = M^{-2.5}$. More massi
 
 Stars are governed by three fundamental timescales, each associated with a different physical process. Their hierarchy — which is shortest, which is longest — tells you what a star is doing at any given moment.
 
+::: {.callout-note title="Timescale Grammar"}
+A useful pattern in astrophysics is
+
+$$
+\tau \sim \frac{\text{something stored}}{\text{something spent per second}}.
+$$
+
+For the Kelvin-Helmholtz timescale, the "something stored" is the star's gravitational/thermal energy reservoir and the "something spent per second" is the luminosity. For the nuclear timescale, the stored quantity is usable fusion energy and the spending rate is again the luminosity.
+
+The dynamical timescale is the odd one out. It is not "energy divided by luminosity." Instead, it is set by how quickly gravity can rearrange matter, so it depends on the star's mean density.
+:::
+
 ### The Dynamical Timescale: How Fast Could a Star Collapse?
 
 Imagine you could suddenly "turn off" all the internal pressure holding a star up. How long would it take the star to collapse under its own gravity?
@@ -158,18 +170,66 @@ A white dwarf's dynamical timescale is about 3 seconds. If its pressure support 
 
 Before anyone knew about nuclear reactions, the best guess for the Sun's energy source was **gravitational contraction** — the idea that the Sun shines by slowly shrinking, converting gravitational potential energy into heat and light.
 
-This is a reasonable idea. From Module 1, you know that the gravitational potential energy of a uniform sphere of mass $M$ and radius $R$ is (in order of magnitude):
+A powerful way to think about this is with the same grammar we just introduced:
 
 $$
-E_\text{grav} \sim \frac{GM^2}{R}
+\tau \sim \frac{\text{energy reservoir}}{\text{energy-loss rate}}.
 $$
 
-If the Sun radiates this energy at its current luminosity $L$, the time to exhaust the gravitational energy supply is the **Kelvin-Helmholtz timescale**:
+For the Kelvin-Helmholtz timescale, the relevant reservoir is the star's **gravitational binding-energy reservoir**. In order of magnitude, a self-gravitating star has
+
+$$
+|E| \sim \frac{GM^2}{R}.
+$$
+
+This is a scaling statement, not an exact structural model. A more careful treatment using the virial theorem changes only the numerical prefactor, not the dependence on $M$, $R$, and $L$.
+
+If the star has no long-term nuclear energy source, then its luminosity must come from leaking away that bound energy. Luminosity is an energy-loss rate, so the sign matters:
+
+$$
+L = -\frac{dE}{dt}.
+$$
+
+That minus sign is not decoration. If the star is losing energy, then $dE/dt < 0$, while the outward luminosity $L$ is positive.
+
+Putting those ideas together gives the Kelvin-Helmholtz timescale:
 
 {{< include ../../../_includes/equations/kelvin-helmholtz.qmd >}}
 {{< eqrefcard kelvin-helmholtz >}}
 
-Here $G$ is Newton's gravitational constant, $M$ is the star's mass, $R$ is its radius, and $L$ is its luminosity. The hidden assumption is important: this is the lifetime **if gravitational contraction is the only energy source**.
+Here $G$ is Newton's gravitational constant, $M$ is the star's mass, $R$ is its radius, and $L$ is its luminosity. The hidden assumption is important: this is the lifetime **if gravitational contraction is the only long-term energy source**.
+
+You can also see the same result from a contraction-rate argument. If
+
+$$
+E \sim -\frac{GM^2}{R},
+$$
+
+then for approximately constant mass,
+
+$$
+\frac{dE}{dt} \sim \frac{GM^2}{R^2}\frac{dR}{dt}.
+$$
+
+For a contracting star, $dR/dt < 0$, so
+
+$$
+L = -\frac{dE}{dt} \sim \frac{GM^2}{R^2}\left|\frac{dR}{dt}\right|.
+$$
+
+Rearranging gives
+
+$$
+\left|\frac{dR}{dt}\right| \sim \frac{LR^2}{GM^2},
+$$
+
+so the characteristic contraction time is
+
+$$
+\frac{R}{|dR/dt|} \sim \frac{GM^2}{RL} = \tau_\text{KH}.
+$$
+
+That interpretation matters. The Kelvin-Helmholtz timescale is **not** a free-fall time. It is the time for a star to contract **quasi-statically** as it radiates away energy.
 
 ### Worked Example: The Sun's Kelvin-Helmholtz Timescale
 
@@ -343,6 +403,8 @@ $$
 
 This is why normalization is so useful: the left side is dimensionless, the right side is dimensionless, and the answer is immediately interpretable. A value of $0.2$ means "one-fifth of the Sun's lifetime." A value of $5$ means "five times the Sun's lifetime."
 
+Notice how closely this mirrors the Kelvin-Helmholtz logic. There, the reservoir was gravitational/thermal energy and the loss rate was luminosity. Here, the reservoir is nuclear energy and the loss rate is still luminosity. Same grammar, different reservoir.
+
 ### Quick Ratio Example
 
 Suppose a star has $M = 2\,M_\odot$ and $L = 10\,L_\odot$. Then
@@ -377,17 +439,15 @@ This is one of the most important scaling relations in all of astrophysics. Let'
 
 | Star Mass ($M/M_\odot$) | Lifetime ($\tau_\text{nuc}$) | Comparison |
 |:---:|:---:|:---:|
-| $0.1$ | $\sim 10^{13}~\text{yr}$ | $\gg$ age of universe — still on MS |
+| $0.1$ | $\sim 3 \times 10^{12}~\text{yr}$ | Simple scaling only; still $\gg$ age of universe |
 | $0.5$ | $\sim 56~\text{Gyr}$ | $>$ age of universe — still on MS |
 | $1.0$ | $\sim 10~\text{Gyr}$ | Sun: halfway through |
 | $2.0$ | $\sim 1.8~\text{Gyr}$ | Short enough to see evolution in clusters |
 | $10$ | $\sim 32~\text{Myr}$ | Geologically brief |
-| $50$ | $\sim 570{,}000~\text{yr}$ | A blink |
-| $100$ | $\sim 100{,}000~\text{yr}$ | The shortest-lived stars |
 
 **The pattern is dramatic.** A $10\,M_\odot$ star has 10 times the fuel but burns it $10^{3.5} \approx 3{,}000$ times faster. Its lifetime is $10/3{,}000 \approx 1/300$ of the Sun's. A $0.1\,M_\odot$ red dwarf, on the other hand, has only $1/10$ the fuel but burns it $10^{3.5} \approx 3{,}000$ times slower — it will outlive the current age of the universe by a factor of a thousand.
 
-One caveat matters here: this is a **main-sequence scaling estimate**, not a universal law of nature. The exponent in the mass-luminosity relation changes somewhat with stellar mass, and the accessible fuel fraction is not exactly the same for every star. The scaling is still powerful because it gets the right qualitative story and the right order of magnitude.
+Two caveats matter here. At **low mass**, the luminosity scaling changes and fully convective stars can access a larger fraction of their hydrogen than the Sun can. That means the very lowest-mass stars can live even longer than the simple $M^{-2.5}$ estimate suggests. At **high mass**, the mass-luminosity relation also bends away from $L \propto M^{3.5}$, so blindly extrapolating the table to $50\,M_\odot$ or $100\,M_\odot$ would predict lifetimes that are too short. The scaling is still powerful because it gets the right qualitative story and the right order of magnitude across the broad middle of the main sequence.
 
 ### Worked Example: Why M Dwarfs Live So Long
 
@@ -398,7 +458,7 @@ Take an idealized fully convective M dwarf with
 $$
 \frac{M}{M_\odot} = 0.2
 \qquad \text{and} \qquad
-\frac{L}{L_\odot} \approx (0.2)^{3.5} \approx 0.008
+\frac{L}{L_\odot} \approx (0.2)^{3.5} \approx 0.0036
 $$
 
 For a fully convective star, most of the hydrogen can eventually be mixed through the whole star rather than being trapped outside the core. That means the accessible fuel fraction can be much larger than in the Sun. A simple order-of-magnitude comparison is:
@@ -416,19 +476,19 @@ $$
 \left(\frac{M}{M_\odot}\right)
 \left(\frac{L}{L_\odot}\right)^{-1}
 \approx
-10 \times 0.2 \times (0.008)^{-1}
-\approx 250
+10 \times 0.2 \times (0.0036)^{-1}
+\approx 560
 $$
 
 So the star's main-sequence lifetime is
 
 $$
-\tau_\text{nuc} \approx 250 \times 10~\text{Gyr} \approx 2.5 \times 10^{12}~\text{yr}
+\tau_\text{nuc} \approx 560 \times 10~\text{Gyr} \approx 5.6 \times 10^{12}~\text{yr}
 $$
 
-That is about **2.5 trillion years** — far longer than the current age of the universe. This is why the faintest red dwarfs are the Galaxy's long-term survivors.
+That is about **5.6 trillion years** — far longer than the current age of the universe. This is why the faintest red dwarfs are the Galaxy's long-term survivors.
 
-This number should not be treated as an exact prediction for every low-mass star. The mass-luminosity exponent changes at low mass, and real stellar models include more detailed microphysics. But the conclusion is robust: **the lowest-mass stars live enormously longer than Sun-like stars.**
+This number should not be treated as an exact prediction for every low-mass star. We deliberately combined two approximations: the simple luminosity scaling and the idea that full convection raises the accessible fuel fraction. Real stellar models handle both effects more carefully. But the conclusion is robust: **the lowest-mass stars live enormously longer than Sun-like stars.**
 
 ::: {.callout-tip}
 ## Check Yourself
@@ -461,7 +521,7 @@ For the Sun, the three timescales span an enormous range:
 | Timescale | Symbol | Value (Sun) | Physical Process |
 |:----------|:------:|:-----------:|:----------------|
 | Dynamical | $\tau_\text{dyn}$ | $\sim 50~\text{min}$ | Free-fall / pressure response |
-| Thermal (KH) | $\tau_\text{KH}$ | $\sim 30~\text{Myr}$ | Gravitational energy radiation |
+| Thermal (KH) | $\tau_\text{KH}$ | $\sim 30~\text{Myr}$ | Quasi-static contraction powered by the binding-energy reservoir |
 | Nuclear | $\tau_\text{nuc}$ | $\sim 10~\text{Gyr}$ | Hydrogen fusion |
 
 The hierarchy $\tau_\text{dyn} \ll \tau_\text{KH} \ll \tau_\text{nuc}$ has profound consequences:
@@ -511,7 +571,7 @@ The hierarchy spans a factor of $\sim 10^{10}$ from fastest to slowest. This eno
 | Timescale | Formula | Physical Meaning | Sun Value |
 |:----------|:-------:|:----------------|:---------:|
 | Dynamical $\tau_\text{dyn}$ | $\sim 1/\sqrt{G\bar{\rho}}$ | Free-fall time; how fast gravity rearranges matter | $\sim 50~\text{min}$ |
-| Thermal $\tau_\text{KH}$ | $\sim GM^2/(RL)$ | Time to radiate stored gravitational energy | $\sim 30~\text{Myr}$ |
+| Thermal $\tau_\text{KH}$ | $\sim GM^2/(RL)$ | Time to radiate the star's binding-energy reservoir | $\sim 30~\text{Myr}$ |
 | Nuclear $\tau_\text{nuc}$ | $\sim \varepsilon f_M Mc^2/L$ | Time to exhaust nuclear fuel | $\sim 10~\text{Gyr}$ |
 
 ### Symbol Legend
