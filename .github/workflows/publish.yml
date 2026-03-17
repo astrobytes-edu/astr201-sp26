@@ -17,6 +17,8 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      TEXLIVE_REPOSITORY: https://ctan.math.utah.edu/ctan/tex-archive/systems/texlive/tlnet
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -31,11 +33,11 @@ jobs:
       - name: Set up TinyTeX
         uses: r-lib/actions/setup-tinytex@v2
 
-      - name: Refresh tlmgr and install LaTeX packages for PDF
+      - name: Configure TinyTeX mirror and install LaTeX packages for PDF
         run: |
-          tlmgr option repository https://mirror.ctan.org/systems/texlive/tlnet
+          tlmgr option repository "$TEXLIVE_REPOSITORY"
           tlmgr update --self
-          tlmgr install titling
+          tlmgr install titling koma-script caption tcolorbox tikzfill pdfcol fontawesome5
 
       - name: Set up Python
         uses: actions/setup-python@v5
