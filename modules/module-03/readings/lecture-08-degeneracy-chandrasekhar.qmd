@@ -3,7 +3,7 @@ title: "Lecture 8: The Quantum Limit — Degeneracy Pressure and the Chandrasekh
 subtitle: "What holds up a dead star — and why does quantum mechanics impose a maximum mass?"
 author: "Dr. Anna Rosen"
 date: "2026-03-24"
-description: "White dwarfs are held up by electron degeneracy pressure — a fundamentally quantum mechanical force with no classical analogue. This reading completes the QM toolkit by introducing the Pauli exclusion principle, derives degeneracy pressure from the uncertainty principle, and shows that relativistic effects impose a maximum white dwarf mass: the Chandrasekhar limit of ~1.4 solar masses. The mass scale is set by fundamental constants, while the exact value depends on composition through the electron fraction."
+description: "White dwarfs are held up by electron degeneracy pressure — a fundamentally quantum mechanical force with no classical analogue. This reading completes the QM toolkit by introducing the Pauli exclusion principle, derives degeneracy pressure from the uncertainty principle, and shows that relativistic effects impose a maximum white dwarf mass: the Chandrasekhar limit of about 1.4 solar masses. The mass scale is set by fundamental constants, while the exact value depends on composition through the electron fraction."
 draft: false
 categories: [degeneracy-pressure, chandrasekhar-limit, pauli-exclusion, white-dwarfs, quantum-mechanics, fundamental-constants]
 course: ASTR 201
@@ -19,7 +19,7 @@ Concept-Throughline:
   - The Pauli exclusion principle completes the QM trilogy — fermions cannot share quantum states, so compressing them into small volumes forces them into high-momentum states
   - Degeneracy pressure arises from quantum mechanics, not thermal energy — it works at zero temperature and is fundamentally different from the gas pressure that supports main-sequence stars
   - Relativity imposes a speed limit (c) on electrons — as they approach c, the pressure gains slow down while gravity keeps growing, and no equilibrium exists above the Chandrasekhar mass
-  - The Chandrasekhar mass scale is set by ℏ, c, G, and m_p, while the exact value depends on composition through the electron fraction $Y_e$
+  - The Chandrasekhar mass scale is set by $\hbar$, $c$, $G$, and $m_p$, while the exact value depends on composition through the electron fraction $Y_e$
 math-level: symbolic_with_interpretation
 mode: Draft
 prerequisites: "Heisenberg uncertainty principle and confinement (Reading 6), white dwarf properties (Reading 7), de Broglie wavelength (Reading 3), virial theorem (Reading 2)"
@@ -88,9 +88,9 @@ The critical point: **this pressure has nothing to do with temperature.** Even a
 
 | Reading | QM Concept | What It Does |
 |:--------|:-----------|:-------------|
-| R3 | **Wave-particle duality** + de Broglie $\lambda$ | Enables quantum tunneling through the Coulomb barrier → fusion |
-| R6 | **Heisenberg uncertainty** $\Delta x \cdot \Delta p \geq \hbar/2$ | Confinement → momentum → zero-point energy → pressure at $T = 0$ |
-| **R8** | **Pauli exclusion principle** | Fermions fill momentum states from bottom up → degeneracy pressure |
+| R3 | **Wave-particle duality** + de Broglie $\lambda$ | Enables quantum tunneling through the Coulomb barrier, making fusion possible |
+| R6 | **Heisenberg uncertainty** $\Delta x \cdot \Delta p \geq \hbar/2$ | Confinement produces momentum, zero-point energy, and pressure even at $T = 0$ |
+| **R8** | **Pauli exclusion principle** | Fermions fill momentum states from the bottom up, producing degeneracy pressure |
 
 Together, these three principles explain:
 - Why stars can shine (R3: tunneling makes fusion possible)
@@ -184,7 +184,11 @@ At high density and low temperature, $P_\text{deg}$ dominates — the gas is **d
 The **Fermi energy** $E_F$ is the kinetic energy of the highest-occupied momentum state — the fastest electron, which was forced into a high-energy orbit by the exclusion principle. For a white dwarf:
 
 $$
-E_F = \frac{p_F^2}{2m_e} = \frac{\hbar^2}{2m_e}\left(\frac{3\pi^2 n_e}{1}\right)^{2/3}
+E_F = \frac{p_F^2}{2m_e}
+$$
+
+$$
+E_F = \frac{\hbar^2}{2m_e}\left(3\pi^2 n_e\right)^{2/3}
 $$
 
 At $\rho \sim 10^6~\text{g}/\text{cm}^3$ (typical white dwarf):
@@ -196,7 +200,13 @@ $$
 (The factor of 2 assumes equal numbers of protons and neutrons — each proton contributes one electron.)
 
 $$
-E_F \sim \frac{(10^{-27})^2 \times (3 \times 10^{29})^{2/3}}{10^{-27}} \sim 10^{-7}~\text{erg} \sim 0.06~\text{MeV}
+E_F
+\sim
+\frac{(10^{-27})^2 \times (3 \times 10^{29})^{2/3}}{10^{-27}}
+$$
+
+$$
+E_F \sim 10^{-7}~\text{erg} \sim 0.06~\text{MeV}
 $$
 
 This Fermi energy ($\sim 0.06~\text{MeV}$) is much less than the electron rest-mass energy ($m_e c^2 = 0.511~\text{MeV}$), confirming that electrons in a typical white dwarf are non-relativistic. But as density increases (more massive white dwarfs), $E_F$ approaches $m_e c^2$ — and relativistic effects become crucial. This is where the Chandrasekhar limit emerges.
@@ -423,7 +433,7 @@ $$
 
 {{< eqrefcard wd-mass-radius >}}
 
-**More massive white dwarfs are smaller.** This is the opposite of main-sequence stars ($R \propto M^{0.8}$) and ordinary objects (a bigger rock is more massive). It's a direct consequence of degeneracy physics: more mass → more gravity → electrons squeezed harder → denser → smaller star.
+**More massive white dwarfs are smaller.** This is the opposite of main-sequence stars ($R \propto M^{0.8}$) and ordinary objects (a bigger rock is more massive). It's a direct consequence of degeneracy physics: more mass means stronger gravity, tighter electron confinement, higher density, and therefore a smaller star.
 
 As $M \rightarrow M_\text{Ch}$, the electrons become relativistic, the pressure softens, and the non-relativistic mass-radius trend fails:
 
@@ -505,19 +515,21 @@ The most important ideas from this reading:
 │  Attacker:    Gravity                                │
 │  Defender:    Electron degeneracy pressure (QM)      │
 │  Status:      CONDITIONAL STALEMATE.                 │
-│               Below 1.4 M☉: degeneracy wins.        │
-│               AT 1.4 M☉: electrons go relativistic, │
-│               pressure fails, R → 0. GRAVITY WINS.  │
+│               Below 1.4 solar masses: degeneracy     │
+│               wins. At 1.4 solar masses: electrons   │
+│               go relativistic, pressure fails, and   │
+│               gravity wins.                          │
 │                                                      │
 │  The Chandrasekhar limit:                            │
-│  M_Ch = (ℏc/G)^{3/2} / m_p² ≈ 1.4 M☉             │
-│  — built from four fundamental constants.            │
+│  About 1.4 solar masses, built from four            │
+│  fundamental constants.                              │
 │                                                      │
 │  Scores so far:                                      │
-│  M < 0.08 M☉: no fusion, QM wins (brown dwarfs)    │
-│  0.08–8 M☉: fusion → WD (QM holds, < 1.4 M☉)     │
-│  8+ M☉: core > 1.4 M☉ → ??? → R9–R10             │
-│  Next: What happens to massive star cores? → R9      │
+│  Below 0.08 solar masses: no fusion; QM wins.       │
+│  From 0.08 to 8 solar masses: fusion, then white    │
+│  dwarf if the core stays below 1.4 solar masses.    │
+│  Above that: massive cores keep collapsing. See R9. │
+│  Next: What happens to massive star cores? See R9.   │
 └──────────────────────────────────────────────────────┘
 ```
 

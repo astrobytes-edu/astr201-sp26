@@ -944,9 +944,16 @@ figures:
 
   random-walk:
     path: /assets/images/module-03/random-walk.png
-    caption: "**A photon's random walk** through the solar interior. Left: a simulated 2,000-step random walk shows how scattering produces a tangled path. The net displacement is only √N × ℓ — far less than the total path length. Right: the real numbers for the Sun — ~10²⁴ scatterings, ~170,000 years from core to surface, versus 2.3 seconds in a straight line."
+    caption: "**A photon's random walk** through the solar interior. Left: a simulated 2,000-step random walk shows how scattering produces a tangled path. The net displacement grows only with the square root of the number of steps, so it stays far smaller than the total path length. Right: the real numbers for the Sun — about $10^{24}$ scatterings, about $170{,}000$ years from core to surface, versus 2.3 seconds in a straight line."
     alt: "Two-panel figure. Left panel shows a colorful simulated random walk of 2000 steps with start point, end point, and net displacement arrow. Right panel lists key numbers: mean free path 1 cm, 10^24 scatterings, diffusion time 170,000 years, straight-line time 2.3 seconds."
     credit: "ASTR 201 (generated)"
+    module: 3
+
+  diffusion-vs-straight-line:
+    path: /assets/images/module-03/diffusion-vs-straight-line.svg
+    caption: "**What to notice:** a straight-line beam crosses the star in one stellar radius, but radiative diffusion follows a tangled path whose total length is vastly larger. The step size stays tiny, so the transport time explodes even though each individual step is taken at the speed of light."
+    alt: "Two-panel comparison between straight streaming and radiative diffusion. The left panel shows a direct path from the stellar core to the surface. The right panel shows a tangled random-walk path with many short steps reaching the same surface only after a much longer total path."
+    credit: "Course illustration (A. Rosen)"
     module: 3
 
   stellar-structure-zones:

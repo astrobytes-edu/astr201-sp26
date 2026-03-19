@@ -17,9 +17,9 @@ learning-objectives:
   - Connect opacity and radiation transport to the Eddington luminosity (maximum luminosity set by radiation pressure)
 Concept-Throughline:
   - Stars are opaque — photons cannot stream freely from core to surface; they scatter trillions of times
-  - The mean free path (ℓ = 1/κρ) sets how far a photon travels between interactions
-  - The random walk (d = √N × ℓ) explains why energy transport is slow — a simple solar-core estimate gives about 250,000 years, while detailed solar models give about 170,000 years
-  - Radiation pressure (P_rad = aT⁴/3) is negligible in the Sun but dominates in massive stars, setting the Eddington luminosity limit
+  - The mean free path sets how far radiation travels between interactions
+  - Random-walk scaling explains why energy transport is slow: the net distance grows only as the square root of the number of steps
+  - Radiation pressure is negligible in the Sun but grows rapidly with temperature, eventually helping set the Eddington luminosity limit in massive stars
 math-level: symbolic_with_interpretation
 mode: Draft
 prerequisites: "Photon properties from Module 1 (speed of light, wavelength, energy), nuclear fusion from Reading 3 (energy released in the core), hydrostatic equilibrium from Reading 2"
@@ -30,10 +30,10 @@ prerequisites: "Photon properties from Module 1 (speed of light, wavelength, ene
 After completing this reading, you should be able to:
 
 1. **Define** opacity $\kappa$ and explain its role in determining how far a photon travels between interactions
-2. **Calculate** the mean free path $\ell = 1/(\kappa\rho)$ and compare it to stellar radii
-3. **Apply** the random walk to estimate the photon diffusion time: $t_\text{diff} \sim R^2/(\ell c)$
+2. **Calculate** the mean free path $\ell = \frac{1}{\kappa\rho}$ and compare it to stellar radii
+3. **Apply** the random walk to estimate the photon diffusion time: $t_\text{diff} \sim \frac{R^2}{\ell c}$
 4. **Explain** radiative diffusion as the primary energy transport mechanism in stellar interiors
-5. **Define** radiation pressure $P_\text{rad} = aT^4/3$ and explain when it matters
+5. **Define** radiation pressure $P_\text{rad} = \frac{aT^4}{3}$ and explain when it matters
 6. **Connect** radiation pressure to the Eddington luminosity $L_\text{Edd}$
 
 ## Concept Throughline
@@ -75,7 +75,7 @@ $$
 \kappa~[\text{cm}^2/\text{g}]
 $$
 
-Higher opacity means the material is more effective at intercepting photons. Opacity depends on the temperature, density, and composition of the gas — the dominant physical processes change with conditions.
+Higher opacity means the material is more effective at intercepting photons. Opacity depends on the temperature, density, and composition of the gas — the dominant physical processes change with conditions. Opacity is not a single physical process but a sum over many interaction mechanisms, each of which dominates in different temperature and density regimes.
 
 | Opacity Source | Physical Process | Dominates When |
 |:-------------|:-----------------|:--------------|
@@ -113,14 +113,32 @@ where $\kappa$ is the opacity ($\text{cm}^2/\text{g}$) and $\rho$ is the mass de
 The solar core has density $\rho_c \approx 150~\text{g}/\text{cm}^3$ (about 150 times denser than water, or about 10 times denser than lead). With electron-scattering opacity $\kappa \approx 0.34~\text{cm}^2/\text{g}$:
 
 $$
-\ell = \frac{1}{\kappa\,\rho_c} = \frac{1}{(0.34)(150)}~\text{cm} = \frac{1}{51}~\text{cm} \approx 0.02~\text{cm} \approx 0.2~\text{mm}
+\ell = \frac{1}{\kappa\,\rho_c}
+$$
+
+$$
+\ell = \frac{1}{(0.34~\text{cm}^2\,\text{g}^{-1})(150~\text{g}\,\text{cm}^{-3})}
+$$
+
+$$
+\ell = \frac{1}{51}~\text{cm} \approx 0.02~\text{cm} \approx 0.2~\text{mm}
 $$
 
 **The mean free path in the solar core is about $0.2~\text{mm}$** — smaller than a grain of sand. A photon travels less than a millimeter before being scattered by a free electron.
 
-**Units check:** $[\kappa\rho] = (\text{cm}^2/\text{g})(\text{g}/\text{cm}^3) = 1/\text{cm}$. Taking the reciprocal: $\ell$ is in cm. ✓
+**Units check:**
+
+$$
+[\kappa\rho] = \left(\frac{\text{cm}^2}{\text{g}}\right)\left(\frac{\text{g}}{\text{cm}^3}\right) = \text{cm}^{-1}
+$$
+
+$$
+[\ell] = \frac{1}{[\kappa\rho]} = \text{cm}
+$$
 
 Compare this to the solar radius: $R_\odot = 7.0 \times 10^{10}~\text{cm}$. The ratio $R_\odot/\ell \sim 3.5 \times 10^{12}$ — a photon must travel about $3.5$ trillion mean free paths to cross the Sun. It cannot stream out; it must *diffuse*.
+
+The diffusion approximation applies when the mean free path satisfies $\ell \ll R$. In this regime, radiation transport behaves like a random walk rather than free streaming.
 
 ::: {.callout-tip}
 ## Check Yourself
@@ -130,8 +148,16 @@ The Earth's atmosphere has an opacity of roughly $\kappa \sim 10^{-6}~\text{cm}^
 ::: {.callout-note collapse="true"}
 ## Solution
 
+$$ 
+\ell = \frac{1}{\kappa\rho}
 $$
-\ell = \frac{1}{\kappa\rho} = \frac{1}{(10^{-6})(10^{-3})}~\text{cm} = \frac{1}{10^{-9}}~\text{cm} = 10^{9}~\text{cm} = 10{,}000~\text{km}
+
+$$
+\ell = \frac{1}{(10^{-6}~\text{cm}^2\,\text{g}^{-1})(10^{-3}~\text{g}\,\text{cm}^{-3})}
+$$
+
+$$
+\ell = 10^{9}~\text{cm} = 10{,}000~\text{km}
 $$
 
 The mean free path for visible light in Earth's atmosphere is about $10{,}000~\text{km}$ — much larger than the thickness of the atmosphere ($\sim 100~\text{km}$). Photons travel freely through the atmosphere without scattering, which is why the atmosphere is transparent to visible light. (This is *not* true for infrared radiation — greenhouse gases have much higher IR opacity, which is why the greenhouse effect works.)
@@ -155,17 +181,27 @@ The key property of a random walk is that the net distance traveled after $N$ st
 The $\sqrt{N}$ factor is devastating. To travel a net distance $d$ by random walk, you need:
 
 $$
-N = \left(\frac{d}{\ell}\right)^2
+N \sim \left(\frac{d}{\ell}\right)^2
 $$
 
 **What this says:** Random walks are extremely inefficient. To go twice as far, you need *four* times as many steps. To cross the Sun ($d = R_\odot$), the number of scatterings is not $R_\odot/\ell$ but $(R_\odot/\ell)^2$.
+
+{{< fig diffusion-vs-straight-line >}}
 
 ### Worked Example: Photon Diffusion Time in the Sun
 
 **Number of scatterings:**
 
 $$
-N = \left(\frac{R_\odot}{\ell}\right)^2 = \left(\frac{7.0 \times 10^{10}}{0.02}\right)^2 = (3.5 \times 10^{12})^2 \approx 1.2 \times 10^{25}
+N \sim \left(\frac{R_\odot}{\ell}\right)^2
+$$
+
+$$
+N \sim \left(\frac{7.0 \times 10^{10}~\text{cm}}{0.02~\text{cm}}\right)^2
+$$
+
+$$
+N \sim (3.5 \times 10^{12})^2 \approx 1.2 \times 10^{25}
 $$
 
 About $10^{25}$ scatterings — ten trillion trillion bounces.
@@ -173,7 +209,15 @@ About $10^{25}$ scatterings — ten trillion trillion bounces.
 **Total path length:** The photon travels at speed $c$ between each scattering, so the total distance traveled is:
 
 $$
-d_\text{total} = N \times \ell = 1.2 \times 10^{25} \times 0.02~\text{cm} = 2.4 \times 10^{23}~\text{cm}
+d_\text{total} \sim N\ell
+$$
+
+$$
+d_\text{total} \sim (1.2 \times 10^{25})(0.02~\text{cm})
+$$
+
+$$
+d_\text{total} \sim 2.4 \times 10^{23}~\text{cm}
 $$
 
 For comparison, the straight-line distance to the Sun's surface is only $R_\odot = 7 \times 10^{10}~\text{cm}$. The photon travels $\sim 3 \times 10^{12}$ times farther than necessary — it covers the equivalent of about $0.3~\text{light-years}$, all inside a sphere of radius $7 \times 10^{10}~\text{cm}$.
@@ -181,20 +225,36 @@ For comparison, the straight-line distance to the Sun's surface is only $R_\odot
 **Diffusion time:**
 
 $$
-t_\text{diff} = \frac{d_\text{total}}{c} = \frac{N\ell}{c} = \frac{R_\odot^2}{\ell c}
+t_\text{diff} \sim \frac{d_\text{total}}{c}
 $$
 
 $$
-t_\text{diff} = \frac{(7.0 \times 10^{10})^2}{(0.02)(3.0 \times 10^{10})}~\text{s} = \frac{4.9 \times 10^{21}}{6.0 \times 10^{8}}~\text{s} \approx 8 \times 10^{12}~\text{s}
+t_\text{diff} \sim \frac{N\ell}{c} \sim \frac{R_\odot^2}{\ell c}
+$$
+
+$$
+t_\text{diff} \sim \frac{(7.0 \times 10^{10}~\text{cm})^2}{(0.02~\text{cm})(3.0 \times 10^{10}~\text{cm}\,\text{s}^{-1})}
+$$
+
+$$
+t_\text{diff} \approx 8 \times 10^{12}~\text{s}
 $$
 
 Converting to years ($1~\text{yr} \approx 3.15 \times 10^7~\text{s}$):
 
 $$
-t_\text{diff} \approx \frac{8 \times 10^{12}}{3.15 \times 10^7}~\text{yr} \approx 2.5 \times 10^5~\text{yr} \approx 250{,}000~\text{yr}
+t_\text{diff} \approx \frac{8 \times 10^{12}~\text{s}}{3.15 \times 10^7~\text{s}\,\text{yr}^{-1}}
 $$
 
-**Units check:** $[R^2/(\ell c)] = \text{cm}^2/(\text{cm} \times \text{cm}/\text{s}) = \text{s}$. ✓
+$$
+t_\text{diff} \approx 2.5 \times 10^5~\text{yr} \approx 250{,}000~\text{yr}
+$$
+
+**Units check:**
+
+$$
+\left[\frac{R^2}{\ell c}\right] = \frac{\text{cm}^2}{\text{cm}\,(\text{cm}\,\text{s}^{-1})} = \text{s}
+$$
 
 **Sanity check:** Detailed solar models give $\sim 170{,}000~\text{yr}$. Our estimate of $\sim 250{,}000~\text{yr}$ uses solar-core values everywhere instead of a full interior profile, so being within a factor of $\sim 1.5$ is exactly what we should expect from a one-zone calculation.
 
@@ -205,30 +265,50 @@ The sunlight you see from the Sun left its *surface* $8~\text{minutes}$ ago. But
 :::
 
 ::: {.callout-tip}
-## Misconception Check
+## Misconception Check — Photon Speed
 
-If photons always move at speed $c$, why doesn't solar energy reach the surface in about $2$ seconds?
+True or false: energy moves slowly through the Sun because photons move slowly.
 
 ::: {.callout-note collapse="true"}
 ## Answer
 
-Because the photon directions are constantly randomized. Between interactions each photon segment moves at $c$, but the **net outward displacement** only grows like $\sqrt{N}\,\ell$, not $N\ell$. The speed of each step is large; the efficiency of the random walk is terrible.
+False. Photons always move at $c$. The transport is slow because scattering, absorption, and re-emission constantly randomize the direction of travel, so the **net outward displacement** only grows like $\sqrt{N}\,\ell$, not $N\ell$.
 :::
 :::
 
 ::: {.callout-tip}
-## Check Yourself
+## Check Yourself — Scaling
 
-If the Sun's opacity suddenly doubled (making it twice as opaque), what would happen to the mean free path and the photon diffusion time?
+Using
+
+$$
+t_\text{diff} \sim \frac{R^2}{\ell c}
+$$
+
+if the mean free path decreases by a factor of $10$, what happens to $t_\text{diff}$?
 
 ::: {.callout-note collapse="true"}
 ## Solution
 
-If $\kappa \rightarrow 2\kappa$, then:
-- Mean free path: $\ell = 1/(\kappa\rho) \rightarrow \ell/2$ (halved)
-- Diffusion time: $t_\text{diff} = R^2/(\ell c) \rightarrow 2R^2/(\ell c) = 2\,t_\text{diff}$ (doubled)
+If
 
-The photon diffusion time is inversely proportional to the mean free path: $t_\text{diff} \propto 1/\ell \propto \kappa$. More opaque stars transport energy *more slowly*, which has direct consequences for stellar structure — if energy can't escape fast enough via radiation, convection takes over (Reading 5).
+$$
+\ell \rightarrow \frac{\ell}{10},
+$$
+
+then
+
+$$
+t_\text{diff} \rightarrow \frac{R^2}{(\ell/10)c} = 10\,t_\text{diff}.
+$$
+
+The diffusion time becomes **ten times longer**. In other words,
+
+$$
+t_\text{diff} \propto \frac{1}{\ell} \propto \kappa.
+$$
+
+Smaller mean free paths and higher opacities make radiative transport slower.
 :::
 :::
 
@@ -238,7 +318,7 @@ The photon diffusion time is inversely proportional to the mean free path: $t_\t
 
 ### From Random Walks to Energy Transport
 
-The random walk picture tells us how individual photons wander, but what matters for stellar structure is how *energy* flows. The energy flows outward because the core is hotter than the surface — there are more energetic photons in the core than near the surface. On average, more energy is carried outward (from hot to cool) than inward, producing a net energy flux.
+The random walk picture tells us how radiation is repeatedly redirected, but what matters for stellar structure is how *energy* flows. Individual photons are constantly absorbed and re-emitted, so the identity of a photon is not preserved. What actually diffuses outward is **energy**, not a single photon traveling from core to surface. The energy flows outward because the core is hotter than the surface — there are more energetic photons in the core than near the surface. On average, more energy is carried outward (from hot to cool) than inward, producing a net energy flux.
 
 This process is called **radiative diffusion** — energy "leaks" outward through an opaque medium, driven by the temperature gradient. The luminosity at radius $r$ is given by:
 
@@ -248,15 +328,16 @@ This process is called **radiative diffusion** — energy "leaks" outward throug
 
 where $a = 4\sigma/c = 7.56 \times 10^{-15}~\text{erg}\,\text{cm}^{-3}\,\text{K}^{-4}$ is the radiation constant.
 
-**What this says in plain English:** The luminosity flowing outward through radius $r$ depends on three things:
+This equation says:
 
-1. **The temperature gradient** ($dT/dr$) — steeper gradient means faster energy flow
-2. **The opacity** ($\kappa$) — higher opacity means slower energy flow
-3. **The surface area** ($4\pi r^2$) — more area means more energy can flow through
+- energy flows down a temperature gradient
+- high opacity ($\kappa$) suppresses transport
+- high density ($\rho$) suppresses transport
+- larger surface area ($4\pi r^2$) allows more energy flow
 
 **Units check:** $[aT^4] = \text{erg}\,\text{cm}^{-3}$, so $[d(aT^4)/dr] = \text{erg}\,\text{cm}^{-4}$. Multiplying by $r^2 c/(\kappa\rho)$ gives $\text{cm}^2 \times \text{cm}/\text{s} \times \text{cm} \times \text{erg}\,\text{cm}^{-4} = \text{erg}/\text{s}$, which is exactly a luminosity.
 
-**The key insight:** Radiative diffusion is *slow* precisely because opacity is high. The energy doesn't stream — it leaks, like heat through an insulating wall. This is why a photon diffusion time of order $10^5$ years is consistent with individual photons moving at $c$.
+**The key insight:** Radiative diffusion is *slow* precisely because opacity is high. The energy doesn't stream — it leaks, like heat through an insulating wall. This is why a diffusion time of order $10^5$ years is consistent with individual photons moving at $c$. If radiative diffusion cannot carry energy fast enough, the star develops a steeper temperature gradient until a different transport mechanism — convection — takes over.
 
 ::: {.callout-note title="Observable → Model → Inference" .omi}
 **Observable:** The Sun's luminosity $L_\odot = 3.8 \times 10^{33}~\text{erg}/\text{s}$ and its surface temperature $T_\text{eff} = 5{,}800~\text{K}$.
@@ -286,14 +367,26 @@ where $a = 7.56 \times 10^{-15}~\text{erg}\,\text{cm}^{-3}\,\text{K}^{-4}$ is th
 
 In the Sun, radiation pressure is small compared to gas pressure:
 
+$$ 
+\frac{P_\text{rad}}{P_\text{gas}} \sim \frac{aT_c^4/3}{\rho_c k_B T_c / m_p}
 $$
-\frac{P_\text{rad}}{P_\text{gas}} \sim \frac{aT_c^4/3}{\rho_c k_B T_c / m_p} \sim \frac{a T_c^3 m_p}{3\rho_c k_B}
+
+$$
+\frac{P_\text{rad}}{P_\text{gas}} \sim \frac{a T_c^3 m_p}{3\rho_c k_B}
 $$
 
 For the Sun ($T_c \approx 1.5 \times 10^7~\text{K}$, $\rho_c \approx 150~\text{g}/\text{cm}^3$):
 
 $$
-\frac{P_\text{rad}}{P_\text{gas}} \sim \frac{(7.56 \times 10^{-15})(1.5 \times 10^7)^3(1.67 \times 10^{-24})}{3(150)(1.38 \times 10^{-16})} \approx 6 \times 10^{-4}
+\frac{P_\text{rad}}{P_\text{gas}} \sim \frac{a T_c^3 m_p}{3\rho_c k_B}
+$$
+
+$$
+\frac{P_\text{rad}}{P_\text{gas}} \sim \frac{(7.56 \times 10^{-15})(1.5 \times 10^7)^3(1.67 \times 10^{-24})}{3(150)(1.38 \times 10^{-16})}
+$$
+
+$$
+\frac{P_\text{rad}}{P_\text{gas}} \approx 6 \times 10^{-4}
 $$
 
 Radiation pressure is only $\sim 0.06\%$ of the gas pressure in the Sun — completely negligible. But radiation pressure scales as $T^4$ while gas pressure scales as $T$, so radiation pressure grows much faster in hotter stars.
@@ -317,11 +410,19 @@ where $G$ is Newton's gravitational constant, $M$ is the star's mass, $c$ is the
 Using electron-scattering opacity $\kappa \approx 0.34~\text{cm}^2/\text{g}$:
 
 $$
-L_\text{Edd} = \frac{4\pi (6.674 \times 10^{-8})(2.0 \times 10^{33})(3.0 \times 10^{10})}{0.34}~\text{erg}/\text{s}
+L_\text{Edd} = \frac{4\pi G M_\odot c}{\kappa}
 $$
 
 $$
-L_\text{Edd} \approx \frac{5.0 \times 10^{37}}{0.34} \approx 1.5 \times 10^{38}~\text{erg}/\text{s} \approx 3.8 \times 10^{4}\,L_\odot
+L_\text{Edd} = \frac{4\pi (6.674 \times 10^{-8})(2.0 \times 10^{33})(3.0 \times 10^{10})}{0.34}~\text{erg}\,\text{s}^{-1}
+$$
+
+$$
+L_\text{Edd} \approx \frac{5.0 \times 10^{37}}{0.34}~\text{erg}\,\text{s}^{-1}
+$$
+
+$$
+L_\text{Edd} \approx 1.5 \times 10^{38}~\text{erg}\,\text{s}^{-1} \approx 3.8 \times 10^{4}\,L_\odot
 $$
 
 The Sun's Eddington luminosity is about $38{,}000\,L_\odot$ — roughly $38{,}000$ times its actual luminosity. The Sun is far below its Eddington limit, so radiation pressure is dynamically unimportant. But a $100\,M_\odot$ star, with $L \sim 10^6\,L_\odot$ and $L_\text{Edd} \sim 3.8 \times 10^6\,L_\odot$, is *approaching* its limit.
@@ -365,9 +466,9 @@ At $M \sim 100\,M_\odot$, the actual luminosity approaches the Eddington limit. 
 | Quantity | Formula | Sun Value |
 |:---------|:--------|:---------:|
 | Opacity (electron scattering) | $\kappa_\text{es} \approx 0.34~\text{cm}^2/\text{g}$ | $0.34~\text{cm}^2/\text{g}$ |
-| Mean free path (core) | $\ell = 1/(\kappa\rho)$ | $\sim 0.02~\text{cm}$ |
-| Number of scatterings | $N = (R/\ell)^2$ | $\sim 10^{25}$ |
-| Photon diffusion time | $t_\text{diff} = R^2/(\ell c)$ | $\sim 250{,}000~\text{yr}$ (core estimate) |
+| Mean free path (core) | $\ell = \frac{1}{\kappa\rho}$ | $\sim 0.02~\text{cm}$ |
+| Number of scatterings | $N \sim \left(\frac{R}{\ell}\right)^2$ | $\sim 10^{25}$ |
+| Photon diffusion time | $t_\text{diff} \sim \frac{R^2}{\ell c}$ | $\sim 250{,}000~\text{yr}$ (core estimate) |
 | Radiation pressure (core) | $P_\text{rad} = aT^4/3$ | $\sim 10^{13}~\text{dyn}/\text{cm}^2$ |
 | Eddington luminosity | $L_\text{Edd} = 4\pi GMc/\kappa$ | $\sim 3.8 \times 10^4\,L_\odot$ |
 
@@ -405,7 +506,7 @@ The most important ideas from this reading:
 ├──────────────────────────────────────────────────────┤
 │  Attacker:    Gravity (always)                       │
 │  Defender:    Thermal pressure (from nuclear fusion)  │
-│  New player:  Radiation pressure (P_rad = aT⁴/3)    │
+│  New player:  Radiation pressure (rises as T^4)      │
 │  Status:      BALANCED — energy flows outward by     │
 │               radiative diffusion, but slowly. The   │
 │               star is a self-regulating thermostat.   │
@@ -415,8 +516,10 @@ The most important ideas from this reading:
 │               gravity directly — and sometimes wins.  │
 │  Takeaway:    Photons move at c, but net outward      │
 │               transport is slow because random walks  │
-│               only gain distance as sqrt(N).          │
-│  Next:        Why does L ∝ M^3.5? → Reading 5        │
+│               only gain distance as the square root   │
+│               of the number of steps.                 │
+│  Next:        Why luminosity rises so steeply with    │
+│               mass — Reading 5                        │
 └──────────────────────────────────────────────────────┘
 ```
 

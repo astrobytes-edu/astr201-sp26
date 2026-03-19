@@ -19,7 +19,7 @@ learning-objectives:
   - Connect hydrostatic equilibrium to the dynamical timescale and explain why departures from balance are corrected almost instantly
 Concept-Throughline:
   - A star is a pressure-gravity balancing act — the pressure gradient must increase toward the center to support the weight of overlying layers
-  - Hydrostatic equilibrium (dP/dr = -ρg) is the foundational equation of stellar structure — every other equation builds on it
+  - Hydrostatic equilibrium is the foundational equation of stellar structure — every other equation builds on it
   - The virial theorem connects total thermal and gravitational energy — and predicts that gravitational contraction heats a star (negative heat capacity)
   - From hydrostatic equilibrium, the virial theorem, and the ideal-gas picture, we can estimate a solar core temperature of order 10–20 MK — no nuclear physics needed
 math-level: symbolic_with_interpretation
@@ -38,7 +38,7 @@ After completing this reading, you should be able to:
 5. **Estimate** a star's central temperature: $T_c \sim \frac{\mu G M m_p}{k_B R}$ using hydrostatic scaling and the ideal-gas law
 6. **Explain** why gravity alone predicts a stellar core temperature of order $10^7\,\mathrm{K}$ for the Sun
 7. **Explain** why a self-gravitating system has negative heat capacity — it gets *hotter* as it loses energy
-8. **Connect** hydrostatic equilibrium to the dynamical timescale: departures are corrected on $\tau_{\text{dyn}} \sim$ minutes
+8. **Connect** hydrostatic equilibrium to the dynamical timescale: departures are corrected on a timescale of order minutes for the Sun
 
 :::{.callout-note title="Math Grammar Convention"}
 In this reading, we will be careful about what each mathematical symbol means.
@@ -87,7 +87,7 @@ $$
 T_c \sim \frac{\mu G M m_p}{k_B R}
 $$
 
-This is the central logic of stellar structure.
+This chain is the logic of stellar structure.
 :::
 
 {{< fig hydrostatic-reasoning-ladder >}}
@@ -131,7 +131,7 @@ F_{P,\text{net}} = \left[P(r) - P(r+dr)\right]A.
 $$
 If $P(r+dr) = P(r)$, then $F_{P,\text{net}} = 0$ no matter how large the common pressure is. A star is supported only when the lower side pushes harder than the upper side.
 
-This is the key insight: it is the **pressure gradient**,
+The physical point is that it is the **pressure gradient**,
 $$
 \frac{dP}{dr},
 $$
@@ -303,43 +303,68 @@ The plot below uses a Maxwell-Boltzmann speed distribution for protons as a peda
 #| code-fold: true
 #| warning: false
 #| out-width: "100%"
-#| fig-cap: "**What to notice:** temperature describes a distribution of particle speeds, not a single particle speed. Higher temperatures broaden the Maxwell-Boltzmann distribution and shift it toward faster particles. This is a pedagogical illustration for protons; the key idea is the changing distribution, not memorizing the formula."
-#| fig-alt: "Single plot of normalized Maxwell-Boltzmann speed distributions for protons at 10^4 K, 10^6 K, and 1.5 times 10^7 K. The hotter curves are broader and peak at higher speeds."
+#| fig-cap: "**What to notice:** temperature describes a distribution of particle speeds, not a single particle speed. The bottom axis uses CGS speed units ($\\mathrm{cm\\,s^{-1}}$), and the top axis shows the equivalent single-particle kinetic temperature scale $T_{\\mathrm{eq}} = \\frac{m_p v^2}{2k_B}$. Higher temperatures broaden the Maxwell-Boltzmann distribution and shift it toward faster particles."
+#| fig-alt: "Log-scale plot of normalized Maxwell-Boltzmann speed distributions for protons at 10^4 K, 10^6 K, and 1.5 times 10^7 K. The bottom axis shows speed in centimeters per second, and the top axis shows the equivalent kinetic temperature scale. Hotter curves are broader and shifted toward higher speeds."
 
 import numpy as np
 import matplotlib.pyplot as plt
+from matplotlib.ticker import LogFormatterMathtext
 
-k_b = 1.380649e-23      # J K^-1
-m_p = 1.6726219e-27     # kg
+k_b = 1.380649e-16      # erg K^-1
+m_p = 1.6726219e-24     # g
 
 temperatures = [1.0e4, 1.0e6, 1.5e7]
 labels = [r"$10^4\,\mathrm{K}$", r"$10^6\,\mathrm{K}$", r"$1.5\times10^7\,\mathrm{K}$"]
 colors = ["tab:blue", "tab:orange", "tab:red"]
 
-v = np.linspace(0.0, 1.6e6, 1000)  # m s^-1
+v = np.logspace(5.0, 8.8, 1600)  # cm s^-1
 
-fig, ax = plt.subplots(figsize=(8.8, 5.8))
+def maxwell_boltzmann_speed(v_cgs, temperature):
+    prefactor = 4.0 * np.pi * (m_p / (2.0 * np.pi * k_b * temperature)) ** 1.5
+    return prefactor * v_cgs**2 * np.exp(-m_p * v_cgs**2 / (2.0 * k_b * temperature))
+
+def speed_to_temperature(v_cgs):
+    return m_p * v_cgs**2 / (2.0 * k_b)
+
+def temperature_to_speed(temperature):
+    return np.sqrt(2.0 * k_b * temperature / m_p)
+
+fig, ax = plt.subplots(figsize=(9.2, 6.0))
 
 for temperature, label, color in zip(temperatures, labels, colors):
-    distribution = (
-        4.0
-        * np.pi
-        * (m_p / (2.0 * np.pi * k_b * temperature)) ** 1.5
-        * v**2
-        * np.exp(-m_p * v**2 / (2.0 * k_b * temperature))
-    )
+    distribution = maxwell_boltzmann_speed(v, temperature)
     distribution = distribution / distribution.max()
-    ax.plot(v / 1000.0, distribution, label=label, color=color, linewidth=3.0)
+    most_probable_speed = np.sqrt(2.0 * k_b * temperature / m_p)
+    ax.plot(v, distribution, label=label, color=color, linewidth=3.0)
+    ax.axvline(most_probable_speed, color=color, linewidth=1.4, linestyle="--", alpha=0.65)
 
-ax.set_xlabel(r"Speed ($\mathrm{km\,s^{-1}}$)", fontsize=15)
-ax.set_ylabel("Relative probability density", fontsize=15)
-ax.set_title("Pedagogical Maxwell-Boltzmann Speed Distributions for Protons", fontsize=17, pad=12)
+ax.set_xscale("log")
+ax.set_xlabel(r"Speed $v$ ($\mathrm{cm\,s^{-1}}$)", fontsize=15)
+ax.set_ylabel("Relative probability density (peak normalized)", fontsize=15)
+ax.set_title("Maxwell-Boltzmann Speed Distributions for Protons", fontsize=17, pad=12)
 ax.tick_params(labelsize=13)
 ax.grid(True, alpha=0.25)
 ax.legend(frameon=False, fontsize=13)
+ax.xaxis.set_major_formatter(LogFormatterMathtext())
+
+secax = ax.secondary_xaxis("top", functions=(speed_to_temperature, temperature_to_speed))
+secax.set_xscale("log")
+secax.set_xlabel(
+    r"Equivalent kinetic temperature $T_{\mathrm{eq}} = \frac{m_p v^2}{2k_B}$ ($\mathrm{K}$)",
+    fontsize=14,
+)
+secax.tick_params(labelsize=12)
+secax.xaxis.set_major_formatter(LogFormatterMathtext())
+
 plt.tight_layout()
 plt.show()
 ```
+
+The upper axis is a translation from speed to the single-particle kinetic temperature scale
+$$
+T_{\mathrm{eq}} = \frac{m_p v^2}{2k_B}.
+$$
+It is a way to compare speeds and thermal-energy scales, not a claim that all protons at temperature $T$ move at one speed.
 
 ::: {.callout-warning}
 ## Misconception Check — “Temperature Is the Speed of a Single Particle”
@@ -403,7 +428,7 @@ $$
 M^2.
 $$
 
-This is a **trend estimate**, not a precision stellar-model result. It assumes the simple hydrostatic scalings developed later in the reading, and it suppresses differences in detailed structure and composition. But it captures the key idea we need: radiation pressure becomes disproportionately more important in higher-mass stars.
+This scaling uses simplified hydrostatic estimates and ignores detailed structure and composition. It is meant to show a **trend**, not predict exact stellar interiors.
 
 ::: {.callout-warning}
 ## Misconception Check — Radiation Pressure
@@ -677,11 +702,18 @@ Suppose the density stays the same but the temperature doubles. How does the the
 ::: {.callout-note collapse="true"}
 ## Solution
 
-For thermal gas pressure, $P_{\text{gas}} \propto T$ at fixed density, so doubling $T$ doubles the gas pressure.
+For thermal gas pressure, $P_{\text{gas}} \propto T$ at fixed density, so
+$$
+P_{\text{gas,new}} = 2\,P_{\text{gas,old}}.
+$$
 
 For radiation pressure, $P_{\text{rad}} \propto T^4$, so doubling $T$ gives
 $$
-P_{\text{rad,new}} = 2^4 P_{\text{rad,old}} = 16\,P_{\text{rad,old}}.
+P_{\text{rad,new}}
+=
+2^4 P_{\text{rad,old}}
+=
+16\,P_{\text{rad,old}}.
 $$
 
 So radiation pressure increases much more rapidly with temperature than gas pressure does. That is why radiation pressure becomes relatively more important in hotter stars, even though thermal gas pressure dominates in the Sun.
@@ -730,7 +762,7 @@ $$
 F_P \approx -A\frac{dP}{dr}\,dr.
 $$
 
-Because pressure decreases outward, $dP/dr < 0$, so the pressure-gradient force points outward. The minus sign ensures the direction of the force is physically correct.
+Because pressure decreases outward, $\frac{dP}{dr} < 0$, so the pressure-gradient force points outward. The minus sign ensures the direction of the force is physically correct.
 
 Gravity pulls the shell inward. If $g(r)$ is the local gravitational acceleration, then
 $$
@@ -874,7 +906,7 @@ If that balance is violated, the shell accelerates inward or outward instead of 
 ::: {.callout-tip}
 ## Check Yourself
 
-The equation of hydrostatic equilibrium says $dP/dr < 0$ everywhere inside a star. What would happen if $dP/dr > 0$ at some radius (pressure *increasing* outward)? What would happen if $dP/dr = 0$ (uniform pressure)?
+The equation of hydrostatic equilibrium says $\frac{dP}{dr} < 0$ everywhere inside a star. What would happen if $\frac{dP}{dr} > 0$ at some radius (pressure *increasing* outward)? What would happen if $\frac{dP}{dr} = 0$ (uniform pressure)?
 
 ::: {.callout-note collapse="true"}
 ## Solution
@@ -903,11 +935,13 @@ everywhere inside the star: pressure must decrease outward so that the net press
 
 ## Part 3: Estimating the Central Pressure
 
-Hydrostatic equilibrium tells us the *slope* of the pressure profile, but not yet the pressure scale itself. To answer our guiding question more quantitatively, we now estimate the central pressure a star must build in order to support its own weight.
+Hydrostatic equilibrium tells us the *slope* of the pressure profile, but not yet the pressure scale itself. In astronomy, we often know a star’s mass and radius before we know its internal structure. A scaling argument lets us infer interior conditions directly from those observable quantities.
+
+To answer our guiding question more quantitatively, we now estimate the central pressure a star must build in order to support its own weight.
 
 ### A Scaling Argument
 
-We cannot solve the hydrostatic equilibrium equation exactly without knowing the full internal profiles $M(r)$ and $\rho(r)$. But in astronomy we often know a star’s **global** properties — especially its mass $M$ and radius $R$ — long before we know its detailed interior structure.
+We cannot solve the hydrostatic equilibrium equation exactly without knowing the full internal profiles $M(r)$ and $\rho(r)$. But a scaling argument lets us connect those unknown interior quantities to the **global** properties we can often measure first.
 
 #### Step 1: Approximate the pressure gradient
 
@@ -967,6 +1001,8 @@ we get
 $$
 \frac{P_c}{R} \sim \frac{G M \rho}{R^2}.
 $$
+
+Here we replace the local gravitational acceleration $g(r)=\frac{GM(r)}{r^2}$ with a global scale $g \sim \frac{GM}{R^2}$. This is a **scaling approximation**, not a statement about the exact local value of gravity inside the star.
 
 Now insert the mean-density approximation:
 $$
@@ -1116,7 +1152,13 @@ P_c \propto \frac{1}{R^4}
 $$
 at fixed mass, shrinking the radius by a factor of $2$ gives
 $$
-\frac{P_{c,\text{new}}}{P_{c,\odot}} = \left(\frac{R_\odot}{R_\odot/2}\right)^4 = 2^4 = 16.
+\frac{P_{c,\text{new}}}{P_{c,\odot}}
+=
+\left(\frac{R_\odot}{R_\odot/2}\right)^4
+=
+2^4
+=
+16.
 $$
 
 So the required central pressure increases by a **large factor**:
@@ -1225,16 +1267,22 @@ has units of pressure in CGS. Do this by tracking the units of each factor.
 
 Use the CGS units of each quantity:
 $$
-\left[G\right] = \mathrm{cm^3\,g^{-1}\,s^{-2}}, \quad
-\left[M^2\right] = \mathrm{g^2}, \quad
-\left[R^4\right] = \mathrm{cm^4}.
+[G] = \mathrm{cm^3\,g^{-1}\,s^{-2}},
+\qquad
+[M^2] = \mathrm{g^2},
+\qquad
+[R^4] = \mathrm{cm^4}.
 $$
 
 Therefore,
 $$
 \frac{G M^2}{R^4}
-\rightarrow
-\frac{\mathrm{cm^3\,g^{-1}\,s^{-2}}\;\mathrm{g^2}}{\mathrm{cm^4}}
+=
+\mathrm{cm^3\,g^{-1}\,s^{-2}}
+\cdot
+\mathrm{g^2}
+\cdot
+\mathrm{cm^{-4}}
 = \mathrm{g\,cm^{-1}\,s^{-2}}.
 $$
 
@@ -1329,10 +1377,10 @@ $$
 Thermal energy and gravitational binding are tightly linked in a self-gravitating star.
 :::
 
-In quasi-static contraction, this relation implies that when gravitational binding energy is released, roughly half goes into increasing the thermal energy of the gas and roughly half must be lost from the star. That bookkeeping is what leads to the counterintuitive thermal behavior of stars.
+In quasi-static contraction, the virial theorem implies that roughly half of the released gravitational energy increases the thermal energy of the gas, while roughly half must be lost from the star. That bookkeeping is what leads to the counterintuitive thermal behavior of stars.
 
 ::: {.callout-tip}
-## Check Yourself — Gravitational Scaling
+## Check Yourself — Energy Scaling
 
 Use the scaling
 
@@ -1340,11 +1388,11 @@ $$
 U_{\text{grav}} \sim -\frac{G M^2}{R}.
 $$
 
-Suppose a protostar keeps the same mass but contracts to half its radius.
+If a star contracts to **one-third** its radius at fixed mass:
 
-1. Does $|U_{\text{grav}}|$ increase or decrease?
-2. By what factor?
-3. What does that imply qualitatively about the thermal energy if the contraction is quasi-static?
+1. By what factor does $|U_{\text{grav}}|$ change?
+2. Is this a small or large effect?
+3. What does this imply about heating?
 
 :::
 
@@ -1357,9 +1405,16 @@ $$
 |U_{\text{grav}}| \propto \frac{1}{R}.
 $$
 
-So shrinking the radius by a factor of $2$ makes the magnitude of the gravitational potential energy larger by a factor of $2$.
+So shrinking the radius from $R$ to $R/3$ gives
+$$
+\frac{|U_{\text{grav,new}}|}{|U_{\text{grav,old}}|}
+=
+\frac{R}{R/3}
+=
+3.
+$$
 
-That means the star becomes more tightly bound. In quasi-static contraction, the virial theorem implies that the thermal energy also increases, so the core gets hotter.
+That is a **large** change in binding energy, not a tiny correction. The star becomes much more tightly bound. In quasi-static contraction, the virial theorem implies that part of that released gravitational energy goes into thermal energy, so the gas heats substantially.
 :::
 
 ### The Negative Heat Capacity Paradox
@@ -1550,7 +1605,7 @@ $$
 
 The left-hand side is the thermal-energy scale per particle, while the right-hand side is the gravitational-energy scale per particle. Hydrostatic support requires these scales to be comparable.
 
-This is one of the deepest results in stellar astrophysics: gravity alone sets the temperature scale required for fusion.
+This result is powerful: gravity alone sets the temperature scale required for fusion.
 
 This is still an order-of-magnitude estimate, not a full stellar-structure solution. But it captures the key point: **gravity alone predicts a stellar core temperature of order $10^7\,\mathrm{K}$**.
 
@@ -1782,7 +1837,7 @@ $$
 | Step | Physics | What it determines |
 |------|--------|-------------------|
 | Gravity | $g(r)$ | inward pull |
-| Hydrostatic equilibrium | $dP/dr$ | pressure gradient |
+| Hydrostatic equilibrium | $\frac{dP}{dr}$ | pressure gradient |
 | Pressure scaling | $P_c$ | central pressure |
 | Ideal gas | $P \leftrightarrow T$ | temperature |
 | Virial theorem | $K, U$ | energy balance |
@@ -1816,7 +1871,7 @@ Before reading the summary, step back and look at the logic chain we have built.
    10^7\,\mathrm{K}.
    $$
 
-This is the real payoff of stellar structure. Starting from gravity alone, and adding only force balance, energy balance, and a thermal-gas model, we reach a striking conclusion: stars naturally develop hot cores. Fusion is not an arbitrary extra ingredient pasted onto stars later. Gravity itself drives the star to the temperature scale where fusion becomes possible.
+This is the payoff of stellar structure. Starting from gravity alone, and adding only force balance, energy balance, and a thermal-gas model, we find that stars naturally develop hot cores. Fusion is not an arbitrary extra ingredient pasted onto stars later. Gravity itself drives the star to the temperature scale where fusion becomes possible.
 
 ## Reference Tables
 
@@ -1824,8 +1879,8 @@ This is the real payoff of stellar structure. Starting from gravity alone, and a
 
 | Quantity | Scaling / Formula | Sun Value |
 |:---------|:-----------------|:---------:|
-| Central pressure | $P_c \sim GM^2/R^4$ | $\sim 10^{16}\,\mathrm{dyn\,cm^{-2}}$ |
-| Core temperature | $T_c \sim \mu GM m_p/(k_B R)$ | $\sim 1.5 \times 10^{7}\,\mathrm{K}$ |
+| Central pressure | $P_c \sim \frac{G M^2}{R^4}$ | $\sim 10^{16}\,\mathrm{dyn\,cm^{-2}}$ |
+| Core temperature | $T_c \sim \frac{\mu G M m_p}{k_B R}$ | $\sim 1.5 \times 10^{7}\,\mathrm{K}$ |
 | Core thermal energy/particle | $\frac{3}{2}k_B T_c$ | $\sim 2\,\mathrm{keV}$ |
 | Virial relation | $2K_{\text{th}} + U_{\text{grav}} = 0$ | — |
 
@@ -1851,7 +1906,7 @@ This is the real payoff of stellar structure. Starting from gravity alone, and a
 
 | Conservation Law | Where It Appears | What It Constrains |
 |:----------------|:----------------|:------------------|
-| Momentum conservation | Hydrostatic equilibrium ($dP/dr = -\rho g$) | Force balance at every radius — net force on each shell is zero |
+| Momentum conservation | Hydrostatic equilibrium ($\frac{dP}{dr} = -\rho g$) | Force balance at every radius — net force on each shell is zero |
 | Energy conservation | Virial theorem ($2K_{\text{th}} + U_{\text{grav}} = 0$) | Relationship between thermal and gravitational energy in equilibrium |
 
 ---

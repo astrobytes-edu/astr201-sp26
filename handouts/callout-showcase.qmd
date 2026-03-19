@@ -27,10 +27,19 @@ Before reading further, predict: what color will a 10,000 K star appear?
 :::
 
 ::: {.callout-worked-example}
-**Problem:** Calculate the frequency of red light (λ = 700 nm).
+**Problem:** Calculate the frequency of red light ($\lambda = 700~\text{nm}$).
 
 **Solution:**
-$\nu = c/\lambda = (3 \times 10^{10}\ \text{cm/s}) / (7 \times 10^{-5}\ \text{cm}) = 4.3 \times 10^{14}\ \text{Hz}$
+$$
+\nu = \frac{c}{\lambda}
+$$
+
+$$
+\nu
+=
+\frac{3 \times 10^{10}~\text{cm}\,\text{s}^{-1}}{7 \times 10^{-5}~\text{cm}}
+\approx 4.3 \times 10^{14}~\text{Hz}
+$$
 :::
 
 ::: {.callout-deep-dive collapse="true"}
@@ -71,17 +80,31 @@ Wrong. We measure the spectrum (wavelength distribution). Temperature is *inferr
 :::
 
 ::: {.callout-problem}
-A star at 10 pc has apparent magnitude m = 5. What is its absolute magnitude M?
+A star at $10~\text{pc}$ has apparent magnitude $m = 5$. What is its absolute magnitude $M$?
 :::
 
 ::: {.callout-solution}
-M = m - 5 log(d/10) = 5 - 5 log(1) = 5
+$$
+M = m - 5\log_{10}\!\left(\frac{d}{10}\right)
+$$
+
+$$
+M = 5 - 5\log_{10}(1) = 5
+$$
 :::
 
 ::: {.callout-sanity-check}
 **Units check:** Does $L = 4\pi r^2 \sigma T^4$ give watts?
 
-$[\text{m}^2][\text{W/m}^2\text{K}^4][\text{K}^4] = [\text{W}]$ ✓
+$$
+[\text{m}^2]
+[\text{W}\,\text{m}^{-2}\,\text{K}^{-4}]
+[\text{K}^4]
+=
+[\text{W}]
+$$
+
+$\checkmark$
 :::
 
 ::: {.callout-frontier}

@@ -442,9 +442,9 @@ mass_conservation:
     - "No mass loss or gain (steady state)"
 
 radiative_transport:
-  predicts: "Given opacity $\\kappa$, density $\\rho$, temperature $T$, and luminosity $L(r)$, it determines the temperature gradient $dT/dr$."
-  depends: "Scales as $|dT/dr| \\propto \\kappa \\rho L / (T^3 r^2)$. Higher opacity or luminosity steepens the temperature gradient."
-  says: "Energy flows from hot center to cool surface by radiative diffusion. If the required temperature gradient is too steep, convection takes over (Schwarzschild criterion)."
+  predicts: "Given opacity $\\kappa$, density $\\rho$, temperature $T$, and luminosity $L(r)$, it determines the radiative temperature gradient $\\left(dT/dr\\right)_\\text{rad}$, meaning the gradient radiation alone would require."
+  depends: "Scales as $\\left|\\left(dT/dr\\right)_\\text{rad}\\right| \\propto \\kappa \\rho L / (T^3 r^2)$. Higher opacity or luminosity steepens the required radiative gradient."
+  says: "Energy flows from hot center to cool surface by radiative diffusion. If the required radiative gradient is too steep, radiation becomes inefficient and convection takes over."
   assumptions:
     - "Energy transported by radiation (not convection)"
     - "Local thermodynamic equilibrium"

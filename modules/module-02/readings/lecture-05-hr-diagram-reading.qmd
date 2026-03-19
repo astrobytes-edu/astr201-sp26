@@ -108,9 +108,9 @@ In this module, `log` means $\log_{10}$ unless stated otherwise.
 
 Useful anchor values:
 
-\[
+$$
 \log_{10}(1)=0,\quad \log_{10}(10)=1,\quad \log_{10}(100)=2,\quad \log_{10}(0.1)=-1
-\]
+$$
 
 Common traps:
 
@@ -177,9 +177,21 @@ Smaller magnitude means brighter, so Star A has the larger flux. A $5~\text{mag}
 
 **Solution:**
 
-$$\Delta m = m_B - m_A = 6.0 - 1.0 = 5.0~\text{mag}$$
+$$
+\Delta m = m_B - m_A
+$$
 
-$$\frac{F_A}{F_B} = 10^{0.4 \times 5.0} = 10^{2.0} = 100$$
+$$
+\Delta m = 6.0 - 1.0 = 5.0~\text{mag}
+$$
+
+$$
+\frac{F_A}{F_B} = 10^{0.4 \times 5.0}
+$$
+
+$$
+\frac{F_A}{F_B} = 10^{2.0} = 100
+$$
 
 Star A is $100\times$ brighter than Star B in apparent flux.
 
@@ -222,9 +234,31 @@ where:
 
 **Key sanity checks:**
 
-- At $d = 10~\text{pc}$: $m - M = 5\log_{10}\!\left(\frac{10~\text{pc}}{10~\text{pc}}\right) = 0$, so $m = M$. $\checkmark$ (Definition of absolute magnitude.)
-- At $d = 100~\text{pc}$: $m - M = 5\log_{10}\!\left(\frac{100~\text{pc}}{10~\text{pc}}\right) = 5\log_{10}(10) = 5$. So the star appears $5~\text{mag}$ fainter than at $10~\text{pc}$, i.e., $100\times$ fainter — consistent with inverse-square scaling. $\checkmark$
-- At $d = 1{,}000~\text{pc}$: $m - M = 10$. The star is $10^4\times$ fainter. $\checkmark$
+- At $d = 10~\text{pc}$:
+
+  $$
+  m - M = 5\log_{10}\!\left(\frac{10~\text{pc}}{10~\text{pc}}\right) = 0
+  $$
+
+  so $m = M$. $\checkmark$ (Definition of absolute magnitude.)
+- At $d = 100~\text{pc}$:
+
+  $$
+  m - M = 5\log_{10}\!\left(\frac{100~\text{pc}}{10~\text{pc}}\right)
+  = 5\log_{10}(10)
+  = 5
+  $$
+
+  So the star appears $5~\text{mag}$ fainter than at $10~\text{pc}$, i.e., $100\times$ fainter — consistent with inverse-square scaling. $\checkmark$
+- At $d = 1{,}000~\text{pc}$:
+
+  $$
+  m - M = 5\log_{10}\!\left(\frac{1{,}000~\text{pc}}{10~\text{pc}}\right)
+  = 5\log_{10}(100)
+  = 10
+  $$
+
+  The star is $10^4\times$ fainter. $\checkmark$
 
 ::: {.callout-note}
 ## Worked Example: Finding Distance from Magnitudes
@@ -235,17 +269,35 @@ where:
 
 **Step 1 — Distance modulus**
 
-$$m - M = 14.0 - (-4.0) = 18.0~\text{mag}$$
+$$
+m - M = 14.0 - (-4.0)
+$$
+
+$$
+m - M = 18.0~\text{mag}
+$$
 
 **Step 2 — Solve for distance**
 
 $$18.0 = 5\log_{10}\!\left(\frac{d}{10\,\mathrm{pc}}\right)$$
 
-$$\log_{10}\!\left(\frac{d}{10\,\mathrm{pc}}\right) = \frac{18.0}{5} = 3.6$$
+$$
+\log_{10}\!\left(\frac{d}{10\,\mathrm{pc}}\right)
+=
+\frac{18.0}{5}
+=
+3.6
+$$
 
 $$\frac{d}{10\,\mathrm{pc}} = 10^{3.6} \approx 3{,}981$$
 
-$$d \approx 3{,}981 \times 10~\text{pc} \approx 4.0 \times 10^4~\text{pc} = 40~\text{kpc}$$
+$$
+d \approx 3{,}981 \times 10~\text{pc}
+=
+4.0 \times 10^4~\text{pc}
+=
+40~\text{kpc}
+$$
 
 **Unit check:** Distance comes out in parsecs. $\checkmark$
 
@@ -538,15 +590,37 @@ $$\frac{L}{L_\odot} = \left(\frac{R}{R_\odot}\right)^2 \left(\frac{T}{T_\odot}\r
 
 Solve for $R/R_\odot$:
 
-$$\left(\frac{R}{R_\odot}\right)^2 = \frac{L/L_\odot}{(T/T_\odot)^4} = \frac{400}{(4{,}000/5{,}800)^4}$$
+$$
+\left(\frac{R}{R_\odot}\right)^2
+=
+\frac{L/L_\odot}{(T/T_\odot)^4}
+=
+\frac{400}{(4{,}000/5{,}800)^4}
+$$
 
-Calculate the temperature ratio: $4{,}000/5{,}800 = 0.690$
+Calculate the temperature ratio:
 
-$$0.690^4 = (0.690)^2 \times (0.690)^2 = 0.476 \times 0.476 = 0.226$$
+$$
+\frac{4{,}000}{5{,}800} = 0.690
+$$
 
-$$\left(\frac{R}{R_\odot}\right)^2 = \frac{400}{0.226} = 1{,}770$$
+$$
+0.690^4
+=
+(0.690)^2 \times (0.690)^2
+=
+0.476 \times 0.476
+=
+0.226
+$$
 
-$$\frac{R}{R_\odot} = \sqrt{1{,}770} = 42$$
+$$
+\left(\frac{R}{R_\odot}\right)^2 = \frac{400}{0.226} = 1{,}770
+$$
+
+$$
+\frac{R}{R_\odot} = \sqrt{1{,}770} = 42
+$$
 
 **The red giant has a radius of ${\sim}42\,R_\odot$.** If placed at the center of our solar system, it would extend past the orbit of Mercury ($0.39~\text{AU} \approx 84\,R_\odot$)... well, halfway to Mercury.
 

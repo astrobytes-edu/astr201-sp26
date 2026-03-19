@@ -330,7 +330,25 @@ $$
 \tau_\text{KH} \sim \frac{2.67 \times 10^{59}}{2.66 \times 10^{44}}~\text{s} \approx 1.0 \times 10^{15}~\text{s} \approx 30~\text{Myr}
 $$
 
-**Units check:** $[GM^2/(RL)] = \text{cm}^3~\text{g}^{-1}~\text{s}^{-2} \times \text{g}^2 / (\text{cm} \times \text{erg}/\text{s})$. Since $1~\text{erg} = 1~\text{g}~\text{cm}^2~\text{s}^{-2}$, this simplifies to seconds. ✓
+**Units check:**
+
+$$
+\left[\frac{GM^2}{RL}\right]
+=
+\frac{\left(\text{cm}^3\,\text{g}^{-1}\,\text{s}^{-2}\right)\left(\text{g}^2\right)}
+{\left(\text{cm}\right)\left(\text{erg}\,\text{s}^{-1}\right)}
+$$
+
+$$
+=
+\frac{\text{g}\,\text{cm}^2\,\text{s}^{-2}}{\text{erg}\,\text{s}^{-1}}
+=
+\frac{\text{erg}}{\text{erg}\,\text{s}^{-1}}
+=
+\text{s}
+$$
+
+$\checkmark$
 
 $$
 \boxed{\tau_{\text{KH},\odot} \approx 30~\text{Myr}}
@@ -473,7 +491,18 @@ $$
 \tau_\text{nuc} \approx 3.3 \times 10^{17}~\text{s} \approx 10~\text{Gyr}
 $$
 
-**Units check:** $[\text{g} \times \text{cm}^2/\text{s}^2] / [\text{erg}/\text{s}] = \text{erg} / (\text{erg}/\text{s}) = \text{s}$. ✓
+**Units check:**
+
+$$
+\frac{\left[\text{g}\right]\left[\text{cm}^2\,\text{s}^{-2}\right]}
+{\left[\text{erg}\,\text{s}^{-1}\right]}
+=
+\frac{\left[\text{erg}\right]}{\left[\text{erg}\,\text{s}^{-1}\right]}
+=
+\left[\text{s}\right]
+$$
+
+$\checkmark$
 
 $$
 \boxed{\tau_{\text{nuc},\odot} \approx 10~\text{Gyr}}

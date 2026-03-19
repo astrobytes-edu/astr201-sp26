@@ -3,7 +3,7 @@ title: "Lecture 3: The Universe Is Weird — Nuclear Fusion and the Four Forces"
 subtitle: "What keeps a star hot, and why does it require quantum mechanics?"
 author: "Dr. Anna Rosen"
 date: "2026-03-12"
-description: "Hydrostatic equilibrium tells us the Sun's core is ~15 million kelvin. But the Coulomb barrier between two protons requires ~10 billion kelvin to overcome classically. How does fusion happen? The answer requires all four fundamental forces of nature, quantum tunneling, and a weak-interaction bottleneck that makes the Sun burn slowly enough to last billions of years."
+description: "Hydrostatic equilibrium tells us the Sun's core is about 15 million kelvin. But the Coulomb barrier between two protons requires about 10 billion kelvin to overcome classically. How does fusion happen? The answer requires all four fundamental forces of nature, quantum tunneling, and a weak-interaction bottleneck that makes the Sun burn slowly enough to last billions of years."
 draft: false
 categories: [nuclear-fusion, four-forces, quantum-tunneling, pp-chain, binding-energy, stellar-energy]
 course: ASTR 201
@@ -14,17 +14,17 @@ learning-objectives:
   - Explain why the Coulomb barrier prevents classical fusion at stellar core temperatures and why quantum tunneling resolves this
   - Describe wave-particle duality and calculate the de Broglie wavelength of a particle
   - Outline the proton-proton chain and identify which fundamental force governs each step
-  - Calculate the energy released per fusion reaction from the mass deficit using E = Δmc²
+  - Calculate the energy released per fusion reaction from the mass deficit using mass-energy equivalence
   - Interpret the binding energy per nucleon curve and explain why fusion of light elements releases energy while fusion beyond iron does not
 Concept-Throughline:
   - Main-sequence evolution is the gradual conversion of hydrogen mass fraction $X$ into helium mass fraction $Y$, while the metals fraction $Z$ mostly affects structure indirectly
   - Four forces govern stellar interiors — gravity compresses, EM resists fusion, the strong force binds nuclei, and the weak force enables transmutation
   - Quantum tunneling makes close approach possible, but the weak interaction throttles the actual proton-proton reaction rate — that bottleneck is why the Sun can shine steadily for billions of years
-  - The pp-chain converts 4H → He + energy, with the mass deficit (0.7%) becoming radiation via E = mc²
+  - The pp-chain converts hydrogen into helium, with the mass deficit (0.7%) becoming radiation through mass-energy equivalence
   - Binding energy per nucleon peaks at iron — fusion releases energy only for elements lighter than iron (foreshadowing the iron catastrophe in massive stars)
 math-level: symbolic_with_interpretation
 mode: Refine
-prerequisites: "Core temperature estimate from Reading 2 (T_c ~ 15 MK, thermal energy ~ 2 keV), Coulomb's law (conceptual), E = mc² (conceptual), hydrogen energy levels from Module 1"
+prerequisites: "Core temperature estimate from Reading 2 (core temperature about 15 MK, thermal energy about 2 keV), Coulomb's law (conceptual), mass-energy equivalence (conceptual), hydrogen energy levels from Module 1"
 ---
 
 ## Learning Objectives
@@ -34,14 +34,24 @@ After completing this reading, you should be able to:
 1. **Use** the stellar-composition mass fractions $(X, Y, Z)$ to describe how hydrogen burning changes a star's core
 2. **Explain** which of the four fundamental forces dominates each part of stellar fusion and why
 3. **Explain** why the Coulomb barrier prevents classical fusion at $T_c \sim 15~\text{MK}$ and how quantum tunneling resolves this
-4. **Calculate** the de Broglie wavelength $\lambda = h/p$ and explain its physical meaning
-5. **Describe** the proton-proton chain: $4\text{H} \rightarrow \text{He} + 2e^+ + 2\nu_e + \gamma$, identifying which force governs each step
+4. **Calculate** the de Broglie wavelength $\lambda_{\mathrm{dB}} = \frac{h}{p}$ and explain its physical meaning
+5. **Describe** the proton-proton chain: $4\,{}^1\mathrm{H} \rightarrow {}^4\mathrm{He} + 2e^+ + 2\nu_e + \gamma$, identifying which force governs each step
 6. **Calculate** the energy per fusion event from the mass deficit: $E = \Delta m \, c^2$
 7. **Interpret** the binding energy per nucleon curve: why fusion releases energy up to iron, and what happens beyond
 
 ## Concept Throughline
 
 > *The Sun's core is 15 million kelvin — but that's not hot enough.* Two protons repel each other with a Coulomb barrier of $\sim 1~\text{MeV}$, while the typical thermal energy at $15~\text{MK}$ is only $\sim 2~\text{keV}$ — a factor of 500 too low. Classically, fusion is impossible. And yet the Sun fuses $6 \times 10^{11}~\text{kg}$ of hydrogen every second. The resolution requires a radical idea from quantum mechanics: particles are also waves, and waves do not stop abruptly at barriers. Protons can *tunnel* through the Coulomb barrier — but even after tunneling, the first proton-proton reaction is throttled by the weak interaction. That combination, rare enough to be slow but common enough to power the Sun, is the physics that keeps every star alive. Reading 2 showed that gravity naturally sets a core temperature scale of order $10^7\,\mathrm{K}$. This reading shows why that is still not enough classically — and why quantum mechanics is essential for making stars work.
+
+From hydrostatic equilibrium, gravity sets a core temperature scale of order
+$$
+T_c \sim 10^7\,\mathrm{K}.
+$$
+But the Coulomb barrier corresponds to an energy scale of order
+$$
+T_{\mathrm{barrier}} \sim 10^{10}\,\mathrm{K}.
+$$
+This mismatch is the central paradox: **gravity makes stars hot — but not hot enough for classical fusion.**
 
 ::: {.callout-note title="Causal Map of the Problem"}
 1. Gravity compresses the stellar core.
@@ -114,7 +124,6 @@ Everything in the universe — every interaction between every particle — is g
 | **Weak nuclear** | $\sim 10^{-6}$ | $\sim 10^{-16}~\text{cm}$ (subnuclear) | Converts protons to neutrons (beta decay); enables the pp-chain |
 | **Gravity** | $\sim 10^{-39}$ | Infinite | Compresses gas to extreme density and temperature; holds the star together |
 
-::: {layout-ncol=2}
 {{< fig force-gravity >}}
 
 {{< fig force-electromagnetic >}}
@@ -122,7 +131,6 @@ Everything in the universe — every interaction between every particle — is g
 {{< fig force-strong >}}
 
 {{< fig force-weak >}}
-:::
 
 {{< fig standard-model-particles >}}
 
@@ -156,28 +164,33 @@ This is a deep theme in physics: the weakest force shapes the largest structures
 
 ### The Problem
 
-For two protons to fuse, they must get close enough for the strong nuclear force to take over — within about $1~\text{fm} = 10^{-13}~\text{cm}$ of each other. But protons are positively charged, and like charges repel. The electromagnetic (Coulomb) repulsion between two protons at distance $r$ is:
+For two protons to fuse, they must get close enough for the strong nuclear force to take over — within about $1~\text{fm} = 10^{-13}~\text{cm}$ of each other. But protons are positively charged, and like charges repel. In Gaussian CGS units, the Coulomb potential energy is:
 
 $$
-E_\text{Coulomb}(r) = \frac{e^2}{r}
+E_{\mathrm{Coulomb}}(r) = \frac{e^2}{r}.
 $$
 
-where $e = 4.803 \times 10^{-10}~\text{esu}$ is the elementary charge in CGS/Gaussian units. We will use this as an order-of-magnitude estimate of the barrier height at nuclear separation.
+In SI units, this would be
+$$
+E(r) = \frac{1}{4\pi\epsilon_0}\frac{e^2}{r}.
+$$
+
+Throughout this reading we will use Gaussian CGS, where the electrostatic constant is absorbed into $e^2$. Here $e = 4.803 \times 10^{-10}~\text{esu}$ is the elementary charge, and we will use this as an order-of-magnitude estimate of the barrier height at nuclear separation.
 
 Before plugging in numbers, it is worth checking the units. In Gaussian CGS units, the combination $e^2$ carries units of energy times length:
 
 $$
-[e^2] = \text{erg} \cdot \text{cm}.
+[e^2] = \mathrm{erg \cdot cm}.
 $$
 
 So the Coulomb energy really does come out with energy units:
 
 $$
-E_\text{Coulomb}
+E_{\mathrm{Coulomb}} = \frac{e^2}{r}
+\Rightarrow
+\frac{\mathrm{erg \cdot cm}}{\mathrm{cm}}
 =
-\frac{\text{erg} \cdot \text{cm}}{\text{cm}}
-=
-\text{erg}.
+\mathrm{erg}.
 $$
 
 That unit check matters because it tells us we are comparing two actual energy scales: the electrostatic barrier and the thermal energy of the gas.
@@ -187,12 +200,15 @@ That unit check matters because it tells us we are comparing two actual energy s
 At the nuclear distance $r \sim 1~\text{fm} = 10^{-13}~\text{cm}$:
 
 $$
-E_\text{Coulomb}
-\sim
-\frac{e^2}{r}
-=
-\frac{(4.803 \times 10^{-10}~\text{esu})^2}{10^{-13}~\text{cm}}
-\approx 2.3 \times 10^{-6}~\text{erg}
+E_{\mathrm{Coulomb}} \sim \frac{e^2}{r}
+$$
+
+$$
+E_{\mathrm{Coulomb}} \sim \frac{(4.803 \times 10^{-10}~\text{esu})^2}{10^{-13}~\text{cm}}
+$$
+
+$$
+E_{\mathrm{Coulomb}} \approx 2.3 \times 10^{-6}~\text{erg}.
 $$
 
 Now convert to mega-electron-volts:
@@ -204,10 +220,13 @@ $$
 so
 
 $$
-E_\text{Coulomb}
+E_{\mathrm{Coulomb}}
 \approx
 \frac{2.3 \times 10^{-6}~\text{erg}}{1.602 \times 10^{-6}~\text{erg/MeV}}
-\approx 1.4~\text{MeV}
+$$
+
+$$
+E_{\mathrm{Coulomb}} \approx 1.4~\text{MeV}.
 $$
 
 This is an order-of-magnitude estimate of the barrier height at nuclear separation, not an exact threshold for every collision geometry. The important point is the scale: the Coulomb barrier is of order **MeV**, while stellar-core thermal energies are of order **keV**.
@@ -227,6 +246,8 @@ E \sim k_B T.
 $$
 
 These are not contradictory statements. The quantity $k_B T$ tells you the scale, while $\frac{3}{2}k_B T$ gives the mean kinetic energy for a monatomic gas.
+
+The typical particle energy is $\sim k_B T$, but fusion occurs in the **high-energy tail**, not at the average.
 
 ### The Mismatch
 
@@ -253,9 +274,15 @@ Even accounting for the high-energy tail of the Maxwell-Boltzmann distribution, 
 {{< fig maxwell-boltzmann-energies-barrier-tail >}}
 
 $$
-f \sim e^{-E_\text{Coulomb}/k_B T_c}
-\sim e^{-1.4~\text{MeV}/1.3~\text{keV}}
-\sim e^{-10^3}
+f \sim e^{-E_{\mathrm{Coulomb}}/k_B T_c}
+$$
+
+$$
+f \sim e^{-1.4~\text{MeV}/1.3~\text{keV}}
+$$
+
+$$
+f \sim e^{-10^3}.
 $$
 
 This exponential suppression is the key classical result: the high-energy tail of the distribution is nowhere near enough to rescue fusion.
@@ -291,8 +318,15 @@ $$
 Now solve for $T$:
 
 $$
-T \sim \frac{2(1.602\times10^{-6}\,\mathrm{erg})}{3(1.38\times10^{-16}\,\mathrm{erg\,K^{-1}})}
-\approx 7.7\times10^9\,\mathrm{K}.
+T \sim \frac{2E_{\mathrm{barrier}}}{3k_B}
+$$
+
+$$
+T \sim \frac{2 \times 1.602\times10^{-6}\,\mathrm{erg}}{3 \times 1.38\times10^{-16}\,\mathrm{erg\,K^{-1}}}
+$$
+
+$$
+T \approx 7.7\times10^9\,\mathrm{K}.
 $$
 
 So classical fusion would require a temperature of order
@@ -318,7 +352,7 @@ In 1924, Louis de Broglie proposed a revolutionary idea: every particle also beh
 {{< include ../../../_includes/equations/de-broglie.qmd >}}
 {{< eqrefcard de-broglie >}}
 
-Here $h = 6.626 \times 10^{-27}~\text{erg}\cdot\text{s}$ is Planck's constant, $p = mv$ is the particle's momentum, $m$ is its mass, and $v$ is its velocity. For everyday objects (a baseball, a person), $\lambda_\text{dB}$ is absurdly small — far smaller than any atom — so wave behavior is undetectable. But for protons in a stellar core, moving at thermal velocities, the de Broglie wavelength becomes far larger than the nuclear scale.
+Here $h = 6.626 \times 10^{-27}~\text{erg}\cdot\text{s}$ is Planck's constant, $p = mv$ is the particle's momentum, $m$ is its mass, and $v$ is its velocity. For everyday objects (a baseball, a person), $\lambda_{\mathrm{dB}}$ is absurdly small — far smaller than any atom — so wave behavior is undetectable. But for protons in a stellar core, moving at thermal velocities, the de Broglie wavelength becomes far larger than the nuclear scale.
 
 {{< fig maxwell-boltzmann-speeds-solar-core >}}
 
@@ -398,9 +432,9 @@ Interpretation: the proton is described by a wavefunction spread over a region m
 
 ### What Is Tunneling?
 
-Here is the quantum effect. A classical particle encountering a barrier higher than its energy simply bounces back — like a ball hitting a wall. But a quantum particle, described by a wave, doesn't stop sharply at the barrier. The wave function *leaks* through the barrier, decaying exponentially but not reaching zero. If the barrier is thin enough, there's a nonzero probability that the particle appears on the other side.
+Here is the quantum effect. A classical particle encountering a barrier higher than its energy simply bounces back — like a ball hitting a wall. But a quantum particle is described by a wavefunction, not a point mass following one trajectory. The wavefunction decays exponentially inside the classically forbidden region but remains nonzero. This means there is a finite probability of finding the particle on the far side of the barrier.
 
-This is **quantum tunneling**: a particle passes through a barrier it classically could not overcome, simply because its wave function has a nonzero amplitude on the far side.
+This is **quantum tunneling**: a particle passes through a barrier it classically could not overcome because the wavefunction has a nonzero amplitude on the far side.
 
 {{< fig coulomb-barrier-and-tunneling >}}
 
@@ -412,6 +446,20 @@ $$
 
 The overlap of the Maxwell-Boltzmann distribution with the tunneling probability produces a narrow **Gamow peak**: fusion does not happen at the average energy, but in a small middle window where collisions are common enough and tunneling is not too suppressed.
 
+The Gamow peak arises from the competition between decreasing particle number at high energies in the Maxwell-Boltzmann tail and increasing tunneling probability at higher energies.
+
+::: {.callout-warning}
+## Misconception Check — Fusion Energy
+
+True or false: most fusion reactions occur at the average thermal energy $k_B T$.
+
+::: {.callout-note collapse="true"}
+## Answer
+
+False. Fusion occurs in a narrow energy window called the **Gamow peak**, where particles are energetic enough and tunneling is still probable.
+:::
+:::
+
 {{< fig nuclear-stellax-gamow-peak >}}
 
 The left panel shows the Sun's regime; the right shows a hotter massive-star core. In both cases, the reaction window is narrow. The important difference is that the CNO reaction window sits at higher energy because carbon's larger charge raises the Coulomb barrier.
@@ -419,16 +467,19 @@ The left panel shows the Sun's regime; the right shows a hotter massive-star cor
 That means out of every $10^{20}$ proton-proton collisions, only *one* gets through the Coulomb barrier. This sounds hopeless — until you consider the conditions inside the core.
 
 ::: {.callout-tip}
-## Check Yourself — Scaling
+## Check Yourself — Exponential Sensitivity
 
-If the Coulomb barrier were $10\times$ higher, would fusion rates change a little or enormously?
+Use
+$$
+P_{\mathrm{tunnel}} \sim e^{-E_{\mathrm{barrier}}/k_B T}.
+$$
 
-Explain your answer using the exponential sensitivity of tunneling probability.
+If $T$ increases by a factor of $2$, does the fusion rate increase slightly or dramatically?
 
 ::: {.callout-note collapse="true"}
 ## Solution
 
-They would change **enormously**. The tunneling probability depends exponentially on barrier penetration, so increasing the barrier even modestly does not reduce the rate by a small percentage — it can suppress it by many orders of magnitude. This is why fusion rates are so sensitive to the barrier height and to core temperature.
+It increases **dramatically**. Doubling $T$ cuts the size of the exponent roughly in half, so the tunneling probability changes by orders of magnitude rather than by a small percentage. The exact fusion rate also depends on the Maxwell-Boltzmann distribution and the Gamow peak, but the key physical point is that exponential sensitivity makes stellar fusion extremely temperature-dependent.
 :::
 :::
 
@@ -533,7 +584,7 @@ The pp-chain happens in three steps. Each step involves a different fundamental 
 
 Keep the force roles separate: gravity creates the hot dense core, electromagnetism creates the barrier, quantum tunneling permits close approach, the weak force enables proton-to-neutron conversion, and the strong force binds the resulting nuclei.
 
-**Step 1: Proton + Proton → Deuterium** (slowest step — the bottleneck)
+**Step 1: proton plus proton makes deuterium** (slowest step — the bottleneck)
 
 $$
 {}^1\text{H} + {}^1\text{H} \rightarrow {}^2\text{H} + e^+ + \nu_e
@@ -544,7 +595,7 @@ $$
 - **This step is the bottleneck** because the close approach requires tunneling, but the actual conversion to deuterium requires the weak interaction. The weak-interaction part is what makes Step 1 so slow. The average proton in the solar core waits $\sim 10^{9}~\text{yr}$ before successfully completing this step.
 That is the real reason stars are long-lived: tunneling makes fusion possible, but the weak interaction keeps the first step rare.
 
-**Step 2: Deuterium + Proton → Helium-3** (fast)
+**Step 2: deuterium plus proton makes helium-3** (fast)
 
 $$
 {}^2\text{H} + {}^1\text{H} \rightarrow {}^3\text{He} + \gamma
@@ -554,7 +605,7 @@ $$
 - **Strong nuclear force:** Binds the three nucleons into ${}^3\text{He}$
 - Once deuterium forms, this capture happens very quickly, on a timescale of about $1\,\mathrm{s}$.
 
-**Step 3: Helium-3 + Helium-3 → Helium-4 + 2 Protons** (completes the cycle)
+**Step 3: helium-3 plus helium-3 makes helium-4 plus two protons** (completes the cycle)
 
 $$
 {}^3\text{He} + {}^3\text{He} \rightarrow {}^4\text{He} + 2\,{}^1\text{H}
@@ -813,8 +864,8 @@ But the binding energy per nucleon doesn't increase forever. It peaks at **iron-
 
 | Mass range | What happens | Energy released? |
 |:-----------|:------------|:----------------:|
-| H → He → C → ... → Fe | Fusion (combining light nuclei) | **Yes** — products are more tightly bound |
-| Beyond Fe | Fusion (combining heavy nuclei) | **No** — products are *less* tightly bound; reaction is *endothermic* |
+| From hydrogen through iron | Fusion (combining light nuclei) | **Yes** — products are more tightly bound |
+| Beyond iron | Fusion (combining heavy nuclei) | **No** — products are *less* tightly bound; reaction is *endothermic* |
 
 **Iron is the end of the line for fusion energy.** More precisely: beyond iron, fusion would move the products downward in binding energy per nucleon, so the reaction would require energy input instead of releasing energy. Fusing nuclei heavier than iron *requires* energy input rather than releasing it. This seemingly minor fact has enormous consequences: it determines how massive stars die (Reading 9).
 
@@ -916,13 +967,13 @@ The timescale chart is the physical consequence of the binding-energy story. As 
 | $X, Y, Z$ | Hydrogen, helium, and metal mass fractions (composition) | Dimensionless |
 | $k_B$ | Boltzmann constant | $1.38 \times 10^{-16}~\text{erg}\,\text{K}^{-1}$ |
 | $h$ | Planck's constant | $6.626 \times 10^{-27}~\text{erg}\cdot\text{s}$ |
-| $\lambda_\text{dB}$ | de Broglie wavelength | cm |
+| $\lambda_{\mathrm{dB}}$ | de Broglie wavelength | cm |
 | $e$ | Elementary charge | $4.803 \times 10^{-10}~\text{esu}$ |
 | $\Delta m$ | Mass deficit (reactants minus products) | g (or amu) |
 | $\epsilon_{\text{nuc}}$ | Nuclear energy generation rate per unit mass | $\text{erg}\,\text{g}^{-1}\,\text{s}^{-1}$ |
 | $\nu$ | Temperature sensitivity index, $d\ln\epsilon/d\ln T$ | Dimensionless |
 | $E_{\text{bind}}/A$ | Binding energy per nucleon | MeV per nucleon |
-| $\varepsilon$ | Mass-to-energy conversion efficiency | Dimensionless ($\approx 0.007$ for H→He) |
+| $\varepsilon$ | Mass-to-energy conversion efficiency | Dimensionless ($\approx 0.007$ for hydrogen-to-helium fusion) |
 | amu | Atomic mass unit, defined as $1/12$ of a neutral carbon-12 atom | $1.661 \times 10^{-24}~\text{g}$ |
 | $\text{eV}$ | Electron volt (energy unit) | $1.602 \times 10^{-12}~\text{erg}$ |
 | $\text{MeV}$ | Mega-electron volt | $1.602 \times 10^{-6}~\text{erg}$ |
@@ -931,9 +982,9 @@ The timescale chart is the physical consequence of the binding-energy story. As 
 
 | Reading | Elements Built | Process | Stellar Phase |
 |:-------:|:--------------|:--------|:-------------|
-| **R3 (this reading)** | **H → He** | **pp-chain, CNO cycle** | **Main sequence** |
-| R7 | He → C → O | Triple-alpha, alpha capture | Red giant |
-| R9 | C → ... → Fe, beyond Fe | Successive burning; r-process | Massive star cores; supernovae |
+| **R3 (this reading)** | **Hydrogen to helium** | **pp-chain, CNO cycle** | **Main sequence** |
+| R7 | Helium to carbon to oxygen | Triple-alpha, alpha capture | Red giant |
+| R9 | Carbon through iron; beyond-iron production | Successive burning; r-process | Massive star cores; supernovae |
 
 ---
 
@@ -945,9 +996,9 @@ The most important ideas from this reading:
 
 2. **Stellar evolution begins as composition evolution.** On the main sequence, hydrogen mass fraction $X$ is gradually converted into helium mass fraction $Y$, while $Z$ mostly changes the structure indirectly through opacity and later burning pathways.
 
-3. **Quantum tunneling** resolves the Coulomb barrier problem by allowing some proton pairs to reach nuclear distances. But tunneling is only part of the story: the weak interaction throttles the first pp reaction, which is why the Sun burns hydrogen slowly enough to live for billions of years. This is wave-particle duality in action: $\lambda_\text{dB} = h/p$.
+3. **Quantum tunneling** resolves the Coulomb barrier problem by allowing some proton pairs to reach nuclear distances. But tunneling is only part of the story: the weak interaction throttles the first pp reaction, which is why the Sun burns hydrogen slowly enough to live for billions of years. This is wave-particle duality in action: $\lambda_{\mathrm{dB}} = \frac{h}{p}$.
 
-4. **The pp-chain** converts $4\text{H} \rightarrow \text{He}$, releasing $26.7~\text{MeV}$ per reaction. The mass deficit ($0.7\%$) becomes energy via $E = \Delta m\,c^2$, and most of that energy stays in the star long enough to power the luminosity we see.
+4. **The pp-chain** converts $4\,{}^1\mathrm{H} \rightarrow {}^4\mathrm{He} + 2e^+ + 2\nu_e + \gamma$, releasing $26.7~\text{MeV}$ per reaction. The mass deficit ($0.7\%$) becomes energy via $E = \Delta m\,c^2$, and most of that energy stays in the star long enough to power the luminosity we see.
 
 5. **The binding energy curve** peaks at iron. Fusion releases energy only for elements lighter than iron — iron is the end of the fusion road. This fact will determine how massive stars die (Reading 9).
 
@@ -959,11 +1010,13 @@ The most important ideas from this reading:
 ├──────────────────────────────────────────────────────┤
 │  Attacker:    Gravity (compresses core to 15 MK)     │
 │  Defender:    Nuclear fusion (pp-chain) — replenishes │
-│               thermal energy via E = Δmc²            │
+│               thermal energy through mass-energy      │
+│               conversion                              │
 │  Assist:      Quantum tunneling enables close        │
 │               approach; weak force keeps Step 1 slow │
 │  Status:      BALANCED — fusion sustains the pressure│
-│               gradient for τ_nuc ~ 10 Gyr.           │
+│               gradient for a nuclear lifetime of      │
+│               order 10 Gyr.                           │
 │               But hydrogen is finite...              │
 │  Retrieval:   Tunneling makes fusion possible; the   │
 │               weak interaction makes it long-lived.  │

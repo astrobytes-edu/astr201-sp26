@@ -11,7 +11,7 @@ module: "3 - Stellar Structure & Evolution"
 learning-objectives:
   - Explain why the core contracts and the envelope expands when core hydrogen is exhausted
   - Describe shell hydrogen burning and its role in driving red giant expansion
-  - Explain the triple-alpha process and why helium burning requires T ~ 100 MK
+  - Explain the triple-alpha process and why helium burning requires temperatures of about 100 MK
   - Describe the helium flash in low-mass stars and why it occurs in degenerate cores
   - Trace the path from asymptotic giant branch through planetary nebula to white dwarf
   - Identify carbon and oxygen as the nucleosynthetic products of helium burning
@@ -19,7 +19,7 @@ Concept-Throughline:
   - When hydrogen runs out, the core contracts (virial theorem) — but this contraction is the beginning, not the end
   - Shell burning inflates the envelope to red giant dimensions through a mechanism that is still not fully intuitive even to experts
   - The triple-alpha process builds carbon from helium — every carbon atom in your body was forged in a red giant
-  - White dwarfs are the final state for stars below ~8 solar masses — dead cores held up by electron degeneracy pressure
+  - White dwarfs are the final state for stars below about 8 solar masses — dead cores held up by electron degeneracy pressure
 math-level: symbolic_with_interpretation
 mode: Draft
 prerequisites: "Virial theorem and core temperature (Reading 2), nuclear fusion and binding energy curve (Reading 3), stellar structure equations (Reading 5), degeneracy pressure concept (Reading 6)"
@@ -69,7 +69,13 @@ Without energy generation, the core can't maintain its temperature. The virial t
 
 1. **The core radiates energy** — photons carry energy outward from the still-hot (but no longer replenished) core
 2. **Total energy decreases** — the star loses energy to radiation
-3. **The core contracts** — since $E = U_\text{grav}/2 = -K_\text{th}$, losing energy means $|U_\text{grav}|$ increases (deeper potential well), so the core shrinks
+3. **The core contracts** — from the virial relations
+
+   $$
+   E = \frac{U_\text{grav}}{2} = -K_\text{th}
+   $$
+
+   losing energy means $|U_\text{grav}|$ increases (deeper potential well), so the core shrinks
 4. **The core gets hotter** — paradoxically, losing energy increases the thermal energy ($K_\text{th} = -U_\text{grav}/2$ increases as the potential well deepens). Negative heat capacity in action.
 
 This is the virial theorem's most dramatic consequence: **a star that loses energy responds by getting hotter.** We met this paradox in Reading 2 — now we see it in action.
@@ -234,17 +240,43 @@ This **alpha capture** reaction competes with the triple-alpha process, and the 
 The energy released per triple-alpha reaction:
 
 $$
-E = \Delta m \, c^2 = (3 \times 4.002602 - 12.000000)~\text{u} \times 931.5~\text{MeV/u} = 7.275~\text{MeV}
+E = \Delta m \, c^2
+$$
+
+$$
+E = (3 \times 4.002602 - 12.000000)~\text{u} \times 931.5~\text{MeV/u}
+$$
+
+$$
+E = 7.275~\text{MeV}
 $$
 
 This is $\sim 7.3~\text{MeV}$ per carbon nucleus produced — compared to $26.7~\text{MeV}$ per helium nucleus from hydrogen burning. Helium burning produces less energy per reaction *and* consumes fuel faster (because the luminosity of a helium-burning star is much higher). This is why helium burning lasts a much shorter time than hydrogen burning.
 
 ::: {.callout-note title="Nucleosynthesis Thread (2 of 3)"}
-**Reading 3:** $\text{H} \rightarrow \text{He}$ (pp-chain, main sequence)
+**Reading 3:**
 
-**This reading:** $\text{He} \rightarrow \text{C} \rightarrow \text{O}$ (triple-alpha + alpha capture, red giant)
+$$
+\text{H} \rightarrow \text{He}
+$$
 
-**Reading 9:** $\text{C} \rightarrow \ldots \rightarrow \text{Fe}$ + beyond Fe via r-process (massive stars, supernovae)
+(pp-chain, main sequence)
+
+**This reading:**
+
+$$
+\text{He} \rightarrow \text{C} \rightarrow \text{O}
+$$
+
+(triple-alpha + alpha capture, red giant)
+
+**Reading 9:**
+
+$$
+\text{C} \rightarrow \ldots \rightarrow \text{Fe}
+$$
+
+plus beyond-iron production through the r-process (massive stars, supernovae)
 
 **Every carbon atom in your DNA was once inside a dying red giant star.** Oxygen is also produced by alpha capture during helium burning, though the largest oxygen yields come from more massive stars later in the stellar life cycle. The periodic table is being constructed inside stars, one fusion stage at a time.
 :::
@@ -277,8 +309,8 @@ For stars with $M \lesssim 2\,M_\odot$, something dramatic happens when helium i
 
 In a degenerate gas, pressure depends on *density*, not temperature. This breaks the stellar thermostat:
 
-- **Normal core:** Temperature rises → pressure rises → core expands → temperature drops → rate decreases. (Negative feedback — stable.)
-- **Degenerate core:** Temperature rises → pressure *unchanged* (degeneracy doesn't depend on $T$) → no expansion → temperature rises further → rate increases explosively. (Positive feedback — **runaway!**)
+- **Normal core:** Temperature rises, pressure rises, the core expands, the temperature drops, and the reaction rate decreases. (Negative feedback — stable.)
+- **Degenerate core:** Temperature rises, the pressure stays *unchanged* (degeneracy doesn't depend on $T$), there is no expansion, the temperature rises further, and the reaction rate increases explosively. (Positive feedback — **runaway!**)
 
 The result is the **helium flash** — a thermonuclear runaway in the degenerate core. For a brief period (seconds to minutes), the energy generation rate in the core is enormous — comparable to the luminosity of the entire Milky Way ($\sim 10^{11}\,L_\odot$). But this energy doesn't reach the surface: it is absorbed by the overlying layers, lifting the degeneracy (heating the gas until it becomes non-degenerate) and re-establishing the normal thermal equilibrium.
 
@@ -391,7 +423,13 @@ Type Ia supernovae are critical to cosmology because they are **standardizable c
 ::: {.callout-tip}
 ## Check Yourself
 
-A white dwarf has $M = 0.6\,M_\odot$ and $R = R_\oplus = 6.4 \times 10^8~\text{cm}$. Calculate its average density and compare to Earth's.
+A white dwarf has mass $M = 0.6\,M_\odot$ and radius $R = R_\oplus$, where
+
+$$
+R_\oplus = 6.4 \times 10^8~\text{cm}.
+$$
+
+Calculate its average density and compare to Earth's.
 
 ::: {.callout-note collapse="true"}
 ## Solution
@@ -497,8 +535,8 @@ The most important ideas from this reading:
 │  Gravity Scoreboard — Reading 7                      │
 ├──────────────────────────────────────────────────────┤
 │  Attacker:    Gravity                                │
-│  Former defender: Nuclear fusion (H → He exhausted)  │
-│  New defender:    Nuclear fusion (He → C, O)         │
+│  Former defender: Nuclear fusion (hydrogen exhausted)│
+│  New defender:    Nuclear fusion (helium to C and O) │
 │  Duration:        ~100 Myr (1% of H-burning phase)  │
 │  Final state:     WHITE DWARF                        │
 │  What holds it up: Electron degeneracy pressure      │
@@ -507,9 +545,9 @@ The most important ideas from this reading:
 │                   the line. No more energy sources.  │
 │                   The star cools forever.             │
 │                                                      │
-│  But: Is degeneracy pressure invincible? → R8        │
+│  But: Is degeneracy pressure invincible? See R8.     │
 │  What if the WD mass exceeds a critical limit?       │
-│  Next: The Chandrasekhar limit → Reading 8           │
+│  Next: The Chandrasekhar limit, Reading 8            │
 └──────────────────────────────────────────────────────┘
 ```
 

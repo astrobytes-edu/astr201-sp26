@@ -9,9 +9,9 @@ categories: [mass-limits, brown-dwarfs, eddington-limit, heisenberg-uncertainty,
 course: ASTR 201
 module: "3 - Stellar Structure & Evolution"
 learning-objectives:
-  - Explain why there is a minimum mass for hydrogen fusion (~0.08 solar masses) using quantum confinement and electron degeneracy
+  - Explain why there is a minimum mass for hydrogen fusion (about 0.08 solar masses) using quantum confinement and electron degeneracy
   - State the Heisenberg uncertainty principle and explain how confining particles to small spaces gives them momentum
-  - Explain why there is a maximum stellar mass (~100–150 solar masses) set by the Eddington luminosity
+  - Explain why there is a maximum stellar mass (about 100 to 150 solar masses) set by the Eddington luminosity
   - Describe what brown dwarfs are and why they fail to sustain hydrogen fusion
   - Calculate the Eddington luminosity for a given stellar mass and compare it to the actual luminosity
   - Explain how both mass limits depend on fundamental constants of nature
@@ -22,7 +22,7 @@ Concept-Throughline:
   - The Eddington limit marks where radiation force becomes comparable to gravity, so very massive stars develop strong winds and an upper mass scale
 math-level: symbolic_with_interpretation
 mode: Draft
-prerequisites: "de Broglie wavelength (Reading 3), Eddington luminosity and radiation pressure (Reading 4), mass-luminosity relation L ∝ M^3.5 (Reading 5), core temperature estimate T_c ∝ M/R (Reading 2)"
+prerequisites: "de Broglie wavelength (Reading 3), Eddington luminosity and radiation pressure (Reading 4), the mass-luminosity relation from Reading 5, and the core-temperature scaling from Reading 2"
 ---
 
 ## Learning Objectives
@@ -90,13 +90,28 @@ $$
 At the Sun's core ($T_c \sim 1.5 \times 10^7~\text{K}$), the de Broglie wavelength of a proton is:
 
 $$
-\lambda_\text{dB} \sim \frac{6.63 \times 10^{-27}~\text{erg}\cdot\text{s}}{\sqrt{3 \times 1.67 \times 10^{-24}~\text{g} \times 1.38 \times 10^{-16}~\text{erg}/\text{K} \times 1.5 \times 10^7~\text{K}}} \sim 3 \times 10^{-10}~\text{cm}
+\lambda_\text{dB}
+\sim
+\frac{6.63 \times 10^{-27}~\text{erg}\cdot\text{s}}
+{\sqrt{3 \times 1.67 \times 10^{-24}~\text{g} \times 1.38 \times 10^{-16}~\text{erg}\,\text{K}^{-1} \times 1.5 \times 10^7~\text{K}}}
+$$
+
+$$
+\lambda_\text{dB} \sim 3 \times 10^{-10}~\text{cm}
 $$
 
 The average interparticle spacing in the solar core is:
 
 $$
-d \sim n^{-1/3} \sim \left(\frac{\rho}{m_p}\right)^{-1/3} \sim \left(\frac{150~\text{g}/\text{cm}^3}{1.67 \times 10^{-24}~\text{g}}\right)^{-1/3} \sim 2 \times 10^{-9}~\text{cm}
+d \sim n^{-1/3}
+\sim
+\left(\frac{\rho}{m_p}\right)^{-1/3}
+\sim
+\left(\frac{150~\text{g}\,\text{cm}^{-3}}{1.67 \times 10^{-24}~\text{g}}\right)^{-1/3}
+$$
+
+$$
+d \sim 2 \times 10^{-9}~\text{cm}
 $$
 
 So in the Sun, $\lambda_\text{dB} \sim 3 \times 10^{-10}~\text{cm} \ll d \sim 2 \times 10^{-9}~\text{cm}$ — the quantum wavelength is about $7\times$ smaller than the particle spacing. The particles "fit" comfortably as classical objects. Quantum mechanics plays a role in nuclear reactions (tunneling), but the *gas behavior* is classical.
@@ -146,7 +161,11 @@ The de Broglie wavelength argument tells us *when* quantum effects matter. But *
 
 {{< eqrefcard heisenberg >}}
 
-where $\Delta x$ is the uncertainty in position, $\Delta p$ is the uncertainty in momentum, and $\hbar = h/(2\pi) = 1.055 \times 10^{-27}~\text{erg}\cdot\text{s}$ is the reduced Planck constant.
+where $\Delta x$ is the uncertainty in position and $\Delta p$ is the uncertainty in momentum. The reduced Planck constant is
+
+$$
+\hbar = \frac{h}{2\pi} = 1.055 \times 10^{-27}~\text{erg}\cdot\text{s}.
+$$
 
 **What this says:** You cannot simultaneously know a particle's exact position and exact momentum. The more precisely you confine a particle (smaller $\Delta x$), the larger its momentum uncertainty ($\Delta p$) must be — and therefore the faster the particle moves.
 
@@ -348,7 +367,11 @@ $$
 $$
 
 $$
-\frac{M}{M_\odot} = (3.8 \times 10^4)^{1/2.5} = (3.8 \times 10^4)^{0.4} \approx 100
+\frac{M}{M_\odot} = (3.8 \times 10^4)^{1/2.5}
+$$
+
+$$
+\frac{M}{M_\odot} = (3.8 \times 10^4)^{0.4} \approx 100
 $$
 
 So a naive crossover estimate gives $M_\text{max} \sim 100\,M_\odot$. In practice, stars up to $\sim 150\text{–}200\,M_\odot$ have been observed (for example R136a1 in the Large Magellanic Cloud, with a birth mass near $170\,M_\odot$), because the mass-luminosity relation flattens at very high masses and the Eddington limit is not an absolute wall. The useful lesson is not that stars instantly explode at $100\,M_\odot$, but that radiation increasingly constrains the structure and drives strong mass loss.
@@ -362,7 +385,11 @@ The most massive known star, R136a1, has a current mass of $\sim 170\,M_\odot$ a
 ## Solution
 
 $$
-L_\text{Edd} = 3.8 \times 10^4 \times 170\,L_\odot = 6.5 \times 10^6\,L_\odot
+L_\text{Edd} = 3.8 \times 10^4 \times 170\,L_\odot
+$$
+
+$$
+L_\text{Edd} = 6.5 \times 10^6\,L_\odot
 $$
 
 $$
@@ -500,10 +527,10 @@ The most important ideas from this reading:
 │  Defender:    Thermal pressure (nuclear fusion)       │
 │  Referee:     Quantum mechanics + radiation pressure  │
 │  Status:      CONSTRAINED. Gravity can only build    │
-│               stars within 0.08–150 M☉.             │
-│               Too small → electron degeneracy        │
-│               prevents fusion. Too large →           │
-│               radiation and winds limit growth.      │
+│               stars within about 0.08 to 150 M_sun. │
+│               Too small: electron degeneracy         │
+│               prevents fusion. Too large: radiation  │
+│               and winds limit growth.                │
 │                                                      │
 │  New weapon:  Degeneracy pressure — quantum          │
 │               momentum from confinement. Works even  │
@@ -514,7 +541,7 @@ The most important ideas from this reading:
 │               degeneracy; the upper limit by the     │
 │               Eddington regime and mass loss.        │
 │  Next:        What happens when hydrogen runs out?   │
-│               → Reading 7                            │
+│               See Reading 7                          │
 └──────────────────────────────────────────────────────┘
 ```
 

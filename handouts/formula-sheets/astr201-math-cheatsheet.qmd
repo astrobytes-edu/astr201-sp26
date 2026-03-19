@@ -49,11 +49,35 @@ Multiply by 1 in a smart form:
 
 $1\,\rm km = 10^5\,cm$ so
 
-$3\,\rm km = 3\,km \times \dfrac{10^5\,cm}{1\,km} = 3\times 10^5\,cm$
+$$
+3\,\rm km
+=
+3\,\rm km \times \dfrac{10^5\,cm}{1\,km}
+=
+3\times 10^5\,cm
+$$
 
 **Area and volume:**
-- $1\,\rm m^2 = (100\,cm)^2 = 10^4\,cm^2$
-- $1\,\rm m^3 = (100\,cm)^3 = 10^6\,cm^3$
+
+Area:
+
+$$
+1\,\rm m^2
+=
+(100\,cm)^2
+=
+10^4\,cm^2
+$$
+
+Volume:
+
+$$
+1\,\rm m^3
+=
+(100\,cm)^3
+=
+10^6\,cm^3
+$$
 
 **Energy and power:**
 - $1\,\rm J = 10^7\,erg$
@@ -80,4 +104,3 @@ $3\,\rm km = 3\,km \times \dfrac{10^5\,cm}{1\,km} = 3\times 10^5\,cm$
 | Sphere surface area | $A = 4\pi R^2$ |
 | Sphere volume | $V = \dfrac{4}{3}\pi R^3$ |
 | Cylinder volume | $V = \pi R^2 h$ |
-

@@ -71,7 +71,7 @@ And they don't stop there. Each time a fuel is exhausted, the core contracts fur
 
 {{< fig onion-shell-burning >}}
 
-| Stage | Fuel → Product | $T_\text{ignition}$ | Duration ($25\,M_\odot$ star) |
+| Stage | Fuel to product | $T_\text{ignition}$ | Duration ($25\,M_\odot$ star) |
 |:------|:--------------|:------|:-------|
 | 1. Hydrogen | $\text{H} \rightarrow \text{He}$ | $\sim 4 \times 10^7~\text{K}$ | $\sim 7 \times 10^6~\text{yr}$ |
 | 2. Helium | $\text{He} \rightarrow \text{C}, \text{O}$ | $\sim 2 \times 10^8~\text{K}$ | $\sim 5 \times 10^5~\text{yr}$ |
@@ -95,7 +95,11 @@ The accelerating timescale follows from two effects:
 The combination — less fuel energy and faster burning — compresses each stage into a smaller fraction of the star's life:
 
 $$
-\frac{\tau_\text{Si}}{\tau_\text{H}} \sim \frac{1~\text{day}}{7 \times 10^6~\text{yr}} \sim 4 \times 10^{-10}
+\frac{\tau_\text{Si}}{\tau_\text{H}} \sim \frac{1~\text{day}}{7 \times 10^6~\text{yr}}
+$$
+
+$$
+\frac{\tau_\text{Si}}{\tau_\text{H}} \sim 4 \times 10^{-10}
 $$
 
 Silicon burning lasts less than one-billionth of the hydrogen-burning lifetime.
@@ -134,8 +138,8 @@ The curve has a peak because of the competition between the strong nuclear force
 
 This means:
 
-- **Fusing elements lighter than iron** → products are more tightly bound → energy is released ✓
-- **Fusing elements heavier than iron** → products are *less* tightly bound → energy is *consumed* ✗
+- **Fusing elements lighter than iron:** the products are more tightly bound, so energy is released. ✓
+- **Fusing elements heavier than iron:** the products are *less* tightly bound, so energy is *consumed*. ✗
 
 **Iron is the ash of nuclear burning.** Just as you can't burn ash in a fireplace, you can't extract energy by fusing iron. The fusion furnace has run out of fuel — permanently and irreversibly.
 
@@ -270,16 +274,41 @@ The collapse of the iron core from $R \sim 1{,}000~\text{km}$ to $R \sim 10~\tex
 ::: {.callout-note collapse="true"}
 ## Solution
 
-Since $R_f = 10~\text{km} = 10^6~\text{cm}$ and $R_i = 1{,}000~\text{km} = 10^8~\text{cm}$:
+Since
 
 $$
-\frac{1}{R_f} - \frac{1}{R_i} = \frac{1}{10^6} - \frac{1}{10^8} = 10^{-6}(1 - 0.01) \approx 10^{-6}~\text{cm}^{-1}
+R_f = 10~\text{km} = 10^6~\text{cm}
+$$
+
+and
+
+$$
+R_i = 1{,}000~\text{km} = 10^8~\text{cm},
+$$
+
+$$
+\frac{1}{R_f} - \frac{1}{R_i}
+=
+\frac{1}{10^6} - \frac{1}{10^8}
+$$
+
+$$
+\frac{1}{R_f} - \frac{1}{R_i}
+=
+10^{-6}(1 - 0.01)
+\approx 10^{-6}~\text{cm}^{-1}
 $$
 
 The $1/R_i$ term contributes only $1\%$ — the final radius dominates. The energy released:
 
 $$
-\Delta E \sim \frac{GM^2}{R_f} = \frac{6.67 \times 10^{-8} \times (2.8 \times 10^{33})^2}{10^6}
+\Delta E \sim \frac{GM^2}{R_f}
+$$
+
+$$
+\Delta E
+\sim
+\frac{6.67 \times 10^{-8} \times (2.8 \times 10^{33})^2}{10^6}
 $$
 
 $$
@@ -413,7 +442,7 @@ The Sun formed from gas that had been enriched by multiple generations of stella
 
 ### Burning Stages of a $25\,M_\odot$ Star
 
-| Stage | Fuel → Ash | $T$ (K) | $\rho$ (g/cm³) | Duration | Energy (MeV/nucleon) |
+| Stage | Fuel to ash | $T$ (K) | $\rho$ (g/cm³) | Duration | Energy (MeV/nucleon) |
 |:------|:-----------|:--------|:------|:---------|:---------|
 | H | $\text{H} \rightarrow \text{He}$ | $4 \times 10^7$ | $5$ | $7 \times 10^6~\text{yr}$ | 6.7 |
 | He | $\text{He} \rightarrow \text{C,O}$ | $2 \times 10^8$ | $700$ | $5 \times 10^5~\text{yr}$ | 0.6 |
@@ -469,18 +498,19 @@ The most important ideas from this reading:
 │    - Electron degeneracy (Chandrasekhar exceeded)    │
 │  Status:      GRAVITY WINS — CATASTROPHICALLY.       │
 │               Iron core collapses in < 1 second.     │
-│               Energy: 3 × 10⁵³ erg (mostly ν).     │
+│               Energy: about 3 x 10^53 erg, mostly   │
+│               in neutrinos.                         │
 │                                                      │
 │  But: the collapse is not the end.                   │
 │    - The core bounces at nuclear density             │
 │    - NEUTRON DEGENERACY halts the collapse           │
 │    - If the core is too massive even for that...     │
-│      GRAVITY WINS COMPLETELY. → Black hole.          │
+│      gravity wins completely, and a black hole forms.│
 │                                                      │
 │  The explosion scatters every element the star       │
 │  ever built — seeding the next generation.           │
 │  The periodic table is a record of gravity's battles.│
-│  Next: Neutron stars & black holes → Reading 10      │
+│  Next: Neutron stars and black holes, Reading 10     │
 └──────────────────────────────────────────────────────┘
 ```
 

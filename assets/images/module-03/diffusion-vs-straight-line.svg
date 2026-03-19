@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560" role="img" aria-labelledby="title desc">
+  <title id="title">Straight-line escape versus radiative diffusion</title>
+  <desc id="desc">Two-panel comparison. The left panel shows a straight path from the stellar core to the surface. The right panel shows a tangled random walk with many short steps that reaches the same surface only after a much longer path.</desc>
+  <rect width="1200" height="560" fill="#fbfaf4"/>
+  <text x="600" y="48" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="700" fill="#1d3557">
+    Why diffusion is slow
+  </text>
+  <text x="600" y="82" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#4a5568">
+    Same net escape distance, very different total path length
+  </text>
+
+  <rect x="50" y="110" width="500" height="390" rx="24" fill="#ffffff" stroke="#d8dee9" stroke-width="2"/>
+  <rect x="650" y="110" width="500" height="390" rx="24" fill="#ffffff" stroke="#d8dee9" stroke-width="2"/>
+
+  <text x="300" y="150" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#1d3557">
+    Straight streaming
+  </text>
+  <text x="900" y="150" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#1d3557">
+    Radiative diffusion
+  </text>
+
+  <circle cx="300" cy="305" r="135" fill="#fff2cc" stroke="#f4a261" stroke-width="4"/>
+  <circle cx="900" cy="305" r="135" fill="#fff2cc" stroke="#f4a261" stroke-width="4"/>
+
+  <circle cx="300" cy="305" r="24" fill="#e76f51"/>
+  <circle cx="900" cy="305" r="24" fill="#e76f51"/>
+  <text x="300" y="312" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#ffffff">
+    core
+  </text>
+  <text x="900" y="312" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#ffffff">
+    core
+  </text>
+
+  <circle cx="425" cy="305" r="10" fill="#264653"/>
+  <circle cx="1025" cy="305" r="10" fill="#264653"/>
+  <text x="425" y="336" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#264653">
+    surface
+  </text>
+  <text x="1025" y="336" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#264653">
+    surface
+  </text>
+
+  <line x1="324" y1="305" x2="415" y2="305" stroke="#2a9d8f" stroke-width="8" stroke-linecap="round"/>
+  <polygon points="430,305 405,292 405,318" fill="#2a9d8f"/>
+  <text x="300" y="385" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#2a9d8f" font-weight="700">
+    path length = R
+  </text>
+  <text x="300" y="415" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#4a5568">
+    travel time ~ R / c
+  </text>
+
+  <polyline
+    points="924,305 960,260 935,225 985,205 948,175 1015,190 980,235 1028,258 990,292 1030,325 980,360 1008,396 960,420 1000,445 968,455 932,430 950,392 905,368 930,330 890,305 920,272 882,245 910,215 875,198 900,220 870,250 890,285 860,308 885,335 858,368 890,400 865,430 890,452 930,440 940,405 915,374 948,342 928,318 975,306 1015,305"
+    fill="none"
+    stroke="#7b2cbf"
+    stroke-width="7"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+  <line x1="924" y1="305" x2="1015" y2="305" stroke="#264653" stroke-width="4" stroke-dasharray="10 10"/>
+  <polygon points="1030,305 1005,292 1005,318" fill="#264653"/>
+  <text x="900" y="385" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#7b2cbf" font-weight="700">
+    total path length >> R
+  </text>
+  <text x="900" y="415" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#4a5568">
+    many short steps of size l
+  </text>
+  <text x="900" y="445" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#4a5568">
+    net escape still only one stellar radius
+  </text>
+
+  <text x="300" y="490" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#1d3557">
+    One outward trip reaches the surface.
+  </text>
+  <text x="900" y="490" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#1d3557">
+    A random walk needs many more steps to get the same net displacement.
+  </text>
+</svg>

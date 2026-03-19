@@ -11,14 +11,14 @@ module: "3 - Stellar Structure & Evolution"
 learning-objectives:
   - Describe the structure and extreme properties of neutron stars (density, magnetic fields, rotation)
   - Explain pulsars as rotating neutron stars with misaligned magnetic axes (lighthouse model)
-  - State the TOV limit (~2–3 solar masses) and explain why it represents the maximum neutron star mass
+  - State the TOV limit (about 2 to 3 solar masses) and explain why it represents the maximum neutron star mass
   - Calculate the Schwarzschild radius for a given mass
   - Explain qualitatively why Newtonian gravity breaks down for compact objects and why general relativity is needed
   - Describe observational evidence for neutron stars and black holes (pulsars, X-ray binaries, gravitational waves, EHT)
 Concept-Throughline:
   - Neutron stars are quantum mechanical objects at nuclear density — city-sized, supported by neutron degeneracy pressure, spinning hundreds of times per second
-  - The TOV limit (~2–3 solar masses) is the neutron star analogue of the Chandrasekhar limit — above it, nothing in known physics can resist gravity
-  - General relativity replaces Newtonian gravity when v ~ c or when the Schwarzschild radius approaches the physical radius
+  - The TOV limit (about 2 to 3 solar masses) is the neutron star analogue of the Chandrasekhar limit — above it, nothing in known physics can resist gravity
+  - General relativity replaces Newtonian gravity when speeds approach $c$ or when the Schwarzschild radius approaches the physical radius
   - Black holes are not objects in space — they are features of spacetime itself, defined by the event horizon
 math-level: symbolic_with_interpretation
 mode: Draft
@@ -99,7 +99,19 @@ The result is a neutron star — a ball of $\sim 10^{57}$ neutrons, with a thin 
 A teaspoon ($\sim 5~\text{cm}^3$) of neutron star material would weigh:
 
 $$
-m = \rho \times V = 5 \times 10^{14}~\text{g}/\text{cm}^3 \times 5~\text{cm}^3 = 2.5 \times 10^{15}~\text{g} = 2.5 \times 10^9~\text{kg}
+m = \rho \times V
+$$
+
+$$
+m
+=
+5 \times 10^{14}~\text{g}\,\text{cm}^{-3} \times 5~\text{cm}^3
+=
+2.5 \times 10^{15}~\text{g}
+$$
+
+$$
+m = 2.5 \times 10^9~\text{kg}
 $$
 
 That's $2.5$ billion tonnes — roughly the mass of a $1~\text{km}$ asteroid — in a teaspoon. If you placed this teaspoon on Earth's surface, it would punch through the crust and sink to the center.
@@ -123,11 +135,26 @@ $$
 If the Sun ($R_1 = 7 \times 10^{10}~\text{cm}$, rotation period $P_1 \approx 25~\text{days}$) collapsed to neutron star dimensions ($R_2 = 10^6~\text{cm}$):
 
 $$
-\frac{P_1}{P_2} = \frac{R_1^2}{R_2^2} = \left(\frac{7 \times 10^{10}}{10^6}\right)^2 = 4.9 \times 10^9
+\frac{P_1}{P_2} = \frac{R_1^2}{R_2^2}
 $$
 
 $$
-P_2 = \frac{25~\text{days}}{4.9 \times 10^9} = \frac{2.16 \times 10^6~\text{s}}{4.9 \times 10^9} \approx 4.4 \times 10^{-4}~\text{s}
+\frac{P_1}{P_2}
+=
+\left(\frac{7 \times 10^{10}}{10^6}\right)^2
+=
+4.9 \times 10^9
+$$
+
+$$
+P_2 = \frac{25~\text{days}}{4.9 \times 10^9}
+$$
+
+$$
+P_2
+=
+\frac{2.16 \times 10^6~\text{s}}{4.9 \times 10^9}
+\approx 4.4 \times 10^{-4}~\text{s}
 $$
 
 A rotation period of $\sim 0.4~\text{ms}$ — over 2,000 rotations per second. The actual Sun rotates slowly and would lose angular momentum during collapse, but the calculation illustrates why neutron stars spin so fast: conservation of angular momentum during a factor-of-$10^5$ contraction in radius amplifies the rotation rate by a factor of $10^{10}$.
@@ -135,7 +162,13 @@ A rotation period of $\sim 0.4~\text{ms}$ — over 2,000 rotations per second. T
 ::: {.callout-tip}
 ## Check Yourself
 
-The same angular momentum argument explains why neutron stars have such extreme magnetic fields. If the Sun's magnetic field is $\sim 1~\text{G}$ and magnetic flux is conserved ($\Phi = B \times \pi R^2 = \text{constant}$), estimate the magnetic field of the resulting neutron star.
+The same angular momentum argument explains why neutron stars have such extreme magnetic fields. If the Sun's magnetic field is $\sim 1~\text{G}$ and magnetic flux is conserved,
+
+$$
+\Phi = B \times \pi R^2 = \text{constant},
+$$
+
+estimate the magnetic field of the resulting neutron star.
 
 ::: {.callout-note collapse="true"}
 ## Solution
@@ -147,7 +180,11 @@ B_1 R_1^2 = B_2 R_2^2 \quad \Rightarrow \quad B_2 = B_1 \left(\frac{R_1}{R_2}\ri
 $$
 
 $$
-B_2 = 1~\text{G} \times \left(\frac{7 \times 10^{10}}{10^6}\right)^2 = 4.9 \times 10^9~\text{G}
+B_2 = 1~\text{G} \times \left(\frac{7 \times 10^{10}}{10^6}\right)^2
+$$
+
+$$
+B_2 = 4.9 \times 10^9~\text{G}
 $$
 
 This gives $B \sim 5 \times 10^9~\text{G}$ — already enormous. Observed neutron star fields are $10^{12}\text{–}10^{15}~\text{G}$, even stronger, suggesting additional magnetic field amplification during the collapse (dynamo processes in the turbulent proto-neutron star). The strongest-field neutron stars (**magnetars**, $B \sim 10^{15}~\text{G}$) have fields so intense that they can deform the neutron star crust, triggering "starquakes" and gamma-ray flares.
@@ -190,7 +227,18 @@ The Crab pulsar has a period of $P = 33.5~\text{ms}$ and is spinning down at a r
 If the spin-down rate has been approximately constant, the age is:
 
 $$
-\tau = \frac{P}{2\dot{P}} = \frac{0.0335}{2 \times 4.21 \times 10^{-13}} \approx 4.0 \times 10^{10}~\text{s} \approx 1{,}260~\text{yr}
+\tau = \frac{P}{2\dot{P}}
+$$
+
+$$
+\tau
+=
+\frac{0.0335}{2 \times 4.21 \times 10^{-13}}
+\approx 4.0 \times 10^{10}~\text{s}
+$$
+
+$$
+\tau \approx 1{,}260~\text{yr}
 $$
 
 The Crab Nebula is the remnant of a supernova recorded by Chinese astronomers in 1054 CE — about $970$ years ago. Our estimate ($1{,}260~\text{yr}$) is in the right ballpark. The discrepancy arises because the spin-down rate is not exactly constant (it decreases as the pulsar slows) and because we assumed the birth period was zero. This "characteristic age" $\tau = P/(2\dot{P})$ is a standard estimate used for pulsars.
@@ -273,7 +321,20 @@ This is the **Schwarzschild radius** — the radius at which the escape velocity
 For the Sun:
 
 $$
-R_{s,\odot} = \frac{2 \times 6.67 \times 10^{-8} \times 2.0 \times 10^{33}}{(3.0 \times 10^{10})^2} = \frac{2.67 \times 10^{26}}{9.0 \times 10^{20}} \approx 3.0 \times 10^5~\text{cm} = 3.0~\text{km}
+R_{s,\odot}
+=
+\frac{2 \times 6.67 \times 10^{-8} \times 2.0 \times 10^{33}}{(3.0 \times 10^{10})^2}
+$$
+
+$$
+R_{s,\odot}
+=
+\frac{2.67 \times 10^{26}}{9.0 \times 10^{20}}
+\approx 3.0 \times 10^5~\text{cm}
+$$
+
+$$
+R_{s,\odot} = 3.0~\text{km}
 $$
 
 For Earth:
@@ -308,7 +369,15 @@ $$
 \frac{R_s}{R} = \frac{4.2}{10} = 0.42
 $$
 
-The Schwarzschild radius is $42\%$ of the physical radius. This is *enormous* — for comparison, $R_s/R_\odot = 3~\text{km}/7 \times 10^5~\text{km} = 4 \times 10^{-6}$ for the Sun, and $R_s/R_\oplus \sim 10^{-9}$ for Earth.
+The Schwarzschild radius is $42\%$ of the physical radius. This is *enormous*. For the Sun, the corresponding ratio is only $4 \times 10^{-6}$, and for Earth it is only $R_s/R_\oplus \sim 10^{-9}$.
+
+$$
+\frac{R_s}{R_\odot}
+=
+\frac{3~\text{km}}{7 \times 10^5~\text{km}}
+=
+4 \times 10^{-6}
+$$
 
 When $R_s/R$ is a significant fraction of unity, general relativity is essential — Newtonian gravity is no longer accurate. A neutron star's surface gravity, spacetime curvature, and light propagation all require GR to describe correctly. Photons emitted from the surface are gravitationally redshifted by $\sim 30\%$ before reaching a distant observer. Time runs measurably slower on the neutron star surface. These are not tiny corrections — they are dominant effects.
 :::
@@ -390,10 +459,10 @@ Neither neutron stars nor black holes can be observed directly in isolation (bla
 | Evidence | What we see | What it tells us |
 |:---------|:-----------|:-----------------|
 | **X-ray binaries** | Accretion disk X-rays; no surface emission | Compact object with no surface (unlike NS) |
-| **Mass function** | Companion star orbits → $M > 3\,M_\odot$ | Too massive for NS → must be BH |
-| **Gravitational waves** | GW150914 (BH-BH merger, LIGO 2015) | $36 + 29 = 62\,M_\odot$; $3\,M_\odot c^2$ radiated as GW |
+| **Mass function** | Companion star orbits imply $M > 3\,M_\odot$ | Too massive for a neutron star, so it must be a black hole |
+| **Gravitational waves** | GW150914 (BH-BH merger, LIGO 2015) | $36 + 29 = 62\,M_\odot$ with $3\,M_\odot c^2$ radiated as gravitational waves |
 | **Event Horizon Telescope** | Shadow of M87* (2019), Sgr A* (2022) | Light ring matches GR prediction for $4 \times 10^6\,M_\odot$ BH |
-| **Stellar orbits** | S-stars orbiting Sgr A* | Keplerian orbits → $4 \times 10^6\,M_\odot$ in $< 100~\text{AU}$ |
+| **Stellar orbits** | S-stars orbiting Sgr A* | Keplerian orbits imply $4 \times 10^6\,M_\odot$ inside $< 100~\text{AU}$ |
 
 {{< fig cygnus-x1-accretion >}}
 
@@ -414,12 +483,35 @@ The supermassive black hole at the center of the Milky Way (Sgr A*) has $M \appr
 ## Solution
 
 $$
-R_s = 3.0~\text{km} \times 4 \times 10^6 = 1.2 \times 10^7~\text{km}
+R_s = 3.0~\text{km} \times 4 \times 10^6
 $$
 
-Compared to the Sun's radius: $R_s/(R_\odot) = 1.2 \times 10^7 / 7 \times 10^5 \approx 17$. The event horizon of Sgr A* is about $17$ solar radii — a large star could fit inside it comfortably.
+$$
+R_s = 1.2 \times 10^7~\text{km}
+$$
 
-Compared to Earth's orbit: $R_s/(1~\text{AU}) = 1.2 \times 10^7 / 1.5 \times 10^8 = 0.08$. The event horizon is about $0.08~\text{AU}$ — roughly $1/5$ of Mercury's orbital radius.
+Compared to the Sun's radius:
+
+$$
+\frac{R_s}{R_\odot}
+=
+\frac{1.2 \times 10^7}{7 \times 10^5}
+\approx 17
+$$
+
+The event horizon of Sgr A* is about $17$ solar radii — a large star could fit inside it comfortably.
+
+Compared to Earth's orbit:
+
+$$
+\frac{R_s}{1~\text{AU}}
+=
+\frac{1.2 \times 10^7}{1.5 \times 10^8}
+=
+0.08
+$$
+
+The event horizon is about $0.08~\text{AU}$ — roughly $1/5$ of Mercury's orbital radius.
 
 Despite containing 4 million solar masses, the event horizon is only $\sim 17$ solar radii across. This is because $R_s \propto M$, while the volume scales as $R_s^3 \propto M^3$. The average density *inside* the event horizon is $\bar{\rho} = 3M/(4\pi R_s^3) \propto M^{-2}$. Supermassive black holes have *lower* average density inside their horizons than stellar-mass ones. For Sgr A*: $\bar{\rho} \sim 10^3~\text{g}/\text{cm}^3$ — less dense than the Sun's core.
 :::
@@ -447,7 +539,7 @@ The boundaries between these outcomes depend on mass loss during the star's life
 | Opponent | What it does | When it loses |
 |:---------|:-------------|:-------------|
 | **Thermal pressure** | Pushes outward (gas, radiation) | Fuel exhausted; cooling |
-| **Nuclear fusion** | Replenishes thermal energy | H → He → C → ... → Fe; iron is the end |
+| **Nuclear fusion** | Replenishes thermal energy | Hydrogen to helium to carbon and onward to iron; iron is the end |
 | **Radiation pressure** | Opposes gravity in massive stars | Sets upper mass limit ($\sim 150\,M_\odot$) |
 | **Electron degeneracy** | QM pressure at $T = 0$ | Electrons go relativistic at $1.4\,M_\odot$ |
 | **Neutron degeneracy** | QM pressure at nuclear density | Neutrons go relativistic at $\sim 2.5\,M_\odot$ |
@@ -511,15 +603,15 @@ The most important ideas from this reading:
 │  geometry of spacetime points only inward.           │
 │                                                      │
 │  FINAL SCORES:                                       │
-│  ──────────────────────────────────────────           │
-│  M < 0.08 M☉:   No fusion. Brown dwarf. (QM floor)  │
-│  0.08–8 M☉:     Fusion → WD. Gravity held off by    │
-│                  electron degeneracy. (1.4 M☉ cap)   │
-│  8–25 M☉:       Supernova → NS. Gravity held off    │
-│                  by neutron degeneracy. (2.5 M☉ cap) │
-│  > 25 M☉:       Supernova → BH. Gravity wins.       │
-│                  No defense. No appeal. No escape.   │
-│  ──────────────────────────────────────────           │
+│  --------------------------------------------------  │
+│  Below 0.08 solar masses: no fusion. Brown dwarf.   │
+│  From 0.08 to 8 solar masses: fusion, then white    │
+│  dwarf. Gravity held off by electron degeneracy.    │
+│  From 8 to 25 solar masses: supernova, then neutron │
+│  star. Gravity held off by neutron degeneracy.      │
+│  Above 25 solar masses: supernova, then black hole. │
+│  Gravity wins. No defense. No appeal. No escape.    │
+│  --------------------------------------------------  │
 │                                                      │
 │  But the story isn't over.                           │
 │                                                      │
