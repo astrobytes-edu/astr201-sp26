@@ -887,6 +887,61 @@ figures:
     credit: "ASTR 201 (generated)"
     module: 3
 
+  fusion-energy-flow:
+    path: /assets/images/module-03/fusion-energy-flow.svg
+    caption: "**What to notice:** fusion energy is born in the core, mostly stays in the star, and only later escapes as luminosity. The neutrino channel leaves quickly, but the photon energy must thermalize and diffuse outward through the stellar interior."
+    alt: "Horizontal flow diagram showing core mass deficit producing gamma rays and particle kinetic energy, a small branch for escaping neutrinos, then thermalization in dense plasma, photon diffusion through the star, and final surface luminosity."
+    credit: "ASTR 201 (SVG)"
+    module: 3
+
+  nuclear-stellax-why-sun-shines:
+    path: /assets/images/module-03/nuclear-stellax/teaching_why_sun_shines.png
+    caption: "**What to notice:** there is an astrophysically narrow window between 'too cool to sustain hydrogen burning' and 'so hot that the rate skyrockets.' The Sun sits in that middle regime, where fusion is strong enough to power the star but still slow enough to last billions of years."
+    alt: "Log-log plot of nuclear energy generation rate per unit mass versus core temperature. A shaded cool region is labeled no fusion or brown dwarf, and the Sun is marked near 1.57 times 10 to the 7 kelvin at roughly 10 squared erg per gram per second."
+    module: 3
+
+  nuclear-stellax-thermostat:
+    path: /assets/images/module-03/nuclear-stellax/teaching_thermostat.png
+    caption: "**What to notice:** the temperature sensitivity of nuclear burning changes with temperature. The dashed guides mark the textbook pp and CNO scalings, while the full curve shows that the Sun already lives in a strongly temperature-sensitive regime. That sensitivity is what makes fusion a thermostat."
+    alt: "Plot of the logarithmic temperature sensitivity nu equals d ln epsilon over d ln T versus temperature. The Sun is marked near 1.7 times 10 to the 7 kelvin with nu about 17, and dashed reference lines indicate pp burning near 4 and CNO burning near 16."
+    module: 3
+
+  nuclear-stellax-gamow-peak:
+    path: /assets/images/module-03/nuclear-stellax/teaching_gamow_peak.png
+    caption: "**What to notice:** the Gamow window depends on both temperature and reaction type. At the Sun's temperature the pp window sits at only a few keV, while the CNO window lies at higher energy because the Coulomb barrier is larger."
+    alt: "Two-panel plot of normalized reaction-probability windows versus energy for pp and carbon-proton reactions. The left panel is for solar temperature, the right for a hotter 10-solar-mass star, with pp peaks at lower energies than CNO peaks in both cases."
+    module: 3
+
+  nuclear-stellax-pp-vs-cno:
+    path: /assets/images/module-03/nuclear-stellax/nuclear_pp_vs_cno.png
+    caption: "**What to notice:** pp burning dominates in Sun-like cores, but the CNO cycle overtakes it once the core reaches roughly $18\\,\\mathrm{MK}$. That crossover is why more massive main-sequence stars are powered by a different hydrogen-burning pathway."
+    alt: "Semilog plot of nuclear energy generation rate versus temperature in megakelvin comparing pp and CNO burning at fixed density and composition. The curves cross near 18 megakelvin, with the CNO curve rising much more steeply."
+    module: 3
+
+  nuclear-stellax-epsilon-network:
+    path: /assets/images/module-03/nuclear-stellax/network_epsilon_vs_T.png
+    caption: "**What to notice:** as temperature rises, the dominant nuclear network changes in stages: pp to CNO, then triple-alpha ignition, then the advanced carbon, neon, oxygen, and silicon burning regimes. The lower panel shows where the more detailed networks begin to differ from a basic hydrogen-burning approximation."
+    alt: "Two-panel figure of nuclear energy generation rate versus temperature. The upper panel shows three model curves across pp, CNO, alpha-burning, and advanced-burning transitions marked by vertical lines. The lower panel shows the ratio of two more detailed networks to a basic reference network."
+    module: 3
+
+  nuclear-stellax-main-sequence-burning-map:
+    path: /assets/images/module-03/nuclear-stellax/teaching_mass_density.png
+    caption: "**What to notice:** main-sequence stars occupy different places in temperature-density space. Low-mass stars lie on the pp side of the boundary, while hotter massive stars sit on the CNO side."
+    alt: "Color heatmap of log nuclear energy generation rate for hydrogen burning as a function of log temperature and log density, with a dashed pp-equals-CNO boundary and labeled points for stars from 0.3 to 25 solar masses including the Sun."
+    module: 3
+
+  nuclear-stellax-pp-cno-3alpha:
+    path: /assets/images/module-03/nuclear-stellax/teaching_pp_cno_3alpha.png
+    caption: "**What to notice:** hydrogen burning via pp and CNO occupies the tens-of-megakelvin regime, while triple-alpha does not turn on until about $10^8\\,\\mathrm{K}$. The mass markers show why Sun-like stars, massive stars, and helium-burning cores live on different parts of the temperature axis."
+    alt: "Log plot of nuclear energy generation rate versus temperature comparing pp, CNO, and triple-alpha burning. Markers show representative stellar masses, the Sun, the pp-to-CNO crossover near 1.8 times 10 to the 7 kelvin, and triple-alpha ignition near 10 to the 8 kelvin."
+    module: 3
+
+  nuclear-stellax-burning-stages:
+    path: /assets/images/module-03/nuclear-stellax/teaching_burning_stages.png
+    caption: "**What to notice:** each successive burning stage in a massive star occurs at higher temperature and lasts dramatically less time. Hydrogen burning lasts millions of years, but silicon burning lasts only about a day before iron halts exothermic fusion."
+    alt: "Two-panel figure titled from hydrogen to iron. The left panel shows energy generation versus temperature with labeled vertical markers for hydrogen, helium, carbon, neon, oxygen, and silicon burning. The right panel is a bar chart of burning timescales for a 25-solar-mass star, shrinking from millions of years for hydrogen to one day for silicon."
+    module: 3
+
   random-walk:
     path: /assets/images/module-03/random-walk.png
     caption: "**A photon's random walk** through the solar interior. Left: a simulated 2,000-step random walk shows how scattering produces a tangled path. The net displacement is only √N × ℓ — far less than the total path length. Right: the real numbers for the Sun — ~10²⁴ scatterings, ~170,000 years from core to surface, versus 2.3 seconds in a straight line."

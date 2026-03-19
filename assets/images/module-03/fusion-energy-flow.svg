@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-labelledby="title desc" data-theme="light" data-palette="aurora">
+  <title id="title">Fusion energy flow from core mass deficit to surface luminosity</title>
+  <desc id="desc">A horizontal flow diagram showing core mass deficit producing gamma rays and particle kinetic energy, a small neutrino-loss branch escaping quickly, then thermalization in dense plasma, photon diffusion through the star, and final surface luminosity.</desc>
+  <defs>
+    <marker id="arrow-teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--teal)"/>
+    </marker>
+    <marker id="arrow-pink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--pink)"/>
+    </marker>
+  </defs>
+  <style>
+    svg {
+      --teal: #028391;
+      --pink: #be5a83;
+      --violet: #7077a1;
+      --bg: #ffffff;
+      --panel: #f2f3fb;
+      --fg: #111218;
+      --muted: #3a3d52;
+      --faint: #666b85;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+    }
+    .title { font-size: 28px; font-weight: 700; fill: var(--fg); }
+    .subtitle { font-size: 16px; fill: var(--muted); }
+    .node { fill: var(--panel); stroke: var(--teal); stroke-width: 3; }
+    .node-secondary { fill: #eef8f9; stroke: var(--teal); stroke-width: 3; }
+    .node-loss { fill: #f9eef3; stroke: var(--pink); stroke-width: 3; }
+    .label { fill: var(--fg); font-size: 19px; font-weight: 650; text-anchor: middle; }
+    .body { fill: var(--muted); font-size: 16px; text-anchor: middle; }
+    .arrow { stroke: var(--teal); stroke-width: 4; fill: none; marker-end: url(#arrow-teal); }
+    .arrow-loss { stroke: var(--pink); stroke-width: 4; fill: none; marker-end: url(#arrow-pink); }
+    .arrow-text { fill: var(--faint); font-size: 14px; text-anchor: middle; }
+    .panel { fill: var(--panel); stroke: var(--violet); stroke-width: 3; }
+    .panel-title { fill: var(--violet); font-size: 18px; font-weight: 700; }
+    .panel-text { fill: var(--fg); font-size: 17px; }
+  </style>
+
+  <rect x="0" y="0" width="960" height="540" fill="var(--bg)"/>
+
+  <text x="40" y="42" class="title">From Mass Deficit to Starlight</text>
+  <text x="40" y="68" class="subtitle">Fusion energy is created in the core, mostly stays in the star, and escapes only after a long radiative journey.</text>
+
+  <g>
+    <rect x="40" y="145" width="150" height="120" rx="20" class="node"/>
+    <text x="115" y="182" class="label">Core fusion</text>
+    <text x="115" y="208" class="body">4H -&gt; He</text>
+    <text x="115" y="230" class="body">mass deficit</text>
+    <text x="115" y="252" class="body">becomes energy</text>
+  </g>
+
+  <g>
+    <rect x="220" y="145" width="150" height="120" rx="20" class="node-secondary"/>
+    <text x="295" y="178" class="label">Immediate output</text>
+    <text x="295" y="204" class="body">gamma rays</text>
+    <text x="295" y="226" class="body">+ particle kinetic</text>
+    <text x="295" y="248" class="body">energy</text>
+  </g>
+
+  <g>
+    <rect x="240" y="38" width="210" height="78" rx="18" class="node-loss"/>
+    <text x="345" y="68" class="label">Small loss channel</text>
+    <text x="345" y="92" class="body">neutrinos escape</text>
+    <text x="345" y="114" class="body">quickly (~2%)</text>
+  </g>
+
+  <g>
+    <rect x="400" y="145" width="150" height="120" rx="20" class="node"/>
+    <text x="475" y="182" class="label">Thermalized</text>
+    <text x="475" y="208" class="body">energy is absorbed</text>
+    <text x="475" y="230" class="body">and shared with</text>
+    <text x="475" y="252" class="body">the dense plasma</text>
+  </g>
+
+  <g>
+    <rect x="580" y="145" width="150" height="120" rx="20" class="node-secondary"/>
+    <text x="655" y="182" class="label">Radiative transport</text>
+    <text x="655" y="208" class="body">photons are</text>
+    <text x="655" y="230" class="body">absorbed, re-emitted,</text>
+    <text x="655" y="252" class="body">and scattered</text>
+  </g>
+
+  <g>
+    <rect x="760" y="145" width="150" height="120" rx="20" class="node"/>
+    <text x="835" y="182" class="label">Surface output</text>
+    <text x="835" y="208" class="body">energy finally</text>
+    <text x="835" y="230" class="body">escapes as</text>
+    <text x="835" y="252" class="body">luminosity</text>
+  </g>
+
+  <line x1="190" y1="205" x2="220" y2="205" class="arrow"/>
+  <line x1="370" y1="205" x2="400" y2="205" class="arrow"/>
+  <line x1="550" y1="205" x2="580" y2="205" class="arrow"/>
+  <line x1="730" y1="205" x2="760" y2="205" class="arrow"/>
+  <path d="M 295 145 C 295 118, 320 118, 320 116" class="arrow-loss"/>
+
+  <text x="205" y="135" class="arrow-text">fusion creates energetic products</text>
+  <text x="475" y="135" class="arrow-text">most energy stays in the star</text>
+  <text x="655" y="135" class="arrow-text">many scatterings build a slow outward leak</text>
+  <text x="835" y="135" class="arrow-text">the photosphere is where we finally see it</text>
+
+  <rect x="40" y="384" width="880" height="118" rx="22" class="panel"/>
+  <text x="66" y="416" class="panel-title">Key insight</text>
+  <text x="66" y="448" class="panel-text">The pp-chain does not send visible light straight out of the core.</text>
+  <text x="66" y="474" class="panel-text">Most of the released energy is trapped, thermalized, and only later diffuses outward as the luminosity we observe.</text>
+</svg>
