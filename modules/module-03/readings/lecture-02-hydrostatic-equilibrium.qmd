@@ -125,6 +125,12 @@ Imagine a thin shell of gas at some radius $r$ inside a star. This shell feels g
 
 If the pressure were the same everywhere inside the star, the inward and outward pressure forces on the shell would exactly cancel, and gravity would win unopposed. For pressure to resist gravity, the pressure *below* the shell must exceed the pressure *above* it. In other words, it's not pressure itself that matters — it's the **pressure gradient**, the rate at which pressure changes with position.
 
+What matters physically is the **difference** in pressure across the shell:
+$$
+F_{P,\text{net}} = \left[P(r) - P(r+dr)\right]A.
+$$
+If $P(r+dr) = P(r)$, then $F_{P,\text{net}} = 0$ no matter how large the common pressure is. A star is supported only when the lower side pushes harder than the upper side.
+
 This is the key insight: it is the **pressure gradient**,
 $$
 \frac{dP}{dr},
@@ -166,6 +172,26 @@ $$
 P_{\text{gas}} = n k_B T = \frac{\rho k_B T}{\mu m_p}.
 $$
 
+::: {.callout-note title="Deep Dive — What Gas Pressure Really Is"}
+Gas pressure is a **macroscopic** description of an enormous number of microscopic collisions. A gas contains a vast ensemble of particles moving in many directions. Every time those particles strike a surface, they transfer momentum. Pressure is the cumulative rate of that momentum transfer per unit area.
+
+Temperature is not “how much heat a single particle contains.” It is a macroscopic description of the typical kinetic-energy distribution of the whole ensemble. A hotter gas has particles that typically move faster, so collisions transfer more momentum. A denser gas has more particles in each cubic centimeter, so collisions happen more often. Both effects raise the pressure.
+
+The ideal-gas law collects those ideas into one compact statement:
+$$
+P_{\text{gas}} = n k_B T = \frac{\rho k_B T}{\mu m_p}.
+$$
+
+Read term by term:
+
+- $n$ is the number density, so it counts how many particles can collide in each unit volume.
+- $T$ is the temperature, so it sets the typical kinetic-energy scale of the particle distribution.
+- $\rho$ is the mass density, so it tracks how much matter is packed into the gas.
+- $\mu m_p$ is the mean mass per particle, so it converts from mass density to number density.
+
+What this equation is really saying: gas pressure increases when there are **more particles per unit volume** or when those particles have **larger typical speeds**.
+:::
+
 | Symbol | Meaning |
 |---|---|
 | $P_{\text{gas}}$ | thermal gas pressure, in $\mathrm{dyn\,cm^{-2}}$ |
@@ -179,34 +205,465 @@ $$
 
 This equation says something physically simple but powerful: at fixed density, a hotter gas pushes harder; at fixed temperature, a denser gas pushes harder. In ordinary stars like the Sun, this thermal gas pressure is the main source of support against gravity.
 
+::: {.callout-important title="What $\mu$ Means and Why It Matters"}
+$\mu$ is the **mean molecular weight**. It is dimensionless, and it tells you the average mass per particle in units of the proton mass. The actual mean mass per particle is therefore
+$$
+\mu m_p.
+$$
+
+In a fully ionized gas, “particle” means more than just nuclei. Electrons also count, because electrons and nuclei both contribute to the particle population that shares thermal energy and produces pressure. That is why ionization state and chemical composition both affect $\mu$.
+
+For a **fully ionized** mixture with hydrogen mass fraction $X$, helium mass fraction $Y$, and metal mass fraction $Z$, the mean molecular weight is approximately
+$$
+\frac{1}{\mu} \approx 2X + \frac{3}{4}Y + \frac{1}{2}Z.
+$$
+
+Here:
+
+- $X$ is the mass fraction of hydrogen
+- $Y$ is the mass fraction of helium
+- $Z$ is the mass fraction of all elements heavier than helium
+
+These mass fractions satisfy
+$$
+X + Y + Z = 1.
+$$
+
+The factors in the $\mu$ equation come from counting how many pressure-producing particles you get per unit mass:
+
+- hydrogen contributes one proton and one electron when fully ionized, so it gives many particles per gram
+- helium contributes one nucleus and two electrons, but that mass is packed into four nucleons, so it gives fewer particles per gram than hydrogen
+- heavier elements contribute still fewer particles per gram, which is why they enter with a smaller coefficient
+
+For ionized solar-composition gas, a typical choice is
+$$
+X \approx 0.70,
+\qquad
+Y \approx 0.28,
+\qquad
+Z \approx 0.02.
+$$
+
+Substituting gives
+$$
+\frac{1}{\mu}
+\approx
+2(0.70) + \frac{3}{4}(0.28) + \frac{1}{2}(0.02)
+=
+1.40 + 0.21 + 0.01
+=
+1.62,
+$$
+so
+$$
+\mu \approx \frac{1}{1.62} \approx 0.62 \approx 0.6.
+$$
+
+That is why throughout this reading we use
+$$
+\mu \approx 0.6.
+$$
+
+Physically, $\mu$ matters because it connects mass density to number density:
+$$
+n = \frac{\rho}{\mu m_p}.
+$$
+At fixed $\rho$ and $T$, a smaller $\mu$ means each particle is lighter on average, so there are **more particles per unit volume**. More particles means more collisions, and more collisions mean a larger gas pressure. Composition therefore affects both pressure support and the temperature required for hydrostatic support.
+:::
+
+::: {.callout-tip}
+## Check Yourself — Why $\mu$ Matters
+
+Suppose $\mu$ decreases while $\rho$ and $T$ stay fixed. Does the gas pressure increase or decrease? Explain physically before you quote the equation.
+
+::: {.callout-note collapse="true"}
+## Solution
+
+The gas pressure increases.
+
+From
+$$
+P_{\text{gas}} = \frac{\rho k_B T}{\mu m_p},
+$$
+a smaller $\mu$ gives a larger pressure at fixed $\rho$ and $T$.
+
+The physical reason is more important than the algebra: if $\mu$ decreases, the average mass per particle decreases, so the same mass density contains more particles. More particles per unit volume means more collisions, so the momentum-transfer rate and therefore the pressure increase.
+:::
+:::
+
+#### Temperature Describes a Distribution, Not a Single Speed
+
+One more subtle point matters here. Temperature does not assign one “correct speed” to every particle. It describes a **distribution** of particle speeds and kinetic energies. Some particles move slower than the average, some faster, and the whole distribution shifts as the gas heats up.
+
+The plot below uses a Maxwell-Boltzmann speed distribution for protons as a pedagogical illustration. The exact formula matters less than the pattern: as temperature rises, the distribution broadens and shifts toward higher speeds.
+
+```{python}
+#| label: fig-maxwell-boltzmann-temperature-shift
+#| echo: true
+#| code-fold: true
+#| warning: false
+#| out-width: "100%"
+#| fig-cap: "**What to notice:** temperature describes a distribution of particle speeds, not a single particle speed. Higher temperatures broaden the Maxwell-Boltzmann distribution and shift it toward faster particles. This is a pedagogical illustration for protons; the key idea is the changing distribution, not memorizing the formula."
+#| fig-alt: "Single plot of normalized Maxwell-Boltzmann speed distributions for protons at 10^4 K, 10^6 K, and 1.5 times 10^7 K. The hotter curves are broader and peak at higher speeds."
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+k_b = 1.380649e-23      # J K^-1
+m_p = 1.6726219e-27     # kg
+
+temperatures = [1.0e4, 1.0e6, 1.5e7]
+labels = [r"$10^4\,\mathrm{K}$", r"$10^6\,\mathrm{K}$", r"$1.5\times10^7\,\mathrm{K}$"]
+colors = ["tab:blue", "tab:orange", "tab:red"]
+
+v = np.linspace(0.0, 1.6e6, 1000)  # m s^-1
+
+fig, ax = plt.subplots(figsize=(8.8, 5.8))
+
+for temperature, label, color in zip(temperatures, labels, colors):
+    distribution = (
+        4.0
+        * np.pi
+        * (m_p / (2.0 * np.pi * k_b * temperature)) ** 1.5
+        * v**2
+        * np.exp(-m_p * v**2 / (2.0 * k_b * temperature))
+    )
+    distribution = distribution / distribution.max()
+    ax.plot(v / 1000.0, distribution, label=label, color=color, linewidth=3.0)
+
+ax.set_xlabel(r"Speed ($\mathrm{km\,s^{-1}}$)", fontsize=15)
+ax.set_ylabel("Relative probability density", fontsize=15)
+ax.set_title("Pedagogical Maxwell-Boltzmann Speed Distributions for Protons", fontsize=17, pad=12)
+ax.tick_params(labelsize=13)
+ax.grid(True, alpha=0.25)
+ax.legend(frameon=False, fontsize=13)
+plt.tight_layout()
+plt.show()
+```
+
+::: {.callout-warning}
+## Misconception Check — “Temperature Is the Speed of a Single Particle”
+
+A student says, “At $1.5\times10^7\,\mathrm{K}$ every proton in the solar core must move at the same speed.”
+
+Why is this wrong?
+
+::: {.callout-note collapse="true"}
+## Solution
+
+It is wrong because temperature describes an ensemble, not a single particle. Even in thermal equilibrium, particles occupy a distribution of speeds and energies. The temperature sets the overall scale of that distribution, but different particles still move at different speeds at the same instant.
+:::
+:::
+
 #### Radiation Pressure: Momentum from Light
 
-Photons also carry momentum, even though they have no mass. If photons are trapped inside a star and scatter again and again off particles, they push on the gas and on any surface you imagine inside the star. That push is called **radiation pressure**.
+Photons carry momentum even though they have no rest mass. If photons are trapped inside a star and scatter repeatedly from matter, they exert a pressure on the gas. That contribution is called **radiation pressure**.
 
-A radiation field in local thermal equilibrium has a blackbody energy density
+For a radiation field in local thermal equilibrium, the radiation energy density is
 $$
-u_{\text{rad}} = aT^4,
+u_{\text{rad}} = a T^4,
 $$
-where $a$ is the radiation constant. Because an isotropic bath of photons pushes equally in all directions, the associated radiation pressure is
+where $a$ is the radiation constant. For an isotropic radiation field, the associated pressure is
 $$
-P_{\text{rad}} = \frac{1}{3}u_{\text{rad}} = \frac{1}{3}aT^4.
+P_{\text{rad}} = \frac{1}{3} u_{\text{rad}} = \frac{1}{3} a T^4.
 $$
 
-The key clue is the steep temperature dependence: $P_{\text{rad}} \propto T^4$. At fixed density, gas pressure scales only as $P_{\text{gas}} \propto T$, while radiation pressure scales as $P_{\text{rad}} \propto T^4$. Radiation pressure therefore grows much faster with temperature than thermal gas pressure does. For a star like the Sun, thermal gas pressure dominates. In very hot, very massive stars, radiation pressure becomes much more important.
+The important physics is the temperature dependence:
+$$
+P_{\text{gas}} \propto T,
+\qquad
+P_{\text{rad}} \propto T^4
+$$
+at fixed density. Radiation pressure therefore grows much more rapidly with temperature than thermal gas pressure does.
 
-There is also a useful mass-scaling preview hiding here. The ratio of the two pressure sources is
+For a star like the Sun, thermal gas pressure dominates. In very hot, very massive stars, radiation pressure becomes much more important.
+
+We can make that trend more explicit with a scaling argument. Using
+$$
+P_{\text{gas}} \sim \frac{\rho k_B T}{\mu m_p},
+$$
+the ratio of radiation pressure to gas pressure scales as
 $$
 \frac{P_{\text{rad}}}{P_{\text{gas}}} \propto \frac{T^4}{\rho T} = \frac{T^3}{\rho}.
 $$
-Later in this reading we will estimate that $T_c \sim M/R$ and $\rho \sim M/R^3$, which implies
-$$
-\frac{P_{\text{rad}}}{P_{\text{gas}}} \propto \frac{(M/R)^3}{M/R^3} \propto M^2.
-$$
-This is only a scaling argument, not a precision stellar model, but it captures the trend we care about: radiation pressure becomes disproportionately more important in higher-mass stars.
 
-{{< fig radiation-pressure-mass-scaling >}}
+Later in this reading we will estimate that
+$$
+T_c \sim \frac{M}{R},
+\qquad
+\rho \sim \frac{M}{R^3}.
+$$
 
-At this point, we can partially answer our guiding question. In Sun-like stars, the outward support is supplied mostly by thermal gas pressure. In more massive stars, radiation pressure contributes a much larger share of that support.
+Substituting those hydrostatic scaling estimates gives
+$$
+\frac{P_{\text{rad}}}{P_{\text{gas}}}
+\propto
+\frac{(M/R)^3}{M/R^3}
+\propto
+M^2.
+$$
+
+This is a **trend estimate**, not a precision stellar-model result. It assumes the simple hydrostatic scalings developed later in the reading, and it suppresses differences in detailed structure and composition. But it captures the key idea we need: radiation pressure becomes disproportionately more important in higher-mass stars.
+
+::: {.callout-warning}
+## Misconception Check — Radiation Pressure
+
+True or false:
+
+Because radiation pressure scales as $T^4$, it must dominate the support in all stars.
+
+Think before reading.
+
+**Answer:** False.
+
+The fact that radiation pressure grows very rapidly with temperature does **not** mean it dominates in every star. In Sun-like stars, thermal gas pressure is still the main source of support. Radiation pressure becomes much more important only in hotter, more massive stars.
+:::
+
+##### Recommended Figure — Gas Pressure vs. Radiation Pressure
+
+A simple log-log plot comparing normalized thermal gas pressure and radiation pressure as functions of temperature at fixed density reinforces the main idea in this section.
+
+```{python}
+#| label: fig-gas-vs-radiation-pressure
+#| out-width: "100%"
+#| fig-cap: "Normalized pressure scalings at fixed density: thermal gas pressure rises linearly with $T$, while radiation pressure rises as $T^4$. The plot is pedagogical: the goal is to compare slopes, not to build a full stellar model."
+#| fig-alt: "Log-log plot of normalized gas pressure and radiation pressure versus temperature. The gas-pressure curve rises linearly with temperature, while the radiation-pressure curve rises much more steeply with a fourth-power dependence."
+import numpy as np
+import matplotlib.pyplot as plt
+
+T = np.logspace(4, 8, 400)
+T_ref = 1.0e6
+P_gas_norm = T / T_ref
+P_rad_norm = (T / T_ref) ** 4
+
+fig, ax = plt.subplots(figsize=(8.8, 6.2))
+ax.loglog(T, P_gas_norm, linewidth=3.4, label=r"$P_{\mathrm{gas}} \propto T$")
+ax.loglog(T, P_rad_norm, linewidth=3.4, label=r"$P_{\mathrm{rad}} \propto T^4$")
+
+ax.set_xlabel("Temperature $T$ (K)", fontsize=15)
+ax.set_ylabel("Normalized pressure (arbitrary units)", fontsize=15)
+ax.set_title("Gas Pressure vs. Radiation Pressure at Fixed Density", fontsize=17, pad=12)
+ax.tick_params(labelsize=13)
+ax.legend(frameon=False, loc="upper left", fontsize=13)
+ax.annotate(
+    r"slope $=1$",
+    xy=(2.0e5, 2.0e5 / T_ref),
+    xytext=(1.4e4, 4.5e-1),
+    fontsize=13,
+    arrowprops=dict(arrowstyle="->", lw=1.6),
+)
+ax.annotate(
+    r"slope $=4$",
+    xy=(3.0e6, (3.0e6 / T_ref) ** 4),
+    xytext=(1.5e5, 8.0e3),
+    fontsize=13,
+    arrowprops=dict(arrowstyle="->", lw=1.6),
+)
+ax.grid(True, which="both", alpha=0.30)
+plt.tight_layout()
+```
+
+**What to notice:**
+
+- $P_{\text{gas}} \propto T$
+- $P_{\text{rad}} \propto T^4$
+- radiation pressure grows much more rapidly with temperature
+- the important lesson is the difference in slope, not the arbitrary normalization
+
+##### Deep Dive — Radiation Pressure, Thermal Equilibrium, and Why Stars Look Like Blackbodies
+
+::: {.callout-note title="Deep Dive — Photons as a Fluid: Pressure, Diffusion, and Blackbody Radiation"}
+
+So far, we have treated radiation pressure as a formula:
+
+$$
+P_{\rm rad} = \frac{1}{3} a T^4.
+$$
+
+But where does this actually come from physically?
+
+To understand radiation pressure inside a star, we need to connect three ideas:
+
+- photons carry momentum
+- photons interact repeatedly with matter inside stars
+- these interactions drive the radiation field toward thermal equilibrium
+
+---
+
+###### 1. Photons Carry Momentum → Radiation Can Push
+
+Even though photons have no rest mass, they carry energy and momentum:
+
+$$
+p = \frac{E}{c}.
+$$
+
+When photons are absorbed or scattered, they transfer momentum to matter.
+
+Pressure is momentum transfer per unit area per unit time.
+
+So if photons are constantly hitting matter from all directions, they exert a real pressure.
+
+---
+
+###### 2. Inside a Star: Photons Don’t Free-Stream — They Diffuse
+
+A key difference between the interior of a star and empty space:
+
+- In space: photons travel freely.
+- Inside a star: photons are constantly absorbed and re-emitted or scattered.
+
+The mean free path of a photon is extremely short compared to the stellar radius.
+
+So instead of moving in straight lines across the star, photons execute a **random walk**.
+
+This process is called **radiative diffusion**.
+
+::: {.callout-important title="Key Idea — Radiation as a Diffusing Fluid"}
+Inside a star, radiation behaves like a diffusing fluid of energy and momentum, not like a beam of light.
+:::
+
+This has two crucial consequences:
+
+1. The radiation field becomes nearly **isotropic** (same in all directions).
+2. Energy transport is slow and governed by gradients, not free streaming.
+
+---
+
+###### 3. Why the Factor of 1/3?
+
+The radiation energy density is:
+
+$$
+u_{\rm rad} = a T^4.
+$$
+
+But pressure is not equal to energy density — it is the **momentum flux along one direction**.
+
+In an isotropic radiation field:
+
+- photons move in all directions equally
+- only a fraction of their momentum contributes along any given axis
+
+A geometric average gives:
+
+$$
+P_{\rm rad} = \frac{1}{3} u_{\rm rad}.
+$$
+
+This factor of $1/3$ comes from averaging over all directions in 3D.
+
+---
+
+###### 4. Thermal Equilibrium → Blackbody Radiation
+
+Because photons are constantly interacting with matter:
+
+- absorption and emission happen repeatedly
+- scattering redistributes photon directions
+
+the radiation field is driven toward **local thermal equilibrium (LTE)**.
+
+In LTE:
+
+- the radiation spectrum becomes a **blackbody spectrum**
+- the energy density depends only on temperature:
+  $$
+  u_{\rm rad} = a T^4
+  $$
+
+::: {.callout-tip title="Connection to Modules 1 & 2"}
+This is why stars behave approximately like blackbodies:
+
+- deep inside the star, radiation and matter are tightly coupled
+- photons are repeatedly absorbed and re-emitted
+- the radiation field forgets its origin and relaxes to a thermal spectrum
+
+The surface layers then emit something close to that blackbody radiation.
+:::
+
+---
+
+###### 5. Pressure + Energy Transport Are Linked
+
+Radiation plays **two roles simultaneously**:
+
+1. **Pressure support** (via momentum transfer)
+2. **Energy transport** (via diffusion)
+
+The same photons that:
+
+- push outward (pressure)
+- also carry energy outward (luminosity)
+
+This is why stellar structure and stellar luminosity are deeply connected.
+
+---
+
+###### 6. Big Physical Picture
+
+Put it all together:
+
+- Gravity compresses the star
+- Compression heats the gas
+- Hot gas emits radiation
+- Radiation becomes trapped and diffuses outward
+- That radiation:
+  - transports energy
+  - exerts pressure
+
+::: {.callout-important title="Synthesis — Why Radiation Pressure Matters"}
+Radiation pressure is not a separate “extra” effect.
+
+It is the natural consequence of:
+
+- hot matter emitting photons
+- photons interacting with matter
+- and the system reaching thermal equilibrium
+
+In massive stars, where temperatures are high, this radiation field becomes strong enough to help support the star against gravity.
+:::
+
+---
+
+###### Check Yourself — Diffusion vs Free Streaming
+
+Explain the difference between:
+
+- photons escaping freely from a hot object
+- photons diffusing through a stellar interior
+
+Why does only one of these situations produce a blackbody spectrum?
+
+---
+
+###### Check Yourself — Why $T^4$ Matters
+
+Radiation pressure scales as:
+
+$$
+P_{\rm rad} \propto T^4.
+$$
+
+Explain physically why this rises much faster with temperature than gas pressure.
+
+(Hint: think about both the number of photons and their typical energy.)
+
+:::
+
+::: {.callout-warning}
+## Misconception Check — “Massless Photons Cannot Exert Pressure”
+
+A student says, “Photons have no mass, so they cannot push on matter.”
+
+Why is this incorrect?
+
+::: {.callout-note collapse="true"}
+## Solution
+
+Photons have no rest mass, but they do carry momentum. When photons are absorbed or scattered, they transfer momentum to matter. Pressure is momentum transfer per unit area, so trapped radiation can exert a real pressure even though the photons themselves are massless.
+:::
+:::
 
 ::: {.callout-note title="Spoiler for Later: Degeneracy Pressure"}
 There is a third major pressure source in stellar astrophysics: **degeneracy pressure**. Unlike thermal gas pressure, it does not come from particles being hot. It comes from quantum mechanics, specifically the Pauli exclusion principle, which prevents identical fermions from all occupying the same low-energy state. That is the pressure support that matters in white dwarfs and neutron stars. For now, the key point is that not all stellar pressure is thermal.
@@ -262,6 +719,7 @@ The net pressure force is therefore
 $$
 F_P = F_{\text{in}} - F_{\text{out}} = P(r)A - P(r+dr)A.
 $$
+If the two face pressures were equal, this force would vanish. The shell would then feel gravity alone.
 
 Now use the first-order Taylor expansion:
 $$
@@ -338,6 +796,44 @@ This is a local force-balance law. If the pressure fell too slowly with radius, 
 
 This is a differential equation, meaning it relates how pressure changes with radius to the local conditions inside the star. To solve for the full structure $P(r)$, $\rho(r)$, and $M(r)$, we need additional equations. That fuller system is the subject of Reading 5.
 
+::: {.callout-tip}
+## Check Yourself — Local or Global?
+
+Classify each statement as either a **local law** or a **global scaling estimate**:
+
+1. $$
+   \frac{dP}{dr} = -\rho g
+   $$
+2. $$
+   P_c \sim \frac{G M^2}{R^4}
+   $$
+
+Then explain what physical question each one answers.
+
+:::
+
+::: {.callout-note}
+## Solution
+
+The equation
+
+$$
+\frac{dP}{dr} = -\rho g
+$$
+
+is a **local law**. It tells us how pressure must change with radius at a specific location inside the star in order to balance the local weight of the gas.
+
+The relation
+
+$$
+P_c \sim \frac{G M^2}{R^4}
+$$
+
+is a **global scaling estimate**. It tells us the approximate pressure scale a whole star must build in order to support itself, using only its overall mass and radius.
+
+So the first equation describes the detailed force balance inside the star, while the second gives an order-of-magnitude inference about the star’s central conditions.
+:::
+
 ::: {.callout-warning}
 ## Misconception Check — “High Pressure = Support”
 
@@ -411,9 +907,7 @@ Hydrostatic equilibrium tells us the *slope* of the pressure profile, but not ye
 
 ### A Scaling Argument
 
-We cannot solve the hydrostatic equilibrium equation exactly without knowing the full internal profiles $\rho(r)$ and $M(r)$. Instead, we estimate the *scale* of the central pressure.
-
-This is not a detailed stellar-structure solution. It is a controlled approximation designed to answer a more modest question: what pressure scale must a star reach in order to support itself?
+We cannot solve the hydrostatic equilibrium equation exactly without knowing the full internal profiles $M(r)$ and $\rho(r)$. But in astronomy we often know a star’s **global** properties — especially its mass $M$ and radius $R$ — long before we know its detailed interior structure.
 
 #### Step 1: Approximate the pressure gradient
 
@@ -442,6 +936,22 @@ $$
 $$
 
 > Important: this is a global scaling approximation, not the true local density profile. Real stars are centrally concentrated, so this step captures the scaling but not the detailed structure.
+
+::: {.callout-warning}
+## Misconception Check — “$\rho \sim M/R^3$ Is the Density Everywhere”
+
+Does the relation
+$$
+\rho \sim \frac{M}{R^3}
+$$
+tell you the true density at every radius inside a star?
+
+::: {.callout-note collapse="true"}
+## Solution
+
+No. It is a **mean-density scaling**, not the local density profile $\rho(r)$. Real stars are denser in their interiors than in their outer layers. We use this approximation only to estimate the overall pressure scale, not to claim that the star has uniform density.
+:::
+:::
 
 #### Step 3: Apply hydrostatic equilibrium
 
@@ -489,6 +999,60 @@ P_c \propto R^{-4}.
 $$
 
 That is why compact stars require enormous internal pressure even when their total mass is not especially large.
+
+##### Recommended Figure — Local Law vs. Global Scaling
+
+This two-panel conceptual figure helps separate the differential law from the global inference it motivates.
+
+```{python}
+#| label: fig-local-law-vs-global-scaling
+#| out-width: "100%"
+#| fig-cap: "Conceptual comparison between a local differential law and a global scaling estimate. Left: $\\frac{dP}{dr} = -\\rho g$. Right: $P_c \\sim \\frac{G M^2}{R^4}$."
+#| fig-alt: "Two-panel schematic. Left panel shows a thin shell inside a star with an outward pressure force on the inner face, a smaller inward pressure force on the outer face, and inward gravity. Right panel shows a whole star labeled with mass M, radius R, and a high central pressure scale."
+import matplotlib.pyplot as plt
+from matplotlib.patches import Circle, Rectangle, FancyArrowPatch
+
+fig, axes = plt.subplots(1, 2, figsize=(11.8, 5.8))
+
+# Left panel: local law
+ax = axes[0]
+ax.set_aspect("equal")
+outer = Circle((0, 0), 1.0, fill=False, lw=2.4)
+shell = Rectangle((-0.22, -0.92), 0.44, 0.18, fill=False, lw=2.4)
+ax.add_patch(outer)
+ax.add_patch(shell)
+ax.add_patch(FancyArrowPatch((0, -0.83), (0, -0.55), arrowstyle="->", mutation_scale=18, lw=2.4))
+ax.add_patch(FancyArrowPatch((0, -0.74), (0, -1.02), arrowstyle="->", mutation_scale=18, lw=2.4))
+ax.add_patch(FancyArrowPatch((0.52, -0.83), (0.25, -0.83), arrowstyle="->", mutation_scale=18, lw=2.4))
+ax.text(0, -0.5, r"$P(r)A$", ha="center", fontsize=14)
+ax.text(0, -1.1, r"$P(r+dr)A$", ha="center", fontsize=14)
+ax.text(0.72, -0.83, r"$F_g$", va="center", fontsize=14)
+ax.text(0, 1.12, "Local shell", ha="center", fontsize=14)
+ax.text(0, -1.33, r"$\frac{dP}{dr} = -\rho g$", ha="center", fontsize=15)
+ax.axis("off")
+
+# Right panel: global scaling
+ax = axes[1]
+ax.set_aspect("equal")
+star = Circle((0, 0), 1.0, fill=False, lw=2.4)
+core = Circle((0, 0), 0.28, fill=False, lw=2.2, linestyle="--")
+ax.add_patch(star)
+ax.add_patch(core)
+ax.add_patch(FancyArrowPatch((0, 0), (0.96, 0), arrowstyle="->", mutation_scale=18, lw=2.4))
+ax.text(0.48, 0.08, r"$R$", ha="center", fontsize=14)
+ax.text(0, 0, r"$P_c$", ha="center", va="center", fontsize=15)
+ax.text(-0.05, 1.12, r"Whole star: $M,\ R$", ha="center", fontsize=14)
+ax.text(0, -1.33, r"$P_c \sim \frac{G M^2}{R^4}$", ha="center", fontsize=15)
+ax.axis("off")
+
+plt.tight_layout()
+```
+
+**What to notice:**
+
+- hydrostatic equilibrium is a local differential statement
+- central-pressure scaling is a global inference from the star’s overall properties
+- the global estimate does not replace the local law; it summarizes what the local law implies at the scale of the whole star
 
 ::: {.callout-note title="Optional Precision Note"}
 If you model the star as a uniform-density sphere and solve more carefully, you get the same scaling,
@@ -566,12 +1130,21 @@ Physical reasoning: packing the same mass into a smaller radius makes gravity ha
 
 ### Worked Example: The Sun’s Central Pressure
 
-Equation:
+For the Sun, use the constants
+$$
+G = 6.674\times10^{-8}\,\mathrm{cm^3\,g^{-1}\,s^{-2}},
+\quad
+M_\odot = 2.0\times10^{33}\,\mathrm{g},
+\quad
+R_\odot = 7.0\times10^{10}\,\mathrm{cm}.
+$$
+
+The scaling estimate is
 $$
 P_c \sim \frac{G M_\odot^2}{R_\odot^4}.
 $$
 
-Substitution:
+Substitute each value explicitly:
 $$
 P_c \sim
 \frac{(6.674\times10^{-8}\,\mathrm{cm^3\,g^{-1}\,s^{-2}})
@@ -682,90 +1255,156 @@ That is exactly the CGS unit of pressure.
 
 ## Part 4: The Virial Theorem for Stars
 
+Force balance tells us what support a star needs at each radius. But it does not yet tell us how gravity and thermal energy are linked as the star contracts, radiates, and evolves.
+
+To answer that question, we need an energy argument.
+
+The virial theorem is the key tool: it connects the star’s thermal energy to its gravitational binding energy and explains why contraction heats a self-gravitating object instead of cooling it.
+
 ### Energy Balance in Self-Gravitating Systems
 
 Hydrostatic equilibrium is a **force-balance** statement: it tells us how pressure gradients balance gravity at each radius inside the star.
 
 The virial theorem is an **energy-balance** statement: it relates the star’s total thermal energy to its gravitational potential energy.
 
-For a bound star, the gravitational potential energy is negative and has the characteristic scale
+For a bound star, the gravitational potential energy has the characteristic scale
 $$
 U_{\text{grav}} \sim -\frac{G M^2}{R}.
 $$
 
-The minus sign matters: a bound self-gravitating object has less energy than the same mass dispersed to infinite separation.
+The minus sign matters. A bound self-gravitating object has less energy than the same mass dispersed to infinite separation.
 
 For a star in hydrostatic equilibrium, the virial theorem gives
-
-{{< include ../../../_includes/equations/stellar-virial.qmd >}}
-{{< eqrefcard stellar-virial >}}
-
-where $K_{\text{th}}$ is the total thermal energy of the gas and $U_{\text{grav}}$ is the gravitational potential energy of the bound star.
-
-Rearranging gives
 $$
-K_{\text{th}} = -\frac{1}{2}U_{\text{grav}}.
+2K_{\text{th}} + U_{\text{grav}} = 0.
+$$
+
+Here:
+
+- $K_{\text{th}}$ is the total thermal energy of the gas
+- $U_{\text{grav}}$ is the total gravitational potential energy
+- the factor of $2$ is the characteristic coefficient for a non-relativistic, self-gravitating gas in equilibrium
+
+Rearranging,
+$$
+K_{\text{th}} = -\frac{1}{2} U_{\text{grav}}.
 $$
 
 Since $U_{\text{grav}} < 0$, the thermal energy is positive, as it must be.
 
+Now define the total energy:
+$$
+E_{\text{tot}} = K_{\text{th}} + U_{\text{grav}}.
+$$
+
+Substitute the virial-theorem relation:
+$$
+E_{\text{tot}}
+=
+-\frac{1}{2}U_{\text{grav}} + U_{\text{grav}}
+=
+\frac{1}{2}U_{\text{grav}}
+=
+- K_{\text{th}}
+< 0.
+$$
+
+So a star in hydrostatic equilibrium is gravitationally bound: its total energy is negative.
+
 ::: {.callout-note}
 ## Why the Factor of 2?
 
-The virial-theorem result
-$$
-2K_{\text{th}} + U_{\text{grav}} = 0
-$$
-does not come from a mysterious convention. The short intuition is that thermal support enters through pressure-volume work, while gravitational binding changes with radius in a different way when the whole star is rescaled. In equilibrium, those two scalings differ by a factor of $2$, which is why the thermal term carries that coefficient.
+The full derivation is beyond the scope of this reading, but the coefficient is not arbitrary. The thermal term enters through pressure support and kinetic motion, while the gravitational term depends on how the binding energy changes when the star is rescaled. In equilibrium, those contributions combine to give
 
-The key takeaway for this course is not the detailed derivation of the coefficient. It is the consequence: the star’s thermal energy is directly tied to its gravitational binding energy.
+$$
+2K_{\text{th}} + U_{\text{grav}} = 0.
+$$
+
+For this course, the key takeaway is the consequence:
+
+$$
+K_{\text{th}} = -\frac{1}{2}U_{\text{grav}}.
+$$
+
+Thermal energy and gravitational binding are tightly linked in a self-gravitating star.
 :::
 
-When gravitational energy changes, roughly half increases the thermal energy of the gas and half is radiated away.
+In quasi-static contraction, this relation implies that when gravitational binding energy is released, roughly half goes into increasing the thermal energy of the gas and roughly half must be lost from the star. That bookkeeping is what leads to the counterintuitive thermal behavior of stars.
 
-The total energy is
+::: {.callout-tip}
+## Check Yourself — Gravitational Scaling
+
+Use the scaling
+
 $$
-E_{\text{tot}} = K_{\text{th}} + U_{\text{grav}}
-= -\frac{1}{2}U_{\text{grav}} + U_{\text{grav}}
-= \frac{1}{2}U_{\text{grav}}
-= -K_{\text{th}} < 0.
+U_{\text{grav}} \sim -\frac{G M^2}{R}.
 $$
 
-A negative total energy means the star is gravitationally bound: energy must be added to unbind it.
+Suppose a protostar keeps the same mass but contracts to half its radius.
+
+1. Does $|U_{\text{grav}}|$ increase or decrease?
+2. By what factor?
+3. What does that imply qualitatively about the thermal energy if the contraction is quasi-static?
+
+:::
+
+::: {.callout-note}
+## Solution
+
+At fixed mass,
+
+$$
+|U_{\text{grav}}| \propto \frac{1}{R}.
+$$
+
+So shrinking the radius by a factor of $2$ makes the magnitude of the gravitational potential energy larger by a factor of $2$.
+
+That means the star becomes more tightly bound. In quasi-static contraction, the virial theorem implies that the thermal energy also increases, so the core gets hotter.
+:::
 
 ### The Negative Heat Capacity Paradox
 
-Here is the strange part. A star radiates energy from its surface, so its total energy decreases:
+Here is the surprising part.
+
+A star radiates energy from its surface, so its total energy decreases:
+
 $$
 E_{\text{tot}} \rightarrow \text{more negative}.
 $$
 
 Because
-$$
-E_{\text{tot}} = \frac{1}{2}U_{\text{grav}},
-$$
-this means $U_{\text{grav}}$ also becomes more negative. In physical terms, the star contracts.
 
-But the virial theorem says
 $$
-K_{\text{th}} = -\frac{1}{2}U_{\text{grav}}.
+E_{\text{tot}} = \frac{1}{2} U_{\text{grav}},
 $$
-So if $U_{\text{grav}}$ becomes more negative, $K_{\text{th}}$ becomes larger. More thermal energy means higher particle speeds and a higher temperature.
 
-So the star gets **hotter as it loses energy**. This is called **negative heat capacity**, and it is a hallmark of self-gravitating systems.
+this means that $U_{\text{grav}}$ must also become more negative. Physically, the star contracts into a more tightly bound state.
 
-Here is the logic chain in plain language:
+But the virial theorem also says
+
+$$
+K_{\text{th}} = -\frac{1}{2} U_{\text{grav}}.
+$$
+
+So if $U_{\text{grav}}$ becomes more negative, then $K_{\text{th}}$ becomes larger. More thermal energy means larger typical particle speeds and therefore a higher temperature.
+
+So the star gets hotter as it loses energy.
+
+This is called **negative heat capacity**, and it is a defining feature of self-gravitating systems.
+
+The logic chain is:
 
 1. The star radiates energy away.
-2. The total energy becomes more negative.
+2. Its total energy becomes more negative.
 3. The star contracts.
-4. The gravitational energy becomes more negative.
-5. The thermal energy increases because $K_{\text{th}} = -\frac{1}{2}U_{\text{grav}}$.
-6. The core gets hotter.
+4. Its gravitational potential energy becomes more negative.
+5. Its thermal energy increases because
+   $$
+   K_{\text{th}} = -\frac{1}{2}U_{\text{grav}}.
+   $$
+6. The core temperature rises.
 
-In an ordinary system, energy loss lowers the temperature. In a self-gravitating system, energy loss leads to contraction, and contraction raises the typical particle speeds.
-
-Gravity couples energy loss to contraction, and contraction increases particle speeds. That is why losing energy makes the star hotter.
+In an ordinary laboratory system, losing energy usually lowers the temperature. In a self-gravitating system, energy loss drives contraction, and contraction raises the typical particle speeds. That is why gravitational contraction heats a protostar.
 
 {{< fig virial-energy-partition >}}
 
@@ -813,15 +1452,22 @@ A protostar begins too cool for fusion, but contraction steadily heats the core 
 :::
 :::
 
-::: {.callout-tip}
-## Check Yourself
+::: {.callout-warning}
+## Misconception Check — “If a Star Loses Energy, It Must Cool”
 
 True or false: If a star loses energy, it must cool.
 
 ::: {.callout-note collapse="true"}
 ## Solution
 
-False — due to negative heat capacity, losing energy causes contraction, which raises temperature.
+False. For a self-gravitating star,
+$$
+E_{\text{tot}} = \frac{1}{2} U_{\text{grav}}
+\qquad \text{and} \qquad
+K_{\text{th}} = -\frac{1}{2} U_{\text{grav}}.
+$$
+
+If radiation makes $E_{\text{tot}}$ more negative, then $U_{\text{grav}}$ must also become more negative. That contraction increases $K_{\text{th}}$, so the core temperature rises rather than falls.
 :::
 :::
 
@@ -910,6 +1556,24 @@ This is still an order-of-magnitude estimate, not a full stellar-structure solut
 
 At this point, we can sharpen our answer to the guiding question. A Sun-like star is held up by a pressure gradient supplied mainly by hot gas, and gravity demands that this gas reach a core temperature of roughly $10^7\,\mathrm{K}$.
 
+::: {.callout-warning}
+## Misconception Check — “The Core Temperature Is Chosen by Fusion Physics First”
+
+A student says, “The Sun’s core is hot because fusion needs about $10^7\,\mathrm{K}$, so the star somehow adjusts itself to that number.”
+
+What is backward about that statement?
+
+::: {.callout-note collapse="true"}
+## Solution
+
+The direction of reasoning is reversed. Before we talk about nuclear reaction details, hydrostatic support and the ideal-gas picture already imply
+$$
+T_c \sim \frac{\mu G M m_p}{k_B R}.
+$$
+Gravity sets the thermal scale required for support. Fusion becomes possible because gravity drives the star to that temperature scale, not because the star first “knows” a fusion target temperature.
+:::
+:::
+
 ::: {.callout-note title="What This Equation Is Saying"}
 The combination $GM/R$ is the gravitational potential scale per unit mass. The combination $k_B T_c/(\mu m_p)$ is the thermal-energy scale per unit mass of the gas. Hydrostatic support requires these two scales to be comparable. That is why gravity fixes the core temperature scale.
 :::
@@ -918,12 +1582,28 @@ The combination $GM/R$ is the gravitational potential scale per unit mass. The c
 
 ### Worked Example: The Sun’s Core Temperature
 
-Equation:
+For the Sun, use
+$$
+\mu = 0.6,
+\quad
+G = 6.674\times10^{-8}\,\mathrm{cm^3\,g^{-1}\,s^{-2}},
+\quad
+M_\odot = 2.0\times10^{33}\,\mathrm{g},
+$$
+$$
+m_p = 1.67\times10^{-24}\,\mathrm{g},
+\quad
+k_B = 1.38\times10^{-16}\,\mathrm{erg\,K^{-1}},
+\quad
+R_\odot = 7.0\times10^{10}\,\mathrm{cm}.
+$$
+
+The scaling estimate is
 $$
 T_c \sim \frac{\mu G M_\odot m_p}{k_B R_\odot}.
 $$
 
-Substitution:
+Substitute each quantity explicitly:
 $$
 T_c \sim
 \frac{(0.6)(6.674\times10^{-8}\,\mathrm{cm^3\,g^{-1}\,s^{-2}})
@@ -983,7 +1663,7 @@ T_{c,\odot} \approx 1.5\times10^7\,\mathrm{K} \approx 15\,\mathrm{MK},
 $$
 so this stripped-down estimate is already in the correct solar ballpark.
 
-The physical lesson matters more than the exact coefficient: gravity and the ideal-gas picture alone already demand a core temperature of order $10^7\,\mathrm{K}$.
+The physical lesson matters more than the exact coefficient: gravity and the ideal-gas picture alone already demand a core temperature of order $10^7\,\mathrm{K}$. This is a **scaling success**, not an exact stellar-structure solution, and that is exactly the level of agreement we should expect from such a stripped-down argument.
 
 ::: {.callout-note title="Observable → Model → Inference" .omi}
 **Observable:** The Sun's mass ($M_\odot = 2.0 \times 10^{33}\,\mathrm{g}$) and radius ($R_\odot = 7.0 \times 10^{10}\,\mathrm{cm}$) — both measured from binary orbits and angular size + distance.

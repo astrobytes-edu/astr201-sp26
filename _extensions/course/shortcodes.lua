@@ -142,7 +142,17 @@ local function normalize_yaml_value(value)
 
   -- Quoted strings: capture content up to closing quote, ignore trailing comments.
   local dq = value:match('^"([^"]*)"')
-  if dq ~= nil then return dq end
+  if dq ~= nil then
+    -- Minimal unescape for double-quoted YAML scalars so LaTeX backslashes
+    -- survive registry parsing correctly.
+    dq = dq:gsub("\\\\", "\0")
+    dq = dq:gsub('\\"', '"')
+    dq = dq:gsub("\\n", "\n")
+    dq = dq:gsub("\\t", "\t")
+    dq = dq:gsub("\\r", "\r")
+    dq = dq:gsub("\0", "\\")
+    return dq
+  end
 
   local sq = value:match("^'([^']*)'")
   if sq ~= nil then return sq end

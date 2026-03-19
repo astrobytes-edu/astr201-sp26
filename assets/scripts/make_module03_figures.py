@@ -47,6 +47,14 @@ SLIDE_ORANGE = "#c47b33"
 SLIDE_ROSE = "#b55d70"
 SLIDE_GOLD = "#b2871b"
 
+SLIDE_TICK_SIZE = 13
+SLIDE_LABEL_SIZE = 15
+SLIDE_TITLE_SIZE = 19
+SLIDE_BODY_SIZE = 12.5
+SLIDE_SMALL_SIZE = 11.5
+SLIDE_LEGEND_SIZE = 12.5
+SLIDE_EXPORT_DPI = 240
+
 OUTPUT_DIR = Path(__file__).resolve().parent.parent / "images" / "module-03"
 
 # ─────────────────────────────────────────────────────────────
@@ -85,7 +93,7 @@ def apply_slide_style(fig, ax):
     """Apply white-slide styling for deck-ready figures."""
     fig.patch.set_facecolor(SLIDE_BG)
     ax.set_facecolor(SLIDE_BG)
-    ax.tick_params(colors=SLIDE_TEXT, which="both", labelsize=11)
+    ax.tick_params(colors=SLIDE_TEXT, which="both", labelsize=SLIDE_TICK_SIZE)
     ax.xaxis.label.set_color(SLIDE_TEXT)
     ax.yaxis.label.set_color(SLIDE_TEXT)
     ax.title.set_color(SLIDE_TEXT)
@@ -100,7 +108,7 @@ def apply_slide_style(fig, ax):
 def finalize_slide_axes(ax, grid=True):
     """Apply the standard slide-axis treatment to an existing axes."""
     ax.set_facecolor(SLIDE_BG)
-    ax.tick_params(colors=SLIDE_TEXT, which="both", labelsize=11)
+    ax.tick_params(colors=SLIDE_TEXT, which="both", labelsize=SLIDE_TICK_SIZE)
     ax.xaxis.label.set_color(SLIDE_TEXT)
     ax.yaxis.label.set_color(SLIDE_TEXT)
     ax.title.set_color(SLIDE_TEXT)
@@ -117,7 +125,13 @@ def finalize_slide_axes(ax, grid=True):
 
 def save_slide_figure(fig, filename):
     """Save a white-background figure into the module-03 image directory."""
-    fig.savefig(OUTPUT_DIR / filename, facecolor=SLIDE_BG, bbox_inches="tight")
+    fig.savefig(
+        OUTPUT_DIR / filename,
+        facecolor=SLIDE_BG,
+        bbox_inches="tight",
+        dpi=SLIDE_EXPORT_DPI,
+        pad_inches=0.08,
+    )
     plt.close(fig)
     print(f"  ✓ {filename}")
 
@@ -726,7 +740,7 @@ def make_pressure_vs_pressure_gradient():
                                         facecolor=SLIDE_PANEL, edgecolor=SLIDE_GRID, linewidth=1.5)
         ax.add_patch(shell)
         ax.text(0.50, 0.49, "gas shell", ha="center", va="center",
-                fontsize=13, color=SLIDE_TEXT, fontweight="bold")
+                fontsize=15, color=SLIDE_TEXT, fontweight="bold")
 
         ax.annotate("", xy=(0.50, 0.35), xytext=(0.50, 0.35 - bottom_w),
                     arrowprops=dict(arrowstyle="-|>", lw=7, color=SLIDE_TEAL))
@@ -734,20 +748,20 @@ def make_pressure_vs_pressure_gradient():
                     arrowprops=dict(arrowstyle="-|>", lw=7, color=SLIDE_ORANGE))
         ax.annotate("", xy=(0.72, 0.18), xytext=(0.72, 0.37),
                     arrowprops=dict(arrowstyle="-|>", lw=5, color=SLIDE_ROSE))
-        ax.text(0.74, 0.18, "gravity", fontsize=11, color=SLIDE_ROSE,
+        ax.text(0.74, 0.18, "gravity", fontsize=12.5, color=SLIDE_ROSE,
                 va="center", fontweight="bold")
         ax.text(0.50, 0.93, title, ha="center", va="center",
-                fontsize=15, color=SLIDE_TEXT, fontweight="bold")
+                fontsize=17, color=SLIDE_TEXT, fontweight="bold")
         ax.text(0.50, 0.82, top_label, ha="center", va="center",
-                fontsize=11.5, color=SLIDE_TEXT)
+                fontsize=13, color=SLIDE_TEXT)
 
     axes[0].text(0.50, 0.16, r"net pressure force $=0$", ha="center", va="center",
-                 fontsize=12, color=SLIDE_TEXT, fontweight="bold")
+                 fontsize=13.5, color=SLIDE_TEXT, fontweight="bold")
     axes[1].text(0.50, 0.16, r"net pressure force $>0$", ha="center", va="center",
-                 fontsize=12, color=SLIDE_TEAL, fontweight="bold")
+                 fontsize=13.5, color=SLIDE_TEAL, fontweight="bold")
 
     fig.suptitle("A Star Is Supported by a Pressure Gradient, Not by Pressure Alone",
-                 fontsize=18.5, color=SLIDE_TEXT, fontweight="bold", y=1.02)
+                 fontsize=21, color=SLIDE_TEXT, fontweight="bold", y=1.02)
     fig.tight_layout()
     save_slide_figure(fig, "pressure-vs-pressure-gradient.png")
 
@@ -785,11 +799,11 @@ def make_hydrostatic_reasoning_ladder():
         )
         ax.add_patch(patch)
         ax.text(xs[idx], y0 + box_h - 0.09, title, ha="center", va="center",
-                fontsize=13, color=SLIDE_TEXT, fontweight="bold")
+                fontsize=14.5, color=SLIDE_TEXT, fontweight="bold")
         ax.text(xs[idx], y0 + 0.21, equation, ha="center", va="center",
-                fontsize=12.5, color=color, fontweight="bold")
+                fontsize=13.5, color=color, fontweight="bold")
         ax.text(xs[idx], y0 + 0.07, subtitle, ha="center", va="center",
-                fontsize=10.6, color=SLIDE_MUTED)
+                fontsize=12, color=SLIDE_MUTED)
 
         if idx < len(steps) - 1:
             ax.annotate(
@@ -800,14 +814,14 @@ def make_hydrostatic_reasoning_ladder():
             )
 
     ax.text(0.50, 0.92, "The Logic of Hydrostatic Equilibrium",
-            ha="center", va="center", fontsize=18.5, color=SLIDE_TEXT, fontweight="bold")
+            ha="center", va="center", fontsize=20.5, color=SLIDE_TEXT, fontweight="bold")
     ax.text(
         0.50,
         0.10,
         "Guiding question: what holds a star up, and how hot must the core be for that support to exist?",
         ha="center",
         va="center",
-        fontsize=11.2,
+        fontsize=12.5,
         color=SLIDE_TEXT,
         bbox=dict(boxstyle="round,pad=0.34", facecolor=SLIDE_PANEL, edgecolor=SLIDE_GRID),
     )
@@ -827,7 +841,7 @@ def make_hydrostatic_equilibrium():
         ax.add_patch(plt.Circle((0, 0), radius, facecolor=color, edgecolor=color, alpha=alpha, linewidth=2))
 
     ax.add_patch(plt.Circle((0, 0), 0.60, fill=False, edgecolor=SLIDE_TEXT, linewidth=2.0, linestyle="--"))
-    ax.text(0.55, 0.66, r"thin shell at $r$", fontsize=12, color=SLIDE_TEXT, fontweight="bold")
+    ax.text(0.55, 0.66, r"thin shell at $r$", fontsize=13.5, color=SLIDE_TEXT, fontweight="bold")
 
     for angle in np.linspace(0, 2 * np.pi, 10, endpoint=False):
         x1, y1 = 0.62 * np.cos(angle), 0.62 * np.sin(angle)
@@ -840,11 +854,11 @@ def make_hydrostatic_equilibrium():
         ax.annotate("", xy=(x2, y2), xytext=(x1, y1),
                     arrowprops=dict(arrowstyle="-|>", color=SLIDE_TEAL, lw=1.8, alpha=0.85))
 
-    ax.text(0, 0, "core", ha="center", va="center", fontsize=13, color=SLIDE_TEXT, fontweight="bold")
-    ax.text(-1.05, -0.95, "gravity pulls every shell inward", fontsize=11, color=SLIDE_ROSE, fontweight="bold")
-    ax.text(-1.05, -1.10, "the pressure gradient pushes outward", fontsize=11, color=SLIDE_TEAL, fontweight="bold")
+    ax.text(0, 0, "core", ha="center", va="center", fontsize=14.5, color=SLIDE_TEXT, fontweight="bold")
+    ax.text(-1.05, -0.95, "gravity pulls every shell inward", fontsize=12.5, color=SLIDE_ROSE, fontweight="bold")
+    ax.text(-1.05, -1.10, "the pressure gradient pushes outward", fontsize=12.5, color=SLIDE_TEAL, fontweight="bold")
     ax.text(0.0, 1.16, "Hydrostatic equilibrium is local: each shell supports the weight above it.",
-            ha="center", va="bottom", fontsize=11.5, color=SLIDE_TEXT,
+            ha="center", va="bottom", fontsize=13, color=SLIDE_TEXT,
             bbox=dict(boxstyle="round,pad=0.35", facecolor=SLIDE_PANEL, edgecolor=SLIDE_GRID))
 
     ax.set_xlim(-1.25, 1.25)
@@ -865,26 +879,26 @@ def make_hydrostatic_shell_force_balance():
                                     facecolor=SLIDE_PANEL, edgecolor=SLIDE_GRID, linewidth=1.5)
     ax.add_patch(shell)
     ax.text(0.50, 0.47, r"shell: $\rho(r),\,A,\,dr$", ha="center", va="center",
-            fontsize=14, color=SLIDE_TEXT, fontweight="bold")
+            fontsize=15.5, color=SLIDE_TEXT, fontweight="bold")
 
     ax.annotate("", xy=(0.28, 0.47), xytext=(0.08, 0.47),
                 arrowprops=dict(arrowstyle="-|>", lw=7, color=SLIDE_TEAL))
-    ax.text(0.06, 0.56, r"$F_{\rm in}=P(r)A$", fontsize=12, color=SLIDE_TEAL, fontweight="bold")
+    ax.text(0.06, 0.56, r"$F_{\rm in}=P(r)A$", fontsize=13.5, color=SLIDE_TEAL, fontweight="bold")
 
     ax.annotate("", xy=(0.72, 0.47), xytext=(0.92, 0.47),
                 arrowprops=dict(arrowstyle="-|>", lw=5, color=SLIDE_ORANGE))
-    ax.text(0.74, 0.56, r"$F_{\rm out}=P(r+dr)A$", fontsize=12, color=SLIDE_ORANGE, fontweight="bold")
+    ax.text(0.74, 0.56, r"$F_{\rm out}=P(r+dr)A$", fontsize=13.5, color=SLIDE_ORANGE, fontweight="bold")
 
     ax.annotate("", xy=(0.50, 0.14), xytext=(0.50, 0.30),
                 arrowprops=dict(arrowstyle="-|>", lw=6, color=SLIDE_ROSE))
-    ax.text(0.52, 0.13, r"$F_g=-g(r)\rho A\,dr$", fontsize=12, color=SLIDE_ROSE, fontweight="bold")
+    ax.text(0.52, 0.13, r"$F_g=-g(r)\rho A\,dr$", fontsize=13.5, color=SLIDE_ROSE, fontweight="bold")
 
     ax.text(0.50, 0.82, r"$F_P = P(r)A - P(r+dr)A \approx -A\frac{dP}{dr}dr$",
-            ha="center", fontsize=14, color=SLIDE_TEXT, fontweight="bold")
+            ha="center", fontsize=15.5, color=SLIDE_TEXT, fontweight="bold")
     ax.text(0.50, 0.74, r"because $dP/dr<0$, the pressure-gradient force points outward",
-            ha="center", fontsize=11.5, color=SLIDE_TEXT)
+            ha="center", fontsize=13, color=SLIDE_TEXT)
     ax.text(0.50, 0.04, r"Hydrostatic equilibrium: $F_P + F_g = 0$",
-            ha="center", fontsize=14, color=SLIDE_TEXT, fontweight="bold")
+            ha="center", fontsize=15.5, color=SLIDE_TEXT, fontweight="bold")
 
     fig.tight_layout()
     save_slide_figure(fig, "hydrostatic-shell-force-balance.png")
@@ -910,16 +924,16 @@ def make_toy_star_radial_profiles():
         ax.plot(r, yvals, color=color, linewidth=3.0)
         ax.set_xlim(0.0, 1.0)
         ax.set_ylim(0.0, 1.05)
-        ax.set_xlabel(r"$r/R$", fontsize=12)
+        ax.set_xlabel(r"$r/R$", fontsize=13.5)
         ax.text(0.05, 0.93, equation, transform=ax.transAxes,
-                fontsize=11, color=color, fontweight="bold")
+                fontsize=12.5, color=color, fontweight="bold")
         ax.text(0.05, 0.83, subtitle, transform=ax.transAxes,
-                fontsize=10, color=SLIDE_MUTED)
-    axes[0].set_ylabel("Normalized value", fontsize=12)
+                fontsize=11.5, color=SLIDE_MUTED)
+    axes[0].set_ylabel("Normalized value", fontsize=14)
     fig.suptitle("Toy Model: Uniform-Density Star Interior Profiles",
-                 fontsize=18, color=SLIDE_TEXT, fontweight="bold", y=1.03)
+                 fontsize=20, color=SLIDE_TEXT, fontweight="bold", y=1.03)
     fig.text(0.5, -0.02, "This is a toy model, not a real solar model. The point is the trend: support is most demanding in the center.",
-             ha="center", fontsize=10.5, color=SLIDE_MUTED)
+             ha="center", fontsize=12, color=SLIDE_MUTED)
 
     fig.tight_layout()
     save_slide_figure(fig, "toy-star-radial-profiles.png")
@@ -938,8 +952,8 @@ def make_pressure_gradient_scale_estimate():
             label=r"scale estimate: $\Delta P/\Delta r \sim P_c/R$")
 
     ax.scatter([0.0, 1.0], [1.0, 0.0], color=[SLIDE_ROSE, SLIDE_ORANGE], s=55, zorder=5)
-    ax.text(0.02, 1.03, r"$P_c$", color=SLIDE_ROSE, fontsize=11.5, fontweight="bold")
-    ax.text(0.84, 0.06, r"$P(R)\approx 0$", color=SLIDE_ORANGE, fontsize=11.2, fontweight="bold")
+    ax.text(0.02, 1.03, r"$P_c$", color=SLIDE_ROSE, fontsize=13, fontweight="bold")
+    ax.text(0.80, 0.06, r"$P(R)\approx 0$", color=SLIDE_ORANGE, fontsize=13, fontweight="bold")
 
     ax.annotate(
         "",
@@ -948,7 +962,7 @@ def make_pressure_gradient_scale_estimate():
         arrowprops=dict(arrowstyle="<->", lw=1.8, color=SLIDE_ROSE),
     )
     ax.text(0.09, 0.52, r"$\Delta P \sim P_c$", color=SLIDE_ROSE,
-            fontsize=11.5, fontweight="bold", va="center")
+            fontsize=13, fontweight="bold", va="center")
 
     ax.annotate(
         "",
@@ -958,23 +972,23 @@ def make_pressure_gradient_scale_estimate():
         annotation_clip=False,
     )
     ax.text(0.50, -0.16, r"$\Delta r \sim R$", color=SLIDE_ORANGE,
-            fontsize=11.5, fontweight="bold", ha="center")
+            fontsize=13, fontweight="bold", ha="center")
 
     ax.text(0.55, 0.73, "Assume the profile varies smoothly\nacross the star, not in a sharp jump.",
-            fontsize=10.8, color=SLIDE_TEXT,
+            fontsize=12.5, color=SLIDE_TEXT,
             bbox=dict(boxstyle="round,pad=0.30", facecolor=SLIDE_PANEL, edgecolor=SLIDE_GRID))
     ax.text(0.55, 0.45, r"Then $\dfrac{dP}{dr}$ has the same scale as"
             "\n" r"$\dfrac{\Delta P}{\Delta r} \sim \dfrac{P_c}{R}$",
-            fontsize=11.5, color=SLIDE_TEXT,
+            fontsize=13, color=SLIDE_TEXT,
             bbox=dict(boxstyle="round,pad=0.30", facecolor=SLIDE_PANEL, edgecolor=SLIDE_GRID))
 
     ax.set_xlim(0.0, 1.0)
     ax.set_ylim(-0.20, 1.08)
-    ax.set_xlabel(r"Fractional Radius ($r/R$)", fontsize=13)
-    ax.set_ylabel(r"Normalized Pressure ($P/P_c$)", fontsize=13)
+    ax.set_xlabel(r"Fractional Radius ($r/R$)", fontsize=14.5)
+    ax.set_ylabel(r"Normalized Pressure ($P/P_c$)", fontsize=14.5)
     ax.set_title("Why the Pressure-Gradient Scale Is $dP/dr \sim P_c/R$",
-                 fontsize=17.5, fontweight="bold", pad=10)
-    ax.legend(loc="upper right", frameon=False, fontsize=9.7)
+                 fontsize=19.5, fontweight="bold", pad=10)
+    ax.legend(loc="upper right", frameon=False, fontsize=12)
 
     fig.tight_layout()
     save_slide_figure(fig, "pressure-gradient-scale-estimate.png")
@@ -992,16 +1006,16 @@ def make_central_pressure_scaling_grid():
     image = ax.pcolormesh(masses, radii, np.log10(pressure), cmap="YlOrRd", shading="auto")
     contours = ax.contour(masses, radii, np.log10(pressure),
                           levels=np.arange(14, 19), colors=SLIDE_TEXT, alpha=0.35, linewidths=0.8)
-    ax.clabel(contours, fmt=lambda v: fr"$10^{{{int(v)}}}$", fontsize=8)
+    ax.clabel(contours, fmt=lambda v: fr"$10^{{{int(v)}}}$", fontsize=10)
     ax.plot(1.0, 1.0, "o", color=SLIDE_TEXT, markersize=7, markeredgecolor=SLIDE_BG, markeredgewidth=1.2)
-    ax.text(1.1, 1.06, "Sun", color=SLIDE_TEXT, fontsize=10.5, fontweight="bold")
-    ax.set_xlabel(r"Mass ($M/M_\odot$)", fontsize=13)
-    ax.set_ylabel(r"Radius ($R/R_\odot$)", fontsize=13)
+    ax.text(1.1, 1.06, "Sun", color=SLIDE_TEXT, fontsize=12, fontweight="bold")
+    ax.set_xlabel(r"Mass ($M/M_\odot$)", fontsize=14.5)
+    ax.set_ylabel(r"Radius ($R/R_\odot$)", fontsize=14.5)
     ax.set_title(r"Order-of-Magnitude Central Pressure from $P_c \sim GM^2/R^4$",
-                 fontsize=17, fontweight="bold", pad=10)
+                 fontsize=18.5, fontweight="bold", pad=10)
     cbar = fig.colorbar(image, ax=ax, pad=0.02)
-    cbar.set_label(r"$\log_{10}(P_c/\mathrm{dyn\,cm^{-2}})$", color=SLIDE_TEXT)
-    cbar.ax.tick_params(colors=SLIDE_TEXT)
+    cbar.set_label(r"$\log_{10}(P_c/\mathrm{dyn\,cm^{-2}})$", color=SLIDE_TEXT, fontsize=13)
+    cbar.ax.tick_params(colors=SLIDE_TEXT, labelsize=12)
     cbar.outline.set_edgecolor(SLIDE_GRID)
 
     fig.tight_layout()
@@ -1025,9 +1039,9 @@ def make_radiation_pressure_mass_scaling():
     sample_masses = np.array([1.0, 10.0, 30.0])
     sample_ratios = sample_masses**2
     ax.scatter(sample_masses, sample_ratios, s=55, color=[SLIDE_TEAL, SLIDE_ORANGE, SLIDE_ROSE], zorder=5)
-    ax.text(1.08, 1.12, "Sun", color=SLIDE_TEXT, fontsize=10.8, fontweight="bold")
-    ax.text(10.7, 115, r"$10\,M_\odot$", color=SLIDE_TEXT, fontsize=10.5, fontweight="bold")
-    ax.text(31.5, 980, r"$30\,M_\odot$", color=SLIDE_TEXT, fontsize=10.5, fontweight="bold")
+    ax.text(1.08, 1.12, "Sun", color=SLIDE_TEXT, fontsize=12, fontweight="bold")
+    ax.text(10.7, 115, r"$10\,M_\odot$", color=SLIDE_TEXT, fontsize=12, fontweight="bold")
+    ax.text(31.5, 980, r"$30\,M_\odot$", color=SLIDE_TEXT, fontsize=12, fontweight="bold")
 
     ax.text(
         0.04,
@@ -1036,18 +1050,18 @@ def make_radiation_pressure_mass_scaling():
         "\n"
         r"Vertical axis is normalized so the Sun sits at $1$.",
         transform=ax.transAxes,
-        fontsize=10.8,
+        fontsize=12.5,
         color=SLIDE_TEXT,
         va="top",
         bbox=dict(boxstyle="round,pad=0.34", facecolor=SLIDE_PANEL, edgecolor=SLIDE_GRID),
     )
 
-    ax.set_xlabel(r"Mass ($M/M_\odot$)", fontsize=14)
-    ax.set_ylabel(r"Relative $P_{\rm rad}/P_{\rm gas}$" "\n" r"(normalized to Sun)", fontsize=14)
+    ax.set_xlabel(r"Mass ($M/M_\odot$)", fontsize=15)
+    ax.set_ylabel(r"Relative $P_{\rm rad}/P_{\rm gas}$" "\n" r"(normalized to Sun)", fontsize=15)
     ax.set_xlim(0.5, 60.0)
     ax.set_ylim(0.2, 5.0e3)
     ax.set_title("Radiation Pressure Gains Ground Rapidly in Massive Stars",
-                 fontsize=17.5, fontweight="bold", pad=12)
+                 fontsize=19.5, fontweight="bold", pad=12)
 
     fig.tight_layout()
     save_slide_figure(fig, "radiation-pressure-mass-scaling.png")
@@ -1066,15 +1080,15 @@ def make_virial_energy_partition():
     ax_left.axhline(0.0, color=SLIDE_GRID, linewidth=1.2)
     ax_left.bar(labels, energies, color=colors, width=0.58)
     ax_left.set_ylim(-2.4, 1.4)
-    ax_left.set_ylabel("Relative energy units", fontsize=12)
-    ax_left.set_title("Virial Energy Ledger", fontsize=16, fontweight="bold")
+    ax_left.set_ylabel("Relative energy units", fontsize=13.5)
+    ax_left.set_title("Virial Energy Ledger", fontsize=17.5, fontweight="bold")
     ax_left.text(0.02, 0.95, r"$2K_{\rm th} + U_{\rm grav} = 0$",
-                 transform=ax_left.transAxes, fontsize=12, color=SLIDE_TEXT,
+                 transform=ax_left.transAxes, fontsize=13, color=SLIDE_TEXT,
                  fontweight="bold", va="top")
     ax_left.text(0.02, 0.84, r"$K_{\rm th}=-\frac{1}{2}U_{\rm grav}$",
-                 transform=ax_left.transAxes, fontsize=11, color=SLIDE_TEXT, va="top")
+                 transform=ax_left.transAxes, fontsize=12, color=SLIDE_TEXT, va="top")
     ax_left.text(0.02, 0.74, r"$E_{\rm tot}=K_{\rm th}+U_{\rm grav}=\frac{1}{2}U_{\rm grav}<0$",
-                 transform=ax_left.transAxes, fontsize=11, color=SLIDE_TEXT, va="top")
+                 transform=ax_left.transAxes, fontsize=12, color=SLIDE_TEXT, va="top")
 
     ax_right.set_facecolor(SLIDE_BG)
     ax_right.axis("off")
@@ -1089,13 +1103,13 @@ def make_virial_energy_partition():
     xs = np.linspace(0.08, 0.92, len(chain))
     for idx, ((text, color), xpos) in enumerate(zip(chain, xs)):
         ax_right.text(xpos, 0.55, text, ha="center", va="center",
-                      fontsize=11.5, color=SLIDE_TEXT,
+                      fontsize=12.5, color=SLIDE_TEXT,
                       bbox=dict(boxstyle="round,pad=0.35", facecolor=SLIDE_PANEL, edgecolor=color, linewidth=1.6))
         if idx < len(chain) - 1:
             ax_right.annotate("", xy=(xs[idx + 1] - 0.055, 0.55), xytext=(xpos + 0.055, 0.55),
                               arrowprops=dict(arrowstyle="-|>", color=color, lw=1.7))
     ax_right.set_title("Why Losing Energy Can Make a Star Hotter",
-                       fontsize=16, color=SLIDE_TEXT, fontweight="bold", pad=12)
+                       fontsize=17.5, color=SLIDE_TEXT, fontweight="bold", pad=12)
 
     fig.tight_layout()
     save_slide_figure(fig, "virial-energy-partition.png")
@@ -1118,17 +1132,17 @@ def make_core_temperature_scaling():
     ax.plot(masses, fixed_radius, color=SLIDE_MUTED, linewidth=1.8, linestyle="--",
             label=r"if radius were fixed: $T_c \propto M$")
     ax.plot(1.0, 15.0, "o", color=SLIDE_TEAL, markersize=8, markeredgecolor=SLIDE_BG, markeredgewidth=1.3)
-    ax.text(1.08, 16.3, "Sun", color=SLIDE_TEXT, fontsize=11, fontweight="bold")
+    ax.text(1.08, 16.3, "Sun", color=SLIDE_TEXT, fontsize=12, fontweight="bold")
     ax.text(0.13, 45, "gravity sets the\nfusion-scale temperature", color=SLIDE_TEAL,
-            fontsize=10.5, fontweight="bold")
+            fontsize=12, fontweight="bold")
 
-    ax.set_xlabel(r"Mass ($M/M_\odot$)", fontsize=14)
-    ax.set_ylabel(r"Core Temperature Scale (MK)", fontsize=14)
+    ax.set_xlabel(r"Mass ($M/M_\odot$)", fontsize=15)
+    ax.set_ylabel(r"Core Temperature Scale (MK)", fontsize=15)
     ax.set_xlim(0.1, 20.0)
     ax.set_ylim(5.0, 4.0e2)
     ax.set_title("Hydrostatic Equilibrium Predicts Only a Modest Rise in Core Temperature",
-                 fontsize=17.5, fontweight="bold", pad=12)
-    ax.legend(loc="upper left", frameon=False, fontsize=9.8)
+                 fontsize=19.5, fontweight="bold", pad=12)
+    ax.legend(loc="upper left", frameon=False, fontsize=12)
 
     fig.tight_layout()
     save_slide_figure(fig, "core-temperature-scaling.png")
@@ -1154,21 +1168,21 @@ def make_maxwell_boltzmann_speeds_solar_core():
                                 (v_mean, "mean", SLIDE_GOLD),
                                 (v_rms, "rms", SLIDE_ROSE)]:
         ax.axvline(value / 1.0e7, color=color, linewidth=1.6, linestyle=(0, (4, 3)))
-        ax.text(value / 1.0e7 + 0.08, 0.92, label, color=color, fontsize=10.3,
+        ax.text(value / 1.0e7 + 0.08, 0.92, label, color=color, fontsize=12,
                 fontweight="bold", rotation=90, va="top")
 
     ax.text(0.66, 0.95,
             fr"$T = {T_CORE_SUN:.1e}\,$K" "\n"
             fr"$v_{{\rm mp}} \approx {v_mp/1.0e7:.1f}\times10^7$ cm s$^{{-1}}$",
-            transform=ax.transAxes, fontsize=11, color=SLIDE_TEXT,
+            transform=ax.transAxes, fontsize=12.5, color=SLIDE_TEXT,
             va="top", bbox=dict(boxstyle="round,pad=0.35", facecolor=SLIDE_PANEL, edgecolor=SLIDE_GRID))
 
-    ax.set_xlabel(r"Proton Speed ($10^7\,\mathrm{cm\,s^{-1}}$)", fontsize=14)
-    ax.set_ylabel("Normalized Probability Density", fontsize=14)
+    ax.set_xlabel(r"Proton Speed ($10^7\,\mathrm{cm\,s^{-1}}$)", fontsize=15)
+    ax.set_ylabel("Normalized Probability Density", fontsize=15)
     ax.set_xlim(0.0, 24.0)
     ax.set_ylim(0.0, 1.08)
     ax.set_title("Maxwell-Boltzmann Proton Speeds in the Solar Core",
-                 fontsize=18, fontweight="bold", pad=12)
+                 fontsize=19.5, fontweight="bold", pad=12)
 
     fig.tight_layout()
     save_slide_figure(fig, "maxwell-boltzmann-speeds-solar-core.png")

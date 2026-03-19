@@ -756,14 +756,14 @@ figures:
 
   timescales-vs-mass:
     path: /assets/images/module-03/timescales-vs-mass.png
-    caption: "**What to notice:** the hierarchy $ \\tau_{\\rm dyn} \\ll \\tau_{\\rm KH} \\ll \\tau_{\\rm nuc} $ survives across the main sequence. Massive stars still adjust quickly, but their thermal and nuclear clocks shrink drastically. Low-mass and high-mass caveat bands remind us where simple scaling laws bend."
+    caption: '**What to notice:** the hierarchy $ \tau_{\text{dyn}} \ll \tau_{\text{KH}} \ll \tau_{\text{nuc}} $ survives across the main sequence. Massive stars still adjust quickly, but their thermal and nuclear clocks shrink drastically. Low-mass and high-mass caveat bands remind us where simple scaling laws bend.'
     alt: "Generated white-background log-log plot of stellar timescale versus stellar mass in solar units, with three labeled curves for dynamical, Kelvin-Helmholtz, and nuclear timescales, a marked Sun point, a dashed age-of-the-universe line, and shaded caveat bands at low and high mass."
     credit: "ASTR 201 (generated)"
     module: 3
 
   main-sequence-lifetime-vs-mass:
     path: /assets/images/module-03/main-sequence-lifetime-vs-mass.png
-    caption: "**What to notice:** the naive $ \\tau \\propto M^{-2.5} $ guide captures the broad trend, but real low-mass stars live even longer because they access more of their fuel, while very massive-star lifetimes are longer than a blind high-mass extrapolation would predict."
+    caption: '**What to notice:** the naive $ \tau \propto M^{-2.5} $ guide captures the broad trend, but real low-mass stars live even longer because they access more of their fuel, while very massive-star lifetimes are longer than a blind high-mass extrapolation would predict.'
     alt: "Generated white-background log-log plot of main-sequence lifetime versus stellar mass showing a solid piecewise lifetime model, a dashed naive M to the minus 2.5 guide, a Sun marker, an age-of-the-universe line, and shaded caveat regions for fully convective low-mass stars and very massive stars."
     credit: "ASTR 201 (generated)"
     module: 3
@@ -812,28 +812,28 @@ figures:
 
   pressure-gradient-scale-estimate:
     path: /assets/images/module-03/pressure-gradient-scale-estimate.png
-    caption: "**What to notice:** the pressure profile is smooth across a scale of order the stellar radius, so the pressure-gradient scale is set by a total drop of order $P_c$ across a distance of order $R$. That is why $dP/dr \\sim P_c/R$ is a sensible scaling estimate."
+    caption: '**What to notice:** the pressure profile is smooth across a scale of order the stellar radius, so the pressure-gradient scale is set by a total drop of order $P_c$ across a distance of order $R$. That is why $dP/dr \sim P_c/R$ is a sensible scaling estimate.'
     alt: "Single-panel plot of normalized pressure versus fractional radius for a smooth toy stellar profile, with labels marking central pressure, near-zero surface pressure, a vertical delta-P arrow, a horizontal delta-r arrow, and a dashed secant representing the scale estimate P_c over R."
     credit: "ASTR 201 (generated)"
     module: 3
 
   central-pressure-scaling-grid:
     path: /assets/images/module-03/central-pressure-scaling-grid.png
-    caption: "**What to notice:** central pressure depends strongly on compactness. Holding mass fixed while shrinking the radius drives the required support sharply upward because $P_c \\sim GM^2/R^4$."
+    caption: '**What to notice:** central pressure depends strongly on compactness. Holding mass fixed while shrinking the radius drives the required support sharply upward because $P_c \sim GM^2/R^4$.'
     alt: "Generated heatmap of logarithmic central pressure in dynes per square centimeter as a function of stellar mass and radius in solar units, with contour labels and a marked Sun point."
     credit: "ASTR 201 (generated)"
     module: 3
 
   radiation-pressure-mass-scaling:
     path: /assets/images/module-03/radiation-pressure-mass-scaling.png
-    caption: "**What to notice:** even a rough hydrostatic scaling predicts that radiation pressure becomes far more important in higher-mass stars. Relative to the Sun, the ratio $P_{\\rm rad}/P_{\\rm gas}$ grows roughly as $M^2$."
+    caption: '**What to notice:** even a rough hydrostatic scaling predicts that radiation pressure becomes far more important in higher-mass stars. Relative to the Sun, the ratio $P_{\text{rad}}/P_{\text{gas}}$ grows roughly as $M^2$.'
     alt: "Log-log plot of stellar mass versus the relative importance of radiation pressure compared with gas pressure, normalized so the Sun equals one, with markers at 1, 10, and 30 solar masses and an annotation explaining the M squared scaling."
     credit: "ASTR 201 (generated)"
     module: 3
 
   virial-energy-partition:
     path: /assets/images/module-03/virial-energy-partition.png
-    caption: "**What to notice:** the virial theorem fixes the bookkeeping: $K_{\\rm th} = -\\tfrac{1}{2}U_{\\rm grav}$ and $E_{\\rm tot} < 0$. That is why a star can lose energy, contract, and still get hotter."
+    caption: '**What to notice:** the virial theorem fixes the bookkeeping: $K_{\text{th}} = -\tfrac{1}{2}U_{\text{grav}}$ and $E_{\text{tot}} < 0$. That is why a star can lose energy, contract, and still get hotter.'
     alt: "Two-panel generated figure with a virial energy ledger bar chart for gravitational, thermal, and total energy on the left and a causal chain from radiating energy to core heating on the right."
     credit: "ASTR 201 (generated)"
     module: 3
