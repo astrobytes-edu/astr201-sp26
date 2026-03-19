@@ -752,6 +752,70 @@ def make_pressure_vs_pressure_gradient():
     save_slide_figure(fig, "pressure-vs-pressure-gradient.png")
 
 
+def make_hydrostatic_reasoning_ladder():
+    """Preview the logic chain from gravity to a fusion-scale core temperature."""
+    fig, ax = plt.subplots(figsize=(14.2, 4.8), dpi=220)
+    fig.patch.set_facecolor(SLIDE_BG)
+    ax.set_facecolor(SLIDE_BG)
+    ax.axis("off")
+
+    steps = [
+        ("Gravity", r"$g(r)=\dfrac{GM(r)}{r^2}$", "sets the inward pull", SLIDE_GOLD),
+        ("Force Balance", r"$\dfrac{dP}{dr}=-\rho g$", "hydrostatic equilibrium", SLIDE_ROSE),
+        ("Pressure Scale", r"$P_c \sim \dfrac{GM^2}{R^4}$", "required central pressure", SLIDE_ORANGE),
+        ("Gas Pressure", r"$P \approx P_{\rm gas}$" "\n" r"$\sim \rho \dfrac{k_B T}{\mu m_p}$", "microphysics of support", SLIDE_TEAL),
+        ("Temperature Scale", r"$T_c \sim \dfrac{\mu G M m_p}{k_B R}$", "gravity sets the core temperature", ACCENT_BLUE),
+    ]
+
+    box_w = 0.16
+    box_h = 0.46
+    y0 = 0.26
+    xs = np.linspace(0.11, 0.89, len(steps))
+
+    for idx, (title, equation, subtitle, color) in enumerate(steps):
+        x0 = xs[idx] - box_w / 2.0
+        patch = mpatches.FancyBboxPatch(
+            (x0, y0),
+            box_w,
+            box_h,
+            boxstyle="round,pad=0.02,rounding_size=0.03",
+            facecolor=SLIDE_PANEL,
+            edgecolor=color,
+            linewidth=2.2,
+        )
+        ax.add_patch(patch)
+        ax.text(xs[idx], y0 + box_h - 0.09, title, ha="center", va="center",
+                fontsize=13, color=SLIDE_TEXT, fontweight="bold")
+        ax.text(xs[idx], y0 + 0.21, equation, ha="center", va="center",
+                fontsize=12.5, color=color, fontweight="bold")
+        ax.text(xs[idx], y0 + 0.07, subtitle, ha="center", va="center",
+                fontsize=10.6, color=SLIDE_MUTED)
+
+        if idx < len(steps) - 1:
+            ax.annotate(
+                "",
+                xy=(xs[idx + 1] - box_w / 2.0 - 0.018, y0 + box_h / 2.0),
+                xytext=(xs[idx] + box_w / 2.0 + 0.018, y0 + box_h / 2.0),
+                arrowprops=dict(arrowstyle="-|>", lw=2.0, color=SLIDE_GRID),
+            )
+
+    ax.text(0.50, 0.92, "The Logic of Hydrostatic Equilibrium",
+            ha="center", va="center", fontsize=18.5, color=SLIDE_TEXT, fontweight="bold")
+    ax.text(
+        0.50,
+        0.10,
+        "Guiding question: what holds a star up, and how hot must the core be for that support to exist?",
+        ha="center",
+        va="center",
+        fontsize=11.2,
+        color=SLIDE_TEXT,
+        bbox=dict(boxstyle="round,pad=0.34", facecolor=SLIDE_PANEL, edgecolor=SLIDE_GRID),
+    )
+
+    fig.tight_layout()
+    save_slide_figure(fig, "hydrostatic-reasoning-ladder.png")
+
+
 def make_hydrostatic_equilibrium():
     """Cross-section view of local shell-by-shell force balance in a star."""
     fig, ax = plt.subplots(figsize=(8.8, 8.2), dpi=220, subplot_kw={"aspect": "equal"})
@@ -861,6 +925,61 @@ def make_toy_star_radial_profiles():
     save_slide_figure(fig, "toy-star-radial-profiles.png")
 
 
+def make_pressure_gradient_scale_estimate():
+    """Show why dP/dr ~ P_c / R is a reasonable order-of-magnitude estimate."""
+    r = np.linspace(0.0, 1.0, 500)
+    pressure = np.clip((1.0 - r**1.7) ** 1.25, 0.0, None)
+
+    fig, ax = plt.subplots(figsize=(10.4, 6.6), dpi=220)
+    apply_slide_style(fig, ax)
+    ax.plot(r, pressure, color=SLIDE_TEAL, linewidth=3.2, label="toy smooth pressure profile")
+    ax.fill_between(r, 0.0, pressure, color=SLIDE_TEAL, alpha=0.10)
+    ax.plot([0.0, 1.0], [1.0, 0.0], linestyle="--", color=SLIDE_ORANGE, linewidth=2.0,
+            label=r"scale estimate: $\Delta P/\Delta r \sim P_c/R$")
+
+    ax.scatter([0.0, 1.0], [1.0, 0.0], color=[SLIDE_ROSE, SLIDE_ORANGE], s=55, zorder=5)
+    ax.text(0.02, 1.03, r"$P_c$", color=SLIDE_ROSE, fontsize=11.5, fontweight="bold")
+    ax.text(0.84, 0.06, r"$P(R)\approx 0$", color=SLIDE_ORANGE, fontsize=11.2, fontweight="bold")
+
+    ax.annotate(
+        "",
+        xy=(0.06, 0.98),
+        xytext=(0.06, 0.02),
+        arrowprops=dict(arrowstyle="<->", lw=1.8, color=SLIDE_ROSE),
+    )
+    ax.text(0.09, 0.52, r"$\Delta P \sim P_c$", color=SLIDE_ROSE,
+            fontsize=11.5, fontweight="bold", va="center")
+
+    ax.annotate(
+        "",
+        xy=(1.0, -0.10),
+        xytext=(0.0, -0.10),
+        arrowprops=dict(arrowstyle="<->", lw=1.8, color=SLIDE_ORANGE),
+        annotation_clip=False,
+    )
+    ax.text(0.50, -0.16, r"$\Delta r \sim R$", color=SLIDE_ORANGE,
+            fontsize=11.5, fontweight="bold", ha="center")
+
+    ax.text(0.55, 0.73, "Assume the profile varies smoothly\nacross the star, not in a sharp jump.",
+            fontsize=10.8, color=SLIDE_TEXT,
+            bbox=dict(boxstyle="round,pad=0.30", facecolor=SLIDE_PANEL, edgecolor=SLIDE_GRID))
+    ax.text(0.55, 0.45, r"Then $\dfrac{dP}{dr}$ has the same scale as"
+            "\n" r"$\dfrac{\Delta P}{\Delta r} \sim \dfrac{P_c}{R}$",
+            fontsize=11.5, color=SLIDE_TEXT,
+            bbox=dict(boxstyle="round,pad=0.30", facecolor=SLIDE_PANEL, edgecolor=SLIDE_GRID))
+
+    ax.set_xlim(0.0, 1.0)
+    ax.set_ylim(-0.20, 1.08)
+    ax.set_xlabel(r"Fractional Radius ($r/R$)", fontsize=13)
+    ax.set_ylabel(r"Normalized Pressure ($P/P_c$)", fontsize=13)
+    ax.set_title("Why the Pressure-Gradient Scale Is $dP/dr \sim P_c/R$",
+                 fontsize=17.5, fontweight="bold", pad=10)
+    ax.legend(loc="upper right", frameon=False, fontsize=9.7)
+
+    fig.tight_layout()
+    save_slide_figure(fig, "pressure-gradient-scale-estimate.png")
+
+
 def make_central_pressure_scaling_grid():
     """Heatmap showing how central pressure depends on mass and radius."""
     masses = np.linspace(0.3, 10.0, 200)
@@ -887,6 +1006,51 @@ def make_central_pressure_scaling_grid():
 
     fig.tight_layout()
     save_slide_figure(fig, "central-pressure-scaling-grid.png")
+
+
+def make_radiation_pressure_mass_scaling():
+    """Show the relative rise of radiation support with stellar mass."""
+    masses = np.logspace(np.log10(0.5), np.log10(60.0), 400)
+    relative_ratio = masses**2
+
+    fig, ax = plt.subplots(figsize=(10.8, 6.8), dpi=220)
+    apply_slide_style(fig, ax)
+    ax.set_xscale("log")
+    ax.set_yscale("log")
+
+    ax.plot(masses, relative_ratio, color=SLIDE_ROSE, linewidth=3.0)
+    ax.fill_between(masses, 1.0, relative_ratio, where=relative_ratio >= 1.0,
+                    color=SLIDE_ROSE, alpha=0.10)
+
+    sample_masses = np.array([1.0, 10.0, 30.0])
+    sample_ratios = sample_masses**2
+    ax.scatter(sample_masses, sample_ratios, s=55, color=[SLIDE_TEAL, SLIDE_ORANGE, SLIDE_ROSE], zorder=5)
+    ax.text(1.08, 1.12, "Sun", color=SLIDE_TEXT, fontsize=10.8, fontweight="bold")
+    ax.text(10.7, 115, r"$10\,M_\odot$", color=SLIDE_TEXT, fontsize=10.5, fontweight="bold")
+    ax.text(31.5, 980, r"$30\,M_\odot$", color=SLIDE_TEXT, fontsize=10.5, fontweight="bold")
+
+    ax.text(
+        0.04,
+        0.94,
+        r"Hydrostatic scaling gives $\dfrac{P_{\rm rad}}{P_{\rm gas}} \propto \dfrac{T^3}{\rho} \propto M^2$"
+        "\n"
+        r"Vertical axis is normalized so the Sun sits at $1$.",
+        transform=ax.transAxes,
+        fontsize=10.8,
+        color=SLIDE_TEXT,
+        va="top",
+        bbox=dict(boxstyle="round,pad=0.34", facecolor=SLIDE_PANEL, edgecolor=SLIDE_GRID),
+    )
+
+    ax.set_xlabel(r"Mass ($M/M_\odot$)", fontsize=14)
+    ax.set_ylabel(r"Relative $P_{\rm rad}/P_{\rm gas}$" "\n" r"(normalized to Sun)", fontsize=14)
+    ax.set_xlim(0.5, 60.0)
+    ax.set_ylim(0.2, 5.0e3)
+    ax.set_title("Radiation Pressure Gains Ground Rapidly in Massive Stars",
+                 fontsize=17.5, fontweight="bold", pad=12)
+
+    fig.tight_layout()
+    save_slide_figure(fig, "radiation-pressure-mass-scaling.png")
 
 
 def make_virial_energy_partition():
@@ -1799,10 +1963,13 @@ def main():
     make_cluster_turnoff_clock()
     make_fuel_vs_burn_rate()
     make_pressure_vs_pressure_gradient()
+    make_hydrostatic_reasoning_ladder()
     make_hydrostatic_equilibrium()
     make_hydrostatic_shell_force_balance()
     make_toy_star_radial_profiles()
+    make_pressure_gradient_scale_estimate()
     make_central_pressure_scaling_grid()
+    make_radiation_pressure_mass_scaling()
     make_virial_energy_partition()
     make_core_temperature_scaling()
     make_maxwell_boltzmann_speeds_solar_core()
