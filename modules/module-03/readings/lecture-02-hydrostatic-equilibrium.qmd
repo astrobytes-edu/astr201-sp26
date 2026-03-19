@@ -80,7 +80,7 @@ A star is held up by a **pressure gradient**, not just by pressure. The pressure
 
 In Reading 1, you calculated the Sun's dynamical timescale: $\tau_{\text{dyn}} \sim 50\,\mathrm{min}$. If gravity were the only force acting, the Sun would collapse in less than an hour. Yet the Sun has been shining for $4.6\,\mathrm{Gyr}$ — about $4 \times 10^{13}$ dynamical times. Somehow it maintains an almost perfect balance between inward pull and outward support.
 
-What force opposes gravity? The answer is **pressure** — specifically, the pressure of the hot gas inside the star. But saying "pressure holds the star up" is not quite right, and understanding *why* requires some care.
+What force opposes gravity? The answer is **pressure** — specifically, the pressure of the hot gas inside the star. But saying "pressure holds the star up" is not quite right, and understanding *why* requires some care. If the balance fails, even briefly, the gas cannot remain static: some layer must accelerate inward or outward on roughly the dynamical timescale.
 
 ### Pressure vs. Pressure *Gradient*
 
@@ -159,6 +159,16 @@ $$
 
 The key clue is the steep temperature dependence: $P_{\text{rad}} \propto T^4$. At fixed density, gas pressure scales only as $P_{\text{gas}} \propto T$, while radiation pressure scales as $P_{\text{rad}} \propto T^4$. Radiation pressure therefore grows much faster with temperature than thermal gas pressure does. For a star like the Sun, thermal gas pressure dominates. In very hot, very massive stars, radiation pressure becomes much more important.
 
+There is also a useful mass-scaling preview hiding here. The ratio of the two pressure sources is
+$$
+\frac{P_{\text{rad}}}{P_{\text{gas}}} \propto \frac{T^4}{\rho T} = \frac{T^3}{\rho}.
+$$
+Later in this reading we will estimate that $T_c \sim M/R$ and $\rho \sim M/R^3$, which implies
+$$
+\frac{P_{\text{rad}}}{P_{\text{gas}}} \propto \frac{(M/R)^3}{M/R^3} \propto M^2.
+$$
+This is only a scaling argument, not a precision stellar model, but it captures the trend we care about: radiation pressure becomes disproportionately more important in higher-mass stars.
+
 ::: {.callout-note title="Spoiler for Later: Degeneracy Pressure"}
 There is a third major pressure source in stellar astrophysics: **degeneracy pressure**. Unlike thermal gas pressure, it does not come from particles being hot. It comes from quantum mechanics, specifically the Pauli exclusion principle, which prevents identical fermions from all occupying the same low-energy state. That is the pressure support that matters in white dwarfs and neutron stars. For now, the key point is that not all stellar pressure is thermal.
 :::
@@ -194,6 +204,8 @@ Consider a thin shell of gas at radius $r$ inside a star. Give the shell thickne
 $$
 dm = \rho(r)A\,dr.
 $$
+
+If the inward and outward forces do not cancel, the shell accelerates. That is what makes this equation so important: hydrostatic equilibrium is the condition for a star to remain nearly static instead of beginning a rapid global readjustment.
 
 Two forces act on this shell in the radial direction:
 
@@ -287,6 +299,43 @@ This is a local force-balance law. If the pressure fell too slowly with radius, 
 
 This is a differential equation, meaning it relates how pressure changes with radius to the local conditions inside the star. To solve for the full structure $P(r)$, $\rho(r)$, and $M(r)$, we need additional equations. That fuller system is the subject of Reading 5.
 
+::: {.callout-warning}
+## Misconception Check — “High Pressure = Support”
+
+A student says:
+
+> “If the pressure is extremely high everywhere inside a star, that should prevent collapse.”
+
+Is this correct?
+
+**Think before reading.**
+
+**Answer:**
+
+No.
+
+Uniform pressure produces **no net force**, because the forces on opposite sides of a shell cancel.
+
+Only a **pressure gradient** produces support:
+$$
+\frac{dP}{dr} < 0.
+$$
+
+Support depends on how pressure changes with radius, not on pressure being “large” in some absolute sense.
+:::
+
+::: {.callout-note title="Observable → Model → Inference" .omi}
+**Observable:** The Sun keeps nearly the same size for many billions of years, far longer than its $\sim 50$ minute dynamical timescale.
+
+**Model:** Force balance on a thin shell inside the star.
+
+**Inference:** Each shell must satisfy
+$$
+\frac{dP}{dr} = -\rho g.
+$$
+If that balance is violated, the shell accelerates inward or outward instead of staying in place.
+:::
+
 ::: {.callout-tip}
 ## Check Yourself
 
@@ -321,36 +370,77 @@ everywhere inside the star: pressure must decrease outward so that the net press
 
 ### A Scaling Argument
 
-We cannot solve the hydrostatic equilibrium equation exactly without knowing the full internal profiles $\rho(r)$ and $M(r)$, but we can estimate the central pressure using a scaling argument.
+We cannot solve the hydrostatic equilibrium equation exactly without knowing the full internal profiles $\rho(r)$ and $M(r)$. Instead, we estimate the *scale* of the central pressure.
 
-Replace local quantities with global scales. We are not solving for the full profile; we are estimating the pressure scale the star must reach in order to support itself.
+This is not a detailed stellar-structure solution. It is a controlled approximation designed to answer a more modest question: what pressure scale must a star reach in order to support itself?
 
-**Step 1: Approximate the gradient.** Across the star, the pressure changes from roughly $P_c$ at the center to nearly $0$ at the surface, over a distance of order $R$. So we write
+#### Step 1: Approximate the pressure gradient
+
+Across the star, pressure decreases from roughly $P_c$ at the center to nearly zero at the surface. That means
+$$
+\Delta P \sim P_c,
+$$
+because the surface pressure is tiny compared with the central pressure. The change happens across a distance of order the stellar radius,
+$$
+\Delta r \sim R.
+$$
+
+Therefore,
 $$
 \frac{dP}{dr} \sim \frac{\Delta P}{\Delta r} \sim \frac{P_c}{R}.
 $$
 
-**Step 2: Substitute density.** For an order-of-magnitude estimate, replace $M(r)$ by the total mass $M$ and use mean density:
+#### Step 2: Replace local quantities with global scales
+
+For an order-of-magnitude estimate, replace the local density by the **mean density**:
 $$
 \rho \sim \frac{M}{R^3}.
 $$
 
-Then hydrostatic equilibrium gives
+> Important: this is a mean-density approximation, not the real density profile of a star. Real stars are centrally concentrated, so this step captures the scaling but not the detailed structure.
+
+#### Step 3: Apply hydrostatic equilibrium
+
+Using
+$$
+\frac{dP}{dr} \sim -\rho g,
+$$
+and replacing $g$ by its global scale $GM/R^2$, we get
 $$
 \frac{P_c}{R} \sim \frac{G M \rho}{R^2}.
 $$
 
-Now substitute $\rho \sim M/R^3$:
+Now insert the mean-density approximation:
 $$
-\frac{P_c}{R} \sim \frac{G M}{R^2}\frac{M}{R^3}.
+\frac{P_c}{R} \sim \frac{G M}{R^2} \cdot \frac{M}{R^3}.
 $$
 
-**Step 3: Solve the scaling.** Multiply both sides by $R$:
+#### Step 4: Solve the scaling
+
+So
+$$
+\frac{P_c}{R} \sim \frac{G M^2}{R^5}.
+$$
+
+Multiply both sides by $R$:
 $$
 P_c \sim \frac{G M^2}{R^4}.
 $$
 
-**Step 4: Interpret the result.** This is a scaling estimate, not an exact solution. It tells us how the required central pressure depends on stellar mass and radius: more compact stars require higher pressure. Holding the mass fixed while shrinking the radius drives the needed support sharply upward because $P_c \propto R^{-4}$.
+#### Final result
+
+$$
+P_c \sim \frac{G M^2}{R^4}.
+$$
+
+#### Physical interpretation
+
+This is a scaling estimate, not an exact solution. It tells us that stronger gravity demands higher internal pressure, and smaller radii make that demand rise sharply:
+$$
+P_c \propto R^{-4}.
+$$
+
+That is why compact stars require enormous internal pressure even when their total mass is not especially large.
 
 ::: {.callout-note title="Optional Precision Note"}
 If you model the star as a uniform-density sphere and solve more carefully, you get the same scaling,
@@ -360,9 +450,79 @@ $$
 but with a numerical prefactor. The power of the scaling argument is that it captures the physics without forcing us to solve the full stellar structure problem yet.
 :::
 
+::: {.callout-note title="Observable → Model → Inference" .omi}
+**Observable:** Stellar masses and radii can be measured, even when central conditions cannot.
+
+**Model:** Hydrostatic equilibrium plus a mean-density approximation for the interior.
+
+**Inference:** The required central pressure scale is
+$$
+P_c \sim \frac{G M^2}{R^4}.
+$$
+Massive or compact stars therefore need much larger central pressure.
+:::
+
 {{< fig toy-star-radial-profiles >}}
 
+::: {.callout-note title="Recommended Figure — Pressure Profile"}
+The toy radial-profile figure above is the pressure-profile picture to keep in mind as we read this section.
+
+**What to notice:**
+
+- Pressure peaks at the center.
+- Pressure decreases monotonically outward.
+- The **gradient** of the curve, not the absolute height of the curve by itself, is what supplies support.
+
+Even a toy model is enough to reinforce the central lesson: support comes from the slope of $P(r)$, not from “high pressure everywhere.”
+:::
+
 {{< fig central-pressure-scaling-grid >}}
+
+::: {.callout-tip}
+## Check Yourself — Scaling Practice
+
+Suppose a star has:
+
+- twice the mass of the Sun
+- the same radius as the Sun
+
+Using
+$$
+P_c \sim \frac{G M^2}{R^4},
+$$
+
+1. Predict before calculating: is its central pressure larger or smaller than the Sun’s?
+2. By what factor does the central pressure change?
+3. Without plugging in solar numbers, check that $GM^2/R^4$ has pressure units in CGS.
+
+::: {.callout-note collapse="true"}
+## Solution
+
+Because
+$$
+P_c \propto M^2
+$$
+at fixed radius, doubling the mass gives
+$$
+P_c \rightarrow 2^2 P_c = 4P_c.
+$$
+
+So the central pressure is **4 times larger**.
+
+The unit check is also reassuring:
+$$
+\frac{G M^2}{R^4}
+\rightarrow
+\frac{\mathrm{cm^3\,g^{-1}\,s^{-2}}\; \mathrm{g^2}}{\mathrm{cm^4}}
+= \mathrm{g\,cm^{-1}\,s^{-2}}
+= \mathrm{dyn\,cm^{-2}}.
+$$
+
+That is exactly the unit of pressure in CGS.
+
+Physical reasoning: more mass means stronger gravity, so the star needs a steeper pressure gradient and therefore a larger central pressure.
+:::
+:::
 
 ### Worked Example: The Sun’s Central Pressure
 
@@ -474,6 +634,13 @@ Hydrostatic equilibrium is a **force-balance** statement: it tells us how pressu
 
 The virial theorem is an **energy-balance** statement: it relates the star’s total thermal energy to its gravitational potential energy.
 
+For a bound star, the gravitational potential energy is negative and has the characteristic scale
+$$
+U_{\text{grav}} \sim -\frac{G M^2}{R}.
+$$
+
+The minus sign matters: a bound self-gravitating object has less energy than the same mass dispersed to infinite separation.
+
 For a star in hydrostatic equilibrium, the virial theorem gives
 
 {{< include ../../../_includes/equations/stellar-virial.qmd >}}
@@ -536,6 +703,17 @@ Gravity couples energy loss to contraction, and contraction increases particle s
 
 {{< fig virial-energy-partition >}}
 
+::: {.callout-note title="Observable → Model → Inference" .omi}
+**Observable:** Protostars radiate energy while gradually shrinking instead of collapsing in free fall.
+
+**Model:** A bound self-gravitating gas obeys the virial theorem, so
+$$
+2K_{\text{th}} + U_{\text{grav}} = 0.
+$$
+
+**Inference:** As radiation removes total energy, the star contracts, $U_{\text{grav}}$ becomes more negative, and the thermal energy increases. The core gets hotter as the star loses energy.
+:::
+
 ::: {.callout-warning title="This Is Counterintuitive — But It's Real"}
 In everyday life, losing energy makes things cooler. In self-gravitating systems, losing energy makes things *hotter*. This is not a mathematical trick — it is the physical mechanism by which protostars heat up as they contract, eventually reaching core temperatures high enough to ignite nuclear fusion. The negative heat capacity of gravity is how stars are *born*.
 :::
@@ -588,46 +766,63 @@ P_{\text{gas}} = \frac{\rho k_B T}{\mu m_p},
 $$
 where $P_{\text{gas}}$ is the thermal gas pressure, $\rho$ is the mass density, $T$ is the temperature, $k_B = 1.38\times10^{-16}\,\mathrm{erg\,K^{-1}}$ is Boltzmann’s constant, $m_p = 1.67\times10^{-24}\,\mathrm{g}$ is the proton mass, and $\mu$ is the mean molecular weight. For ionized solar-composition gas, $\mu \approx 0.6$, so $\mu m_p$ is the mean mass per particle.
 
-To estimate the core temperature, we combine the hydrostatic pressure scale with the ideal-gas picture. This is an order-of-magnitude argument, so we will use the central pressure scale from Part 3 and the mean density scale for the stellar interior.
+To estimate the core temperature, we now connect the hydrostatic pressure scale to the ideal-gas pressure scale.
 
-Start with the hydrostatic pressure scale:
+#### Step 1: Write both pressure scales
+
+From Part 3, hydrostatic support requires
 $$
 P_c \sim \frac{G M^2}{R^4}.
 $$
 
-For the core gas, use the ideal-gas pressure scale
+For the gas pressure in the core,
 $$
 P_c \sim \frac{\rho k_B T_c}{\mu m_p}.
 $$
 
-Now replace the density by the mean-density scale
+#### Step 2: Substitute the mean density
+
+Using the same mean-density approximation as before,
 $$
-\rho \sim \frac{M}{R^3}.
+\rho \sim \frac{M}{R^3},
+$$
+so the gas-pressure scale becomes
+$$
+P_c \sim \frac{M}{R^3} \cdot \frac{k_B T_c}{\mu m_p}.
 $$
 
-Substituting that into the gas-pressure estimate gives
+#### Step 3: Set the two pressure estimates equal
+
+Hydrostatic support demands
 $$
-P_c \sim \frac{M}{R^3}\frac{k_B T_c}{\mu m_p}.
+\frac{M}{R^3} \cdot \frac{k_B T_c}{\mu m_p} \sim \frac{G M^2}{R^4}.
 $$
 
-Set this equal to the hydrostatic pressure requirement:
+#### Step 4: Cancel terms carefully
+
+Cancel one factor of $M$:
 $$
-\frac{M}{R^3}\frac{k_B T_c}{\mu m_p} \sim \frac{G M^2}{R^4}.
+\frac{1}{R^3} \cdot \frac{k_B T_c}{\mu m_p} \sim \frac{G M}{R^4}.
 $$
 
-Now cancel one factor of $M$ and three factors of $R$:
+Now multiply both sides by $R^3$:
 $$
 \frac{k_B T_c}{\mu m_p} \sim \frac{G M}{R}.
 $$
 
-Therefore,
+#### Final result
+
 $$
 T_c \sim \frac{\mu G M m_p}{k_B R}.
 $$
 
+#### What this means physically
+
+The left-hand side is the thermal-energy scale per particle, while the right-hand side is the gravitational-energy scale per particle. Hydrostatic support requires these scales to be comparable.
+
 This is one of the deepest results in stellar astrophysics: gravity alone sets the temperature scale required for fusion.
 
-This is still an order-of-magnitude estimate, not a full stellar structure solution. But it captures the key point: **gravity alone predicts a stellar core temperature of order $10^7\,\mathrm{K}$**.
+This is still an order-of-magnitude estimate, not a full stellar-structure solution. But it captures the key point: **gravity alone predicts a stellar core temperature of order $10^7\,\mathrm{K}$**.
 
 ::: {.callout-note title="What This Equation Is Saying"}
 The combination $GM/R$ is the gravitational potential scale per unit mass. The combination $k_B T_c/(\mu m_p)$ is the thermal-energy scale per unit mass of the gas. Hydrostatic support requires these two scales to be comparable. That is why gravity fixes the core temperature scale.
