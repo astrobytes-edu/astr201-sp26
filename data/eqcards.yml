@@ -372,7 +372,7 @@ de_broglie:
 pp_chain_net:
   predicts: "The net products and energy released when four protons fuse to helium."
   depends: "Requires conditions: $T \\gtrsim 10$ MK, $\\rho \\gtrsim 100$ g/cm³."
-  says: "Four hydrogen nuclei become one helium-4 nucleus plus two positrons, two neutrinos, and 26.7 MeV of energy. The mass deficit (0.7%) becomes radiation."
+  says: "Four hydrogen nuclei become one helium-4 nucleus plus two positrons, two neutrinos, and 26.7 MeV of released energy. The mass deficit is converted into energy."
   assumptions:
     - "Dominant pathway in stars with $M \\lesssim 1.3\\,M_\\odot$"
     - "CNO cycle dominates for more massive (hotter) stars"

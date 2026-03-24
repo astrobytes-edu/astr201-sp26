@@ -1148,6 +1148,69 @@ def make_core_temperature_scaling():
     save_slide_figure(fig, "core-temperature-scaling.png")
 
 
+def make_fusion_force_scale_map():
+    """Scale map showing which force matters where in the fusion story."""
+    fig, ax = plt.subplots(figsize=(12.4, 5.8), dpi=220)
+    fig.patch.set_facecolor(SLIDE_BG)
+    ax.set_facecolor(SLIDE_BG)
+    ax.set_xscale("log")
+    ax.set_xlim(1e-16, 2e11)
+    ax.set_ylim(-0.6, 4.4)
+
+    for side in ("top", "right", "left"):
+        ax.spines[side].set_visible(False)
+    ax.spines["bottom"].set_color(SLIDE_GRID)
+    ax.spines["bottom"].set_linewidth(1.1)
+    ax.tick_params(axis="x", colors=SLIDE_TEXT, labelsize=12.5)
+    ax.tick_params(axis="y", length=0, colors=SLIDE_TEXT, labelsize=12.5, pad=14)
+    ax.grid(True, axis="x", color=SLIDE_GRID, linewidth=0.8, alpha=0.9)
+
+    rows = [
+        ("weak interaction", 3.3, 5e-17, 2e-16, SLIDE_GOLD,
+         "proton-to-neutron conversion\nin Step 1"),
+        ("strong interaction", 2.3, 4e-14, 4e-13, SLIDE_TEAL,
+         "binds nucleons once they\nreach nuclear distance"),
+        ("electromagnetism", 1.3, 1e-13, 5e-7, SLIDE_ROSE,
+         "charged nuclei repel during approach"),
+        ("gravity", 0.3, 5e8, 7e10, "#4d7cab",
+         "compresses the whole star\nand sets the core conditions"),
+    ]
+
+    ax.set_yticks([3.3, 2.3, 1.3, 0.3])
+    ax.set_yticklabels([row[0] for row in rows], fontweight="bold")
+    for tick, (_, _, _, _, color, _) in zip(ax.get_yticklabels(), rows):
+        tick.set_color(color)
+
+    for label, y, x1, x2, color, note in rows:
+        ax.plot([x1, x2], [y, y], color=color, linewidth=9, solid_capstyle="round")
+        ax.text(x2 * 1.08, y, note, ha="left", va="center",
+                fontsize=10.4, color=SLIDE_TEXT)
+
+    scale_markers = [
+        (1e-16, "weak"),
+        (1e-13, "1 fm\nnuclear"),
+        (1e-8, "atom"),
+        (7e10, "Sun radius"),
+    ]
+    for x, label in scale_markers:
+        ax.axvline(x, color=SLIDE_GRID, linewidth=1.0, linestyle=(0, (3, 3)))
+        ax.text(x, -0.16, label, ha="center", va="top",
+                fontsize=10.3, color=SLIDE_MUTED)
+
+    ax.text(0.98, 0.94,
+            "This is a dominance map for the fusion story,\nnot a literal plot of force magnitude.",
+            transform=ax.transAxes, ha="right", va="top",
+            fontsize=10.2, color=SLIDE_MUTED,
+            bbox=dict(boxstyle="round,pad=0.3", facecolor=SLIDE_PANEL, edgecolor=SLIDE_GRID))
+
+    ax.set_xlabel("Characteristic Length Scale (cm)", fontsize=14, color=SLIDE_TEXT, labelpad=8)
+    ax.set_title("Which Force Matters Where in Stellar Fusion?",
+                 fontsize=18.5, color=SLIDE_TEXT, fontweight="bold", pad=12)
+
+    fig.tight_layout()
+    save_slide_figure(fig, "fusion-force-scale-map.png")
+
+
 def make_maxwell_boltzmann_speeds_solar_core():
     """Physically computed proton speed distribution in the solar core."""
     v = np.linspace(0.0, 2.4e8, 800)
@@ -1186,6 +1249,63 @@ def make_maxwell_boltzmann_speeds_solar_core():
 
     fig.tight_layout()
     save_slide_figure(fig, "maxwell-boltzmann-speeds-solar-core.png")
+
+
+def make_fusion_energy_scale_ladder():
+    """Log-scale comparison of the key proton-fusion energy scales."""
+    kT_kev = (K_B_CGS * T_CORE_SUN) / KEV_TO_ERG
+    mean_kev = 1.5 * kT_kev
+    barrier_kev = 1400.0
+    energy_kev = np.linspace(0.2, 45.0, 900)
+    gamow_kev = 493.0
+    product = np.exp(-energy_kev / kT_kev) * np.exp(-np.sqrt(gamow_kev / energy_kev))
+    peak_kev = energy_kev[np.argmax(product)]
+
+    fig, ax = plt.subplots(figsize=(11.8, 3.8), dpi=220)
+    fig.patch.set_facecolor(SLIDE_BG)
+    ax.set_facecolor(SLIDE_BG)
+    ax.set_xscale("log")
+    ax.set_xlim(0.7, 4000.0)
+    ax.set_ylim(-0.8, 0.95)
+
+    for side in ("top", "right", "left"):
+        ax.spines[side].set_visible(False)
+    ax.spines["bottom"].set_color(SLIDE_GRID)
+    ax.spines["bottom"].set_linewidth(1.1)
+    ax.tick_params(axis="x", colors=SLIDE_TEXT, labelsize=12.5)
+    ax.tick_params(axis="y", length=0)
+    ax.grid(True, axis="x", color=SLIDE_GRID, linewidth=0.8, alpha=0.9)
+
+    ax.hlines(0.0, 1.0, barrier_kev, color=SLIDE_MUTED, linewidth=3.0, alpha=0.35)
+    ax.annotate("", xy=(barrier_kev, 0.0), xytext=(1.0, 0.0),
+                arrowprops=dict(arrowstyle="<->", lw=1.5, color=SLIDE_MUTED))
+    ax.text(np.sqrt(barrier_kev), 0.16, r"factor $\sim 10^3$",
+            ha="center", va="bottom", fontsize=10.8, color=SLIDE_MUTED, fontweight="bold")
+
+    markers = [
+        (kT_kev, SLIDE_TEAL, r"$k_B T \approx 1.3\,\mathrm{keV}$", -0.35),
+        (mean_kev, SLIDE_GOLD, r"$\langle E \rangle \approx 1.9\,\mathrm{keV}$", 0.33),
+        (peak_kev, SLIDE_ORANGE, fr"Gamow window few-keV peak" "\n" fr"$\approx {peak_kev:.1f}\,\mathrm{{keV}}$", -0.35),
+        (barrier_kev, SLIDE_ROSE, r"Coulomb barrier" "\n" r"$\approx 1.4\,\mathrm{MeV}$", 0.33),
+    ]
+    for x, color, label, y in markers:
+        ax.plot(x, 0.0, marker="o", markersize=10, color=color, markeredgecolor=SLIDE_BG, markeredgewidth=1.2, zorder=5)
+        ax.vlines(x, 0.0, y * 0.75, color=color, linewidth=1.8, linestyle=(0, (3, 2)))
+        ax.text(x, y, label, ha="center", va="center", fontsize=10.6, color=color,
+                fontweight="bold",
+                bbox=dict(boxstyle="round,pad=0.25", facecolor=SLIDE_PANEL, edgecolor=SLIDE_GRID))
+
+    ax.text(0.98, 0.90, "Solar-core fusion is a few-keV problem confronting a MeV barrier.",
+            transform=ax.transAxes, ha="right", va="top",
+            fontsize=10.4, color=SLIDE_TEXT)
+
+    ax.set_xlabel("Energy (keV)", fontsize=14, color=SLIDE_TEXT, labelpad=8)
+    ax.set_yticks([])
+    ax.set_title("The Key Energy Scales for Proton-Proton Fusion",
+                 fontsize=18, color=SLIDE_TEXT, fontweight="bold", pad=12)
+
+    fig.tight_layout()
+    save_slide_figure(fig, "fusion-energy-scale-ladder.png")
 
 
 def make_maxwell_boltzmann_energies_barrier_tail():
@@ -1246,12 +1366,34 @@ def make_coulomb_barrier_and_tunneling():
     ax.axvspan(1.0, turning_point, color=SLIDE_ORANGE, alpha=0.08)
     ax.axvline(1.0, color=SLIDE_TEXT, linewidth=1.0, linestyle=":")
 
+    ax2 = ax.twinx()
+    ax2.set_ylim(-1.1, 1.1)
+    ax2.set_yticks([])
+    for side in ("top", "right", "left", "bottom"):
+        ax2.spines[side].set_visible(False)
+    ax2.tick_params(left=False, right=False, labelleft=False, labelright=False, bottom=False, labelbottom=False)
+
+    allowed = r_fm >= turning_point
+    forbidden = (r_fm < turning_point) & (r_fm >= 1.0)
+    inside = r_fm < 1.0
+    psi_allowed = 0.55 * np.sin(10.0 * np.log(r_fm[allowed] / turning_point) + 0.4)
+    psi_forbidden = 0.55 * (r_fm[forbidden] / turning_point) ** 1.05
+    psi_inside = 0.10 * np.sin(12.0 * (r_fm[inside] - 0.45)) - 0.08
+
+    ax2.plot(r_fm[allowed], psi_allowed, color=ACCENT_BLUE, linewidth=2.0, alpha=0.95)
+    ax2.plot(r_fm[forbidden], psi_forbidden, color=ACCENT_BLUE, linewidth=2.4, alpha=0.95)
+    ax2.plot(r_fm[inside], psi_inside, color=ACCENT_BLUE, linewidth=2.0, alpha=0.95)
+
     ax.text(1.08, 1.55, "nuclear scale\n~1 fm", color=SLIDE_TEXT, fontsize=10.5, fontweight="bold")
     ax.text(turning_point * 0.88, 0.012, "classical turning point\nfor a few-keV proton",
             color=SLIDE_GOLD, fontsize=10.3, fontweight="bold", ha="right")
     ax.text(18.0, 0.22, "classically forbidden region:\nquantum tunneling is required",
             color=SLIDE_ORANGE, fontsize=11, fontweight="bold",
             bbox=dict(boxstyle="round,pad=0.35", facecolor=SLIDE_PANEL, edgecolor=SLIDE_GRID))
+    ax.text(210.0, 1.45,
+            "schematic wavefunction amplitude\noscillatory outside, decaying inside barrier",
+            color=ACCENT_BLUE, fontsize=10.3, fontweight="bold", ha="right",
+            bbox=dict(boxstyle="round,pad=0.3", facecolor=SLIDE_PANEL, edgecolor=SLIDE_GRID))
 
     ax.set_xlabel("Separation (fm)", fontsize=14)
     ax.set_ylabel("Potential Energy (MeV)", fontsize=14)
@@ -1986,7 +2128,9 @@ def main():
     make_radiation_pressure_mass_scaling()
     make_virial_energy_partition()
     make_core_temperature_scaling()
+    make_fusion_force_scale_map()
     make_maxwell_boltzmann_speeds_solar_core()
+    make_fusion_energy_scale_ladder()
     make_maxwell_boltzmann_energies_barrier_tail()
     make_coulomb_barrier_and_tunneling()
     make_gamow_window_cartoon()
