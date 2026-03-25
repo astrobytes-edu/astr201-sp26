@@ -2,746 +2,1086 @@
 title: "Lecture 5: The Stellar Blueprint — Structure Equations and Main-Sequence Scalings"
 subtitle: "Why is the mass-luminosity relation so steep? The four equations that determine everything."
 author: "Dr. Anna Rosen"
-date: "2026-03-19"
-description: "For main-sequence stars of similar composition, mass is the dominant control parameter. In this reading, we assemble the four stellar structure equations — mass conservation, hydrostatic equilibrium, energy transport, and energy generation — and show how they combine to produce the leading-order scaling relations behind the main sequence. We also discover when radiative transport fails and convection takes over, explaining why low-mass and high-mass stars have opposite internal structures."
+date: "2026-03-24"
+description: "For main-sequence stars of similar composition, mass is the dominant control parameter. In this reading, we assemble the stellar structure equations, show why they must be solved as a coupled system, and then use carefully stated scaling arguments to derive the leading-order physics behind the main sequence. We also identify when radiative transport fails, when convection takes over, and why very low-mass, solar-like, and high-mass stars develop different interior structures."
 draft: false
 categories: [stellar-structure, scaling-relations, ODEs, convection, main-sequence, schwarzschild-criterion]
 course: ASTR 201
 module: "3 - Stellar Structure & Evolution"
 learning-objectives:
-  - State the four stellar structure equations and explain what physical principle each encodes
-  - Derive the main-sequence mass-luminosity scaling from the stellar structure equations using dimensional analysis
-  - Derive a toy mass-radius scaling and the mass-lifetime scaling, then explain why more realistic stellar models give different exponents
-  - Explain the Schwarzschild criterion for convective instability and predict when convection replaces radiation
-  - Describe the contrasting internal structures of low-mass and high-mass stars and explain why they differ
-  - Explain why ODEs are important — the full stellar structure problem requires solving coupled differential equations
+  - State the four stellar structure equations and identify the physical principle behind each one
+  - Explain why stellar structure is a coupled ODE problem rather than a single algebra problem
+  - Derive the leading-order toy scaling L ∝ M^3/κ from the structure equations
+  - Derive a toy mass-radius relation for pp-chain, radiative main-sequence stars
+  - Derive the nuclear-lifetime scaling τ_nuc ∝ M/L and explain why massive stars live much shorter lives
+  - State the Schwarzschild criterion and explain physically when convection begins
+  - Distinguish among fully convective very low-mass stars, solar-like stars with convective envelopes, and high-mass stars with convective cores
+  - Connect the observed main sequence to the underlying stellar-structure physics
 Concept-Throughline:
-  - Four coupled ODEs determine everything about a star given its mass and composition — these are the stellar blueprints
-  - Scaling relations are the payoff — by combining the equations dimensionally, we derive a leading-order luminosity scaling, a toy mass-radius trend, and the short lifetimes of massive stars
-  - The radiative temperature gradient can become too steep, producing convective instability (Schwarzschild criterion) and shifting energy transport to bulk gas motions
-  - Low-mass stars have convective envelopes and radiative cores; high-mass stars have the opposite — this reversal is controlled by opacity and the CNO cycle
+  - The main sequence is not just an observational pattern; it is a structural consequence of stellar physics
+  - Four coupled structure equations determine how mass, pressure, temperature, and luminosity vary with radius
+  - Order-of-magnitude versions of those equations reveal why the mass-luminosity relation is so steep
+  - Convection begins when the radiative temperature gradient required to carry the luminosity becomes unstable
+  - Main-sequence interiors fall into three broad regimes: very low-mass stars can be nearly fully convective, solar-like stars have radiative cores and convective envelopes, and higher-mass stars have convective cores and radiative envelopes
 math-level: symbolic_with_interpretation
-mode: Draft
+mode: Refine
 prerequisites: "Hydrostatic equilibrium and virial theorem (Reading 2), nuclear fusion and the pp-chain/CNO cycle (Reading 3), opacity, mean free path, and radiative diffusion (Reading 4)"
 ---
+
+For main-sequence stars of similar composition, mass is the dominant control parameter. But that statement is only useful if we can explain **why** changing the mass changes everything else so dramatically. In this reading, we assemble the stellar structure equations, show why they must be solved as a coupled system, and then use carefully stated scaling arguments to derive the leading-order physics behind the main sequence. The goal is not to memorize four equations. The goal is to understand why the observed mass-luminosity relation is so steep, why more massive stars are larger and hotter, and why different stars transport energy in different ways.
 
 ## Learning Objectives
 
 After completing this reading, you should be able to:
 
-1. **State** the four stellar structure equations and identify the physical principle behind each
-2. **Derive** $L \propto M^3$ from the structure equations using dimensional/scaling analysis
-3. **Derive** a toy mass-radius scaling and $\tau_\text{nuc} \propto M^{-2\text{ to }-2.5}$, then explain why realistic stellar models give steeper radius exponents
-4. **Explain** the Schwarzschild criterion: when is the radiative temperature gradient too steep for stability?
-5. **Describe** the contrasting structures of low-mass vs. high-mass stars (convective envelope vs. convective core)
-6. **Explain** why ODEs matter — stellar structure requires solving coupled differential equations
+- state the four stellar structure equations and identify the physical principle behind each one,
+- explain why stellar structure is a coupled ODE problem rather than a single algebra problem,
+- derive the leading-order toy scaling
+  $$
+  L \propto \frac{M^3}{\kappa}
+  $$
+  from the structure equations,
+- derive a toy mass-radius relation for pp-chain, radiative main-sequence stars,
+- derive the nuclear-lifetime scaling
+  $$
+  \tau_{\rm nuc} \propto \frac{M}{L},
+  $$
+  and explain why massive stars live much shorter lives,
+- state the Schwarzschild criterion and explain physically when convection begins,
+- distinguish among fully convective very low-mass stars, solar-like stars with convective envelopes, and high-mass stars with convective cores,
+- connect the observed main sequence to the underlying stellar-structure physics.
 
 ## Concept Throughline
 
-> *You measured $L \propto M^{3.5}$ empirically in Module 2. Now you'll understand* why that observed trend is so steep. Four coupled differential equations — encoding mass conservation, pressure balance, energy transport, and energy generation — determine a star's internal structure given its mass and composition. By combining these equations with dimensional analysis, we can derive leading-order main-sequence scalings: $L \propto M^3$ for a simple opacity model, a toy mass-radius trend, $T_c \propto M/R$, and short lifetimes for massive stars. The HR diagram is not just a catalog — its structure reflects physics.
+In Module 2, you measured the empirical trend that more massive main-sequence stars are much more luminous. In Readings 1–4, you built the ingredients needed to explain that trend: gravity sets the pressure scale, hydrostatic equilibrium sets the force balance, fusion sets the energy source, and radiation transport sets how hard it is for energy to escape. This reading puts those ingredients together.
 
-::: {.callout-note title="Reading Map — Choose Your Track"}
+The logic chain is:
 
-**Track A (Core, ~30 min):** Read **Parts 1–4** — the four equations, the scaling derivations, the convection criterion, and the main-sequence synthesis. Skip the optional enrichment box.
+1. stars are described by radial profiles, so we need differential equations,
+2. four coupled structure equations determine how mass, pressure, temperature, and luminosity vary with radius,
+3. order-of-magnitude versions of those equations reveal the main-sequence scaling relations,
+4. radiative transport can fail when the required temperature gradient becomes too steep,
+5. the resulting interior structures explain why different kinds of main-sequence stars look and evolve differently.
 
-**Track B (Full, ~40 min):** Read everything, including the enrichment box on why convective cores matter for stellar evolution.
+The main sequence is not just an observational pattern. It is a structural consequence of stellar physics.
 
-*Both tracks cover all core learning objectives.*
+:::{.callout-note}
+## Reading Map — Choose Your Track
+
+**Track A (Core, $\sim 30$ min):** Read Parts 1–4 in order.
+**Track B (Full, $\sim 40$ min):** Read everything, including the extra checkpoints and enrichment box.
+
+Both tracks cover the core learning objectives.
 :::
 
----
-
-::: {.callout-important}
+:::{.callout-important}
 ## The Big Idea
 
-**Four equations, one dominant control parameter, and a whole sequence of stars.** Given a star's mass and chemical composition, the stellar structure equations predict its radius, luminosity, temperature profile, density profile, and lifetime. These equations encode the physics you've learned across Readings 1–4: gravity, pressure, energy transport, and nuclear energy generation. The main sequence isn't an accident — it emerges from four coupled differential equations. Our simple derivations will give the right *direction* and nearly the right *steepness*, then we'll compare those toy exponents to more realistic stellar models.
+The main sequence is a **mass sequence** because stellar structure is a self-consistent physics problem. For stars of similar composition, changing the mass changes the gravity, which changes the pressure scale, which changes the core temperature, which changes the fusion rate and the transport requirements.
+
+The deepest result in this reading is not a single formula. It is the causal chain
+
+$$
+\rho \sim \frac{M}{R^3}
+\rightarrow
+P_c \sim \frac{GM^2}{R^4}
+\rightarrow
+T_c \sim \frac{M}{R}
+\rightarrow
+L \sim \frac{M^3}{\kappa}.
+$$
+
+That is why the mass-luminosity relation is steep, and that is why massive stars burn out so quickly.
 :::
 
----
+## Part 1: The Problem We Are Trying to Explain
 
-## Part 1: The Four Equations — Stellar Blueprints
+Astronomers do not begin this topic from theory alone. We begin from an observational fact:
+
+- main-sequence stars occupy a narrow band in the HR diagram,
+- more massive main-sequence stars are much more luminous,
+- the empirical mass-luminosity relation is steep, roughly
+  $$
+  L \propto M^{3} \text{ to } M^{3.5}
+  $$
+  over much of the main sequence.
+
+That is the mystery for this reading.
+
+Why should a factor-of-two increase in mass produce an increase of roughly one order of magnitude in luminosity? Why are massive stars not just a little brighter, but **dramatically** brighter?
+
+To answer that, we need a theory of stellar interiors.
+
+:::{.callout-tip}
+## Think First
+
+Suppose two main-sequence stars have similar composition, but one has twice the mass of the other.
+
+Before seeing any derivation, predict:
+
+1. Is the core temperature likely to be a little higher or a lot higher?
+2. Is the luminosity likely to be a little higher or a lot higher?
+3. Which quantity do you expect to be more sensitive to mass: $T_c$ or $L$?
+
+Commit to a prediction before reading on.
+:::
+
+## Part 2: Why Stellar Structure Requires Differential Equations
+
+A star is not described by a single temperature or a single pressure. Those quantities vary continuously from center to surface:
+
+$$
+M(r), \qquad P(r), \qquad T(r), \qquad L(r), \qquad \rho(r).
+$$
+
+That means stellar structure is a **profile problem**. We are not asking for one number. We are asking how each quantity changes with radius.
+
+That is why ordinary algebra is not enough. We need differential equations.
 
 ### Why ODEs?
 
-A star's properties — pressure $P$, temperature $T$, density $\rho$, luminosity $L$ — all vary continuously from center to surface. They are functions of radius: $P(r)$, $T(r)$, $\rho(r)$, $L(r)$. To determine how these quantities change with radius, we need **differential equations** — equations that relate the rate of change of one quantity to the values of other quantities at the same radius.
+If a quantity changes continuously with radius, then the natural question is not “what is its value?” but “how fast is it changing?” That is what a derivative tells us.
 
-You don't need to solve these ODEs in this course — that requires a computer. But you need to understand what each equation *says*, because the scaling relations that define the main sequence come directly from them.
+The stellar structure equations therefore relate:
 
-A star is not described by one number; it is described by profiles. That is why algebra alone is not enough and differential equations are unavoidable.
+- how enclosed mass grows with radius,
+- how pressure changes with radius,
+- how temperature changes with radius,
+- how luminosity changes with radius.
 
-### The Four Equations
+Each equation gives one radial rate of change.
 
-**Equation 1: Mass Conservation** — "How does enclosed mass grow with radius?"
+{{< fig stellar-structure-coupling >}}
 
-{{< include ../../../_includes/equations/mass-conservation.qmd >}}
+The important point is that the structure equations are not independent recipes. Each equation needs quantities that are determined by the others, so the solution must be self-consistent.
 
-{{< eqrefcard mass-conservation >}}
+:::{.callout-warning}
+## Misconception Check
 
-**What it says:** As you move outward by $dr$, the enclosed mass increases by the mass in that thin shell:
+“A star can be modeled well enough by one average temperature and one average pressure.”
+
+False.
+
+Average quantities can be useful for scaling arguments, but the real stellar-structure problem is a **profile** problem. Pressure, temperature, density, luminosity, and enclosed mass all vary with radius.
+:::
+
+## Part 3: The Four Equations — The Stellar Blueprint
+
+We now write the four structure equations in their standard spherical form.
+
+### Equation 1: Mass conservation
 
 $$
-dM = \rho \times \text{volume}
+\frac{dM}{dr} = 4\pi r^2 \rho(r)
+$$
+
+Here:
+
+- $M(r)$ is the mass enclosed inside radius $r$,
+- $\rho(r)$ is the local density.
+
+This equation is geometry. A thin shell of radius $r$ and thickness $dr$ has volume
+
+$$
+dV = 4\pi r^2\,dr,
+$$
+
+so its mass is
+
+$$
+dM = \rho\,dV = 4\pi r^2 \rho\,dr.
+$$
+
+Divide by $dr$ and you get the differential form above.
+
+### Equation 2: Hydrostatic equilibrium
+
+$$
+\frac{dP}{dr} = -\frac{G M(r)\rho(r)}{r^2}
+$$
+
+Here:
+
+- $P(r)$ is the pressure,
+- $G$ is Newton’s gravitational constant.
+
+This is force balance. The pressure must decrease outward so that the pressure gradient can support the weight of the overlying gas against gravity.
+
+### Equation 3: Energy generation
+
+$$
+\frac{dL}{dr} = 4\pi r^2 \rho(r)\,\epsilon(r)
+$$
+
+Here:
+
+- $L(r)$ is the luminosity passing through radius $r$,
+- $\epsilon(r)$ is the nuclear energy generation rate per unit mass, with units ${\rm erg\ g^{-1}\ s^{-1}}$.
+
+This is energy conservation inside the star. As you move outward through a shell, the luminosity increases by the energy produced in that shell.
+
+### Equation 4: Radiative transport
+
+From Reading 4, radiative diffusion gives the flux
+
+$$
+F_{\rm rad} = -\frac{4acT^3}{3\kappa\rho}\frac{dT}{dr},
+$$
+
+where:
+
+- $a$ is the radiation constant,
+- $c$ is the speed of light,
+- $\kappa$ is the opacity.
+
+Since luminosity is flux times area,
+
+$$
+L(r) = 4\pi r^2 F_{\rm rad},
+$$
+
+so the radiative temperature gradient can be written as
+
+$$
+\left(\frac{dT}{dr}\right)_{\rm rad}
 =
-\rho \times 4\pi r^2\,dr
+-\frac{3\kappa\rho L(r)}{16\pi a c\,r^2 T^3}.
 $$
 
-This is geometry, not physics — it defines how mass is distributed.
-
----
-
-**Equation 2: Hydrostatic Equilibrium** — "How does pressure change with radius?"
-
-{{< include ../../../_includes/equations/hydrostatic-equilibrium.qmd >}}
-
-{{< eqrefcard hydrostatic-equilibrium >}}
-
-**What it says:** You know this from Reading 2. The pressure gradient balances gravity at every radius. This is Newton's second law applied to a shell in static balance:
+Using $a = 4\sigma/c$, this is equivalently
 
 $$
-F = ma = 0.
+\left(\frac{dT}{dr}\right)_{\rm rad}
+=
+-\frac{3\kappa\rho L(r)}{64\pi \sigma r^2 T^3}.
 $$
 
----
+This equation tells you how steep the temperature gradient must be if radiation alone carries the luminosity.
 
-**Equation 3: Radiative Transport** — "How does temperature change with radius?"
+:::{.callout-note}
+## The Four ODEs Are Not the Whole Story
 
-{{< include ../../../_includes/equations/radiative-transport.qmd >}}
+The four structure equations are necessary, but not sufficient. To close the system, you also need constitutive relations:
 
-{{< eqrefcard radiative-transport >}}
+**Equation of state**
+$$
+P = \frac{\rho k_B T}{\mu m_H}
+$$
 
-**What it says:** You know the pieces from Reading 4. The temperature drops outward because energy flows from hot (center) to cool (surface) by radiative diffusion. Higher opacity ($\kappa$) or higher luminosity ($L$) means a *steeper required radiative gradient* — the star must work harder to push energy through opaque material.
+**Opacity law**
+$$
+\kappa = \kappa(\rho, T, \text{composition})
+$$
 
----
+**Nuclear energy generation law**
+$$
+\epsilon = \epsilon(\rho, T, \text{composition})
+$$
 
-**Equation 4: Energy Generation** — "How does luminosity change with radius?"
+You also need boundary conditions, such as
 
-{{< include ../../../_includes/equations/energy-generation.qmd >}}
+$$
+M(0)=0, \qquad L(0)=0
+$$
 
-{{< eqrefcard energy-generation >}}
+at the center, plus appropriate surface boundary conditions.
 
-**What it says:** As you move outward through a shell with nuclear energy generation rate $\varepsilon$ ($\text{erg}/\text{g}/\text{s}$), the luminosity increases by the energy produced in that shell. Outside the energy-generating core, $\varepsilon = 0$ and $L(r)$ is constant — the luminosity you see at the surface is the luminosity generated in the core.
+This is why stellar structure is a coupled system, not just four standalone formulas.
+:::
 
-::: {.callout-tip}
-## Check Yourself — Units of the Energy Generation Equation
+### Unit check: the energy-generation equation
 
 Verify that
 
 $$
-\frac{dL}{dr} = 4\pi r^2 \rho \varepsilon
+\frac{dL}{dr} = 4\pi r^2 \rho \epsilon
 $$
 
-has units of luminosity per unit length.
-:::
+has the correct units.
 
-::: {.callout-note collapse="true"}
-## Solution
+Use:
 
-Use CGS units:
+- $[r^2] = {\rm cm^2}$,
+- $[\rho] = {\rm g\ cm^{-3}}$,
+- $[\epsilon] = {\rm erg\ g^{-1}\ s^{-1}}$.
 
-$$
-[r^2] = \mathrm{cm^2}, \qquad
-[\rho] = \mathrm{g\,cm^{-3}}, \qquad
-[\varepsilon] = \mathrm{erg\,g^{-1}\,s^{-1}}.
-$$
-
-So the right-hand side has units
+Then the right-hand side has units
 
 $$
-\mathrm{cm^2}
-\cdot
-\mathrm{g\,cm^{-3}}
-\cdot
-\mathrm{erg\,g^{-1}\,s^{-1}}
+{\rm cm^2}
+\times
+{\rm g\ cm^{-3}}
+\times
+{\rm erg\ g^{-1}\ s^{-1}}
 =
-\mathrm{erg\,cm^{-1}\,s^{-1}}.
+{\rm erg\ cm^{-1}\ s^{-1}},
 $$
 
-That is exactly luminosity per unit radius, which matches the left-hand side:
+which matches
 
 $$
 \left[\frac{dL}{dr}\right]
 =
-\frac{\mathrm{erg\,s^{-1}}}{\mathrm{cm}}
+\frac{{\rm erg\ s^{-1}}}{{\rm cm}}
 =
-\mathrm{erg\,cm^{-1}\,s^{-1}}.
+{\rm erg\ cm^{-1}\ s^{-1}}.
 $$
+
+:::{.callout-tip}
+## Check Yourself — Why This Is a Coupled Problem
+
+Look back at the four equations and the closure relations.
+
+Which equation needs information supplied by another equation? Give at least two examples.
+
+Do not answer with “all of them” unless you can explain specifically how.
 :::
 
-### The Complete System
+:::{.callout-note}
+## Solution
 
-| Equation | Unknown it determines | Physical principle |
-|:---------|:---------------------|:------------------|
-| Mass conservation | $M(r)$ | Geometry (mass = density × volume) |
-| Hydrostatic equilibrium | $P(r)$ | Force balance (Newton's 2nd law) |
-| Radiative transport | $T(r)$ | Energy transport (radiative diffusion) |
-| Energy generation | $L(r)$ | Energy conservation (fusion → radiation) |
+Two examples:
 
-**Four equations, four unknowns** [$M(r)$, $P(r)$, $T(r)$, $L(r)$] — plus two auxiliary relations:
+1. Hydrostatic equilibrium needs $M(r)$, which is determined by the mass-conservation equation.
+2. The radiative gradient needs $L(r)$, which is determined by the energy-generation equation.
 
-- **Equation of state:** $P = \rho k_B T / (\mu m_p)$ — connects $P$, $\rho$, and $T$ (ideal gas law)
-- **Nuclear energy generation rate:** $\varepsilon(\rho, T)$ — depends on temperature and density (from nuclear physics)
-
-Given boundary conditions (center: $M = 0$, $L = 0$; surface: $P \approx 0$, $T = T_\text{eff}$), these equations have a *unique solution* for a given mass $M$ and composition. For main-sequence stars of similar composition, **mass is the dominant control parameter**.
-
-::: {.callout-note}
-## Recommended Figure — Four Equations, Four Unknowns
-
-Add a coupling diagram with boxes for
-
-$$
-M(r), \quad P(r), \quad T(r), \quad L(r)
-$$
-
-and arrows showing how the four stellar structure equations connect them.
-
-What students should notice:
-
-- stellar structure is a coupled system, not four separate formulas
-- each equation depends on quantities determined by the others
-- solving the problem requires self-consistency
-
-How to generate it:
-
-- a simple SVG or vector diagram is best
-- use arrows labeled “mass conservation,” “hydrostatic equilibrium,” “radiative transport,” and “energy generation”
+More broadly, the opacity $\kappa$ and nuclear rate $\epsilon$ both depend on local conditions such as $T$ and $\rho$, while the equation of state ties $P$, $T$, and $\rho$ together. That is why the full solution must be self-consistent.
 :::
 
-::: {.callout-tip}
-## Think First
+## Part 4: Deriving the Main-Sequence Scalings
 
-Look at the four equations. Notice that each one connects *different* physical quantities — mass, pressure, temperature, luminosity, density, opacity. This means you can't solve any one equation independently; they're **coupled**. Why does this coupling make the problem fundamentally different from, say, solving a single equation like $F = ma$?
+We will not solve the full ODE system. Instead, we will extract the leading-order physics by replacing local gradients with characteristic scales.
 
-::: {.callout-note collapse="true"}
-## Answer
+That is a **toy-model** approach. It is valuable because it reveals the physical logic behind the main-sequence trends.
 
-In a single equation like $F = ma$, you can solve for the unknown directly given the other quantities. In the stellar structure system, *every* equation depends on quantities determined by *other* equations:
+:::{.callout-important}
+## Assumptions for the Toy Derivation
 
-- Hydrostatic equilibrium needs $M(r)$ from mass conservation
-- Radiative transport needs $L(r)$ from energy generation
-- Energy generation needs $T(r)$ from radiative transport
-- All equations need $\rho(r)$ from the equation of state, which needs $P(r)$ and $T(r)$
+In the scaling argument below, we assume:
 
-You must solve all four simultaneously — the solution is self-consistent or it doesn't exist. This is why stellar structure requires numerical computation (computers). But the *scaling behavior* — how solutions change with mass — can be extracted by dimensional analysis without solving the equations.
+- spherical symmetry,
+- stars of similar composition,
+- ideal-gas pressure dominates,
+- radiative transport sets the temperature gradient in the region controlling the scaling,
+- characteristic central or mean values can replace full radial profiles,
+- for the simplest luminosity scaling, opacity $\kappa$ is treated as slowly varying or approximately constant,
+- for the toy mass-radius scaling, pp-chain burning is approximated by
+  $$
+  \epsilon \propto \rho T^4.
+  $$
+
+These assumptions are not exact. They are what let us convert the full structure problem into a physics-first scaling argument.
 :::
-:::
 
----
+### Step 1: Mass conservation gives the density scale
 
-## Part 2: Deriving the Main-Sequence Scalings
-
-### The Power of Dimensional Analysis
-
-We are not solving the full stellar structure problem here. That requires solving the coupled ODE system numerically. Instead, we will extract the leading-order physics by replacing derivatives with ratios and turning each equation into an order-of-magnitude scaling relation.
-
-This is a toy-model approach, and we will state the approximations explicitly. Its purpose is not precision. Its purpose is insight: it shows why the main-sequence trends are steep, why mass is the dominant control parameter, and why the observed HR diagram reflects the stellar structure equations.
-
-### Step 1: Mass Conservation → Density Scaling
-
-From $dM/dr = 4\pi r^2 \rho$, replacing $dM \sim M$ and $dr \sim R$:
+From
 
 $$
-\frac{M}{R} \sim R^2\rho
+\frac{dM}{dr} = 4\pi r^2 \rho,
 $$
 
-$$
-\rho \sim \frac{M}{R^3}
-$$
-
-This just says: mean density scales as mass divided by volume. Not surprising, but we'll need it.
-
-### Step 2: Hydrostatic Equilibrium → Pressure Scaling
-
-From $dP/dr = -GM\rho/r^2$, replacing $dP \sim P_c$, $dr \sim R$, $M(r) \sim M$, $\rho \sim M/R^3$, $r \sim R$:
+replace the derivative by a characteristic ratio:
 
 $$
-\frac{P_c}{R} \sim \frac{GM}{R^2}\frac{M}{R^3}
+\frac{M}{R} \sim R^2 \rho.
 $$
 
-$$
-P_c \sim \frac{GM^2}{R^4}
-$$
-
-You derived this in Reading 2. Now let's go further.
-
-### Step 3: Ideal Gas → Temperature Scaling
-
-From $P = \rho k_B T / (\mu m_p)$ with $P_c \sim GM^2/R^4$ and $\rho \sim M/R^3$:
+Therefore,
 
 $$
-\frac{GM^2}{R^4} \sim \frac{M}{R^3}\frac{k_B T_c}{\mu m_p}
+\rho \sim \frac{M}{R^3}.
 $$
 
-$$
-T_c \sim \frac{GM\mu m_p}{k_B R}
-$$
+This is the mean-density scaling: mass divided by volume.
 
-This is the core temperature scaling from Reading 2: $T_c \propto M/R$.
+### Step 2: Hydrostatic equilibrium gives the pressure scale
 
-**Sanity check:** This dependence is only linear in $T_c$, but fusion is not. Even a modest increase in core temperature can produce a much larger luminosity because the pp-chain scales roughly as $T^4$ and the CNO cycle even more steeply.
-
-### Step 4: Radiative Transport → Luminosity Scaling
-
-Start from the radiative transport equation, written as a scaling relation:
+Start from
 
 $$
-\left|\frac{dT}{dr}\right|_\text{rad}
+\frac{dP}{dr} = -\frac{GM\rho}{r^2}.
+$$
+
+Replace the derivative by a characteristic ratio:
+
+$$
+\frac{P_c}{R} \sim \frac{GM\rho}{R^2}.
+$$
+
+Now insert the density scaling from Step 1:
+
+$$
+\frac{P_c}{R}
 \sim
-\frac{\kappa \rho L}{T^3 r^2}.
-$$
-
-Now replace the local quantities by characteristic stellar scales:
-
-$$
-\frac{T_c}{R}
-\sim
-\frac{\kappa \rho L}{T_c^3 R^2}.
-$$
-
-Solve for $L$:
-
-$$
-L
-\sim
-\frac{T_c^4 R^3}{\kappa \rho}.
-$$
-
-Now insert the mean-density scaling from Step 1,
-
-$$
-\rho \sim \frac{M}{R^3},
-$$
-
-to get
-
-$$
-L
-\sim
-\frac{T_c^4 R^3}{\kappa (M/R^3)}
+\frac{GM}{R^2}\frac{M}{R^3}
 =
-\frac{T_c^4 R^6}{\kappa M}.
+\frac{GM^2}{R^5}.
 $$
 
-From Step 3,
+Multiply by $R$:
+
+$$
+P_c \sim \frac{GM^2}{R^4}.
+$$
+
+This is the hydrostatic pressure scale.
+
+### Step 3: The ideal gas law gives the temperature scale
+
+Use the ideal-gas equation of state:
+
+$$
+P \sim \frac{\rho k_B T}{\mu m_H}.
+$$
+
+At the core scale,
+
+$$
+P_c \sim \frac{\rho k_B T_c}{\mu m_H}.
+$$
+
+Substitute the results from Steps 1 and 2:
+
+$$
+\frac{GM^2}{R^4}
+\sim
+\frac{M}{R^3}\frac{k_B T_c}{\mu m_H}.
+$$
+
+Cancel one factor of $M$ and simplify:
+
+$$
+\frac{GM}{R}
+\sim
+\frac{k_B T_c}{\mu m_H}.
+$$
+
+So the core temperature scaling is
+
+$$
+T_c \sim \frac{G M \mu m_H}{k_B R}.
+$$
+
+The key takeaway is
 
 $$
 T_c \propto \frac{M}{R}.
 $$
 
-Substitute this into the luminosity scaling:
+More massive stars tend to have hotter cores, but the radius also matters. That is why we should **not** assign a single temperature-mass exponent until we know how $R$ depends on $M$.
+
+:::{.callout-tip}
+## Think First
+
+At this point in the derivation, we have shown that
+
+$$
+T_c \propto \frac{M}{R}.
+$$
+
+Before going further, predict:
+
+1. If radius increased in direct proportion to mass, would the core temperature change much across the main sequence?
+2. Could luminosity still change a lot even if the core temperature changed only moderately?
+
+Explain physically before calculating anything else.
+:::
+
+### Step 4: Radiative transport gives the luminosity scale
+
+This step is the heart of the lecture.
+
+Start from the radiative flux form:
+
+$$
+F_{\rm rad}
+=
+-\frac{4acT^3}{3\kappa\rho}\frac{dT}{dr}.
+$$
+
+For a scaling argument, replace the gradient by a characteristic ratio:
+
+$$
+\left|\frac{dT}{dr}\right|
+\sim
+\frac{T_c}{R}.
+$$
+
+So the characteristic radiative flux is
+
+$$
+F_{\rm rad}
+\sim
+\frac{4acT_c^3}{3\kappa\rho}\frac{T_c}{R}
+\sim
+\frac{T_c^4}{\kappa\rho R},
+$$
+
+where the constants have been dropped because we only want the scaling.
+
+Now convert flux to luminosity:
+
+$$
+L \sim 4\pi R^2 F_{\rm rad}
+\sim
+R^2 \frac{T_c^4}{\kappa\rho R}.
+$$
+
+Therefore,
+
+$$
+L \sim \frac{R T_c^4}{\kappa\rho}.
+$$
+
+Now substitute the density scaling from Step 1:
+
+$$
+\rho \sim \frac{M}{R^3}.
+$$
+
+Then
 
 $$
 L
 \sim
-\frac{(M/R)^4 R^6}{\kappa M}
+\frac{R T_c^4}{\kappa (M/R^3)}
 =
-\frac{M^4 R^2}{\kappa M}
-=
-\frac{M^3 R^2}{\kappa}.
+\frac{T_c^4 R^4}{\kappa M}.
 $$
 
-{{< include ../../../_includes/equations/lum-mass-scaling.qmd >}}
+Now substitute the temperature scaling from Step 3:
 
-{{< eqrefcard lum-mass-scaling >}}
+$$
+T_c \propto \frac{M}{R}.
+$$
 
-If we now make the additional toy-model assumption that radius varies only weakly compared with the mass dependence we are trying to isolate, then the leading-order scaling becomes
+So
+
+$$
+L
+\sim
+\frac{(M/R)^4 R^4}{\kappa M}
+=
+\frac{M^4}{\kappa M}
+=
+\frac{M^3}{\kappa}.
+$$
+
+This is the clean toy luminosity scaling:
 
 $$
 L \propto \frac{M^3}{\kappa}.
 $$
 
-This is a **toy structural scaling**, not a precision stellar-model law. It assumes radiative transport, simple mean-density scalings, and a simplified opacity treatment. But it captures the main physical point: luminosity rises steeply with mass because more massive stars must transport energy through hotter interiors under stronger gravity.
-
-If opacity $\kappa$ is approximately constant (electron scattering), this gives
+If $\kappa$ is approximately constant, then
 
 $$
 L \propto M^3.
 $$
 
-In more realistic models, opacity is not constant. For lower-mass stars, Kramers-like opacity steepens the result toward approximately
+That is already close to the observed steep main-sequence relation.
+
+:::{.callout-important}
+## What This Derivation Really Says
+
+The mass-luminosity relation is steep because more massive stars live under stronger gravity and therefore require hotter interiors. Those hotter interiors must transport energy outward through an opaque star. The radiative-transport requirement then forces the luminosity upward very rapidly with mass.
+
+This is not a fit pulled from data. It is a structural consequence of the stellar equations.
+:::
+
+### Why the real exponent is often steeper
+
+The toy result
 
 $$
-L \propto M^{3.5}\text{--}M^4,
+L \propto M^3
 $$
 
-which matches the empirical trend much better.
+is not the final word.
 
-### Step 5: Mass-Radius Relation
-
-To estimate a toy mass-radius relation, we now bring in the energy generation equation. For pp-chain hydrogen burning, a useful approximate scaling is
+Real stars do **not** all have constant opacity, and they do **not** all burn hydrogen with the same temperature sensitivity. As the opacity law and nuclear physics change across the main sequence, the exponent shifts. Over much of the observed main sequence, the empirical relation is closer to
 
 $$
-\varepsilon \propto \rho T^4.
+L \propto M^{3.5}
 $$
 
-The luminosity generated in the core scales like volume times energy generation per unit volume:
+than to $M^3$.
+
+That is a success, not a failure. The toy derivation explains **why the relation is steep in the first place**.
+
+### Step 5: A toy mass-radius relation
+
+To get a radius scaling, we now connect energy production to energy loss.
+
+A crude scaling for the luminosity generated in the core is
 
 $$
-L \sim R^3 \rho \varepsilon.
+L \sim R^3 \rho \epsilon.
 $$
 
-Using $\varepsilon \propto \rho T_c^4$, this becomes
+For pp-chain hydrogen burning, use the toy scaling
 
 $$
-L \sim R^3 \rho^2 T_c^4
+\epsilon \propto \rho T^4.
 $$
 
-Now substitute the previous scalings:
+Then
+
+$$
+L \sim R^3 \rho (\rho T_c^4)
+= R^3 \rho^2 T_c^4.
+$$
+
+Now substitute the density and temperature scalings:
 
 $$
 \rho \sim \frac{M}{R^3},
 \qquad
-T_c \propto \frac{M}{R}.
+T_c \sim \frac{M}{R}.
 $$
+
+So
 
 $$
 L
 \sim
 R^3
 \left(\frac{M}{R^3}\right)^2
-\left(\frac{M}{R}\right)^4
+\left(\frac{M}{R}\right)^4.
 $$
+
+Work through the powers carefully:
 
 $$
 L
-=
+\sim
 R^3 \frac{M^2}{R^6} \frac{M^4}{R^4}
 =
 \frac{M^6}{R^7}.
 $$
 
-Now set this equal to the toy radiative-transport scaling
+But from Step 4, the toy transport scaling gave
 
 $$
-L \propto M^3.
-$$
-
-$$
-M^3 \propto \frac{M^6}{R^7}
-\qquad\Rightarrow\qquad
-R^7 \propto M^3
-\qquad\Rightarrow\qquad
-R \propto M^{3/7} \approx M^{0.43}.
-$$
-
-This toy result is shallower than the observed main-sequence mass-radius relation. That is expected. We have used simplified opacity and energy-generation scalings, and we have ignored structural changes across the main sequence. More realistic models steepen the relation to roughly
-
-$$
-R \propto M^{0.6}\text{--}M^{0.8}
-$$
-
-over much of the main sequence.
-
-The important insight is qualitative: **more massive stars are larger**, because higher core temperatures and pressures push the envelope outward.
-
-::: {.callout-note}
-## Recommended Figure — Scaling Ladder to the Main Sequence
-
-Add a visual flowchart showing the logic:
-
-$$
-\rho \sim \frac{M}{R^3}
-\;\rightarrow\;
-P_c \sim \frac{GM^2}{R^4}
-\;\rightarrow\;
-T_c \sim \frac{M}{R}
-\;\rightarrow\;
 L \propto M^3
 $$
 
-What students should notice:
+for roughly constant opacity. Set the two luminosity scalings equal:
 
-- each scaling feeds the next
-- the mass-luminosity relation is not an isolated fact
-- the HR diagram emerges from a chain of physical reasoning
+$$
+\frac{M^6}{R^7} \propto M^3.
+$$
 
-How to generate it:
+So
 
-- use a horizontal or vertical flowchart with short captions under each arrow
-- keep the equations large and visually clean
-:::
+$$
+R^7 \propto M^3,
+$$
 
-### The Complete Scaling Table
+which gives the toy mass-radius relation
 
-| Relation | Scaling | Physical Origin |
-|:---------|:--------|:---------------|
-| $L \propto M^3$ (toy) $\rightarrow M^{3.5}$ (realistic) | Radiative transport + HE | Luminosity set by how fast energy leaks through opaque envelope |
-| $R \propto M^{3/7}$ (toy) $\rightarrow M^{0.6\text{–}0.8}$ (realistic) | Energy generation + transport | Higher mass → hotter core → more pressure → larger star |
-| $T_c \propto M/R \propto M^{0.2}$ | Virial theorem | Core temperature varies weakly with mass |
-| $\tau_\text{nuc} \propto M/L \propto M^{-2\text{ to }-2.5}$ | Fuel ÷ burn rate | Massive stars burn fuel far faster than they accumulate it |
+$$
+R \propto M^{3/7} \approx M^{0.43}.
+$$
 
-::: {.callout-tip}
-## Check Yourself — Toy Model vs. Real Star
+This is shallower than the observed main-sequence radius trend, which is often closer to
 
-Our toy derivation gives
+$$
+R \propto M^{0.6} \text{ to } M^{0.8}
+$$
+
+over much of the main sequence. That is expected. The toy model uses simplified opacity and energy-generation laws and ignores structural changes across the sequence.
+
+Still, it gets the crucial qualitative point right:
+
+- more massive stars are larger,
+- but luminosity rises more steeply than radius.
+
+### Step 6: The nuclear lifetime scaling
+
+The nuclear lifetime is approximately
+
+$$
+\tau_{\rm nuc} \sim \frac{\text{available fuel}}{\text{burn rate}}.
+$$
+
+For stars of similar composition, the available fuel scales roughly with mass:
+
+$$
+\text{fuel} \propto M.
+$$
+
+The burn rate is the luminosity:
+
+$$
+\text{burn rate} \propto L.
+$$
+
+Therefore,
+
+$$
+\tau_{\rm nuc} \propto \frac{M}{L}.
+$$
+
+Using the toy luminosity scaling,
 
 $$
 L \propto M^3,
 $$
 
-while the observed main-sequence trend is closer to
+we get
 
 $$
-L \propto M^{3.5}.
+\tau_{\rm nuc} \propto \frac{M}{M^3} = M^{-2}.
 $$
 
-Why is that still a success?
+Using the more empirical scaling
 
-What does the toy model get right, and what does it leave out?
+$$
+L \propto M^{3.5},
+$$
+
+we get
+
+$$
+\tau_{\rm nuc} \propto M^{-2.5}.
+$$
+
+That is why massive stars live much shorter lives. They do have more fuel, but the burn rate rises much faster than the fuel supply.
+
+{{< fig main-sequence-scaling-ladder >}}
+
+The mass-luminosity relation is not an isolated empirical fact. It is the end of a chain of physical reasoning.
+
+:::{.callout-warning}
+## Misconception Check
+
+“Massive stars live shorter lives because they run out of fuel.”
+
+That sentence is incomplete and therefore misleading.
+
+Massive stars live shorter lives because their **luminosities rise much more steeply than their fuel supply**. The problem is not a lack of fuel. It is an enormous burn rate.
 :::
 
-::: {.callout-note collapse="true"}
+:::{.callout-tip}
+## Check Yourself — Scaling
+
+Use the toy scaling
+
+$$
+L \propto M^3.
+$$
+
+If one main-sequence star has twice the mass of another and they have similar opacity, predict:
+
+1. the luminosity ratio,
+2. the lifetime ratio.
+
+Do this first in words, then in algebra.
+:::
+
+:::{.callout-note}
 ## Solution
 
-It is a success because the toy model gets the **main physical trend** right: luminosity increases very steeply with mass. That already explains why massive stars are so much brighter and shorter-lived than low-mass stars.
-
-What the toy model leaves out are the details that shift the exponent: realistic opacity laws, different fusion pathways (pp vs. CNO), structural changes across the main sequence, and the fact that radius is not truly independent of mass. So the toy derivation is not a precision fit — it is a physics-first explanation of why the observed relation is steep in the first place.
-:::
-
-::: {.callout-tip}
-## Check Yourself
-
-The luminosity scaling $L \propto M^3/\kappa$ shows that higher opacity *reduces* the luminosity. Explain physically why a more opaque star is *less* luminous.
-
-::: {.callout-note collapse="true"}
-## Solution
-
-Higher opacity means photons have a shorter mean free path — they scatter more frequently and diffuse more slowly through the star. Radiative diffusion becomes less efficient at transporting energy outward. For a star of a given mass, the structure adjusts until the self-regulated luminosity is lower than it would be in a more transparent star.
-
-Think of it as insulation: a more opaque star is better insulated. Less heat escapes per unit time, so the luminosity is lower. The star compensates by having a slightly different structure (lower core temperature, adjusted fusion rate), but the net effect is reduced luminosity.
-:::
-:::
-
----
-
-## Part 3: When Radiation Fails — Convection
-
-The radiative equation does not just tell us how energy can flow; it also tells us when radiation becomes inefficient enough that the star must switch transport mechanisms.
-
-### The Schwarzschild Criterion
-
-Radiative transport works only if the temperature gradient required to carry the luminosity is gentle enough for the gas to remain stable. If the required **radiative** gradient becomes too steep, the gas becomes convectively unstable.
-
-The physical picture is a buoyancy test. Imagine displacing a small blob of gas upward. As it rises, the pressure around it decreases, so the blob expands and cools.
-
-Two different gradients now matter:
-
-- the **adiabatic gradient**: how fast the blob cools as it expands without exchanging heat
-- the **radiative gradient**: how fast the surrounding star’s temperature decreases outward if radiation alone carries the luminosity
-
-If the surroundings cool **more rapidly** with radius than the rising blob does, then the blob remains warmer and less dense than its environment. It stays buoyant and continues to rise. That is convective instability.
-
-The instability criterion is
+If mass doubles, then
 
 $$
-\left|\frac{dT}{dr}\right|_\text{rad} > \left|\frac{dT}{dr}\right|_\text{ad}
+\frac{L_2}{L_1} = \left(\frac{M_2}{M_1}\right)^3 = 2^3 = 8.
 $$
 
-In words: if radiation alone would require a temperature gradient steeper than the adiabatic gradient, the gas becomes unstable and convection sets in.
+So the more massive star is about eight times more luminous in the toy model.
 
-Convection is then the star’s workaround. Instead of relying only on photon diffusion, the star transports energy by bulk motions of gas: hot material rises, cool material sinks, and energy is carried far more efficiently than radiation could manage on its own.
+For the lifetime,
 
-::: {.callout-warning}
-## Misconception Check — Convection
+$$
+\tau_{\rm nuc} \propto \frac{M}{L} \propto M^{-2},
+$$
 
-True or false:
+so
 
-Convection happens simply because the gas is hot.
+$$
+\frac{\tau_2}{\tau_1}
+=
+\left(\frac{M_2}{M_1}\right)^{-2}
+=
+2^{-2}
+=
+\frac{1}{4}.
+$$
 
-**Answer:** False.
-
-Hot gas by itself is not enough. Convection happens when the temperature gradient is steep enough that a displaced blob remains buoyant instead of sinking back. The issue is stability, not just temperature.
+So the star with twice the mass has only about one quarter of the nuclear lifetime.
 :::
 
-### What Makes the Radiative Gradient Steep?
+## Part 5: When Radiation Fails — Convection
 
-From the radiative transport equation:
+The radiative-transport equation does more than tell us how energy can flow. It also tells us when radiative transport becomes too inefficient to maintain stability.
+
+### The physical idea
+
+Imagine a small blob of gas displaced upward inside a star.
+
+As it rises, the pressure around it drops. The blob expands and cools. Now compare two temperature gradients:
+
+- the **adiabatic gradient**: how fast the blob cools as it expands without exchanging heat,
+- the **radiative gradient**: how fast the background star’s temperature would drop if radiation alone carried the luminosity.
+
+If the surroundings cool more rapidly than the blob does, then the blob remains warmer and less dense than its environment. It stays buoyant and continues to rise.
+
+That is convective instability.
+
+{{< fig convection-stability-cartoon >}}
+
+This is why convection is a stability problem, not just the slogan “hot gas rises.” What matters is the comparison between the parcel’s adiabatic cooling and the background radiative gradient.
+
+### The Schwarzschild criterion
+
+The standard criterion is written in logarithmic form:
 
 $$
-\left|\frac{dT}{dr}\right|_\text{rad} \propto \frac{\kappa \rho L}{T^3 r^2}
+\nabla_{\rm rad} > \nabla_{\rm ad},
+\qquad
+\nabla \equiv \frac{d\ln T}{d\ln P}.
 $$
 
-The radiative gradient is steep when:
-- **Opacity $\kappa$ is high** — photons can't get through
-- **Luminosity $L$ is high** — lots of energy to transport
-- **Temperature $T$ is low** — fewer photon states to carry energy
+At the level of physical intuition, this means the radiative temperature drop is too steep for stability, so a displaced parcel remains buoyant instead of returning to its original position.
 
-### Low-Mass Stars: Convective Envelopes
+In words:
 
-In stars with $M \lesssim 1.3\,M_\odot$ (including the Sun), the outer layers are cool enough that hydrogen is partially ionized. Partially ionized hydrogen has **very high opacity** (bound-free absorption), making the radiative gradient steep. The outer envelope becomes convectively unstable.
+- if radiation can carry the luminosity with a gentle enough gradient, the region stays radiative,
+- if radiation would require too steep a gradient, convection begins.
 
-Meanwhile, the core is hot ($T_c \sim 15~\text{MK}$), fully ionized, and relatively transparent (electron scattering only). The pp-chain energy generation is spread over a large volume ($\varepsilon \propto T^4$, modest temperature dependence). The required radiative gradient is manageable, so the core is **radiatively stable**.
+### What makes the radiative gradient steep?
 
-**Result:** Low-mass stars have **radiative cores** and **convective envelopes**.
+From the radiative-transport equation, the required radiative gradient scales as
 
-### High-Mass Stars: Convective Cores
+$$
+\left|\frac{dT}{dr}\right|_{\rm rad}
+\propto
+\frac{\kappa \rho L}{T^3 r^2}.
+$$
 
-In stars with $M \gtrsim 1.3\,M_\odot$, the core temperature exceeds $\sim 17~\text{MK}$ and the CNO cycle dominates. The CNO cycle has extreme temperature sensitivity ($\varepsilon \propto T^{16}$), concentrating energy generation in a tiny central region. This dumps enormous luminosity through a small area, so the required radiative gradient is extremely steep and the core becomes **convectively unstable**.
+So the radiative gradient becomes steeper when:
 
-Meanwhile, the envelope is hot enough to be fully ionized (low opacity), and the required radiative gradient is modest, so the envelope is **radiatively stable**.
+- opacity $\kappa$ is high,
+- density $\rho$ is high,
+- luminosity $L$ is high,
+- temperature $T$ is low,
+- radius $r$ is small.
 
-**Result:** High-mass stars have **convective cores** and **radiative envelopes** — the opposite of low-mass stars.
+That already suggests two places where convection might appear:
+
+1. **cool, opaque outer layers**, where radiation struggles to get through,
+2. **very luminous cores**, where too much energy must pass through a small area.
+
+### Three main-sequence interior regimes
+
+#### 1. Very low-mass stars: often fully convective
+
+At the lowest main-sequence masses, the combination of cool temperatures, high opacity, and structural properties can make convection efficient throughout most or all of the star.
+
+Result: many stars below roughly
+
+$$
+M \lesssim 0.35\,M_\odot
+$$
+
+are close to fully convective.
+
+#### 2. Solar-like stars: radiative cores and convective envelopes
+
+For stars like the Sun, the core is hot and fully ionized, so the opacity is relatively low and radiation can carry the energy without requiring an unstable gradient.
+
+But the outer envelope is cooler and more opaque. There, radiative transport becomes inefficient and convection takes over.
+
+Result: stars of roughly solar mass typically have
+
+- **radiative cores**,
+- **convective envelopes**.
+
+#### 3. Higher-mass stars: convective cores and radiative envelopes
+
+In more massive stars, the core temperature becomes high enough that the CNO cycle dominates hydrogen burning. The CNO cycle is much more temperature-sensitive than the pp chain, so energy generation becomes strongly concentrated toward the center.
+
+That concentrates a large luminosity into a small inner region, making the required radiative gradient very steep. The core becomes convective.
+
+Meanwhile, the envelope is hot and relatively transparent, so radiation can often carry the energy there.
+
+Result: stars above roughly
+
+$$
+M \gtrsim 1.3 \text{ to } 1.5\,M_\odot
+$$
+
+typically have
+
+- **convective cores**,
+- **radiative envelopes**.
 
 {{< fig stellar-structure-zones >}}
 
-### Summary: The Structural Reversal
+This schematic compares the solar-like and high-mass archetypes. The very lowest-mass main-sequence stars are a third regime: many are nearly fully convective and are therefore not represented by the Sun-like panel.
 
-| Property | Low-Mass ($M \lesssim 1.3\,M_\odot$) | High-Mass ($M \gtrsim 1.3\,M_\odot$) |
-|:---------|:--------------------------------------|:--------------------------------------|
-| Core transport | Radiative | **Convective** |
-| Envelope transport | **Convective** | Radiative |
-| Dominant fusion | pp-chain ($\varepsilon \propto T^4$) | CNO cycle ($\varepsilon \propto T^{16}$) |
-| Why core convects? | It doesn't — $\varepsilon$ is spread out | CNO dumps energy in tiny region |
-| Why envelope convects? | Partial ionization → high opacity | It doesn't — fully ionized, low opacity |
-
-::: {.callout-note title="Enrichment: Why Convective Cores Matter for Evolution" collapse="true"}
-Convection mixes the gas — hot material from the center is carried upward, and cooler material sinks down. In a star with a **convective core**, the core is well-mixed: fresh hydrogen from the outer core is continuously brought to the center where fusion occurs.
-
-This means convective-core stars:
-1. Have access to a *larger* fuel supply (the entire convective core, not just the innermost region)
-2. Build up a *uniform* helium core when hydrogen is exhausted (no composition gradient)
-3. Experience a *sharper* transition when core hydrogen runs out
-
-In contrast, radiative-core stars (like the Sun) develop a composition gradient — helium accumulates at the very center while hydrogen remains in the outer core. This leads to a more gradual transition off the main sequence.
-
-These differences in core structure directly affect how stars evolve after the main sequence — a topic we'll explore in Readings 7 and 9.
-:::
-
-::: {.callout-tip}
-## Check Yourself
-
-The Sun has a convective envelope that extends from about $0.71\,R_\odot$ to the surface. Granulation — the pattern of bright convective cells visible on the Sun's surface — is direct observational evidence for convection. A typical granule is about $1{,}000~\text{km}$ across and lasts about $10~\text{minutes}$. Why are the bright centers hot gas *rising* and the dark edges cool gas *sinking*?
-
-::: {.callout-note collapse="true"}
-## Solution
-
-Convection carries energy by bulk gas motions: hot gas rises from deeper (hotter) layers, and cool gas sinks back down after radiating its energy at the surface.
-
-The **bright centers** of granules are hotter gas that has risen from below — they are brighter because hotter gas emits more radiation (Stefan-Boltzmann: $F \propto T^4$). The **dark edges** are cooler gas that has already radiated its excess energy and is sinking back down to be reheated.
-
-The timescale ($\sim 10~\text{min}$) is close to the local dynamical timescale — convection operates on roughly the free-fall time, which is much faster than radiative diffusion. This is why convection is so much more efficient at transporting energy.
-:::
-:::
-
----
-
-## Part 4: The Main Sequence Explained
-
-### Putting It All Together
-
-We can now explain the main sequence as a *consequence* of the stellar structure equations:
-
-1. **Mass determines core temperature** (virial theorem): $T_c \propto M/R \propto M^{0.2}$
-2. **Core temperature determines fusion rate** (nuclear physics): $\varepsilon \propto T^4$ (pp) or $T^{16}$ (CNO)
-3. **Opacity determines how fast energy escapes** (radiative transport): $L \propto M^3/\kappa$
-4. **Energy escape rate = energy production rate** (thermal equilibrium): fusion adjusts to match
-
-The **main sequence** is the locus of stars in thermal equilibrium — where energy production matches energy loss. Each point on the main sequence corresponds to a different mass, with all other properties ($L$, $R$, $T_\text{eff}$, $\tau_\text{nuc}$) following from the structure equations and the star's composition.
-
-### Why the Main Sequence Exists
-
-Stars spend most of their lives on the main sequence because:
-- Hydrogen fusion is the most efficient nuclear energy source (0.7% mass-to-energy conversion)
-- The hydrogen supply is large (the core is $\sim 10\%$ of the star's mass)
-- The star is self-regulating: if it produces too much energy, it expands and cools (reducing fusion); too little, it contracts and heats (increasing fusion)
-
-This self-regulation — the **stellar thermostat** — works because the fusion rate increases with temperature ($\varepsilon \propto T^n$, with $n = 4$ for pp and $n \approx 16$ for CNO) while the equilibrium temperature is set by gravity ($T_c \propto M/R$). Any perturbation is corrected on $\tau_\text{KH}$ (millions of years) — fast compared to $\tau_\text{nuc}$ (billions of years).
-
-::: {.callout-note title="Observable → Model → Inference" .omi}
-**Observable:** The main sequence — a tight band in the $L$–$T_\text{eff}$ plane where most stars are found.
-
-**Model:** Four stellar structure equations + ideal gas + nuclear energy generation rates.
-
-**Inference:** The main sequence is a *mass sequence* — stars at the top are massive, hot, luminous, and short-lived; stars at the bottom are low-mass, cool, faint, and long-lived. The tight observed band in the HR diagram reflects the underlying stellar structure physics.
-:::
-
-::: {.callout-tip}
+:::{.callout-warning}
 ## Misconception Check
 
-Massive stars have more fuel than low-mass stars. Why do they still live *shorter* lives?
+“Convection happens because the gas is hot.”
 
-::: {.callout-note collapse="true"}
-## Answer
+False.
 
-Because the burn rate rises much faster than the fuel supply. The available fuel scales roughly as $M$, but the luminosity scales roughly as $M^{3\text{–}3.5}$. A massive star does have more hydrogen, but it spends that hydrogen vastly faster.
-:::
+Convection happens because the **temperature gradient is unstable**, not because the gas is merely hot. Hot gas can still be radiatively stable if the required temperature gradient is shallow enough.
 :::
 
----
+:::{.callout-tip}
+## Check Yourself — Physical Reasoning
+
+Use
+
+$$
+\left|\frac{dT}{dr}\right|_{\rm rad}
+\propto
+\frac{\kappa \rho L}{T^3 r^2}.
+$$
+
+Predict which change is more likely to trigger convection:
+
+1. increasing the opacity in an outer envelope,
+2. decreasing the opacity in that same envelope.
+
+Explain the direction of the effect before answering.
+:::
+
+:::{.callout-note}
+## Solution
+
+Increasing the opacity makes radiative transport less efficient, so the required radiative temperature gradient becomes steeper. That pushes the star closer to convective instability.
+
+Decreasing the opacity makes radiative transport easier, so the required gradient becomes shallower and convection becomes less likely.
+:::
+
+:::{.callout-note}
+## Enrichment: Why Convective Cores Matter for Evolution
+
+Convection mixes stellar material. In a convective core, fresh hydrogen can be carried into the burning region, while helium ash is redistributed throughout the convective zone. That means high-mass main-sequence stars can use a larger fraction of their core hydrogen supply than a radiative-core star can.
+
+This matters later for post-main-sequence evolution:
+
+- convective-core stars build larger, more uniform helium cores,
+- solar-like stars build steeper composition gradients in their cores,
+- those different internal profiles lead to different evolutionary paths after core hydrogen exhaustion.
+:::
+
+## Part 6: The Main Sequence Explained
+
+We can now connect the whole argument.
+
+### Observable $\rightarrow$ Model $\rightarrow$ Inference
+
+**Observable:** The main sequence is a narrow band in the HR diagram, and more massive stars are much more luminous.
+
+**Model:** The stellar structure equations, plus the equation of state, opacity law, and nuclear energy generation law, determine the profiles $M(r)$, $P(r)$, $T(r)$, $L(r)$, and $\rho(r)$ for a given stellar mass and composition.
+
+**Inference:** The main sequence is a structural sequence controlled primarily by mass. The steep mass-luminosity relation reflects how gravity, pressure support, nuclear burning, and energy transport fit together inside stars.
+
+### Why stars spend most of their lives there
+
+Main-sequence stars are in long-lived thermal balance:
+
+- fusion in the core generates energy,
+- that energy is transported to the surface,
+- the luminosity leaving the surface matches the energy production rate on long timescales.
+
+This balance is stable because stars have a thermostat:
+
+- if the core produces too much energy, the star expands,
+- expansion lowers the core temperature,
+- fusion weakens.
+
+If the core produces too little energy:
+
+- the star contracts,
+- contraction raises the core temperature,
+- fusion strengthens.
+
+That self-regulation is why hydrogen burning can last for billions of years.
+
+:::{.callout-important}
+## Final Takeaway
+
+The main sequence is not a list of unrelated stellar properties.
+
+It is the visible trace of a coupled interior physics problem.
+
+Mass sets the gravity scale. Gravity sets the pressure scale. Pressure and the equation of state set the temperature scale. Temperature and opacity determine how energy is produced and transported. That chain produces the steep mass-luminosity relation, the short lifetimes of massive stars, and the contrasting interior structures across the main sequence.
+:::
 
 ## Reference Tables
 
-### The Four Stellar Structure Equations
+### The four stellar structure equations
 
-| # | Equation | What It Determines | Physical Principle |
-|:-:|:---------|:-------------------|:------------------|
-| 1 | $dM/dr = 4\pi r^2 \rho$ | Mass distribution | Geometry |
-| 2 | $dP/dr = -GM\rho/r^2$ | Pressure profile | Force balance (Newton) |
-| 3 | $\left(dT/dr\right)_\text{rad} = -(3\kappa\rho/16\sigma T^3)(L/4\pi r^2)$ | Temperature profile | Energy transport (diffusion) |
-| 4 | $dL/dr = 4\pi r^2 \rho\varepsilon$ | Luminosity profile | Energy conservation (fusion) |
+| # | Equation | What it determines | Physical principle |
+|---|---|---|---|
+| 1 | $$\frac{dM}{dr}=4\pi r^2\rho$$ | mass profile | geometry |
+| 2 | $$\frac{dP}{dr}=-\frac{GM(r)\rho}{r^2}$$ | pressure profile | force balance |
+| 3 | $$\left(\frac{dT}{dr}\right)_{\rm rad}=-\frac{3\kappa\rho L(r)}{16\pi a c\,r^2 T^3}$$ | radiative temperature gradient | energy transport |
+| 4 | $$\frac{dL}{dr}=4\pi r^2\rho\epsilon$$ | luminosity profile | energy conservation |
 
-### Main-Sequence Scaling Relations
+### Closure relations
 
-| Scaling | Exponent | Physical Origin |
-|:--------|:---------|:---------------|
-| $L \propto M^{3\text{–}3.5}$ | Radiative transport + HE | How fast energy leaks out |
-| $R \propto M^{3/7}$ (toy), then $M^{0.6\text{–}0.8}$ in realistic models | Energy generation + all four | Pressure pushes envelope outward |
-| $T_c \propto M^{0.2}$ | Virial theorem | Weak mass dependence |
-| $\tau_\text{nuc} \propto M^{-2\text{ to }-2.5}$ | $M/L$ | Fuel ÷ burn rate |
+| Relation | Role |
+|---|---|
+| $$P=\frac{\rho k_B T}{\mu m_H}$$ | equation of state |
+| $$\kappa=\kappa(\rho,T,\text{composition})$$ | opacity law |
+| $$\epsilon=\epsilon(\rho,T,\text{composition})$$ | nuclear energy generation |
 
-### Symbol Legend
+### Main-sequence scaling relations
 
-| Symbol | Meaning | Units |
-|:------:|:--------|:------|
-| $\varepsilon$ | Nuclear energy generation rate (per unit mass) | $\text{erg}\,\text{g}^{-1}\,\text{s}^{-1}$ |
-| $\kappa$ | Opacity | $\text{cm}^2/\text{g}$ |
-| $\mu$ | Mean molecular weight | Dimensionless |
-| $T_\text{eff}$ | Effective (surface) temperature | K |
+| Relation | Status | Physical meaning |
+|---|---|---|
+| $$\rho \sim \frac{M}{R^3}$$ | toy scaling | mean density scale |
+| $$P_c \sim \frac{GM^2}{R^4}$$ | toy scaling | hydrostatic pressure scale |
+| $$T_c \sim \frac{M}{R}$$ | robust leading-order scaling | hotter cores in more massive, more compact stars |
+| $$L \propto \frac{M^3}{\kappa}$$ | toy radiative scaling | steep luminosity trend from transport + gravity |
+| $$R \propto M^{3/7}$$ | toy pp-chain, radiative result | qualitative mass-radius trend |
+| $$\tau_{\rm nuc}\propto \frac{M}{L}$$ | general lifetime scaling | fuel divided by burn rate |
 
----
+### Interior regimes across the main sequence
+
+| Regime | Typical mass range | Interior structure | Main reason |
+|---|---|---|---|
+| very low mass | $$M \lesssim 0.35\,M_\odot$$ | nearly fully convective | cool, opaque interiors favor convection |
+| solar-like | $$0.35 \lesssim M/M_\odot \lesssim 1.3$$ | radiative core, convective envelope | cool outer layers are opaque |
+| high mass | $$M \gtrsim 1.3 \text{ to } 1.5\,M_\odot$$ | convective core, radiative envelope | CNO burning concentrates luminosity in the core |
 
 ## Summary: From Equations to the HR Diagram
 
-The most important ideas from this reading:
+The most important ideas from this reading are:
 
-1. **Four coupled ODEs** — mass conservation, hydrostatic equilibrium, radiative transport, and energy generation — determine a star's structure given its mass and composition. For main-sequence stars of similar composition, mass is the dominant control parameter.
+- Stars require differential equations because they are described by **radial profiles**, not single numbers.
+- The four stellar structure equations govern mass, pressure, temperature, and luminosity as functions of radius.
+- Those equations must be combined with closure relations such as the equation of state, opacity law, and nuclear energy generation law.
+- A toy scaling analysis gives
+  $$
+  L \propto \frac{M^3}{\kappa},
+  $$
+  which explains why the main-sequence mass-luminosity relation is so steep.
+- A toy pp-chain, radiative model gives
+  $$
+  R \propto M^{3/7},
+  $$
+  which captures the qualitative trend that more massive stars are larger.
+- The nuclear lifetime scales as
+  $$
+  \tau_{\rm nuc} \propto \frac{M}{L},
+  $$
+  so massive stars live much shorter lives because luminosity rises more steeply than fuel supply.
+- Convection appears when radiative transport would require too steep a temperature gradient.
+- The main sequence is a **mass sequence in thermal equilibrium**, not just an observational catalog.
 
-2. **Scaling relations derived from the structure equations** explain the main sequence: a toy model gives $L \propto M^3$ and $R \propto M^{3/7}$, while more realistic opacity and fusion physics steepen these toward the observed trends.
-
-3. **Convection replaces radiation** when the radiative temperature gradient is too steep (Schwarzschild criterion). Low-mass stars have convective envelopes (high opacity in partially ionized outer layers); high-mass stars have convective cores (CNO cycle dumps energy in a tiny region).
-
-4. **The main sequence is a mass sequence** in thermal equilibrium. The stellar thermostat (fusion rate sensitive to temperature, gravity sets temperature) keeps stars stable for $\tau_\text{nuc}$.
-
-::: {.callout-note title="Gravity Scoreboard — Reading 5"}
-
-```
-┌──────────────────────────────────────────────────────┐
-│  Gravity Scoreboard — Reading 5                      │
-├──────────────────────────────────────────────────────┤
-│  Attacker:    Gravity                                │
-│  Defender:    Thermal pressure (fusion-powered)       │
-│  Transport:   Radiation + convection (carry energy    │
-│               from core to surface)                  │
-│  Status:      LEADING-ORDER EXPLAINED. The main      │
-│               sequence shape follows from four       │
-│               equations plus composition.            │
-│                                                      │
-│  Takeaway:    Massive stars have more fuel, but      │
-│               burn it much faster because L rises    │
-│               more steeply than M.                   │
-│                                                      │
-│  But: what happens outside the main sequence?        │
-│  - Can a star be too small for fusion? See R6.      │
-│  - Can a star be too massive to stay stable? See R6.│
-│  - What happens when hydrogen runs out? See R7-R10. │
-│  Next: Mass limits, Reading 6                        │
-└──────────────────────────────────────────────────────┘
-```
-
-We've now explained the leading-order physics behind the main sequence. But the main sequence has boundaries: stars can't be arbitrarily small (quantum mechanics prevents fusion below $\sim 0.08\,M_\odot$) or arbitrarily large (radiation pressure and mass loss constrain the upper end near $\sim 100\text{–}150\,M_\odot$). In Reading 6, we explore both limits — and discover that quantum mechanics, which made fusion possible (Reading 3), also helps set the floor of the stellar mass function.
-:::
-
-::: {.callout-tip}
+:::{.callout-tip}
 ## Looking Ahead
 
-The main sequence is a mass sequence with clear boundaries. In Reading 6, we'll discover what sets those boundaries: the **minimum mass** (where quantum mechanics prevents the core from reaching fusion temperatures) and the **maximum mass** (where radiation pressure overwhelms gravity). Both limits arise from fundamental physics — and both require quantum mechanics to understand.
+The main sequence has edges. Stars cannot be arbitrarily small and still ignite sustained hydrogen fusion, and they cannot be arbitrarily massive and remain stable against strong radiation forces and mass loss.
+
+In the next reading, we will explore those mass limits and see how quantum mechanics and radiation pressure help set the boundaries of the stellar mass function.
 :::

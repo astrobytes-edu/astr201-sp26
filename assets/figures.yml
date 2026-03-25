@@ -1003,6 +1003,27 @@ figures:
     credit: "ASTR 201 (generated)"
     module: 3
 
+  stellar-structure-coupling:
+    path: /assets/images/module-03/stellar-structure-coupling.svg
+    caption: "**What to notice:** the four stellar structure equations form a coupled loop. Mass and luminosity profiles feed the pressure and radiative gradients, while the equation of state, opacity law, nuclear rate, and boundary conditions close the system."
+    alt: "Ring diagram of the stellar structure problem with boxes for mass conservation, hydrostatic equilibrium, radiative transport, and energy generation around a central closure box listing the equation of state, opacity law, nuclear rate, and boundary conditions. Arrows show that each equation depends on quantities supplied by the others."
+    credit: "ASTR 201 (generated)"
+    module: 3
+
+  main-sequence-scaling-ladder:
+    path: /assets/images/module-03/main-sequence-scaling-ladder.svg
+    caption: "**What to notice:** the steep mass-luminosity relation is the end of a reasoning chain. Mean density sets the pressure scale, pressure sets the core-temperature scale, and radiative transport then drives the luminosity toward $L \\propto M^3/\\kappa$."
+    alt: "Left-to-right ladder of four scaling boxes showing density proportional to mass over radius cubed, central pressure proportional to G times mass squared over radius to the fourth, core temperature proportional to mass over radius, and luminosity proportional to mass cubed over opacity. A lower branch adds the lifetime scaling tau proportional to mass over luminosity."
+    credit: "ASTR 201 (generated)"
+    module: 3
+
+  convection-stability-cartoon:
+    path: /assets/images/module-03/convection-stability-cartoon.svg
+    caption: "**What to notice:** convection is a stability problem. In a stable radiative layer the displaced parcel cools more than its surroundings and sinks back, but when the radiative gradient is steeper than the adiabatic gradient the parcel stays warmer and keeps rising."
+    alt: "Two-panel convection cartoon. The left panel shows a stable radiative layer where an upward-displaced parcel ends up cooler than the surroundings and sinks. The right panel shows an unstable layer where the surroundings cool more rapidly, so the parcel remains warmer and continues to rise. Small line plots compare the parcel and surroundings gradients and label the Schwarzschild criterion."
+    credit: "ASTR 201 (generated)"
+    module: 3
+
   eddington-force-balance:
     path: /assets/images/module-03/eddington-force-balance.png
     caption: "**What to notice:** the Eddington luminosity comes from a force balance on the same gas parcel. Gravity pulls inward with $g = GM/r^2$, while radiation pushes outward with $g_\\text{rad} = \\kappa L/(4\\pi r^2 c)$. Setting those equal gives the luminosity at which radiation pressure can compete directly with gravity."
@@ -1019,8 +1040,8 @@ figures:
 
   stellar-structure-zones:
     path: /assets/images/module-03/stellar-structure-zones.png
-    caption: "**The structural reversal** between low-mass and high-mass stars. Low-mass stars (like the Sun) have radiative cores and convective envelopes. High-mass stars have the opposite: convective cores and radiative envelopes. The transition occurs near ~1.5 M☉, driven by the temperature sensitivity of the CNO cycle."
-    alt: "Side-by-side cross-sections of a low-mass star (radiative core, convective envelope) and a high-mass star (convective core, radiative envelope), with transport mechanisms indicated by arrows and circular patterns"
+    caption: "**What to notice:** this schematic compares the two non-fully-convective archetypes on the main sequence. Solar-like stars have radiative cores and convective envelopes, while higher-mass stars reverse that pattern and develop convective cores with radiative envelopes. The very lowest-mass stars are a third regime and are often nearly fully convective."
+    alt: "Side-by-side cross-sections of a solar-like star with a radiative core and convective envelope and a higher-mass star with a convective core and radiative envelope, with transport mechanisms indicated by arrows and circulation patterns. The figure does not include the separate very-low-mass fully convective regime."
     credit: "ASTR 201 (generated)"
     module: 3
 

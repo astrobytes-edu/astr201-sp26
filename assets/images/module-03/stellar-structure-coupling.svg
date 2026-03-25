@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-labelledby="title desc" data-theme="light" data-palette="aurora">
+  <title id="title">Coupled stellar structure equations</title>
+  <desc id="desc">A ring diagram showing the four stellar structure equations around a central closure box. Mass conservation, hydrostatic equilibrium, radiative transport, and energy generation must be solved together with the equation of state, opacity law, nuclear rate, and boundary conditions.</desc>
+  <defs>
+    <marker id="arrow-teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--teal)"/>
+    </marker>
+    <marker id="arrow-violet" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--violet)"/>
+    </marker>
+  </defs>
+  <style>
+    svg {
+      --teal: #028391;
+      --pink: #be5a83;
+      --violet: #7077a1;
+      --bg: #ffffff;
+      --panel: #f2f3fb;
+      --fg: #111218;
+      --muted: #3a3d52;
+      --faint: #666b85;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+    }
+    .title { fill: var(--fg); font-size: 28px; font-weight: 700; }
+    .subtitle { fill: var(--muted); font-size: 16px; }
+    .eq-box { fill: var(--panel); stroke: var(--teal); stroke-width: 3; }
+    .closure { fill: #fbf8fd; stroke: var(--violet); stroke-width: 3; }
+    .eq-title { fill: var(--fg); font-size: 20px; font-weight: 700; text-anchor: middle; }
+    .eq-body { fill: var(--muted); font-size: 16px; text-anchor: middle; }
+    .closure-title { fill: var(--violet); font-size: 20px; font-weight: 700; text-anchor: middle; }
+    .closure-body { fill: var(--fg); font-size: 16px; text-anchor: middle; }
+    .arrow { stroke: var(--teal); stroke-width: 4; fill: none; marker-end: url(#arrow-teal); }
+    .closure-arrow { stroke: var(--violet); stroke-width: 3; fill: none; marker-end: url(#arrow-violet); }
+    .arrow-text { fill: var(--faint); font-size: 14px; text-anchor: middle; }
+    .footer { fill: #eef8f9; stroke: var(--pink); stroke-width: 3; }
+    .footer-title { fill: var(--pink); font-size: 18px; font-weight: 700; }
+    .footer-text { fill: var(--fg); font-size: 17px; }
+  </style>
+
+  <rect x="0" y="0" width="960" height="540" fill="var(--bg)"/>
+
+  <text x="40" y="42" class="title">The Stellar Structure Problem Is Coupled</text>
+  <text x="40" y="68" class="subtitle">Each differential equation needs quantities supplied by the others, so the star must satisfy everything self-consistently.</text>
+
+  <rect x="330" y="96" width="300" height="100" rx="22" class="eq-box"/>
+  <text x="480" y="128" class="eq-title">Mass conservation</text>
+  <text x="480" y="153" class="eq-body">dM/dr = 4pi r^2 rho</text>
+  <text x="480" y="175" class="eq-body">sets how enclosed mass grows outward</text>
+
+  <rect x="650" y="210" width="250" height="120" rx="22" class="eq-box"/>
+  <text x="775" y="242" class="eq-title">Hydrostatic balance</text>
+  <text x="775" y="267" class="eq-body">dP/dr = -G M rho / r^2</text>
+  <text x="775" y="289" class="eq-body">needs M(r) and local rho</text>
+  <text x="775" y="311" class="eq-body">to set the pressure gradient</text>
+
+  <rect x="330" y="340" width="300" height="100" rx="22" class="eq-box"/>
+  <text x="480" y="372" class="eq-title">Radiative transport</text>
+  <text x="480" y="397" class="eq-body">dT/dr depends on kappa, rho, L, and T</text>
+  <text x="480" y="419" class="eq-body">sets the temperature profile</text>
+
+  <rect x="60" y="210" width="250" height="120" rx="22" class="eq-box"/>
+  <text x="185" y="242" class="eq-title">Energy generation</text>
+  <text x="185" y="267" class="eq-body">dL/dr = 4pi r^2 rho epsilon</text>
+  <text x="185" y="289" class="eq-body">epsilon depends on local</text>
+  <text x="185" y="311" class="eq-body">temperature and density</text>
+
+  <rect x="350" y="205" width="260" height="125" rx="24" class="closure"/>
+  <text x="480" y="237" class="closure-title">Closure + boundaries</text>
+  <text x="480" y="264" class="closure-body">Equation of state: P(r), T(r) -> rho(r)</text>
+  <text x="480" y="287" class="closure-body">Opacity law: kappa(rho, T, composition)</text>
+  <text x="480" y="310" class="closure-body">Nuclear rate: epsilon(rho, T, composition)</text>
+  <text x="480" y="333" class="closure-body">Boundary conditions at center and surface</text>
+
+  <path d="M 480 196 C 570 200, 660 215, 690 230" class="arrow"/>
+  <path d="M 775 330 C 770 365, 660 392, 630 392" class="arrow"/>
+  <path d="M 330 392 C 280 392, 205 350, 185 330" class="arrow"/>
+  <path d="M 185 210 C 205 175, 310 125, 360 125" class="arrow"/>
+
+  <text x="645" y="184" class="arrow-text">M(r) feeds gravity</text>
+  <text x="710" y="384" class="arrow-text">L(r) helps set the radiative gradient</text>
+  <text x="250" y="388" class="arrow-text">T and rho control epsilon</text>
+  <text x="255" y="176" class="arrow-text">rho controls shell mass</text>
+
+  <path d="M 480 205 L 480 196" class="closure-arrow"/>
+  <path d="M 610 250 L 650 250" class="closure-arrow"/>
+  <path d="M 480 330 L 480 340" class="closure-arrow"/>
+  <path d="M 350 250 L 310 250" class="closure-arrow"/>
+
+  <text x="618" y="238" class="arrow-text">rho</text>
+  <text x="480" y="191" class="arrow-text">rho</text>
+  <text x="480" y="353" class="arrow-text">kappa, rho</text>
+  <text x="342" y="238" class="arrow-text">epsilon</text>
+
+  <rect x="40" y="458" width="880" height="56" rx="18" class="footer"/>
+  <text x="62" y="491" class="footer-title">What to notice</text>
+  <text x="210" y="491" class="footer-text">The star is not solved by plugging into one formula. The equations and closure relations feed one another in a loop, so only a self-consistent profile works.</text>
+</svg>
