@@ -970,8 +970,43 @@ figures:
 
   random-walk:
     path: /assets/images/module-03/random-walk.png
-    caption: "**A photon's random walk** through the solar interior. Left: a simulated 2,000-step random walk shows how scattering produces a tangled path. The net displacement grows only with the square root of the number of steps, so it stays far smaller than the total path length. Right: the real numbers for the Sun — about $10^{24}$ scatterings, about $170{,}000$ years from core to surface, versus 2.3 seconds in a straight line."
-    alt: "Two-panel figure. Left panel shows a colorful simulated random walk of 2000 steps with start point, end point, and net displacement arrow. Right panel lists key numbers: mean free path 1 cm, 10^24 scatterings, diffusion time 170,000 years, straight-line time 2.3 seconds."
+    caption: '**Toy walk plus one-zone solar scaling.** The left panel is a simulated 2,000-step random walk that makes the $\sqrt{N}$ scaling visible. The right panel is a separate one-zone solar estimate using a mean free path of about 0.02 cm, about $10^{25}$ interactions, and a diffusion time of about 260,000 years. Students should not read the left-panel geometry as a literal solar trajectory.'
+    alt: "Two-panel figure. Left panel shows a colorful 2000-step toy random walk with a start point, end point, and net-displacement arrow. Right panel summarizes a separate one-zone solar estimate with mean free path about 0.02 centimeters, about 10 to the 25 scatterings, diffusion time of a few times 10 to the 5 years, and straight-line time of 2.3 seconds."
+    credit: "ASTR 201 (generated)"
+    module: 3
+
+  optical-depth-slab:
+    path: /assets/images/module-03/optical-depth-slab.png
+    caption: "**What to notice:** optical depth is a count of how many mean free paths fit across a region. In the optically thin case, $\ell > R$ and a photon usually crosses without interacting. In the optically thick case, $\ell \ll R$, so many short steps fit across the same slab thickness and transport becomes interaction-dominated."
+    alt: "Two-panel optical-depth cartoon. The left panel shows an optically thin slab with slab thickness R shorter than the mean free path ell and a photon crossing essentially straight through. The right panel shows an optically thick slab with slab thickness R much larger than ell, marked by many short interaction steps across the slab. Each panel labels tau as approximately R over ell."
+    credit: "ASTR 201 (generated)"
+    module: 3
+
+  random-walk-scaling:
+    path: /assets/images/module-03/random-walk-scaling.png
+    caption: "**What to notice:** the total path length grows as $N\\ell$, but the net displacement grows only as $\sqrt{N}\\,\\ell$. The widening gap is why random walks are so inefficient: after many steps, most of the travel has been spent getting redirected rather than making net outward progress."
+    alt: "Log-log plot of distance scale versus number of steps N. One line shows total path length proportional to N times ell, and a lower line shows net displacement proportional to square root of N times ell. Callouts mark the slope 1 and slope one-half behavior and note that at one million steps the path length is about a million ell while the displacement is only about a thousand ell."
+    credit: "ASTR 201 (generated)"
+    module: 3
+
+  radiative-flux-opacity:
+    path: /assets/images/module-03/radiative-flux-opacity.png
+    caption: "**What to notice:** a temperature gradient creates an outward radiative flux, but opacity throttles how much energy that gradient can carry. For the same density and the same $d(aT^4)/dr$, increasing $\kappa$ by a factor of 10 reduces $F_\\text{rad}$ by the same factor."
+    alt: "Two-panel radiative diffusion figure. The left panel shows normalized radiation energy density decreasing outward with arrows indicating a larger outward flux for low opacity and a smaller outward flux for high opacity. The right panel is a log-log plot of relative radiative flux versus relative opacity showing an inverse relationship, with a note that ten times higher opacity gives ten times smaller flux."
+    credit: "ASTR 201 (generated)"
+    module: 3
+
+  radiation-vs-convection-transport:
+    path: /assets/images/module-03/radiation-vs-convection-transport.png
+    caption: "**What to notice:** both panels show the same center-to-surface slice, but the transport mechanism is completely different. On the left, radiation diffuses by a random walk of many tiny steps because high opacity keeps the mean free path short. On the right, convection moves energy by large-scale circulation: hot, low-density plasma rises and cool, high-density plasma sinks."
+    alt: "Two-panel comparison titled energy transport in stars: radiation versus convection. The left panel shows a vertical stellar slice from center at bottom to surface at top, with tangled short photon paths labeled random walk and notes about many small steps, inefficient transport, and short mean free path at high opacity. The right panel shows the same slice with two large convection cells, red upward arrows for hot rising plasma, blue downward arrows for cool sinking plasma, and a note that bulk motion transports energy."
+    credit: "ASTR 201 (generated)"
+    module: 3
+
+  eddington-force-balance:
+    path: /assets/images/module-03/eddington-force-balance.png
+    caption: "**What to notice:** the Eddington luminosity comes from a force balance on the same gas parcel. Gravity pulls inward with $g = GM/r^2$, while radiation pushes outward with $g_\\text{rad} = \\kappa L/(4\\pi r^2 c)$. Setting those equal gives the luminosity at which radiation pressure can compete directly with gravity."
+    alt: "Schematic showing a star on the left and a gas parcel in the envelope on the right. An inward arrow labeled gravity points from the parcel toward the star, and an outward arrow labeled radiative acceleration points away from the star. Text boxes show g equals GM over r squared, g_rad equals kappa L over four pi r squared c, and the Eddington limit condition g_rad equals g."
     credit: "ASTR 201 (generated)"
     module: 3
 

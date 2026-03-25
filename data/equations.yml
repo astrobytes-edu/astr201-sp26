@@ -288,6 +288,12 @@ random-walk:
   include: "_includes/equations/random-walk.qmd"
   card: "random_walk"
 
+radiative-diffusion-flux:
+  title: "Radiative diffusion flux"
+  anchor: "eq-radiative-diffusion-flux"
+  include: "_includes/equations/radiative-diffusion-flux.qmd"
+  card: "radiative_diffusion_flux"
+
 radiative-diffusion-luminosity:
   title: "Radiative diffusion luminosity"
   anchor: "eq-radiative-diffusion-luminosity"

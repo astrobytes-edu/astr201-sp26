@@ -398,26 +398,34 @@ def make_random_walk():
     ax2.set_facecolor(SLIDE_BG)
     ax2.axis("off")
 
+    r_sun_cm = 7.0e10
+    mean_free_path_cm = 1.96e-2
+    c_cm_s = 3.0e10
+    n_scatterings = (r_sun_cm / mean_free_path_cm) ** 2
+    diffusion_time_yr = (r_sun_cm ** 2) / (mean_free_path_cm * c_cm_s * YEAR_S)
+    straight_line_time_s = r_sun_cm / c_cm_s
+    opacity_penalty = diffusion_time_yr * YEAR_S / straight_line_time_s
+
     info_text = [
         ("The Photon's Journey", 20, "bold", SLIDE_TEXT, 0.95),
-        ("Inside the Sun", 14, "normal", SLIDE_MUTED, 0.90),
+        ("Toy walk left; Sun right", 14, "normal", SLIDE_MUTED, 0.90),
         ("", 10, "normal", SLIDE_TEXT, 0.84),
         ("Mean free path:", 13, "bold", SLIDE_TEAL, 0.80),
-        ("ℓ ≈ 1 cm", 16, "normal", SLIDE_TEXT, 0.75),
-        ("(in the solar core)", 10, "normal", SLIDE_MUTED, 0.71),
+        (f"ℓ ≈ {mean_free_path_cm:.2f} cm", 16, "normal", SLIDE_TEXT, 0.75),
+        ("(one-zone solar-core estimate)", 10, "normal", SLIDE_MUTED, 0.71),
         ("", 10, "normal", SLIDE_TEXT, 0.65),
         ("Number of scatterings:", 13, "bold", "#4c74a7", 0.61),
-        ("N = (R/ℓ)^2 ≈ 10^24", 16, "normal", SLIDE_TEXT, 0.56),
+        (f"N = (R/ℓ)^2 ≈ {n_scatterings / 1e25:.1f} × 10^25", 16, "normal", SLIDE_TEXT, 0.56),
         ("", 10, "normal", SLIDE_TEXT, 0.50),
         ("Diffusion time:", 13, "bold", "#8f63a3", 0.46),
-        ("t = Nℓ/c ≈ 170,000 yr", 16, "normal", SLIDE_TEXT, 0.41),
+        (f"t ≈ {diffusion_time_yr / 1e5:.1f} × 10^5 yr", 16, "normal", SLIDE_TEXT, 0.41),
         ("", 10, "normal", SLIDE_TEXT, 0.35),
         ("Straight-line time:", 13, "bold", SLIDE_ORANGE, 0.31),
-        ("t = R/c ≈ 2.3 s", 16, "normal", SLIDE_TEXT, 0.26),
+        (f"t = R/c ≈ {straight_line_time_s:.1f} s", 16, "normal", SLIDE_TEXT, 0.26),
         ("", 10, "normal", SLIDE_TEXT, 0.20),
         ("Opacity penalty:", 13, "bold", SLIDE_ROSE, 0.16),
-        ("170,000 yr / 2.3 s ≈ 2 × 10^12", 14, "normal", SLIDE_TEXT, 0.11),
-        ("The Sun is transparent to neutrinos, not to photons.", 11, "normal", SLIDE_ROSE, 0.04),
+        (f"t_diff / (R/c) ≈ {opacity_penalty / 1e12:.1f} × 10^12", 14, "normal", SLIDE_TEXT, 0.11),
+        ("Energy diffuses; not one immortal photon.", 11, "normal", SLIDE_ROSE, 0.04),
     ]
 
     for text, size, weight, color, ypos in info_text:
@@ -426,7 +434,7 @@ def make_random_walk():
                  fontstyle=style, color=color, transform=ax2.transAxes, va="top")
 
     ax2.text(0.05, 0.88,
-             "Toy Monte Carlo + diffusion scaling",
+             "Toy Monte Carlo + one-zone solar scaling",
              transform=ax2.transAxes, fontsize=10.5, color=SLIDE_MUTED,
              bbox=dict(boxstyle="round,pad=0.28", facecolor=SLIDE_PANEL, edgecolor=SLIDE_GRID))
 
@@ -435,7 +443,798 @@ def make_random_walk():
 
 
 # ═════════════════════════════════════════════════════════════
-# Figure 3: Timescale Hierarchy
+# Figure 3: Optical Depth / Mean Free Path Cartoon
+# Used in: R4 (Radiation Transport)
+# ═════════════════════════════════════════════════════════════
+def make_optical_depth_slab():
+    """Compare optically thin and optically thick slabs as counts of mean free paths."""
+    fig, axes = plt.subplots(1, 2, figsize=(13.4, 5.9), dpi=220)
+    fig.patch.set_facecolor(SLIDE_BG)
+
+    specs = [
+        {
+            "title": r"Optically Thin: $\tau < 1$",
+            "slab_width": 4.0,
+            "ell_draw": 8.5,
+            "tau_label": r"$\tau \sim R/\ell \approx 0.5$",
+            "color": SLIDE_TEAL,
+            "note": "A photon usually crosses\nwithout interacting.",
+        },
+        {
+            "title": r"Optically Thick: $\tau \gg 1$",
+            "slab_width": 9.6,
+            "ell_draw": 1.2,
+            "tau_label": r"$\tau \sim R/\ell \approx 8$",
+            "color": SLIDE_ROSE,
+            "note": "Many short steps fit across\none slab thickness.",
+        },
+    ]
+
+    for ax, spec in zip(axes, specs):
+        ax.set_facecolor(SLIDE_BG)
+        ax.set_xlim(0, 14)
+        ax.set_ylim(0, 6.6)
+        ax.axis("off")
+
+        x0 = 2.0
+        y0 = 2.3
+        slab_height = 1.6
+
+        slab = mpatches.FancyBboxPatch(
+            (x0, y0),
+            spec["slab_width"],
+            slab_height,
+            boxstyle="round,pad=0.02,rounding_size=0.18",
+            facecolor="#eef4fb",
+            edgecolor=SLIDE_GRID,
+            linewidth=1.8,
+        )
+        ax.add_patch(slab)
+
+        ax.text(
+            x0 + spec["slab_width"] / 2,
+            y0 + 0.34 * slab_height,
+            "stellar material",
+            ha="center",
+            va="center",
+            fontsize=12,
+            color=SLIDE_MUTED,
+            fontweight="bold",
+        )
+
+        ax.text(
+            x0 + spec["slab_width"] / 2,
+            5.85,
+            spec["title"],
+            ha="center",
+            va="center",
+            fontsize=17,
+            color=SLIDE_TEXT,
+            fontweight="bold",
+        )
+
+        ax.annotate(
+            "",
+            xy=(x0 + spec["slab_width"], 1.55),
+            xytext=(x0, 1.55),
+            arrowprops=dict(arrowstyle="<->", lw=2.2, color=SLIDE_ORANGE),
+        )
+        ax.text(
+            x0 + spec["slab_width"] / 2,
+            1.05,
+            r"$R$",
+            ha="center",
+            va="center",
+            fontsize=15,
+            color=SLIDE_ORANGE,
+            fontweight="bold",
+        )
+
+        ell_x0 = x0 - 0.35 if spec["slab_width"] < spec["ell_draw"] else x0
+        ell_x1 = ell_x0 + spec["ell_draw"]
+        ax.annotate(
+            "",
+            xy=(ell_x1, 4.65),
+            xytext=(ell_x0, 4.65),
+            arrowprops=dict(arrowstyle="<->", lw=2.2, color=ACCENT_BLUE),
+        )
+        ax.text(
+            0.5 * (ell_x0 + ell_x1),
+            5.05,
+            r"$\ell$",
+            ha="center",
+            va="center",
+            fontsize=15,
+            color=ACCENT_BLUE,
+            fontweight="bold",
+        )
+
+        if spec["slab_width"] < spec["ell_draw"]:
+            photon_y = y0 + 0.62 * slab_height
+            ax.annotate(
+                "",
+                xy=(x0 + spec["slab_width"] + 0.9, photon_y),
+                xytext=(x0 - 1.0, photon_y),
+                arrowprops=dict(arrowstyle="-|>", lw=2.8, color=spec["color"]),
+            )
+        else:
+            interaction_x = np.arange(x0 + spec["ell_draw"], x0 + spec["slab_width"], spec["ell_draw"])
+            start_x = x0 - 0.7
+            y_mid = y0 + 0.62 * slab_height
+
+            for hit_x in interaction_x:
+                ax.annotate(
+                    "",
+                    xy=(hit_x, y_mid),
+                    xytext=(start_x, y_mid),
+                    arrowprops=dict(arrowstyle="-|>", lw=2.4, color=spec["color"]),
+                )
+                ax.plot(
+                    hit_x,
+                    y_mid,
+                    "o",
+                    color=spec["color"],
+                    markersize=7.5,
+                    markeredgecolor=SLIDE_BG,
+                    markeredgewidth=1.0,
+                    zorder=4,
+                )
+                start_x = hit_x
+
+            ax.annotate(
+                "",
+                xy=(x0 + spec["slab_width"] + 0.8, y_mid),
+                xytext=(start_x, y_mid),
+                arrowprops=dict(arrowstyle="-|>", lw=2.4, color=spec["color"]),
+            )
+
+        ax.text(
+            x0 + spec["slab_width"] / 2,
+            0.35,
+            spec["tau_label"],
+            ha="center",
+            va="center",
+            fontsize=13,
+            color=spec["color"],
+            fontweight="bold",
+            bbox=dict(boxstyle="round,pad=0.28", facecolor=SLIDE_PANEL, edgecolor=spec["color"]),
+        )
+        ax.text(
+            x0 + spec["slab_width"] / 2,
+            5.35,
+            spec["note"],
+            ha="center",
+            va="center",
+            fontsize=11.5,
+            color=SLIDE_MUTED,
+        )
+
+    fig.suptitle(
+        "Optical Depth Counts How Many Mean Free Paths Fit Across the Star",
+        fontsize=18.5,
+        fontweight="bold",
+        color=SLIDE_TEXT,
+        y=0.98,
+    )
+    fig.tight_layout(rect=(0, 0, 1, 0.95))
+    save_slide_figure(fig, "optical-depth-slab.png")
+
+
+# ═════════════════════════════════════════════════════════════
+# Figure 4: Random-Walk Displacement Scaling
+# Used in: R4 (Radiation Transport)
+# ═════════════════════════════════════════════════════════════
+def make_random_walk_scaling():
+    """Show why random-walk displacement grows only as the square root of step count."""
+    fig, ax = plt.subplots(figsize=(11.8, 6.8), dpi=220)
+    apply_slide_style(fig, ax)
+
+    n_steps = np.logspace(0, 6, 500)
+    total_path = n_steps
+    net_displacement = np.sqrt(n_steps)
+
+    ax.loglog(
+        n_steps,
+        total_path,
+        color=SLIDE_ORANGE,
+        linewidth=3.0,
+        label=r"Total path length $\sim N\ell$",
+    )
+    ax.loglog(
+        n_steps,
+        net_displacement,
+        color=SLIDE_TEAL,
+        linewidth=3.4,
+        label=r"Net displacement $\sim \sqrt{N}\,\ell$",
+    )
+    ax.fill_between(
+        n_steps,
+        net_displacement,
+        total_path,
+        color=SLIDE_ORANGE,
+        alpha=0.10,
+    )
+
+    highlight_steps = np.array([10, 100, 10_000, 1_000_000])
+    ax.scatter(highlight_steps, np.sqrt(highlight_steps), color=SLIDE_TEAL, s=40, zorder=4)
+    ax.scatter(highlight_steps, highlight_steps, color=SLIDE_ORANGE, s=40, zorder=4)
+
+    ax.annotate(
+        r"At $N=10^6$ steps:" "\n" r"path length $\sim 10^6\ell$" "\n" r"displacement $\sim 10^3\ell$",
+        xy=(1.0e6, 1.0e3),
+        xytext=(1.2e4, 2.2e4),
+        fontsize=11.5,
+        color=SLIDE_TEXT,
+        bbox=dict(boxstyle="round,pad=0.35", facecolor=SLIDE_PANEL, edgecolor=SLIDE_GRID),
+        arrowprops=dict(arrowstyle="-|>", color=SLIDE_TEAL, lw=2.0),
+    )
+    ax.text(
+        0.03,
+        0.85,
+        "The vertical gap grows quickly:\nrandom walks waste distance on repeated redirection.",
+        transform=ax.transAxes,
+        fontsize=11.5,
+        color=SLIDE_MUTED,
+        ha="left",
+        va="top",
+        bbox=dict(boxstyle="round,pad=0.32", facecolor=SLIDE_PANEL, edgecolor=SLIDE_GRID),
+    )
+
+    guide_x = np.array([20, 200])
+    ax.loglog(guide_x, 6e4 * (guide_x / guide_x[0]), "--", color=SLIDE_ORANGE, linewidth=1.7, alpha=0.85)
+    ax.loglog(guide_x, 300 * (guide_x / guide_x[0]) ** 0.5, "--", color=SLIDE_TEAL, linewidth=1.7, alpha=0.85)
+    ax.text(95, 1.8e5, "slope 1", color=SLIDE_ORANGE, fontsize=11.5, rotation=27)
+    ax.text(110, 550, "slope 1/2", color=SLIDE_TEAL, fontsize=11.5, rotation=13)
+
+    ax.set_xlabel(r"Number of steps, $N$", fontsize=14)
+    ax.set_ylabel(r"Distance scale (in units of $\ell$)", fontsize=14)
+    ax.set_title("Random Walks Grow Only as the Square Root of Step Count",
+                 fontsize=18.5, fontweight="bold", pad=14)
+    ax.legend(
+        loc="upper left",
+        bbox_to_anchor=(0.0, 1.01),
+        ncol=2,
+        frameon=False,
+        fontsize=12.0,
+        columnspacing=1.2,
+        handlelength=1.7,
+    )
+    fig.tight_layout()
+    save_slide_figure(fig, "random-walk-scaling.png")
+
+
+# ═════════════════════════════════════════════════════════════
+# Figure 5: Radiative Flux Throttled by Opacity
+# Used in: R4 (Radiation Transport)
+# ═════════════════════════════════════════════════════════════
+def make_radiative_flux_opacity():
+    """Show that larger opacity throttles radiative energy flow for the same gradient."""
+    fig, axes = plt.subplots(
+        1, 2, figsize=(13.6, 6.1), dpi=220, gridspec_kw={"width_ratios": [1.0, 1.05]}
+    )
+    fig.patch.set_facecolor(SLIDE_BG)
+
+    ax1, ax2 = axes
+    apply_slide_style(fig, ax1)
+    apply_slide_style(fig, ax2)
+
+    radius = np.linspace(0, 1.0, 300)
+    u_norm = 1.0 - 0.82 * radius ** 1.25
+    ax1.plot(radius, u_norm, color=SLIDE_ORANGE, linewidth=3.0)
+    ax1.fill_between(radius, u_norm, 0, color=SLIDE_ORANGE, alpha=0.10)
+    ax1.set_xlim(0, 1.0)
+    ax1.set_ylim(0, 1.08)
+    ax1.set_xlabel(r"Radius, $r/R$", fontsize=14)
+    ax1.set_ylabel(r"Normalized radiation energy density", fontsize=13.5)
+    ax1.set_title(r"A gradient in $u_{\rm rad}=aT^4$ drives outward flow",
+                  fontsize=17.5, fontweight="bold", pad=12)
+
+    ax1.text(0.07, 0.96, "hot interior", color=SLIDE_ORANGE, fontsize=11.5, fontweight="bold")
+    ax1.text(0.75, 0.18, "cooler exterior", color=SLIDE_MUTED, fontsize=11.5, fontweight="bold")
+
+    x_ref = 0.48
+    y_ref = np.interp(x_ref, radius, u_norm)
+    ax1.annotate(
+        "",
+        xy=(x_ref + 0.21, y_ref - 0.12),
+        xytext=(x_ref - 0.02, y_ref - 0.12),
+        arrowprops=dict(arrowstyle="-|>", lw=3.0, color=SLIDE_TEAL),
+    )
+    ax1.annotate(
+        "low $\\kappa$:\nlarger $F_{\\rm rad}$",
+        xy=(x_ref + 0.21, y_ref - 0.12),
+        xytext=(0.63, 0.80),
+        textcoords="axes fraction",
+        fontsize=11.2,
+        color=SLIDE_TEAL,
+        ha="left",
+        va="center",
+        bbox=dict(boxstyle="round,pad=0.30", facecolor=SLIDE_PANEL, edgecolor=SLIDE_TEAL),
+    )
+    ax1.annotate(
+        "",
+        xy=(x_ref + 0.11, y_ref - 0.28),
+        xytext=(x_ref - 0.02, y_ref - 0.28),
+        arrowprops=dict(arrowstyle="-|>", lw=3.0, color=SLIDE_ROSE),
+    )
+    ax1.annotate(
+        "high $\\kappa$:\nsmaller $F_{\\rm rad}$",
+        xy=(x_ref + 0.11, y_ref - 0.28),
+        xytext=(0.63, 0.54),
+        textcoords="axes fraction",
+        fontsize=11.2,
+        color=SLIDE_ROSE,
+        ha="left",
+        va="center",
+        bbox=dict(boxstyle="round,pad=0.30", facecolor=SLIDE_PANEL, edgecolor=SLIDE_ROSE),
+    )
+    ax1.text(
+        0.05,
+        0.13,
+        r"Same $d(aT^4)/dr$ and same $\rho$",
+        transform=ax1.transAxes,
+        fontsize=11.0,
+        color=SLIDE_MUTED,
+        bbox=dict(boxstyle="round,pad=0.28", facecolor=SLIDE_PANEL, edgecolor=SLIDE_GRID),
+    )
+
+    kappa_rel = np.logspace(-1, 1.3, 300)
+    flux_rel = 1.0 / kappa_rel
+    ax2.loglog(kappa_rel, flux_rel, color=SLIDE_ROSE, linewidth=3.2)
+    ax2.scatter([1.0, 10.0], [1.0, 0.1], color=[SLIDE_TEAL, SLIDE_ROSE], s=55, zorder=4)
+    ax2.axvline(1.0, color=SLIDE_GRID, linestyle="--", linewidth=1.2)
+    ax2.axvline(10.0, color=SLIDE_GRID, linestyle="--", linewidth=1.2)
+    ax2.axhline(1.0, color=SLIDE_GRID, linestyle="--", linewidth=1.2)
+    ax2.axhline(0.1, color=SLIDE_GRID, linestyle="--", linewidth=1.2)
+
+    ax2.annotate(
+        r"$10\times$ opacity" "\n" r"$\Rightarrow 10\times$ smaller flux",
+        xy=(10.0, 0.1),
+        xytext=(2.6, 0.42),
+        fontsize=11.3,
+        color=SLIDE_TEXT,
+        bbox=dict(boxstyle="round,pad=0.34", facecolor=SLIDE_PANEL, edgecolor=SLIDE_GRID),
+        arrowprops=dict(arrowstyle="-|>", color=SLIDE_ROSE, lw=2.0),
+    )
+    ax2.text(
+        0.04,
+        0.93,
+        r"Fixed gradient: $F_{\rm rad} \propto 1/\kappa$",
+        transform=ax2.transAxes,
+        fontsize=11.3,
+        color=SLIDE_MUTED,
+        ha="left",
+        va="top",
+        bbox=dict(boxstyle="round,pad=0.30", facecolor=SLIDE_PANEL, edgecolor=SLIDE_GRID),
+    )
+
+    ax2.set_xlabel(r"Opacity relative to baseline, $\kappa/\kappa_0$", fontsize=13.5)
+    ax2.set_ylabel(r"Relative radiative flux, $F_{\rm rad}/F_0$", fontsize=13.5)
+    ax2.set_title("Higher Opacity Throttles Radiative Energy Flow",
+                  fontsize=17.5, fontweight="bold", pad=12)
+
+    fig.tight_layout()
+    save_slide_figure(fig, "radiative-flux-opacity.png")
+
+
+# ═════════════════════════════════════════════════════════════
+# Figure 6: Radiation vs Convection Transport
+# Used in: R4 (Radiation Transport)
+# ═════════════════════════════════════════════════════════════
+def make_radiation_vs_convection_transport():
+    """Contrast radiative diffusion with convection using the same stellar slice."""
+    fig, axes = plt.subplots(1, 2, figsize=(13.8, 7.2), dpi=220)
+    fig.patch.set_facecolor(SLIDE_BG)
+
+    slice_cmap = LinearSegmentedColormap.from_list(
+        "stellar_slice", ["#ffd99a", "#f7f2e8", "#e6edf9"]
+    )
+    warm_arrow = "#d46a2f"
+    cool_arrow = ACCENT_BLUE
+    connector = "#8da0b4"
+
+    def draw_slice(ax, panel_title):
+        ax.set_xlim(0, 1)
+        ax.set_ylim(0, 1)
+        ax.axis("off")
+        ax.set_facecolor(SLIDE_BG)
+
+        x0, y0, width, height = 0.18, 0.12, 0.64, 0.74
+        gradient = np.linspace(0, 1, 500).reshape(-1, 1)
+        ax.imshow(
+            gradient,
+            extent=(x0, x0 + width, y0, y0 + height),
+            origin="lower",
+            cmap=slice_cmap,
+            aspect="auto",
+            alpha=0.95,
+            zorder=0,
+        )
+        border = mpatches.FancyBboxPatch(
+            (x0, y0),
+            width,
+            height,
+            boxstyle="round,pad=0.015,rounding_size=0.035",
+            facecolor="none",
+            edgecolor=SLIDE_GRID,
+            linewidth=1.7,
+            zorder=2,
+        )
+        ax.add_patch(border)
+
+        ax.text(
+            0.50,
+            0.965,
+            panel_title,
+            ha="center",
+            va="top",
+            fontsize=16,
+            color=SLIDE_TEXT,
+            fontweight="bold",
+        )
+
+        ax.annotate(
+            "",
+            xy=(0.08, y0 + height),
+            xytext=(0.08, y0),
+            arrowprops=dict(arrowstyle="-|>", lw=1.8, color=SLIDE_MUTED),
+        )
+        ax.text(0.08, y0 - 0.05, "center", ha="center", va="top",
+                fontsize=10.8, color=SLIDE_MUTED, fontweight="bold")
+        ax.text(0.08, y0 + height + 0.03, "surface", ha="center", va="bottom",
+                fontsize=10.8, color=SLIDE_MUTED, fontweight="bold")
+
+        return x0, y0, width, height
+
+    # ── Left panel: radiation diffusion ──────────────────────
+    ax = axes[0]
+    x0, y0, width, height = draw_slice(ax, "RADIATION\n(DIFFUSION)")
+    rng = np.random.default_rng(7)
+
+    for x_start in (0.31, 0.50, 0.67):
+        x = x_start
+        y = y0 + 0.05
+        points = [(x, y)]
+        for _ in range(15):
+            dx = rng.normal(0.0, 0.055)
+            dy = abs(rng.normal(0.055, 0.028))
+            if rng.random() < 0.30:
+                dy *= -0.35
+            x = np.clip(x + dx, x0 + 0.035, x0 + width - 0.035)
+            y = np.clip(y + dy, y0 + 0.035, y0 + height - 0.035)
+            points.append((x, y))
+            if y >= y0 + height - 0.05:
+                break
+
+        for p0, p1 in zip(points[:-1], points[1:]):
+            ax.annotate(
+                "",
+                xy=p1,
+                xytext=p0,
+                arrowprops=dict(
+                    arrowstyle="-|>",
+                    lw=2.0,
+                    color=SLIDE_ORANGE,
+                    alpha=0.95,
+                    shrinkA=0,
+                    shrinkB=0,
+                    mutation_scale=8,
+                ),
+            )
+
+    ax.text(
+        0.50,
+        0.79,
+        "random walk",
+        ha="center",
+        va="center",
+        fontsize=12.2,
+        color=SLIDE_TEXT,
+        fontweight="bold",
+        bbox=dict(boxstyle="round,pad=0.28", facecolor=SLIDE_PANEL, edgecolor=SLIDE_GRID),
+    )
+    ax.annotate(
+        "many small steps",
+        xy=(0.47, 0.41),
+        xytext=(0.08, 0.38),
+        fontsize=11.0,
+        color=SLIDE_TEXT,
+        ha="left",
+        va="center",
+        bbox=dict(boxstyle="round,pad=0.28", facecolor=SLIDE_PANEL, edgecolor=SLIDE_GRID),
+        arrowprops=dict(arrowstyle="-|>", color=SLIDE_ORANGE, lw=1.8),
+    )
+    ax.annotate(
+        "inefficient transport",
+        xy=(0.61, 0.70),
+        xytext=(0.82, 0.56),
+        fontsize=11.0,
+        color=SLIDE_TEXT,
+        ha="right",
+        va="center",
+        bbox=dict(boxstyle="round,pad=0.28", facecolor=SLIDE_PANEL, edgecolor=SLIDE_GRID),
+        arrowprops=dict(arrowstyle="-|>", color=SLIDE_ORANGE, lw=1.8),
+    )
+    ax.annotate(
+        "",
+        xy=(0.33, 0.20),
+        xytext=(0.43, 0.20),
+        arrowprops=dict(arrowstyle="<->", color=SLIDE_ORANGE, lw=1.8),
+    )
+    ax.text(0.38, 0.16, r"$\ell$", ha="center", va="center",
+            fontsize=12.5, color=SLIDE_ORANGE, fontweight="bold")
+    ax.annotate(
+        "high opacity ->\nshort mean free path",
+        xy=(0.38, 0.20),
+        xytext=(0.08, 0.12),
+        fontsize=10.8,
+        color=SLIDE_TEXT,
+        ha="left",
+        va="bottom",
+        bbox=dict(boxstyle="round,pad=0.28", facecolor=SLIDE_PANEL, edgecolor=SLIDE_GRID),
+        arrowprops=dict(arrowstyle="-|>", color=SLIDE_ORANGE, lw=1.6),
+    )
+
+    # ── Right panel: convection ──────────────────────────────
+    ax = axes[1]
+    x0, y0, width, height = draw_slice(ax, "CONVECTION\n(BULK MOTION)")
+
+    def draw_cell(xc):
+        yc = 0.49
+        half_w = 0.12
+        half_h = 0.23
+        x_left = xc - 0.70 * half_w
+        x_right = xc + 0.70 * half_w
+        y_bottom = yc - half_h
+        y_top = yc + half_h
+
+        ax.annotate(
+            "",
+            xy=(x_left, y_top),
+            xytext=(x_left, y_bottom),
+            arrowprops=dict(arrowstyle="-|>", lw=3.0, color=warm_arrow),
+        )
+        ax.annotate(
+            "",
+            xy=(x_right, y_bottom),
+            xytext=(x_right, y_top),
+            arrowprops=dict(arrowstyle="-|>", lw=3.0, color=cool_arrow),
+        )
+        top_arc = mpatches.FancyArrowPatch(
+            (x_left, y_top),
+            (x_right, y_top),
+            connectionstyle="arc3,rad=0.55",
+            arrowstyle="-|>",
+            mutation_scale=10,
+            lw=2.0,
+            color=connector,
+            alpha=0.95,
+        )
+        bottom_arc = mpatches.FancyArrowPatch(
+            (x_right, y_bottom),
+            (x_left, y_bottom),
+            connectionstyle="arc3,rad=-0.55",
+            arrowstyle="-|>",
+            mutation_scale=10,
+            lw=2.0,
+            color=connector,
+            alpha=0.95,
+        )
+        ax.add_patch(top_arc)
+        ax.add_patch(bottom_arc)
+
+    draw_cell(0.39)
+    draw_cell(0.61)
+
+    ax.annotate(
+        "hot rises\n(low density)",
+        xy=(0.31, 0.68),
+        xytext=(0.14, 0.78),
+        fontsize=11.0,
+        color=SLIDE_TEXT,
+        ha="left",
+        va="center",
+        bbox=dict(boxstyle="round,pad=0.28", facecolor=SLIDE_PANEL, edgecolor=warm_arrow),
+        arrowprops=dict(arrowstyle="-|>", color=warm_arrow, lw=1.8),
+    )
+    ax.annotate(
+        "cool sinks\n(high density)",
+        xy=(0.69, 0.33),
+        xytext=(0.86, 0.24),
+        fontsize=11.0,
+        color=SLIDE_TEXT,
+        ha="right",
+        va="center",
+        bbox=dict(boxstyle="round,pad=0.28", facecolor=SLIDE_PANEL, edgecolor=cool_arrow),
+        arrowprops=dict(arrowstyle="-|>", color=cool_arrow, lw=1.8),
+    )
+    ax.text(
+        0.50,
+        0.16,
+        "bulk motion\ntransports energy",
+        ha="center",
+        va="center",
+        fontsize=12.0,
+        color=SLIDE_TEXT,
+        fontweight="bold",
+        bbox=dict(boxstyle="round,pad=0.30", facecolor=SLIDE_PANEL, edgecolor=SLIDE_GRID),
+    )
+
+    fig.suptitle(
+        "Energy Transport in Stars: Radiation vs Convection",
+        fontsize=19.0,
+        fontweight="bold",
+        color=SLIDE_TEXT,
+        y=0.965,
+    )
+    fig.text(
+        0.50,
+        0.055,
+        "Radiation: many small steps $\\rightarrow$ slow diffusion\n"
+        "Convection: large-scale motion $\\rightarrow$ efficient transport",
+        ha="center",
+        va="center",
+        fontsize=12.4,
+        color=SLIDE_TEXT,
+        fontweight="bold",
+    )
+    fig.subplots_adjust(left=0.04, right=0.98, top=0.90, bottom=0.12, wspace=0.08)
+    save_slide_figure(fig, "radiation-vs-convection-transport.png")
+
+
+# ═════════════════════════════════════════════════════════════
+# Figure 7: Eddington Force Balance
+# Used in: R4 (Radiation Transport)
+# ═════════════════════════════════════════════════════════════
+def make_eddington_force_balance():
+    """Schematic of gravity and radiation balancing on a gas parcel."""
+    fig, ax = plt.subplots(figsize=(12.8, 6.5), dpi=220)
+    fig.patch.set_facecolor(SLIDE_BG)
+    ax.set_facecolor(SLIDE_BG)
+    ax.set_xlim(0, 12.5)
+    ax.set_ylim(0, 7.0)
+    ax.axis("off")
+
+    star_center = (2.8, 3.5)
+    for radius, color, alpha in [
+        (1.55, "#ffd8a8", 0.22),
+        (1.32, "#f9c97b", 0.34),
+        (1.08, "#f5b451", 0.72),
+        (0.82, "#f29f38", 0.95),
+    ]:
+        ax.add_patch(mpatches.Circle(star_center, radius, facecolor=color, edgecolor="none", alpha=alpha))
+
+    ax.text(
+        star_center[0],
+        star_center[1],
+        "star",
+        ha="center",
+        va="center",
+        fontsize=16,
+        color=SLIDE_TEXT,
+        fontweight="bold",
+        path_effects=[pe.withStroke(linewidth=3, foreground=SLIDE_BG, alpha=0.7)],
+    )
+
+    parcel_x = 8.35
+    parcel_y = 3.5
+    parcel = mpatches.FancyBboxPatch(
+        (parcel_x - 0.55, parcel_y - 0.45),
+        1.1,
+        0.9,
+        boxstyle="round,pad=0.05,rounding_size=0.12",
+        facecolor="#eef4fb",
+        edgecolor=SLIDE_GRID,
+        linewidth=1.8,
+    )
+    ax.add_patch(parcel)
+    ax.text(parcel_x, parcel_y, "gas\nparcel", ha="center", va="center",
+            fontsize=12.5, color=SLIDE_TEXT, fontweight="bold")
+
+    ax.plot(
+        [star_center[0] + 1.55, parcel_x - 0.55],
+        [star_center[1], parcel_y],
+        color=SLIDE_MUTED,
+        linestyle=(0, (4, 4)),
+        linewidth=1.6,
+    )
+    ax.text(5.55, 3.78, r"$r$", fontsize=15, color=SLIDE_MUTED, fontweight="bold")
+
+    for y_offset in (-0.45, 0.0, 0.45):
+        ax.annotate(
+            "",
+            xy=(parcel_x - 0.6, parcel_y + y_offset),
+            xytext=(star_center[0] + 1.7, parcel_y + y_offset),
+            arrowprops=dict(arrowstyle="-|>", lw=2.0, color=SLIDE_ROSE, alpha=0.55),
+        )
+    ax.text(
+        5.65,
+        4.55,
+        r"radiation flux $F = L/(4\pi r^2)$",
+        ha="center",
+        va="center",
+        fontsize=11.5,
+        color=SLIDE_ROSE,
+        bbox=dict(boxstyle="round,pad=0.26", facecolor=SLIDE_PANEL, edgecolor=SLIDE_ROSE),
+    )
+
+    ax.annotate(
+        "",
+        xy=(parcel_x - 1.55, parcel_y),
+        xytext=(parcel_x - 0.58, parcel_y),
+        arrowprops=dict(arrowstyle="-|>", lw=3.1, color=ACCENT_BLUE),
+    )
+    ax.text(
+        parcel_x - 2.55,
+        parcel_y + 0.48,
+        r"gravity" "\n" r"$g = GM/r^2$",
+        ha="center",
+        va="center",
+        fontsize=12,
+        color=ACCENT_BLUE,
+        fontweight="bold",
+        bbox=dict(boxstyle="round,pad=0.28", facecolor=SLIDE_PANEL, edgecolor=ACCENT_BLUE),
+    )
+
+    ax.annotate(
+        "",
+        xy=(parcel_x + 1.45, parcel_y),
+        xytext=(parcel_x + 0.58, parcel_y),
+        arrowprops=dict(arrowstyle="-|>", lw=3.1, color=SLIDE_ROSE),
+    )
+    ax.text(
+        parcel_x + 2.55,
+        parcel_y + 0.48,
+        r"radiation" "\n" r"$g_{\rm rad} = \kappa F/c$",
+        ha="center",
+        va="center",
+        fontsize=12,
+        color=SLIDE_ROSE,
+        fontweight="bold",
+        bbox=dict(boxstyle="round,pad=0.28", facecolor=SLIDE_PANEL, edgecolor=SLIDE_ROSE),
+    )
+
+    ax.text(
+        8.1,
+        5.95,
+        "At the Eddington limit:",
+        fontsize=15,
+        color=SLIDE_TEXT,
+        fontweight="bold",
+        ha="center",
+    )
+    ax.text(
+        8.1,
+        5.05,
+        r"$g_{\rm rad}=g$" "\n"
+        r"$\kappa L/(4\pi r^2 c)=GM/r^2$" "\n"
+        r"$L = L_{\rm Edd}$",
+        fontsize=13,
+        color=SLIDE_TEXT,
+        ha="center",
+        va="center",
+        bbox=dict(boxstyle="round,pad=0.34", facecolor=SLIDE_PANEL, edgecolor=SLIDE_GRID),
+    )
+
+    ax.text(
+        0.98,
+        0.10,
+        "Below $L_{\\rm Edd}$ gravity wins; near $L_{\\rm Edd}$ radiation can lift the gas.",
+        transform=ax.transAxes,
+        ha="right",
+        va="center",
+        fontsize=11.3,
+        color=SLIDE_MUTED,
+    )
+    ax.set_title("The Eddington Limit Is a Force-Balance Ceiling",
+                 fontsize=18.5, color=SLIDE_TEXT, fontweight="bold", pad=12)
+
+    fig.tight_layout()
+    save_slide_figure(fig, "eddington-force-balance.png")
+
+
+# ═════════════════════════════════════════════════════════════
+# Figure 7: Timescale Hierarchy
 # Used in: R1 (Ages & Lifetimes)
 # ═════════════════════════════════════════════════════════════
 def make_timescale_hierarchy():
@@ -2113,6 +2912,11 @@ def main():
 
     make_binding_energy_curve()
     make_random_walk()
+    make_optical_depth_slab()
+    make_random_walk_scaling()
+    make_radiative_flux_opacity()
+    make_radiation_vs_convection_transport()
+    make_eddington_force_balance()
     make_timescale_hierarchy()
     make_timescales_vs_mass()
     make_main_sequence_lifetime_vs_mass()

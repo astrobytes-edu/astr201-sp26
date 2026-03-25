@@ -405,6 +405,15 @@ random_walk:
     - "Constant step size (uniform medium)"
     - "Three-dimensional random walk (the $\\sqrt{N}$ result holds in any dimension)"
 
+radiative_diffusion_flux:
+  predicts: "Given the opacity $\\kappa$, density $\\rho$, and temperature profile $T(r)$, it predicts the radiative energy flux $F_\\text{rad}$."
+  depends: "Scales as $F \\propto -c\\,d(aT^4)/dr /(\\kappa\\rho)$. Steeper temperature gradients increase the flux; higher opacity or density suppress it."
+  says: "This is the macroscopic version of the random walk. Energy diffuses from hot regions to cool regions, and opacity throttles how efficiently that happens."
+  assumptions:
+    - "Diffusion approximation (photon mean free path $\\ll r$)"
+    - "Local thermodynamic equilibrium"
+    - "Radiation is the dominant transport mechanism in the region of interest"
+
 radiative_diffusion_luminosity:
   predicts: "Given the opacity $\\kappa$, density $\\rho$, temperature profile $T(r)$, and radius $r$, it predicts the luminosity carried outward by radiative diffusion."
   depends: "Scales as $L \\propto r^2 c\\,|d(aT^4)/dr|/(\\kappa\\rho)$. Steeper temperature gradients or lower opacity allow faster energy flow."

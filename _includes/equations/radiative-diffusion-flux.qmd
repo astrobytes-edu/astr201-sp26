@@ -1,0 +1,7 @@
+$$
+F_\text{rad}
+=
+-\frac{c}{3\kappa\rho}\frac{d(aT^4)}{dr}
+=
+-\frac{4acT^3}{3\kappa\rho}\frac{dT}{dr}
+$$ {#eq-radiative-diffusion-flux}
