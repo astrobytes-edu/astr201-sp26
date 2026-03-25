@@ -6,7 +6,7 @@ draft: false
 ## Assignments
 
 ::: {.callout-tip}
-**Current cycle:** [Homework 6](astr201-hw6.qmd) posts Tuesday, March 10, 2026 and is due Tuesday, March 17, 2026 at 11:59 pm. [Growth Memo 1](../handouts/growth-memo-1.qmd) also posts Sunday, March 15, 2026 and is due Friday, March 20, 2026 at 11:59 pm. [Homework 5 solutions](solutions/astr201-hw5-solutions.qmd) are now posted.
+**Current cycle:** [Homework 7](astr201-hw7.qmd) was due Tuesday, March 24, 2026 at 11:59 pm. [Homework 7 solutions](solutions/astr201-hw7-solutions.qmd) are now posted, and the Homework 7 grade memo is due Friday, March 27, 2026 at 11:59 pm.
 :::
 
 | Assignment | Posted | Due | Grade Memo Due | Solutions |
@@ -14,7 +14,7 @@ draft: false
 | Homework 10: Cosmology Synthesis — Hubble Law, Expansion, Big Bang | Wed Apr 22 | Tues Apr 28 | Fri May 1 | — |
 | Homework 9: Galaxies I — ISM, Star Formation, and Galaxy Structure | Wed Apr 15 | Tues Apr 21 | Fri Apr 24 | — |
 | Homework 8: Stellar Evolution + Compact Remnants (Midterm 2 Prep) | Wed Apr 1 | Tues Apr 7 | Fri Apr 10 | — |
-| Homework 7: Stellar Structure II — Fusion Ignition + Main-Sequence Scalings | Wed Mar 18 | Tues Mar 24 | Fri Mar 27 | — |
+| [Homework 7](astr201-hw7.qmd): Stellar Structure II — Fusion Ignition + Main-Sequence Scalings | Wed Mar 18 | Tues Mar 24 | Fri Mar 27 | [Solutions](solutions/astr201-hw7-solutions.qmd) |
 | [Homework 6](astr201-hw6.qmd): Quantum Mechanics, Stellar Alchemy, and a Trailblazer | Tues Mar 10 | Tues Mar 17 | — | — |
 | [Growth Memo 1](../handouts/growth-memo-1.qmd): Reflect, celebrate, and plan | Sun Mar 15 | Fri Mar 20 | — | — |
 | [Homework 5](astr201-hw5.qmd) | Wed Feb 25 | Tues Mar 3 | Fri Mar 6 | [Solutions](solutions/astr201-hw5-solutions.qmd) |

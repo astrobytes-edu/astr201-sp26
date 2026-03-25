@@ -1,0 +1,519 @@
+---
+title: "Homework 7 Solutions"
+subtitle: "Stellar Structure II — Fusion Ignition + Main-Sequence Scalings"
+author: "Dr. Anna Rosen"
+date: "2026-03-25"
+description: "Solutions to Homework 7."
+draft: false
+course: ASTR 201
+module: "Module 3 Lectures 1–3 (ages, equilibrium, fusion)"
+---
+
+::: {.callout-note}
+**Student note:** These are model solutions written to show reasoning, units, and checks. Your own work can be shorter if your setup, logic, and interpretation are clear.
+
+**Grade memo note:** Use these solutions to identify what you understood, what broke, and what you will do differently next time.
+:::
+
+---
+
+## Part A — Stellar Clocks and Main-Sequence Lifetimes
+
+## Problem 1 — Fuel Is Not Lifetime
+
+<!-- Problem: Conceptual / Connection / O→M→I / Tools: Scaling/Ratio, Uncertainty/Assumptions / ⭐⭐ -->
+
+**Restatement:** Explain why more stellar mass does not automatically mean a longer main-sequence lifetime.
+
+**Key insight:** Lifetime depends on both the fuel reservoir and the burn rate. Mass adds fuel, but luminosity rises much faster.
+
+**Answer:**
+
+- (a) The statement is incomplete because lifetime is not set by fuel alone. A more massive star has more hydrogen, but it also radiates energy much faster.
+- (b) Along the main sequence, the burn rate, represented by the luminosity, grows faster with mass than the accessible fuel supply does.
+- (c) Since
+  $$
+  \tau_{\text{nuc}} \propto \frac{M}{L},
+  $$
+  and $L$ rises steeply with mass, the ratio $M/L$ gets smaller for high-mass stars. That means massive stars exhaust their fuel more quickly and die young.
+
+**Sanity check:** If luminosity increases by a factor much larger than the mass increase, the star must spend its fuel faster. $\checkmark$
+
+**Common misconception:** “More fuel” sounds like “longer lifetime,” but in stars the burn rate wins.
+
+---
+
+## Problem 2 — Solar-Normalized Nuclear Lifetime
+
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Scaling/Ratio, Energy / ⭐⭐ -->
+
+**Given:** $M = 2\,M_\odot$, $L = 10\,L_\odot$, $\tau_{\text{nuc},\odot} \approx 10~\text{Gyr}$.
+
+**Find:** The lifetime ratio $\tau_{\text{nuc}}/\tau_{\text{nuc},\odot}$ and the star’s lifetime.
+
+**Equation:**
+$$
+\frac{\tau_{\text{nuc}}}{\tau_{\text{nuc},\odot}}
+\approx
+\left(\frac{M}{M_\odot}\right)
+\left(\frac{L}{L_\odot}\right)^{-1}
+$$
+
+**Steps:**
+
+**(a)** Compute the dimensionless ratio:
+$$
+\frac{\tau_{\text{nuc}}}{\tau_{\text{nuc},\odot}}
+=
+\frac{2}{10}
+=
+0.20
+$$
+
+**(b)** Multiply by the Sun’s lifetime:
+$$
+\tau_{\text{nuc}}
+=
+0.20 \times 10~\text{Gyr}
+=
+2.0~\text{Gyr}
+$$
+
+$$
+\boxed{\tau_{\text{nuc}} \approx 2.0~\text{Gyr}}
+$$
+
+**(c)** The star lives only about one-fifth as long as the Sun because its luminosity is much larger relative to its extra fuel.
+
+**Unit check:** $M/M_\odot$ and $L/L_\odot$ are dimensionless, so the ratio is dimensionless before we multiply by Gyr. $\checkmark$
+
+**Sanity check:** A star with $10\times$ the Sun’s luminosity should not live as long as the Sun if it has only $2\times$ as much fuel. $\checkmark$
+
+---
+
+## Problem 3 — Turnoff as a Clock
+
+<!-- Problem: Synthesis / Connection / O→M→I / Tools: Scaling/Ratio, Model-Inversion / ⭐⭐ -->
+
+**Restatement:** Use a $10\,M_\odot$ turnoff star to estimate the age of a young cluster and explain the inference chain.
+
+**Key elements:**
+
+- Use $\tau_{\text{nuc}} \propto M^{-2.5}$
+- Normalize to the Sun’s $\sim 10~\text{Gyr}$ lifetime
+- Identify the direct observable and the model
+- Explain why a massive turnoff implies youth
+
+**Sample response:**
+
+The lifetime scales as
+$$
+\tau_{\text{nuc}}
+\approx
+10~\text{Gyr}
+\left(\frac{10}{1}\right)^{-2.5}.
+$$
+
+Since
+$$
+10^{-2.5} \approx 3.16 \times 10^{-3},
+$$
+we get
+$$
+\tau_{\text{nuc}}
+\approx
+10 \times 3.16 \times 10^{-3}~\text{Gyr}
+\approx
+3.16 \times 10^{-2}~\text{Gyr}
+\approx
+31.6~\text{Myr}.
+$$
+
+So the cluster age scale is about
+$$
+\boxed{\tau_{\text{cluster}} \sim 3 \times 10^7~\text{yr}}
+$$
+
+The direct observable is the cluster’s main-sequence turnoff, or equivalently the hottest and most massive star still on the main sequence. The model is the main-sequence lifetime scaling, which maps mass to lifetime. The inference is that the cluster age is approximately the lifetime of the turnoff star. Because a B2 star is hot and massive, it would disappear from the main sequence quickly. If it is still there, the cluster must still be young.
+
+**Grading guidance:** Full credit requires the numerical age scale, explicit observable/model/inference language, and a physical explanation of why a blue or massive turnoff implies youth.
+
+---
+
+## Part B — Hydrostatic Support and Core Conditions
+
+## Problem 4 — Pressure Does Not Hold a Star Up
+
+<!-- Problem: Conceptual / Connection / O→M→I / Tools: Force/Balance / ⭐⭐ -->
+
+**Restatement:** Explain why stars need a pressure gradient, not just pressure.
+
+**Key insight:** Support comes from a difference in pressure across a layer. Uniform pressure gives no net force.
+
+**Answer:**
+
+- (a) If
+  $$
+  \frac{dP}{dr} = 0,
+  $$
+  pressure is the same on both sides of every shell, so the pressure forces cancel. Gravity would be unopposed, and the star would collapse on the dynamical timescale.
+- (b) If
+  $$
+  \frac{dP}{dr} > 0,
+  $$
+  pressure increases outward. Then the pressure-gradient force points inward, in the same direction as gravity, so the gas would be driven inward even more strongly.
+- (c) Hydrostatic equilibrium requires
+  $$
+  \frac{dP}{dr} < 0
+  $$
+  because pressure must decrease outward for the net pressure force to point outward and balance gravity.
+
+**Sanity check:** Only a higher pressure below a shell than above it can push that shell outward. $\checkmark$
+
+**Common misconception:** “High pressure” sounds supportive, but without a gradient it does nothing dynamically.
+
+---
+
+## Problem 5 — Central Pressure from Hydrostatic Scaling
+
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Scaling/Ratio, Force/Balance, Unit-Conversion / ⭐⭐ -->
+
+**Given:** 
+$$
+P_c \sim \frac{G M^2}{R^4},
+\qquad
+G = 6.674 \times 10^{-8},
+\qquad
+M_\odot = 2.0 \times 10^{33}~\text{g},
+\qquad
+R_\odot = 7.0 \times 10^{10}~\text{cm}.
+$$
+
+**Find:** The scaling change for $R \rightarrow R/2$, then the Sun’s central pressure in $\text{dyn/cm}^2$ and atmospheres.
+
+**Steps:**
+
+**(a)** At fixed mass,
+$$
+P_c \propto R^{-4}.
+$$
+So shrinking the radius from $R$ to $R/2$ gives
+$$
+\frac{P_{c,\text{new}}}{P_{c,\text{old}}}
+=
+\left(\frac{R}{R/2}\right)^4
+=
+2^4
+=
+16.
+$$
+
+So the required central pressure increases by a factor of
+$$
+\boxed{16}.
+$$
+
+**(b)** Estimate the Sun’s central pressure:
+$$
+P_c \sim \frac{(6.674 \times 10^{-8})(2.0 \times 10^{33})^2}{(7.0 \times 10^{10})^4}.
+$$
+
+Evaluate the powers:
+$$
+(2.0 \times 10^{33})^2 = 4.0 \times 10^{66},
+\qquad
+(7.0 \times 10^{10})^4 \approx 2.4 \times 10^{43}.
+$$
+
+Then
+$$
+P_c \sim \frac{(6.674 \times 10^{-8})(4.0 \times 10^{66})}{2.4 \times 10^{43}}
+\approx
+1.1 \times 10^{16}~\text{g}~\text{cm}^{-1}~\text{s}^{-2}.
+$$
+
+Since
+$$
+1~\text{g}~\text{cm}^{-1}~\text{s}^{-2} = 1~\text{dyn/cm}^2,
+$$
+we get
+$$
+\boxed{P_{c,\odot} \sim 1.1 \times 10^{16}~\text{dyn/cm}^2}.
+$$
+
+**(c)** Convert to atmospheres:
+$$
+P_{c,\odot}
+\approx
+\frac{1.1 \times 10^{16}~\text{dyn/cm}^2}{1.013 \times 10^6~\text{dyn/cm}^2/\text{atm}}
+\approx
+1.1 \times 10^{10}~\text{atm}.
+$$
+
+$$
+\boxed{P_{c,\odot} \sim 1.1 \times 10^{10}~\text{atm}}
+$$
+
+**(d)** Compactness matters strongly because the pressure requirement scales as $R^{-4}$, so even modest shrinking produces a very large increase in the needed central pressure.
+
+**Unit check:** 
+$$
+\left[\frac{G M^2}{R^4}\right]
+=
+\frac{\left(\text{cm}^3~\text{g}^{-1}~\text{s}^{-2}\right)\left(\text{g}^2\right)}{\text{cm}^4}
+=
+\text{g}~\text{cm}^{-1}~\text{s}^{-2}
+=
+\text{dyn/cm}^2.
+$$
+$\checkmark$
+
+**Sanity check:** The $R^{-4}$ dependence means compact stars should require enormous interior pressures, so a value of billions of atmospheres is physically plausible. $\checkmark$
+
+---
+
+## Problem 6 — Core Temperature from Gravity
+
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Unit-Conversion, Force/Balance, Model-Inversion / ⭐⭐ -->
+
+**Given:**
+$$
+T_c \sim \frac{\mu G M m_p}{k_B R},
+\qquad
+\mu = 0.6.
+$$
+
+**Find:** The Sun’s core temperature, then the relative and absolute core temperature of a $10\,M_\odot$ main-sequence star.
+
+**Steps:**
+
+**(a)** For the Sun,
+$$
+T_{c,\odot}
+\sim
+\frac{(0.6)(6.674 \times 10^{-8})(2.0 \times 10^{33})(1.67 \times 10^{-24})}{(1.38 \times 10^{-16})(7.0 \times 10^{10})}.
+$$
+
+Evaluate numerator and denominator:
+$$
+\text{numerator} \approx 1.34 \times 10^2,
+\qquad
+\text{denominator} \approx 9.66 \times 10^{-6}.
+$$
+
+So
+$$
+T_{c,\odot}
+\approx
+\frac{1.34 \times 10^2}{9.66 \times 10^{-6}}~\text{K}
+\approx
+1.38 \times 10^7~\text{K}.
+$$
+
+Convert to MK:
+$$
+1.38 \times 10^7~\text{K} = 13.8~\text{MK}.
+$$
+
+$$
+\boxed{T_{c,\odot} \approx 1.4 \times 10^7~\text{K} \approx 14~\text{MK}}
+$$
+
+**(b)** Using
+$$
+T_c \propto \frac{M}{R}
+\qquad \text{and} \qquad
+R \propto M^{0.8},
+$$
+we get
+$$
+T_c \propto M^{0.2}.
+$$
+
+For a $10\,M_\odot$ star,
+$$
+\frac{T_{c,10}}{T_{c,\odot}} \approx 10^{0.2} \approx 1.58.
+$$
+
+$$
+\boxed{\frac{T_{c,10}}{T_{c,\odot}} \approx 1.6}
+$$
+
+**(c)** Then
+$$
+T_{c,10}
+\approx
+1.58 \times 14~\text{MK}
+\approx
+22~\text{MK}.
+$$
+
+$$
+\boxed{T_{c,10} \approx 2.2 \times 10^7~\text{K} \approx 22~\text{MK}}
+$$
+
+**(d)** This is surprising because a $10\,M_\odot$ star is enormously more luminous than the Sun, yet its core is only modestly hotter. The huge luminosity differences along the main sequence are not caused by core temperatures differing by orders of magnitude.
+
+**Unit check:** The units in
+$$
+\frac{\mu G M m_p}{k_B R}
+$$
+reduce to kelvin because the gravitational-energy scale per particle is being compared to the thermal-energy scale. $\checkmark$
+
+**Sanity check:** A core temperature of order $10^7~\text{K}$ is exactly the scale the reading argues gravity should produce. $\checkmark$
+
+---
+
+## Problem 7 — Losing Energy, Getting Hotter
+
+<!-- Problem: Synthesis / Connection / O→M→I / Tools: Energy, Model-Inversion / ⭐⭐ -->
+
+**Restatement:** Explain why a protostar heats up as it radiates energy away.
+
+**Key elements:**
+
+- Use the virial theorem
+- Explain why total energy becomes more negative
+- Connect contraction to larger thermal energy
+- Name the phenomenon negative heat capacity
+
+**Sample response:**
+
+The virial theorem says
+$$
+2K_{\text{th}} + U_{\text{grav}} = 0,
+$$
+so
+$$
+K_{\text{th}} = -\frac{1}{2}U_{\text{grav}}.
+$$
+
+When a protostar radiates energy, its total energy decreases and becomes more negative. A self-gravitating object responds by contracting into a more tightly bound state, so $U_{\text{grav}}$ becomes more negative. Because the thermal energy is tied to the gravitational energy through the virial theorem, a more negative $U_{\text{grav}}$ means a larger $K_{\text{th}}$. Larger thermal energy means higher typical particle speeds, so the core temperature rises. This is called **negative heat capacity**: unlike an everyday object, a bound self-gravitating system gets hotter as it loses energy. That is exactly why gravitational contraction can drive a protostar toward fusion ignition.
+
+**Grading guidance:** Full credit requires contraction, more negative gravitational energy, higher thermal energy, and explicit use of the term negative heat capacity.
+
+---
+
+## Part C — Fusion Ignition and Energy Release
+
+## Problem 8 — Tunneling Makes Fusion Possible; the Weak Interaction Makes It Slow
+
+<!-- Problem: Conceptual / Connection / O→M→I / Tools: Model-Inversion / ⭐⭐ -->
+
+**Restatement:** Distinguish the role of tunneling from the role of the weak interaction in pp fusion.
+
+**Key insight:** Tunneling solves the barrier problem, but the weak interaction sets the rate.
+
+**Answer:**
+
+- (a) Quantum tunneling solves the problem that solar-core protons do not have enough classical thermal energy to overcome the Coulomb barrier. It allows rare close approaches anyway.
+- (b) The first step of the pp chain is still extremely slow because one proton must convert into a neutron during
+  $$
+  p + p \rightarrow d + e^+ + \nu_e.
+  $$
+  That conversion is controlled by the weak interaction.
+- (c) The true bottleneck is the rare successful weak conversion that forms deuterium, not the existence of proton collisions by itself.
+
+**Sanity check:** If tunneling alone set the timescale, the Sun would burn much faster than it actually does. $\checkmark$
+
+**Common misconception:** “The Sun lives a long time because proton collisions are rare.” In reality, collisions are abundant; successful weak conversions are rare.
+
+---
+
+## Problem 9 — Classical Fusion Should Fail
+
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Unit-Conversion, Energy, Order-of-Magnitude / ⭐⭐ -->
+
+**Given:** 
+$$
+\frac{3}{2}k_B T \approx 1.44~\text{MeV},
+\qquad
+k_B = 8.617 \times 10^{-5}~\text{eV/K},
+\qquad
+T_{c,\odot} \approx 1.5 \times 10^7~\text{K}.
+$$
+
+**Find:** The classical barrier-crossing temperature and its ratio to the solar-core temperature.
+
+**Steps:**
+
+Convert the barrier energy to eV:
+$$
+1.44~\text{MeV} = 1.44 \times 10^6~\text{eV}.
+$$
+
+Solve for $T$:
+$$
+T
+\approx
+\frac{2(1.44 \times 10^6~\text{eV})}{3(8.617 \times 10^{-5}~\text{eV/K})}.
+$$
+
+Numerically,
+$$
+T \approx 1.11 \times 10^{10}~\text{K}.
+$$
+
+$$
+\boxed{T_{\text{classical}} \approx 1.1 \times 10^{10}~\text{K}}
+$$
+
+Now compare to the solar core:
+$$
+\frac{T_{\text{classical}}}{T_{c,\odot}}
+\approx
+\frac{1.11 \times 10^{10}}{1.5 \times 10^7}
+\approx
+7.4 \times 10^2.
+$$
+
+So the classical temperature is about
+$$
+\boxed{7.4 \times 10^2 \text{ times larger}}
+$$
+than the actual solar-core temperature.
+
+**(d)** This means the Sun is nowhere near hot enough for classical proton-proton fusion. Stars need quantum tunneling because classical thermal motion alone cannot explain fusion.
+
+**Unit check:** The eV units cancel in the ratio $E/k_B$, leaving kelvin. $\checkmark$
+
+**Sanity check:** The answer should be vastly larger than the solar-core temperature, not just slightly larger. $\checkmark$
+
+---
+
+## Problem 10 — From Mass Deficit to the Iron Limit
+
+<!-- Problem: Synthesis / Connection / O→M→I / Tools: Energy, Model-Inversion / ⭐⭐⭐ -->
+
+**Restatement:** Compute the pp-chain energy release from the mass deficit, then explain why fusion stops being exothermic near iron.
+
+**Key elements:**
+
+- Convert $\Delta m$ to energy
+- Explain binding energy per nucleon
+- Distinguish light nuclei from iron-region nuclei
+
+**Sample response:**
+
+Use the direct conversion
+$$
+1~\text{amu} = 931.5~\text{MeV}/c^2.
+$$
+
+Then
+$$
+E = \Delta m c^2 = (0.02872~\text{amu})(931.5~\text{MeV}/c^2)c^2.
+$$
+
+So
+$$
+E \approx 26.7~\text{MeV}.
+$$
+
+$$
+\boxed{E_{\text{pp,net}} \approx 26.7~\text{MeV}}
+$$
+
+Hydrogen-to-helium fusion is exothermic because the helium product is more tightly bound per nucleon than the separated hydrogen nuclei. That means the products have lower total mass-energy, and the difference appears as released energy. Carbon fusion can still release energy because carbon lies below the iron/nickel peak in binding energy per nucleon. Fusion can still move nuclei upward on that curve. Iron is different: nuclei near the iron/nickel region are already close to the maximum binding energy per nucleon, so further fusion would move them downward on the curve and would require energy input instead of releasing it.
+
+**Grading guidance:** Full credit requires the correct MeV value and a binding-energy-per-nucleon explanation that clearly distinguishes carbon from iron.

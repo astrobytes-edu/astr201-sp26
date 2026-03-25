@@ -719,6 +719,97 @@ The hierarchy spans a factor of $\sim 10^{10}$ from fastest to slowest. This eno
 
 ---
 
+## Practice Problems
+
+Use these values unless a problem states otherwise:
+
+- $G = 6.674 \times 10^{-8}~\text{cm}^3~\text{g}^{-1}~\text{s}^{-2}$
+- $M_\odot = 2.0 \times 10^{33}~\text{g}$
+- $R_\odot = 7.0 \times 10^{10}~\text{cm}$
+- $L_\odot = 3.8 \times 10^{33}~\text{erg/s}$
+- $c = 3.0 \times 10^{10}~\text{cm/s}$
+- $\tau_{\text{nuc},\odot} \approx 10~\text{Gyr}$
+- Age of the universe $\approx 13.8~\text{Gyr}$
+
+### Conceptual
+
+<!-- Problem: Conceptual / Connection / O→M→I / Tools: Scaling/Ratio, Uncertainty/Assumptions / ⭐⭐ -->
+1. ⭐⭐ **Fuel is not lifetime.** A student says, “A more massive main-sequence star should live longer because it has more hydrogen fuel.”
+   - (a) Explain why this statement is incomplete.
+   - (b) In the lifetime logic $\tau_{\text{nuc}} \sim \text{fuel}/\text{burn rate}$, which term grows faster with stellar mass along the main sequence?
+   - (c) Use the scaling $\tau_{\text{nuc}} \propto M/L$ to explain why high-mass stars die young.
+
+<!-- Problem: Conceptual / Connection / — / Tools: Model-Inversion, Uncertainty/Assumptions / ⭐ -->
+2. ⭐ **Which clock answers which question?** Match each question to the most relevant stellar timescale, and justify each match in one sentence.
+   - (a) How quickly would the Sun respond if pressure support suddenly failed?
+   - (b) How long could the Sun shine if gravity were its only energy source?
+   - (c) How long can core hydrogen fusion sustain the Sun’s present luminosity?
+
+<!-- Problem: Conceptual / Connection / O→M→I / Tools: Data/Graph, Model-Inversion / ⭐⭐ -->
+3. ⭐⭐ **Turnoff color as an age clue.** Cluster A still has blue main-sequence turnoff stars, while Cluster B’s turnoff is much redder and cooler.
+   - (a) Which cluster is older?
+   - (b) What is the direct observable in this comparison?
+   - (c) What model connects that observable to the cluster age?
+
+### Calculation
+
+<!-- Problem: Calculation:Full / Application / — / Tools: Dimensional, Unit-Conversion / ⭐ -->
+4. ⭐ **The Sun’s dynamical timescale.** The Sun’s mean density is $\bar{\rho}_\odot \approx 1.4~\text{g/cm}^3$.
+   - (a) Use
+     $$
+     \tau_{\text{dyn}} \sim \frac{1}{\sqrt{G\bar{\rho}}}
+     $$
+     to estimate the Sun’s dynamical timescale in seconds.
+   - (b) Convert your answer to minutes.
+   - (c) Explain in one sentence what this timescale means physically.
+
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Energy, Dimensional / ⭐⭐ -->
+5. ⭐⭐ **Kelvin-Helmholtz timescale for the Sun.**
+   - (a) Use
+     $$
+     \tau_{\text{KH}} \sim \frac{GM_\odot^2}{R_\odot L_\odot}
+     $$
+     to estimate the Sun’s Kelvin-Helmholtz timescale in seconds.
+   - (b) Convert your answer to Myr.
+   - (c) If the Sun had the same mass and radius but twice the luminosity, by what factor would $\tau_{\text{KH}}$ change?
+
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Energy, Scaling/Ratio / ⭐⭐ -->
+6. ⭐⭐ **Nuclear lifetime, from the Sun to a heavier star.**
+   - (a) For a Sun-like star, use
+     $$
+     \tau_{\text{nuc}} \sim \frac{\varepsilon f_M M c^2}{L}
+     $$
+     with $\varepsilon = 0.007$ and $f_M = 0.10$ to estimate the Sun’s nuclear lifetime.
+   - (b) Use solar normalization to estimate the main-sequence lifetime of a star with $M = 2\,M_\odot$ and $L = 10\,L_\odot$.
+   - (c) Compare your answer in part (b) to the Sun’s lifetime.
+
+### Synthesis
+
+<!-- Problem: Synthesis / Connection / O→M→I / Tools: Scaling/Ratio, Order-of-Magnitude, Model-Inversion / ⭐⭐ -->
+7. ⭐⭐ **Why M dwarfs live so long.** An idealized fully convective M dwarf has
+   $$
+   \frac{M}{M_\odot} = 0.2,
+   \qquad
+   \frac{L}{L_\odot} \approx (0.2)^{3.5} \approx 0.0036,
+   \qquad
+   \frac{f_M}{f_{M,\odot}} \approx 10.
+   $$
+   - (a) Estimate its nuclear lifetime in units of the Sun’s lifetime.
+   - (b) Convert that result to years.
+   - (c) Compare the result to the age of the universe and explain what that implies about the faintest red dwarfs.
+
+<!-- Problem: Synthesis / Connection / O→M→I / Tools: Scaling/Ratio, Model-Inversion, Uncertainty/Assumptions / ⭐⭐ -->
+8. ⭐⭐ **Turnoff as a clock.** A young cluster still contains a B2 main-sequence star with mass $M \approx 10\,M_\odot$.
+   - (a) Use the scaling
+     $$
+     \tau_{\text{nuc}} \propto M^{-2.5}
+     $$
+     to estimate the star’s main-sequence lifetime and therefore the cluster age scale.
+   - (b) State the observable, model, and inference in this dating method.
+   - (c) Explain why the star can remain close to hydrostatic equilibrium while still evolving over millions of years.
+
+---
+
 ## Reference Tables
 
 ### The Three Stellar Timescales

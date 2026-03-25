@@ -1,0 +1,271 @@
+---
+title: "Homework 7"
+subtitle: "Stellar Structure II — Fusion Ignition + Main-Sequence Scalings"
+author: "Dr. Anna Rosen"
+course: ASTR 201
+module: "Module 3 Lectures 1–3 (ages, equilibrium, fusion)"
+lectures: "Module 3 Lectures 1–3 (ages, equilibrium, fusion)"
+math-level: symbolic_with_interpretation
+draft: false
+estimated-time: "4–6 hours"
+due: "Tuesday, March 24, 2026 at 11:59 pm"
+grade-memo-due: "Friday, March 27, 2026 at 11:59 pm"
+submission: "Canvas; upload a single clearly scanned PDF or a legible PDF export"
+format:
+  html:
+    toc: true
+  pdf:
+    toc: false
+    geometry: margin=1in
+    fontsize: 11pt
+---
+
+{{< hwmeta >}}
+
+## Learning Objectives
+
+- Use lifetime scalings to explain why massive stars evolve quickly and to estimate ages from the main-sequence turnoff.
+- Explain hydrostatic equilibrium as a balance between gravity and a pressure gradient, then estimate central pressure and core temperature from mass and radius.
+- Use the virial theorem to explain why a self-gravitating protostar gets hotter as it loses energy.
+- Explain why proton-proton fusion is classically impossible, why quantum tunneling makes it possible, and why the weak interaction sets the pace.
+- Connect mass deficit and binding energy per nucleon to the energy released by fusion and to the iron limit.
+
+## Concept Throughline
+
+- **A star’s life is set by fuel divided by burn rate.**
+- **A star is held up by a pressure gradient, not by pressure alone.**
+- **Gravity naturally drives stellar cores to temperatures of order $10^7~\text{K}$.**
+- **Fusion works because quantum mechanics opens the door, but the weak interaction keeps the Sun from burning out quickly.**
+- **Fusion releases energy only when it moves nuclei upward in binding energy per nucleon.**
+
+## Prerequisites
+
+- Ratio methods and scientific notation
+- Unit tracking in CGS
+- Observable → model → inference reasoning from earlier modules
+- Reading 1–3 of Module 3
+
+## Relevant Sources (Module-Based)
+
+- [Module 3 (reading): Lecture 1 — The Clock Is Ticking: Stellar Ages and Lifetimes](https://astrobytes-edu.github.io/astr201-sp26/modules/module-03/readings/lecture-01-ages-lifetimes.html)
+- [Module 3 (reading): Lecture 2 — The Balancing Act: Hydrostatic Equilibrium](https://astrobytes-edu.github.io/astr201-sp26/modules/module-03/readings/lecture-02-hydrostatic-equilibrium.html)
+- [Module 3 (reading): Lecture 3 — Why Stars Shine: Nuclear Fusion](https://astrobytes-edu.github.io/astr201-sp26/modules/module-03/readings/lecture-03-nuclear-fusion.html)
+
+::: {.callout-note}
+**Before you start:** Review the [Homework Guidelines](hw-tips.qmd) for required format and tools.
+:::
+
+::: {.callout-tip}
+**HW7 note:** This assignment asks you to do more than get numbers. For every major result, say what the number means physically. If you only hand in arithmetic, you are leaving points on the table.
+:::
+
+::: {.callout-note}
+Use these values and relations unless a problem states otherwise:
+
+- Solar-normalized nuclear lifetime for similar hydrogen-burning main-sequence stars:
+  $$
+  \frac{\tau_{\text{nuc}}}{\tau_{\text{nuc},\odot}}
+  \approx
+  \left(\frac{M}{M_\odot}\right)
+  \left(\frac{L}{L_\odot}\right)^{-1}
+  $$
+  with $\tau_{\text{nuc},\odot} \approx 10~\text{Gyr}$.
+- Central-pressure scaling:
+  $$
+  P_c \sim \frac{G M^2}{R^4}
+  $$
+- Core-temperature scaling:
+  $$
+  T_c \sim \frac{\mu G M m_p}{k_B R}
+  $$
+- Mass-energy relation:
+  $$
+  E = \Delta m c^2
+  $$
+- Solar and physical constants:
+  $$
+  G = 6.674 \times 10^{-8}~\text{cm}^3~\text{g}^{-1}~\text{s}^{-2},
+  \quad
+  M_\odot = 2.0 \times 10^{33}~\text{g},
+  \quad
+  R_\odot = 7.0 \times 10^{10}~\text{cm},
+  $$
+  $$
+  m_p = 1.67 \times 10^{-24}~\text{g},
+  \quad
+  k_B = 1.38 \times 10^{-16}~\text{erg}~\text{K}^{-1} = 8.617 \times 10^{-5}~\text{eV/K},
+  \quad
+  \mu = 0.6,
+  $$
+  $$
+  c = 3.0 \times 10^{10}~\text{cm/s},
+  \quad
+  1~\text{amu} = 931.5~\text{MeV}/c^2,
+  \quad
+  1~\text{atm} = 1.013 \times 10^6~\text{dyn/cm}^2.
+  $$
+- Solar-core temperature:
+  $$
+  T_{c,\odot} \approx 1.5 \times 10^7~\text{K}
+  $$
+- Head-on proton-proton barrier scale:
+  $$
+  E_{\text{barrier}} \approx 1.44~\text{MeV}
+  $$
+:::
+
+::: {.callout-note}
+**Required reporting format:**
+
+- Every numeric answer must include units.
+- Include a one-line sanity check for each calculation problem.
+- For conceptual and synthesis problems, write in complete sentences.
+- When you use a scaling relation, say what assumption makes that scaling valid.
+:::
+
+---
+
+## Problems (10 total)
+
+### Part A — Stellar Clocks and Main-Sequence Lifetimes
+
+<!-- Problem: Conceptual / Connection / O→M→I / Tools: Scaling/Ratio, Uncertainty/Assumptions / ⭐⭐ -->
+### Problem 1 — Fuel Is Not Lifetime
+
+A student says, “A more massive main-sequence star should live longer because it has more hydrogen fuel.”
+
+- (a) Explain why this statement is incomplete.
+- (b) In the lifetime logic $\tau_{\text{nuc}} \sim \text{fuel}/\text{burn rate}$, which term grows faster with stellar mass along the main sequence?
+- (c) Use the scaling $\tau_{\text{nuc}} \propto M/L$ to explain why high-mass stars die young.
+
+---
+
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Scaling/Ratio, Energy / ⭐⭐ -->
+### Problem 2 — Solar-Normalized Nuclear Lifetime
+
+For similar hydrogen-burning main-sequence stars, use
+$$
+\frac{\tau_{\text{nuc}}}{\tau_{\text{nuc},\odot}}
+\approx
+\left(\frac{M}{M_\odot}\right)
+\left(\frac{L}{L_\odot}\right)^{-1},
+\qquad
+\tau_{\text{nuc},\odot} \approx 10~\text{Gyr}.
+$$
+
+A star has $M = 2\,M_\odot$ and $L = 10\,L_\odot$.
+
+- (a) Compute $\tau_{\text{nuc}}/\tau_{\text{nuc},\odot}$.
+- (b) Estimate the star’s main-sequence lifetime in Gyr.
+- (c) In one sentence, explain physically why the lifetime is shorter than the Sun’s.
+
+---
+
+<!-- Problem: Synthesis / Connection / O→M→I / Tools: Scaling/Ratio, Model-Inversion / ⭐⭐ -->
+### Problem 3 — Turnoff as a Clock
+
+A young cluster still contains a B2 main-sequence star with mass $M \approx 10\,M_\odot$.
+
+- (a) Use the scaling
+  $$
+  \tau_{\text{nuc}} \propto M^{-2.5}
+  $$
+  together with $\tau_{\text{nuc},\odot} \approx 10~\text{Gyr}$ to estimate the star’s main-sequence lifetime and therefore the cluster age scale.
+- (b) State the observable, model, and inference in this dating method.
+- (c) Explain why seeing a hot, massive turnoff star means the cluster cannot be old.
+
+---
+
+### Part B — Hydrostatic Support and Core Conditions
+
+<!-- Problem: Conceptual / Connection / O→M→I / Tools: Force/Balance / ⭐⭐ -->
+### Problem 4 — Pressure Does Not Hold a Star Up
+
+Explain why only a pressure gradient can balance gravity inside a star.
+
+- (a) What would happen if $\frac{dP}{dr} = 0$ everywhere inside a star?
+- (b) What would happen if $\frac{dP}{dr} > 0$ at some radius?
+- (c) Why must hydrostatic equilibrium require $\frac{dP}{dr} < 0$?
+
+---
+
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Scaling/Ratio, Force/Balance, Unit-Conversion / ⭐⭐ -->
+### Problem 5 — Central Pressure from Hydrostatic Scaling
+
+At fixed mass, the central-pressure scaling is
+$$
+P_c \sim \frac{G M^2}{R^4}.
+$$
+
+- (a) If a star’s radius shrinks from $R$ to $R/2$ at fixed mass, by what factor does the required central pressure change?
+- (b) Use the solar values to estimate the Sun’s central pressure in $\text{dyn/cm}^2$.
+- (c) Convert your answer to atmospheres.
+- (d) In one sentence, explain why compactness matters so strongly in this scaling.
+
+---
+
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Unit-Conversion, Force/Balance, Model-Inversion / ⭐⭐ -->
+### Problem 6 — Core Temperature from Gravity
+
+Use
+$$
+T_c \sim \frac{\mu G M m_p}{k_B R}
+$$
+with $\mu = 0.6$.
+
+- (a) Estimate the Sun’s core temperature in kelvin and in MK.
+- (b) Use the scaling $T_c \propto M/R$ together with the main-sequence mass-radius relation $R \propto M^{0.8}$ to estimate the core temperature of a $10\,M_\odot$ star relative to the Sun.
+- (c) Estimate the $10\,M_\odot$ star’s core temperature in MK.
+- (d) Explain why your answer shows that main-sequence core temperatures do **not** vary by orders of magnitude.
+
+---
+
+<!-- Problem: Synthesis / Connection / O→M→I / Tools: Energy, Model-Inversion / ⭐⭐ -->
+### Problem 7 — Losing Energy, Getting Hotter
+
+A protostar radiates energy from its surface while remaining gravitationally bound.
+
+- (a) Use the virial theorem to explain why the protostar contracts as it loses energy.
+- (b) Explain why the core temperature rises instead of falls.
+- (c) In 2–4 sentences, explain why this behavior is called **negative heat capacity** and why it matters for fusion ignition.
+
+---
+
+### Part C — Fusion Ignition and Energy Release
+
+<!-- Problem: Conceptual / Connection / O→M→I / Tools: Model-Inversion / ⭐⭐ -->
+### Problem 8 — Tunneling Makes Fusion Possible; the Weak Interaction Makes It Slow
+
+- (a) What physical problem does quantum tunneling solve for proton-proton fusion?
+- (b) Why is the first step of the pp chain still extremely slow even after tunneling is allowed?
+- (c) In one sentence, identify the true bottleneck that sets the Sun’s main-sequence lifetime.
+
+---
+
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Unit-Conversion, Energy, Order-of-Magnitude / ⭐⭐ -->
+### Problem 9 — Classical Fusion Should Fail
+
+Set
+$$
+\frac{3}{2}k_B T \approx 1.44~\text{MeV}
+$$
+to estimate the temperature required for **classical** proton-proton barrier crossing.
+
+- (a) Estimate the required temperature in kelvin.
+- (b) Compare your answer to the solar-core temperature $T_{c,\odot} \approx 1.5 \times 10^7~\text{K}$.
+- (c) By what factor is the required classical temperature larger than the actual solar-core temperature?
+- (d) What does this comparison imply about why stars need quantum tunneling?
+
+---
+
+<!-- Problem: Synthesis / Connection / O→M→I / Tools: Energy, Model-Inversion / ⭐⭐⭐ -->
+### Problem 10 — From Mass Deficit to the Iron Limit
+
+The net hydrogen-to-helium conversion has a mass deficit
+$$
+\Delta m = 0.02872~\text{amu}.
+$$
+
+- (a) Compute the net pp-chain energy release in MeV.
+- (b) Explain, in terms of binding energy per nucleon, why hydrogen-to-helium fusion is exothermic.
+- (c) Explain why carbon fusion can still release energy, but iron fusion cannot.

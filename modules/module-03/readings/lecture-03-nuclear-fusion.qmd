@@ -1173,6 +1173,80 @@ Put the logic in order:
 | 3 | ${}^3\mathrm{He} + {}^3\mathrm{He} \rightarrow {}^4\mathrm{He} + 2p$ | electromagnetic approach + strong binding | completes the chain |
 | net | $4p \rightarrow {}^4\mathrm{He} + 2e^+ + 2\nu_e + 26.7 \ \mathrm{MeV}$ | all four forces matter in the full causal story | set mainly by Step 1 |
 
+## Practice Problems
+
+Use these values unless a problem states otherwise:
+
+- $k_B = 8.617 \times 10^{-5}~\text{eV/K}$
+- $1~\text{eV} = 1.602 \times 10^{-12}~\text{erg}$
+- $1~\text{MeV} = 10^6~\text{eV}$
+- $1~\text{amu} = 1.661 \times 10^{-24}~\text{g} = 931.5~\text{MeV}/c^2$
+- $c = 3.0 \times 10^{10}~\text{cm/s}$
+- Solar-core temperature: $T_c \approx 1.5 \times 10^7~\text{K}$
+- Head-on proton-proton barrier scale: $E_{\text{barrier}} \approx 1.44~\text{MeV}$
+
+### Conceptual
+
+<!-- Problem: Conceptual / Connection / O→M→I / Tools: Uncertainty/Assumptions / ⭐ -->
+1. ⭐ **Why gravity wins globally.**
+   - (a) Why does gravity control stellar structure even though it is far weaker than the strong and electromagnetic forces in a proton-proton encounter?
+   - (b) What feature of gravity matters most on stellar scales?
+   - (c) Why does electromagnetism not simply dominate the whole star instead?
+
+<!-- Problem: Conceptual / Connection / O→M→I / Tools: Model-Inversion / ⭐⭐ -->
+2. ⭐⭐ **Fusion does not happen at the average thermal energy.**
+   - (a) Why are low-energy proton collisions common but ineffective for fusion?
+   - (b) Why are very high-energy collisions more effective but much rarer?
+   - (c) Explain why the fusion rate is set by a narrow overlap between the thermal distribution and tunneling probability, not by the average value of $k_B T$ alone.
+
+<!-- Problem: Conceptual / Connection / O→M→I / Tools: Model-Inversion, Uncertainty/Assumptions / ⭐⭐ -->
+3. ⭐⭐ **Tunneling makes fusion possible; the weak interaction makes it slow.**
+   - (a) What physical problem does quantum tunneling solve for proton-proton fusion?
+   - (b) Why is the first step of the pp chain still extremely slow even after tunneling is allowed?
+   - (c) In one sentence, state the true bottleneck that sets the Sun’s main-sequence lifetime.
+
+### Calculation
+
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Unit-Conversion, Energy, Order-of-Magnitude / ⭐⭐ -->
+4. ⭐⭐ **Classical fusion should fail.**
+   - (a) Set
+     $$
+     \frac{3}{2}k_B T \approx 1.44~\text{MeV}
+     $$
+     and estimate the temperature required for classical proton-proton barrier crossing.
+   - (b) Compare your answer to the solar-core temperature.
+   - (c) By what factor is the required classical temperature larger than the actual solar-core temperature?
+
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Unit-Conversion, Energy / ⭐⭐ -->
+5. ⭐⭐ **The pp-chain energy release.** The net hydrogen-to-helium conversion has a mass deficit
+   $$
+   \Delta m = 0.02872~\text{amu}.
+   $$
+   - (a) Convert $\Delta m$ to grams.
+   - (b) Use $E = \Delta m c^2$ to compute the released energy in ergs.
+   - (c) Convert your answer to MeV.
+
+<!-- Problem: Calculation:Full / Application / — / Tools: Scaling/Ratio, Order-of-Magnitude / ⭐⭐ -->
+6. ⭐⭐ **pp versus CNO temperature sensitivity.** Suppose the core temperature rises by $10\%$.
+   - (a) If $\epsilon_{\text{pp}} \propto T^4$, by what factor does the pp-chain rate change?
+   - (b) If $\epsilon_{\text{CNO}} \propto T^{18}$, by what factor does the CNO rate change?
+   - (c) Which burning mode is more sensitive to a small temperature perturbation?
+
+### Synthesis
+
+<!-- Problem: Synthesis / Connection / O→M→I / Tools: Data/Graph, Uncertainty/Assumptions / ⭐⭐ -->
+7. ⭐⭐ **Solar neutrinos as evidence.**
+   - (a) What is the direct observable in the solar-neutrino argument?
+   - (b) What model connects that observable to the pp chain?
+   - (c) In 2–4 sentences, explain why solar neutrinos are such strong evidence that the Sun’s power source is nuclear fusion in the core.
+
+<!-- Problem: Synthesis / Connection / O→M→I / Tools: Energy, Model-Inversion / ⭐⭐⭐ -->
+8. ⭐⭐⭐ **From mass deficit to the iron limit.**
+   - (a) Use the mass deficit $\Delta m = 0.02872~\text{amu}$ to compute the net pp-chain energy release in MeV.
+   - (b) Explain why hydrogen-to-helium fusion is exothermic in terms of binding energy per nucleon.
+   - (c) Explain why carbon fusion can still release energy, but iron fusion cannot.
+   - (d) The first stars formed with almost no carbon, nitrogen, or oxygen. Explain why they still could begin hydrogen burning.
+
 ## Summary: All Four Forces, One Star
 
 The central ideas from this reading are:

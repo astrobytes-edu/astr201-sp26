@@ -1873,6 +1873,83 @@ Before reading the summary, step back and look at the logic chain we have built.
 
 This is the payoff of stellar structure. Starting from gravity alone, and adding only force balance, energy balance, and a thermal-gas model, we find that stars naturally develop hot cores. Fusion is not an arbitrary extra ingredient pasted onto stars later. Gravity itself drives the star to the temperature scale where fusion becomes possible.
 
+## Practice Problems
+
+Use these values unless a problem states otherwise:
+
+- $G = 6.674 \times 10^{-8}~\text{cm}^3~\text{g}^{-1}~\text{s}^{-2}$
+- $M_\odot = 2.0 \times 10^{33}~\text{g}$
+- $R_\odot = 7.0 \times 10^{10}~\text{cm}$
+- $m_p = 1.67 \times 10^{-24}~\text{g}$
+- $k_B = 1.38 \times 10^{-16}~\text{erg}~\text{K}^{-1}$
+- $\mu = 0.6$
+- $1~\text{atm} = 1.013 \times 10^6~\text{dyn/cm}^2$
+
+### Conceptual
+
+<!-- Problem: Conceptual / Connection / O→M→I / Tools: Force/Balance / ⭐ -->
+1. ⭐ **Pressure is not enough.** A student says, “The Sun survives because the pressure inside it is huge.”
+   - (a) Explain why that statement is incomplete.
+   - (b) What does a pressure gradient do that uniform pressure cannot do?
+   - (c) In one sentence, connect this idea to hydrostatic equilibrium.
+
+<!-- Problem: Conceptual / Application / O→M→I / Tools: Model-Inversion, Uncertainty/Assumptions / ⭐⭐ -->
+2. ⭐⭐ **What if the gradient were wrong?**
+   - (a) What would happen if $\frac{dP}{dr} = 0$ everywhere inside a star?
+   - (b) What would happen if $\frac{dP}{dr} > 0$ at some radius?
+   - (c) Why must hydrostatic equilibrium require $\frac{dP}{dr} < 0$?
+
+<!-- Problem: Conceptual / Connection / — / Tools: Model-Inversion, Uncertainty/Assumptions / ⭐ -->
+3. ⭐ **Why smaller $\mu$ matters.** Suppose the mean molecular weight $\mu$ decreases while $\rho$ and $T$ stay fixed.
+   - (a) Does the gas pressure increase or decrease?
+   - (b) Explain the physical reason in terms of particle number density.
+   - (c) Why does composition therefore matter for pressure support?
+
+### Calculation
+
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Scaling/Ratio, Force/Balance / ⭐ -->
+4. ⭐ **How compactness changes the pressure requirement.** At fixed mass, the central-pressure scaling is
+   $$
+   P_c \sim \frac{G M^2}{R^4}.
+   $$
+   - (a) If a star’s radius shrinks from $R$ to $R/2$, by what factor does the required central pressure change?
+   - (b) Repeat for a shrink from $R$ to $R/3$.
+   - (c) Explain why the result is so sensitive to radius.
+
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Dimensional, Unit-Conversion, Force/Balance / ⭐⭐ -->
+5. ⭐⭐ **The Sun’s central pressure.**
+   - (a) Use
+     $$
+     P_c \sim \frac{G M_\odot^2}{R_\odot^4}
+     $$
+     to estimate the Sun’s central pressure in $\text{dyn/cm}^2$.
+   - (b) Convert your answer to atmospheres.
+   - (c) Explain why this is a scaling success even though detailed solar models give a larger value.
+
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Unit-Conversion, Force/Balance, Model-Inversion / ⭐⭐ -->
+6. ⭐⭐ **Core temperature from gravity.**
+   - (a) Use
+     $$
+     T_c \sim \frac{\mu G M_\odot m_p}{k_B R_\odot}
+     $$
+     to estimate the Sun’s core temperature in kelvin and in MK.
+   - (b) Use the scaling $T_c \propto M/R$ together with the main-sequence mass-radius relation $R \propto M^{0.8}$ to estimate the core temperature of a $10\,M_\odot$ star relative to the Sun.
+   - (c) Explain why the result in part (b) is physically surprising at first glance.
+
+### Synthesis
+
+<!-- Problem: Synthesis / Connection / O→M→I / Tools: Energy, Uncertainty/Assumptions / ⭐⭐ -->
+7. ⭐⭐ **Losing energy, getting hotter.** A protostar radiates energy from its surface while remaining gravitationally bound.
+   - (a) Use the virial theorem to explain why the protostar contracts as it loses energy.
+   - (b) Explain why the core temperature rises instead of falls.
+   - (c) In 2–4 sentences, describe why this behavior is called negative heat capacity.
+
+<!-- Problem: Synthesis / Connection / O→M→I / Tools: Scaling/Ratio, Model-Inversion, Uncertainty/Assumptions / ⭐⭐ -->
+8. ⭐⭐ **From mass and radius to fusion conditions.**
+   - (a) Write the reasoning ladder that links measured stellar mass and radius to an inferred core temperature of order $10^7~\text{K}$.
+   - (b) Identify one assumption in the pressure-scaling step and one assumption in the temperature-scaling step.
+   - (c) Explain why this argument is enough to show that gravity naturally drives stars toward fusion temperatures, even before we discuss nuclear reaction rates.
+
 ## Reference Tables
 
 ### Key Results from Hydrostatic Equilibrium
