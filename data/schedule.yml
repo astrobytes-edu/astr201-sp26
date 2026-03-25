@@ -138,11 +138,13 @@ homework:
     title: "HW 5: Masses from Motion + Magnitudes/HR Synthesis (Midterm 1 Review)"
   - week: 9
     title: "HW 6: Quantum Mechanics, Stellar Alchemy, and a Trailblazer"
+    grade_memo: false
   - week: 10
     title: "HW 7: Stellar Structure I — Lifetimes, Equilibrium, and Fusion"
   - week: 12
     title: "HW 8: Stellar Structure II — Radiation Transport, Structure Scalings, and Mass Limits (Midterm 2 Prep)"
-  - week: 14
-    title: "HW 9: Galaxies I — ISM, Star Formation, and Galaxy Structure"
-  - week: 15
-    title: "HW 10: Cosmology Synthesis — Hubble Law, Expansion, Big Bang"
+  - week: 13
+    title: "HW 9: Stellar Evolution + Compact Remnants (Midterm 2 Prep)"
+  - week: 16
+    title: "HW 10: Final Synthesis — ISM, Galaxies, Dark Matter, and Cosmology"
+    grade_memo: false

@@ -72,6 +72,7 @@ Reading labels:
 
 > This module includes hydrostatic equilibrium, transport, fusion, scaling relations, and **stellar endpoints** (white dwarfs / neutron stars / black holes).
 > We also cover **minimum and maximum stellar masses**, including a short Quantum Mechanics/de Broglie motivation for the minimum mass.
+> Because we are running behind, the late Module 3 sequence on mass limits, stellar evolution, and stellar death will be more concise.
 >
 > **Note:** The first Module 3 lecture (Week 7 Tue) is delivered *before* Exam 1 but is **not** covered on it — this gives you study time for Modules 1–2.
 
@@ -80,10 +81,10 @@ Reading labels:
 | 7 | Mar 3 & 5 | Ages & lifetimes; timescale reasoning<br>Thu: **EXAM 1** (covers Modules 1–2) | Ch. 8 (pp. 49–51) | 3 |
 | 8 | Mar 10 & 12 | Hydrostatic equilibrium + virial temperature (thermal lens)<br>Nuclear fusion: four forces, quantum tunneling, pp-chain | Ch. 15 (pp. 101–104) + Ch. 18 (pp. 120–122) | 6 |
 | 9 | Mar 17 & 19 | Radiation transport: opacity, random walk, diffusion<br>Stellar structure equations + main-sequence scalings | Ch. 16 (pp. 107–110) + Ch. 17 (pp. 112–116) | 9 |
-| 10 | Mar 24 & 26 | Min/max masses: brown dwarfs (QM + de Broglie) & Eddington limit<br>Low-mass evolution → white dwarfs | Ch. 18 (pp. 122–124) + Ch. 19 (pp. 128–131) | 6 |
+| 10 | Mar 24 & 26 | Radiation transport: opacity, random walk, diffusion<br>Stellar structure equations + main-sequence scalings | Ch. 16 (pp. 107–110) + Ch. 17 (pp. 112–116) | 9 |
 | Spring Break | Mar 31 & Apr 2 | — No class — | — | — |
-| 11 | Apr 7 & 9 | Degeneracy pressure + Chandrasekhar limit (conceptual QM/stat-phys)<br>High-mass evolution → core-collapse supernovae | Ch. 19 (pp. 131–134) + Ch. 20.1–20.3 (pp. 137–140) | 7 |
-| 12 | Apr 14 & 16 | Neutron stars + black holes; where GR matters (conceptual)<br>Thu: **EXAM 2** | Ch. 20.4–20.5 (pp. 140–143) | 4 |
+| 11 | Apr 7 & 9 | Min/max masses: brown dwarfs, Eddington limit, and degeneracy pressure<br>Low-mass evolution → white dwarfs + Chandrasekhar limit | Ch. 18 (pp. 122–124) + Ch. 19 (pp. 128–134) | 10 |
+| 12 | Apr 14 & 16 | High-mass evolution → core-collapse supernovae; neutron stars + black holes<br>Thu: **EXAM 2** | Ch. 20.1–20.5 (pp. 137–143) | 7 |
 
 ---
 
@@ -93,7 +94,7 @@ Reading labels:
 |:-|:--|:-----|:--|:-|
 | 13 | Apr 21 & 23 | ISM phases; heating vs cooling (thermal balance)<br>Star formation: Jeans criterion; IMF; angular momentum → disks<br>Extinction/reddening (here) | Ch 21 (pp. 155–163) + Ch 22 (pp. 166–171) + Ch 12.3 (pp. 77–78) | 17 |
 | 14 | Apr 28 & 30 | Milky Way: rotation curve → dark matter<br>External galaxies + Hubble law; large-scale structure + lensing | Ch 26 (pp. 201–210) + Ch 27.1–27.3 (pp. 213–217) + Ch 29 (pp. 232–238) | 22 |
-| 15 | May 5 | Cosmology capstone: expansion dynamics → CMB → early eras<br>Synthesis + optional review | Ch 30 (pp. 243–248) + Ch 32.2–32.4 (pp. 261–264) | 10 |
+| 15 | May 5 | Cosmology capstone: expansion dynamics → CMB → early eras<br>Synthesis + optional review | Ch. 30 (pp. 243–248) + Ch. 32.2–32.4 (pp. 261–264) | 10 |
 
 ---
 

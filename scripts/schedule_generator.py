@@ -114,7 +114,7 @@ def generate_schedule(config_path: str = "data/schedule.yml") -> list[dict]:
                 })
                 date_idx += 1
 
-    # Add homework due dates (Tuesday) and grade memo due dates (following Friday)
+    # Add homework due dates (Tuesday) and optional grade memo due dates (following Friday)
     hw_schedule = []
     for hw in config.get("homework", []):
         # Homework due Tuesday of given week
@@ -125,7 +125,9 @@ def generate_schedule(config_path: str = "data/schedule.yml") -> list[dict]:
             due_date = week_start
         else:
             due_date = week_start + timedelta(days=days_to_tuesday)
-        grade_memo_due = due_date + timedelta(days=3)  # following Friday
+        grade_memo_due = None
+        if hw.get("grade_memo", True):
+            grade_memo_due = due_date + timedelta(days=3)  # following Friday
 
         hw_schedule.append({
             "week": hw["week"],
@@ -166,7 +168,7 @@ def format_homework_table(hw_schedule: list[dict]) -> str:
     lines = ["| Week | Due Date | Grade Memo Due | Assignment |", "|:--:|:--|:--|:--|"]
     for hw in hw_schedule:
         due_date_str = hw["date"].strftime("%a %b %d")
-        memo_date_str = hw["grade_memo_due"].strftime("%a %b %d")
+        memo_date_str = hw["grade_memo_due"].strftime("%a %b %d") if hw["grade_memo_due"] else "—"
         lines.append(f"| {hw['week']} | {due_date_str} | {memo_date_str} | {hw['title']} |")
     return "\n".join(lines)
 

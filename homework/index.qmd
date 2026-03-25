@@ -11,8 +11,8 @@ draft: false
 
 | Assignment | Posted | Due | Grade Memo Due | Solutions |
 |------------|--------|-----|----------------|-----------|
-| Homework 10: Cosmology Synthesis — Hubble Law, Expansion, Big Bang | Wed Apr 22 | Tues Apr 28 | Fri May 1 | — |
-| Homework 9: Galaxies I — ISM, Star Formation, and Galaxy Structure | Wed Apr 15 | Tues Apr 21 | Fri Apr 24 | — |
+| Homework 10: Final Synthesis — ISM, Galaxies, Dark Matter, and Cosmology | Wed Apr 22 | Tues May 5 | — | — |
+| Homework 9: Stellar Evolution + Compact Remnants (Midterm 2 Prep) | Wed Apr 8 | Tues Apr 14 | Fri Apr 17 | — |
 | Homework 8: Stellar Structure II — Radiation Transport, Structure Scalings, and Mass Limits (Midterm 2 Prep) | Wed Apr 1 | Tues Apr 7 | Fri Apr 10 | — |
 | [Homework 7](astr201-hw7.qmd): Stellar Structure I — Lifetimes, Equilibrium, and Fusion | Wed Mar 18 | Tues Mar 24 | Fri Mar 27 | — |
 | [Homework 6](astr201-hw6.qmd): Quantum Mechanics, Stellar Alchemy, and a Trailblazer | Tues Mar 10 | Tues Mar 17 | — | — |
@@ -37,6 +37,8 @@ draft: false
 - Include: what you got right, what broke, what you learned, what you'll do differently
 - Per-problem self-rating (1–5) with brief justification
 - AI and collaboration disclosure (even if "none")
+
+**Exception:** A final synthesis-style homework assigned immediately before the cumulative final may not include a separate grade memo.
 
 **Lowest homework score is dropped** (to cover one off-week or emergency).
 
