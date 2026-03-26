@@ -13,7 +13,7 @@ draft: false
 |------------|--------|-----|----------------|-----------|
 | Homework 10: Final Synthesis — ISM, Galaxies, Dark Matter, and Cosmology | Wed Apr 22 | Tues May 5 | — | — |
 | Homework 9: Stellar Evolution + Compact Remnants (Midterm 2 Prep) | Wed Apr 8 | Tues Apr 14 | Fri Apr 17 | — |
-| [Homework 7](astr201-hw7.qmd): Stellar Structure I — Lifetimes, Equilibrium, and Fusion | Wed Mar 18 | Tues Apr 7 | Fri Apr 10 | After grade memo deadline |
+| [Homework 7](astr201-hw7.qmd): Stellar Structure I — Lifetimes, Equilibrium, and Fusion | Thu Mar 26 | Tues Apr 7 | Fri Apr 10 | After grade memo deadline |
 | [Homework 6](astr201-hw6.qmd): Quantum Mechanics, Stellar Alchemy, and a Trailblazer | Tues Mar 10 | Tues Mar 17 | — | — |
 | [Growth Memo 1](../handouts/growth-memo-1.qmd): Reflect, celebrate, and plan | Sun Mar 15 | Fri Mar 20 | — | — |
 | [Homework 5](astr201-hw5.qmd) | Wed Feb 25 | Tues Mar 3 | Fri Mar 6 | [Solutions](solutions/astr201-hw5-solutions.qmd) |
