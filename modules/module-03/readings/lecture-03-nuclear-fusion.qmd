@@ -575,11 +575,45 @@ A proton in the solar core is **delocalized over a region hundreds of times larg
 That does not mean the proton is spread uniformly everywhere. It means the proton cannot be treated as a classical particle with one definite trajectory through the barrier problem. The correct language is wave mechanics.
 :::
 
+### The uncertainty principle and why localization fails
+
+The de Broglie relation, $\lambda = h/p$, tells us more than "particles have wavelengths." It tells us that momentum sets the spatial scale of the wave description. A larger momentum means a shorter wavelength, so the wave varies over a smaller distance and the motion looks more classically localized. A smaller momentum means a longer wavelength, so the proton is spread over a larger region and is less classically localizable.
+
+The same idea appears in the Heisenberg uncertainty principle:
+
+$$
+\Delta x \, \Delta p \gtrsim \frac{\hbar}{2}.
+$$
+
+Here $\Delta x$ is the spread in position, $\Delta p$ is the spread in momentum, and $\hbar$ is the reduced Planck constant, which sets the quantum scale. The deepest weirdness is not merely that particles are also waves. It is that quantum objects are **not** exactly localized classical things. Nature does not allow a proton to have both a perfectly sharp position and a perfectly sharp momentum, so the picture of one exact trajectory is fundamentally wrong.
+
+If you try to confine a proton to an extremely tiny region, the uncertainty principle forces a large spread in momentum. If the momentum stays modest, then the associated de Broglie wavelength is longer and the state is more spatially spread out. That is why solar-core protons are not well described as tiny classical beads approaching a barrier. Once we accept that the proton is described by a wave spread over a finite region, the barrier problem has to be asked in wave language rather than point-particle language.
+
+::: {.callout-warning}
+## Misconception Check
+
+"The uncertainty principle means we just do not know the proton's true position well enough."
+
+No. This is not merely a measurement problem. It is a statement about the structure of the quantum state itself: the proton cannot simultaneously have both a perfectly exact position and a perfectly exact momentum.
+:::
+
+::: {.callout-tip}
+## Check Yourself
+
+Why would squeezing a proton into an extremely tiny region imply a large momentum uncertainty?
+
+::: {.callout-note collapse="true"}
+## Solution
+
+Because $\Delta x \, \Delta p \gtrsim \hbar/2$. If $\Delta x$ is made very small, then $\Delta p$ must grow so the product does not fall below the quantum limit. A tightly localized proton therefore cannot also have one sharply defined momentum.
+:::
+:::
+
 {{< fig coulomb-barrier-and-tunneling >}}
 
 ### Tunneling
 
-In classical mechanics, a particle with energy below the barrier height simply reflects. In quantum mechanics, the particle is described by a wavefunction. That wavefunction can extend into the classically forbidden region and decay there instead of dropping instantly to zero. If it remains nonzero beyond the barrier, there is a nonzero probability of finding the particle on the far side. That is quantum tunneling.
+In classical mechanics, a particle with energy below the barrier height simply reflects. But once the proton is described as a wavefunction with finite spatial extent rather than as a perfectly localized point particle, the barrier problem changes. The wavefunction can extend into the classically forbidden region and decay there instead of dropping instantly to zero. If it remains nonzero beyond the barrier, there is a nonzero probability of finding the particle on the far side. The correct description is therefore not "it hits the wall and bounces," but "its amplitude penetrates the barrier." That is quantum tunneling.
 
 Tunneling is therefore not a literal hole in the barrier, not a small missing patch in the force field, and not a story about a proton "borrowing" the needed energy. It is a wave-mechanics result.
 
