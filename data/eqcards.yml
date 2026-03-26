@@ -362,11 +362,11 @@ core_temperature:
     - "Order-of-magnitude estimate: real stellar structure adds order-unity corrections from central concentration and composition gradients"
 
 de_broglie:
-  predicts: "Given a particle's momentum $p$ (or mass $m$ and velocity $v$), it predicts the particle's quantum wavelength."
-  depends: "Scales as $\\lambda \\propto 1/p$. Heavier or faster particles have shorter wavelengths."
-  says: "Every particle has a wave nature. When $\\lambda_\\text{dB}$ is comparable to nuclear distances (~$10^{-13}$ cm), quantum effects dominate — enabling tunneling through barriers."
+  predicts: "Given a particle's momentum $p$ (or mass $m$ and velocity $v$), it predicts the spatial scale over which the particle behaves like a wave."
+  depends: "Scales as $\\lambda \\propto 1/p$. Higher momentum means a shorter wavelength and more localized, more classical-looking behavior. Lower momentum means a longer wavelength and a more spatially extended, less classically localized state."
+  says: "A particle is not just a tiny hard sphere. When its de Broglie wavelength is not tiny compared with the physical scale of the problem, the classical trajectory picture fails and we must use wave mechanics instead."
   assumptions:
-    - "Non-relativistic ($v \\ll c$)"
+    - "Non-relativistic if we rewrite momentum as $p = mv$"
     - "Single particle (not a composite system)"
 
 pp_chain_net:

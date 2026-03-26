@@ -379,6 +379,29 @@ That is effectively zero for any astrophysical purpose.
 The classical tail is not giving us a slow version of fusion. It gives us essentially **no fusion at all**. That is why the next step in the story must be a genuinely new physical mechanism.
 :::
 
+::: {.callout-tip}
+## Scaling Check
+
+The Coulomb barrier is about $10^3$ times larger than $k_B T$.
+
+1. If the temperature increased by a factor of 10, would classical fusion become viable?
+2. Roughly how hot would the core need to be for $k_B T \sim \mathrm{MeV}$?
+
+::: {.callout-note collapse="true"}
+## Solution
+
+Even a factor of 10 increase only raises the characteristic thermal scale to about $10 \ \mathrm{keV}$, still far below the $\mathrm{MeV}$ barrier.
+
+To make $k_B T$ itself of order $\mathrm{MeV}$ requires
+
+$$
+T \sim 10^{10} \ \mathrm{K}.
+$$
+
+So classical fusion is not "almost working." It is **orders of magnitude off**.
+:::
+:::
+
 ### Classical vs Quantum Suppression
 
 | Effect | Expression | Physical meaning |
@@ -466,6 +489,18 @@ If classical physics fails, we need a new mechanism.
 
 This equation matters because a proton in the solar core cannot be treated as a tiny hard sphere following one exact path. The relevant question is whether its wavelength is large enough for wave behavior to matter on the scale of the barrier problem.
 
+::: {.callout-important}
+## Mechanism Before Interpretation
+
+We are not introducing this equation as a mathematical curiosity. We are introducing it because classical physics has already failed.
+
+The Coulomb barrier is of order $\mathrm{MeV}$, while the thermal scale in the solar core is only of order $\mathrm{keV}$.
+
+So the question becomes: what new physical mechanism allows fusion to happen anyway?
+
+The de Broglie relation gives the first part of the answer. Protons are not point particles. They are extended wave-like objects, and that is what makes tunneling possible.
+:::
+
 ### Worked example: the de Broglie wavelength of a solar-core proton
 
 Take a characteristic proton energy equal to the mean thermal energy:
@@ -525,6 +560,20 @@ v
 \end{aligned}
 $$
 
+::: {.callout-note}
+## Unit Check
+
+$$
+\frac{\mathrm{erg}}{\mathrm{g}}
+=
+\frac{\mathrm{g \, cm^2 \, s^{-2}}}{\mathrm{g}}
+=
+\mathrm{cm^2 \, s^{-2}}.
+$$
+
+Taking the square root gives $\mathrm{cm \, s^{-1}}$, as required for a velocity.
+:::
+
 Now compute the wavelength:
 
 $$
@@ -568,26 +617,52 @@ The de Broglie wavelength is hundreds of times larger than the nuclear distance 
 ### Interpretation of the de Broglie wavelength
 
 ::: {.callout-important}
-## Why This Ratio Matters
+## What This Ratio Actually Means
 
-A proton in the solar core is **delocalized over a region hundreds of times larger than nuclear scales**.
+$$
+\frac{\lambda_{\rm dB}}{r_{\rm nuc}} \sim 10^2 - 10^3
+$$
 
-That does not mean the proton is spread uniformly everywhere. It means the proton cannot be treated as a classical particle with one definite trajectory through the barrier problem. The correct language is wave mechanics.
+This is not a small correction to classical motion. It is a complete breakdown of the classical picture.
+
+A proton is not localized at a point near the barrier. It is spread over a region hundreds of times larger than the nuclear scale. That means:
+
+- there is no single trajectory,
+- there is no single turning point in the classical sense,
+- the correct description is inherently nonlocal.
+
+So the question changes. We no longer ask, "Does the particle have enough energy to cross the barrier?" We ask, "What is the amplitude of the wave inside and beyond the barrier?"
 :::
 
 ### The uncertainty principle and why localization fails
 
-The de Broglie relation, $\lambda = h/p$, tells us more than "particles have wavelengths." It tells us that momentum sets the spatial scale of the wave description. A larger momentum means a shorter wavelength, so the wave varies over a smaller distance and the motion looks more classically localized. A smaller momentum means a longer wavelength, so the proton is spread over a larger region and is less classically localizable.
+The de Broglie relation does not just say "particles have wavelengths." It tells us that **momentum sets the spatial scale of the wave description**.
 
-The same idea appears in the Heisenberg uncertainty principle:
+This idea leads directly to the uncertainty principle:
 
 $$
 \Delta x \, \Delta p \gtrsim \frac{\hbar}{2}.
 $$
 
-Here $\Delta x$ is the spread in position, $\Delta p$ is the spread in momentum, and $\hbar$ is the reduced Planck constant, which sets the quantum scale. The deepest weirdness is not merely that particles are also waves. It is that quantum objects are **not** exactly localized classical things. Nature does not allow a proton to have both a perfectly sharp position and a perfectly sharp momentum, so the picture of one exact trajectory is fundamentally wrong.
+Here $\Delta x$ is the spread in position, $\Delta p$ is the spread in momentum, and $\hbar$ is the reduced Planck constant, which sets the quantum scale.
 
-If you try to confine a proton to an extremely tiny region, the uncertainty principle forces a large spread in momentum. If the momentum stays modest, then the associated de Broglie wavelength is longer and the state is more spatially spread out. That is why solar-core protons are not well described as tiny classical beads approaching a barrier. Once we accept that the proton is described by a wave spread over a finite region, the barrier problem has to be asked in wave language rather than point-particle language.
+::: {.callout-important}
+## The Uncertainty Principle Follows From Wave Mechanics
+
+This is not an extra rule layered on top of wave behavior. A wave that is tightly localized in space must contain many wavelengths and therefore many momenta. A wave with one well-defined momentum must be spread out in space.
+:::
+
+Higher momentum means a shorter wavelength and more localized, more classical-looking behavior. Lower momentum means a longer wavelength and more spatial spread. Solar-core protons live in a regime where that spread cannot be ignored.
+
+::: {.callout-important}
+## The Fundamental Weirdness
+
+The deepest break from classical physics is not just that particles have wavelengths. It is that a particle cannot be both perfectly localized and have a perfectly defined momentum.
+
+So the classical idea of "a particle following one exact path through space" is not approximately wrong here. It is fundamentally invalid.
+:::
+
+If you try to confine a proton to an extremely tiny region, the uncertainty principle forces a large spread in momentum. That means a wide range of possible velocities, not one sharply defined incoming path. Once we accept that the proton is described by a wave spread over a finite region, the barrier problem has to be asked in wave language rather than point-particle language.
 
 ::: {.callout-warning}
 ## Misconception Check
@@ -600,20 +675,69 @@ No. This is not merely a measurement problem. It is a statement about the struct
 ::: {.callout-tip}
 ## Check Yourself
 
-Why would squeezing a proton into an extremely tiny region imply a large momentum uncertainty?
+Suppose you try to confine a proton to a region of size
+
+$$
+\Delta x \sim 10^{-13} \ \mathrm{cm}.
+$$
+
+1. What must happen to $\Delta p$?
+2. What does that imply about the range of possible velocities?
+3. Why does this make a single classical trajectory impossible?
 
 ::: {.callout-note collapse="true"}
 ## Solution
 
-Because $\Delta x \, \Delta p \gtrsim \hbar/2$. If $\Delta x$ is made very small, then $\Delta p$ must grow so the product does not fall below the quantum limit. A tightly localized proton therefore cannot also have one sharply defined momentum.
+From
+
+$$
+\Delta x \, \Delta p \gtrsim \frac{\hbar}{2},
+$$
+
+making $\Delta x$ very small forces $\Delta p$ to become very large.
+
+That means:
+
+- the proton cannot have one well-defined momentum,
+- it must contain a wide range of velocities,
+- its motion cannot be described by a single path.
+
+So the classical trajectory picture breaks down completely.
 :::
 :::
+
+<!--
+FIGURE SUGGESTION: Wave vs classical particle
+
+Description:
+Two-panel diagram:
+LEFT: classical particle trajectory stopping at turning point
+RIGHT: wavefunction oscillating + decaying into barrier
+
+What to notice:
+- classical: sharp boundary
+- quantum: smooth exponential decay
+
+Generate with:
+- Python (matplotlib)
+- plot potential + wavefunction envelope
+-->
 
 {{< fig coulomb-barrier-and-tunneling >}}
 
 ### Tunneling
 
-In classical mechanics, a particle with energy below the barrier height simply reflects. But once the proton is described as a wavefunction with finite spatial extent rather than as a perfectly localized point particle, the barrier problem changes. The wavefunction can extend into the classically forbidden region and decay there instead of dropping instantly to zero. If it remains nonzero beyond the barrier, there is a nonzero probability of finding the particle on the far side. The correct description is therefore not "it hits the wall and bounces," but "its amplitude penetrates the barrier." That is quantum tunneling.
+In classical mechanics, a particle with energy below the barrier reflects.
+
+But that statement assumes a perfectly localized particle with a single trajectory. Quantum mechanics has already removed that assumption. The proton is described by a wavefunction spread over a finite region. That wave does not abruptly stop at the classical turning point.
+
+Instead,
+
+- it extends into the classically forbidden region,
+- it decays exponentially there,
+- and it can remain nonzero beyond the barrier.
+
+So the correct statement is: the proton does not "hit a wall." Its wavefunction **penetrates** the barrier. That is quantum tunneling.
 
 Tunneling is therefore not a literal hole in the barrier, not a small missing patch in the force field, and not a story about a proton "borrowing" the needed energy. It is a wave-mechanics result.
 
