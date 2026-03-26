@@ -66,7 +66,7 @@ website:
   announcement:
     icon: info-circle
     dismissable: true
-    content: "**Current cycle:** [Homework 6](/homework/astr201-hw6.qmd) and [Growth Memo 1](/handouts/growth-memo-1.qmd) are now posted. Both are due Tuesday, March 17 at 11:59 pm. See the [Homework](/homework/index.qmd) page for details."
+    content: "**Current cycle:** [Homework 7](/homework/astr201-hw7.qmd) is due Tuesday, April 7 at 11:59 pm, and the Homework 7 grade memo is due Friday, April 10 at 11:59 pm. Solutions will be posted after the grade-memo deadline. See the [Homework](/homework/index.qmd) page for details."
     type: primary
     position: below-navbar
   navbar:
@@ -216,6 +216,7 @@ website:
       - section: "Homework"
         contents:
           - homework/index.qmd
+          - homework/astr201-hw7.qmd
           - homework/astr201-hw6.qmd
           - handouts/growth-memo-1.qmd
           - homework/astr201-hw5.qmd

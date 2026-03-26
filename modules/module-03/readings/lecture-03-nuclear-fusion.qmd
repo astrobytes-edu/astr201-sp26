@@ -646,6 +646,8 @@ The de Broglie relation does not just say "particles have wavelengths." It tells
 
 This idea leads directly to the uncertainty principle:
 
+Because a wave cannot be both perfectly localized and have a single wavelength, position and momentum cannot both be sharply defined.
+
 $$
 \Delta x \, \Delta p \gtrsim \frac{\hbar}{2}.
 $$
@@ -749,7 +751,7 @@ Instead,
 - it decays exponentially there,
 - and it can remain nonzero beyond the barrier.
 
-So the correct statement is: the proton does not "hit a wall." Its wavefunction **penetrates** the barrier. That is quantum tunneling.
+So the correct statement is: the proton does not "hit a wall." Its wavefunction has nonzero amplitude inside and beyond the classically forbidden region. That is quantum tunneling.
 
 Tunneling is therefore not a literal hole in the barrier, not a small missing patch in the force field, and not a story about a proton "borrowing" the needed energy. It is a wave-mechanics result.
 
@@ -796,6 +798,8 @@ Their product peaks at an intermediate energy called the **Gamow window**.
 ## Stop And Synthesize
 
 Classical physics fails because the barrier is far too large.
+
+Classical physics fails not because the Sun is slightly too cold, but because the underlying model of particles as localized trajectories is wrong at these scales.
 
 Quantum mechanics fixes the *possibility* problem by allowing tunneling.
 

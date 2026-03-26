@@ -903,21 +903,21 @@ figures:
 
   localization-wavepackets:
     path: /assets/images/module-03/localization-wavepackets.svg
-    caption: "**What to notice:** a tightly localized wave packet must contain many wavelengths and therefore a broad momentum spread. A broad packet is less localized in space but has a narrower momentum spread. This is why the uncertainty principle is a wave-packet tradeoff, not a measurement failure."
+    caption: "**What to notice:** a tightly localized wave packet must contain many wavelengths and therefore a broad momentum spread. A broad packet is less localized in space but has a narrower momentum spread. This is why the uncertainty principle is a wave-packet tradeoff, not a measurement failure. This figure is a schematic wave-packet comparison, not a direct measurement."
     alt: "Generated two-panel wave-packet comparison. The top panel shows a narrow spatial packet with many oscillations labeled small Delta x and large Delta p. The bottom panel shows a broad packet with fewer oscillations labeled large Delta x and small Delta p."
     credit: "ASTR 201 (generated)"
     module: 3
 
   classical-vs-quantum-barrier:
     path: /assets/images/module-03/classical-vs-quantum-barrier.svg
-    caption: "**What to notice:** classical motion predicts a sharp turning point and reflection, while the quantum wavefunction extends into and through the barrier. The barrier is no longer an absolute boundary."
+    caption: "**What to notice:** classical motion predicts a sharp turning point and reflection, while the quantum wavefunction extends into and through the barrier. The barrier is no longer an absolute boundary. This is a schematic wavefunction, not an exact solution to the Schrodinger equation."
     alt: "Generated two-panel barrier comparison. The left panel shows a classical particle with energy below the barrier reflecting at a turning point. The right panel shows a wavefunction oscillating before the barrier, decaying exponentially inside the forbidden region, and remaining nonzero beyond the barrier."
     credit: "ASTR 201 (generated)"
     module: 3
 
   gamow-window-upgraded:
     path: /assets/images/module-03/gamow-window-upgraded.svg
-    caption: "**What to notice:** low-energy collisions are common but tunnel poorly, while high-energy collisions tunnel better but are rare. Most fusion comes from the narrow overlap where those two effects balance."
+    caption: "**What to notice:** low-energy collisions are common but tunnel poorly, while high-energy collisions tunnel better but are rare. Most fusion comes from the narrow overlap where those two effects balance. This is a schematic weighting diagram, not an exact cross-section calculation."
     alt: "Generated schematic Gamow-window plot versus collision energy in keV, showing a thermal-rarity curve, a tunneling-transmission curve, their combined overlap curve, a shaded Gamow window, and labeled markers for k sub B T and the peak."
     credit: "ASTR 201 (generated)"
     module: 3

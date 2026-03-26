@@ -8,8 +8,8 @@ lectures: "Module 3 Lectures 1–3 (ages, equilibrium, fusion)"
 math-level: symbolic_with_interpretation
 draft: false
 estimated-time: "4–6 hours"
-due: "Tuesday, March 24, 2026 at 11:59 pm"
-grade-memo-due: "Friday, March 27, 2026 at 11:59 pm"
+due: "Tuesday, April 7, 2026 at 11:59 pm"
+grade-memo-due: "Friday, April 10, 2026 at 11:59 pm"
 submission: "Canvas; upload a single clearly scanned PDF or a legible PDF export"
 format:
   html:
@@ -238,7 +238,7 @@ A protostar radiates energy from its surface while remaining gravitationally bou
 
 - (a) What physical problem does quantum tunneling solve for proton-proton fusion?
 - (b) Why is the first step of the pp chain still extremely slow even after tunneling is allowed?
-- (c) In one sentence, identify the true bottleneck that sets the Sun’s main-sequence lifetime.
+- (c) In one sentence, explain why the weak interaction in the first proton-proton step largely controls the Sun’s hydrogen-burning rate.
 
 ---
 
