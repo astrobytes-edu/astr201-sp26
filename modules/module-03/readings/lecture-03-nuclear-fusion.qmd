@@ -481,6 +481,8 @@ The Sun does not solve the fusion problem by getting classically hot enough. It 
 
 If classical physics fails, we need a new mechanism.
 
+{{< fig fusion-logic-flow >}}
+
 ### Particles are also waves
 
 {{< include ../../../_includes/equations/de-broglie.qmd >}}
@@ -574,6 +576,8 @@ $$
 Taking the square root gives $\mathrm{cm \, s^{-1}}$, as required for a velocity.
 :::
 
+Since $\lambda = h/p$, the key quantity is the momentum $p = m_p v$. We compute $v$ from the thermal energy to determine $p$, and therefore $\lambda$.
+
 Now compute the wavelength:
 
 $$
@@ -614,6 +618,8 @@ $$
 
 The de Broglie wavelength is hundreds of times larger than the nuclear distance scale. That does not mean fusion is easy. It means classical barrier crossing is no longer the right language for the problem.
 
+{{< fig debroglie-vs-nuclear-scale >}}
+
 ### Interpretation of the de Broglie wavelength
 
 ::: {.callout-important}
@@ -644,13 +650,15 @@ $$
 \Delta x \, \Delta p \gtrsim \frac{\hbar}{2}.
 $$
 
-Here $\Delta x$ is the spread in position, $\Delta p$ is the spread in momentum, and $\hbar$ is the reduced Planck constant, which sets the quantum scale.
+Here $\Delta x$ is the spread in position, $\Delta p$ is the spread in momentum, and $\hbar$ is the reduced Planck constant, which sets the quantum scale. This tradeoff is not an independent rule. It is a direct consequence of describing particles as waves.
 
 ::: {.callout-important}
 ## The Uncertainty Principle Follows From Wave Mechanics
 
 This is not an extra rule layered on top of wave behavior. A wave that is tightly localized in space must contain many wavelengths and therefore many momenta. A wave with one well-defined momentum must be spread out in space.
 :::
+
+{{< fig localization-wavepackets >}}
 
 Higher momentum means a shorter wavelength and more localized, more classical-looking behavior. Lower momentum means a longer wavelength and more spatial spread. Solar-core protons live in a regime where that spread cannot be ignored.
 
@@ -706,30 +714,34 @@ So the classical trajectory picture breaks down completely.
 :::
 :::
 
-<!--
-FIGURE SUGGESTION: Wave vs classical particle
+::: {.callout-tip}
+## Synthesis Check
 
-Description:
-Two-panel diagram:
-LEFT: classical particle trajectory stopping at turning point
-RIGHT: wavefunction oscillating + decaying into barrier
+A proton in the solar core has $E \sim \mathrm{keV}$, far below the $\mathrm{MeV}$ barrier.
 
-What to notice:
-- classical: sharp boundary
-- quantum: smooth exponential decay
+Using both the de Broglie relation and the uncertainty principle, explain why:
 
-Generate with:
-- Python (matplotlib)
-- plot potential + wavefunction envelope
--->
+1. the classical trajectory picture fails,
+2. tunneling becomes the correct description.
 
-{{< fig coulomb-barrier-and-tunneling >}}
+::: {.callout-note collapse="true"}
+## Solution
+
+The de Broglie relation tells us that a low-momentum proton has a wavelength that is large compared with nuclear scales, so it cannot be treated as a tiny classical point particle. The uncertainty principle then tells us that a state cannot have both a perfectly sharp position and a perfectly sharp momentum, so there is no single exact path toward the barrier.
+
+Once the proton is described as a spatially extended wave rather than a localized bead, the barrier problem must be asked in wave language. The wavefunction can extend into the classically forbidden region and decay there, so tunneling becomes the correct description.
+:::
+:::
+
+{{< fig classical-vs-quantum-barrier >}}
 
 ### Tunneling
 
 In classical mechanics, a particle with energy below the barrier reflects.
 
 But that statement assumes a perfectly localized particle with a single trajectory. Quantum mechanics has already removed that assumption. The proton is described by a wavefunction spread over a finite region. That wave does not abruptly stop at the classical turning point.
+
+Because the proton is not localized at a single point, the barrier cannot act as an absolute boundary.
 
 Instead,
 
@@ -778,7 +790,7 @@ where the first factor describes thermal rarity and the second encodes tunneling
 
 Their product peaks at an intermediate energy called the **Gamow window**.
 
-{{< fig gamow-window-cartoon >}}
+{{< fig gamow-window-upgraded >}}
 
 ::: {.callout-note}
 ## Stop And Synthesize

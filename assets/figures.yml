@@ -887,6 +887,41 @@ figures:
     credit: "ASTR 201 (generated)"
     module: 3
 
+  fusion-logic-flow:
+    path: /assets/images/module-03/fusion-logic-flow.svg
+    caption: "**What to notice:** the quantum part of the fusion story is a causal chain, not a list. Classical fusion fails because the Coulomb barrier is too high, wave behavior removes the exact-trajectory picture, tunneling allows rare close approaches, and the weak interaction then sets the overall rate."
+    alt: "Generated horizontal flow diagram with rounded boxes and arrows showing the sequence gravity compresses the core, the Coulomb barrier blocks classical fusion, the de Broglie wavelength makes the proton behave like a wave, uncertainty removes the exact classical trajectory, tunneling allows rare close approach, and the weak interaction sets the actual fusion rate."
+    credit: "ASTR 201 (generated)"
+    module: 3
+
+  debroglie-vs-nuclear-scale:
+    path: /assets/images/module-03/debroglie-vs-nuclear-scale.svg
+    caption: "**What to notice:** the solar-core proton's de Broglie wavelength is hundreds of times larger than the nuclear scale. That is why the proton cannot be treated as a tiny classical bead at the barrier."
+    alt: "Generated log-scale length ruler in centimeters with labeled markers for the nuclear scale near 10 to the minus 13 centimeters, the solar-core proton de Broglie wavelength near 6.5 times 10 to the minus 11 centimeters, and an atomic scale near 10 to the minus 8 centimeters, with an annotation emphasizing the hundreds-fold gap between the proton wavelength and the nuclear scale."
+    credit: "ASTR 201 (generated)"
+    module: 3
+
+  localization-wavepackets:
+    path: /assets/images/module-03/localization-wavepackets.svg
+    caption: "**What to notice:** a tightly localized wave packet must contain many wavelengths and therefore a broad momentum spread. A broad packet is less localized in space but has a narrower momentum spread. This is why the uncertainty principle is a wave-packet tradeoff, not a measurement failure."
+    alt: "Generated two-panel wave-packet comparison. The top panel shows a narrow spatial packet with many oscillations labeled small Delta x and large Delta p. The bottom panel shows a broad packet with fewer oscillations labeled large Delta x and small Delta p."
+    credit: "ASTR 201 (generated)"
+    module: 3
+
+  classical-vs-quantum-barrier:
+    path: /assets/images/module-03/classical-vs-quantum-barrier.svg
+    caption: "**What to notice:** classical motion predicts a sharp turning point and reflection, while the quantum wavefunction extends into and through the barrier. The barrier is no longer an absolute boundary."
+    alt: "Generated two-panel barrier comparison. The left panel shows a classical particle with energy below the barrier reflecting at a turning point. The right panel shows a wavefunction oscillating before the barrier, decaying exponentially inside the forbidden region, and remaining nonzero beyond the barrier."
+    credit: "ASTR 201 (generated)"
+    module: 3
+
+  gamow-window-upgraded:
+    path: /assets/images/module-03/gamow-window-upgraded.svg
+    caption: "**What to notice:** low-energy collisions are common but tunnel poorly, while high-energy collisions tunnel better but are rare. Most fusion comes from the narrow overlap where those two effects balance."
+    alt: "Generated schematic Gamow-window plot versus collision energy in keV, showing a thermal-rarity curve, a tunneling-transmission curve, their combined overlap curve, a shaded Gamow window, and labeled markers for k sub B T and the peak."
+    credit: "ASTR 201 (generated)"
+    module: 3
+
   binding-energy-curve:
     path: /assets/images/module-03/binding-energy-curve.png
     caption: "**What to notice:** moving upward on the binding-energy curve means moving to a lower total mass-energy. That is why fusion releases energy up to the broad iron/nickel peak, while fusion beyond that region costs energy."
