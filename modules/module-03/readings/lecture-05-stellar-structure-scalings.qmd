@@ -36,17 +36,9 @@ After completing this reading, you should be able to:
 
 - state the four stellar structure equations and identify the physical principle behind each one,
 - explain why stellar structure is a coupled ODE problem rather than a single algebra problem,
-- derive the leading-order toy scaling
-  $$
-  L \propto \frac{M^3}{\kappa}
-  $$
-  from the structure equations,
+- derive the leading-order toy scaling $L \propto M^3/\kappa$ from the structure equations,
 - derive a toy mass-radius relation for pp-chain, radiative main-sequence stars,
-- derive the nuclear-lifetime scaling
-  $$
-  \tau_{\rm nuc} \propto \frac{M}{L},
-  $$
-  and explain why massive stars live much shorter lives,
+- derive the nuclear-lifetime scaling $\tau_{\rm nuc} \propto M/L$ and explain why massive stars live much shorter lives,
 - state the Schwarzschild criterion and explain physically when convection begins,
 - distinguish among fully convective very low-mass stars, solar-like stars with convective envelopes, and high-mass stars with convective cores,
 - connect the observed main sequence to the underlying stellar-structure physics.
@@ -77,14 +69,14 @@ Both tracks cover the core learning objectives.
 :::{.callout-important}
 ## The Big Idea
 
-The main sequence is a **mass sequence** because stellar structure is a self-consistent physics problem. For stars of similar composition, changing the mass changes the gravity, which changes the pressure scale, which changes the core temperature, which changes the fusion rate and the transport requirements.
+The main sequence is a mass sequence because stellar structure is a self-consistent physics problem. For stars of similar composition, changing the mass changes the gravity, which changes the pressure scale, which changes the core temperature, which changes the fusion rate and the transport requirements.
 
 The deepest result in this reading is not a single formula. It is the causal chain
 
 $$
 \rho \sim \frac{M}{R^3}
 \rightarrow
-P_c \sim \frac{GM^2}{R^4}
+P_c \sim \frac{G M^2}{R^4}
 \rightarrow
 T_c \sim \frac{M}{R}
 \rightarrow
@@ -647,6 +639,34 @@ So a more massive star is forced into a state where:
 The steep relation $L \propto M^3/\kappa$ is therefore a structural consequence of the stellar equations, not a fit to data.
 :::
 
+:::{.callout-tip}
+## Check Yourself — Opacity and luminosity
+
+Hold $M$, $R$, and the characteristic core temperature fixed.
+
+1. If the opacity $\kappa$ doubles, does the transport-limited luminosity increase or decrease?
+2. By what factor does it change in the toy scaling?
+3. What is the physical reason for that direction?
+
+Write your prediction before doing any algebra.
+:::
+
+:::{.callout-note}
+## Solution
+
+From the toy scaling,
+
+$$
+L \propto \frac{1}{\kappa}
+$$
+
+when the other structural quantities are held fixed.
+
+So if $\kappa$ doubles, the transport-limited luminosity decreases by a factor of $2$.
+
+Physically, larger opacity makes the stellar material less transparent. Radiation then escapes less easily, so the luminosity that can be carried by radiative diffusion is smaller for the same characteristic structure.
+:::
+
 ### Why the real exponent is often steeper
 
 The toy result
@@ -655,9 +675,9 @@ $$
 L \propto M^3
 $$
 
-is not the final word.
+for similar opacity is not the final word.
 
-Real stars do **not** all have constant opacity, and they do **not** all burn hydrogen with the same temperature sensitivity. As the opacity law and nuclear physics change across the main sequence, the exponent shifts. Over much of the observed main sequence, the empirical relation is closer to
+Real stars do not all have constant opacity, and they do not all burn hydrogen with the same temperature sensitivity. As the opacity law and nuclear physics change across the main sequence, the exponent shifts. Over much of the observed main sequence, the empirical relation is closer to
 
 $$
 L \propto M^{3.5}
@@ -665,7 +685,9 @@ $$
 
 than to $M^3$.
 
-That is a success, not a failure. The toy derivation explains **why the relation is steep in the first place**.
+That is a success, not a failure. The toy derivation explains why the relation is steep in the first place, even though the exact exponent depends on more realistic microphysics and structure.
+
+{{< fig mass-luminosity-toy-vs-empirical >}}
 
 ### Step 5: A toy mass-radius relation
 
@@ -721,10 +743,8 @@ $$
 But from Step 4, the toy transport scaling gave
 
 $$
-L \propto M^3
+L \propto \frac{M^3}{\kappa}.
 $$
-
-for roughly constant opacity.
 
 :::{.callout-important}
 ## Closing the system
@@ -740,10 +760,16 @@ A real star must satisfy both simultaneously. That is why we set the two scaling
 Set the two luminosity scalings equal:
 
 $$
-\frac{M^6}{R^7} \propto M^3.
+\frac{M^6}{R^7} \propto \frac{M^3}{\kappa}.
 $$
 
 So
+
+$$
+R^7 \propto \kappa M^3.
+$$
+
+For stars of similar opacity, treat $\kappa$ as approximately constant. Then
 
 $$
 R^7 \propto M^3,
@@ -1115,8 +1141,8 @@ Mass sets the gravity scale. Gravity sets the pressure scale. Pressure and the e
 |---|---|---|---|
 | 1 | $$\frac{dM}{dr}=4\pi r^2\rho$$ | mass profile | geometry |
 | 2 | $$\frac{dP}{dr}=-\frac{GM(r)\rho}{r^2}$$ | pressure profile | force balance |
-| 3 | $$\left(\frac{dT}{dr}\right)_{\rm rad}=-\frac{3\kappa\rho L(r)}{16\pi a c\,r^2 T^3}$$ | radiative temperature gradient | energy transport |
-| 4 | $$\frac{dL}{dr}=4\pi r^2\rho\epsilon$$ | luminosity profile | energy conservation |
+| 3 | $$\frac{dL}{dr}=4\pi r^2\rho\epsilon$$ | luminosity profile | energy conservation |
+| 4 | $$\left(\frac{dT}{dr}\right)_{\rm rad}=-\frac{3\kappa\rho L(r)}{16\pi a c\,r^2 T^3}$$ | radiative temperature gradient | energy transport |
 
 ### Closure relations
 
@@ -1153,11 +1179,11 @@ Starting from gravity, explain the following causal chain in your own words:
 $$
 \rho \sim \frac{M}{R^3}
 \rightarrow
-P_c \sim \frac{GM^2}{R^4}
+P_c \sim \frac{G M^2}{R^4}
 \rightarrow
 T_c \sim \frac{M}{R}
 \rightarrow
-L \propto \frac{M^3}{\kappa}
+L \propto \frac{M^3}{\kappa}.
 $$
 
 Your explanation must identify:
@@ -1174,23 +1200,11 @@ The most important ideas from this reading are:
 - Stars require differential equations because they are described by **radial profiles**, not single numbers.
 - The four stellar structure equations govern mass, pressure, temperature, and luminosity as functions of radius.
 - Those equations must be combined with closure relations such as the equation of state, opacity law, and nuclear energy generation law.
-- A toy scaling analysis gives
-  $$
-  L \propto \frac{M^3}{\kappa},
-  $$
-  which explains why the main-sequence mass-luminosity relation is so steep.
-- A toy pp-chain, radiative model gives
-  $$
-  R \propto M^{3/7},
-  $$
-  which captures the qualitative trend that more massive stars are larger.
-- The nuclear lifetime scales as
-  $$
-  \tau_{\rm nuc} \propto \frac{M}{L},
-  $$
-  so massive stars live much shorter lives because luminosity rises more steeply than fuel supply.
+- A toy scaling analysis gives $L \propto M^3/\kappa$, which explains why the main-sequence mass-luminosity relation is so steep.
+- A toy pp-chain, radiative model gives $R \propto M^{3/7}$, which captures the qualitative trend that more massive stars are larger.
+- The nuclear lifetime scales as $\tau_{\rm nuc} \propto M/L$, so massive stars live much shorter lives because luminosity rises more steeply than fuel supply.
 - Convection appears when radiative transport would require too steep a temperature gradient.
-- The main sequence is a **mass sequence in thermal equilibrium**, not just an observational catalog.
+- The main sequence is a mass sequence in thermal equilibrium, not just an observational catalog.
 
 :::{.callout-tip}
 ## Looking Ahead

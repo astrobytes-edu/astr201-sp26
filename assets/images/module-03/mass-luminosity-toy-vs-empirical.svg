@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">Toy versus empirical mass-luminosity scaling</title>
+  <desc id="desc">Log-log plot comparing the toy main-sequence scaling L proportional to M cubed with a steeper empirical scaling L proportional to M to the 3.5. Both lines are steep; the empirical relation climbs slightly faster with mass.</desc>
+  <style>
+    :root {
+      --bg: #0b0b0f;
+      --panel: #13162a;
+      --fg: #eef0ff;
+      --muted: #c9cbe5;
+      --faint: #8f92ad;
+      --grid: #1a1c28;
+      --grid-strong: #24263a;
+      --teal: #028391;
+      --teal-bright: #41a2ac;
+      --pink: #be5a83;
+      --pink-bright: #ce83a2;
+      --violet: #7077a1;
+      --white-soft: rgba(238, 240, 255, 0.72);
+    }
+
+    .bg { fill: var(--bg); }
+    .panel { fill: var(--panel); stroke: var(--violet); stroke-width: 2; rx: 18; }
+    .plot-frame { fill: none; stroke: var(--fg); stroke-width: 2; }
+    .grid { stroke: var(--grid); stroke-width: 1.5; }
+    .grid-strong { stroke: var(--grid-strong); stroke-width: 2; }
+    .axis-label, .tick, .title, .subtitle, .legend, .note, .footer, .footer-small {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      fill: var(--fg);
+    }
+    .title { font-size: 28px; font-weight: 700; }
+    .subtitle { font-size: 15px; fill: var(--muted); }
+    .axis-label { font-size: 17px; font-weight: 600; }
+    .tick { font-size: 15px; fill: var(--muted); }
+    .legend { font-size: 16px; }
+    .note { font-size: 18px; font-weight: 700; }
+    .footer { font-size: 15px; fill: var(--muted); }
+    .footer-small { font-size: 13px; fill: var(--faint); }
+    .toy-line { fill: none; stroke: var(--teal-bright); stroke-width: 5; stroke-linecap: round; }
+    .empirical-line { fill: none; stroke: var(--pink-bright); stroke-width: 5; stroke-linecap: round; }
+    .guide { stroke: var(--violet); stroke-width: 2; stroke-dasharray: 8 8; opacity: 0.9; }
+    .point { fill: var(--white-soft); stroke: var(--fg); stroke-width: 1.5; }
+  </style>
+
+  <rect class="bg" x="0" y="0" width="960" height="540" />
+
+  <text class="title" x="70" y="58">Toy vs empirical mass-luminosity scaling</text>
+  <text class="subtitle" x="70" y="84">On log-log axes, power laws are straight lines. The question is how steep each one is.</text>
+
+  <rect class="panel" x="72" y="102" width="816" height="322" />
+
+  <g aria-hidden="true">
+    <line class="grid" x1="110" y1="390" x2="760" y2="390" />
+    <line class="grid" x1="110" y1="315" x2="760" y2="315" />
+    <line class="grid" x1="110" y1="240" x2="760" y2="240" />
+    <line class="grid" x1="110" y1="165" x2="760" y2="165" />
+    <line class="grid" x1="110" y1="90" x2="760" y2="90" />
+
+    <line class="grid" x1="110" y1="90" x2="110" y2="390" />
+    <line class="grid" x1="272.5" y1="90" x2="272.5" y2="390" />
+    <line class="grid" x1="435" y1="90" x2="435" y2="390" />
+    <line class="grid" x1="597.5" y1="90" x2="597.5" y2="390" />
+    <line class="grid" x1="760" y1="90" x2="760" y2="390" />
+
+    <line class="guide" x1="337.5" y1="390" x2="337.5" y2="90" />
+    <line class="guide" x1="110" y1="277.5" x2="760" y2="277.5" />
+  </g>
+
+  <rect class="plot-frame" x="110" y="90" width="650" height="300" />
+
+  <path class="toy-line" d="M110 356.25 L760 131.25" />
+  <path class="empirical-line" d="M110 369.38 L760 106.88" />
+
+  <circle class="point" cx="167.5" cy="341.25" r="5.5" />
+  <circle class="point" cx="306" cy="289.3" r="5.5" />
+  <circle class="point" cx="466.9" cy="229" r="5.5" />
+  <circle class="point" cx="631" cy="167.4" r="5.5" />
+
+  <text class="tick" x="99" y="395" text-anchor="end">10⁻³</text>
+  <text class="tick" x="99" y="320" text-anchor="end">10⁻¹</text>
+  <text class="tick" x="99" y="245" text-anchor="end">10¹</text>
+  <text class="tick" x="99" y="170" text-anchor="end">10³</text>
+  <text class="tick" x="99" y="95" text-anchor="end">10⁵</text>
+
+  <text class="tick" x="110" y="417" text-anchor="middle">0.2</text>
+  <text class="tick" x="272.5" y="417" text-anchor="middle">0.63</text>
+  <text class="tick" x="337.5" y="417" text-anchor="middle">1</text>
+  <text class="tick" x="597.5" y="417" text-anchor="middle">6.3</text>
+  <text class="tick" x="760" y="417" text-anchor="middle">20</text>
+
+  <text class="axis-label" x="435" y="450" text-anchor="middle">Mass M (in solar-mass units)</text>
+  <text class="axis-label" x="42" y="240" text-anchor="middle" transform="rotate(-90 42 240)">Luminosity L (in solar-luminosity units)</text>
+
+  <g transform="translate(795 150)">
+    <line class="toy-line" x1="0" y1="0" x2="54" y2="0" />
+    <text class="legend" x="68" y="6">Toy scaling: L ∝ M³</text>
+
+    <line class="empirical-line" x1="0" y1="42" x2="54" y2="42" />
+    <text class="legend" x="68" y="48">Empirical trend: L ∝ M³·⁵</text>
+
+    <circle class="point" cx="27" cy="86" r="5.5" />
+    <text class="legend" x="68" y="92">Representative stars</text>
+  </g>
+
+  <g transform="translate(72 445)">
+    <rect class="panel" x="0" y="0" width="816" height="66" />
+    <text class="note" x="24" y="28">What to notice</text>
+    <text class="footer" x="24" y="50">Both relations are steep. The empirical line is slightly steeper, but the toy derivation already explains why luminosity rises so rapidly with mass.</text>
+    <text class="footer-small" x="610" y="50">Dashed guides mark 1 solar mass and 1 solar luminosity.</text>
+  </g>
+</svg>

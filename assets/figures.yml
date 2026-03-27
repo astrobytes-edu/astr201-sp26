@@ -1052,6 +1052,13 @@ figures:
     credit: "ASTR 201 (generated)"
     module: 3
 
+  mass-luminosity-toy-vs-empirical:
+    path: /assets/images/module-03/mass-luminosity-toy-vs-empirical.svg
+    caption: "**What to notice:** the toy scaling $L \\propto M^3$ already captures the steepness of the mass-luminosity trend, while the empirical relation is often somewhat steeper because real opacity laws and nuclear physics vary across the main sequence."
+    alt: "Log-log comparison plot of a toy main-sequence mass-luminosity scaling labeled L proportional to M cubed and a steeper empirical scaling labeled L proportional to M to the 3.5 over a schematic main-sequence mass range. A few white points sit between the two lines to suggest representative stars."
+    credit: "ASTR 201 (generated)"
+    module: 3
+
   convection-stability-cartoon:
     path: /assets/images/module-03/convection-stability-cartoon.svg
     caption: "**What to notice:** convection is a stability problem. In a stable radiative layer the displaced parcel cools more than its surroundings and sinks back, but when the radiative gradient is steeper than the adiabatic gradient the parcel stays warmer and keeps rising."
