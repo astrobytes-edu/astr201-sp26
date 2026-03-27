@@ -75,12 +75,12 @@ The deepest result in this reading is not a single formula. It is the causal cha
 
 $$
 \rho \sim \frac{M}{R^3}
-\rightarrow
+\;\rightarrow\;
 P_c \sim \frac{G M^2}{R^4}
-\rightarrow
+\;\rightarrow\;
 T_c \sim \frac{M}{R}
-\rightarrow
-L \sim \frac{M^3}{\kappa}.
+\;\rightarrow\;
+L \propto \frac{M^3}{\kappa}.
 $$
 
 That is why the mass-luminosity relation is steep, and that is why massive stars burn out so quickly.
@@ -527,27 +527,24 @@ This step is the heart of the lecture.
 Start from the radiative flux form:
 
 $$
-F_{\rm rad}
-=
--\frac{4acT^3}{3\kappa\rho}\frac{dT}{dr}.
+F_{\mathrm{rad}} =
+- \frac{4acT^3}{3\kappa\rho}\,\frac{dT}{dr}.
 $$
 
 For a scaling argument, replace the gradient by a characteristic ratio:
 
 $$
-\left|\frac{dT}{dr}\right|
-\sim
-\frac{T_c}{R}.
+\left| \frac{dT}{dr} \right| \sim \frac{T_c}{R}.
 $$
 
 So the characteristic radiative flux is
 
 $$
-F_{\rm rad}
+F_{\mathrm{rad}}
 \sim
-\frac{4acT_c^3}{3\kappa\rho}\frac{T_c}{R}
+\frac{4acT_c^3}{3\kappa\rho}\,\frac{T_c}{R}
 \sim
-\frac{T_c^4}{\kappa\rho R},
+\frac{T_c^4}{\kappa \rho R},
 $$
 
 where the constants have been dropped because we only want the scaling.
@@ -555,15 +552,15 @@ where the constants have been dropped because we only want the scaling.
 Now convert flux to luminosity:
 
 $$
-L \sim 4\pi R^2 F_{\rm rad}
+L \sim 4\pi R^2 F_{\mathrm{rad}}
 \sim
-R^2 \frac{T_c^4}{\kappa\rho R}.
+R^2 \frac{T_c^4}{\kappa \rho R}.
 $$
 
 Therefore,
 
 $$
-L \sim \frac{R T_c^4}{\kappa\rho}.
+L \sim \frac{R T_c^4}{\kappa \rho}.
 $$
 
 Now substitute the density scaling from Step 1:
@@ -575,11 +572,8 @@ $$
 Then
 
 $$
-L
-\sim
-\frac{R T_c^4}{\kappa (M/R^3)}
-=
-\frac{T_c^4 R^4}{\kappa M}.
+L \sim \frac{R T_c^4}{\kappa (M/R^3)}
+= \frac{T_c^4 R^4}{\kappa M}.
 $$
 
 Now substitute the temperature scaling from Step 3:
@@ -591,13 +585,9 @@ $$
 So
 
 $$
-L
-\sim
-\frac{(M/R)^4 R^4}{\kappa M}
-=
-\frac{M^4}{\kappa M}
-=
-\frac{M^3}{\kappa}.
+L \sim \frac{(M/R)^4 R^4}{\kappa M}
+= \frac{M^4}{\kappa M}
+= \frac{M^3}{\kappa}.
 $$
 
 This is the clean toy luminosity scaling:
@@ -723,19 +713,16 @@ $$
 So
 
 $$
-L
-\sim
-R^3
-\left(\frac{M}{R^3}\right)^2
-\left(\frac{M}{R}\right)^4.
+L \sim R^3 \left(\frac{M}{R^3}\right)^2 \left(\frac{M}{R}\right)^4.
 $$
 
 Work through the powers carefully:
 
 $$
-L
-\sim
-R^3 \frac{M^2}{R^6} \frac{M^4}{R^4}
+L \sim
+R^3
+\frac{M^2}{R^6}
+\frac{M^4}{R^4}
 =
 \frac{M^6}{R^7}.
 $$
@@ -751,8 +738,8 @@ $$
 
 At this stage we have two independent estimates of luminosity:
 
-- a **transport-limited luminosity** from radiative diffusion,
-- a **production-limited luminosity** from nuclear burning.
+- a transport-limited luminosity from radiative diffusion,
+- a production-limited luminosity from nuclear burning.
 
 A real star must satisfy both simultaneously. That is why we set the two scalings equal.
 :::
@@ -1156,12 +1143,12 @@ Mass sets the gravity scale. Gravity sets the pressure scale. Pressure and the e
 
 | Relation | Status | Physical meaning |
 |---|---|---|
-| $$\rho \sim \frac{M}{R^3}$$ | toy scaling | mean density scale |
-| $$P_c \sim \frac{GM^2}{R^4}$$ | toy scaling | hydrostatic pressure scale |
-| $$T_c \sim \frac{M}{R}$$ | robust leading-order scaling | hotter cores in more massive, more compact stars |
-| $$L \propto \frac{M^3}{\kappa}$$ | toy radiative scaling | steep luminosity trend from transport + gravity |
+| $\rho \sim \dfrac{M}{R^3}$ | toy scaling | mean density scale |
+| $P_c \sim \dfrac{G M^2}{R^4}$ | toy scaling | hydrostatic pressure scale |
+| $T_c \sim \dfrac{M}{R}$ | robust leading-order scaling | hotter cores in more massive, more compact stars |
+| $L \propto \dfrac{M^3}{\kappa}$ | toy radiative scaling | steep luminosity trend from transport + gravity |
 | $$R \propto M^{3/7}$$ | toy pp-chain, radiative result | qualitative mass-radius trend |
-| $$\tau_{\rm nuc}\propto \frac{M}{L}$$ | general lifetime scaling | fuel divided by burn rate |
+| $\tau_{\mathrm{nuc}} \propto \dfrac{M}{L}$ | general lifetime scaling | fuel divided by burn rate |
 
 ### Interior regimes across the main sequence
 
