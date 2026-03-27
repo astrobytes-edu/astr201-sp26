@@ -1047,7 +1047,7 @@ figures:
 
   main-sequence-scaling-ladder:
     path: /assets/images/module-03/main-sequence-scaling-ladder.svg
-    caption: "**What to notice:** the steep mass-luminosity relation is the end of a reasoning chain. Mean density sets the pressure scale, pressure sets the core-temperature scale, and radiative transport then drives the luminosity toward $L \\propto M^3/\\kappa$."
+    caption: "**What to notice:** this is a causal chain, not a list of formulas. Each step follows from a physical principle — mass conservation sets density, hydrostatic equilibrium sets pressure, the equation of state sets temperature, and radiative transport forces a steep luminosity scaling. The result is $L \\propto M^3/\\kappa$, not by assumption, but by necessity."
     alt: "Left-to-right ladder of four scaling boxes showing density proportional to mass over radius cubed, central pressure proportional to G times mass squared over radius to the fourth, core temperature proportional to mass over radius, and luminosity proportional to mass cubed over opacity. A lower branch adds the lifetime scaling tau proportional to mass over luminosity."
     credit: "ASTR 201 (generated)"
     module: 3

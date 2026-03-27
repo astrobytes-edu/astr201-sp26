@@ -151,6 +151,16 @@ The stellar structure equations therefore relate:
 
 Each equation gives one radial rate of change.
 
+:::{.callout-warning}
+## Misconception Check
+
+“We can solve stellar structure by plugging numbers into a few formulas.”
+
+False.
+
+Each structure equation depends on quantities determined by the others. The problem is not evaluating formulas. It is solving a coupled system that must be internally consistent.
+:::
+
 {{< fig stellar-structure-coupling >}}
 
 The important point is that the structure equations are not independent recipes. Each equation needs quantities that are determined by the others, so the solution must be self-consistent.
@@ -427,6 +437,18 @@ $$
 
 This is the hydrostatic pressure scale.
 
+:::{.callout-note}
+## Scaling ≠ equality
+
+The relation
+
+$$
+P_c \sim \frac{GM^2}{R^4}
+$$
+
+is an order-of-magnitude scaling, not an exact equality. Numerical factors of order unity are dropped, but the dimensional dependence is physically meaningful.
+:::
+
 ### Step 3: The ideal gas law gives the temperature scale
 
 Use the ideal-gas equation of state:
@@ -470,6 +492,24 @@ T_c \propto \frac{M}{R}.
 $$
 
 More massive stars tend to have hotter cores, but the radius also matters. That is why we should **not** assign a single temperature-mass exponent until we know how $R$ depends on $M$.
+
+:::{.callout-note}
+## Unit check
+
+From
+
+$$
+T_c \sim \frac{G M \mu m_H}{k_B R}
+$$
+
+check units:
+
+- $GM/R$ has units of energy per mass,
+- multiplying by $m_H$ gives energy,
+- dividing by $k_B$ converts energy to temperature.
+
+So the expression has units of kelvin, as required.
+:::
 
 :::{.callout-tip}
 ## Think First
@@ -574,6 +614,12 @@ $$
 L \propto \frac{M^3}{\kappa}.
 $$
 
+:::{.callout-important}
+## Direction matters
+
+Higher opacity makes it harder for radiation to escape, so for fixed structure it reduces the luminosity. That is why the scaling carries $\kappa$ in the denominator, not the numerator.
+:::
+
 If $\kappa$ is approximately constant, then
 
 $$
@@ -585,9 +631,20 @@ That is already close to the observed steep main-sequence relation.
 :::{.callout-important}
 ## What This Derivation Really Says
 
-The mass-luminosity relation is steep because more massive stars live under stronger gravity and therefore require hotter interiors. Those hotter interiors must transport energy outward through an opaque star. The radiative-transport requirement then forces the luminosity upward very rapidly with mass.
+The steep mass-luminosity relation is not arbitrary.
 
-This is not a fit pulled from data. It is a structural consequence of the stellar equations.
+- Gravity sets the pressure scale: $P_c \sim GM^2/R^4$
+- Pressure sets the temperature scale: $T_c \sim M/R$
+- Temperature controls both nuclear burning and radiative transport
+- Radiative transport limits how easily energy can escape
+
+So a more massive star is forced into a state where:
+
+- the core is hotter,
+- energy is produced more rapidly,
+- and the star must increase its luminosity dramatically to transport that energy outward.
+
+The steep relation $L \propto M^3/\kappa$ is therefore a structural consequence of the stellar equations, not a fit to data.
 :::
 
 ### Why the real exponent is often steeper
@@ -667,7 +724,20 @@ $$
 L \propto M^3
 $$
 
-for roughly constant opacity. Set the two luminosity scalings equal:
+for roughly constant opacity.
+
+:::{.callout-important}
+## Closing the system
+
+At this stage we have two independent estimates of luminosity:
+
+- a **transport-limited luminosity** from radiative diffusion,
+- a **production-limited luminosity** from nuclear burning.
+
+A real star must satisfy both simultaneously. That is why we set the two scalings equal.
+:::
+
+Set the two luminosity scalings equal:
 
 $$
 \frac{M^6}{R^7} \propto M^3.
@@ -773,18 +843,20 @@ $$
 L \propto M^3.
 $$
 
-If one main-sequence star has twice the mass of another and they have similar opacity, predict:
+for stars of similar opacity.
 
-1. the luminosity ratio,
-2. the lifetime ratio.
-
-Do this first in words, then in algebra.
+1. Predict qualitatively: if mass doubles, does luminosity increase linearly, quadratically, or more steeply?
+2. Now compute the luminosity ratio explicitly.
+3. Use $\tau_{\rm nuc} \propto M/L$ to predict the lifetime ratio.
+4. Explain in one sentence why the lifetime decreases even though the star has more fuel.
 :::
 
 :::{.callout-note}
 ## Solution
 
-If mass doubles, then
+If mass doubles, the luminosity rises **more steeply** than linearly or quadratically because it scales like the cube of the mass.
+
+Explicitly,
 
 $$
 \frac{L_2}{L_1} = \left(\frac{M_2}{M_1}\right)^3 = 2^3 = 8.
@@ -811,6 +883,8 @@ $$
 $$
 
 So the star with twice the mass has only about one quarter of the nuclear lifetime.
+
+The lifetime decreases because the fuel supply grows only in proportion to mass, while the burn rate grows much more rapidly through the luminosity.
 :::
 
 ## Part 5: When Radiation Fails — Convection
@@ -860,6 +934,24 @@ $$
 \propto
 \frac{\kappa \rho L}{T^3 r^2}.
 $$
+
+:::{.callout-note}
+## What this scaling assumes
+
+The relation
+
+$$
+\left| \frac{dT}{dr} \right|_{\rm rad} \propto \frac{\kappa \rho L}{T^3 r^2}
+$$
+
+assumes:
+
+- radiative diffusion is the dominant transport mechanism,
+- local thermodynamic equilibrium,
+- opacity can be treated as a local function.
+
+When these assumptions fail, convection replaces radiation as the dominant transport process.
+:::
 
 So the radiative gradient becomes steeper when:
 
@@ -1052,6 +1144,28 @@ Mass sets the gravity scale. Gravity sets the pressure scale. Pressure and the e
 | very low mass | $$M \lesssim 0.35\,M_\odot$$ | nearly fully convective | cool, opaque interiors favor convection |
 | solar-like | $$0.35 \lesssim M/M_\odot \lesssim 1.3$$ | radiative core, convective envelope | cool outer layers are opaque |
 | high mass | $$M \gtrsim 1.3 \text{ to } 1.5\,M_\odot$$ | convective core, radiative envelope | CNO burning concentrates luminosity in the core |
+
+:::{.callout-tip}
+## Synthesis Check — The Whole Chain
+
+Starting from gravity, explain the following causal chain in your own words:
+
+$$
+\rho \sim \frac{M}{R^3}
+\rightarrow
+P_c \sim \frac{GM^2}{R^4}
+\rightarrow
+T_c \sim \frac{M}{R}
+\rightarrow
+L \propto \frac{M^3}{\kappa}
+$$
+
+Your explanation must identify:
+
+- what physical principle is used at each step,
+- why each step depends on the previous one,
+- where assumptions enter the argument.
+:::
 
 ## Summary: From Equations to the HR Diagram
 
