@@ -28,7 +28,7 @@ mode: Refine
 prerequisites: "Hydrostatic equilibrium and virial theorem (Reading 2), nuclear fusion and the pp-chain/CNO cycle (Reading 3), opacity, mean free path, and radiative diffusion (Reading 4)"
 ---
 
-For main-sequence stars of similar composition, mass is the dominant control parameter. But that statement is only useful if we can explain **why** changing the mass changes everything else so dramatically. In this reading, we assemble the stellar structure equations, show why they must be solved as a coupled system, and then use carefully stated scaling arguments to derive the leading-order physics behind the main sequence. The goal is not to memorize four equations. The goal is to understand why the observed mass-luminosity relation is so steep, why more massive stars are larger and hotter, and why different stars transport energy in different ways.
+For main-sequence stars of similar composition, **observations suggest** that mass is the dominant control parameter. But that statement is only scientifically useful if we can build a model that explains **why** changing the mass changes luminosity, radius, temperature, and interior structure so dramatically. In this reading, we assemble the stellar structure equations, show why they must be solved as a coupled system, and then use carefully stated scaling arguments to derive the leading-order physics behind the main sequence. The goal is not to memorize four equations. The goal is to understand why the observed mass-luminosity relation is so steep, why more massive stars are larger and hotter, and why different stars transport energy in different ways.
 
 ## Learning Objectives
 
@@ -88,7 +88,7 @@ That is why the mass-luminosity relation is steep, and that is why massive stars
 
 ## Part 1: The Problem We Are Trying to Explain
 
-Astronomers do not begin this topic from theory alone. We begin from an observational fact:
+Astronomers do not begin this topic from theory alone. We begin from an **observable pattern**:
 
 - main-sequence stars occupy a narrow band in the HR diagram,
 - more massive main-sequence stars are much more luminous,
@@ -98,7 +98,11 @@ Astronomers do not begin this topic from theory alone. We begin from an observat
   $$
   over much of the main sequence.
 
-That is the mystery for this reading.
+That is the **observable** we want to explain. The rest of the reading builds the **model** and then asks what we can **infer** from it.
+
+The surprising part is not just that more massive stars are brighter. It is that luminosity increases **much faster than mass** — that is what we need to explain.
+
+A factor-of-two increase in mass produces roughly an eightfold increase in luminosity. That is not a small effect — it is a structural change. Before reading further, ask yourself: do you expect gravity, temperature, or energy transport to be responsible for this steepness?
 
 Why should a factor-of-two increase in mass produce an increase of roughly one order of magnitude in luminosity? Why are massive stars not just a little brighter, but **dramatically** brighter?
 
@@ -128,9 +132,11 @@ $$
 
 That means stellar structure is a **profile problem**. We are not asking for one number. We are asking how each quantity changes with radius.
 
-That is why ordinary algebra is not enough. We need differential equations.
+That is why ordinary algebra is not enough. We need **a dynamical profile model**: a set of differential equations that describes how stellar properties vary with radius.
 
 ### Why ODEs?
+
+If you want to know the structure of a star, you are really asking: how does each quantity change as you move outward? That is a question about rates of change — and rates of change are what derivatives describe.
 
 If a quantity changes continuously with radius, then the natural question is not “what is its value?” but “how fast is it changing?” That is what a derivative tells us.
 
@@ -150,12 +156,12 @@ Each equation gives one radial rate of change.
 
 False.
 
-Each structure equation depends on quantities determined by the others. The problem is not evaluating formulas. It is solving a coupled system that must be internally consistent.
+Each structure equation depends on quantities determined by the others. So the problem is not “plugging into formulas.” The problem is finding a **self-consistent interior profile** that satisfies all equations, closure relations, and boundary conditions at the same time.
 :::
 
 {{< fig stellar-structure-coupling >}}
 
-The important point is that the structure equations are not independent recipes. Each equation needs quantities that are determined by the others, so the solution must be self-consistent.
+The important point is that the structure equations are not independent recipes. Each equation needs quantities that are determined by the others, so the solution must be self-consistent. A star is not defined by numbers — it is defined by a *solution*.
 
 :::{.callout-warning}
 ## Misconception Check
@@ -260,6 +266,12 @@ $$
 
 This equation tells you how steep the temperature gradient must be if radiation alone carries the luminosity.
 
+At this point, you might think: “I have four equations — I can just use them.” But each equation contains quantities defined by the others. That means none of them can be solved independently.
+
+This is not four problems. This is one coupled problem.
+
+Do not try to memorize these equations. Focus on what each one *controls* in the star.
+
 :::{.callout-note}
 ## The Four ODEs Are Not the Whole Story
 
@@ -352,9 +364,24 @@ More broadly, the opacity $\kappa$ and nuclear rate $\epsilon$ both depend on lo
 
 ## Part 4: Deriving the Main-Sequence Scalings
 
-We will not solve the full ODE system. Instead, we will extract the leading-order physics by replacing local gradients with characteristic scales.
+:::{.callout-important}
+## How to Read the Next Derivation
 
-That is a **toy-model** approach. It is valuable because it reveals the physical logic behind the main-sequence trends.
+In the next section, keep three categories separate:
+
+- **Observable:** the steep main-sequence mass-luminosity trend,
+- **Model ingredients:** hydrostatic equilibrium, ideal-gas pressure, radiative diffusion, and similar composition,
+- **Inference:** a toy scaling close to
+  $$
+  L \propto \frac{M^3}{\kappa}.
+  $$
+
+The purpose of the derivation is not to get exact exponents. It is to show **why steepness is expected from the structure equations at all**.
+:::
+
+We will not solve the full ODE system exactly. Instead, we will build a **controlled toy model** that extracts the leading-order physics by replacing full radial profiles and local gradients with characteristic scales.
+
+This is not the exact stellar solution. It is a deliberately simplified model designed to answer one question: **why is the mass-luminosity relation steep at all?**
 
 :::{.callout-important}
 ## Assumptions for the Toy Derivation
@@ -485,6 +512,8 @@ $$
 
 More massive stars tend to have hotter cores, but the radius also matters. That is why we should **not** assign a single temperature-mass exponent until we know how $R$ depends on $M$.
 
+Up to this point, we have not used anything about energy transport or nuclear physics. This is purely gravity, pressure support, and the equation of state. That is why the temperature scale emerges from the structure alone.
+
 :::{.callout-note}
 ## Unit check
 
@@ -520,9 +549,9 @@ Before going further, predict:
 Explain physically before calculating anything else.
 :::
 
-### Step 4: Radiative transport gives the luminosity scale
+### Step 4: Radiative transport gives a transport-limited luminosity scaling
 
-This step is the heart of the lecture.
+This step is the heart of the derivation. This is where the steepness enters.
 
 Start from the radiative flux form:
 
@@ -596,6 +625,18 @@ $$
 L \propto \frac{M^3}{\kappa}.
 $$
 
+More precisely, this is the luminosity that can be carried outward by radiative diffusion for the assumed characteristic structure.
+
+Pause here.
+
+Notice what just happened: the radius has dropped out of the scaling entirely.
+
+That means luminosity is no longer controlled primarily by size. It is controlled primarily by mass.
+
+That is the key reason luminosity depends so steeply on mass — gravity, pressure, temperature, and transport combine in a way that leaves mass as the dominant control parameter.
+
+This result depends on the assumptions above, especially that radiative transport sets the temperature gradient and that opacity varies slowly. If those assumptions change, the exponent will change, but the logic linking mass to luminosity remains.
+
 :::{.callout-important}
 ## Direction matters
 
@@ -620,7 +661,7 @@ The steep mass-luminosity relation is not arbitrary.
 - Temperature controls both nuclear burning and radiative transport
 - Radiative transport limits how easily energy can escape
 
-So a more massive star is forced into a state where:
+So increasing the mass forces the star into a new structural state where:
 
 - the core is hotter,
 - energy is produced more rapidly,
@@ -675,13 +716,13 @@ $$
 
 than to $M^3$.
 
-That is a success, not a failure. The toy derivation explains why the relation is steep in the first place, even though the exact exponent depends on more realistic microphysics and structure.
+That is a success, not a failure of the model. The toy derivation is doing the correct scientific job: it explains **why the relation is steep**, even though the exact exponent requires more realistic microphysics.
 
 {{< fig mass-luminosity-toy-vs-empirical >}}
 
 ### Step 5: A toy mass-radius relation
 
-To get a radius scaling, we now connect energy production to energy loss.
+To get a radius scaling, we now impose a new physical requirement: in a long-lived main-sequence star, **energy production in the core must match energy transport out of the star**.
 
 A crude scaling for the luminosity generated in the core is
 
@@ -741,7 +782,9 @@ At this stage we have two independent estimates of luminosity:
 - a transport-limited luminosity from radiative diffusion,
 - a production-limited luminosity from nuclear burning.
 
-A real star must satisfy both simultaneously. That is why we set the two scalings equal.
+A long-lived main-sequence star must satisfy both simultaneously: it must generate the luminosity it transports.
+
+This is the same logic as equilibrium in other systems: a stable system must balance what goes in and what comes out.
 :::
 
 Set the two luminosity scalings equal:
@@ -781,12 +824,14 @@ Still, it gets the crucial qualitative point right:
 - more massive stars are larger,
 - but luminosity rises more steeply than radius.
 
+That inference depends on the toy assumptions above, especially radiative transport dominance, similar composition, and the simplified pp-chain scaling. A more realistic model changes the exponent, but not the basic logic that mass drives both structure and transport demands.
+
 ### Step 6: The nuclear lifetime scaling
 
-The nuclear lifetime is approximately
+The nuclear lifetime is approximately the available nuclear fuel divided by the luminosity, where luminosity acts as a proxy for the rate at which the star is spending its usable energy supply.
 
 $$
-\tau_{\rm nuc} \sim \frac{\text{available fuel}}{\text{burn rate}}.
+\tau_{\rm nuc} \sim \frac{\text{available fuel}}{\text{luminosity}}.
 $$
 
 For stars of similar composition, the available fuel scales roughly with mass:
@@ -832,6 +877,8 @@ $$
 $$
 
 That is why massive stars live much shorter lives. They do have more fuel, but the burn rate rises much faster than the fuel supply.
+
+More mass means more fuel, but luminosity grows even faster. That is why massive stars die young.
 
 {{< fig main-sequence-scaling-ladder >}}
 
@@ -920,6 +967,8 @@ That is convective instability.
 {{< fig convection-stability-cartoon >}}
 
 This is why convection is a stability problem, not just the slogan “hot gas rises.” What matters is the comparison between the parcel’s adiabatic cooling and the background radiative gradient.
+
+The question is not “is the gas hot?” The question is “does the environment cool faster than the parcel?”
 
 ### The Schwarzschild criterion
 
@@ -1096,7 +1145,7 @@ Main-sequence stars are in long-lived thermal balance:
 - that energy is transported to the surface,
 - the luminosity leaving the surface matches the energy production rate on long timescales.
 
-This balance is stable because stars have a thermostat:
+This balance is stable because hydrogen-burning stars have a **self-regulating thermal feedback**:
 
 - if the core produces too much energy, the star expands,
 - expansion lowers the core temperature,
@@ -1113,11 +1162,13 @@ That self-regulation is why hydrogen burning can last for billions of years.
 :::{.callout-important}
 ## Final Takeaway
 
-The main sequence is not a list of unrelated stellar properties.
+The main sequence is not just an observational catalog of stellar properties.
 
-It is the visible trace of a coupled interior physics problem.
+It is the **observable signature** of a coupled interior physics problem.
 
-Mass sets the gravity scale. Gravity sets the pressure scale. Pressure and the equation of state set the temperature scale. Temperature and opacity determine how energy is produced and transported. That chain produces the steep mass-luminosity relation, the short lifetimes of massive stars, and the contrasting interior structures across the main sequence.
+Mass sets the gravity scale. Gravity sets the pressure scale. Pressure and the equation of state set the temperature scale. Temperature and opacity determine how energy is produced and transported. That chain *forces* the steep mass-luminosity relation — it is not optional, and it is not empirical coincidence.
+
+The HR diagram is not just something we observe. It is something the laws of physics produce.
 :::
 
 ## Reference Tables
@@ -1161,7 +1212,11 @@ Mass sets the gravity scale. Gravity sets the pressure scale. Pressure and the e
 :::{.callout-tip}
 ## Synthesis Check — The Whole Chain
 
-Starting from gravity, explain the following causal chain in your own words:
+Starting from gravity, explain the following causal chain in your own words. For each arrow, identify:
+
+1. the physical principle being used,
+2. the new assumption introduced, and
+3. the inference that follows.
 
 $$
 \rho \sim \frac{M}{R^3}
@@ -1173,11 +1228,7 @@ T_c \sim \frac{M}{R}
 L \propto \frac{M^3}{\kappa}.
 $$
 
-Your explanation must identify:
-
-- what physical principle is used at each step,
-- why each step depends on the previous one,
-- where assumptions enter the argument.
+Your explanation should make clear why each step depends on the previous one.
 :::
 
 ## Summary: From Equations to the HR Diagram
