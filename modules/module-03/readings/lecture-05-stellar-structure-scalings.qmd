@@ -30,6 +30,14 @@ prerequisites: "Hydrostatic equilibrium and virial theorem (Reading 2), nuclear 
 
 For main-sequence stars of similar composition, **observations suggest** that mass is the dominant control parameter. But that statement is only scientifically useful if we can build a model that explains **why** changing the mass changes luminosity, radius, temperature, and interior structure so dramatically. In this reading, we assemble the stellar structure equations, show why they must be solved as a coupled system, and then use carefully stated scaling arguments to derive the leading-order physics behind the main sequence. The goal is not to memorize four equations. The goal is to understand why the observed mass-luminosity relation is so steep, why more massive stars are larger and hotter, and why different stars transport energy in different ways.
 
+:::{.callout-note}
+## A Note on the Math in This Reading
+
+This reading includes derivations and differential equations because those tools are central to how astrophysics describes stars. You are **not** expected to solve the full stellar-structure ODE system on your own for this course.
+
+What you *are* responsible for is understanding what the scalings mean, what physical ideas each equation represents, what assumptions enter the toy model, and why this kind of math is useful for turning observations into physical inference. The goal here is to make this mathematical language feel more familiar and less mysterious, not to turn the reading into a formal ODE exercise.
+:::
+
 ## Learning Objectives
 
 After completing this reading, you should be able to:
@@ -619,17 +627,19 @@ L \sim \frac{(M/R)^4 R^4}{\kappa M}
 = \frac{M^3}{\kappa}.
 $$
 
-This is the clean toy luminosity scaling:
+This is the clean **transport-limited toy luminosity scaling**:
 
 $$
 L \propto \frac{M^3}{\kappa}.
 $$
 
-More precisely, this is the luminosity that can be carried outward by radiative diffusion for the assumed characteristic structure.
+At this stage, we have **not** yet shown that the star actually produces exactly this luminosity. We have shown the luminosity that radiative diffusion can carry for the assumed characteristic structure.
 
 Pause here.
 
 Notice what just happened: the radius has dropped out of the scaling entirely.
+
+That does **not** mean radius is irrelevant to stellar structure. It means that under these specific toy assumptions, the leading-order radiative luminosity scaling can be expressed without an explicit radius dependence.
 
 That means luminosity is no longer controlled primarily by size. It is controlled primarily by mass.
 
@@ -782,7 +792,12 @@ At this stage we have two independent estimates of luminosity:
 - a transport-limited luminosity from radiative diffusion,
 - a production-limited luminosity from nuclear burning.
 
-A long-lived main-sequence star must satisfy both simultaneously: it must generate the luminosity it transports.
+A long-lived main-sequence star must satisfy both simultaneously:
+
+- the core must **produce** energy at some rate,
+- the star must **transport** that energy outward at the same rate.
+
+Main-sequence equilibrium requires those two rates to match.
 
 This is the same logic as equilibrium in other systems: a stable system must balance what goes in and what comes out.
 :::
@@ -949,7 +964,7 @@ The lifetime decreases because the fuel supply grows only in proportion to mass,
 
 ## Part 5: When Radiation Fails — Convection
 
-The radiative-transport equation does more than tell us how energy can flow. It also tells us when radiative transport becomes too inefficient to maintain stability.
+The radiative-transport equation does more than tell us how energy flows. It also tells us when radiation is **no longer able to carry the required luminosity stably by itself**. When that happens, convection can begin.
 
 ### The physical idea
 
@@ -1027,6 +1042,17 @@ That already suggests two places where convection might appear:
 
 1. **cool, opaque outer layers**, where radiation struggles to get through,
 2. **very luminous cores**, where too much energy must pass through a small area.
+
+:::{.callout-tip}
+## Predict Before Reading On
+
+If you had to guess, where should convection be more likely:
+
+- in a cool, opaque outer envelope, or
+- in a very luminous stellar core?
+
+Explain your answer using the radiative-gradient scaling before looking at the three regimes.
+:::
 
 ### Three main-sequence interior regimes
 
@@ -1168,7 +1194,7 @@ It is the **observable signature** of a coupled interior physics problem.
 
 Mass sets the gravity scale. Gravity sets the pressure scale. Pressure and the equation of state set the temperature scale. Temperature and opacity determine how energy is produced and transported. That chain *forces* the steep mass-luminosity relation — it is not optional, and it is not empirical coincidence.
 
-The HR diagram is not just something we observe. It is something the laws of physics produce.
+The HR diagram is not just an observational pattern. It is the visible consequence of underlying physical laws operating inside stars.
 :::
 
 ## Reference Tables
