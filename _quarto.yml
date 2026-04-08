@@ -66,7 +66,7 @@ website:
   announcement:
     icon: info-circle
     dismissable: true
-    content: "**Current cycle:** [Homework 7](/homework/astr201-hw7.qmd) is due Tuesday, April 7 at 11:59 pm, and the Homework 7 grade memo is due Friday, April 10 at 11:59 pm. Solutions will be posted after the grade-memo deadline. See the [Homework](/homework/index.qmd) page for details."
+    content: "**Looking ahead:** [Homework 7](/homework/astr201-hw7.qmd) is due Tuesday, April 14 at 11:59 pm. [Exam 2](/exams/index.qmd) is on Tuesday, April 21 and covers everything through Module 3. See the [Homework](/homework/index.qmd) and [Exams](/exams/index.qmd) pages for details."
     type: primary
     position: below-navbar
   navbar:

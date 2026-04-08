@@ -40,6 +40,10 @@ After completing this reading, you should be able to:
 
 > *The main sequence has edges.* You can't build a star of any mass — nature imposes two boundaries, each enforced by different physics. At the **bottom**, quantum mechanics prevents continued contraction before the core gets hot enough for sustained fusion. At the **top**, radiation becomes so important that the most massive stars drive extreme winds and approach a luminosity ceiling. Both limits depend on fundamental constants, which means the range of stellar masses is written into the laws of physics.
 
+::: {.callout-important title="Required Reading Note"}
+This page is **required reading**, but we will **not** lecture through it in full during class. I want you to read it because it ties together the full Module 3 story: gravity heats stars, quantum mechanics sets the lower mass limit, and radiation pressure helps set the upper mass limit. In class, I will likely highlight the big ideas and connections, but not walk through every derivation or enrichment section in detail.
+:::
+
 ::: {.callout-note title="Reading Map — Choose Your Track"}
 
 **Track A (Core, ~25 min):** Read **Parts 1–5** in order — the minimum mass, Heisenberg uncertainty, maximum mass, and the stellar mass range. Skip any box marked *Enrichment*.
