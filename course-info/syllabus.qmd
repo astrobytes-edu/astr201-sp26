@@ -102,7 +102,7 @@ By the end of this course, students will be able to:
 ### Important Dates and Course Schedule{#sec-important-dates}
 
 - **Midterm Exam 1:** Thursday, March 5  
-- **Midterm Exam 2:** Thursday, April 16  
+- **Midterm Exam 2:** Tuesday, April 21  
 - **Final Exam:** Thursday, May 7 — 10:30 am–12:30 pm — LH 245  
 
 The tentative day-by-day schedule (topics, readings, homework calendar) is on the course website. [Click here for the Course Schedule.](./schedule.qmd)

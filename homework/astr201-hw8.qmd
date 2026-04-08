@@ -1,0 +1,272 @@
+---
+title: "Homework 8"
+subtitle: "Stellar Structure II — Energy Transport, Mass Limits, and White Dwarfs (Exam 2 Prep)"
+author: "Dr. Anna Rosen"
+course: ASTR 201
+module: "Module 3 Lectures 4–8 (transport, scalings, mass limits, low-mass evolution, degeneracy)"
+lectures: "Module 3 Lectures 4–8 (transport, scalings, mass limits, low-mass evolution, degeneracy)"
+math-level: symbolic_with_interpretation
+draft: false
+estimated-time: "4–6 hours"
+due: "Tuesday, April 14, 2026 at 11:59 pm"
+grade-memo-due: "Friday, April 17, 2026 at 11:59 pm"
+submission: "Canvas; upload a single clearly scanned PDF or a legible PDF export"
+format:
+  html:
+    toc: true
+  pdf:
+    toc: false
+    geometry: margin=1in
+    fontsize: 11pt
+---
+
+{{< hwmeta >}}
+
+## Learning Objectives
+
+- Use opacity, optical depth, mean free path, and random-walk reasoning to explain why energy escapes stars slowly.
+- Apply toy stellar-structure scalings to connect mass to luminosity, radius, density, and lifetime.
+- Explain why quantum mechanics sets the minimum stellar mass while radiation pressure helps set the upper end.
+- Trace the low-mass evolutionary path from core hydrogen exhaustion to red giant, helium burning, planetary nebula, and white dwarf.
+- Explain how electron degeneracy pressure supports white dwarfs and why the Chandrasekhar limit imposes a maximum white-dwarf mass.
+
+## Concept Throughline
+
+- **Tiny photon steps make energy transport slow even when photons move locally at $c$.**
+- **Stellar structure is a coupled balance problem, so scaling relations reveal real physics instead of just producing numbers.**
+- **The stellar mass range is bounded from below by degeneracy and from above by radiation pressure and winds.**
+- **Low-mass stellar death exposes a degenerate core rather than triggering core collapse.**
+- **White dwarfs are supported by quantum mechanics, but only up to the Chandrasekhar limit.**
+
+## Prerequisites
+
+- Homework 7 tools: scaling, dimensional analysis, hydrostatic reasoning, and sanity checks
+- Module 3 Readings 4–8
+- Scientific notation and algebra with power laws
+- Clear observable → model → inference reasoning in complete sentences
+
+## Relevant Sources (Module-Based)
+
+- [Module 3 (reading): Lecture 4 — The Long Way Out: Radiation Transport](https://astrobytes-edu.github.io/astr201-sp26/modules/module-03/readings/lecture-04-radiation-transport.html)
+- [Module 3 (reading): Lecture 5 — The Stellar Blueprint: Structure Equations and Main-Sequence Scalings](https://astrobytes-edu.github.io/astr201-sp26/modules/module-03/readings/lecture-05-stellar-structure-scalings.html)
+- [Module 3 (reading): Lecture 6 — Nature's Narrow Window: Minimum and Maximum Stellar Masses](https://astrobytes-edu.github.io/astr201-sp26/modules/module-03/readings/lecture-06-mass-limits.html)
+- [Module 3 (reading): Lecture 7 — The Gentle Death of a Sun-Like Star: Low-Mass Stellar Evolution](https://astrobytes-edu.github.io/astr201-sp26/modules/module-03/readings/lecture-07-low-mass-evolution.html)
+- [Module 3 (reading): Lecture 8 — The Quantum Limit: Degeneracy Pressure and the Chandrasekhar Mass](https://astrobytes-edu.github.io/astr201-sp26/modules/module-03/readings/lecture-08-degeneracy-chandrasekhar.html)
+
+::: {.callout-note}
+**Before you start:** Review the [Homework Guidelines](hw-tips.qmd) for required format and tools.
+:::
+
+::: {.callout-tip}
+**HW8 note:** This is your last homework before Exam 2. Treat it like a guided study set: show the units, say what each scaling assumes, and include a one-line physical interpretation after every major result.
+:::
+
+::: {.callout-note}
+Use these values and relations unless a problem states otherwise:
+
+These toy stellar-structure scalings are for **roughly solar-like, radiative pp-chain main-sequence stars**. Use them only when a problem explicitly tells you to do so, and say that assumption out loud in your solution.
+
+- Mean free path:
+  $$
+  \ell = \frac{1}{\kappa \rho}
+  $$
+- Optical depth:
+  $$
+  \tau \sim \kappa \rho R \sim \frac{R}{\ell}
+  $$
+- Diffusion-time estimate:
+  $$
+  t_{\text{diff}} \sim \frac{R^2}{\ell c}
+  $$
+- Toy main-sequence scalings for radiative pp-chain stars:
+  $$
+  \frac{L}{L_\odot} \approx \left(\frac{M}{M_\odot}\right)^3,
+  \qquad
+  \frac{R}{R_\odot} \approx \left(\frac{M}{M_\odot}\right)^{3/7}
+  $$
+  $$
+  \frac{t_{\text{MS}}}{t_{\odot}} \approx
+  \left(\frac{M}{M_\odot}\right)
+  \left(\frac{L}{L_\odot}\right)^{-1},
+  \qquad
+  t_\odot \approx 10~\text{Gyr}
+  $$
+- Eddington luminosity for electron-scattering opacity:
+  $$
+  L_{\text{Edd}} = \frac{4 \pi G M c}{\kappa}
+  \approx 3.8 \times 10^4
+  \left(\frac{M}{M_\odot}\right)L_\odot
+  $$
+- White-dwarf mass-radius trend (non-relativistic regime):
+  $$
+  R \propto M^{-1/3}
+  $$
+- White-dwarf average density:
+  $$
+  \bar{\rho} = \frac{M}{\frac{4}{3}\pi R^3}
+  $$
+- Useful constants:
+  $$
+  c = 3.0 \times 10^{10}~\text{cm/s},
+  \quad
+  M_\odot = 2.0 \times 10^{33}~\text{g},
+  \quad
+  R_\odot = 7.0 \times 10^{10}~\text{cm},
+  \quad
+  R_\oplus = 6.4 \times 10^8~\text{cm}
+  $$
+- Reference scales:
+  $$
+  \kappa_{\text{es}} \approx 0.34~\text{cm}^2~\text{g}^{-1},
+  \quad
+  \rho_{\text{core},\odot} \approx 150~\text{g/cm}^3,
+  \quad
+  M_{\text{Ch}} \approx 1.4\,M_\odot
+  $$
+:::
+
+::: {.callout-note}
+**Required reporting format:**
+
+- Every numeric answer must include units.
+- Show the identity-trick logic for unit conversions instead of skipping straight to a converted number.
+- Include a one-line sanity check for each calculation problem.
+- For conceptual and synthesis problems, write in complete sentences and name the key physical idea explicitly.
+- When you use a scaling relation, say what assumption makes that scaling reasonable.
+:::
+
+---
+
+## Problems (9 total)
+
+### Part A — Why Energy Escapes So Slowly
+
+<!-- Problem: Conceptual / Connection / O→M→I / Tools: Model-Inversion, Uncertainty/Assumptions / ⭐ -->
+### Problem 1 — Why the Sun Is Not a Transparent Bulb
+
+A student says, "Photons move at the speed of light, so energy made in the solar core should reach the surface in a few seconds."
+
+- (a) Explain the missing physics in this statement.
+- (b) In words, distinguish **opacity** $\kappa$ from **optical depth** $\tau$.
+- (c) Explain why, in stellar interiors, what diffuses outward is the **energy of the radiation field** rather than the identity of one specific photon.
+
+---
+
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Unit-Conversion, Scaling/Ratio, Model-Inversion / ⭐⭐ -->
+### Problem 2 — Mean Free Path, Optical Depth, and Diffusion Time
+
+Use a one-zone solar estimate with
+
+- $\kappa = 0.34~\text{cm}^2\,\text{g}^{-1}$
+- $\rho = 150~\text{g/cm}^3$
+- $R = R_\odot = 7.0 \times 10^{10}~\text{cm}$
+
+- (a) Compute the photon mean free path $\ell$ in cm.
+- (b) Compute the optical depth $\tau$ across one solar radius.
+- (c) Estimate the photon diffusion time $t_{\text{diff}}$ in seconds and in years.
+- (d) Compare your result to the straight-line light-crossing time $t_{\text{stream}} = R_\odot/c$, and explain in one sentence why the two answers differ so dramatically.
+
+---
+
+<!-- Problem: Synthesis / Connection / O→M→I / Tools: Model-Inversion, Uncertainty/Assumptions / ⭐⭐ -->
+### Problem 3 — Why Different Stars Transport Energy Differently
+
+Compare a **solar-like** main-sequence star with a **high-mass** main-sequence star. (Do not use the very-low-mass, fully convective regime for this problem.)
+
+- (a) Explain why a **high-mass** star tends to develop a **convective core**.
+- (b) Explain why a **solar-like** star can instead have a **radiative core** and a **convective envelope**.
+- (c) In 3–5 sentences, connect these transport regimes to the deeper idea that energy transport depends on whether radiation can carry the required luminosity efficiently enough.
+
+---
+
+### Part B — Main-Sequence Scalings and Mass Limits
+
+<!-- Problem: Calculation:Full / Application / — / Tools: Scaling/Ratio / ⭐⭐ -->
+### Problem 4 — Toy Main-Sequence Scalings in Their Proper Regime
+
+Use the toy scalings
+$$
+\frac{L}{L_\odot} \approx \left(\frac{M}{M_\odot}\right)^3,
+\qquad
+\frac{R}{R_\odot} \approx \left(\frac{M}{M_\odot}\right)^{3/7},
+\qquad
+\frac{t_{\text{MS}}}{t_\odot} \approx
+\left(\frac{M}{M_\odot}\right)
+\left(\frac{L}{L_\odot}\right)^{-1}.
+$$
+
+For a **toy radiative, pp-chain main-sequence star** with $M = 1.2\,M_\odot$:
+
+- (a) Estimate its luminosity in solar units.
+- (b) Estimate its radius in solar units.
+- (c) Use $\bar{\rho} \propto M/R^3$ to compute its **average density relative to the Sun**.
+- (d) Estimate its main-sequence lifetime in Gyr.
+- (e) State clearly why this problem is a **toy-model exercise** rather than a full description of every main-sequence star.
+
+---
+
+<!-- Problem: Conceptual / Connection / O→M→I / Tools: Model-Inversion / ⭐⭐ -->
+### Problem 5 — Why Nature Allows Only a Narrow Stellar Mass Range
+
+Hydrogen-burning stars occupy only a limited mass range.
+
+- (a) Explain why objects below about $0.08\,M_\odot$ become **brown dwarfs** instead of sustained hydrogen-burning stars.
+- (b) Explain why stars near the upper end of the mass range run into the **Eddington regime** and strong mass loss.
+- (c) In one or two sentences, explain why the lower and upper limits come from **different** physical mechanisms.
+
+---
+
+<!-- Problem: Calculation:Full / Connection / O→M→I / Tools: Scaling/Ratio, Order-of-Magnitude, Uncertainty/Assumptions / ⭐⭐ -->
+### Problem 6 — Estimating the Maximum Stellar Mass
+
+Set the ordinary main-sequence luminosity scaling
+$$
+\frac{L}{L_\odot} \approx \left(\frac{M}{M_\odot}\right)^{3.5}
+$$
+equal to the Eddington scaling
+$$
+\frac{L_{\text{Edd}}}{L_\odot} \approx 3.8 \times 10^4 \left(\frac{M}{M_\odot}\right).
+$$
+
+- (a) Solve for the characteristic mass scale where the two become comparable.
+- (b) Report your answer as an **order-of-magnitude upper-mass scale** in solar masses, not as a fake-precision exact cutoff.
+- (c) Explain why this is an **order-of-magnitude ceiling** rather than a hard wall at exactly one mass.
+- (d) Observations show stars up to roughly $150\text{–}200\,M_\odot$. Explain why that does **not** contradict your estimate.
+
+---
+
+### Part C — Low-Mass Evolution and White Dwarfs
+
+<!-- Problem: Conceptual / Connection / O→M→I / Tools: Model-Inversion, Uncertainty/Assumptions / ⭐⭐ -->
+### Problem 7 — From Main Sequence to Red Giant
+
+Describe the low-mass evolutionary path after core hydrogen is exhausted.
+
+- (a) What happens first in the **core** and what happens first in the **envelope**?
+- (b) Why does hydrogen-shell burning make the star become a **red giant** even though the core itself is contracting?
+- (c) Why can helium ignition become a **helium flash** in low-mass stars?
+- (d) After core helium burning ends, what makes the star enter the **AGB** phase, and how does that lead to a **planetary nebula** plus a white dwarf?
+
+---
+
+<!-- Problem: Calculation:Full / Application / — / Tools: Unit-Conversion, Scaling/Ratio / ⭐⭐ -->
+### Problem 8 — White Dwarf Density and the Reversed Mass-Radius Relation
+
+A typical white dwarf has mass $M = 0.6\,M_\odot$ and radius $R = R_\oplus$.
+
+- (a) Compute its average density in $\text{g/cm}^3$.
+- (b) Compare your result to Earth's average density, $\bar{\rho}_\oplus \approx 5.5~\text{g/cm}^3$.
+- (c) A second white dwarf has mass $1.2\,M_\odot$. Using $R \propto M^{-1/3}$, compute the radius ratio $R_{1.2}/R_{0.6}$.
+- (d) In one sentence, explain why the more massive white dwarf is **smaller**, not larger.
+
+---
+
+<!-- Problem: Synthesis / Connection / O→M→I / Tools: Model-Inversion, Uncertainty/Assumptions / ⭐⭐⭐ -->
+### Problem 9 — The Chandrasekhar Limit as an Inference Chain
+
+Astronomers observe white dwarfs in binaries and infer their masses and radii. Stable white dwarfs are compact, Earth-sized, degenerate objects, and the stable population cuts off near $1.4\,M_\odot$.
+
+- (a) State the **observable**, the **model**, and the **inference** in this story.
+- (b) Explain why **electron degeneracy pressure**, rooted in the Pauli exclusion principle, can support a white dwarf even when there is no fusion.
+- (c) Explain why relativity changes the game as the white dwarf mass rises toward the Chandrasekhar limit.
+- (d) In 3–5 sentences, explain what the Chandrasekhar limit tells us about the fate of stellar cores above $1.4\,M_\odot$.

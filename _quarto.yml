@@ -66,7 +66,7 @@ website:
   announcement:
     icon: info-circle
     dismissable: true
-    content: "**Looking ahead:** [Homework 7](/homework/astr201-hw7.qmd) is due Tuesday, April 14 at 11:59 pm. [Exam 2](/exams/index.qmd) is on Tuesday, April 21 and covers everything through Module 3. See the [Homework](/homework/index.qmd) and [Exams](/exams/index.qmd) pages for details."
+    content: "**This week:** [Homework 8](/homework/astr201-hw8.qmd) is due Tuesday, April 14 at 11:59 pm. The [Homework 7 solutions](/homework/solutions/astr201-hw7-solutions.qmd) are posted for review, and [Exam 2](/exams/index.qmd) is Tuesday, April 21 covering everything through Module 3. See the [Homework](/homework/index.qmd) and [Exams](/exams/index.qmd) pages for details."
     type: primary
     position: below-navbar
   navbar:
@@ -216,7 +216,9 @@ website:
       - section: "Homework"
         contents:
           - homework/index.qmd
+          - homework/astr201-hw8.qmd
           - homework/astr201-hw7.qmd
+          - homework/solutions/astr201-hw7-solutions.qmd
           - homework/astr201-hw6.qmd
           - handouts/growth-memo-1.qmd
           - homework/astr201-hw5.qmd

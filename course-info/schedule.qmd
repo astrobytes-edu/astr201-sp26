@@ -32,7 +32,7 @@ Reading labels:
 
 - **First class:** Tue **Jan 20, 2026**
 - **Exam 1 (in class):** Thu **Mar 5, 2026**
-- **Exam 2 (in class):** Thu **Apr 16, 2026**
+- **Exam 2 (in class):** Tue **Apr 21, 2026**
 - **Spring Break (no class):** Tue **Mar 31** & Thu **Apr 2**
 - **Last class (synthesis + optional review):** Tue **May 5**
 - **Final Exam:** Thu **May 7** 10:30 am - 12:30 pm | **Room:** LH 249
@@ -84,7 +84,7 @@ Reading labels:
 | 10 | Mar 24 & 26 | Radiation transport: opacity, random walk, diffusion<br>Stellar structure equations + main-sequence scalings | Ch. 16 (pp. 107–110) + Ch. 17 (pp. 112–116) | 9 |
 | Spring Break | Mar 31 & Apr 2 | — No class — | — | — |
 | 11 | Apr 7 & 9 | Min/max masses: brown dwarfs, Eddington limit, and degeneracy pressure<br>Low-mass evolution → white dwarfs + Chandrasekhar limit | Ch. 18 (pp. 122–124) + Ch. 19 (pp. 128–134) | 10 |
-| 12 | Apr 14 & 16 | High-mass evolution → core-collapse supernovae; neutron stars + black holes<br>Thu: **EXAM 2** | Ch. 20.1–20.5 (pp. 137–143) | 7 |
+| 12 | Apr 14 & 16 | High-mass evolution → core-collapse supernovae<br>Neutron stars + black holes; Exam 2 review and synthesis | Ch. 20.1–20.5 (pp. 137–143) | 7 |
 
 ---
 
@@ -92,7 +92,7 @@ Reading labels:
 
 | Week | Dates | Topics (in class) | Required reading (Core) | Core pages |
 |:-|:--|:-----|:--|:-|
-| 13 | Apr 21 & 23 | ISM phases; heating vs cooling (thermal balance)<br>Star formation: Jeans criterion; IMF; angular momentum → disks<br>Extinction/reddening (here) | Ch 21 (pp. 155–163) + Ch 22 (pp. 166–171) + Ch 12.3 (pp. 77–78) | 17 |
+| 13 | Apr 21 & 23 | Tue: **EXAM 2**<br>Thu: ISM phases; heating vs cooling; star formation; extinction/reddening | Ch 21 (pp. 155–163) + Ch 22 (pp. 166–171) + Ch 12.3 (pp. 77–78) | 17 |
 | 14 | Apr 28 & 30 | Milky Way: rotation curve → dark matter<br>External galaxies + Hubble law; large-scale structure + lensing | Ch 26 (pp. 201–210) + Ch 27.1–27.3 (pp. 213–217) + Ch 29 (pp. 232–238) | 22 |
 | 15 | May 5 | Cosmology capstone: expansion dynamics → CMB → early eras<br>Synthesis + optional review | Ch. 30 (pp. 243–248) + Ch. 32.2–32.4 (pp. 261–264) | 10 |
 
