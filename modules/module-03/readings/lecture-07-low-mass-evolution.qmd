@@ -21,7 +21,7 @@ Concept-Throughline:
   - The triple-alpha process builds carbon from helium — every carbon atom in your body was forged in a red giant
   - White dwarfs are the final state for stars below about 8 solar masses — dead cores held up by electron degeneracy pressure
 math-level: symbolic_with_interpretation
-mode: Draft
+mode: Refine
 prerequisites: "Virial theorem and core temperature (Reading 2), nuclear fusion and binding energy curve (Reading 3), stellar structure equations (Reading 5), degeneracy pressure concept (Reading 6)"
 ---
 
@@ -170,6 +170,11 @@ $$
 \frac{R}{R_\odot} \approx 87
 $$
 
+So
+$$
+\boxed{\frac{R}{R_\odot} \approx 87}
+$$
+
 The red giant is $\sim 87$ times the Sun's current radius. If placed at the Sun's position, it would extend past Mercury's orbit ($\sim 83\,R_\odot$) and nearly to Venus ($\sim 155\,R_\odot$). This is a star that was once roughly solar-sized — now it fills a substantial fraction of the inner solar system.
 :::
 :::
@@ -244,14 +249,35 @@ E = \Delta m \, c^2
 $$
 
 $$
-E = (3 \times 4.002602 - 12.000000)~\text{u} \times 931.5~\text{MeV/u}
+\Delta m
+=
+\left(3 \times 4.002602 - 12.000000\right)~\text{u}
+=
+0.007806~\text{u}
 $$
 
 $$
-E = 7.275~\text{MeV}
+E
+=
+\left(0.007806~\text{u}\right)
+\left(\frac{931.5~\text{MeV}}{1~\text{u}}\right)
+=
+7.275~\text{MeV}
 $$
 
-This is $\sim 7.3~\text{MeV}$ per carbon nucleus produced — compared to $26.7~\text{MeV}$ per helium nucleus from hydrogen burning. Helium burning produces less energy per reaction *and* consumes fuel faster (because the luminosity of a helium-burning star is much higher). This is why helium burning lasts a much shorter time than hydrogen burning.
+So the triple-alpha process releases
+$$
+\boxed{E_{3\alpha} \approx 7.3~\text{MeV}}
+$$
+per carbon nucleus produced from three helium nuclei.
+
+To compare helium burning with hydrogen burning, the useful quantity is **energy released per unit mass of fuel**, not just energy per reaction. Triple-alpha burning releases about $7.3~\text{MeV}$ from $12~\text{u}$ of helium fuel, while hydrogen burning releases about $26.7~\text{MeV}$ from $4~\text{u}$ of hydrogen fuel. So helium burning yields only about
+$$
+\frac{7.3/12}{26.7/4}
+\approx
+0.09
+$$
+times as much energy per unit mass of fuel as hydrogen burning. Helium-burning stars also shine much more brightly than main-sequence stars, so they use up their available fuel much faster. This is why helium burning lasts much less time than hydrogen burning.
 
 ::: {.callout-note title="Nucleosynthesis Thread (2 of 3)"}
 **Reading 3:**
@@ -361,11 +387,27 @@ A $1\,M_\odot$ star ends its life with a core of $\sim 0.6\,M_\odot$ (the rest w
 
 The ratio is $\tau_\text{He}/\tau_\text{H} \sim 10^8/10^{10} = 0.01$ — helium burning lasts only $\sim 1\%$ as long as hydrogen burning. Two factors explain this:
 
-1. **Less energy per reaction:** The triple-alpha process releases $\sim 7.3~\text{MeV}$ per $^{12}\text{C}$ produced, compared to $\sim 26.7~\text{MeV}$ per $^4\text{He}$ from pp-chain. The energy yield per unit mass is $\sim 10\%$ that of hydrogen burning.
+1. **Less energy per unit mass of fuel:** Triple-alpha burning gives only about $\sim 9\%$ as much energy per unit mass as hydrogen burning.
 
 2. **Higher luminosity:** Helium-burning stars are on the horizontal branch at $L \sim 50\,L_\odot$, compared to $L \sim 1\,L_\odot$ on the main sequence. They burn fuel $\sim 50\times$ faster.
 
-Combined: $\tau_\text{He} \sim 0.1 \times (1/50) \times \tau_\text{H} \sim 0.002 \times \tau_\text{H}$, roughly matching the observed ratio. Each successive burning stage is shorter — a pattern that becomes even more dramatic in massive stars (Reading 9).
+3. **A larger fraction of the star participates in helium burning than in main-sequence core hydrogen burning.** On the main sequence, only the central part of the star can burn hydrogen efficiently. By the time helium burning begins, the helium core itself is a substantial fraction of the stellar mass.
+
+So the lifetime scaling is roughly
+$$
+\tau_\text{He}
+\sim
+\left(\frac{\text{available He fuel}}{\text{available H fuel}}\right)
+\left(\frac{\text{energy per unit mass from He burning}}{\text{energy per unit mass from H burning}}\right)
+\left(\frac{L_\text{H}}{L_\text{He}}\right)
+\tau_\text{H}.
+$$
+
+Using an accessible-fuel ratio of a few, an energy-per-mass ratio of $\sim 0.09$, and a luminosity ratio of $\sim 1/50$, we get an order-of-magnitude estimate near
+$$
+\tau_\text{He} \sim 10^{-2}\,\tau_\text{H},
+$$
+which is consistent with the observed ratio. The big lesson is that each later burning stage has less available fuel energy and usually a higher luminosity, so the stages get progressively shorter.
 :::
 :::
 
@@ -440,6 +482,11 @@ $$
 
 $$
 = \frac{1.2 \times 10^{33}~\text{g}}{1.1 \times 10^{27}~\text{cm}^3} \approx 1.1 \times 10^6~\text{g}/\text{cm}^3
+$$
+
+So the average density is
+$$
+\boxed{\bar{\rho} \approx 1.1 \times 10^6~\text{g}/\text{cm}^3}
 $$
 
 Earth's average density is $\bar{\rho}_\oplus \approx 5.5~\text{g}/\text{cm}^3$, so the white dwarf is about $200{,}000$ times denser than Earth — despite being roughly the same size. A teaspoon of white dwarf material ($\sim 5~\text{cm}^3$) would weigh $\sim 5 \times 10^6~\text{g} = 5~\text{tonnes}$.

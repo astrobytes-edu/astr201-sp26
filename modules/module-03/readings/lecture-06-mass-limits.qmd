@@ -21,7 +21,7 @@ Concept-Throughline:
   - The minimum stellar mass is set by quantum effects — electron degeneracy can halt contraction before hydrogen fusion ignites
   - The Eddington limit marks where radiation force becomes comparable to gravity, so very massive stars develop strong winds and an upper mass scale
 math-level: symbolic_with_interpretation
-mode: Draft
+mode: Refine
 prerequisites: "de Broglie wavelength (Reading 3), Eddington luminosity and radiation pressure (Reading 4), the mass-luminosity relation from Reading 5, and the core-temperature scaling from Reading 2"
 ---
 
@@ -49,6 +49,8 @@ This page is **required reading**, but we will **not** lecture through it in ful
 **Track A (Core, ~25 min):** Read **Parts 1–5** in order — the minimum mass, Heisenberg uncertainty, maximum mass, and the stellar mass range. Skip any box marked *Enrichment*.
 
 **Track B (Full, ~35 min):** Read everything, including the enrichment boxes on brown dwarfs and pair-instability supernovae. These topics connect to Readings 7–10.
+
+If you are short on time, prioritize the **Big Idea** boxes, the **Observable → Model → Inference** box, and the **Summary** at the end.
 
 *Both tracks cover all core learning objectives.*
 :::
@@ -223,7 +225,7 @@ $$
 E_\text{min} \sim \frac{p_\text{min}^2}{2m_e} = \frac{(1.055 \times 10^{-19})^2}{2 \times 9.11 \times 10^{-28}} \sim 6 \times 10^{-12}~\text{erg} \sim 4~\text{eV}
 $$
 
-This is the **zero-point energy** — the minimum kinetic energy an electron must have when confined to atomic scales. It's comparable to the binding energy of hydrogen ($13.6~\text{eV}$), which is not a coincidence: the size of atoms is *set* by the balance between Coulomb attraction (pulling the electron inward) and quantum confinement energy (resisting compression). The same physics operates in white dwarfs — but at much higher densities, with far more dramatic consequences.
+This is the **zero-point energy** — the minimum kinetic energy an electron must have when confined to atomic scales. The number matters less than the pattern: tighter confinement forces larger momentum and therefore larger kinetic energy. That same logic is what makes degeneracy pressure rise in dense stellar matter.
 
 ::: {.callout-tip}
 ## Check Yourself
@@ -356,7 +358,7 @@ If you **naively extrapolate** that moderate-mass trend, luminosity rises much f
 | 50 | $8.8 \times 10^5$ | $1.9 \times 10^6$ | 0.46 |
 | 100 | $10^7$ | $3.8 \times 10^6$ | 2.6 |
 
-This table is useful because it shows **why an upper limit appears at all**. But it is not the full answer. At the highest masses, the mass-luminosity relation flattens, radiation pressure reshapes the interior, and the star responds by driving powerful **radiation-driven winds** that strip mass from the surface.
+This table is useful because it shows **why an upper limit appears at all**. If luminosity rises faster than the Eddington limit, radiation becomes increasingly important. But this table is only an order-of-magnitude guide: at the highest masses, the mass-luminosity relation flattens, radiation pressure reshapes the interior, and the star responds by driving powerful **radiation-driven winds** that strip mass from the surface.
 
 ### Finding the Maximum Mass
 
@@ -378,7 +380,12 @@ $$
 \frac{M}{M_\odot} = (3.8 \times 10^4)^{0.4} \approx 100
 $$
 
-So a naive crossover estimate gives $M_\text{max} \sim 100\,M_\odot$. In practice, stars up to $\sim 150\text{–}200\,M_\odot$ have been observed (for example R136a1 in the Large Magellanic Cloud, with a birth mass near $170\,M_\odot$), because the mass-luminosity relation flattens at very high masses and the Eddington limit is not an absolute wall. The useful lesson is not that stars instantly explode at $100\,M_\odot$, but that radiation increasingly constrains the structure and drives strong mass loss.
+So a naive crossover estimate gives an upper-mass scale of about
+$$
+\boxed{M_\text{max} \sim 100\,M_\odot}.
+$$
+
+In practice, stars up to roughly $\sim 150\text{–}200\,M_\odot$ have been observed. The key lesson is not that stars hit a hard wall at exactly $100\,M_\odot$, but that beyond this scale radiation increasingly constrains the structure, flattens the luminosity trend, and drives strong mass loss.
 
 ::: {.callout-tip}
 ## Check Yourself
