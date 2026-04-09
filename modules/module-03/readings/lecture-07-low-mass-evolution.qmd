@@ -12,8 +12,8 @@ learning-objectives:
   - Infer from cluster HR diagrams why low-mass stars must pass through red giant, helium-burning, and white dwarf phases rather than simply fading away
   - Derive from the virial theorem why energy loss from an inert stellar core leads to contraction and core heating
   - Explain causally why shell hydrogen burning drives red giant expansion and calculate giant radii from luminosity and temperature
-  - Calculate and compare the energy released per unit mass in hydrogen burning and helium burning
-  - Derive how the extreme temperature sensitivity of the triple-alpha process leads to instability in a degenerate helium core
+  - Compare the energy released per unit mass in hydrogen burning and helium burning, and use that comparison together with stellar luminosity arguments to explain why helium-burning phases are shorter
+  - Explain, using the temperature sensitivity of the triple-alpha reaction and the weak temperature dependence of degeneracy pressure, why helium ignition in a degenerate core runs away
   - Use non-relativistic degeneracy-pressure scaling to explain why white dwarfs are temperature-independent remnants and why more massive white dwarfs are smaller
 Concept-Throughline:
   - Observations of clusters show that stars leave the main sequence in systematic ways rather than disappearing
@@ -33,13 +33,15 @@ After completing this reading, you should be able to:
 2. **Derive** from the virial theorem why an inert core that loses energy contracts and heats up.
 3. **Explain causally** why shell hydrogen burning drives red giant expansion instead of simple fading.
 4. **Calculate** a red giant radius from the Stefan-Boltzmann law using explicit dimensionless ratios.
-5. **Calculate** the energy released per unit mass in hydrogen burning and helium burning and **infer** the consequence for stellar lifetimes.
-6. **Derive** how the triple-alpha temperature sensitivity and temperature-independent degeneracy pressure together produce the helium flash.
+5. **Compare** the energy released per unit mass in hydrogen burning and helium burning, and use that comparison together with luminosity arguments to explain why helium-burning phases are shorter.
+6. **Explain**, using the temperature sensitivity of the triple-alpha reaction and the weak temperature dependence of degeneracy pressure, why helium ignition in a degenerate core runs away.
 7. **Use** the non-relativistic degeneracy-pressure scaling and the white-dwarf mass-radius relation to **infer** why more massive white dwarfs are smaller.
 
 ## Concept Throughline
 
 > *The HR diagram tells us what stars do after the main sequence. This reading explains why. When core hydrogen runs out, the core contracts and heats, shell burning turns on, the envelope expands into a red giant, helium ignites, the star sheds its envelope, and a white dwarf remains. Every stage is an inference from observables tied to a physical model.*
+
+At each stage, the key reasoning task is: **what new interior structure or energy source is required to explain the observed position of the star on the HR diagram?**
 
 ::: {.callout-note title="Reading Map — Choose Your Track"}
 
@@ -91,6 +93,8 @@ Astronomers do not watch a single Sun-like star for billions of years. Instead, 
 
 These are not random points scattered across the HR diagram. They are organized structures.
 
+Because stars in a cluster are observed at nearly the same distance and formed at roughly the same time, differences in their HR-diagram positions can be interpreted primarily as differences in stellar mass and evolutionary stage.
+
 ### Model
 
 The model idea is simple before it becomes detailed: a star changes position on the HR diagram when its **luminosity**, **surface temperature**, and **radius** change. Those surface properties change because the **interior energy source**, **pressure support**, and **energy-transport mechanism** change.
@@ -112,6 +116,8 @@ $$
 \rightarrow
 \text{white dwarf}.
 $$
+
+In older, metal-poor populations this core-helium-burning phase often appears as a horizontal branch; in more metal-rich populations it may appear instead as a red clump. In both cases, the key inference is that a new central energy source has turned on.
 
 ### Inference
 
@@ -138,6 +144,8 @@ Once core hydrogen is exhausted, the core can no longer replenish the energy it 
 
 {{< include ../../../_includes/equations/stellar-virial.qmd >}}
 {{< eqrefcard stellar-virial >}}
+
+For this section, use the virial theorem as a quasi-static, ideal-gas argument for the contracting core. We are not claiming that every detail of the post-main-sequence interior can be read off from this one equation alone.
 
 Let us define the symbols:
 
@@ -178,7 +186,7 @@ $$
 E = -K_{\text{th}} = \frac{U_{\text{grav}}}{2}.
 $$
 
-This line is the key to the whole section.
+This line is the key to the whole section. For a self-gravitating system, losing total energy makes the bound state deeper.
 
 If the core radiates energy away, then
 
@@ -222,9 +230,9 @@ This is the negative-heat-capacity behavior of self-gravitating objects:
 
 The core response is therefore the opposite of what students expect from ordinary objects like stovetops or coffee mugs.
 
-The core is now a dense, inert helium core. It is inert because helium fusion requires a much higher temperature than hydrogen fusion.
+After central hydrogen is exhausted, the core is mostly helium ash left behind by earlier fusion. Because the temperature is still too low for helium fusion, this helium core is inert: it contributes mass and gravity, but not new nuclear power.
 
-At the outer edge of that contracting core, a hydrogen-rich layer that was previously too cool for fusion gets compressed and heated. That is where shell burning begins.
+At the outer edge of that contracting core, a hydrogen-rich layer that was previously too cool for fusion gets compressed and heated. The shell that ignites is the layer just outside the inert helium core because it is the first hydrogen-rich region compressed strongly by the contracting core. The center itself cannot resume hydrogen burning because its hydrogen fuel has already been exhausted.
 
 ### Inference
 
@@ -300,6 +308,20 @@ with $N$ fixed, larger $K_{\text{th}}$ means larger $T$.
 
 On the HR diagram, the star does not move down and to the right as a fading ember. It climbs the red giant branch: luminosity rises strongly while surface temperature falls to roughly $3{,}500\text{–}4{,}500~\text{K}$. Observationally, that means the star becomes both **larger** and **brighter** even though core hydrogen burning has ended.
 
+From
+
+$$
+L = 4\pi R^2 \sigma T_{\text{eff}}^4,
+$$
+
+we can write the schematic radius scaling
+
+$$
+R \propto L^{1/2} T_{\text{eff}}^{-2}.
+$$
+
+So if a star becomes much more luminous while its surface temperature drops, its radius must increase dramatically. That is the defining signature of a red giant.
+
 ### Model
 
 The model has two linked pieces: why shell burning is powerful, and why that power inflates the envelope.
@@ -317,7 +339,7 @@ where
 - $\varepsilon$ is the energy generation rate per unit mass, in `erg g^{-1} s^{-1}`,
 - $dm$ is the mass element, in `g`.
 
-For proton-proton burning, a useful schematic scaling is
+For pedagogical purposes, we use the rough local scaling
 
 $$
 \varepsilon_{\text{pp}} \propto \rho X^2 T^4,
@@ -329,6 +351,8 @@ where
 - $X$ is the hydrogen mass fraction,
 - $T$ is temperature.
 
+The exact dependence varies with conditions, but the main point is that compression and heating of the shell make the burning rate rise sharply.
+
 When the helium core contracts, the hydrogen-rich layer just outside it is compressed. Both $\rho$ and $T$ in that shell rise. Because the reaction rate depends strongly on temperature, even a modest rise in $T$ increases $\varepsilon_{\text{pp}}$ substantially. The shell is geometrically thin, but it is located exactly where the temperature and density have become large enough for intense burning. The result is a large luminosity emerging from a small region.
 
 #### Why does the envelope expand instead of just glowing harder at the same size?
@@ -338,7 +362,7 @@ Here is the causal chain, step by step:
 1. **Core contraction raises the pressure at the core-envelope boundary.**
 2. **That compresses and heats the hydrogen shell.**
 3. **The shell luminosity rises.**
-4. **That luminosity is deposited at the base of the envelope.**
+4. **That enhanced outward energy flux must be transported through the base of the envelope.**
 5. **The envelope opacity is high**, so purely radiative transport struggles to carry the new luminosity.
 6. **The radiative temperature gradient steepens.**
 7. **Convection turns on** when the gradient exceeds the stability threshold.
@@ -362,6 +386,8 @@ $$
 
 That is why red giant structure is an envelope response to an interior burning-shell problem.
 
+As the envelope expands, the radiating surface becomes much larger. A larger surface area allows the star to remain very luminous while cooling at the photosphere, moving it up and to the right onto the red giant branch.
+
 #### Radius example from the Stefan-Boltzmann law
 
 We can now quantify what “giant” means. Use the Stefan-Boltzmann law:
@@ -379,6 +405,8 @@ $$
 \left(\frac{R}{R_\odot}\right)^2
 \left(\frac{T_{\text{eff}}}{T_{\text{eff},\odot}}\right)^4.
 $$
+
+The luminosity ratio $L/L_\odot$ is dimensionless, so the right-hand side must also be dimensionless, as required for $\left(R/R_\odot\right)^2$.
 
 Now solve for the radius ratio:
 
@@ -451,6 +479,8 @@ $$
 \approx
 86.7.
 $$
+
+Since $86^2 = 7396$ and $87^2 = 7569$, the square root is indeed about $86.7$.
 
 So the star's radius is
 
@@ -540,7 +570,7 @@ $$
 
 ### Observable
 
-In old clusters, the red giant branch does not continue forever. Stars reach the RGB tip, then populate the horizontal branch. That tells us a new central energy source must turn on. The question is what that source is, and why it behaves so differently from hydrogen burning.
+In old clusters, the red giant branch does not continue forever. Stars reach the RGB tip, then populate the horizontal branch or, in some populations, the red clump. That tells us a new central energy source must turn on. The question is what that source is, and why it behaves so differently from hydrogen burning.
 
 ### Model
 
@@ -554,7 +584,7 @@ $$
 
 before helium burning can proceed efficiently.
 
-But there is another problem. There are no stable nuclei at mass number $A=5$ or $A=8$. So nature cannot climb smoothly upward from helium by single-particle additions. That forces the triple-alpha pathway:
+But there is another problem. There are no stable nuclei at mass number $A=5$ or $A=8$. So nature cannot climb smoothly upward from helium by single-particle additions. That forces the triple-alpha pathway. The equation below is the **net reaction**:
 
 {{< include ../../../_includes/equations/triple-alpha.qmd >}}
 {{< eqrefcard triple-alpha >}}
@@ -642,11 +672,19 @@ $$
 
 as much energy per unit mass of fuel as hydrogen burning.
 
-That is one reason helium-burning lifetimes are so much shorter.
+That is one important reason helium-burning phases are shorter than hydrogen-burning phases. The total lifetime also depends on how much fuel is available and on the luminosity of the star during that phase.
+
+A rough lifetime estimate follows
+
+$$
+t \sim \frac{\text{available nuclear energy}}{L}.
+$$
+
+So even if a phase has some fuel available, its duration is reduced if the star is very luminous during that stage.
 
 #### Why the triple-alpha process is unstable in a degenerate core
 
-The triple-alpha energy generation rate has an extremely steep temperature dependence:
+The triple-alpha energy generation rate has an extremely steep temperature dependence. For pedagogical purposes, we use the schematic local scaling
 
 $$
 \varepsilon_{3\alpha} \propto T^{40}.
@@ -694,7 +732,7 @@ $$
 
 so a $1\%$ temperature rise increases the energy generation rate by roughly $40\text{–}50\%$.
 
-That is already a very sensitive thermostat in an ordinary gas.
+That is already an extremely sensitive response in an ordinary gas.
 
 Now add degeneracy. In a non-relativistic degenerate electron gas,
 
@@ -707,12 +745,12 @@ $$
 P_{\text{deg}} \propto \rho^{5/3}
 $$
 
-with **no explicit temperature dependence**. This scaling assumes the electrons are non-relativistic and degenerate.
+with **no explicit temperature dependence**. This is a schematic non-relativistic degeneracy scaling, not a full equation of state with all constants restored.
 
 That means:
 
 - in an ordinary thermal gas, heating raises pressure and the core expands,
-- in a degenerate core, heating does **not** immediately raise the pressure much,
+- in a degenerate core, the pressure depends mainly on density rather than temperature, so heating does **not** trigger the usual rapid pressure increase,
 - so the core does not expand enough to cool itself,
 - so the temperature keeps rising,
 - and because $\varepsilon_{3\alpha} \propto T^{40}$, the burning runs away.
@@ -726,6 +764,8 @@ The helium flash is violent in the core but not at the surface. The released ene
 - lifting the electron degeneracy,
 - expanding the core slightly,
 - restoring an ordinary thermal thermostat.
+
+The released energy is absorbed deep in the stellar interior and goes mainly into lifting degeneracy and re-expanding the core, rather than emerging promptly from the surface as a bright optical outburst.
 
 So the flash is a deep interior restructuring event, not a giant optical outburst at the photosphere.
 
@@ -795,6 +835,8 @@ After the horizontal branch, low-mass stars return to a cool, luminous giant pha
 
 ### Model
 
+The AGB resembles the RGB in that the star again has a compact inert core, surrounding shell burning, and an enormous convective envelope. The difference is that two burning shells are now present instead of one.
+
 Once core helium is exhausted, the star has an inert carbon-oxygen core. The evolution is again driven by core contraction:
 
 $$
@@ -812,13 +854,17 @@ Now there are **two burning shells** instead of one:
 - an inner helium-burning shell,
 - an outer hydrogen-burning shell.
 
-This shell structure is thermally unstable. The helium shell can ignite in pulses, causing:
+This shell structure is thermally unstable. Because helium burning occurs in a thin shell with strong temperature sensitivity, the helium shell can become thermally unstable and ignite in pulses, causing:
 
 - episodic luminosity spikes in the shell,
 - convective dredge-up that mixes carbon-rich material upward,
 - strong mass loss from the outer envelope.
 
 As mass loss strips away the envelope, the hot compact core is exposed. That bare core emits ultraviolet photons that ionize the expelled gas. The planetary nebula therefore glows because it is photoionized by the hot remnant core.
+
+Because the ejected gas expands and its density drops rapidly, the nebula is only a brief phase compared with the much longer-lived white dwarf that remains.
+
+Despite the name, a planetary nebula has nothing to do with planets; the term is historical.
 
 So the central-star luminosity source and the nebular glow must be distinguished carefully:
 
@@ -869,6 +915,8 @@ In HR diagrams, white dwarfs are hot but faint. That means they must have small 
 
 A white dwarf is supported by electron degeneracy pressure, not by ordinary thermal gas pressure.
 
+Degeneracy pressure comes from quantum state packing, not from thermal agitation.
+
 The key scaling for a non-relativistic degenerate electron gas is
 
 $$
@@ -882,6 +930,8 @@ Assumptions:
 - the pressure is dominated by the electron gas.
 
 Because this pressure comes from quantum state filling, it is largely independent of temperature. That is why a white dwarf can cool without losing its pressure support.
+
+Electron degeneracy pressure supports the white dwarf mechanically against gravity, but it is not a continuing energy source. The white dwarf shines because it is still hot and slowly cooling.
 
 #### Why more massive white dwarfs are smaller
 
@@ -910,6 +960,8 @@ A characteristic gravitational pressure scale is
 $$
 P_{\text{grav}} \sim \frac{GM^2}{R^4}.
 $$
+
+Here $P_{\text{grav}} \sim GM^2/R^4$ is a characteristic self-gravitational pressure scale, not an exact local pressure formula.
 
 Equilibrium requires these to scale together:
 
@@ -940,6 +992,8 @@ So the white-dwarf mass-radius relation is
 {{< include ../../../_includes/equations/wd-mass-radius.qmd >}}
 {{< eqrefcard wd-mass-radius >}}
 
+The algebra matches the physical expectation: adding mass strengthens gravity, so equilibrium requires a higher density. In a degenerate object, achieving higher pressure means packing electrons into a smaller volume, so the radius decreases.
+
 More massive white dwarfs are smaller because stronger gravity demands higher density, and higher density means larger degeneracy pressure.
 
 #### Density example with units
@@ -960,7 +1014,7 @@ $$
 \frac{M}{\frac{4}{3}\pi R^3}.
 $$
 
-Convert the mass:
+Convert the mass. Using $M_\odot \approx 1.99 \times 10^{33}~\text{g}$, which we round here to $2.0 \times 10^{33}~\text{g}$ for simple arithmetic,
 
 $$
 M = 0.6 \left(2.0 \times 10^{33}~\text{g}\right)
@@ -1094,6 +1148,14 @@ The overall timing is also part of the model:
 | Planetary nebula | $\sim 10^4~\text{yr}$ | Ionized ejecta around hot core |
 | White dwarf cooling | $\gtrsim 10^{10}~\text{yr}$ | No fusion; cooling only |
 
+These timescales reflect the basic rule
+
+$$
+t \sim \frac{\text{available energy}}{L},
+$$
+
+so long phases have large fuel reservoirs and modest luminosities, while short phases are either high-luminosity burning stages or brief transient transitions.
+
 ### Inference
 
 Low-mass stars do not end by catastrophic collapse. They end by **structural reorganization and envelope loss**. The observed HR-diagram path therefore implies a sequence of new burning configurations followed by a degenerate remnant.
@@ -1108,7 +1170,7 @@ When we observe:
 - a planetary nebula with a hot compact central star,
 - or an Earth-sized white dwarf cooling with no fusion,
 
-the physical model tells us we are seeing different stages of the **same low-mass evolutionary pathway**, all triggered by the exhaustion of core hydrogen.
+the physical model lets us infer that these are not unrelated classes of objects, but different stages of the **same low-mass evolutionary pathway**, all triggered by the exhaustion of core hydrogen.
 :::
 
 ---
