@@ -505,6 +505,8 @@ $$
 
 This is the physical point to remember: the Eddington luminosity is not a mysterious formula to memorize. It is the luminosity at which radiation force can compete directly with gravity.
 
+{{< fig eddington-force-balance >}}
+
 For electron-scattering opacity ($\kappa \approx 0.34~\text{cm}^2/\text{g}$), this gives:
 
 $$
@@ -539,6 +541,8 @@ If you **naively extrapolate** that moderate-mass trend, luminosity rises much f
 | 100 | $10^7$ | $3.8 \times 10^6$ | 2.6 |
 
 This table is useful because it shows **why an upper limit appears at all**. If luminosity rises faster than the Eddington limit, radiation becomes increasingly important. But this table is only an order-of-magnitude guide: at the highest masses, the mass-luminosity relation flattens, radiation pressure reshapes the interior, and the star responds by driving powerful **radiation-driven winds** that strip mass from the surface.
+
+{{< fig eddington-vs-main-sequence-luminosity >}}
 
 ### Finding the Maximum Mass
 
@@ -613,16 +617,6 @@ Just as the minimum mass depends on fundamental constants, so does the maximum m
 The minimum mass is not arbitrary, and the maximum mass is not just an observational accident.
 
 At the low-mass end, quantum mechanics prevents the core from heating indefinitely. At the high-mass end, radiation force prevents luminosity from remaining dynamically negligible. In both cases, the stellar mass range is constrained by physical laws, not by incomplete astronomical surveys.
-:::
-
-::: {.callout-note collapse="true" title="Instructor Figure Note"}
-
-A helpful companion visual here is a log-log plot of
-
-- $L \propto M^{3.5}$
-- $L_{\text{Edd}} \propto M$
-
-with the crossover region highlighted near $M \sim 10^2\,M_\odot$. The pedagogical target is for students to notice that the main-sequence trend rises more steeply than the Eddington trend, so the gap must eventually close.
 :::
 
 ::: {.callout-note collapse="true" title="Enrichment: Beyond the Eddington Limit — Pair-Instability Supernovae"}

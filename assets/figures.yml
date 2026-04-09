@@ -1073,6 +1073,13 @@ figures:
     credit: "ASTR 201 (generated)"
     module: 3
 
+  eddington-vs-main-sequence-luminosity:
+    path: /assets/images/module-03/eddington-vs-main-sequence-luminosity.svg
+    caption: "**What to notice:** the naive main-sequence relation rises much more steeply than the Eddington limit. In the left panel, the two curves approach each other near $M \\sim 10^2\\,M_\\odot$. In the right panel, the ratio $L/L_{\\mathrm{Edd}}$ rises as $M^{2.5}$ if the moderate-mass trend were extrapolated blindly, which is why an upper-mass scale appears instead of arbitrarily luminous stable stars."
+    alt: "Two-panel white-background log-log figure. Left panel plots stellar luminosity versus mass with a blue curve labeled naive main sequence L proportional to M to the 3.5 and a red curve labeled Eddington limit proportional to M. A dashed vertical line marks a crossover near 100 solar masses, and a shaded region indicates where radiation increasingly constrains structure. Right panel plots the ratio L over L Edd versus mass with a horizontal line at 1 and a purple curve that rises steeply toward and past unity near the same mass scale."
+    credit: "ASTR 201 (generated)"
+    module: 3
+
   diffusion-vs-straight-line:
     path: /assets/images/module-03/diffusion-vs-straight-line.svg
     caption: "**What to notice:** a straight-line beam crosses the star in one stellar radius, but radiative diffusion follows a tangled path whose total length is vastly larger. The step size stays tiny, so the transport time explodes even though each individual step is taken at the speed of light."
