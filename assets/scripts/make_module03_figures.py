@@ -2829,72 +2829,131 @@ def make_mass_limits():
     fig, ax = plt.subplots(figsize=(14, 5), dpi=220)
     apply_slide_style(fig, ax)
 
-    # Mass range (log scale)
-    log_m = np.linspace(-1.5, 2.5, 1000)
+    # Mass range in physical units; both axes will be logarithmic.
+    mass = np.logspace(-2.0, 2.5, 1400)
 
-    # IMF: approximate Salpeter-like shape for visual
-    # dN/dM ∝ M^{-2.35}
-    imf = 10**((-2.35) * log_m)
-    imf = imf / imf.max() * 0.8
+    # Kroupa-style broken-power-law IMF:
+    # dN/dM ∝ M^{-alpha}
+    # alpha = 0.3   for M < 0.08 Msun   (brown dwarfs)
+    # alpha = 1.3   for 0.08 <= M < 0.5 Msun
+    # alpha = 2.3   for M >= 0.5 Msun   (Salpeter-like high-mass slope)
+    alpha = np.piecewise(
+        mass,
+        [mass < 0.08, (mass >= 0.08) & (mass < 0.5), mass >= 0.5],
+        [0.3, 1.3, 2.3],
+    )
+    imf = np.empty_like(mass)
 
-    # Plot IMF as filled area
-    ax.fill_between(log_m, 0, imf, alpha=0.15, color="#5b84b8")
-    ax.plot(log_m, imf, color="#5b84b8", linewidth=1.7, alpha=0.8)
+    low = mass < 0.08
+    mid = (mass >= 0.08) & (mass < 0.5)
+    high = mass >= 0.5
+
+    imf[low] = mass[low] ** (-0.3)
+    c_mid = 0.08 ** (1.3 - 0.3)
+    imf[mid] = c_mid * mass[mid] ** (-1.3)
+    c_high = c_mid * 0.5 ** (2.3 - 1.3)
+    imf[high] = c_high * mass[high] ** (-2.3)
+
+    # Normalize at 1 solar mass so the stellar regime is easier to read and
+    # the high-mass tail remains visibly nonzero on the plot.
+    imf_ref = c_high
+    imf /= imf_ref
+
+    # For a log-mass x-axis, the more visually meaningful quantity is the
+    # abundance per logarithmic interval: dN/dlogM = M * dN/dM.
+    spectrum = mass * imf
+    y_floor = 1e-3
+
+    ax.fill_between(mass, y_floor, spectrum, alpha=0.14, color="#5b84b8")
+    ax.plot(mass, spectrum, color="#4d7cab", linewidth=2.2, alpha=0.95, zorder=3)
 
     # Key boundaries
     boundaries = [
-        (-1.1, "H-burning\nminimum\n0.08 M☉", SLIDE_TEAL,
+        (0.08, "H-burning\nminimum\n0.08 M☉", SLIDE_TEAL,
          "QM floor:\nDegeneracy halts\ncontraction before\nfusion ignites"),
-        (0, "1 M☉\n(Sun)", SLIDE_GOLD, None),
-        (2.18, "Eddington\nlimit\n~150 M☉", SLIDE_ROSE,
+        (1.0, "1 M☉\n(Sun)", SLIDE_GOLD, None),
+        (150.0, "Eddington\nlimit\n~150 M☉", SLIDE_ROSE,
          "Radiation ceiling:\nL_rad > L_Edd\ntears star apart"),
     ]
 
-    for log_m_val, label, color, note in boundaries:
-        ax.axvline(log_m_val, color=color, linewidth=2 if note else 1.5,
+    for mass_val, label, color, note in boundaries:
+        ax.axvline(mass_val, color=color, linewidth=2 if note else 1.5,
                    linestyle="--" if note else ":", alpha=0.7, zorder=3)
-        y_top = 0.9 if note else 0.85
-        ax.text(log_m_val, y_top, label, fontsize=11, color=color,
+        if mass_val == 0.08:
+            y_top = 1.6
+            x_pos = mass_val * 1.24
+        elif mass_val == 1.0:
+            y_top = 1.35
+            x_pos = mass_val
+        else:
+            y_top = 1.8
+            x_pos = mass_val
+        ax.text(x_pos, y_top, label, fontsize=11, color=color,
                 ha="center", va="top", fontweight="bold")
         if note:
-            side = -0.35 if log_m_val < 0 else 0.15
-            ax.text(log_m_val + side, 0.55, note, fontsize=9, color=color,
-                    ha="center" if log_m_val < 0 else "left", va="top",
+            x_note = mass_val * (0.42 if mass_val < 1 else 1.45)
+            note_y = 2.3e-1 if mass_val < 1 else 1.7e-1
+            ax.text(x_note, note_y, note, fontsize=9, color=color,
+                    ha="center" if mass_val < 1 else "left", va="top",
                     alpha=0.85,
                     bbox=dict(boxstyle="round,pad=0.3", facecolor=SLIDE_PANEL,
                               edgecolor=color))
 
     # Regions
     regions = [
-        (-1.5, -1.1, "Brown\nDwarfs", "#9a76b9", 0.08),
-        (-1.1, 2.18, "Hydrogen-Burning Stars", "#4d7cab", 0.04),
+        (0.001, 0.08, "Brown\nDwarfs", "#9a76b9", 0.08),
+        (0.08, 150.0, "Hydrogen-Burning Stars", "#4d7cab", 0.04),
     ]
-    for x1, x2, label, color, alpha in regions:
-        ax.axvspan(x1, x2, alpha=alpha, color=color, zorder=1)
-        ax.text((x1 + x2) / 2, 0.02, label, fontsize=10, color=color,
+    for m1, m2, label, color, alpha in regions:
+        ax.axvspan(m1, m2, alpha=alpha, color=color, zorder=1)
+        region_y = 1.2e-3 if m2 <= 0.08 else 1.5e-3
+        ax.text(np.sqrt(m1 * m2), region_y, label, fontsize=10, color=color,
                 ha="center", va="bottom", alpha=0.6)
 
     # Specific objects
     objects = [
-        (-1.3, "Jupiter\n(0.001 M☉)", SLIDE_MUTED),
-        (-0.6, "M dwarf\n(0.25 M☉)", SLIDE_ROSE),
-        (0.3, "Sirius\n(2 M☉)", SLIDE_TEAL),
-        (1.3, "Spica\n(20 M☉)", "#4d7cab"),
+        (0.25, "M dwarf\n(0.25 M☉)", SLIDE_ROSE),
+        (2.0, "Sirius\n(2 M☉)", SLIDE_TEAL),
+        (20.0, "Spica\n(20 M☉)", "#4d7cab"),
     ]
-    for log_m_val, label, color in objects:
-        imf_val = 10**((-2.35) * log_m_val) / (10**((-2.35) * (-1.5))) * 0.8
-        ax.plot(log_m_val, imf_val, "o", color=color, markersize=8,
+    for mass_val, label, color in objects:
+        if mass_val < 0.08:
+            imf_val = mass_val ** (-0.3)
+        elif mass_val < 0.5:
+            imf_val = c_mid * mass_val ** (-1.3)
+        else:
+            imf_val = c_high * mass_val ** (-2.3)
+        imf_val /= imf.max()
+        plot_y = max(mass_val * imf_val, y_floor * 1.8)
+        ax.plot(mass_val, plot_y, "o", color=color, markersize=8,
                 markeredgecolor=SLIDE_BG, markeredgewidth=1, zorder=5)
-        ax.text(log_m_val, imf_val + 0.03, label, fontsize=8, color=color,
-                ha="center", va="bottom")
+        if "M dwarf" in label:
+            ax.text(mass_val, plot_y / 1.28, label, fontsize=8, color=color,
+                    ha="center", va="top")
+        elif "Sirius" in label:
+            ax.text(mass_val, plot_y * 1.45, label, fontsize=8, color=color,
+                    ha="center", va="bottom")
+        else:
+            ax.text(mass_val, plot_y * 1.35, label, fontsize=8, color=color,
+                    ha="center", va="bottom")
 
-    ax.set_xlabel(r"$\log_{10}(M / M_\odot)$", fontsize=14, color=SLIDE_TEXT)
-    ax.set_ylabel("Relative Number\n(IMF shape)", fontsize=12, color=SLIDE_TEXT)
+    # Mark the Kroupa break between low- and high-mass stellar slopes.
+    ax.axvline(0.5, color="#7a86a3", linewidth=1.3,
+               linestyle=":", alpha=0.7, zorder=2)
+    ax.text(0.5, 1.85, "Kroupa break\n0.5 M☉", fontsize=9,
+            color="#7a86a3", ha="center", va="bottom")
+
+    ax.set_xlabel(r"Mass $(M/M_\odot)$", fontsize=14, color=SLIDE_TEXT)
+    ax.set_ylabel(r"Relative abundance per log interval $\left[M\,\xi(M)\right]$", fontsize=12, color=SLIDE_TEXT)
     ax.set_title("The Stellar Mass Spectrum", fontsize=18,
                  color=SLIDE_TEXT, fontweight="bold", pad=15)
-    ax.set_xlim(-1.5, 2.5)
-    ax.set_ylim(0, 1.0)
-    ax.text(0.98, 0.95, "schematic IMF + physical boundaries",
+    ax.set_xscale("log")
+    ax.set_yscale("log")
+    ax.set_xlim(0.01, 300.0)
+    ax.set_ylim(y_floor, 4.0)
+    ax.grid(True, which="major", color=SLIDE_GRID, linewidth=0.8, alpha=0.9)
+    ax.grid(True, which="minor", color=SLIDE_GRID, linewidth=0.45, alpha=0.45)
+    ax.text(0.98, 0.95, "Kroupa IMF + physical boundaries",
             transform=ax.transAxes, ha="right", va="top",
             fontsize=10.2, color=SLIDE_MUTED,
             bbox=dict(boxstyle="round,pad=0.28", facecolor=SLIDE_PANEL, edgecolor=SLIDE_GRID))
