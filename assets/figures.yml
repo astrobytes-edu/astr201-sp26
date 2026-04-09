@@ -1159,6 +1159,13 @@ figures:
     alt: "Cutaway diagram showing the layered core of an Asymptotic Giant Branch star: a dark carbon-oxygen core at center with no fusion, surrounded by a blue helium-burning shell, a helium layer, and an outer red hydrogen-burning shell. An inset shows the full AGB star with radius labeled as approximately 1 to 1.5 AU."
     module: 3
 
+  ring-nebula-jwst:
+    path: /assets/images/module-03/jwst-ring-nebula-planetary-nebulae.jpg
+    caption: "**The Ring Nebula as a planetary-nebula example.** This is not a star-forming nebula. It is an envelope ejected by a low-mass star near the end of its life. The glowing ring is gas photoionized by the hot exposed remnant core at the center. Observations like this are the reason we infer that low-mass stars end by envelope loss, not by core collapse."
+    alt: "JWST image of the Ring Nebula showing a bright elliptical ring of glowing gas with intricate filamentary structure surrounding a small hot central star. The nebula is set against a dark background with many faint stars."
+    credit: "NASA, ESA, CSA, and STScI"
+    module: 3
+
   triple-alpha-process:
     path: /assets/images/module-03/3Alpha_Process.png
     caption: "**The triple-alpha process** — how stars build carbon from helium. Two ⁴He nuclei fuse to form unstable ⁸Be, which normally decays in ~10⁻¹⁶ s. But at the extreme densities and temperatures of helium burning (~10⁸ K), a third ⁴He captures onto ⁸Be before it decays, producing stable ¹²C and releasing gamma rays. Fred Hoyle predicted the nuclear resonance state that makes this reaction possible — from the mere *existence* of carbon in the universe."
