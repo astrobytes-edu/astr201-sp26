@@ -40,6 +40,14 @@ After completing this reading, you should be able to:
 
 > *The main sequence has edges.* You can't build a star of any mass — nature imposes two boundaries, each enforced by different physics. At the **bottom**, quantum mechanics prevents continued contraction before the core gets hot enough for sustained fusion. At the **top**, radiation becomes so important that the most massive stars drive extreme winds and approach a luminosity ceiling. Both limits depend on fundamental constants, which means the range of stellar masses is written into the laws of physics.
 
+::: {.callout-note title="Observable → Model → Inference" .omi}
+**Observable:** Real stars occupy a limited mass range, from the hydrogen-burning boundary near $\sim 0.08\,M_\odot$ up to an extreme upper tail near $\sim 100\text{–}150\,M_\odot$.
+
+**Model:** Gravity compresses matter, quantum mechanics resists compression at high density, and radiation exerts an outward force in very luminous stars.
+
+**Inference:** The allowed stellar mass range is not an astrophysical accident. It is set by fundamental physics: quantum support at the low-mass end and radiation-pressure limits at the high-mass end.
+:::
+
 ::: {.callout-important title="Required Reading Note"}
 This page is **required reading**, but we will **not** lecture through it in full during class. I want you to read it because it ties together the full Module 3 story: gravity heats stars, quantum mechanics sets the lower mass limit, and radiation pressure helps set the upper mass limit. In class, I will likely highlight the big ideas and connections, but not walk through every derivation or enrichment section in detail.
 :::
@@ -56,6 +64,16 @@ If you are short on time, prioritize the **Big Idea** boxes, the **Observable �
 :::
 
 ---
+
+::: {.callout-note title="Math Grammar for This Reading"}
+We will use three different kinds of mathematical statements, and they do **not** mean the same thing:
+
+- $X \propto Y$ means a **scaling relation**.
+- $X \sim Y$ means an **order-of-magnitude estimate**.
+- $X \approx Y$ means a **numerical approximation** after values have been inserted.
+
+Part of the skill in this reading is noticing when we move from physical scaling to rough estimate to final number.
+:::
 
 ## Part 1: The Mystery at the Bottom
 
@@ -78,6 +96,14 @@ In Reading 2, we derived the core temperature estimate from the virial theorem:
 At first glance, this seems to say that any mass can reach any temperature — just make $R$ small enough. A contracting protostar should get hotter and hotter until fusion ignites. And indeed, for solar-mass stars, this works: gravitational contraction heats the core to $\sim 15~\text{MK}$ and fusion begins.
 
 But there's a hidden assumption: we treated the gas as classical particles — tiny billiard balls with well-defined positions and velocities. This works beautifully for the Sun, where the interparticle spacing is much larger than the particles' quantum wavelengths. But as the star contracts and the density rises, the particles get squeezed closer and closer together. Eventually, a fundamental limit of quantum mechanics kicks in.
+
+::: {.callout-warning}
+## Precision Check
+
+The relation $T_c \propto M/R$ is a **leading-order virial scaling** during contraction. It tells us how gravity tends to heat the core.
+
+It does **not** give us permission to import an empirical main-sequence relation like $R \propto M^{0.8}$ while the object is still a contracting protostar or a brown dwarf. Different regimes require different assumptions.
+:::
 
 ### The de Broglie Wavelength Revisited
 
@@ -124,6 +150,37 @@ So in the Sun, $\lambda_\text{dB} \sim 3 \times 10^{-10}~\text{cm} \ll d \sim 2 
 
 This proton calculation is an **intuition check**, not the actual brown-dwarf support mechanism. Brown dwarfs are supported by **electron degeneracy pressure**. Because electrons are much lighter than protons, they acquire much larger quantum wavelengths and become degenerate first.
 
+We can make that statement more explicit. Start from
+$$
+\lambda_\text{dB} = \frac{h}{mv}.
+$$
+
+For particles in the same thermal environment,
+$$
+v \sim \sqrt{\frac{3k_B T}{m}},
+$$
+so
+$$
+\lambda_\text{dB}
+\sim
+\frac{h}{m\sqrt{3k_B T/m}}
+\propto
+\frac{1}{\sqrt{m}}.
+$$
+
+Therefore,
+$$
+\frac{\lambda_e}{\lambda_p}
+\sim
+\sqrt{\frac{m_p}{m_e}}
+\approx
+\sqrt{1836}
+\approx
+43.
+$$
+
+So at the same temperature, electron quantum wavelengths are tens of times larger than proton quantum wavelengths. That is why **electrons** reach the overlap condition first and become degenerate first.
+
 ### When Quantum Effects Take Over
 
 Now imagine a lower-mass object — say $0.05\,M_\odot$ — trying to contract toward fusion ignition. As it contracts:
@@ -140,6 +197,19 @@ $$
 $$
 
 When this condition is reached, the electrons become **degenerate** — a state where quantum mechanical effects dominate the pressure. We'll explore degeneracy pressure fully in Reading 8, but the key insight is this: *degenerate matter resists further compression even without any thermal energy.* Quantum mechanics generates pressure at zero temperature.
+
+::: {.callout-note}
+## Interpretation Checkpoint
+
+This is the logic chain so far:
+
+- gravity compresses the object,
+- compression reduces the particle spacing,
+- electrons reach the quantum-overlap condition first,
+- and once they do, the gas stops behaving classically.
+
+That transition is the beginning of the minimum-mass story.
+:::
 
 ::: {.callout-tip}
 ## Check Yourself
@@ -181,11 +251,41 @@ $$
 p_\text{min} \sim \frac{\hbar}{\Delta x}
 $$
 
-And therefore a minimum kinetic energy:
+To get the corresponding kinetic-energy scale, substitute that momentum into the non-relativistic kinetic-energy relation
 
 $$
-E_\text{min} \sim \frac{p_\text{min}^2}{2m} \sim \frac{\hbar^2}{2m(\Delta x)^2}
+E \sim \frac{p^2}{2m}.
 $$
+
+Then
+
+$$
+E_\text{min}
+\sim
+\frac{1}{2m}\left(\frac{\hbar}{\Delta x}\right)^2
+\sim
+\frac{\hbar^2}{2m(\Delta x)^2}
+$$
+
+Now set the confinement scale by the interparticle spacing:
+
+$$
+\Delta x \sim d \sim n^{-1/3}.
+$$
+
+Then
+
+$$
+E_\text{min}
+\sim
+\frac{\hbar^2}{2m d^2}
+\propto
+\frac{1}{d^2}
+\propto
+n^{2/3}.
+$$
+
+Compression raises the density, and higher density forces higher momentum and higher kinetic energy. That is the origin of the quantum pressure trend.
 
 ### Why This Matters for Stars
 
@@ -198,6 +298,19 @@ $$
 These fast-moving particles exert pressure — *even if the temperature is zero.* This is **degeneracy pressure**, a fundamentally quantum mechanical effect with no classical analogue.
 
 The critical insight: **gravity tries to compress the star, but compression creates quantum momentum, which creates pressure that resists further compression.** There's a natural equilibrium point where gravitational squeezing balances quantum resistance.
+
+::: {.callout-warning}
+## Misconception Check
+
+"Degeneracy pressure comes from high temperature."
+
+No. Thermal pressure and degeneracy pressure come from different physics.
+
+- Thermal pressure depends on random thermal motion and scales like $P \propto nk_B T$.
+- Degeneracy pressure comes from quantum confinement and state filling, and it exists even at $T = 0$.
+
+The star does not need to be hot for degeneracy pressure to exist. It needs to be dense.
+:::
 
 ::: {.callout-note title="Connection: Building the QM Toolkit"}
 We are building quantum mechanics step by step across Module 3:
@@ -213,7 +326,7 @@ Each reading builds on the previous one. By Reading 8, you'll have the three QM 
 
 ### Worked Example: Zero-Point Energy of a Confined Electron
 
-Suppose an electron is confined to a box of size $\Delta x = 10^{-8}~\text{cm}$ (roughly atomic scale, $\sim 1~\text{\AA}$). What is its minimum kinetic energy?
+Suppose an electron is confined to a box of size $\Delta x = 10^{-8}~\text{cm}$ (roughly atomic scale, about 1 angstrom). What is its minimum kinetic energy?
 
 From the uncertainty principle:
 
@@ -226,6 +339,24 @@ E_\text{min} \sim \frac{p_\text{min}^2}{2m_e} = \frac{(1.055 \times 10^{-19})^2}
 $$
 
 This is the **zero-point energy** — the minimum kinetic energy an electron must have when confined to atomic scales. The number matters less than the pattern: tighter confinement forces larger momentum and therefore larger kinetic energy. That same logic is what makes degeneracy pressure rise in dense stellar matter.
+
+### Unit sanity check
+
+Check the units in the kinetic-energy estimate:
+
+$$
+[E]
+=
+\frac{[\text{g}\,\text{cm}/\text{s}]^2}{\text{g}}
+=
+\frac{\text{g}^2\,\text{cm}^2\,\text{s}^{-2}}{\text{g}}
+=
+\text{g}\,\text{cm}^2\,\text{s}^{-2}
+=
+\text{erg}.
+$$
+
+So the expression has the correct energy units. $\checkmark$
 
 ::: {.callout-tip}
 ## Check Yourself
@@ -275,12 +406,25 @@ The minimum mass can be estimated by asking: at what mass does the **electron de
 
 **The minimum stellar mass is not a coincidence of astrophysics — it is built into the laws of physics.**
 
+This is the causal bridge to the rest of the reading: at the low-mass end, quantum mechanics stops gravity from finishing the job. At the high-mass end, gravity succeeds in making the star extremely luminous, but that luminosity creates a new opponent: radiation force.
+
+::: {.callout-tip}
+## Reasoning Checkpoint
+
+The minimum-mass question is a race between two processes:
+
+- virial heating trying to raise the core temperature toward hydrogen ignition
+- electron degeneracy turning on as the gas becomes denser
+
+If ignition wins first, the object becomes a star. If degeneracy wins first, the object becomes a brown dwarf. That is the causal structure behind the $0.08\,M_\odot$ boundary.
+:::
+
 ::: {.callout-note title="Observable → Model → Inference" .omi}
-**Observable:** The faintest, coolest main-sequence stars have spectral type ~L0, $T_\text{eff} \sim 2{,}000~\text{K}$, and $L \sim 10^{-4}\,L_\odot$. Below this, objects cool and fade over time (brown dwarfs).
+**Observable:** The faintest, coolest main-sequence stars have spectral type around L0, $T_{\text{eff}} \sim 2{,}000~\text{K}$, and $L \sim 10^{-4}\,L_\odot$. Below this boundary, objects cool and fade over time instead of settling onto a stable hydrogen-burning main sequence.
 
-**Model:** Virial theorem ($T_c \propto M/R$) + quantum degeneracy (Heisenberg uncertainty: confinement → pressure at $T = 0$).
+**Model:** Virial heating gives the rough core-temperature trend, while quantum mechanics says sufficiently dense electrons become degenerate and generate pressure even without thermal support.
 
-**Inference:** The boundary between stars and brown dwarfs at $\sim 0.08\,M_\odot$ marks where degeneracy halts contraction before fusion ignition. The minimum stellar mass is a prediction of quantum mechanics applied to self-gravitating gas.
+**Inference:** The star/brown-dwarf boundary near $\sim 0.08\,M_\odot$ marks the mass where electron degeneracy halts contraction before sustained hydrogen fusion can take over.
 :::
 
 ::: {.callout-tip}
@@ -333,6 +477,34 @@ In Reading 4, we introduced the Eddington luminosity — the maximum luminosity 
 
 {{< eqrefcard eddington-luminosity >}}
 
+This result comes from a direct force balance. Radiation pushes outward because photons transfer momentum to matter, while gravity pulls inward:
+
+$$
+f_{\text{rad}} = \frac{\kappa F}{c}
+$$
+
+$$
+F = \frac{L}{4 \pi r^2}
+$$
+
+$$
+f_{\text{grav}} = \frac{GM}{r^2}
+$$
+
+Here $f_{\text{rad}}$ and $f_{\text{grav}}$ are forces per unit mass, $F$ is the radiative flux, $\kappa$ is the opacity in $\text{cm}^2/\text{g}$, and $c$ is the speed of light. If we substitute the flux into the radiation-force expression and then set outward and inward forces equal, we get
+
+$$
+\frac{\kappa L}{4 \pi r^2 c} = \frac{GM}{r^2}
+$$
+
+The $r^2$ cancels from both sides, which is why the Eddington limit depends on total mass and luminosity rather than on the radius at which we evaluate the balance:
+
+$$
+L_{\text{Edd}} = \frac{4 \pi GMc}{\kappa}.
+$$
+
+This is the physical point to remember: the Eddington luminosity is not a mysterious formula to memorize. It is the luminosity at which radiation force can compete directly with gravity.
+
 For electron-scattering opacity ($\kappa \approx 0.34~\text{cm}^2/\text{g}$), this gives:
 
 $$
@@ -340,6 +512,14 @@ $$
 $$
 
 The Eddington luminosity scales **linearly** with mass: $L_\text{Edd} \propto M$.
+
+::: {.callout-warning}
+## Misconception Check
+
+Reaching the Eddington regime does **not** mean the star instantly explodes.
+
+It means radiation force has become dynamically important enough that the star cannot ignore it. In practice, the star responds by readjusting its structure and by driving strong winds that remove mass. The Eddington limit marks a stability threshold, not a cartoon moment where gravity suddenly turns off.
+:::
 
 ### Why There's a Maximum Mass
 
@@ -388,6 +568,18 @@ $$
 In practice, stars up to roughly $\sim 150\text{–}200\,M_\odot$ have been observed. The key lesson is not that stars hit a hard wall at exactly $100\,M_\odot$, but that beyond this scale radiation increasingly constrains the structure, flattens the luminosity trend, and drives strong mass loss.
 
 ::: {.callout-tip}
+## Reasoning Checkpoint
+
+Pause and name the logic chain in words:
+
+- Gravity makes very massive stars centrally compressed and extremely luminous.
+- If luminosity rises too quickly, radiation can no longer be treated as a minor correction.
+- Once radiation force becomes comparable to gravity, the star cannot keep growing in the same way.
+
+That is why the maximum mass is an **upper-mass scale** rather than an arbitrary catalog fact.
+:::
+
+::: {.callout-tip}
 ## Check Yourself
 
 The most massive known star, R136a1, has a current mass of $\sim 170\,M_\odot$ and a luminosity of $\sim 4 \times 10^6\,L_\odot$. Calculate its Eddington ratio $L/L_\text{Edd}$ and explain why it hasn't been blown apart.
@@ -414,6 +606,24 @@ R136a1 is at $\sim 60\%$ of its Eddington limit — close, but not exceeding it.
 ### Why the Maximum Mass is Also Set by Constants
 
 Just as the minimum mass depends on fundamental constants, so does the maximum mass. The Eddington limit comes from balancing radiation force ($L\kappa/(4\pi r^2 c)$) against gravity ($GM/r^2$), so the upper-mass scale depends on gravity through $G$, on relativity through $c$, and on opacity physics through $\kappa$ (which in hot stars is tied to electron scattering).
+
+::: {.callout-warning}
+## Misconception Check
+
+The minimum mass is not arbitrary, and the maximum mass is not just an observational accident.
+
+At the low-mass end, quantum mechanics prevents the core from heating indefinitely. At the high-mass end, radiation force prevents luminosity from remaining dynamically negligible. In both cases, the stellar mass range is constrained by physical laws, not by incomplete astronomical surveys.
+:::
+
+::: {.callout-note collapse="true" title="Instructor Figure Note"}
+
+A helpful companion visual here is a log-log plot of
+
+- $L \propto M^{3.5}$
+- $L_{\text{Edd}} \propto M$
+
+with the crossover region highlighted near $M \sim 10^2\,M_\odot$. The pedagogical target is for students to notice that the main-sequence trend rises more steeply than the Eddington trend, so the gap must eventually close.
+:::
 
 ::: {.callout-note collapse="true" title="Enrichment: Beyond the Eddington Limit — Pair-Instability Supernovae"}
 
