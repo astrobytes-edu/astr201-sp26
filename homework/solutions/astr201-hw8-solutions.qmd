@@ -1,0 +1,621 @@
+---
+title: "Homework 8 Solutions"
+subtitle: "Stellar Structure II — Energy Transport, Mass Limits, and White Dwarfs (Exam 2 Prep)"
+author: "Dr. Anna Rosen"
+date: "2026-04-08"
+description: "Solutions to Homework 8."
+draft: true
+course: ASTR 201
+module: "Module 3 Lectures 4–8 (transport, scalings, mass limits, low-mass evolution, degeneracy)"
+---
+
+::: {.callout-note}
+**Student note:** These are model solutions written to show reasoning, units, assumptions, and checks. Your own work can be shorter if the physics is still clear, but you should always show enough of your setup that another person can trust what you did.
+
+**Grade memo note:** Use these solutions to diagnose where your reasoning was solid, where it drifted, and what habit would make your next attempt stronger.
+:::
+
+::: {.callout-tip}
+**How to study from this page:** Before reading the final boxed answer, stop at the equation or the key physical idea and predict the next step yourself. Then check three things: Did I choose an appropriate model? Did I carry the units honestly? Does the final answer make physical sense?
+:::
+
+---
+
+## Part A — Why Energy Escapes So Slowly
+
+## Problem 1 — Why the Sun Is Not a Transparent Bulb
+
+<!-- Problem: Conceptual / Connection / O→M→I / Tools: Model-Inversion, Uncertainty/Assumptions / ⭐ -->
+
+**Restatement:** Explain why energy made in the solar core does not simply cross the Sun in a few seconds even though photons move at the speed of light.
+
+**Key insight:** The missing physics is opacity. Stellar interiors are optically thick, so photons do not stream straight outward. Instead, repeated absorption, scattering, and re-emission turn energy transport into a random walk.
+
+**Answer:**
+
+For part (a), the missing physics is that the Sun is **opaque**, not transparent. A photon in the solar interior does not travel one solar radius in a straight line. It travels a tiny mean free path, interacts with matter, changes direction, and then repeats that process an enormous number of times. So the energy leaks outward diffusively rather than streaming freely.
+
+For part (b), **opacity** $\kappa$ tells us how effectively matter blocks radiation per unit mass. It is a material property with units of $\text{cm}^2\,\text{g}^{-1}$. **Optical depth** $\tau$ tells us how many mean free paths thick a region is. It is dimensionless and tells us whether a region is optically thin ($\tau \ll 1$) or optically thick ($\tau \gg 1$).
+
+For part (c), what diffuses outward is the **energy of the radiation field**, not the identity of one specific photon, because photons are constantly being absorbed and re-emitted or scattered. The original core photon is not the important thing. What matters is that radiation energy is passed from one interaction to the next through the opaque stellar gas.
+
+**Common misconception:** “Photons move at $c$” is true locally, but it does not mean energy crosses an opaque star in a straight line at speed $c$.
+
+---
+
+## Problem 2 — Mean Free Path, Optical Depth, and Diffusion Time
+
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Unit-Conversion, Scaling/Ratio, Model-Inversion / ⭐⭐ -->
+
+**Given:**
+$$
+\kappa = 0.34~\text{cm}^2\,\text{g}^{-1},
+\qquad
+\rho = 150~\text{g/cm}^3,
+\qquad
+R_\odot = 7.0 \times 10^{10}~\text{cm}
+$$
+$$
+c = 3.0 \times 10^{10}~\text{cm/s}
+$$
+
+**Find:** $\ell$, $\tau$, and $t_{\text{diff}}$, then compare to the light-crossing time.
+
+**Equations:**
+$$
+\ell = \frac{1}{\kappa \rho},
+\qquad
+\tau \sim \kappa \rho R,
+\qquad
+t_{\text{diff}} \sim \frac{R^2}{\ell c}
+$$
+
+**Assumption:** This is a one-zone solar estimate, so we are treating the solar interior as if one representative opacity and density apply across the whole star.
+
+**Steps:**
+
+For part (a), compute the mean free path:
+$$
+\ell = \frac{1}{\kappa \rho}
+=
+\frac{1}{\left(0.34~\text{cm}^2\,\text{g}^{-1}\right)\left(150~\text{g/cm}^3\right)}.
+$$
+
+Now simplify the denominator:
+$$
+\left(0.34~\text{cm}^2\,\text{g}^{-1}\right)\left(150~\text{g/cm}^3\right)
+=
+51~\text{cm}^{-1}.
+$$
+
+So
+$$
+\ell = \frac{1}{51~\text{cm}^{-1}} \approx 1.96 \times 10^{-2}~\text{cm}.
+$$
+
+$$
+\boxed{\ell \approx 2.0 \times 10^{-2}~\text{cm}}
+$$
+
+For part (b), compute the optical depth:
+$$
+\tau \sim \kappa \rho R
+=
+\left(0.34~\text{cm}^2\,\text{g}^{-1}\right)
+\left(150~\text{g/cm}^3\right)
+\left(7.0 \times 10^{10}~\text{cm}\right).
+$$
+
+$$
+\tau \sim 51~\text{cm}^{-1}\left(7.0 \times 10^{10}~\text{cm}\right)
+=
+3.57 \times 10^{12}.
+$$
+
+$$
+\boxed{\tau \sim 3.6 \times 10^{12}}
+$$
+
+This means the solar radius is several trillion mean free paths thick in this one-zone estimate.
+
+For part (c), estimate the diffusion time:
+$$
+t_{\text{diff}} \sim \frac{R_\odot^2}{\ell c}
+=
+\frac{\left(7.0 \times 10^{10}~\text{cm}\right)^2}
+\left(1.96 \times 10^{-2}~\text{cm}\right)\left(3.0 \times 10^{10}~\text{cm/s}\right).
+$$
+
+Compute the numerator:
+$$
+\left(7.0 \times 10^{10}~\text{cm}\right)^2
+=
+4.9 \times 10^{21}~\text{cm}^2.
+$$
+
+Compute the denominator:
+$$
+\left(1.96 \times 10^{-2}~\text{cm}\right)\left(3.0 \times 10^{10}~\text{cm/s}\right)
+=
+5.88 \times 10^8~\text{cm}^2\,\text{s}^{-1}.
+$$
+
+So
+$$
+t_{\text{diff}}
+\sim
+\frac{4.9 \times 10^{21}~\text{cm}^2}
+{5.88 \times 10^8~\text{cm}^2\,\text{s}^{-1}}
+\approx
+8.33 \times 10^{12}~\text{s}.
+$$
+
+Convert seconds to years using the identity trick:
+$$
+8.33 \times 10^{12}~\text{s}
+\left(
+\frac{1~\text{yr}}{3.156 \times 10^7~\text{s}}
+\right)
+\approx
+2.64 \times 10^5~\text{yr}.
+$$
+
+$$
+\boxed{t_{\text{diff}} \sim 8.3 \times 10^{12}~\text{s} \approx 2.6 \times 10^5~\text{yr}}
+$$
+
+For part (d), the straight-line light-crossing time is
+$$
+t_{\text{stream}} = \frac{R_\odot}{c}
+=
+\frac{7.0 \times 10^{10}~\text{cm}}
+{3.0 \times 10^{10}~\text{cm/s}}
+\approx
+2.3~\text{s}.
+$$
+
+So the diffusion time is larger by a factor of
+$$
+\frac{t_{\text{diff}}}{t_{\text{stream}}}
+\approx
+\frac{8.33 \times 10^{12}~\text{s}}{2.3~\text{s}}
+\approx
+3.6 \times 10^{12},
+$$
+which is essentially the optical depth. The two answers differ so dramatically because the photon does not move in one straight trip; it performs a random walk with an extremely tiny step size.
+
+**Unit check:**
+$$
+[\ell] = \frac{1}{(\text{cm}^2\,\text{g}^{-1})(\text{g/cm}^3)} = \text{cm},
+$$
+$$
+[\tau] = (\text{cm}^2\,\text{g}^{-1})(\text{g/cm}^3)(\text{cm}) = 1,
+$$
+$$
+[t_{\text{diff}}] = \frac{\text{cm}^2}{(\text{cm})(\text{cm/s})} = \text{s}.
+$$
+Everything is dimensionally consistent. $\checkmark$
+
+**Sanity check:** A mean free path of only a few hundredths of a centimeter is tiny compared to the solar radius, so a diffusion time of order $10^5$ years is exactly the kind of huge delay we expect. $\checkmark$
+
+---
+
+## Problem 3 — Why Different Stars Transport Energy Differently
+
+<!-- Problem: Synthesis / Connection / O→M→I / Tools: Model-Inversion, Uncertainty/Assumptions / ⭐⭐ -->
+
+**Restatement:** Compare the energy-transport structure of a solar-like star and a high-mass star.
+
+**Key elements:** A complete answer should mention temperature-sensitive core burning in high-mass stars, concentrated luminosity and steep radiative gradients, the hot/transparent solar-like core, and the cooler/more opaque solar-like envelope.
+
+**Sample response:**
+
+For part (a), a high-mass star tends to develop a **convective core** because its central energy generation is strongly concentrated toward the center. In high-mass stars the CNO cycle dominates hydrogen burning, and the CNO cycle is very temperature sensitive. That means a large luminosity must be carried through a very small inner region, which makes the required radiative temperature gradient very steep. Once the radiative gradient becomes too steep, convection is the more efficient transport mechanism, so the core becomes convective.
+
+For part (b), a solar-like star can instead have a **radiative core** because its core is hot and relatively transparent, so radiation can carry the luminosity there without requiring an unstable temperature gradient. But the outer layers are cooler and more opaque, so radiative transport becomes inefficient in the envelope. That is why the Sun-like case tends to have a radiative core and a convective envelope.
+
+For part (c), the deeper principle is that the interior structure is set by whether radiation can carry the star’s luminosity with a stable temperature gradient. If radiation can do the job, the region stays radiative. If carrying the luminosity radiatively would require too steep a gradient, the gas becomes unstable and convection takes over. So transport regime is not an arbitrary label; it emerges from the competition between luminosity demand, opacity, and local physical conditions.
+
+**Grading guidance:** Full credit requires the correct core/envelope comparison and an explanation based on transport efficiency, not just memorized labels.
+
+---
+
+## Part B — Main-Sequence Scalings and Mass Limits
+
+## Problem 4 — Toy Main-Sequence Scalings in Their Proper Regime
+
+<!-- Problem: Calculation:Full / Application / — / Tools: Scaling/Ratio / ⭐⭐ -->
+
+**Given:**
+$$
+\frac{L}{L_\odot} \approx \left(\frac{M}{M_\odot}\right)^3,
+\qquad
+\frac{R}{R_\odot} \approx \left(\frac{M}{M_\odot}\right)^{3/7},
+\qquad
+\frac{t_{\text{MS}}}{t_\odot} \approx \left(\frac{M}{M_\odot}\right)\left(\frac{L}{L_\odot}\right)^{-1}
+$$
+with
+$$
+M = 1.2\,M_\odot,
+\qquad
+t_\odot \approx 10~\text{Gyr}.
+$$
+
+**Find:** $L/L_\odot$, $R/R_\odot$, $\bar{\rho}/\bar{\rho}_\odot$, and $t_{\text{MS}}$.
+
+**Assumption:** This problem explicitly tells us to use the toy radiative, pp-chain scaling model, so this is one of the situations where those relations are appropriate as a first estimate.
+
+**Steps:**
+
+For part (a), estimate the luminosity:
+$$
+\frac{L}{L_\odot}
+\approx
+\left(\frac{1.2\,M_\odot}{M_\odot}\right)^3
+=
+1.2^3
+=
+1.728.
+$$
+
+$$
+\boxed{\frac{L}{L_\odot} \approx 1.73}
+$$
+
+For part (b), estimate the radius:
+$$
+\frac{R}{R_\odot}
+\approx
+\left(\frac{1.2\,M_\odot}{M_\odot}\right)^{3/7}
+=
+1.2^{3/7}.
+$$
+
+Using $3/7 \approx 0.429$,
+$$
+1.2^{3/7} \approx 1.08.
+$$
+
+$$
+\boxed{\frac{R}{R_\odot} \approx 1.08}
+$$
+
+For part (c), use the density scaling
+$$
+\frac{\bar{\rho}}{\bar{\rho}_\odot}
+\propto
+\frac{M/R^3}{M_\odot/R_\odot^3}
+=
+\left(\frac{M}{M_\odot}\right)\left(\frac{R}{R_\odot}\right)^{-3}.
+$$
+
+Substitute the values:
+$$
+\frac{\bar{\rho}}{\bar{\rho}_\odot}
+\approx
+1.2(1.08)^{-3}.
+$$
+
+Since
+$$
+(1.08)^3 \approx 1.26,
+$$
+we get
+$$
+\frac{\bar{\rho}}{\bar{\rho}_\odot}
+\approx
+\frac{1.2}{1.26}
+\approx
+0.95.
+$$
+
+$$
+\boxed{\frac{\bar{\rho}}{\bar{\rho}_\odot} \approx 0.95}
+$$
+
+So the star’s average density is slightly lower than the Sun’s.
+
+For part (d), estimate the lifetime:
+$$
+\frac{t_{\text{MS}}}{t_\odot}
+\approx
+\left(\frac{1.2\,M_\odot}{M_\odot}\right)\left(1.728\right)^{-1}
+=
+\frac{1.2}{1.728}
+\approx
+0.694.
+$$
+
+Then
+$$
+t_{\text{MS}}
+\approx
+0.694\left(10~\text{Gyr}\right)
+\approx
+6.94~\text{Gyr}.
+$$
+
+$$
+\boxed{t_{\text{MS}} \approx 6.9~\text{Gyr}}
+$$
+
+For part (e), this is a toy-model exercise because the real main sequence is not described by one exact set of exponents across all masses. The true structure depends on opacity, transport regime, and whether pp-chain or CNO burning dominates, so these scalings are useful for first-pass physical reasoning, not as universal exact laws.
+
+**Unit check:** The ratios $L/L_\odot$, $R/R_\odot$, and $\bar{\rho}/\bar{\rho}_\odot$ are dimensionless. The lifetime ratio is also dimensionless, and multiplying by $10~\text{Gyr}$ correctly returns a lifetime in Gyr. $\checkmark$
+
+**Sanity check:** A star only slightly more massive than the Sun should be a little larger, somewhat brighter, and somewhat shorter lived, not wildly different in all properties. These answers match that expectation. $\checkmark$
+
+---
+
+## Problem 5 — Why Nature Allows Only a Narrow Stellar Mass Range
+
+<!-- Problem: Conceptual / Connection / O→M→I / Tools: Model-Inversion / ⭐⭐ -->
+
+**Restatement:** Explain the lower and upper mass limits for hydrogen-burning stars.
+
+**Key insight:** The lower limit is set by quantum degeneracy halting contraction before sustained fusion ignition. The upper limit is set by radiation pressure and winds becoming dynamically important as luminosity approaches the Eddington scale.
+
+**Answer:**
+
+For part (a), objects below about $0.08\,M_\odot$ become **brown dwarfs** because they never get hot enough in their cores to sustain ordinary hydrogen burning. As they contract, electron degeneracy begins to matter. That quantum pressure halts further contraction before the core can settle into long-term pp-chain burning.
+
+For part (b), stars near the upper end of the mass range are so luminous that radiation pressure becomes increasingly important. As the luminosity approaches the Eddington scale, outward radiation forces and strong radiation-driven winds make stable growth more difficult and strip mass from the star.
+
+For part (c), the lower and upper limits come from different physics. The lower limit is mainly a **quantum-mechanical** limit involving degeneracy pressure in dense, low-mass objects. The upper limit is mainly a **radiation-force / stellar-wind** limit involving extremely luminous, massive stars near the Eddington regime.
+
+**Common misconception:** Both limits are not just “gravity failing.” The lower limit is about quantum support turning on too early; the upper limit is about radiation pushing back too strongly.
+
+---
+
+## Problem 6 — Estimating the Maximum Stellar Mass
+
+<!-- Problem: Calculation:Full / Connection / O→M→I / Tools: Scaling/Ratio, Order-of-Magnitude, Uncertainty/Assumptions / ⭐⭐ -->
+
+**Given:**
+$$
+\frac{L}{L_\odot} \approx \left(\frac{M}{M_\odot}\right)^{3.5},
+\qquad
+\frac{L_{\text{Edd}}}{L_\odot} \approx 3.8 \times 10^4 \left(\frac{M}{M_\odot}\right)
+$$
+
+**Find:** The characteristic upper-mass scale where the two become comparable.
+
+**Equation setup:** Set the ordinary luminosity trend equal to the Eddington luminosity:
+$$
+\left(\frac{M}{M_\odot}\right)^{3.5}
+=
+3.8 \times 10^4\left(\frac{M}{M_\odot}\right).
+$$
+
+**Assumption:** This is a deliberately naive crossover estimate. We are using simplified scalings to locate the rough mass scale where radiation pressure becomes structurally important.
+
+**Steps:**
+
+For part (a), divide both sides by $(M/M_\odot)$:
+$$
+\left(\frac{M}{M_\odot}\right)^{2.5}
+=
+3.8 \times 10^4.
+$$
+
+Now raise both sides to the power $1/2.5 = 0.4$:
+$$
+\frac{M}{M_\odot}
+=
+\left(3.8 \times 10^4\right)^{0.4}.
+$$
+
+Using logarithms,
+$$
+\log_{10}\!\left(\frac{M}{M_\odot}\right)
+=
+0.4\log_{10}(3.8 \times 10^4).
+$$
+
+Since
+$$
+\log_{10}(3.8 \times 10^4)
+=
+\log_{10}(3.8) + 4
+\approx
+0.58 + 4
+=
+4.58,
+$$
+we get
+$$
+\log_{10}\!\left(\frac{M}{M_\odot}\right)
+\approx
+0.4(4.58)
+\approx
+1.83.
+$$
+
+So
+$$
+\frac{M}{M_\odot}
+\approx
+10^{1.83}
+\approx
+6.8 \times 10^1.
+$$
+
+That is,
+$$
+\boxed{\frac{M}{M_\odot} \approx 6.8 \times 10^1 \approx 70}
+$$
+
+For part (b), the right way to report this is as an **order-of-magnitude upper-mass scale**:
+$$
+\boxed{M_{\text{max, scale}} \sim 10^2\,M_\odot}
+$$
+
+For part (c), this is not a hard wall because the derivation uses oversimplified luminosity and opacity scalings. Real very massive stars do not obey one exact power law all the way to the top. Their interiors change, radiation pressure reshapes the structure, and powerful winds carry off mass. So the estimate is meant to identify when radiation becomes a major player, not to predict one exact forbidden mass.
+
+For part (d), observed stars up to roughly $150\text{–}200\,M_\odot$ do not contradict this estimate because our calculation is only locating a crossover scale. “Of order $10^2\,M_\odot$” already includes the idea that the upper end is broad rather than razor sharp. The observed range simply tells us the real problem is more complicated than the naive crossover model.
+
+**Unit check:** Every quantity in the algebra is a ratio to a solar quantity, so the calculation is dimensionless until the final answer is stated in units of $M_\odot$. $\checkmark$
+
+**Sanity check:** An upper limit somewhere in the few $\times 10^1$ to few $\times 10^2\,M_\odot$ range is exactly the scale the reading motivates, so the result is physically sensible. $\checkmark$
+
+---
+
+## Part C — Low-Mass Evolution and White Dwarfs
+
+## Problem 7 — From Main Sequence to Red Giant
+
+<!-- Problem: Conceptual / Connection / O→M→I / Tools: Model-Inversion, Uncertainty/Assumptions / ⭐⭐ -->
+
+**Restatement:** Describe the low-mass evolutionary path after core hydrogen is exhausted.
+
+**Key insight:** When core hydrogen runs out, the inert helium core contracts and heats while hydrogen-shell burning powers an expanded envelope. Later, helium ignites, and after helium is exhausted the star ascends the AGB, loses its envelope, and leaves behind a white dwarf.
+
+**Answer:**
+
+For part (a), the first thing that happens in the **core** is that the hydrogen-burning core shuts off, leaving behind an inert helium core that contracts and heats. In the **envelope**, the first major response is expansion as hydrogen-shell burning turns on around the core and drives the star away from its main-sequence structure.
+
+For part (b), hydrogen-shell burning makes the star become a **red giant** because the shell adds luminosity just outside the contracting core, and the star settles into a new equilibrium with a much larger, cooler envelope. Convection becomes important in that expanded envelope, but the deeper cause is that the shell-burning luminosity and the whole-star energy budget drive a structural readjustment to a large radius.
+
+For part (c), helium ignition can become a **helium flash** in low-mass stars because the helium core is degenerate by the time it reaches helium-burning temperature. In a degenerate core, pressure does not increase strongly with temperature, so the usual thermostat is broken. A temperature rise does not trigger expansion soon enough, so the helium-burning rate runs away briefly.
+
+For part (d), after core helium burning ends, the star develops an inert carbon-oxygen core. Helium-shell burning and hydrogen-shell burning continue outside that core, which drives the star onto the **asymptotic giant branch (AGB)**. Strong winds and thermal-pulse mass loss eventually expel the envelope. The exposed hot core then ionizes the ejected gas to make a **planetary nebula**, while the compact carbon-oxygen remnant cools as a **white dwarf**.
+
+**Common misconception:** Convection is not the whole explanation for red-giant swelling. It is part of the transport response inside the new giant structure, not the sole root cause.
+
+---
+
+## Problem 8 — White Dwarf Density and the Reversed Mass-Radius Relation
+
+<!-- Problem: Calculation:Full / Application / — / Tools: Unit-Conversion, Scaling/Ratio / ⭐⭐ -->
+
+**Given:**
+$$
+M = 0.6\,M_\odot,
+\qquad
+M_\odot = 2.0 \times 10^{33}~\text{g},
+\qquad
+R = R_\oplus = 6.4 \times 10^8~\text{cm}
+$$
+and
+$$
+\bar{\rho}_\oplus \approx 5.5~\text{g/cm}^3,
+\qquad
+R \propto M^{-1/3}.
+$$
+
+**Find:** The average density, the density relative to Earth, and the radius ratio for a $1.2\,M_\odot$ white dwarf.
+
+**Equation:**
+$$
+\bar{\rho} = \frac{M}{\frac{4}{3}\pi R^3}
+$$
+
+**Steps:**
+
+For part (a), first convert the mass:
+$$
+M = 0.6\,M_\odot
+=
+0.6\left(2.0 \times 10^{33}~\text{g}\right)
+=
+1.2 \times 10^{33}~\text{g}.
+$$
+
+Now compute the volume:
+$$
+V = \frac{4}{3}\pi R^3
+=
+\frac{4}{3}\pi\left(6.4 \times 10^8~\text{cm}\right)^3.
+$$
+
+$$
+\left(6.4 \times 10^8~\text{cm}\right)^3
+=
+2.62 \times 10^{26}~\text{cm}^3,
+$$
+so
+$$
+V \approx 4.19\left(2.62 \times 10^{26}~\text{cm}^3\right)
+\approx
+1.10 \times 10^{27}~\text{cm}^3.
+$$
+
+Then
+$$
+\bar{\rho}
+=
+\frac{1.2 \times 10^{33}~\text{g}}
+{1.10 \times 10^{27}~\text{cm}^3}
+\approx
+1.09 \times 10^6~\text{g/cm}^3.
+$$
+
+$$
+\boxed{\bar{\rho} \approx 1.1 \times 10^6~\text{g/cm}^3}
+$$
+
+For part (b), compare with Earth:
+$$
+\frac{\bar{\rho}_{\text{WD}}}{\bar{\rho}_\oplus}
+=
+\frac{1.09 \times 10^6~\text{g/cm}^3}{5.5~\text{g/cm}^3}
+\approx
+1.98 \times 10^5.
+$$
+
+$$
+\boxed{\frac{\bar{\rho}_{\text{WD}}}{\bar{\rho}_\oplus} \approx 2.0 \times 10^5}
+$$
+
+So the white dwarf is about two hundred thousand times denser than Earth.
+
+For part (c), use the mass-radius scaling:
+$$
+\frac{R_{1.2}}{R_{0.6}}
+=
+\left(\frac{1.2}{0.6}\right)^{-1/3}
+=
+2^{-1/3}.
+$$
+
+$$
+2^{-1/3} \approx 0.794.
+$$
+
+$$
+\boxed{\frac{R_{1.2}}{R_{0.6}} \approx 0.79}
+$$
+
+So the $1.2\,M_\odot$ white dwarf has only about $79\%$ of the radius of the $0.6\,M_\odot$ white dwarf.
+
+For part (d), the more massive white dwarf is smaller because stronger gravity squeezes the electron gas more tightly. The degenerate electrons are forced into higher-momentum states, so equilibrium is reached at a smaller radius.
+
+**Unit check:**
+$$
+[\bar{\rho}] = \frac{\text{g}}{\text{cm}^3},
+$$
+which is correct for a mass density. The radius ratio is dimensionless. $\checkmark$
+
+**Sanity check:** An Earth-sized object containing a substantial fraction of a solar mass should be fantastically dense, so a density near $10^6~\text{g/cm}^3$ is exactly the right scale. $\checkmark$
+
+---
+
+## Problem 9 — The Chandrasekhar Limit as an Inference Chain
+
+<!-- Problem: Synthesis / Connection / O→M→I / Tools: Model-Inversion, Uncertainty/Assumptions / ⭐⭐⭐ -->
+
+**Restatement:** Connect the observations of white dwarf masses and radii to the physical interpretation of the Chandrasekhar limit.
+
+**Key elements:** A complete answer should identify the observable, model, and inference; explain why degeneracy pressure works without fusion; and explain why relativistic electrons imply a maximum stable white-dwarf mass.
+
+**Sample response:**
+
+For part (a), the **observable** is that white dwarfs in binaries have measurable masses and radii and are found to be compact, Earth-sized remnants, with the stable population cutting off near $1.4\,M_\odot$. The **model** is the electron-degenerate white-dwarf model: electrons obey the Pauli exclusion principle, so compressing them fills higher-momentum states and generates degeneracy pressure. When the electrons become relativistic, that pressure law softens and no stable white-dwarf solution exists above a characteristic mass. The **inference** is that white dwarfs are quantum-supported stellar remnants and that electron degeneracy can support them only up to the Chandrasekhar mass.
+
+For part (b), electron degeneracy pressure can support a white dwarf even with no fusion because it does not come from heat. It comes from quantum mechanics: identical fermions cannot all occupy the same state, so compression forces the electrons into higher and higher momentum states. Those momenta create a pressure that persists even at very low temperature.
+
+For part (c), relativity changes the game because electrons cannot keep gaining pressure-support efficiency forever. As the white dwarf becomes more massive and denser, the electron momenta become so large that the electrons approach the speed of light. In that relativistic regime, the pressure does not rise fast enough with density to keep beating gravity indefinitely. That is why there is a maximum stable white-dwarf mass.
+
+For part (d), the Chandrasekhar limit tells us that stellar cores above about $1.4\,M_\odot$ cannot end their lives as stable white dwarfs. If such a core tries to become a white dwarf, electron degeneracy is no longer enough to support it. The core must continue to collapse, leading toward a neutron star or, for still larger masses, a black hole. In a binary-accreting carbon-oxygen white dwarf, approaching this limit can instead trigger a thermonuclear runaway and a Type Ia supernova.
+
+**Grading guidance:** Full credit requires an actual observable → model → inference chain, not just a memorized statement that “the Chandrasekhar limit is $1.4\,M_\odot$.”

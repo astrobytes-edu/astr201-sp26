@@ -6,7 +6,7 @@ draft: false
 ## Assignments
 
 ::: {.callout-tip}
-**Current cycle:** [Homework 8](astr201-hw8.qmd) is now posted and due Tuesday, April 14, 2026 at 11:59 pm. The [Homework 7 solutions](solutions/astr201-hw7-solutions.qmd) are posted for review, the Homework 7 grade memo is due Friday, April 10, 2026 at 11:59 pm, and [Exam 2](../exams/index.qmd) is Tuesday, April 21, 2026.
+**Current cycle:** [Homework 8](astr201-hw8.qmd) is now posted, linked below, and due Tuesday, April 14, 2026 at 11:59 pm. The [Homework 7 solutions](solutions/astr201-hw7-solutions.qmd) are posted for review, the Homework 7 grade memo is due Friday, April 10, 2026 at 11:59 pm, and [Exam 2](../exams/index.qmd) is Tuesday, April 21, 2026.
 :::
 
 | Assignment | Posted | Due | Grade Memo Due | Solutions |
