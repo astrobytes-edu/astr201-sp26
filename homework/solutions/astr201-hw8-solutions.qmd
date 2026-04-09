@@ -236,7 +236,7 @@ $$
 $$
 with
 $$
-M = 1.2\,M_\odot,
+M = 1.1\,M_\odot,
 \qquad
 t_\odot \approx 10~\text{Gyr}.
 $$
@@ -251,33 +251,33 @@ For part (a), estimate the luminosity:
 $$
 \frac{L}{L_\odot}
 \approx
-\left(\frac{1.2\,M_\odot}{M_\odot}\right)^3
+\left(\frac{1.1\,M_\odot}{M_\odot}\right)^3
 =
-1.2^3
+1.1^3
 =
-1.728.
+1.331.
 $$
 
 $$
-\boxed{\frac{L}{L_\odot} \approx 1.73}
+\boxed{\frac{L}{L_\odot} \approx 1.33}
 $$
 
 For part (b), estimate the radius:
 $$
 \frac{R}{R_\odot}
 \approx
-\left(\frac{1.2\,M_\odot}{M_\odot}\right)^{3/7}
+\left(\frac{1.1\,M_\odot}{M_\odot}\right)^{3/7}
 =
-1.2^{3/7}.
+1.1^{3/7}.
 $$
 
 Using $3/7 \approx 0.429$,
 $$
-1.2^{3/7} \approx 1.08.
+1.1^{3/7} \approx 1.04.
 $$
 
 $$
-\boxed{\frac{R}{R_\odot} \approx 1.08}
+\boxed{\frac{R}{R_\odot} \approx 1.04}
 $$
 
 For part (c), use the density scaling
@@ -293,24 +293,24 @@ Substitute the values:
 $$
 \frac{\bar{\rho}}{\bar{\rho}_\odot}
 \approx
-1.2(1.08)^{-3}.
+1.1(1.04)^{-3}.
 $$
 
 Since
 $$
-(1.08)^3 \approx 1.26,
+(1.04)^3 \approx 1.12,
 $$
 we get
 $$
 \frac{\bar{\rho}}{\bar{\rho}_\odot}
 \approx
-\frac{1.2}{1.26}
+\frac{1.1}{1.12}
 \approx
-0.95.
+0.98.
 $$
 
 $$
-\boxed{\frac{\bar{\rho}}{\bar{\rho}_\odot} \approx 0.95}
+\boxed{\frac{\bar{\rho}}{\bar{\rho}_\odot} \approx 0.98}
 $$
 
 So the star’s average density is slightly lower than the Sun’s.
@@ -319,31 +319,31 @@ For part (d), estimate the lifetime:
 $$
 \frac{t_{\text{MS}}}{t_\odot}
 \approx
-\left(\frac{1.2\,M_\odot}{M_\odot}\right)\left(1.728\right)^{-1}
+\left(\frac{1.1\,M_\odot}{M_\odot}\right)\left(1.331\right)^{-1}
 =
-\frac{1.2}{1.728}
+\frac{1.1}{1.331}
 \approx
-0.694.
+0.826.
 $$
 
 Then
 $$
 t_{\text{MS}}
 \approx
-0.694\left(10~\text{Gyr}\right)
+0.826\left(10~\text{Gyr}\right)
 \approx
-6.94~\text{Gyr}.
+8.26~\text{Gyr}.
 $$
 
 $$
-\boxed{t_{\text{MS}} \approx 6.9~\text{Gyr}}
+\boxed{t_{\text{MS}} \approx 8.3~\text{Gyr}}
 $$
 
 For part (e), this is a toy-model exercise because the real main sequence is not described by one exact set of exponents across all masses. The true structure depends on opacity, transport regime, and whether pp-chain or CNO burning dominates, so these scalings are useful for first-pass physical reasoning, not as universal exact laws.
 
 **Unit check:** The ratios $L/L_\odot$, $R/R_\odot$, and $\bar{\rho}/\bar{\rho}_\odot$ are dimensionless. The lifetime ratio is also dimensionless, and multiplying by $10~\text{Gyr}$ correctly returns a lifetime in Gyr. $\checkmark$
 
-**Sanity check:** A star only slightly more massive than the Sun should be a little larger, somewhat brighter, and somewhat shorter lived, not wildly different in all properties. These answers match that expectation. $\checkmark$
+**Sanity check:** A star only slightly more massive than the Sun should be only modestly larger and brighter, with a somewhat shorter lifetime rather than a radically different one. These answers match that expectation. $\checkmark$
 
 ---
 

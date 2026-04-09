@@ -58,7 +58,7 @@ format:
 :::
 
 ::: {.callout-tip}
-**HW8 note:** This is your last homework before Exam 2. Treat it like a guided study set: show the units, say what each scaling assumes, and include a one-line physical interpretation after every major result.
+**HW8 note:** Treat this like a guided study set: show the units, say what each scaling assumes, and include a one-line physical interpretation after every major result.
 :::
 
 ::: {.callout-note}
@@ -133,9 +133,12 @@ These toy stellar-structure scalings are for **roughly solar-like, radiative pp-
 - Include a one-line sanity check for each calculation problem.
 - For conceptual and synthesis problems, write in complete sentences and name the key physical idea explicitly.
 - When you use a scaling relation, say what assumption makes that scaling reasonable.
+- When a problem asks for a causal explanation, write it as a short because → therefore chain rather than a list of disconnected facts.
 :::
 
 ---
+
+This homework is one connected scientific story. Energy released in the core does not escape freely, so transport physics helps determine stellar structure. Structure and radiation then help explain why stars occupy only a narrow mass range. Once a low-mass star exhausts core hydrogen, that same structure-and-transport logic drives it toward a white dwarf, and the observed masses and radii of white dwarfs let us infer where quantum support finally fails.
 
 ## Problems (9 total)
 
@@ -195,7 +198,7 @@ $$
 \left(\frac{L}{L_\odot}\right)^{-1}.
 $$
 
-For a **toy radiative, pp-chain main-sequence star** with $M = 1.2\,M_\odot$:
+For a **toy radiative, pp-chain main-sequence star** with $M = 1.1\,M_\odot$:
 
 - (a) Estimate its luminosity in solar units.
 - (b) Estimate its radius in solar units.
@@ -208,11 +211,11 @@ For a **toy radiative, pp-chain main-sequence star** with $M = 1.2\,M_\odot$:
 <!-- Problem: Conceptual / Connection / O→M→I / Tools: Model-Inversion / ⭐⭐ -->
 ### Problem 5 — Why Nature Allows Only a Narrow Stellar Mass Range
 
-Hydrogen-burning stars occupy only a limited mass range.
+Hydrogen-burning stars occupy only a limited mass range, and astronomers really do observe both substellar brown dwarfs and a very sparse extreme upper-mass tail.
 
 - (a) Explain why objects below about $0.08\,M_\odot$ become **brown dwarfs** instead of sustained hydrogen-burning stars.
 - (b) Explain why stars near the upper end of the mass range run into the **Eddington regime** and strong mass loss.
-- (c) In one or two sentences, explain why the lower and upper limits come from **different** physical mechanisms.
+- (c) In 2–4 sentences, explain why the lower and upper limits come from **different** physical mechanisms and how that physics helps explain the observed stellar population.
 
 ---
 
@@ -240,12 +243,12 @@ $$
 <!-- Problem: Conceptual / Connection / O→M→I / Tools: Model-Inversion, Uncertainty/Assumptions / ⭐⭐ -->
 ### Problem 7 — From Main Sequence to Red Giant
 
-Describe the low-mass evolutionary path after core hydrogen is exhausted.
+Build the post-main-sequence evolution of a low-mass star as a **causal chain** after core hydrogen is exhausted.
 
-- (a) What happens first in the **core** and what happens first in the **envelope**?
-- (b) Why does hydrogen-shell burning make the star become a **red giant** even though the core itself is contracting?
-- (c) Why can helium ignition become a **helium flash** in low-mass stars?
-- (d) After core helium burning ends, what makes the star enter the **AGB** phase, and how does that lead to a **planetary nebula** plus a white dwarf?
+- (a) What changes first in the **core**, and what becomes the star’s dominant energy source once core hydrogen burning stops?
+- (b) How does the **core** respond to that change, and how does that help strengthen hydrogen-shell burning?
+- (c) How does the **envelope** respond, and why does this produce a **red giant** rather than simply a smaller, hotter star?
+- (d) Why does **degeneracy** matter for helium ignition in low-mass stars, and how do the later AGB + mass-loss stages expose a white dwarf?
 
 ---
 
@@ -257,7 +260,7 @@ A typical white dwarf has mass $M = 0.6\,M_\odot$ and radius $R = R_\oplus$.
 - (a) Compute its average density in $\text{g/cm}^3$.
 - (b) Compare your result to Earth's average density, $\bar{\rho}_\oplus \approx 5.5~\text{g/cm}^3$.
 - (c) A second white dwarf has mass $1.2\,M_\odot$. Using $R \propto M^{-1/3}$, compute the radius ratio $R_{1.2}/R_{0.6}$.
-- (d) In one sentence, explain why the more massive white dwarf is **smaller**, not larger.
+- (d) In 2–4 sentences, explain physically why the more massive white dwarf is **smaller**, not larger, and state what mass–radius trend astronomers should therefore expect to infer from white dwarf observations.
 
 ---
 
