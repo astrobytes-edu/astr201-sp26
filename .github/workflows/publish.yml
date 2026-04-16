@@ -32,9 +32,17 @@ jobs:
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2.1.9
 
-      # Install TinyTeX without relying on Quarto's release lookup, which can 403 in CI.
-      - name: Set up TinyTeX
-        uses: r-lib/actions/setup-tinytex@v2
+      # Install TinyTeX directly so we avoid the deprecated Node 20-based action.
+      - name: Install TinyTeX
+        run: |
+          perl -mFile::Find /dev/null
+          which xz
+          curl -fsSL "https://tinytex.yihui.org/install-bin-unix.sh" | sh
+          TEXBIN="$(find "$HOME/.TinyTeX/bin" -maxdepth 1 -type d -name '*-linux' | head -n 1)"
+          echo "$HOME/bin" >> "$GITHUB_PATH"
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+          echo "$TEXBIN" >> "$GITHUB_PATH"
+          tlmgr --version
 
       - name: Configure TinyTeX mirror and install LaTeX packages for PDF
         run: |
