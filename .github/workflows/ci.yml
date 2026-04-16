@@ -30,20 +30,25 @@ jobs:
       # Install TinyTeX directly so we avoid the deprecated Node 20-based action.
       - name: Install TinyTeX
         run: |
-          perl -mFile::Find /dev/null
-          which xz
+          set -euxo pipefail
+          perl -mFile::Find -e1
+          command -v xz
           curl -fsSL "https://tinytex.yihui.org/install-bin-unix.sh" | sh
           TEXBIN="$(find "$HOME/.TinyTeX/bin" -maxdepth 1 -type d -name '*-linux' | head -n 1)"
+          test -n "$TEXBIN"
+          export PATH="$TEXBIN:$HOME/bin:$HOME/.local/bin:$PATH"
           echo "$HOME/bin" >> "$GITHUB_PATH"
           echo "$HOME/.local/bin" >> "$GITHUB_PATH"
           echo "$TEXBIN" >> "$GITHUB_PATH"
-          tlmgr --version
+          echo "TEXBIN=$TEXBIN" >> "$GITHUB_ENV"
+          "$TEXBIN/tlmgr" --version
 
       - name: Configure TinyTeX mirror and install LaTeX packages for PDF
         run: |
-          tlmgr option repository "$TEXLIVE_REPOSITORY"
-          tlmgr update --self
-          tlmgr install titling koma-script caption tcolorbox tikzfill pdfcol fontawesome5
+          set -euxo pipefail
+          "${TEXBIN}/tlmgr" option repository "$TEXLIVE_REPOSITORY"
+          "${TEXBIN}/tlmgr" update --self
+          "${TEXBIN}/tlmgr" install titling koma-script caption tcolorbox tikzfill pdfcol fontawesome5
 
       - name: Set up Python
         uses: actions/setup-python@v6
