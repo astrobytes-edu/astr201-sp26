@@ -18,37 +18,12 @@ permissions:
 jobs:
   render-and-check:
     runs-on: ubuntu-latest
-    env:
-      TEXLIVE_REPOSITORY: https://ctan.math.utah.edu/ctan/tex-archive/systems/texlive/tlnet
     steps:
       - name: Checkout
         uses: actions/checkout@v6
 
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2.1.9
-
-      # Install TinyTeX directly so we avoid the deprecated Node 20-based action.
-      - name: Install TinyTeX
-        run: |
-          set -euxo pipefail
-          perl -mFile::Find -e1
-          command -v xz
-          curl -fsSL "https://tinytex.yihui.org/install-bin-unix.sh" | sh
-          TEXBIN="$(find "$HOME/.TinyTeX/bin" -maxdepth 1 -type d -name '*-linux' | head -n 1)"
-          test -n "$TEXBIN"
-          export PATH="$TEXBIN:$HOME/bin:$HOME/.local/bin:$PATH"
-          echo "$HOME/bin" >> "$GITHUB_PATH"
-          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
-          echo "$TEXBIN" >> "$GITHUB_PATH"
-          echo "TEXBIN=$TEXBIN" >> "$GITHUB_ENV"
-          "$TEXBIN/tlmgr" --version
-
-      - name: Configure TinyTeX mirror and install LaTeX packages for PDF
-        run: |
-          set -euxo pipefail
-          "${TEXBIN}/tlmgr" option repository "$TEXLIVE_REPOSITORY"
-          "${TEXBIN}/tlmgr" update --self
-          "${TEXBIN}/tlmgr" install titling koma-script caption tcolorbox tikzfill pdfcol fontawesome5
 
       - name: Set up Python
         uses: actions/setup-python@v6
@@ -71,9 +46,12 @@ jobs:
             exit 1
           fi
 
-      - name: Render site (HTML + PDFs)
+      - name: Render site (HTML only)
         run: |
-          quarto render
+          quarto render --to html
+          mkdir -p _site/handouts _site/exams
+          rsync -a --prune-empty-dirs --include='*/' --include='*.pdf' --exclude='*' handouts/ _site/handouts/
+          rsync -a --prune-empty-dirs --include='*/' --include='*.pdf' --exclude='*' exams/ _site/exams/
           touch _site/.nojekyll
 
       - name: Normalize RevealJS lazy images for HTML-Proofer
