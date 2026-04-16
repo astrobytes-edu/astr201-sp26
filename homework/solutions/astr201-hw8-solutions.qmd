@@ -2,9 +2,9 @@
 title: "Homework 8 Solutions"
 subtitle: "Stellar Structure II — Energy Transport, Mass Limits, and White Dwarfs (Exam 2 Prep)"
 author: "Dr. Anna Rosen"
-date: "2026-04-08"
+date: "2026-04-16"
 description: "Solutions to Homework 8."
-draft: true
+draft: false
 course: ASTR 201
 module: "Module 3 Lectures 4–8 (transport, scalings, mass limits, low-mass evolution, degeneracy)"
 ---
@@ -97,6 +97,8 @@ $$
 \boxed{\ell \approx 2.0 \times 10^{-2}~\text{cm}}
 $$
 
+This is the Lecture 4 random-walk idea in microscopic form: each photon step is tiny, so escaping the Sun cannot be a one-trip problem.
+
 For part (b), compute the optical depth:
 $$
 \tau \sim \kappa \rho R
@@ -163,6 +165,8 @@ $$
 $$
 \boxed{t_{\text{diff}} \sim 8.3 \times 10^{12}~\text{s} \approx 2.6 \times 10^5~\text{yr}}
 $$
+
+So even though photons move locally at $c$, the **radiation energy field** leaks outward only on a diffusion timescale of hundreds of thousands of years.
 
 For part (d), the straight-line light-crossing time is
 $$
@@ -262,6 +266,8 @@ $$
 \boxed{\frac{L}{L_\odot} \approx 1.33}
 $$
 
+So this toy star is only modestly more massive than the Sun, but it is already about one-third more luminous, which is exactly the steep mass-luminosity message from Lecture 5.
+
 For part (b), estimate the radius:
 $$
 \frac{R}{R_\odot}
@@ -280,11 +286,14 @@ $$
 \boxed{\frac{R}{R_\odot} \approx 1.04}
 $$
 
+That small radius increase shows that luminosity rises faster with mass than size does in this toy radiative main-sequence regime.
+
 For part (c), use the density scaling
 $$
 \frac{\bar{\rho}}{\bar{\rho}_\odot}
-\propto
-\frac{M/R^3}{M_\odot/R_\odot^3}
+=
+\frac{M/\left(\frac{4}{3}\pi R^3\right)}
+{M_\odot/\left(\frac{4}{3}\pi R_\odot^3\right)}
 =
 \left(\frac{M}{M_\odot}\right)\left(\frac{R}{R_\odot}\right)^{-3}.
 $$
@@ -339,6 +348,8 @@ $$
 \boxed{t_{\text{MS}} \approx 8.3~\text{Gyr}}
 $$
 
+This reinforces the lifetime scaling from Lecture 5: a slightly more massive star does not live longer just because it has more fuel, because its luminosity rises enough to make it burn through that fuel faster.
+
 For part (e), this is a toy-model exercise because the real main sequence is not described by one exact set of exponents across all masses. The true structure depends on opacity, transport regime, and whether pp-chain or CNO burning dominates, so these scalings are useful for first-pass physical reasoning, not as universal exact laws.
 
 **Unit check:** The ratios $L/L_\odot$, $R/R_\odot$, and $\bar{\rho}/\bar{\rho}_\odot$ are dimensionless. The lifetime ratio is also dimensionless, and multiplying by $10~\text{Gyr}$ correctly returns a lifetime in Gyr. $\checkmark$
@@ -362,6 +373,8 @@ For part (a), objects below about $0.08\,M_\odot$ become **brown dwarfs** becaus
 For part (b), stars near the upper end of the mass range are so luminous that radiation pressure becomes increasingly important. As the luminosity approaches the Eddington scale, outward radiation forces and strong radiation-driven winds make stable growth more difficult and strip mass from the star.
 
 For part (c), the lower and upper limits come from different physics. The lower limit is mainly a **quantum-mechanical** limit involving degeneracy pressure in dense, low-mass objects. The upper limit is mainly a **radiation-force / stellar-wind** limit involving extremely luminous, massive stars near the Eddington regime.
+
+That also helps explain the observed population: many objects can form near or below the low-mass boundary, but only those above $\sim 0.08\,M_\odot$ settle onto the hydrogen-burning main sequence, while the extreme high-mass end stays sparse because those stars are difficult to build, lose mass strongly, and live very short lives.
 
 **Common misconception:** Both limits are not just “gravity failing.” The lower limit is about quantum support turning on too early; the upper limit is about radiation pushing back too strongly.
 
@@ -472,13 +485,13 @@ For part (d), observed stars up to roughly $150\text{–}200\,M_\odot$ do not co
 
 **Answer:**
 
-For part (a), the first thing that happens in the **core** is that the hydrogen-burning core shuts off, leaving behind an inert helium core that contracts and heats. In the **envelope**, the first major response is expansion as hydrogen-shell burning turns on around the core and drives the star away from its main-sequence structure.
+For part (a), the first change in the **core** is that core hydrogen burning stops, so the star is left with an inert helium core that is no longer being supported by fusion in the center. The dominant energy source then becomes **hydrogen-shell burning** in a layer surrounding that inert core.
 
-For part (b), hydrogen-shell burning makes the star become a **red giant** because the shell adds luminosity just outside the contracting core, and the star settles into a new equilibrium with a much larger, cooler envelope. Convection becomes important in that expanded envelope, but the deeper cause is that the shell-burning luminosity and the whole-star energy budget drive a structural readjustment to a large radius.
+For part (b), the helium core responds by **contracting and heating**. Because a self-gravitating core heats as it contracts, the material just outside the core also gets hotter. That makes the hydrogen-burning shell run faster, so shell burning becomes more luminous and more important. This is the Lecture 7 causal chain: core contraction therefore strengthens shell burning.
 
-For part (c), helium ignition can become a **helium flash** in low-mass stars because the helium core is degenerate by the time it reaches helium-burning temperature. In a degenerate core, pressure does not increase strongly with temperature, so the usual thermostat is broken. A temperature rise does not trigger expansion soon enough, so the helium-burning rate runs away briefly.
+For part (c), the **envelope** responds by expanding outward and cooling at the surface. The shell-burning luminosity and the star's structural readjustment produce a much larger radius, so the photosphere becomes cooler even while the total luminosity rises. That is why the star becomes a **red giant** rather than a smaller, hotter object: the key observable is a cool but very luminous star, which requires a huge radius.
 
-For part (d), after core helium burning ends, the star develops an inert carbon-oxygen core. Helium-shell burning and hydrogen-shell burning continue outside that core, which drives the star onto the **asymptotic giant branch (AGB)**. Strong winds and thermal-pulse mass loss eventually expel the envelope. The exposed hot core then ionizes the ejected gas to make a **planetary nebula**, while the compact carbon-oxygen remnant cools as a **white dwarf**.
+For part (d), **degeneracy** matters because the helium core in a low-mass red giant becomes degenerate before helium ignites. In a degenerate core, pressure depends only weakly on temperature, so the usual thermostat is broken and helium ignition can run away in a helium flash. Later, after core helium burning ends, the star develops an inert carbon-oxygen core, ascends the **AGB** with hydrogen- and helium-shell burning, and loses its envelope through strong winds. That mass loss exposes the hot degenerate core, briefly lighting a planetary nebula and leaving behind the white dwarf.
 
 **Common misconception:** Convection is not the whole explanation for red-giant swelling. It is part of the transport response inside the new giant structure, not the sole root cause.
 
@@ -510,13 +523,18 @@ $$
 \bar{\rho} = \frac{M}{\frac{4}{3}\pi R^3}
 $$
 
+**Assumption:** For part (c), we are using the non-relativistic white-dwarf scaling $R \propto M^{-1/3}$ from Lecture 7, so this is a trend calculation rather than a full equation-of-state model.
+
 **Steps:**
 
 For part (a), first convert the mass:
 $$
 M = 0.6\,M_\odot
 =
-0.6\left(2.0 \times 10^{33}~\text{g}\right)
+0.6\,M_\odot
+\left(
+\frac{2.0 \times 10^{33}~\text{g}}{1\,M_\odot}
+\right)
 =
 1.2 \times 10^{33}~\text{g}.
 $$
@@ -554,6 +572,8 @@ $$
 \boxed{\bar{\rho} \approx 1.1 \times 10^6~\text{g/cm}^3}
 $$
 
+This matches the Lecture 7 picture of a white dwarf as a Sun-like amount of mass compressed into an Earth-sized remnant.
+
 For part (b), compare with Earth:
 $$
 \frac{\bar{\rho}_{\text{WD}}}{\bar{\rho}_\oplus}
@@ -588,7 +608,7 @@ $$
 
 So the $1.2\,M_\odot$ white dwarf has only about $79\%$ of the radius of the $0.6\,M_\odot$ white dwarf.
 
-For part (d), the more massive white dwarf is smaller because stronger gravity squeezes the electron gas more tightly. The degenerate electrons are forced into higher-momentum states, so equilibrium is reached at a smaller radius.
+For part (d), the more massive white dwarf is smaller because stronger gravity squeezes the electron gas more tightly. The degenerate electrons are forced into higher-momentum states, so the star must reach a higher density before degeneracy pressure can balance gravity. That equilibrium occurs at a smaller radius, not a larger one. So astronomers should infer an **inverse mass-radius relation** for white dwarfs: as white-dwarf mass increases, white-dwarf radius decreases.
 
 **Unit check:**
 $$
@@ -610,12 +630,12 @@ which is correct for a mass density. The radius ratio is dimensionless. $\checkm
 
 **Sample response:**
 
-For part (a), the **observable** is that white dwarfs in binaries have measurable masses and radii and are found to be compact, Earth-sized remnants, with the stable population cutting off near $1.4\,M_\odot$. The **model** is the electron-degenerate white-dwarf model: electrons obey the Pauli exclusion principle, so compressing them fills higher-momentum states and generates degeneracy pressure. When the electrons become relativistic, that pressure law softens and no stable white-dwarf solution exists above a characteristic mass. The **inference** is that white dwarfs are quantum-supported stellar remnants and that electron degeneracy can support them only up to the Chandrasekhar mass.
+For part (a), the **observable** is that white dwarfs in binaries have measurable masses and radii, are Earth-sized despite containing a large fraction of a solar mass, and the stable population cuts off near $1.4\,M_\odot$. The **model** is the electron-degenerate white-dwarf model from Lecture 8: electrons obey the Pauli exclusion principle, so compression fills higher-momentum states and generates degeneracy pressure, but once those electrons become relativistic the pressure law softens. The **inference** is that white dwarfs are quantum-supported stellar remnants and that electron degeneracy can support them only up to the Chandrasekhar mass. In other words, the derivation is explaining the observed mass-radius pattern rather than replacing the data.
 
 For part (b), electron degeneracy pressure can support a white dwarf even with no fusion because it does not come from heat. It comes from quantum mechanics: identical fermions cannot all occupy the same state, so compression forces the electrons into higher and higher momentum states. Those momenta create a pressure that persists even at very low temperature.
 
 For part (c), relativity changes the game because electrons cannot keep gaining pressure-support efficiency forever. As the white dwarf becomes more massive and denser, the electron momenta become so large that the electrons approach the speed of light. In that relativistic regime, the pressure does not rise fast enough with density to keep beating gravity indefinitely. That is why there is a maximum stable white-dwarf mass.
 
-For part (d), the Chandrasekhar limit tells us that stellar cores above about $1.4\,M_\odot$ cannot end their lives as stable white dwarfs. If such a core tries to become a white dwarf, electron degeneracy is no longer enough to support it. The core must continue to collapse, leading toward a neutron star or, for still larger masses, a black hole. In a binary-accreting carbon-oxygen white dwarf, approaching this limit can instead trigger a thermonuclear runaway and a Type Ia supernova.
+For part (d), the Chandrasekhar limit tells us that stellar cores above about $1.4\,M_\odot$ cannot end their lives as stable white dwarfs. If such a core tries to become a white dwarf, electron degeneracy is no longer enough to support it once the electrons are relativistic. The core must continue to collapse and seek a different support mechanism, leading toward a neutron star or, for still larger masses, a black hole. In a binary-accreting carbon-oxygen white dwarf, approaching this limit can instead trigger a thermonuclear runaway and a Type Ia supernova. So the $1.4\,M_\odot$ cutoff is not just a number to memorize; it is the dividing line between stable white-dwarf remnants and further catastrophic evolution.
 
 **Grading guidance:** Full credit requires an actual observable → model → inference chain, not just a memorized statement that “the Chandrasekhar limit is $1.4\,M_\odot$.”

@@ -736,50 +736,36 @@ local function get_equations()
   return _equations_cache
 end
 
--- Helper: convert $...$ math to HTML spans that MathJax will process
--- MathJax doesn't auto-process $...$ in raw HTML blocks, so we wrap in spans
-local function convert_math_for_html(text)
-  if not text then return "" end
-  -- Convert $...$ to <span class="math inline">\(...\)</span>
-  -- This is the format Pandoc outputs and MathJax is configured to process
-  text = text:gsub("%$([^$]+)%$", '<span class="math inline">\\(%1\\)</span>')
-  return text
-end
+-- Helper: build meaning card blocks as markdown so inline math renders normally
+local function build_meaning_blocks(card, title, anchor)
+  local md = string.format([[
+::: {.callout-tip .eq-gloss title="%s"}
+**What it predicts**
 
--- Helper: build meaning card HTML
-local function build_meaning_html(card, title, anchor)
-  -- Convert LaTeX delimiters in all fields
-  local predicts = convert_math_for_html(card.predicts or "")
-  local depends = convert_math_for_html(card.depends or "")
-  local says = convert_math_for_html(card.says or "")
+%s
 
-  local html = string.format([[
-<div class="callout callout-tip eq-gloss" data-callout="tip">
-  <div class="callout-header">
-    <div class="callout-title-container flex-fill">
-      <p class="callout-title">%s</p>
-    </div>
-  </div>
-  <div class="callout-body-container callout-body">
-    <p><strong>What it predicts</strong><br/>%s</p>
-    <p><strong>What it depends on</strong><br/>%s</p>
-    <p><strong>What it's saying</strong><br/>%s</p>
-]], title or "Equation meaning", predicts, depends, says)
+**What it depends on**
+
+%s
+
+**What it's saying**
+
+%s
+]], title or "Equation meaning", card.predicts or "", card.depends or "", card.says or "")
 
   if card.assumptions and #card.assumptions > 0 then
-    html = html .. "    <p><strong>Assumptions</strong></p>\n    <ul>\n"
+    md = md .. "\n**Assumptions**\n\n"
     for _, a in ipairs(card.assumptions) do
-      html = html .. "      <li>" .. convert_math_for_html(a) .. "</li>\n"
+      md = md .. "- " .. a .. "\n"
     end
-    html = html .. "    </ul>\n"
   end
 
   if anchor then
-    html = html .. string.format('    <p style="margin-top:0.5rem;"><em>See:</em> <a href="#%s">the equation</a></p>\n', anchor)
+    md = md .. string.format("\n*See:* [the equation](#%s)\n", anchor)
   end
 
-  html = html .. "  </div>\n</div>"
-  return html
+  md = md .. "\n:::\n"
+  return pandoc.read(md, "markdown").blocks
 end
 
 -- {{< eqcard kepler_period >}} - show meaning scaffold only
@@ -792,7 +778,7 @@ function eqcard(args, kwargs)
     return pandoc.RawBlock("html", string.format('<div class="callout callout-warning"><p><strong>Missing eqcard:</strong> <code>%s</code></p></div>', tostring(args[1] or "nil")))
   end
 
-  return pandoc.RawBlock("html", build_meaning_html(card, "Equation meaning", nil))
+  return build_meaning_blocks(card, "Equation meaning", nil)
 end
 
 -- {{< eqrefcard kepler >}} - show meaning + reference link
@@ -818,7 +804,7 @@ function eqrefcard(args, kwargs)
     return pandoc.RawBlock("html", string.format('<div class="callout callout-warning"><p><strong>Missing eqcard:</strong> <code>%s</code></p></div>', eq.card or "nil"))
   end
 
-  return pandoc.RawBlock("html", build_meaning_html(card, eq.title, eq.anchor))
+  return build_meaning_blocks(card, eq.title, eq.anchor)
 end
 
 -- {{< eqshow kepler >}} - title + meaning (use with include for equation)
@@ -848,7 +834,10 @@ function eqshow(args, kwargs)
 
   -- Meaning card
   if card then
-    table.insert(blocks, pandoc.RawBlock("html", build_meaning_html(card, "Equation meaning", eq.anchor)))
+    local meaning_blocks = build_meaning_blocks(card, "Equation meaning", eq.anchor)
+    for _, block in ipairs(meaning_blocks) do
+      table.insert(blocks, block)
+    end
   else
     table.insert(blocks, pandoc.RawBlock("html", string.format('<div class="callout callout-warning"><p><strong>Missing eqcard:</strong> <code>%s</code></p></div>', eq.card or "nil")))
   end

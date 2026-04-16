@@ -502,11 +502,11 @@ hydrogen_burning_minimum:
 triple_alpha:
   predicts: "Net triple-alpha reaction: three helium-4 nuclei fuse to form one carbon-12 nucleus plus a gamma-ray photon."
   depends: "Requires $T \\gtrsim 10^8$ K and $\\rho \\gtrsim 10^4$ g/cm³. Rate scales as $\\varepsilon_{3\\alpha} \\propto T^{40}$."
-  says: "The only way to bridge the mass-5 and mass-8 gaps in nuclear stability. The physical pathway proceeds through unstable $^8$Be and then alpha capture into an excited state of $^{12}$C (the Hoyle state at 7.65 MeV) — without which carbon would be exceedingly rare and carbon-based life impossible."
+  says: "The only way to bridge the mass-5 and mass-8 gaps in nuclear stability. The physical pathway proceeds through unstable $^{8}\\text{Be}$ and then alpha capture into an excited state of $^{12}\\text{C}$ (the Hoyle state at 7.65 MeV) — without which carbon would be exceedingly rare and carbon-based life impossible."
   assumptions:
     - "Occurs in red giant cores and horizontal branch stars"
-    - "Two-step process: $2\\alpha \\rightarrow\\ ^8$Be (unstable) + $\\alpha \\rightarrow\\ ^{12}$C"
-    - "Competes with alpha capture: $^{12}$C + $\\alpha \\rightarrow\\ ^{16}$O"
+    - "Two-step process: $2\\alpha \\rightarrow {}^{8}\\text{Be}$ (unstable), then $\\alpha \\rightarrow {}^{12}\\text{C}$"
+    - "Competes with alpha capture: $^{12}\\text{C} + \\alpha \\rightarrow {}^{16}\\text{O}$"
 
 # --- Reading 8: Degeneracy Pressure & Chandrasekhar ---
 

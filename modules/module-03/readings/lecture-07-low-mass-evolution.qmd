@@ -117,13 +117,15 @@ $$
 \text{white dwarf}.
 $$
 
-In older, metal-poor populations this core-helium-burning phase often appears as a horizontal branch; in more metal-rich populations it may appear instead as a red clump. In both cases, the key inference is that a new central energy source has turned on.
+In older, metal-poor populations the core-helium-burning locus often appears as a horizontal branch; in more metal-rich populations the same core-helium-burning locus may appear instead as a red clump. In both cases, the key inference is that a new central energy source has turned on.
 
 ### Inference
 
 The observations imply that low-mass stars do **not** simply fade when hydrogen runs out in the core. They undergo a sequence of structural reorganizations. The driving question for this reading is:
 
 > **Why do stars follow this path instead of simply fading?**
+
+Why does a low-mass star first swell into a giant, then reorganize around new burning shells and core ignition, and finally end as a compact degenerate remnant rather than simply cooling away from the main sequence?
 
 ---
 
@@ -228,7 +230,7 @@ This is the negative-heat-capacity behavior of self-gravitating objects:
 - the core **contracts**,
 - the core **gets hotter**.
 
-The core response is therefore the opposite of what students expect from ordinary objects like stovetops or coffee mugs.
+For self-gravitating objects, losing energy can make the center hotter, not colder.
 
 After central hydrogen is exhausted, the core is mostly helium ash left behind by earlier fusion. Because the temperature is still too low for helium fusion, this helium core is inert: it contributes mass and gravity, but not new nuclear power.
 
@@ -236,7 +238,7 @@ At the outer edge of that contracting core, a hydrogen-rich layer that was previ
 
 ### Inference
 
-The turnoff and subgiant observations imply that core hydrogen exhaustion does **not** remove gravity from the problem. It lets gravity regain control. The virial theorem then predicts the next stage: contraction of the inert helium core and heating of the shell around it.
+The turnoff and subgiant observations imply that core hydrogen exhaustion does **not** make the star simply switch off and fade at roughly fixed structure. Instead, they show that gravity regains control of the center, forcing contraction of the inert helium core and heating of the surrounding shell. That is why the star leaves the main sequence and enters subgiant evolution rather than disappearing from the HR diagram.
 
 ::: {.callout-tip}
 ## Reasoning Task
@@ -375,7 +377,7 @@ $$
 \rightarrow
 \text{strong shell burning}
 \rightarrow
-\text{energy injection at envelope base}
+\text{enhanced outward energy flux through the base of the envelope}
 \rightarrow
 \text{high-opacity transport bottleneck}
 \rightarrow
@@ -383,6 +385,8 @@ $$
 \rightarrow
 \text{envelope expansion}.
 $$
+
+Convection is part of the envelope response, but the deeper point is global structural readjustment: the outer star must find a new equilibrium that can carry the enhanced shell luminosity.
 
 That is why red giant structure is an envelope response to an interior burning-shell problem.
 
@@ -490,7 +494,9 @@ $$
 
 ### Inference
 
-An RGB star that is luminous but cool must have a very large radius. The red giant branch therefore implies not simple dimming, but large-scale envelope expansion driven by shell burning and transport physics.
+An RGB star that is luminous but cool must have a very large radius. That rules out simple fading at roughly fixed radius after core hydrogen exhaustion. Instead, the red giant branch requires large-scale envelope expansion driven by shell burning and transport physics.
+
+**Lock-in:** So the red giant branch is not a star fading after core hydrogen exhaustion; it is the observable signature of shell burning around a contracting inert core driving a much larger envelope structure.
 
 ::: {.callout-tip}
 ## Reasoning Task
@@ -574,7 +580,7 @@ In old clusters, the red giant branch does not continue forever. Stars reach the
 
 ### Model
 
-#### Why helium ignition requires much higher temperatures
+#### Why helium ignition requires higher temperatures
 
 Helium nuclei have charge $Z = 2$, so the Coulomb barrier is much larger than it was for proton-proton burning. The helium core therefore has to contract to much higher temperature:
 
@@ -584,7 +590,11 @@ $$
 
 before helium burning can proceed efficiently.
 
-But there is another problem. There are no stable nuclei at mass number $A=5$ or $A=8$. So nature cannot climb smoothly upward from helium by single-particle additions. That forces the triple-alpha pathway. The equation below is the **net reaction**:
+This explains why helium ignition happens later: the core must contract much farther than it did during hydrogen burning. But temperature alone is not enough. Helium also faces a nuclear-pathway problem.
+
+#### Why helium must burn through the triple-alpha process
+
+There are no stable nuclei at mass number $A=5$ or $A=8$. So nature cannot climb smoothly upward from helium by single-particle additions. That forces the triple-alpha pathway. The equation below is the **net reaction**:
 
 {{< include ../../../_includes/equations/triple-alpha.qmd >}}
 {{< eqrefcard triple-alpha >}}
@@ -605,7 +615,9 @@ $$
 
 The Hoyle state in $^{12}\text{C}$ makes this chain fast enough to matter astrophysically.
 
-#### Energy per unit mass: hydrogen burning versus helium burning
+Now that we know how helium burns, we can ask why this stage is comparatively brief.
+
+#### Why helium-burning phases are shorter
 
 To understand why helium-burning phases are so short, compare the energy released per unit mass of fuel.
 
@@ -682,7 +694,9 @@ $$
 
 So even if a phase has some fuel available, its duration is reduced if the star is very luminous during that stage.
 
-#### Why the triple-alpha process is unstable in a degenerate core
+That still leaves one crucial problem. If helium burning finally turns on in the core, why does ignition happen gently in some stars but as a runaway in a low-mass degenerate core?
+
+#### Why helium ignition runs away in a degenerate core
 
 The triple-alpha energy generation rate has an extremely steep temperature dependence. For pedagogical purposes, we use the schematic local scaling
 
@@ -757,7 +771,9 @@ That means:
 
 That is the helium flash.
 
-#### Why the helium flash is not seen directly
+The next question is observational: if the flash is so violent in the core, why do we not see the whole star explode at the surface?
+
+#### Why the helium flash is not seen as a surface explosion
 
 The helium flash is violent in the core but not at the surface. The released energy is absorbed by the surrounding stellar interior and goes into:
 
@@ -771,7 +787,9 @@ So the flash is a deep interior restructuring event, not a giant optical outburs
 
 ### Inference
 
-The horizontal branch implies a new core energy source: helium burning. The helium flash implies that helium ignites in a degenerate core, where pressure is largely temperature-independent and the normal stellar thermostat is broken.
+The horizontal branch or red clump rules out continued evolution powered only by shell hydrogen burning. It requires a new central energy source, which the model identifies as core helium burning. The helium flash further implies that ignition occurred under degenerate conditions, where the normal thermal thermostat was broken. That is why RGB ascent terminates and the star relocates to the horizontal branch or red clump instead of continuing indefinitely up the RGB.
+
+**Lock-in:** So the horizontal branch or red clump marks the moment a new central energy source has turned on.
 
 ::: {.callout-tip}
 ## Reasoning Task
@@ -873,7 +891,7 @@ So the central-star luminosity source and the nebular glow must be distinguished
 
 ### Inference
 
-Planetary nebulae imply that low-mass stars do not end by core collapse. They end by envelope ejection. The observed nebula plus hot central star together point to an AGB star that lost its envelope and exposed a compact remnant core.
+Planetary nebulae imply that low-mass stars do not end by direct core collapse or by quietly fading as intact giants. They end by envelope ejection. The observed nebula plus hot central star together point to an AGB star that lost its envelope and exposed a compact remnant core, linking the late AGB population to the white-dwarf track that follows.
 
 ::: {.callout-tip}
 ## Reasoning Task
@@ -932,6 +950,8 @@ Assumptions:
 Because this pressure comes from quantum state filling, it is largely independent of temperature. That is why a white dwarf can cool without losing its pressure support.
 
 Electron degeneracy pressure supports the white dwarf mechanically against gravity, but it is not a continuing energy source. The white dwarf shines because it is still hot and slowly cooling.
+
+**Lock-in:** So a white dwarf remains standing not because it is still generating fusion energy, but because quantum mechanics supplies a pressure that does not disappear as the star cools.
 
 #### Why more massive white dwarfs are smaller
 
@@ -1064,7 +1084,7 @@ $$
 
 ### Inference
 
-An Earth-sized, hot, faint stellar remnant with no fusion source points to a white dwarf supported by electron degeneracy pressure. The inverse mass-radius relation is a signature of quantum pressure, not ordinary gas support.
+An object that is hot but faint on the HR diagram must have a very small radius. That rules out an ordinary gas-supported star of comparable temperature. An Earth-sized, hot, faint stellar remnant with no fusion source therefore points to a white dwarf supported by electron degeneracy pressure. The inverse mass-radius relation is a signature of quantum pressure, not ordinary gas support.
 
 ::: {.callout-tip}
 ## Reasoning Task
@@ -1158,7 +1178,7 @@ so long phases have large fuel reservoirs and modest luminosities, while short p
 
 ### Inference
 
-Low-mass stars do not end by catastrophic collapse. They end by **structural reorganization and envelope loss**. The observed HR-diagram path therefore implies a sequence of new burning configurations followed by a degenerate remnant.
+Low-mass stars do not end by catastrophic collapse, and the HR diagram does not show unrelated classes of stars scattered by chance. It shows a physically connected sequence of structural states that low-mass stars pass through after core hydrogen exhaustion. The observed population signposts therefore imply a sequence of new burning configurations, envelope-loss phases, and finally a degenerate remnant.
 
 ::: {.callout-important}
 ## Final Inference
@@ -1170,7 +1190,7 @@ When we observe:
 - a planetary nebula with a hot compact central star,
 - or an Earth-sized white dwarf cooling with no fusion,
 
-the physical model lets us infer that these are not unrelated classes of objects, but different stages of the **same low-mass evolutionary pathway**, all triggered by the exhaustion of core hydrogen.
+the physical model lets us infer that these are not unrelated classes of objects, but diagnostic population signposts of the **same low-mass evolutionary pathway**, all triggered by the exhaustion of core hydrogen.
 :::
 
 ---
@@ -1183,7 +1203,7 @@ the physical model lets us infer that these are not unrelated classes of objects
 |:---------|:---------------------|:----------|
 | $2K_{\text{th}} + U_{\text{grav}} = 0$ | Core response after H exhaustion | Energy loss leads to contraction and heating |
 | $L = 4\pi R^2 \sigma T_{\text{eff}}^4$ | Giant radius inference | Luminous + cool implies large radius |
-| $3\,{^4\text{He}} \rightarrow {^{12}\text{C}} + \gamma$ | Core helium burning | Carbon is built from helium |
+| $3\,{^4\text{He}} \rightarrow {^{12}\text{C}} + \gamma$ | Net triple-alpha reaction | Carbon is built from helium |
 | $\varepsilon_{3\alpha} \propto T^{40}$ | Helium flash stability | Small temperature changes strongly amplify burning |
 | $P_{\text{deg}} \propto \rho^{5/3}$ | White dwarf support | Degeneracy pressure is density-controlled, not temperature-controlled |
 | $R_{\text{WD}} \propto M^{-1/3}$ | White dwarf structure | More massive white dwarfs are smaller |
