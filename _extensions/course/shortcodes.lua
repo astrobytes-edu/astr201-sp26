@@ -736,6 +736,16 @@ local function get_equations()
   return _equations_cache
 end
 
+-- Helper: convert inline $...$ math inside raw HTML blocks to MathJax spans.
+-- The glossary renderer still emits raw HTML, so it cannot rely on Pandoc's
+-- normal inline-math handling.
+local function convert_math_for_html(text)
+  if not text then
+    return ""
+  end
+  return text:gsub("%$([^$]+)%$", '<span class="math inline">\\(%1\\)</span>')
+end
+
 -- Helper: build meaning card blocks as markdown so inline math renders normally
 local function build_meaning_blocks(card, title, anchor)
   local md = string.format([[
