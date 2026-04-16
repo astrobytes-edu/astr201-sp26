@@ -9,6 +9,9 @@ on:
     - cron: "0 15 * * 1"   # Mondays 15:00 UTC (weekly link-rot patrol)
   workflow_dispatch:
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 permissions:
   contents: read
 
@@ -19,7 +22,7 @@ jobs:
       TEXLIVE_REPOSITORY: https://ctan.math.utah.edu/ctan/tex-archive/systems/texlive/tlnet
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2.1.9
@@ -35,7 +38,7 @@ jobs:
           tlmgr install titling koma-script caption tcolorbox tikzfill pdfcol fontawesome5
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: '3.11'
 
