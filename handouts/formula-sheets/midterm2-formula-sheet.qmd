@@ -1,0 +1,17 @@
+---
+title: "Formula Sheet — Midterm 2"
+subtitle: "Modules 1–3 (cumulative) · CGS Units"
+author: "Dr. Anna Rosen"
+date: "2026-04-19"
+description: "Two-page cumulative formula sheet provided with Midterm 2."
+draft: false
+format:
+  html:
+    toc: false
+---
+
+This is the formula sheet you will receive with Midterm 2 on **Tuesday, April 21, 2026**. It covers Modules 1–3 in CGS units.
+
+Midterm 2 focuses on **Module 3 Lectures 1–8** (stellar timescales, hydrostatic equilibrium, nuclear fusion, radiation transport, stellar structure, mass limits, low-mass evolution, and the Chandrasekhar limit), with cumulative reference to Modules 1 and 2.
+
+[**Download Formula Sheet (PDF)**](FormulaSheet-Midterm2-SP26.pdf){.btn .btn-primary}

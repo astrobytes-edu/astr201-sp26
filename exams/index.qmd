@@ -5,11 +5,11 @@ draft: false
 
 ## Exam Schedule
 
-| Exam | Topics | Date | Solutions |
-|------|--------|------|-----------|
-| Midterm 1 | Modules 1-2 | March 5, 2026 | [Solutions](astr201-Midterm1-solutions.pdf) |
-| Midterm 2 | Modules 2-3 | TBD | *Posted after exam* |
-| Final | Comprehensive | Finals Week | *Posted after exam* |
+| Exam | Topics | Date | Formula Sheet | Solutions |
+|------|--------|------|---------------|-----------|
+| Midterm 1 | Modules 1–2 | March 5, 2026 | [Formula Sheet](../handouts/formula-sheets/FormulaSheet-Midterm1-SP26.pdf) | [Solutions](astr201-Midterm1-solutions.pdf) |
+| Midterm 2 | Module 3 (Lectures 1–8), cumulative | **April 21, 2026** | [Formula Sheet](../handouts/formula-sheets/FormulaSheet-Midterm2-SP26.pdf) | *Posted after exam* |
+| Final | Comprehensive | Finals Week | *Posted before exam* | *Posted after exam* |
 
 ## Exam Policies
 

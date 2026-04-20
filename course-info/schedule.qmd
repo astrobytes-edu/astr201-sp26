@@ -32,7 +32,7 @@ Reading labels:
 
 - **First class:** Tue **Jan 20, 2026**
 - **Exam 1 (in class):** Thu **Mar 5, 2026**
-- **Exam 2 (in class):** Tue **Apr 21, 2026**
+- **Exam 2 (in class):** Tue **Apr 21, 2026** — [Formula Sheet (PDF)](../handouts/formula-sheets/FormulaSheet-Midterm2-SP26.pdf)
 - **Spring Break (no class):** Tue **Mar 31** & Thu **Apr 2**
 - **Last class (synthesis + optional review):** Tue **May 5**
 - **Final Exam:** Thu **May 7** 10:30 am - 12:30 pm | **Room:** LH 249
@@ -92,7 +92,7 @@ Reading labels:
 
 | Week | Dates | Topics (in class) | Required reading (Core) | Core pages |
 |:-|:--|:-----|:--|:-|
-| 13 | Apr 21 & 23 | Tue: **EXAM 2**<br>Thu: ISM phases; heating vs cooling; star formation; extinction/reddening | Ch 21 (pp. 155–163) + Ch 22 (pp. 166–171) + Ch 12.3 (pp. 77–78) | 17 |
+| 13 | Apr 21 & 23 | Tue: **EXAM 2** ([Formula Sheet](../handouts/formula-sheets/FormulaSheet-Midterm2-SP26.pdf))<br>Thu: ISM phases; heating vs cooling; star formation; extinction/reddening | Ch 21 (pp. 155–163) + Ch 22 (pp. 166–171) + Ch 12.3 (pp. 77–78) | 17 |
 | 14 | Apr 28 & 30 | Milky Way: rotation curve → dark matter<br>External galaxies + Hubble law; large-scale structure + lensing | Ch 26 (pp. 201–210) + Ch 27.1–27.3 (pp. 213–217) + Ch 29 (pp. 232–238) | 22 |
 | 15 | May 5 | Cosmology capstone: expansion dynamics → CMB → early eras<br>Synthesis + optional review | Ch. 30 (pp. 243–248) + Ch. 32.2–32.4 (pp. 261–264) | 10 |
 

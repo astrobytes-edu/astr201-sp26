@@ -41,6 +41,14 @@ You'll develop skills in dimensional analysis, scaling relations, and order-of-m
 
 ---
 
+::: {.callout-important appearance="simple"}
+## <i class="bi bi-megaphone"></i> Announcement — Midterm 2: Tuesday, April 21
+
+**Midterm 2 is in class on Tuesday, April 21, 2026.** Coverage: Module 3 Lectures 1–8 (stellar structure, fusion, radiation transport, white dwarfs, Chandrasekhar limit), cumulative with Modules 1–2.
+
+📄 **[Download the Midterm 2 Formula Sheet (PDF)](handouts/formula-sheets/FormulaSheet-Midterm2-SP26.pdf)** — available now to study in advance.
+:::
+
 ::: {.callout-note appearance="simple"}
 ## <i class="bi bi-signpost-split"></i> Start Here
 
