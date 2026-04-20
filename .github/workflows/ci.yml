@@ -83,3 +83,4 @@ jobs:
             ^https://www\.eso\.org/public/videos/?$
             ^https://www\.esa\.int/Science_Exploration/Space_Science/Gaia/?$
             ^https://cas\.sdss\.org/dr18/VisualTools/quickobj/?$
+            ^https://www\.scirp\.org/journal/paperinformation\?paperid=122622$
