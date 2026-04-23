@@ -38,7 +38,7 @@ After completing this reading, you should be able to:
 
 ## Concept Throughline
 
-> *We've followed gravity's battle against everything the universe can throw at it: thermal pressure, nuclear fusion, radiation pressure, electron degeneracy. Each defender has fallen — or been revealed to have limits. Now we reach the endgame. Neutron degeneracy pressure holds at the core of neutron stars — the densest objects with surfaces, where a teaspoon weighs a billion tonnes and the surface gravity is $2 \times 10^{14}$ times Earth's. But even this last defense has a limit. Above $\sim 2\text{–}3\,M_\odot$, no known force in nature can resist gravity. The result is a black hole: not an object in space, but a feature of spacetime itself, where gravity doesn't just win — it redefines the arena.*
+> *We've followed gravity's battle against everything the universe can throw at it: thermal pressure, nuclear fusion, radiation pressure, electron degeneracy. Each defender has fallen — or been revealed to have limits. Now we reach the endgame. Neutron degeneracy pressure holds at the core of neutron stars — the densest objects with surfaces, where a teaspoon would have a mass of billions of tonnes and the surface gravitational acceleration is about $2 \times 10^{11}$ times Earth's. But even this last defense has a limit. Above $\sim 2\text{–}3\,M_\odot$, no known force in nature can resist gravity. The result is a black hole: not an object in space, but a feature of spacetime itself, where gravity doesn't just win — it redefines the arena.*
 
 ::: {.callout-note title="Reading Map — Choose Your Track"}
 
@@ -91,30 +91,54 @@ The result is a neutron star — a ball of $\sim 10^{57}$ neutrons, with a thin 
 | Density | $\sim 5 \times 10^{14}~\text{g}/\text{cm}^3$ | $\sim$ atomic nucleus |
 | Surface gravity | $\sim 2 \times 10^{14}~\text{cm}/\text{s}^2$ | $\sim 2 \times 10^{11}\,g_\oplus$ |
 | Escape velocity | $\sim 0.5c$ ($150{,}000~\text{km}/\text{s}$) | Half the speed of light |
-| Magnetic field | $10^{12}\text{–}10^{15}~\text{G}$ | $10^{8}\text{–}10^{11} \times B_\oplus$ |
+| Magnetic field | $10^{12}\text{–}10^{15}~\text{G}$ | trillions to quadrillions of times Earth's field |
 | Rotation period | $\sim 0.001\text{–}10~\text{s}$ | Up to 716 Hz |
 
 ### The Density Calculation
 
-A teaspoon ($\sim 5~\text{cm}^3$) of neutron star material would weigh:
+A teaspoon ($\sim 5~\text{cm}^3$) of neutron star material would have a mass of:
 
 $$
-m = \rho \times V
+m = \rho V
 $$
 
 $$
+\begin{aligned}
 m
-=
-5 \times 10^{14}~\text{g}\,\text{cm}^{-3} \times 5~\text{cm}^3
-=
-2.5 \times 10^{15}~\text{g}
+&=
+\left(5 \times 10^{14}~\mathrm{g\,cm^{-3}}\right)\left(5~\mathrm{cm^3}\right) \\
+&=
+2.5 \times 10^{15}~\mathrm{g}
+\end{aligned}
 $$
 
 $$
-m = 2.5 \times 10^9~\text{kg}
+\begin{aligned}
+m
+&=
+2.5 \times 10^{15}~\mathrm{g}
+\left(\frac{1~\mathrm{kg}}{10^3~\mathrm{g}}\right) \\
+&=
+2.5 \times 10^{12}~\mathrm{kg}
+\end{aligned}
 $$
 
-That's $2.5$ billion tonnes — roughly the mass of a $1~\text{km}$ asteroid — in a teaspoon. If you placed this teaspoon on Earth's surface, it would punch through the crust and sink to the center.
+$$
+\begin{aligned}
+m
+&=
+2.5 \times 10^{12}~\mathrm{kg}
+\left(\frac{1~\text{tonne}}{10^3~\mathrm{kg}}\right) \\
+&=
+2.5 \times 10^9~\text{tonnes}
+\end{aligned}
+$$
+
+$$
+\boxed{m = 2.5 \times 10^9~\text{tonnes}}
+$$
+
+That's $2.5$ billion tonnes of mass — packed into a teaspoon-sized volume. This is a scale analogy, not a literal laboratory scenario: neutron-star matter is stable only under extreme pressure, so a real "spoonful" could not simply sit unchanged on Earth.
 
 {{< fig ns-cross-section >}}
 
@@ -132,29 +156,57 @@ $$
 \frac{\omega_2}{\omega_1} = \frac{R_1^2}{R_2^2}
 $$
 
+Because
+
+$$
+\omega = \frac{2\pi}{P},
+$$
+
+we can rewrite this as
+
+$$
+\frac{P_1}{P_2} = \frac{\omega_2}{\omega_1} = \frac{R_1^2}{R_2^2}.
+$$
+
 If the Sun ($R_1 = 7 \times 10^{10}~\text{cm}$, rotation period $P_1 \approx 25~\text{days}$) collapsed to neutron star dimensions ($R_2 = 10^6~\text{cm}$):
 
 $$
-\frac{P_1}{P_2} = \frac{R_1^2}{R_2^2}
-$$
-
-$$
+\begin{aligned}
 \frac{P_1}{P_2}
-=
-\left(\frac{7 \times 10^{10}}{10^6}\right)^2
-=
+&=
+\left(\frac{R_1}{R_2}\right)^2 \\
+&=
+\left(\frac{7 \times 10^{10}~\text{cm}}{10^6~\text{cm}}\right)^2 \\
+&=
+\left(7 \times 10^4\right)^2 \\
+&=
 4.9 \times 10^9
+\end{aligned}
 $$
 
 $$
-P_2 = \frac{25~\text{days}}{4.9 \times 10^9}
+\begin{aligned}
+25~\text{days}
+\left(\frac{86400~\text{s}}{1~\text{day}}\right)
+&=
+2.16 \times 10^6~\text{s}
+\end{aligned}
 $$
 
 $$
+\begin{aligned}
 P_2
-=
-\frac{2.16 \times 10^6~\text{s}}{4.9 \times 10^9}
-\approx 4.4 \times 10^{-4}~\text{s}
+&=
+\frac{P_1}{4.9 \times 10^9} \\
+&=
+\frac{2.16 \times 10^6~\text{s}}{4.9 \times 10^9} \\
+&\approx
+4.4 \times 10^{-4}~\text{s}
+\end{aligned}
+$$
+
+$$
+\boxed{P_2 \approx 0.4~\text{ms}}
 $$
 
 A rotation period of $\sim 0.4~\text{ms}$ — over 2,000 rotations per second. The actual Sun rotates slowly and would lose angular momentum during collapse, but the calculation illustrates why neutron stars spin so fast: conservation of angular momentum during a factor-of-$10^5$ contraction in radius amplifies the rotation rate by a factor of $10^{10}$.
@@ -165,7 +217,7 @@ A rotation period of $\sim 0.4~\text{ms}$ — over 2,000 rotations per second. T
 The same angular momentum argument explains why neutron stars have such extreme magnetic fields. If the Sun's magnetic field is $\sim 1~\text{G}$ and magnetic flux is conserved,
 
 $$
-\Phi = B \times \pi R^2 = \text{constant},
+\Phi = B\pi R^2 = \text{constant}.
 $$
 
 estimate the magnetic field of the resulting neutron star.
@@ -176,15 +228,20 @@ estimate the magnetic field of the resulting neutron star.
 Magnetic flux conservation:
 
 $$
-B_1 R_1^2 = B_2 R_2^2 \quad \Rightarrow \quad B_2 = B_1 \left(\frac{R_1}{R_2}\right)^2
+\begin{aligned}
+B_1 R_1^2 &= B_2 R_2^2 \\
+\Rightarrow \quad B_2 &= B_1 \left(\frac{R_1}{R_2}\right)^2
+\end{aligned}
 $$
 
 $$
-B_2 = 1~\text{G} \times \left(\frac{7 \times 10^{10}}{10^6}\right)^2
-$$
-
-$$
-B_2 = 4.9 \times 10^9~\text{G}
+\begin{aligned}
+B_2
+&=
+1~\text{G} \times \left(\frac{7 \times 10^{10}~\text{cm}}{10^6~\text{cm}}\right)^2 \\
+&=
+4.9 \times 10^9~\text{G}
+\end{aligned}
 $$
 
 This gives $B \sim 5 \times 10^9~\text{G}$ — already enormous. Observed neutron star fields are $10^{12}\text{–}10^{15}~\text{G}$, even stronger, suggesting additional magnetic field amplification during the collapse (dynamo processes in the turbulent proto-neutron star). The strongest-field neutron stars (**magnetars**, $B \sim 10^{15}~\text{G}$) have fields so intense that they can deform the neutron star crust, triggering "starquakes" and gamma-ray flares.
@@ -208,40 +265,19 @@ A pulsar is a rapidly rotating neutron star with a strong magnetic field whose m
 - If the beam sweeps across Earth, we see a pulse each rotation period
 - If the beam misses Earth, the neutron star is invisible as a pulsar (but still exists)
 
-The pulse period equals the rotation period: $P = 2\pi/\omega$. Periods range from $\sim 1.4~\text{ms}$ (the fastest millisecond pulsars) to $\sim 10~\text{s}$ (the slowest). Pulsars slowly spin down as they lose rotational energy to magnetic dipole radiation:
+The pulse period equals the neutron star's rotation period. Pulsars are observed with periods ranging from milliseconds to seconds. Over time, many pulsars gradually slow down because they lose rotational energy through their magnetic fields and particle outflows. By measuring how the period changes, astronomers can infer useful physical information such as the pulsar's magnetic field strength and an estimate of its age.
 
-$$
-\dot{E}_\text{rot} = I\omega\dot{\omega} \propto B^2 \omega^4 R^6
-$$
-
-The spin-down rate gives us the magnetic field strength and the pulsar's age. Young pulsars (like the Crab pulsar, born in SN 1054) spin fast ($P = 33~\text{ms}$); old pulsars spin slowly.
+In general, ordinary isolated pulsars spin more slowly as they age. However, some old neutron stars in binary systems can later be spun back up by accreting matter from a companion; these are the millisecond pulsars.
 
 ::: {.callout-tip}
 ## Check Yourself
 
-The Crab pulsar has a period of $P = 33.5~\text{ms}$ and is spinning down at a rate $\dot{P} = 4.21 \times 10^{-13}~\text{s/s}$. Estimate its age assuming it was born spinning infinitely fast.
+Why does a pulsar's extremely short pulse period tell us it must be a compact object rather than a normal star?
 
 ::: {.callout-note collapse="true"}
 ## Solution
 
-If the spin-down rate has been approximately constant, the age is:
-
-$$
-\tau = \frac{P}{2\dot{P}}
-$$
-
-$$
-\tau
-=
-\frac{0.0335}{2 \times 4.21 \times 10^{-13}}
-\approx 4.0 \times 10^{10}~\text{s}
-$$
-
-$$
-\tau \approx 1{,}260~\text{yr}
-$$
-
-The Crab Nebula is the remnant of a supernova recorded by Chinese astronomers in 1054 CE — about $970$ years ago. Our estimate ($1{,}260~\text{yr}$) is in the right ballpark. The discrepancy arises because the spin-down rate is not exactly constant (it decreases as the pulsar slows) and because we assumed the birth period was zero. This "characteristic age" $\tau = P/(2\dot{P})$ is a standard estimate used for pulsars.
+A star with a radius like the Sun's cannot rotate hundreds of times per second without flying apart. Millisecond-to-second pulse periods therefore require a much smaller object with a radius of only tens of kilometers. That is one of the key clues that pulsars are neutron stars.
 :::
 :::
 
@@ -293,7 +329,7 @@ The core collapses without limit, forming a **black hole.**
 ::: {.callout-important}
 ## The Big Idea
 
-**A black hole is not an object in space — it is a region of spacetime from which nothing, not even light, can escape.** It is defined by the **event horizon**: the boundary beyond which the escape velocity exceeds $c$.
+**A black hole is not an object in space — it is a region of spacetime from which nothing, not even light, can escape to distant observers.** A useful Newtonian preview is that the Schwarzschild radius is the radius where the classical escape speed would equal $c$. In general relativity, the event horizon is more fundamentally the boundary beyond which no future-directed signal can escape outward.
 :::
 
 {{< fig warped-spacetime-bh >}}
@@ -314,33 +350,44 @@ Set $v_\text{esc} = c$ (the speed of light) and solve for $R$. The result is the
 
 {{< eqrefcard schwarzschild-radius >}}
 
-This is the **Schwarzschild radius** — the radius at which the escape velocity equals the speed of light. For any mass compressed within its Schwarzschild radius, nothing can escape — not matter, not light, not information.
+This is the **Schwarzschild radius**. In the Newtonian preview, it is the radius at which the classical escape speed equals the speed of light. In general relativity, the associated event horizon is the boundary beyond which no outward signal can reach distant observers.
 
 ### Worked Example: Schwarzschild Radii
 
 For the Sun:
 
 $$
+\begin{aligned}
 R_{s,\odot}
-=
-\frac{2 \times 6.67 \times 10^{-8} \times 2.0 \times 10^{33}}{(3.0 \times 10^{10})^2}
+&=
+\frac{2GM_\odot}{c^2} \\
+&=
+\frac{2(6.67 \times 10^{-8}~\mathrm{cm^3\,g^{-1}\,s^{-2}})(2.0 \times 10^{33}~\mathrm{g})}{(3.0 \times 10^{10}~\mathrm{cm\,s^{-1}})^2} \\
+&=
+\frac{2.67 \times 10^{26}~\mathrm{cm^3\,s^{-2}}}{9.0 \times 10^{20}~\mathrm{cm^2\,s^{-2}}} \\
+&\approx 3.0 \times 10^5~\mathrm{cm}
+\end{aligned}
 $$
 
 $$
-R_{s,\odot}
-=
-\frac{2.67 \times 10^{26}}{9.0 \times 10^{20}}
-\approx 3.0 \times 10^5~\text{cm}
-$$
-
-$$
-R_{s,\odot} = 3.0~\text{km}
+\boxed{R_{s,\odot} = 3.0~\text{km}}
 $$
 
 For Earth:
 
 $$
-R_{s,\oplus} = \frac{2 \times 6.67 \times 10^{-8} \times 6.0 \times 10^{27}}{9.0 \times 10^{20}} \approx 0.89~\text{cm}
+\begin{aligned}
+R_{s,\oplus}
+&=
+\frac{2GM_\oplus}{c^2} \\
+&=
+\frac{2(6.67 \times 10^{-8}~\mathrm{cm^3\,g^{-1}\,s^{-2}})(6.0 \times 10^{27}~\mathrm{g})}{(3.0 \times 10^{10}~\mathrm{cm\,s^{-1}})^2} \\
+&\approx 0.89~\mathrm{cm}
+\end{aligned}
+$$
+
+$$
+\boxed{R_{s,\oplus} \approx 0.89~\text{cm}}
 $$
 
 To turn the Sun into a black hole, you'd need to compress its entire mass into a sphere of radius $3~\text{km}$. To turn Earth into a black hole: $0.89~\text{cm}$ — smaller than a marble.
@@ -356,27 +403,45 @@ A $10\,M_\odot$ black hole has $R_s = 30~\text{km}$. The supermassive black hole
 ::: {.callout-tip}
 ## Check Yourself
 
-A neutron star has $M = 1.4\,M_\odot$ and $R = 10~\text{km}$. Calculate the ratio $R_s/R$ and explain what this tells us about the importance of general relativity.
+A neutron star has $M = 1.4\,M_\odot$ and $R = 10~\text{km}$. Calculate the ratio $R_s/R$ and explain what it tells us about how relativistic the neutron star is.
 
 ::: {.callout-note collapse="true"}
 ## Solution
 
 $$
-R_s = 3.0~\text{km} \times 1.4 = 4.2~\text{km}
+\begin{aligned}
+R_s
+&=
+3.0~\text{km} \times 1.4 \\
+&=
+4.2~\text{km}
+\end{aligned}
 $$
 
 $$
-\frac{R_s}{R} = \frac{4.2}{10} = 0.42
+\begin{aligned}
+\frac{R_s}{R}
+&=
+\frac{4.2~\text{km}}{10~\text{km}} \\
+&=
+0.42
+\end{aligned}
+$$
+
+$$
+\boxed{\frac{R_s}{R} = 0.42}
 $$
 
 The Schwarzschild radius is $42\%$ of the physical radius. This is *enormous*. For the Sun, the corresponding ratio is only $4 \times 10^{-6}$, and for Earth it is only $R_s/R_\oplus \sim 10^{-9}$.
 
 $$
+\begin{aligned}
 \frac{R_s}{R_\odot}
-=
-\frac{3~\text{km}}{7 \times 10^5~\text{km}}
-=
+&=
+\frac{3~\text{km}}{7 \times 10^5~\text{km}} \\
+&=
 4 \times 10^{-6}
+\end{aligned}
 $$
 
 When $R_s/R$ is a significant fraction of unity, general relativity is essential — Newtonian gravity is no longer accurate. A neutron star's surface gravity, spacetime curvature, and light propagation all require GR to describe correctly. Photons emitted from the surface are gravitationally redshifted by $\sim 30\%$ before reaching a distant observer. Time runs measurably slower on the neutron star surface. These are not tiny corrections — they are dominant effects.
@@ -483,20 +548,28 @@ The supermassive black hole at the center of the Milky Way (Sgr A*) has $M \appr
 ## Solution
 
 $$
-R_s = 3.0~\text{km} \times 4 \times 10^6
+\begin{aligned}
+R_s
+&=
+3.0~\text{km} \times 4 \times 10^6 \\
+&=
+1.2 \times 10^7~\text{km}
+\end{aligned}
 $$
 
 $$
-R_s = 1.2 \times 10^7~\text{km}
+\boxed{R_s = 1.2 \times 10^7~\text{km}}
 $$
 
 Compared to the Sun's radius:
 
 $$
+\begin{aligned}
 \frac{R_s}{R_\odot}
-=
-\frac{1.2 \times 10^7}{7 \times 10^5}
-\approx 17
+&=
+\frac{1.2 \times 10^7~\text{km}}{7 \times 10^5~\text{km}} \\
+&\approx 17
+\end{aligned}
 $$
 
 The event horizon of Sgr A* is about $17$ solar radii — a large star could fit inside it comfortably.
@@ -504,11 +577,13 @@ The event horizon of Sgr A* is about $17$ solar radii — a large star could fit
 Compared to Earth's orbit:
 
 $$
+\begin{aligned}
 \frac{R_s}{1~\text{AU}}
-=
-\frac{1.2 \times 10^7}{1.5 \times 10^8}
-=
+&=
+\frac{1.2 \times 10^7~\text{km}}{1.5 \times 10^8~\text{km}} \\
+&=
 0.08
+\end{aligned}
 $$
 
 The event horizon is about $0.08~\text{AU}$ — roughly $1/5$ of Mercury's orbital radius.
@@ -560,7 +635,7 @@ The boundaries between these outcomes depend on mass loss during the star's life
 | Density | $\sim 10^6~\text{g}/\text{cm}^3$ | $\sim 10^{14}~\text{g}/\text{cm}^3$ | No single material density; no surface |
 | $R_s/R$ | $\sim 10^{-4}$ | $\sim 0.4$ | 1 (at horizon) |
 | Support | $e^-$ degeneracy | $n$ degeneracy + nuclear | None |
-| Surface? | Yes (solid) | Yes (crust) | No (event horizon) |
+| Surface? | Yes (material surface / thin atmosphere) | Yes (solid crust over dense interior) | No material surface; event horizon instead |
 
 ### Symbol Legend
 
@@ -569,7 +644,6 @@ The boundaries between these outcomes depend on mass loss during the star's life
 | $R_s$ | Schwarzschild radius | $\text{cm}$ or km |
 | $M_\text{TOV}$ | Tolman-Oppenheimer-Volkoff limit | $\sim 2\text{–}2.5\,M_\odot$ |
 | $P$ | Pulsar period | s |
-| $\dot{P}$ | Period derivative (spin-down rate) | $\text{s}/\text{s}$ (dimensionless) |
 | $\Phi$ | Magnetic flux | $\text{G}\cdot\text{cm}^2$ |
 | $\omega$ | Angular velocity | $\text{rad}/\text{s}$ |
 
@@ -579,7 +653,7 @@ The boundaries between these outcomes depend on mass loss during the star's life
 
 The most important ideas from this reading:
 
-1. **Neutron stars are nuclear-density objects** — $1.4\,M_\odot$ in $10~\text{km}$ radius, spinning up to hundreds of times per second, with magnetic fields $10^{12}$ times Earth's. They are held up by neutron degeneracy pressure — the last stand of quantum mechanics against gravity.
+1. **Neutron stars are nuclear-density objects** — about $1.4\,M_\odot$ packed into a radius of about $10~\text{km}$, spinning from milliseconds to seconds, with magnetic fields of $10^{12}\text{–}10^{15}~\text{G}$, vastly stronger than Earth's. They are held up by neutron degeneracy pressure — the last stand of quantum mechanics against gravity.
 
 2. **The TOV limit ($\sim 2\text{–}2.5\,M_\odot$)** is the neutron star analogue of the Chandrasekhar limit. Above it, no known force can resist gravity.
 
