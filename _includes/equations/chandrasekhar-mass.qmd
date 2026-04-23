@@ -1,3 +1,7 @@
 $$
-M_\text{Ch} \sim \left(\frac{\hbar c}{G}\right)^{3/2} \frac{1}{m_p^2} \approx 1.44\,M_\odot
+M_\text{Ch} \sim \left(\frac{\hbar c}{G}\right)^{3/2} \frac{1}{m_p^2}
+$$
+
+$$
+M_\text{Ch} \approx 5.83\,Y_e^2\,M_\odot \approx 1.46\,M_\odot \quad (Y_e \approx 0.50)
 $$ {#eq-chandrasekhar-mass}

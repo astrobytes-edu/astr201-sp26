@@ -522,11 +522,11 @@ degeneracy_pressure:
 chandrasekhar_mass:
   predicts: "The maximum mass of a white dwarf supported by electron degeneracy pressure."
   depends: "Built from four fundamental constants: $\\hbar$, $c$, $G$, $m_p$. Independent of temperature and radius; the exact value also depends on composition through the electron fraction $Y_e$."
-  says: "Above $1.44\\,M_\\odot$ for a C/O white dwarf, relativistic electrons cannot generate enough degeneracy pressure to balance gravity. Stable white-dwarf solutions disappear in the idealized model. This is the dividing line between white dwarfs and neutron stars/black holes."
+  says: "Once a degenerate core reaches a mass of order $1.4\\,M_\\odot$, relativistic electrons cannot generate enough pressure to balance gravity in the idealized model. Stable white-dwarf solutions disappear, and further collapse requires a different support mechanism."
   assumptions:
     - "Relativistic electron degeneracy pressure"
     - "Cold equation of state (temperature-independent)"
-    - "Exact value depends on $Y_e$: $M_\\text{Ch} = 5.83\\,Y_e^2\\,M_\\odot \\approx 1.44\\,M_\\odot$ for $Y_e = 0.5$ (C/O)"
+    - "Exact value depends on $Y_e$: $M_\\text{Ch} = 5.83\\,Y_e^2\\,M_\\odot \\approx 1.46\\,M_\\odot$ for $Y_e = 0.5$ (C/O)"
 
 wd_mass_radius:
   predicts: "Given a white dwarf's mass, it predicts the radius (inversely)."

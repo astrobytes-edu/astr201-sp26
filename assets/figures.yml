@@ -1219,8 +1219,8 @@ figures:
 
   chandra-periodic-table-origins:
     path: /assets/images/module-03/Chandra_PeriodicTable.jpeg
-    caption: "**Your body is stellar ash.** This periodic table is color-coded by nucleosynthesis origin: Big Bang (H, He), dying low-mass stars (C, N), exploding massive stars (O, Si, Fe), merging neutron stars (Au, Pt), and cosmic ray fission (Li, Be, B). The human body is ~73% hydrogen (Big Bang), ~16.5% oxygen (massive stars), ~9.5% carbon (low-mass stars), and ~1% everything else. Every atom heavier than hydrogen was forged inside a star."
-    alt: "Periodic table on dark background color-coded by element origin: Big Bang fusion (hydrogen and helium), dying low-mass stars (carbon, nitrogen), exploding massive stars (oxygen, silicon, iron group), merging neutron stars (gold, platinum, uranium), and exploding white dwarfs. A human silhouette at right shows body composition: 73 percent hydrogen, 16.5 percent oxygen, 9.5 percent carbon, 1 percent other elements."
+    caption: "**Your body is stellar ash.** This periodic table is color-coded by nucleosynthesis origin: Big Bang (H, He), dying low-mass stars (C, N), exploding massive stars (O, Si, Fe), merging neutron stars (Au, Pt), and cosmic-ray spallation (Li, Be, B). The human silhouette at right should be read as an approximate composition **by number of atoms**, not by mass. That is why hydrogen appears so dominant even though oxygen contributes most of the body's mass."
+    alt: "Periodic table on dark background color-coded by element origin: Big Bang fusion for hydrogen and helium, dying low-mass stars for carbon and nitrogen, exploding massive stars for oxygen, silicon, and the iron group, merging neutron stars for gold, platinum, and uranium, plus other channels for some elements. A human silhouette at right shows an approximate body composition by number of atoms, with hydrogen far more abundant than oxygen and carbon."
     credit: "NASA/CXC/SAO"
     module: 3
 
