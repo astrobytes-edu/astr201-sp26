@@ -540,9 +540,9 @@ wd_mass_radius:
 # --- Reading 10: Neutron Stars & Black Holes ---
 
 tov_limit:
-  predicts: "The maximum mass of a neutron star supported by neutron degeneracy pressure."
-  depends: "Depends on the equation of state of nuclear matter at supra-nuclear density — currently uncertain."
-  says: "Above $\\sim 2\\text{--}2.5\\,M_\\odot$, no known force can resist gravity. The collapse produces a black hole. The analogue of the Chandrasekhar limit for neutron stars."
+  predicts: "The maximum mass of a stable neutron star."
+  depends: "Depends on the equation of state of nuclear matter at supra-nuclear density and on general relativity."
+  says: "Above roughly $2\\text{--}3\\,M_\\odot$, pressure support from dense neutron-star matter cannot keep up with gravity. For course-level reasoning, $2.5\\,M_\\odot$ is a useful dividing value, not an exact universal constant."
   assumptions:
     - "General relativistic hydrostatic equilibrium (TOV equation)"
     - "Cold nuclear matter equation of state (uncertain above nuclear density)"

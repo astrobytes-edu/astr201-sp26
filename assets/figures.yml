@@ -705,7 +705,7 @@ figures:
 
   warped-spacetime-bh:
     path: /assets/images/module-03/webb-STScI-blackholes-warped-spacetime.png
-    caption: "Artist's concept of a black hole with an accretion disk. Matter spiraling inward is heated to extreme temperatures, glowing brightly. The black hole's gravity warps the surrounding spacetime so strongly that even light paths are bent — the glowing ring behind the black hole is visible above and below because spacetime curves light around it."
+    caption: "**What to notice:** the black hole itself is not glowing. The light comes from hot gas in the accretion flow, while the dark central region and bent light paths reveal strongly curved spacetime near the event horizon."
     alt: "Artist rendering of a supermassive black hole surrounded by a bright orange accretion disk, with light paths visibly warped by extreme spacetime curvature near the event horizon"
     credit: "NASA/STScI"
     module: 3
@@ -1239,7 +1239,7 @@ figures:
 
   ns-types-nasa:
     path: /assets/images/module-03/NASA_NeutronStars.jpeg
-    caption: "**Three types of neutron stars.** Magnetars have extraordinarily strong magnetic fields (~10¹⁵ G, a trillion times Earth's). Pulsars emit beams of radiation from their magnetic poles; as the star rotates, the beams sweep across our line of sight like a lighthouse. Some neutron stars are both magnetar and pulsar. About 3,000 pulsars have been discovered, but only ~30 magnetars — they may represent a brief evolutionary phase."
+    caption: "**What to notice:** pulsars emit beams from magnetic-pole regions, and we see pulses only when the rotating beam crosses Earth. Magnetars are neutron stars with especially strong magnetic fields; the categories describe observed behavior, not separate kinds of matter."
     alt: "NASA JPL infographic on dark background showing three panels: Magnetar (left) with intense magnetic field lines, Pulsar (center) with twin beams of radiation sweeping from magnetic poles misaligned with the rotation axis, and Magnetar plus Pulsar (right) combining both properties. Each panel includes a brief description and illustration."
     credit: "NASA/JPL-Caltech"
     module: 3
@@ -1255,6 +1255,27 @@ figures:
     caption: "**Cygnus X-1** — the first strong black hole candidate. A stellar-mass black hole (~21 M☉) accretes gas from its blue supergiant companion star (HDE 226868). The infalling matter forms a swirling accretion disk heated to millions of kelvin, producing intense X-ray emission. Relativistic jets emerge perpendicular to the disk. The black hole itself is invisible — we infer its existence from the X-ray luminosity and the orbital dynamics of the companion."
     alt: "Artist's rendering of the Cygnus X-1 system showing a large blue supergiant star on the right with gas streaming toward a black hole on the left. The gas forms a glowing orange-red accretion disk spiraling inward, with narrow blue-white jets shooting perpendicular to the disk from near the black hole."
     credit: "NASA/CXC"
+    module: 3
+
+  schwarzschild-radius-scaling:
+    path: /assets/images/module-03/schwarzschild-radius-scaling.png
+    caption: "**What to notice:** Schwarzschild radius scales linearly with mass. Doubling the mass doubles the event-horizon radius, which is why the scaling $R_s \\approx 3.0\\,\\mathrm{km}(M/M_\\odot)$ is so powerful."
+    alt: "Log-log line plot of Schwarzschild radius in kilometers versus mass in solar masses. A straight line with slope one is annotated at the Sun, a ten-solar-mass black hole, and Sgr A star."
+    credit: "ASTR 201 (generated)"
+    module: 3
+
+  compactness-ladder:
+    path: /assets/images/module-03/compactness-ladder.png
+    caption: "**What to notice:** compactness $R_s/R$ is tiny for Earth and the Sun, larger for white dwarfs, a large fraction of unity for neutron stars, and exactly $1$ at a black-hole event horizon. Compactness, not mass alone, tells us when general relativity matters."
+    alt: "Bar chart on a logarithmic scale showing compactness R_s over R for Earth, Sun, white dwarf, neutron star, and black hole event horizon. Values rise from about 10 to the minus 9 for Earth to 1 for the black hole horizon."
+    credit: "ASTR 201 (generated)"
+    module: 3
+
+  compact-object-evidence-map:
+    path: /assets/images/module-03/compact-object-evidence-map.png
+    caption: "**What to notice:** no single observation carries the whole argument. Pulses, X-ray binaries, stellar orbits, gravitational waves, and horizon-scale images converge on neutron-star and black-hole models."
+    alt: "Concept map connecting observables such as pulsar periods, X-ray binaries, stellar orbits, gravitational waves, and horizon-scale images to models of neutron stars and black holes, then to physical inferences about dense matter and event horizons."
+    credit: "ASTR 201 (generated)"
     module: 3
 
   # ==============================================================
