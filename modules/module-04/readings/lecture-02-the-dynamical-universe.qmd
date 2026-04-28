@@ -14,105 +14,190 @@ learning-objectives:
   - Describe multiple lines of evidence for dark matter from galaxies, clusters, and large-scale structure
   - Connect galaxy groups, clusters, and the cosmic web to gravitational structure growth
 math-level: symbolic_with_interpretation
-mode: Planning Sketch
+mode: Full Reading
 prerequisites: "Kepler's laws and Newtonian gravity, Doppler shifts, binary-star mass inference, Module 3 compact objects"
 ---
 
-::: {.callout-note title="Reading Status"}
-This is the public reading plan for Lecture 2. It fixes the throughline, figures, equations, and retrieval-practice targets before the full narrative draft.
+## Learning Objectives
+
+After completing this reading, you should be able to:
+
+1. **Use** orbital speed and radius to infer enclosed mass.
+2. **Explain** why Solar-System-like rotation is not what we observe in spiral galaxies.
+3. **Interpret** flat galaxy rotation curves as evidence for extended dark matter halos.
+4. **Describe** how S-star orbits reveal the supermassive black hole at the Galactic center.
+5. **Explain** why the Bullet Cluster and the cosmic web provide evidence beyond individual galaxy rotation curves.
+
+## Concept Throughline
+
+> *Gravity is the universe's scale. If something moves in an orbit, its motion tells us what mass is pulling on it. When the motion does not match the light, the universe is telling us that light is not the whole mass budget.*
+
+This reading is about dynamics: how motion reveals mass. You already know the core idea from binaries and orbits. In Module 2, binary stars let us measure stellar masses. In Module 3, gravity battled pressure inside stars. Now the same gravitational reasoning moves outward to galaxies, clusters, and the cosmic web.
+
+The method is still **observe → model → infer**. We observe positions, velocities, redshifts, or lensing patterns. We model them with gravity. Then we infer masses, dark matter, compact objects, and the architecture of large-scale structure.
+
+---
+
+## Part 1: The Milky Way Is Not Alone
+
+Before we weigh a galaxy, we should place it in context. The Milky Way is one member of the Local Group, a gravitationally bound collection of galaxies that includes Andromeda, Triangulum, and many dwarf galaxies. This matters because galaxies are not isolated test particles in empty space. They live in environments, and gravity links those environments together.
+
+{{< fig local-group-map >}}
+
+The Local Group is already a lesson in scale and hierarchy. The Milky Way and Andromeda dominate the visible stellar mass, but the group contains many smaller galaxies. Dwarf galaxies are easy to miss because they are faint, diffuse, and often low in surface brightness. Yet they are important: they trace the gravitational environment and help reveal how galaxies assemble over time.
+
+{{< fig local-group-galaxy-comparison >}}
+
+The word "group" should remind you of something from earlier in the course: when objects are gravitationally bound, their motions carry information about mass. The Local Group is not expanding with the Hubble flow in the simple way distant galaxies do. Local gravity matters more than cosmic expansion here. That distinction will become important in the cosmology reading.
+
+::: {.callout-note title="Quick Check 1"}
+Why should we be careful about applying Hubble's law to the Milky Way and Andromeda?
 :::
 
-## Throughline
+::: {.callout-note collapse="true" title="Answer"}
+Because the Milky Way and Andromeda are in a gravitationally bound local system. Hubble expansion describes the large-scale average expansion of the universe, but nearby bound systems can have motions dominated by local gravity.
+:::
 
-By the end of this reading, students should be able to infer hidden mass from measured motion by using gravity as the translation model. The governing idea is simple and powerful: if we can measure how fast something orbits, we can weigh what pulls on it. The surprise is that galaxies, clusters, and the cosmic web all tell us gravity is responding to more matter than we can see.
+---
 
-## Equation Anchor
+## Part 2: Motion Weighs What Light Cannot Show
+
+The central equation for this reading comes from circular motion. If an object moves in a nearly circular orbit, gravity supplies the inward acceleration. Equating gravitational acceleration with centripetal acceleration gives a way to infer enclosed mass:
 
 {{< include ../../../_includes/equations/enclosed-mass-circular-speed.qmd >}}
 {{< eqrefcard enclosed-mass-circular-speed >}}
 
-## Observe → Model → Infer
+Let's read this equation like a sentence. **$M(<r)$** is the mass enclosed inside radius **$r$**. The speed **$v$** is the orbital speed at that radius, and **$G$** is the gravitational constant. The equation says that if you measure an orbital speed at some radius, you can infer how much mass must lie inside that orbit.
 
-| Step | Reading role | Figure spine |
-|---|---|---|
-| Observe | Begin nearby: Local Group context, S-star orbits around Sgr A*, Milky Way rotation, and external rotation curves. | `local-group-map`, `local-group-galaxy-comparison`, `s-stars-orbits`, `milky-way-rotation-curve`, `ugc11455-rotation-curve` |
-| Model | Use circular motion and enclosed mass to compare central-mass expectations with galaxy-scale behavior. | `keplerian-rotation-curve-solar-system`, `rotation-curve-dark-matter` |
-| Infer | Extend the same logic to supermassive black holes, AGN feedback, dark matter halos, cluster collisions, and the cosmic web. | `sgr-a-polarized-eht`, `agn-structure`, `active-galactic-nucleus`, `bullet-cluster-composite`, `bullet-cluster-jwst-chandra`, `desi-cosmic-web` |
+The scaling is the important part. Mass grows as **$r v^2$**. If the orbital speed stays the same while radius increases, then the enclosed mass must keep increasing roughly in proportion to radius. That one sentence is the key to galaxy rotation curves.
 
-## Planned Structure
+We should also state the assumptions. This equation is cleanest for circular orbits and approximately spherical mass distributions. Real galaxy disks are not perfectly spherical, and detailed models are more complicated. But the equation captures the essential inference: **fast motion at large radius requires mass at large radius**.
 
-### Part 1: Our Galaxy Is One Member of a Gravitating Neighborhood
+::: {.callout-note title="Units Sanity Check"}
+The right side has units:
 
-Use the Local Group to break the implicit assumption that the Milky Way is the whole stage. The Local Group is the first scale where galaxies themselves become moving objects in a bound system.
+$$
+\frac{r v^2}{G}
+\sim
+\frac{\mathrm{cm}\,(\mathrm{cm^2\,s^{-2}})}
+{\mathrm{cm^3\,g^{-1}\,s^{-2}}}
+=
+\mathrm{g}
+$$
 
-Planned figures:
+The result has units of mass, so the equation passes the dimensional check.
+:::
 
-{{< fig local-group-map >}}
-
-{{< fig local-group-galaxy-comparison >}}
-
-### Part 2: Motion Weighs What Light Cannot Show
-
-Rehearse the familiar logic from binaries and orbits, then apply it to S-star orbits and rotation curves. Students should see the same inference machine working at different scales.
-
-Planned figures:
+Now apply the same idea to the center of the Milky Way. Near the Galactic center, astronomers track individual stars orbiting an invisible compact object. These are the S-stars. Their orbits are small, fast, and curved around a common focus.
 
 {{< fig s-stars-orbits >}}
 
+The observation is motion. The model is gravity. The inference is mass. The S-star orbits require about four million solar masses packed into a region far smaller than a normal star cluster could occupy stably. That compact mass is Sagittarius A*, the Milky Way's central supermassive black hole.
+
+The Event Horizon Telescope gives a different kind of evidence. It does not replace the orbital argument; it complements it by imaging plasma near the event-horizon scale.
+
 {{< fig sgr-a-polarized-eht >}}
+
+This is a good example of how astronomy builds confidence. One observation rarely carries the whole story. Stellar orbits, radio emission, infrared observations, and horizon-scale imaging all point toward the same physical model: a supermassive black hole at the center of the Milky Way.
+
+---
+
+## Part 3: The Rotation-Curve Surprise
+
+Now move from the central black hole to the entire disk of a galaxy. The Solar System gives us a useful expectation. Nearly all of the Solar System's mass is in the Sun. As you move outward from the Sun, the enclosed mass barely changes. The orbital speed therefore decreases with distance.
 
 {{< fig keplerian-rotation-curve-solar-system >}}
 
+That falling curve is what we would expect if most of a galaxy's mass were concentrated where most of its light is. Spiral galaxies have bright stellar disks. If the visible disk contained most of the mass, then stars and gas far from the center should orbit more slowly, much like outer planets orbit the Sun more slowly than inner planets.
+
+But that is not what we observe.
+
 {{< fig milky-way-rotation-curve >}}
 
-### Part 3: The Rotation-Curve Surprise
+The Milky Way's rotation curve stays roughly flat over a large range of radius. Gas and stars far from the Galactic center orbit faster than the visible matter alone would predict. The simplest interpretation is that the enclosed mass keeps increasing with radius, even where the visible light becomes faint.
 
-Make the prediction first: if most mass were concentrated where the light is, speeds should fall outward. Then reveal the flat curves. The inference should land cleanly: the mass distribution is more extended than the light distribution.
-
-Planned figures:
+External galaxies show the same pattern.
 
 {{< fig ugc11455-rotation-curve >}}
 
+This matters because it turns dark matter from a one-galaxy oddity into a population-level inference. If many spiral galaxies show flat rotation curves, then the problem is not that we made one bad map of the Milky Way. The pattern is telling us something general about galaxy mass distributions.
+
 {{< fig rotation-curve-dark-matter >}}
 
-### Part 4: Compact Engines Inside Galaxies
+The term **dark matter** is a name for the inferred gravitating component that does not emit, absorb, or scatter enough light for us to see directly. The word "dark" does not mean mysterious magic. It means electromagnetically dark: visible through gravity, not through ordinary light. We infer it because the gravitational model requires more mass than the luminous matter provides.
 
-Keep AGN as a focused extension of the same dynamical story. S-star orbits infer the central mass in the Milky Way; accretion and jets show how supermassive black holes can become visible and mechanically important for their host galaxies.
+::: {.callout-note title="Quick Check 2"}
+Suppose a galaxy's rotation speed stays about constant as radius doubles. According to $M(<r) = r v^2/G$, what happens to the enclosed mass?
+:::
 
-Planned figures:
+::: {.callout-note collapse="true" title="Answer"}
+If $v$ stays constant and $r$ doubles, then $M(<r)$ roughly doubles. A flat rotation curve means the enclosed mass keeps growing with radius.
+:::
+
+---
+
+## Part 4: Compact Engines Inside Galaxies
+
+Supermassive black holes are not dark matter, but they are part of the dynamical story of galaxies. The Milky Way's central black hole is relatively quiet today. In other galaxies, gas falling onto a supermassive black hole can release enormous energy before crossing the event horizon. Such a system is called an **active galactic nucleus**, or AGN.
 
 {{< fig agn-structure >}}
 
+The engine is accretion. Gas loses gravitational potential energy as it spirals inward. Much of that energy becomes heat, radiation, and sometimes jets. The black hole itself is dark, but the material falling toward it can be among the brightest sources in the universe.
+
+The geometry matters. A disk, dusty torus, broad-line region, and jets can look very different depending on viewing angle. That is why AGN classification can be complicated: the same underlying engine may present different observational faces.
+
 {{< fig active-galactic-nucleus >}}
 
-### Part 5: Dark Matter Beyond Spiral Galaxies
+AGN matter for galaxy evolution because they can inject energy into surrounding gas. A jet or outflow can heat gas, stir it, or push it out of the galaxy. This connects back to the ecosystem model from the previous reading. Stars provide feedback; supermassive black holes can provide feedback too. Both change the gas supply that future star formation depends on.
 
-Use the Bullet Cluster as the second independent line of reasoning. The key observation is not just "there is lensing"; it is that the gravitational mass is offset from the hot gas after a cluster collision.
+::: {.callout-note title="Quick Check 3"}
+Why is an AGN not simply "a bright black hole"?
+:::
 
-Planned figures:
+::: {.callout-note collapse="true" title="Answer"}
+The black hole itself emits no light from inside the event horizon. The brightness comes from matter outside the horizon — especially gas in the accretion disk and sometimes jets — releasing gravitational energy as it falls inward.
+:::
+
+---
+
+## Part 5: Dark Matter Beyond Spiral Galaxies
+
+Rotation curves are powerful, but they are not the only evidence for dark matter. A different kind of test comes from galaxy clusters. Clusters contain galaxies, hot gas, and dark matter. The hot gas emits X-rays. The total gravitating mass can be mapped through gravitational lensing, which measures how mass bends the paths of light from background galaxies.
+
+The Bullet Cluster is famous because it gives a clean visual separation between components.
 
 {{< fig bullet-cluster-composite >}}
 
+In a cluster collision, the galaxies mostly pass through one another because they are separated by enormous distances. The hot gas behaves differently: it collides, shocks, heats, and slows down. If most of the mass were ordinary gas, the gravitational mass map would line up with the hot gas. Instead, the lensing mass is offset from the gas and more closely associated with the collisionless components.
+
 {{< fig bullet-cluster-jwst-chandra >}}
 
-### Part 6: Gravity Builds the Large-Scale Universe
+This does not make every detail of dark matter simple. It does make one thing hard to avoid: gravity is responding to a mass component that is not the hot X-ray gas and not the visible stars alone. The dark matter inference survives a very different kind of observation than a rotation curve.
 
-End with the cosmic web. This sets up Reading 3 by showing that cosmology is not only about expansion; it is also about the competition between expansion and gravitational structure growth.
+::: {.callout-tip title="Evidence Chain"}
+**Observable:** galaxies, X-ray gas, and gravitational lensing peaks are spatially separated after a cluster collision.
 
-Planned figure:
+**Model:** ordinary gas collides and slows; collisionless mass passes through more easily; lensing traces total mass.
+
+**Inference:** most of the gravitating mass is not ordinary hot gas.
+:::
+
+---
+
+## Part 6: Gravity Builds the Large-Scale Universe
+
+The final scale in this reading is larger than a galaxy or a cluster. Redshift surveys map the positions of huge numbers of galaxies in three dimensions. When we do this, galaxies do not appear randomly sprinkled through space. They form a cosmic web: filaments, walls, clusters, and voids.
 
 {{< fig desi-cosmic-web >}}
 
-## Retrieval-Practice Targets
+This is gravity at work on the largest observable scales. Slightly denser regions pull in matter. Under gravity, structure grows. Dark matter matters here because it begins forming gravitational scaffolding before ordinary gas can cool and form luminous galaxies. Galaxies trace the web, but they are not the whole web.
 
-::: {.callout-note title="Quick Checks to Draft"}
-1. If a galaxy's orbital speed stays constant while radius increases, what happens to enclosed mass?
-2. Why is a flat rotation curve surprising if most mass follows visible light?
-3. What does the Bullet Cluster add that a single galaxy rotation curve cannot show by itself?
+This prepares us for the next reading. Cosmology is not only the story of expansion. It is the story of expansion plus gravity. Expansion stretches distances on large scales. Gravity pulls matter together into structure. The universe we observe is the result of both.
+
+## Summary
+
+Motion is a mass measurement. S-star orbits reveal the compact mass at the Milky Way's center. Galaxy rotation curves reveal mass extending far beyond the bright stellar disk. Cluster collisions separate hot gas from gravitational mass. Redshift surveys show a cosmic web shaped by gravity over billions of years. Across all these scales, the method is the same: observe motion or lensing, model with gravity, infer the mass distribution.
+
+::: {.callout-tip title="Exit Ticket"}
+In one paragraph, explain why dark matter is not inferred from one observation alone. Your answer should mention at least two of the following: galaxy rotation curves, the Bullet Cluster, gravitational lensing, and the cosmic web.
 :::
-
-## Drafting Notes
-
-- Keep AGN and supermassive black holes focused: Sgr A* is the compact-object bridge, not a separate fourth lecture.
-- Use "dark matter" as the name for an inference from gravity, not as a particle claim.
-- End by asking what happens when we map enough galaxies to see the universe itself as a structure.

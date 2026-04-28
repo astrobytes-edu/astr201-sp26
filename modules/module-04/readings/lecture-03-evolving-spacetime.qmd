@@ -15,96 +15,204 @@ learning-objectives:
   - Connect the CMB and light-element abundances to a hot dense early universe
   - Explain why hydrogen and helium are mostly products of the early universe, while heavier elements are mostly products of stars and stellar remnants
 math-level: symbolic_with_interpretation
-mode: Planning Sketch
+mode: Full Reading
 prerequisites: "Flux-luminosity-distance, distance modulus, Doppler shift, blackbody radiation, nuclear fusion, stellar nucleosynthesis"
 ---
 
-::: {.callout-note title="Reading Status"}
-This is the public reading plan for Lecture 3. It fixes the throughline, figures, equations, and retrieval-practice targets before the full narrative draft.
+## Learning Objectives
+
+After completing this reading, you should be able to:
+
+1. **Explain** why redshift alone is not enough; cosmology needs distances too.
+2. **Interpret** Hubble's law as an empirical expansion pattern on large scales.
+3. **Distinguish** cosmological redshift from ordinary Doppler motion.
+4. **Use** deep fields as evidence that looking far away means looking back in time.
+5. **Connect** the cosmic microwave background and light-element abundances to a hot dense early universe.
+6. **Explain** why the first three minutes matter for the origin of hydrogen and helium.
+
+## Concept Throughline
+
+> *The universe is not simply a stage where galaxies move. The stage itself changes. Light crossing that changing stage carries a record of expansion, temperature, and time.*
+
+This final reading brings the course back to its biggest question: how can we infer the history of the universe from signals arriving today? The answer is the same method we have used all semester: **observe → model → infer**. We observe distances, redshifts, deep fields, the cosmic microwave background, and element abundances. We model light propagation through expanding spacetime and nuclear reactions in a hot early universe. Then we infer cosmic history.
+
+By the end, we will connect stars and cosmology into one story. Stars build carbon, oxygen, silicon, iron, and many heavier elements. But most of the hydrogen and helium in the universe were not made in stars. They are relics of the first few minutes.
+
+---
+
+## Part 1: Distance First, Then Expansion
+
+Imagine observing a galaxy spectrum and seeing that its lines are redshifted. That tells you the light has been stretched. But by itself, it does not yet tell you the expansion history of the universe. To discover a pattern, you need distances.
+
+This is why the distance ladder matters. Nearby methods calibrate farther-reaching methods. Parallax calibrates local stars. Cepheids extend the ladder because their pulsation periods reveal their luminosities. Supernovae extend it farther still because they can be seen across enormous distances.
+
+{{< fig cepheid-light-curve >}}
+
+A Cepheid's brightness rises and falls in a regular pattern. The directly measured observable is time: the pulsation period. The model is the period-luminosity relation: longer-period Cepheids are more luminous. Once we know luminosity and measure flux, the inverse-square law gives distance.
+
+{{< fig cepheid-period-luminosity >}}
+
+This is a beautiful example of astronomical inference. A clock-like variation becomes a luminosity. A luminosity plus a flux becomes a distance. A distance plus a redshift becomes a point on the expansion diagram.
+
+Supernova host galaxies help extend the same logic to larger distances. The important idea is not that every standard candle is identical in every detail. The important idea is calibration. Each rung works because a lower rung teaches us how to interpret a higher rung.
+
+{{< fig hubble-host-supernova-galaxies >}}
+
+::: {.callout-note title="Quick Check 1"}
+Why would redshifts alone not have been enough to discover Hubble's law?
 :::
 
-## Throughline
+::: {.callout-note collapse="true" title="Answer"}
+Hubble's law is a relation between recession speed and distance. Redshift gives the recession-speed side of the pattern, but without distances there is no way to see that more distant galaxies recede faster.
+:::
 
-By the end of this reading, students should be able to infer an evolving universe from redshift, distance, the cosmic microwave background, and light-element abundances by modeling the universe with an expanding scale factor and a hot dense early phase. The finale should connect the course together: stars make many of the elements, but the universe itself made the first nuclei.
+---
 
-## Equation Anchors
+## Part 2: Hubble's Law Is an Expansion Pattern
+
+At low redshift, the observed pattern is summarized by Hubble's law:
 
 {{< include ../../../_includes/equations/hubble-law.qmd >}}
 {{< eqrefcard hubble-law >}}
 
-{{< include ../../../_includes/equations/cosmological-redshift.qmd >}}
-{{< eqrefcard cosmological-redshift >}}
+Let's unpack the equation. **$v$** is the recession speed inferred from redshift, usually measured in km/s. **$d$** is distance, often measured in megaparsecs for galaxies. **$H_0$** is the Hubble constant, the present-day expansion rate. The equation says that, on large enough scales, recession speed increases linearly with distance.
 
-## Observe → Model → Infer
-
-| Step | Reading role | Figure spine |
-|---|---|---|
-| Observe | Build distances from local calibrators to supernova host galaxies, then compare distance with redshift. | `cepheid-light-curve`, `cepheid-period-luminosity`, `hubble-host-supernova-galaxies`, `measuring-hubble-constant-three-ways` |
-| Model | Replace the everyday "galaxies flying through space" picture with an expanding scale factor. | `expanding-universe-schematic`, `jwst-cosmological-redshift` |
-| Infer | Use deep fields, the CMB, and light elements to infer a hot dense early universe and the first three minutes. | `hubble-ultra-deep-field`, `mom-z14-jwst`, `cmb-map`, `periodic-table-origins` |
-
-## Planned Structure
-
-### Part 1: Distance First, Then Expansion
-
-Start with why Hubble's law required distance measurements, not just redshifts. Cepheids turn time variation into luminosity; supernovae extend the ladder outward; redshift then becomes meaningful as a cosmic pattern.
-
-Planned figures:
-
-{{< fig cepheid-light-curve >}}
-
-{{< fig cepheid-period-luminosity >}}
-
-{{< fig hubble-host-supernova-galaxies >}}
-
-### Part 2: Hubble's Law Is an Expansion Pattern
-
-Use Hubble's law as an empirical relation first, then interpret it. Be explicit that nearby bound systems can ignore the Hubble flow because local gravity wins.
-
-Planned figure:
+This is not a rule for every object near us. The Moon is not expanding away from Earth by Hubble's law. The Solar System is bound. The Milky Way is bound. The Local Group is bound. Hubble's law describes the large-scale expansion pattern after local gravitational motions average out.
 
 {{< fig measuring-hubble-constant-three-ways >}}
 
-### Part 3: Redshift as a Scale-Factor Record
+The Hubble constant can be measured in more than one way. That is powerful because independent methods test the model. It is also where modern cosmology becomes alive: when different measurement chains disagree, astronomers have to decide whether the issue is unrecognized systematic error, incomplete modeling, or new physics. We do not need to solve that frontier here. We do need to understand why it matters: the expansion rate is not just a number; it is a constraint on cosmic history.
 
-This is the conceptual pivot. Doppler shift was motion through space; cosmological redshift is wavelength stretch while light travels through expanding space. The final draft should keep both models separate without overclaiming that "space expands" solves every intuition problem.
+::: {.callout-note title="Units Sanity Check"}
+If distance is measured in megaparsecs and $H_0$ has units of km/s/Mpc, then:
 
-Planned figures:
+$$
+H_0 d
+\sim
+\left(\frac{\mathrm{km\,s^{-1}}}{\mathrm{Mpc}}\right)
+\left(\mathrm{Mpc}\right)
+=
+\mathrm{km\,s^{-1}}
+$$
+
+The units match a speed, as they should.
+:::
+
+---
+
+## Part 3: Redshift as a Scale-Factor Record
+
+In Module 1, we learned the Doppler shift: motion along the line of sight stretches or compresses wavelengths. That model still works for many nearby objects. But on cosmological scales, there is a deeper interpretation. Light from a distant galaxy travels while the universe expands. As space expands, the wavelength of that light stretches too.
+
+{{< include ../../../_includes/equations/cosmological-redshift.qmd >}}
+{{< eqrefcard cosmological-redshift >}}
+
+This equation has two parts. The first part says that **$1+z$** is the ratio of observed wavelength to emitted wavelength. If a spectral line was emitted at one wavelength and observed at a longer wavelength, the redshift tells us the stretch factor. The second part connects that stretch to the scale factor **$a$**, which describes the relative size of the universe at a given cosmic time.
+
+If we set today's scale factor to **$a_0 = 1$**, then light emitted when the universe had scale factor **$a_{\text{emit}} = 1/2$** is observed with **$1+z = 2$**, or **$z = 1$**. The universe doubled in scale while the light was traveling.
 
 {{< fig expanding-universe-schematic >}}
 
+This does not mean galaxies are flying away from a central explosion point into empty pre-existing space. The Big Bang model describes a hot dense early state of the universe itself. Every sufficiently distant observer sees other distant galaxies participating in the expansion. There is no special center in ordinary space.
+
 {{< fig jwst-cosmological-redshift >}}
 
-### Part 4: Looking Far Away Means Looking Back
+Cosmological redshift is therefore a time-and-scale clue. It tells us that the light we receive has crossed an evolving universe. To turn redshift into a precise distance or age, we need a cosmological model, including the effects of matter, radiation, curvature if present, and dark energy. But the core idea is already enough for this course: **redshift records expansion**.
 
-Use deep fields and high-redshift galaxies to connect distance, time, and evolution. The goal is to make cosmic history observable rather than abstract.
+::: {.callout-note title="Quick Check 2"}
+If a galaxy has redshift $z = 3$, what is the wavelength stretch factor $1+z$? What does that mean in scale-factor language?
+:::
 
-Planned figures:
+::: {.callout-note collapse="true" title="Answer"}
+The stretch factor is $1+z = 4$. The observed wavelengths are four times longer than when emitted. In scale-factor language, the universe was one-fourth its present scale when the light was emitted, assuming today's scale factor is normalized to 1.
+:::
+
+---
+
+## Part 4: Looking Far Away Means Looking Back
+
+Light travels at a finite speed. That simple fact turns distance into time. When we observe a nearby object, we see it as it was a short time ago. When we observe a distant galaxy, we see it as it was millions or billions of years ago.
+
+Deep fields make this idea visible. They contain galaxies at many distances, which means they contain galaxies at many lookback times. A single image becomes a layered history of galaxy formation and evolution.
 
 {{< fig hubble-ultra-deep-field >}}
 
+This is one of the most important habits in cosmology: do not read a deep field as a flat photograph. Read it as a time archive. A small, faint, red galaxy in the background may not be a small faint version of a nearby galaxy. It may be a distant galaxy observed when the universe was much younger, with its light stretched and dimmed by cosmic expansion.
+
+JWST pushes this logic closer to the first generations of galaxies. Very high-redshift objects test how quickly stars, gas, dust, and black holes assembled after the Big Bang.
+
 {{< fig mom-z14-jwst >}}
 
-### Part 5: The First Three Minutes
+The frontier is exciting because it is a stress test. If galaxies appear earlier, brighter, or more massive than expected, then models of early galaxy formation must explain how gas cooled, formed stars, and assembled structure quickly enough. As always, the observation is not the final answer. The observation is the constraint that the model must survive.
 
-End with Big Bang nucleosynthesis. The universe cooled from a state hot enough for nuclear reactions; as it expanded, the reaction window closed. Hydrogen and helium are mostly cosmic relics, while stars and stellar remnants build much of the heavier periodic table.
+---
 
-Planned figures:
+## Part 5: The Cosmic Microwave Background
+
+If the universe was once hot and dense, then early on it should have been filled with radiation and ionized matter. At high temperatures, electrons could not remain bound to nuclei; photons scattered constantly from free electrons. The universe was opaque.
+
+As the universe expanded, it cooled. Eventually electrons combined with nuclei to form neutral atoms. Once that happened, photons could travel freely. Those photons are still arriving today, stretched by expansion into microwave wavelengths. We call this relic radiation the **cosmic microwave background**, or CMB.
 
 {{< fig cmb-map >}}
 
-{{< fig periodic-table-origins >}}
+The CMB is powerful evidence because it is not just "old light." It has the spectrum expected from a hot dense early universe that cooled by expansion. Its tiny temperature variations are also seeds of structure: slightly denser regions that gravity could later amplify into galaxies, clusters, and the cosmic web.
 
-## Retrieval-Practice Targets
+This connects directly back to the previous reading. The cosmic web did not appear from nowhere. It grew from small initial density variations under gravity. Dark matter helped structure grow; ordinary matter later cooled into galaxies and stars within that gravitational scaffolding.
 
-::: {.callout-note title="Quick Checks to Draft"}
-1. Why is redshift alone not enough to discover Hubble's law?
-2. What does $1+z$ measure in the scale-factor model?
-3. Why does the first-three-minutes story make hydrogen and helium different from carbon, oxygen, and iron?
+::: {.callout-tip title="Observe → Model → Infer"}
+**Observable:** microwave radiation coming from every direction, with a nearly uniform temperature plus tiny fluctuations.
+
+**Model:** the universe was once hot, dense, ionized, and opaque; expansion cooled it until photons could travel freely.
+
+**Inference:** the CMB is relic light from an early hot phase and contains the seeds of later structure.
 :::
 
-## Drafting Notes
+---
 
-- Avoid saying the Big Bang was an explosion into pre-existing space.
-- Treat the Hubble tension as a frontier note, not the spine of the reading.
-- End with the course-level synthesis: constrained observations become models, models become inferences, and those inferences tell us where atoms came from.
+## Part 6: The First Three Minutes
+
+Now we arrive at the course finale: the origin of the first nuclei.
+
+In Module 3, we studied how stars generate energy by fusing light nuclei into heavier ones. Stars make carbon, oxygen, silicon, iron, and many other elements through stellar burning and explosions. But stars did not make most of the universe's hydrogen and helium. Those were already present before the first stars formed.
+
+In the hot early universe, the temperature was high enough for nuclear reactions. As the universe expanded and cooled, protons and neutrons could combine into light nuclei. This era is called **Big Bang nucleosynthesis**. It happened during the first few minutes, before the universe became too cool and too diffuse for those reactions to continue efficiently.
+
+The result is a universe dominated by hydrogen, with a substantial amount of helium and tiny traces of a few other light nuclei. Heavier elements had to wait for stars.
+
+{{< fig periodic-table-origins >}}
+
+This figure is the punchline to the whole course. The periodic table is a fossil record of cosmic environments. Hydrogen and much of helium point back to the hot early universe. Carbon and oxygen point to stellar interiors. Iron points to advanced stellar evolution and explosions. Some of the heaviest elements point to neutron capture in extreme environments such as neutron-star mergers and certain stellar deaths.
+
+That means you can read the matter around you as an astrophysical archive. The hydrogen in water is ancient in a different way than the oxygen in water. The hydrogen is mostly a Big Bang relic. The oxygen was forged later, inside stars. The same molecule carries multiple chapters of cosmic history.
+
+::: {.callout-note title="Quick Check 3"}
+Why is it misleading to say "stars made all the elements"?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Stars made many heavier elements, but most hydrogen and helium were produced in the early universe. Big Bang nucleosynthesis made the first light nuclei; stars and stellar remnants later made much of the rest of the periodic table.
+:::
+
+---
+
+## Part 7: The Big Picture
+
+We can now connect the full Module 4 arc.
+
+In the first reading, galaxies were ecosystems: gas, dust, stars, and feedback cycling through time. In the second reading, gravity organized those systems and revealed hidden mass through motion, lensing, and large-scale structure. In this reading, expansion turned redshift into a history of spacetime, while the CMB and light elements pointed back to a hot dense early universe.
+
+The course method never changed. We did not directly touch a star, a galaxy, dark matter, or the early universe. We measured signals. We built models. We inferred physical reality.
+
+That is astronomy at its best: not a list of objects, but a discipline of disciplined imagination. The universe sends light, motion, and patterns. Physics tells us what those signals can mean. The result is a story that runs from the first nuclei to stars, galaxies, dark matter, cosmic web, and us.
+
+## Summary
+
+Cosmology begins with distance and redshift. The distance ladder lets us compare how far galaxies are with how much their light is stretched. Hubble's law reveals a large-scale expansion pattern. Cosmological redshift records the changing scale factor of the universe. Deep fields turn distance into lookback time. The CMB shows that the universe was once hot, dense, and opaque. Big Bang nucleosynthesis explains why hydrogen and helium are mostly cosmic relics, while many heavier elements are products of stars and stellar remnants.
+
+::: {.callout-tip title="Final Exit Ticket"}
+Write a three-sentence observe → model → infer chain for the first three minutes:
+
+1. What do we observe today?
+2. What model connects that observation to the early universe?
+3. What do we infer about the origin of hydrogen and helium?
+:::
