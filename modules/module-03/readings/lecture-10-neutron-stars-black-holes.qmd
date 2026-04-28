@@ -98,6 +98,8 @@ Use this ScienceClic video as a visual preview before the reading turns quantita
 
 {{< video https://youtu.be/oLoLey75i2k?si=4s9p3q6ocvY7XCWQ >}}
 
+If the embedded player does not appear, open the video directly: [ScienceClic — Neutron Stars and Pulsars](https://youtu.be/oLoLey75i2k?si=4s9p3q6ocvY7XCWQ).
+
 *Credit:* ScienceClic
 :::
 
@@ -722,6 +724,8 @@ A black hole is a region of spacetime bounded by an event horizon. The event hor
 This ScienceClic video is a visual bridge from the event-horizon idea to the curved-spacetime effects behind black-hole images. Watch for the same physical themes we use below: escape, horizons, light bending, and gravitational time dilation.
 
 {{< video https://youtu.be/ABFGKdKKKyg?si=mawlHH-wcmVcVpR8 >}}
+
+If the embedded player does not appear, open the video directly: [ScienceClic — The Math Behind Interstellar's Black Hole](https://youtu.be/ABFGKdKKKyg?si=mawlHH-wcmVcVpR8).
 
 *Credit:* ScienceClic
 :::
