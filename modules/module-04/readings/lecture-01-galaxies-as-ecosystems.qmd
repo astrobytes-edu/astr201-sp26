@@ -232,7 +232,11 @@ The classification schemes we use for galaxies are therefore only the first laye
 
 {{< fig hubble-tuning-fork >}}
 
-One caution: the Hubble tuning fork is not an evolutionary ladder. Ellipticals do not simply become spirals by moving across the diagram, and spirals do not automatically become ellipticals by sliding to another branch. Galaxy evolution is messier and more physical than that. Shape is an observable. The model has to explain how that shape came to be.
+::: {.callout-warning}
+## Misconception Check: "The tuning fork shows galaxy evolution."
+
+The Hubble tuning fork is a classification diagram, not a time sequence. It organizes galaxies by appearance, but it does not say that ellipticals naturally turn into spirals or that spirals slide along the diagram into ellipticals. To infer evolution, we need physical evidence: gas supply, star-formation rate, stellar populations, environment, feedback, and interaction history.
+:::
 
 ::: {.callout-note title="Quick Check 6"}
 Why is feedback not simply "stars stopping star formation"?
@@ -261,6 +265,82 @@ It suggests that earlier galaxies, on average, had more available cold gas or mo
 :::
 
 This sets up the next reading. If galaxies are ecosystems, then the next question is: *what organizes the ecosystem?* The answer is gravity. Gravity collects gas, binds galaxies, drives mergers, shapes clusters, and reveals dark matter through motion. In the next reading, we will use dynamics to weigh what light cannot show.
+
+## Practice Problems
+
+Use these values and ideas unless a problem states otherwise:
+
+- Star-forming regions are usually traced by young blue stars, ionized gas, infrared dust emission, and cold gas reservoirs.
+- Neutral hydrogen is commonly mapped with the 21-cm radio line.
+- The dynamical timescale scales as $\tau_{\text{dyn}} \sim 1/\sqrt{G\bar{\rho}}$.
+- A galaxy's appearance is an observable clue, not a complete history by itself.
+
+### Conceptual
+
+<!-- Problem: Conceptual / Connection / O→M→I / Tools: Model-Inversion, Evidence-Synthesis / ⭐ -->
+1. ⭐ **Reading a galaxy image as evidence.** A galaxy is blue, patchy, and crossed by dust lanes.
+   - (a) What observables are you using?
+   - (b) What model connects those observables to the galaxy's gas and stellar populations?
+   - (c) What can you infer about recent star formation?
+
+<!-- Problem: Conceptual / Application / O→M→I / Tools: Misconception-Check, Uncertainty/Assumptions / ⭐ -->
+2. ⭐ **The tuning fork trap.** A student says, "The Hubble tuning fork shows ellipticals evolving into spirals."
+   - (a) What is wrong with that statement?
+   - (b) What does the tuning fork actually organize?
+   - (c) What additional evidence would you need to make an evolutionary claim?
+
+<!-- Problem: Conceptual / Connection / O→M→I / Tools: Evidence-Synthesis, Model-Inversion / ⭐⭐ -->
+3. ⭐⭐ **Multiwavelength galaxies.** Explain why optical, infrared, and radio images of the same galaxy can look different without any of them being "wrong."
+
+### Calculation
+
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Scaling/Ratio, Unit-Conversion / ⭐⭐ -->
+4. ⭐⭐ **Density and the gravity clock.** Two gas clouds have average densities $\bar{\rho}_A$ and $\bar{\rho}_B = 100\bar{\rho}_A$.
+   - (a) Use $\tau_{\text{dyn}} \sim 1/\sqrt{G\bar{\rho}}$ to find $\tau_B/\tau_A$.
+   - (b) Which cloud responds to gravity faster?
+   - (c) Explain why this does not guarantee that every dense cloud forms stars.
+
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Scaling/Ratio / ⭐ -->
+5. ⭐ **Gas consumption as a first estimate.** A galaxy contains $5 \times 10^9\,M_\odot$ of cold gas and forms stars at $2\,M_\odot\,\mathrm{yr^{-1}}$.
+   - (a) Estimate the gas consumption time if no gas enters or leaves.
+   - (b) Is that estimate a complete model of galaxy evolution?
+   - (c) Name two processes that could make the real history different.
+
+### Synthesis
+
+<!-- Problem: Synthesis / Connection / O→M→I / Tools: Evidence-Synthesis, Model-Inversion / ⭐⭐ -->
+6. ⭐⭐ **Merger evidence.** You observe a galaxy pair with tidal tails, compressed dust lanes, bright infrared emission, and many blue star clusters.
+   - (a) Identify two direct observables.
+   - (b) Build an observe → model → infer chain for why the interaction may be triggering star formation.
+   - (c) Explain why the stars themselves mostly do not collide.
+
+<!-- Problem: Synthesis / Connection / O→M→I / Tools: Evidence-Synthesis, Uncertainty/Assumptions / ⭐⭐ -->
+7. ⭐⭐ **Feedback is not one-way.** In 3–5 sentences, explain why stellar feedback can both suppress and trigger star formation. Your answer should mention gas heating or expulsion and gas compression.
+
+<!-- Problem: Synthesis / Connection / O→M→I / Tools: Evidence-Synthesis, Model-Inversion / ⭐⭐⭐ -->
+8. ⭐⭐⭐ **The baryon cycle as a story.** Write a short paragraph following one parcel of gas through the baryon cycle: cold gas, star formation, stellar feedback, enrichment, and possible recycling into later star formation.
+
+## Glossary
+
+**Baryon cycle:** The movement of ordinary matter through gas, stars, dust, remnants, outflows, inflows, and later generations of star formation.
+
+**Cold gas:** Gas with low enough thermal pressure that gravity can more easily compress it into dense star-forming regions.
+
+**Dust:** Tiny solid grains in interstellar space that absorb, scatter, and re-emit light, especially important for interpreting optical and infrared observations.
+
+**Feedback:** Energy and momentum returned to surrounding gas by stars, supernovae, stellar winds, radiation, or accreting black holes.
+
+**Galaxy morphology:** The observed shape or structure of a galaxy, such as spiral, elliptical, irregular, or peculiar.
+
+**Interstellar medium:** The gas and dust between stars inside a galaxy.
+
+**Metal enrichment:** The process by which stars and stellar explosions add elements heavier than helium to the surrounding gas.
+
+**Neutral hydrogen:** Hydrogen atoms that are not ionized. Neutral hydrogen can be mapped using the 21-cm radio line.
+
+**Starburst:** A short-lived episode in which a galaxy forms stars much faster than its long-term average rate.
+
+**Tidal interaction:** Gravitational distortion caused by a close passage or merger between galaxies.
 
 ## Summary
 

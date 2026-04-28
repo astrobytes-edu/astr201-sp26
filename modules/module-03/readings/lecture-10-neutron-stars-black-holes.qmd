@@ -93,6 +93,14 @@ Read everything, including the gravitational-redshift enrichment box. This track
 Both tracks cover the core learning objectives.
 :::
 
+::: {.callout-note title="Watch: Neutron Stars and Pulsars"}
+Use this ScienceClic video as a visual preview before the reading turns quantitative. As you watch, track the reasoning chain that will organize this lecture: a compact remnant explains rapid rotation, strong magnetic fields, and lighthouse-like pulses.
+
+{{< video https://youtu.be/oLoLey75i2k?si=4s9p3q6ocvY7XCWQ >}}
+
+*Credit:* ScienceClic
+:::
+
 ---
 
 ## Part 1: Neutron Stars — Nuclear-Density Objects
@@ -710,6 +718,14 @@ A black hole is a region of spacetime bounded by an event horizon. The event hor
 
 {{< fig warped-spacetime-bh >}}
 
+::: {.callout-note title="Watch: Black-Hole Geometry and the Math Behind Interstellar"}
+This ScienceClic video is a visual bridge from the event-horizon idea to the curved-spacetime effects behind black-hole images. Watch for the same physical themes we use below: escape, horizons, light bending, and gravitational time dilation.
+
+{{< video https://youtu.be/ABFGKdKKKyg?si=mawlHH-wcmVcVpR8 >}}
+
+*Credit:* ScienceClic
+:::
+
 ### The Schwarzschild Radius: A Newtonian Preview
 
 We can motivate the correct event-horizon scale using a Newtonian escape-speed argument.
@@ -1286,6 +1302,134 @@ A star's final fate depends on how much mass it loses, whether it has a binary c
 | $\Phi$ | magnetic flux | $\mathrm{G\,cm^2}$ |
 | $\omega$ | angular velocity | $\mathrm{rad\,s^{-1}}$ |
 | $R_s/R$ | compactness | dimensionless |
+
+---
+
+## Practice Problems
+
+Use these values unless a problem states otherwise:
+
+- $G = 6.674 \times 10^{-8}\,\mathrm{cm^3\,g^{-1}\,s^{-2}}$
+- $c = 3.0 \times 10^{10}\,\mathrm{cm\,s^{-1}}$
+- $M_\odot = 2.0 \times 10^{33}\,\mathrm{g}$
+- $1\,\mathrm{km} = 10^5\,\mathrm{cm}$
+- $R_s \approx 3.0\,\mathrm{km}\left(\frac{M}{M_\odot}\right)$
+- For this course, use $M_{\rm TOV} \approx 2.5\,M_\odot$ as an order-of-magnitude dividing value.
+
+### Conceptual
+
+<!-- Problem: Conceptual / Connection / O→M→I / Tools: Model-Inversion, Uncertainty/Assumptions / ⭐ -->
+1. ⭐ **Pulsars as evidence.**
+   - (a) What is the observable in the pulsar argument?
+   - (b) What compact-object model explains that observable?
+   - (c) What physical inference does the model force us to make about the size and density of the source?
+
+<!-- Problem: Conceptual / Connection / O→M→I / Tools: Model-Inversion, Uncertainty/Assumptions / ⭐⭐ -->
+2. ⭐⭐ **The TOV limit is not a second Chandrasekhar constant.**
+   - (a) Why is the Chandrasekhar limit more precisely known than the TOV limit?
+   - (b) Name two pieces of physics that make the neutron-star maximum mass harder to calculate.
+   - (c) Explain why a securely measured $2.1\,M_\odot$ neutron star is scientifically important.
+
+<!-- Problem: Conceptual / Application / O→M→I / Tools: Misconception-Check, Model-Inversion / ⭐ -->
+3. ⭐ **Surface or horizon?** A student says, "A black hole is just a neutron star with a darker surface."
+   - (a) What part of this statement is misleading?
+   - (b) What is an event horizon?
+   - (c) Name one observation that can help distinguish a compact object with a surface from one with an event horizon.
+
+### Calculation
+
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Scaling/Ratio, Unit-Conversion / ⭐ -->
+4. ⭐ **Schwarzschild radius by scaling.** A stellar-mass black hole has mass $8\,M_\odot$.
+   - (a) Use
+     $$
+     R_s \approx 3.0\,\mathrm{km}\left(\frac{M}{M_\odot}\right)
+     $$
+     to estimate its Schwarzschild radius.
+   - (b) Convert your answer to centimeters.
+   - (c) Compare your result to a neutron-star radius of $10\,\mathrm{km}$.
+
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Scaling/Ratio, Compactness / ⭐⭐ -->
+5. ⭐⭐ **Compactness and escape speed.** Consider a neutron star with mass $1.4\,M_\odot$ and radius $12\,\mathrm{km}$.
+   - (a) Estimate $R_s$ using the solar-mass scaling.
+   - (b) Compute the compactness
+     $$
+     \frac{R_s}{R}.
+     $$
+   - (c) Use
+     $$
+     \frac{v_{\rm esc}}{c} = \sqrt{\frac{R_s}{R}}
+     $$
+     to estimate the escape speed as a fraction of $c$.
+   - (d) Explain why this object requires general relativity for accurate modeling.
+
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Scaling/Ratio, Unit-Conversion, Model-Inversion / ⭐⭐ -->
+6. ⭐⭐ **Pulse period as a size limit.** A millisecond pulsar has period
+   $$
+   P = 2.0\,\mathrm{ms}.
+   $$
+   - (a) Convert the period to seconds.
+   - (b) Use
+     $$
+     R < \frac{cP}{2\pi}
+     $$
+     to estimate the largest possible radius if the surface speed must remain below $c$.
+   - (c) Convert your answer from centimeters to kilometers.
+   - (d) Explain why this rules out a normal star.
+
+### Synthesis
+
+<!-- Problem: Synthesis / Connection / O→M→I / Tools: Model-Inversion, Uncertainty/Assumptions / ⭐⭐ -->
+7. ⭐⭐ **Classifying an unseen compact object.** Observations of a binary system imply an unseen companion with mass $5\,M_\odot$. The system emits strong X-rays from accreting gas, and there is no evidence for thermonuclear bursts from a surface.
+   - (a) Why is a white dwarf model unlikely?
+   - (b) Why is a neutron-star model unlikely?
+   - (c) What compact-object model is favored?
+   - (d) State the assumption about the TOV limit that enters your inference.
+
+<!-- Problem: Synthesis / Connection / O→M→I / Tools: Evidence-Synthesis, Model-Inversion / ⭐⭐ -->
+8. ⭐⭐ **Converging evidence.** Choose two of the following observations: pulsar pulses, X-ray binaries, stellar orbits around Sgr A*, gravitational waves, or Event Horizon Telescope images.
+   - (a) For each observation, identify the observable.
+   - (b) For each observation, identify the physical model.
+   - (c) Explain how the two observations together make the case for compact remnants stronger than either observation alone.
+
+<!-- Problem: Synthesis / Connection / O→M→I / Tools: Scaling/Ratio, Uncertainty/Assumptions, Misconception-Check / ⭐⭐⭐ -->
+9. ⭐⭐⭐ **Initial mass is not destiny.** Two massive stars both begin with initial masses near $25\,M_\odot$. One leaves a neutron star; the other leaves a black hole.
+   - (a) Explain why this is possible even if the lecture table gives $25\,M_\odot$ as an approximate boundary.
+   - (b) Name three physical effects that can shift the final outcome.
+   - (c) In one paragraph, explain why final core mass is a better predictor of remnant type than initial mass alone.
+
+## Glossary
+
+**Accretion:** The process in which gas falls onto a compact object. As the gas loses gravitational potential energy, it can heat up and emit X-rays.
+
+**Black hole:** A region of spacetime bounded by an event horizon. It is not a material surface or a solid object.
+
+**Compactness ($R_s/R$):** A dimensionless measure of how close an object's radius is to its Schwarzschild radius. Large compactness means relativistic gravity is important.
+
+**Dense nuclear matter:** Matter compressed to densities comparable to or above atomic nuclei, where neutron degeneracy pressure, nuclear interactions, and general relativity all matter.
+
+**Equation of state:** A relationship between pressure, density, temperature, and composition. For neutron stars, the high-density equation of state is uncertain.
+
+**Event horizon:** The causal boundary of a black hole. Inside the horizon, no future-directed signal can escape to distant observers.
+
+**Gravitational redshift:** The stretching of light to longer wavelengths as it climbs out of a gravitational field.
+
+**Lighthouse model:** The model in which a pulsar's radiation beam sweeps across Earth because the neutron star's magnetic axis is misaligned with its rotation axis.
+
+**Millisecond pulsar:** A rapidly rotating neutron star with a period of a few milliseconds, often spun up by accretion from a binary companion.
+
+**Neutron degeneracy pressure:** Quantum pressure associated with densely packed neutrons. In real neutron stars, this is only part of the pressure support.
+
+**Neutron star:** A compact remnant with roughly a solar mass compressed into a radius of order $10\,\mathrm{km}$, supported by dense nuclear matter.
+
+**Pulsar:** A rotating, magnetized neutron star observed through regular pulses of radiation as its beam crosses our line of sight.
+
+**Schwarzschild radius ($R_s$):** The event-horizon radius of a non-rotating, uncharged black hole:
+
+$$
+R_s = \frac{2GM}{c^2}.
+$$
+
+**TOV limit:** The maximum mass of a stable neutron star, set by general relativity and the equation of state of dense nuclear matter. In this course, treat it as roughly $2$--$3\,M_\odot$.
 
 ---
 

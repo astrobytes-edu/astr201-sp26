@@ -142,6 +142,18 @@ This matters because it turns dark matter from a one-galaxy oddity into a popula
 
 The term **dark matter** is a name for the inferred gravitating component that does not emit, absorb, or scatter enough light for us to see directly. The word "dark" does not mean mysterious magic. It means electromagnetically dark: visible through gravity, not through ordinary light. We infer it because the gravitational model requires more mass than the luminous matter provides.
 
+::: {.callout-warning}
+## Misconception Check: "Flat rotation curve means nothing changes."
+
+"Flat" describes the speed curve, not the mass curve. If $v$ stays approximately constant while $r$ increases, then
+
+$$
+M(<r) = \frac{rv^2}{G}
+$$
+
+keeps increasing with radius. The surprise is not that the outer galaxy is motionless. The surprise is that objects far from the bright disk still orbit quickly, which means mass extends well beyond the light.
+:::
+
 ::: {.quiz}
 
 If a spiral galaxy has a flat rotation curve far beyond its bright stellar disk, what is the most direct inference from $M(<r) = rv^2/G$?
@@ -239,6 +251,87 @@ Why is the cosmic web evidence for gravity acting over cosmic time, rather than 
 ::: {.callout-note collapse="true" title="Answer"}
 The web is a large-scale pattern of clusters, filaments, walls, and voids. Such structure is modeled as growth from small density differences under gravity. Galaxies trace that structure today, but the pattern records the history of gravitational growth.
 :::
+
+## Practice Problems
+
+Use these values and ideas unless a problem states otherwise:
+
+- $G = 6.674 \times 10^{-8}\,\mathrm{cm^3\,g^{-1}\,s^{-2}}$
+- $M_\odot = 2.0 \times 10^{33}\,\mathrm{g}$
+- $1\,\mathrm{kpc} = 3.086 \times 10^{21}\,\mathrm{cm}$
+- $1\,\mathrm{km\,s^{-1}} = 10^5\,\mathrm{cm\,s^{-1}}$
+- For circular motion, $M(<r) = rv^2/G$.
+
+### Conceptual
+
+<!-- Problem: Conceptual / Connection / O→M→I / Tools: Model-Inversion, Evidence-Synthesis / ⭐ -->
+1. ⭐ **Motion as a mass measurement.**
+   - (a) What is directly observed when astronomers track S-stars near the Galactic center?
+   - (b) What model turns that observation into a mass estimate?
+   - (c) What inference does the compactness of the mass support?
+
+<!-- Problem: Conceptual / Application / O→M→I / Tools: Misconception-Check, Scaling/Ratio / ⭐ -->
+2. ⭐ **Flat does not mean empty.** A student says, "If a galaxy's rotation curve is flat, then the enclosed mass must be flat too."
+   - (a) Use the enclosed-mass equation to explain the mistake.
+   - (b) If $v$ stays constant while $r$ increases, what must happen to $M(<r)$?
+   - (c) Why does this point toward an extended halo?
+
+<!-- Problem: Conceptual / Connection / O→M→I / Tools: Evidence-Synthesis, Uncertainty/Assumptions / ⭐⭐ -->
+3. ⭐⭐ **Dark matter is an inference, not a photograph.** Explain why dark matter is inferred from gravity rather than imaged directly in ordinary light.
+
+### Calculation
+
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Unit-Conversion, Scaling/Ratio / ⭐⭐ -->
+4. ⭐⭐ **Weighing a galaxy from a rotation speed.** Gas orbits a galaxy at radius $r = 10\,\mathrm{kpc}$ with speed $v = 200\,\mathrm{km\,s^{-1}}$.
+   - (a) Convert $r$ to centimeters and $v$ to $\mathrm{cm\,s^{-1}}$.
+   - (b) Use $M(<r) = rv^2/G$ to estimate the enclosed mass in grams.
+   - (c) Convert your answer to solar masses.
+   - (d) State one simplifying assumption in this calculation.
+
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Scaling/Ratio, Model-Inversion / ⭐ -->
+5. ⭐ **Doubling the radius.** A galaxy has a flat rotation curve with $v = 220\,\mathrm{km\,s^{-1}}$ from $r = 8\,\mathrm{kpc}$ to $r = 16\,\mathrm{kpc}$.
+   - (a) Without plugging in constants, by what factor does $M(<r)$ increase?
+   - (b) Why is this different from a Solar-System-like mass distribution?
+   - (c) What does this imply about mass outside the bright inner galaxy?
+
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Scaling/Ratio, Unit-Conversion / ⭐⭐ -->
+6. ⭐⭐ **A compact central mass.** A star orbits near a galactic center at radius $r = 1.5 \times 10^{16}\,\mathrm{cm}$ with speed $v = 4.0 \times 10^8\,\mathrm{cm\,s^{-1}}$.
+   - (a) Estimate the enclosed mass using $M(<r) = rv^2/G$.
+   - (b) Convert the mass to $M_\odot$.
+   - (c) Explain why packing that much mass into a small region supports the black-hole interpretation.
+
+### Synthesis
+
+<!-- Problem: Synthesis / Connection / O→M→I / Tools: Evidence-Synthesis, Model-Inversion / ⭐⭐ -->
+7. ⭐⭐ **Many routes to dark matter.** Build two observe → model → infer chains for dark matter using two different kinds of evidence: rotation curves, the Bullet Cluster, gravitational lensing, or the cosmic web.
+
+<!-- Problem: Synthesis / Connection / O→M→I / Tools: Evidence-Synthesis, Uncertainty/Assumptions / ⭐⭐ -->
+8. ⭐⭐ **AGN feedback in the ecosystem model.** Explain how a supermassive black hole can affect future star formation even though the black hole itself does not shine.
+
+<!-- Problem: Synthesis / Connection / O→M→I / Tools: Evidence-Synthesis, Model-Inversion, Uncertainty/Assumptions / ⭐⭐⭐ -->
+9. ⭐⭐⭐ **The Bullet Cluster as a stress test.** In one paragraph, explain why the Bullet Cluster is not just "another dark matter example." Your answer should mention hot gas, lensing, collisionless matter, and why the spatial separation matters.
+
+## Glossary
+
+**Active galactic nucleus (AGN):** A luminous galactic center powered by accretion onto a supermassive black hole.
+
+**Bullet Cluster:** A colliding galaxy-cluster system where hot X-ray gas and gravitational lensing mass are spatially separated.
+
+**Cosmic web:** The large-scale network of filaments, walls, clusters, and voids traced by galaxies and shaped by gravity.
+
+**Dark matter:** A gravitating component inferred from motion, lensing, and structure formation that does not emit, absorb, or scatter enough light to be seen directly.
+
+**Enclosed mass ($M(<r)$):** The amount of mass inside radius $r$, inferred from orbital motion or other gravitational effects.
+
+**Flat rotation curve:** A galaxy rotation curve in which orbital speed stays roughly constant with radius.
+
+**Gravitational lensing:** Bending of light by mass, used to map total gravitating matter whether or not it emits light.
+
+**Local Group:** The gravitationally bound galaxy group containing the Milky Way, Andromeda, Triangulum, and many dwarf galaxies.
+
+**Rotation curve:** A plot of orbital speed versus distance from the center of a galaxy.
+
+**Supermassive black hole:** A black hole with millions to billions of solar masses, commonly found in galactic centers.
 
 ## Summary
 

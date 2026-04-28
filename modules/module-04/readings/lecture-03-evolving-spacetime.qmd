@@ -129,7 +129,11 @@ If we set today's scale factor to **$a_0 = 1$**, then light emitted when the uni
 
 {{< fig expanding-universe-schematic >}}
 
-This does not mean galaxies are flying away from a central explosion point into empty pre-existing space. The Big Bang model describes a hot dense early state of the universe itself. Every sufficiently distant observer sees other distant galaxies participating in the expansion. There is no special center in ordinary space.
+::: {.callout-warning}
+## Misconception Check: "The Big Bang was an explosion into space."
+
+The Big Bang model is not a picture of galaxies flying outward from one central point into empty space. It describes the expansion and cooling of the universe itself from a hot dense early state. On large scales, every observer sees distant galaxies participating in the expansion, so there is no special center in ordinary space.
+:::
 
 {{< fig jwst-cosmological-redshift >}}
 
@@ -246,6 +250,87 @@ In the first reading, galaxies were ecosystems: gas, dust, stars, and feedback c
 The course method never changed. We did not directly touch a star, a galaxy, dark matter, or the early universe. We measured signals. We built models. We inferred physical reality.
 
 That is astronomy at its best: not a list of objects, but a discipline of disciplined imagination. The universe sends light, motion, and patterns. Physics tells us what those signals can mean. The result is a story that runs from the first nuclei to stars, galaxies, dark matter, cosmic web, and us.
+
+## Practice Problems
+
+Use these values and ideas unless a problem states otherwise:
+
+- At low redshift, Hubble's law is $v = H_0d$.
+- Use $H_0 = 70\,\mathrm{km\,s^{-1}\,Mpc^{-1}}$ for simple estimates.
+- Cosmological redshift satisfies $1+z = \lambda_{\rm obs}/\lambda_{\rm emit} = a_0/a_{\rm emit}$.
+- If today's scale factor is normalized to $a_0 = 1$, then $a_{\rm emit} = 1/(1+z)$.
+- Light travel time means distant galaxies are seen at earlier cosmic times.
+
+### Conceptual
+
+<!-- Problem: Conceptual / Connection / O→M→I / Tools: Model-Inversion, Evidence-Synthesis / ⭐ -->
+1. ⭐ **Distance before expansion.**
+   - (a) Why is redshift alone not enough to discover Hubble's law?
+   - (b) What role does the distance ladder play?
+   - (c) Build an observe → model → infer chain for Cepheids as distance indicators.
+
+<!-- Problem: Conceptual / Application / O→M→I / Tools: Misconception-Check, Model-Inversion / ⭐ -->
+2. ⭐ **Not an explosion into space.** A student says, "The Big Bang happened at one point, and galaxies are flying away from that point."
+   - (a) What is misleading about that picture?
+   - (b) What is expanding in the cosmological model?
+   - (c) Why is there no ordinary-space center of expansion?
+
+<!-- Problem: Conceptual / Connection / O→M→I / Tools: Evidence-Synthesis, Uncertainty/Assumptions / ⭐⭐ -->
+3. ⭐⭐ **CMB as evidence.** Explain why the cosmic microwave background is stronger evidence than simply saying "the universe contains old light."
+
+### Calculation
+
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Scaling/Ratio, Unit-Conversion / ⭐ -->
+4. ⭐ **Using Hubble's law.** A galaxy is at distance $d = 100\,\mathrm{Mpc}$.
+   - (a) Use $v = H_0d$ to estimate its recession speed.
+   - (b) State the units of your answer.
+   - (c) Explain why this estimate is more appropriate for large-scale galaxies than for the Moon or Andromeda.
+
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Scaling/Ratio, Model-Inversion / ⭐⭐ -->
+5. ⭐⭐ **Redshift as wavelength stretch.** A spectral line emitted at $\lambda_{\rm emit} = 500\,\mathrm{nm}$ is observed at $\lambda_{\rm obs} = 2000\,\mathrm{nm}$.
+   - (a) Compute $1+z$.
+   - (b) Compute $z$.
+   - (c) If $a_0 = 1$, what was $a_{\rm emit}$?
+   - (d) State in words what this says about the size of the universe when the light was emitted.
+
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Scaling/Ratio, Model-Inversion / ⭐⭐ -->
+6. ⭐⭐ **Scale factor from redshift.** A galaxy has redshift $z = 5$.
+   - (a) What is the wavelength stretch factor?
+   - (b) What was the scale factor when the light was emitted, assuming $a_0 = 1$?
+   - (c) Does this calculation by itself give the exact lookback time? Why or why not?
+
+### Synthesis
+
+<!-- Problem: Synthesis / Connection / O→M→I / Tools: Evidence-Synthesis, Model-Inversion / ⭐⭐ -->
+7. ⭐⭐ **Deep fields as time archives.** Choose one deep-field image from the reading. In 3–5 sentences, explain why it should be read as a history of galaxy evolution, not just a photograph of many galaxies.
+
+<!-- Problem: Synthesis / Connection / O→M→I / Tools: Evidence-Synthesis, Uncertainty/Assumptions / ⭐⭐ -->
+8. ⭐⭐ **Two early-universe relics.** Build two observe → model → infer chains: one for the CMB and one for light-element abundances.
+
+<!-- Problem: Synthesis / Connection / O→M→I / Tools: Evidence-Synthesis, Model-Inversion, Uncertainty/Assumptions / ⭐⭐⭐ -->
+9. ⭐⭐⭐ **The periodic table as cosmic history.** Explain why hydrogen, helium, oxygen, iron, and some of the heaviest elements point to different astrophysical environments. Your answer should connect Big Bang nucleosynthesis, stellar interiors, stellar explosions, and neutron-rich extreme events.
+
+## Glossary
+
+**Big Bang nucleosynthesis:** The formation of light nuclei, especially hydrogen isotopes, helium, and traces of lithium, during the first few minutes of the hot early universe.
+
+**Cosmic microwave background (CMB):** Relic radiation from the early universe, released when the universe became transparent and later stretched into microwave wavelengths.
+
+**Cosmological redshift:** Wavelength stretching caused by the expansion of the universe while light travels.
+
+**Distance ladder:** A chain of distance-measurement methods in which nearby calibrated methods support more distant methods.
+
+**Hubble constant ($H_0$):** The present-day expansion rate in Hubble's law, usually written in $\mathrm{km\,s^{-1}\,Mpc^{-1}}$.
+
+**Hubble's law:** The large-scale relation $v = H_0d$, connecting galaxy recession speed and distance at low redshift.
+
+**Lookback time:** The time light has spent traveling from an object to us, so distant objects are seen as they were in the past.
+
+**Recombination:** The era when electrons combined with nuclei to form neutral atoms, allowing photons to travel freely.
+
+**Scale factor ($a$):** A quantity that describes the relative size of the universe at a given cosmic time.
+
+**Standard candle:** An object whose luminosity can be inferred, allowing distance to be estimated from observed flux.
 
 ## Summary
 
