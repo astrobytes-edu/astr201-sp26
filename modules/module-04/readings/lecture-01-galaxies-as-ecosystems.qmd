@@ -1,0 +1,115 @@
+---
+title: "Lecture 1: Galaxies as Ecosystems"
+subtitle: "Gas, dust, stars, feedback, and the baryon cycle"
+author: "Dr. Anna Rosen"
+date: "2026-04-23"
+description: "Galaxies are evolving ecosystems: gas becomes stars, stars return energy and enriched material, and feedback reshapes the next generation."
+draft: false
+categories: [galaxies, interstellar-medium, star-formation, feedback, baryon-cycle]
+course: ASTR 201
+module: "4 - Galaxies & Cosmology"
+learning-objectives:
+  - Describe a galaxy as an evolving system of gas, dust, stars, remnants, feedback, and gravity
+  - Connect multiwavelength observations to different components of the interstellar medium
+  - Explain why star formation depends on cold dense gas and why feedback regulates future star formation
+  - Infer broad galaxy histories from gas content, dust structure, star-forming regions, and stellar populations
+math-level: symbolic_with_interpretation
+mode: Planning Sketch
+prerequisites: "Module 1 light-as-information, Module 2 stellar populations and HR diagram, Module 3 stellar evolution and chemical enrichment"
+---
+
+::: {.callout-note title="Opening Video: Galaxy Diversity"}
+Start class with the Rubin/LSST zoom-out. Before naming the lesson, ask students what kinds of structure they notice: smooth blobs, spirals, interacting systems, color differences, and sheer number density. The point is not to classify everything yet; it is to make galaxy diversity the observable.
+
+{{< media rubin-zoomout-galaxies width="100%" >}}
+:::
+
+## Throughline
+
+By the end of this reading, students should be able to infer a galaxy's recent history from observable gas, dust, color, and star-formation structure by modeling the galaxy as a baryon cycle. The key shift is that a galaxy is not a container for stars; it is a coupled ecosystem where gravity collects gas, cooling allows collapse, stars inject energy and metals, and feedback changes what can form next.
+
+## Observe → Model → Infer
+
+| Step | Reading role | Figure spine |
+|---|---|---|
+| Observe | Start from the Milky Way as the nearby laboratory: dust lanes, 21-cm hydrogen, infrared views of the Galactic center, and star-forming clouds. | `milky-way-anatomy`, `hi4pi-milky-way-hydrogen`, `milky-way-galactic-center-multiwavelength`, `cats-paw-nebula-jwst` |
+| Model | Build the baryon-cycle picture: gas cools, forms molecular clouds, collapses into stars, receives radiation/winds/supernova feedback, and becomes enriched. | `antennae-merger-multiband`, `molecular-gas-merging-galaxies`, `starburst-m82` |
+| Infer | Use color, gas fraction, dust, morphology, and star-forming regions to infer whether a galaxy is actively building stars, being disturbed, or running out of fuel. | `rubin-cosmic-treasure-chest`, `types-of-galaxies`, `hubble-tuning-fork`, `andromeda-panorama`, `whirlpool-merger`, `star-formation-cosmic-time` |
+
+## Planned Structure
+
+### Part 1: A Galaxy Is Not a Star Box
+
+Open with the Milky Way anatomy figure, but frame it as a limitation: diagrams make a galaxy look static, while observations show a changing system. The first misconception to surface is that galaxies are mostly "where stars are." The replacement model is that much of the action comes from the material between stars.
+
+Planned figure:
+
+{{< fig milky-way-anatomy >}}
+
+### Part 1.5: The Observable Is Diversity
+
+The opening video should be followed by still figures students can inspect. Use the Rubin deep field and morphology examples to make the observation concrete: galaxies differ in shape, color, texture, dust, and companions. Those differences are clues about physics and history.
+
+Planned figures:
+
+{{< fig rubin-cosmic-treasure-chest >}}
+
+{{< fig types-of-galaxies >}}
+
+### Part 2: Different Wavelengths, Different Ingredients
+
+Reconnect to Module 1: wavelength is an information filter. Radio reveals neutral hydrogen; infrared penetrates dust; X-rays and energetic emission reveal hot gas and feedback. The reading should explicitly ask what physical component each wavelength selects before showing the answer.
+
+Planned figures:
+
+{{< fig hi4pi-milky-way-hydrogen >}}
+
+{{< fig milky-way-galactic-center-multiwavelength >}}
+
+{{< fig andromeda-panorama >}}
+
+### Part 3: Star Formation Is a Local Failure of Support
+
+Use molecular clouds and star-forming regions to connect back to gravity, cooling, and pressure. Keep this qualitative unless the final draft needs a short free-fall or Jeans-style scaling. The goal is not to introduce a full star-formation theory; it is to show why gas phase and density matter.
+
+Planned figure:
+
+{{< fig cats-paw-nebula-jwst >}}
+
+### Part 4: Feedback Makes the Ecosystem Self-Regulating
+
+Bridge Module 3 into Module 4: massive stars are not just endpoints; they shape their host galaxies through radiation, winds, supernovae, metal enrichment, and outflows. M82 should carry the "feedback is visible" moment.
+
+Planned figures:
+
+{{< fig antennae-merger-multiband >}}
+
+{{< fig molecular-gas-merging-galaxies >}}
+
+{{< fig whirlpool-merger >}}
+
+{{< fig starburst-m82 >}}
+
+### Part 5: Galaxy Histories from Present-Day Clues
+
+Close by moving from individual galaxies to population history. The cosmic star-formation history figure should be the zoom-out: the whole universe has an ecosystem history, not just individual galaxies.
+
+Planned figure:
+
+{{< fig hubble-tuning-fork >}}
+
+{{< fig star-formation-cosmic-time >}}
+
+## Retrieval-Practice Targets
+
+::: {.callout-note title="Quick Checks to Draft"}
+1. Which wavelength would you choose to map cold neutral hydrogen in the Milky Way, and why?
+2. A galaxy has strong dust lanes, blue clumps, and bright emission from gas. What recent history would you infer?
+3. Why can feedback both suppress and trigger future star formation?
+:::
+
+## Drafting Notes
+
+- Keep the language concrete: gas cools, falls, fragments, forms stars, and gets stirred or expelled.
+- Treat morphology as evidence, not destiny. The Hubble tuning fork can appear as an observational sorting tool, but not as an evolutionary ladder.
+- End by pointing to Reading 2: once galaxies are ecosystems, the next question is how gravity moves and weighs the whole system.

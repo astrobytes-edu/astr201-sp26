@@ -1,0 +1,4 @@
+$$
+1 + z = \frac{\lambda_{\text{obs}}}{\lambda_{\text{emit}}}
+= \frac{a_0}{a_{\text{emit}}}
+$$ {#eq-cosmological-redshift}

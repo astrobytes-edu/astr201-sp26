@@ -16,20 +16,30 @@ listing:
 
 ## Why this module matters
 
-We've studied individual stars, but stars are just building blocks. In this
-final module, we zoom out to understand the Milky Way, external galaxies,
-and the universe as a whole. We'll see how observations of galaxy motions
-led to the discovery of dark matter, and how the expansion of space itself
-tells us about cosmic history.
+We have studied stars as physical systems. In this final module, we zoom out:
+stars live inside galaxies, galaxies move inside dark matter halos, and the
+largest maps we can build reveal an expanding universe with a history.
+
+The throughline is **observe → model → infer**. We observe gas, dust, motions,
+redshifts, deep fields, and the cosmic microwave background. We model those
+signals with gravity, radiation, nuclear physics, and expanding spacetime.
+Then we infer galaxy histories, hidden mass, large-scale structure, and the
+origin of the first nuclei.
 
 ## Learning objectives
 
 By the end of this module, you will be able to:
 
-- Describe the structure of the Milky Way and evidence for dark matter
-- Explain the Hubble law and cosmic expansion
-- Interpret the cosmic microwave background
-- Connect stellar evolution to galactic chemical enrichment
+- Interpret galaxies as evolving ecosystems of gas, dust, stars, remnants, feedback, and gravity
+- Use orbital motion, cluster collisions, and redshift surveys to infer hidden mass and gravitational structure
+- Explain how redshift, expansion, the cosmic microwave background, and light elements support the hot Big Bang model
+- Connect stellar evolution to galactic chemical enrichment and Big Bang nucleosynthesis to the origin of hydrogen and helium
+
+## Reading arc
+
+1. **Galaxies as Ecosystems** — gas, dust, stars, remnants, and feedback cycle through galaxies.
+2. **The Dynamical Universe** — gravity turns motions into mass measurements, revealing dark matter and the cosmic web.
+3. **The Universe as an Evolving Spacetime** — redshift, expansion, deep fields, the CMB, and light elements reveal cosmic history.
 
 ## Lectures
 
@@ -47,8 +57,9 @@ By the end of this module, you will be able to:
 
 ## Required Textbook Reading
 
-- Chapter 10 (pp. 69–78): The Milky Way
-- Chapter 11 (pp. 79–88): Galaxies and Cosmology
+- Chapter 21 + Chapter 22 + Chapter 12.3: Interstellar gas, dust, and star formation
+- Chapter 26 + Chapter 27.1–27.3: The Milky Way, external galaxies, and Hubble's law
+- Chapter 30 + Chapter 32.2–32.4: The Big Bang and the expanding universe
 
 ::: {.callout-frontier}
 - **What is dark matter?** It makes up ~27% of the universe. We've never detected a dark matter particle directly.

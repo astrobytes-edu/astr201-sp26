@@ -1,0 +1,110 @@
+---
+title: "Lecture 3: The Universe as an Evolving Spacetime"
+subtitle: "Redshift, expansion, deep time, and the first three minutes"
+author: "Dr. Anna Rosen"
+date: "2026-04-30"
+description: "Redshift as a record of expansion, the distance ladder, deep fields, the hot Big Bang, and Big Bang nucleosynthesis as the origin of the first nuclei."
+draft: false
+categories: [cosmology, redshift, hubble-law, cosmic-microwave-background, big-bang-nucleosynthesis, distance-ladder]
+course: ASTR 201
+module: "4 - Galaxies & Cosmology"
+learning-objectives:
+  - Explain how the distance ladder connects local calibration to galaxy distances
+  - Interpret Hubble's law as evidence for cosmic expansion on large scales
+  - Relate cosmological redshift to the scale factor of the universe
+  - Connect the CMB and light-element abundances to a hot dense early universe
+  - Explain why hydrogen and helium are mostly products of the early universe, while heavier elements are mostly products of stars and stellar remnants
+math-level: symbolic_with_interpretation
+mode: Planning Sketch
+prerequisites: "Flux-luminosity-distance, distance modulus, Doppler shift, blackbody radiation, nuclear fusion, stellar nucleosynthesis"
+---
+
+::: {.callout-note title="Reading Status"}
+This is the public reading plan for Lecture 3. It fixes the throughline, figures, equations, and retrieval-practice targets before the full narrative draft.
+:::
+
+## Throughline
+
+By the end of this reading, students should be able to infer an evolving universe from redshift, distance, the cosmic microwave background, and light-element abundances by modeling the universe with an expanding scale factor and a hot dense early phase. The finale should connect the course together: stars make many of the elements, but the universe itself made the first nuclei.
+
+## Equation Anchors
+
+{{< include ../../../_includes/equations/hubble-law.qmd >}}
+{{< eqrefcard hubble-law >}}
+
+{{< include ../../../_includes/equations/cosmological-redshift.qmd >}}
+{{< eqrefcard cosmological-redshift >}}
+
+## Observe → Model → Infer
+
+| Step | Reading role | Figure spine |
+|---|---|---|
+| Observe | Build distances from local calibrators to supernova host galaxies, then compare distance with redshift. | `cepheid-light-curve`, `cepheid-period-luminosity`, `hubble-host-supernova-galaxies`, `measuring-hubble-constant-three-ways` |
+| Model | Replace the everyday "galaxies flying through space" picture with an expanding scale factor. | `expanding-universe-schematic`, `jwst-cosmological-redshift` |
+| Infer | Use deep fields, the CMB, and light elements to infer a hot dense early universe and the first three minutes. | `hubble-ultra-deep-field`, `mom-z14-jwst`, `cmb-map`, `periodic-table-origins` |
+
+## Planned Structure
+
+### Part 1: Distance First, Then Expansion
+
+Start with why Hubble's law required distance measurements, not just redshifts. Cepheids turn time variation into luminosity; supernovae extend the ladder outward; redshift then becomes meaningful as a cosmic pattern.
+
+Planned figures:
+
+{{< fig cepheid-light-curve >}}
+
+{{< fig cepheid-period-luminosity >}}
+
+{{< fig hubble-host-supernova-galaxies >}}
+
+### Part 2: Hubble's Law Is an Expansion Pattern
+
+Use Hubble's law as an empirical relation first, then interpret it. Be explicit that nearby bound systems can ignore the Hubble flow because local gravity wins.
+
+Planned figure:
+
+{{< fig measuring-hubble-constant-three-ways >}}
+
+### Part 3: Redshift as a Scale-Factor Record
+
+This is the conceptual pivot. Doppler shift was motion through space; cosmological redshift is wavelength stretch while light travels through expanding space. The final draft should keep both models separate without overclaiming that "space expands" solves every intuition problem.
+
+Planned figures:
+
+{{< fig expanding-universe-schematic >}}
+
+{{< fig jwst-cosmological-redshift >}}
+
+### Part 4: Looking Far Away Means Looking Back
+
+Use deep fields and high-redshift galaxies to connect distance, time, and evolution. The goal is to make cosmic history observable rather than abstract.
+
+Planned figures:
+
+{{< fig hubble-ultra-deep-field >}}
+
+{{< fig mom-z14-jwst >}}
+
+### Part 5: The First Three Minutes
+
+End with Big Bang nucleosynthesis. The universe cooled from a state hot enough for nuclear reactions; as it expanded, the reaction window closed. Hydrogen and helium are mostly cosmic relics, while stars and stellar remnants build much of the heavier periodic table.
+
+Planned figures:
+
+{{< fig cmb-map >}}
+
+{{< fig periodic-table-origins >}}
+
+## Retrieval-Practice Targets
+
+::: {.callout-note title="Quick Checks to Draft"}
+1. Why is redshift alone not enough to discover Hubble's law?
+2. What does $1+z$ measure in the scale-factor model?
+3. Why does the first-three-minutes story make hydrogen and helium different from carbon, oxygen, and iron?
+:::
+
+## Drafting Notes
+
+- Avoid saying the Big Bang was an explosion into pre-existing space.
+- Treat the Hubble tension as a frontier note, not the spine of the reading.
+- End with the course-level synthesis: constrained observations become models, models become inferences, and those inferences tell us where atoms came from.

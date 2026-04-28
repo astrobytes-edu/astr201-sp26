@@ -1,0 +1,3 @@
+$$
+M(<r) = \frac{r v^2}{G}
+$$ {#eq-enclosed-mass-circular-speed}

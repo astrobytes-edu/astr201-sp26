@@ -1,0 +1,3 @@
+$$
+v = H_0 d
+$$ {#eq-hubble-law}

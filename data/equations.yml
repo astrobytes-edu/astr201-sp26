@@ -393,3 +393,23 @@ schwarzschild-radius:
   anchor: "eq-schwarzschild-radius"
   include: "_includes/equations/schwarzschild-radius.qmd"
   card: "schwarzschild_radius"
+
+# ===== Module 4: Galaxies & Cosmology =====
+
+enclosed-mass-circular-speed:
+  title: "Enclosed mass from circular speed"
+  anchor: "eq-enclosed-mass-circular-speed"
+  include: "_includes/equations/enclosed-mass-circular-speed.qmd"
+  card: "enclosed_mass_circular_speed"
+
+hubble-law:
+  title: "Hubble law"
+  anchor: "eq-hubble-law"
+  include: "_includes/equations/hubble-law.qmd"
+  card: "hubble_law"
+
+cosmological-redshift:
+  title: "Cosmological redshift and scale factor"
+  anchor: "eq-cosmological-redshift"
+  include: "_includes/equations/cosmological-redshift.qmd"
+  card: "cosmological_redshift"

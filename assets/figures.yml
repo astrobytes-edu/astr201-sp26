@@ -1012,21 +1012,21 @@ figures:
 
   optical-depth-slab:
     path: /assets/images/module-03/optical-depth-slab.png
-    caption: "**What to notice:** optical depth is a count of how many mean free paths fit across a region. In the optically thin case, $\ell > R$ and a photon usually crosses without interacting. In the optically thick case, $\ell \ll R$, so many short steps fit across the same slab thickness and transport becomes interaction-dominated."
+    caption: '**What to notice:** optical depth is a count of how many mean free paths fit across a region. In the optically thin case, $\ell > R$ and a photon usually crosses without interacting. In the optically thick case, $\ell \ll R$, so many short steps fit across the same slab thickness and transport becomes interaction-dominated.'
     alt: "Two-panel optical-depth cartoon. The left panel shows an optically thin slab with slab thickness R shorter than the mean free path ell and a photon crossing essentially straight through. The right panel shows an optically thick slab with slab thickness R much larger than ell, marked by many short interaction steps across the slab. Each panel labels tau as approximately R over ell."
     credit: "ASTR 201 (generated)"
     module: 3
 
   random-walk-scaling:
     path: /assets/images/module-03/random-walk-scaling.png
-    caption: "**What to notice:** the total path length grows as $N\\ell$, but the net displacement grows only as $\sqrt{N}\\,\\ell$. The widening gap is why random walks are so inefficient: after many steps, most of the travel has been spent getting redirected rather than making net outward progress."
+    caption: '**What to notice:** the total path length grows as $N\\ell$, but the net displacement grows only as $\sqrt{N}\\,\\ell$. The widening gap is why random walks are so inefficient: after many steps, most of the travel has been spent getting redirected rather than making net outward progress.'
     alt: "Log-log plot of distance scale versus number of steps N. One line shows total path length proportional to N times ell, and a lower line shows net displacement proportional to square root of N times ell. Callouts mark the slope 1 and slope one-half behavior and note that at one million steps the path length is about a million ell while the displacement is only about a thousand ell."
     credit: "ASTR 201 (generated)"
     module: 3
 
   radiative-flux-opacity:
     path: /assets/images/module-03/radiative-flux-opacity.png
-    caption: "**What to notice:** a temperature gradient creates an outward radiative flux, but opacity throttles how much energy that gradient can carry. For the same density and the same $d(aT^4)/dr$, increasing $\kappa$ by a factor of 10 reduces $F_\\text{rad}$ by the same factor."
+    caption: '**What to notice:** a temperature gradient creates an outward radiative flux, but opacity throttles how much energy that gradient can carry. For the same density and the same $d(aT^4)/dr$, increasing $\kappa$ by a factor of 10 reduces $F_\\text{rad}$ by the same factor.'
     alt: "Two-panel radiative diffusion figure. The left panel shows normalized radiation energy density decreasing outward with arrows indicating a larger outward flux for low opacity and a smaller outward flux for high opacity. The right panel is a log-log plot of relative radiative flux versus relative opacity showing an inverse relationship, with a note that ten times higher opacity gives ten times smaller flux."
     credit: "ASTR 201 (generated)"
     module: 3
@@ -1261,22 +1261,228 @@ figures:
   # Module 4: Galaxies & Cosmology
   # ==============================================================
 
-  milky-way-structure:
-    path: /assets/images/module-04/milky-way-structure.png
-    caption: "Structure of the Milky Way galaxy"
-    alt: "Diagram showing disk, bulge, halo, and spiral arms of our galaxy"
+  milky-way-anatomy:
+    path: /assets/images/module-04/Milky_Way_Anatomy_Infographic_Simple_Final.jpg
+    caption: "**What to notice:** The Milky Way has multiple components — disk, bulge, bar, spiral arms, halo, dark matter halo, and central black hole. We infer this structure by combining star counts, gas maps, dust corrections, and stellar motions from inside the disk."
+    alt: "Infographic of the Milky Way showing a spiral disk with labeled major components, including spiral arms, central bulge and bar, stellar halo, dark matter halo, and the Sun's location."
     module: 4
 
-  rotation-curve:
-    path: /assets/images/module-04/rotation-curve.png
-    caption: "Galaxy rotation curves reveal dark matter"
-    alt: "Graph comparing expected Keplerian rotation to observed flat rotation curve"
+  hi4pi-milky-way-hydrogen:
+    path: /assets/images/module-04/HI4PI-MW-map.jpg
+    caption: "**What to notice:** Radio maps of neutral hydrogen trace gas across the whole Milky Way, including regions hidden by dust in visible light. A wavelength can be a mapmaking tool."
+    alt: "All-sky map of neutral hydrogen emission from the Milky Way in a Mollweide projection, with bright emission concentrated along the Galactic plane and fainter structures extending above and below it."
+    credit: "HI4PI Collaboration"
     module: 4
 
-  hubble-diagram:
-    path: /assets/images/module-04/hubble-diagram.png
-    caption: "Hubble's law relates distance to recession velocity"
-    alt: "Plot showing linear relationship between galaxy distance and redshift"
+  milky-way-galactic-center-multiwavelength:
+    path: /assets/images/module-04/eso1606e-multiwavelength-MW-galactic-center.jpg
+    caption: "**What to notice:** The Galactic center changes with wavelength because each band selects different physics: cool dust and stars in infrared, hot plasma in X-rays, and gas structures at longer wavelengths."
+    alt: "Multiwavelength view of the Milky Way Galactic center showing the same region in several bands, with different colors and structures revealing stars, dust, gas, and energetic emission."
+    credit: "ESO/NASA/JPL-Caltech/ESA"
+    module: 4
+
+  cats-paw-nebula-jwst:
+    path: /assets/images/module-04/cats-paw-nebula-jwst.jpg
+    caption: "**What to notice:** Star formation happens inside structured gas and dust, not in empty space. Infrared light reveals embedded young stars and heated dust that visible light can miss."
+    alt: "JWST image of the Cat's Paw Nebula showing glowing gas, dust clouds, cavities, and many embedded stars in a complex star-forming region."
+    credit: "NASA/ESA/CSA/STScI"
+    module: 4
+
+  antennae-merger-multiband:
+    path: /assets/images/module-04/eso1137a-antennae-merging-galaxies-hubble-alma.jpg
+    caption: "**What to notice:** Galaxy interactions rearrange gas. The Antennae galaxies show how mergers can compress molecular gas and trigger intense star formation."
+    alt: "Composite image of the Antennae galaxies, a pair of interacting galaxies with long tidal features, bright star-forming regions, and colored emission tracing gas and dust."
+    credit: "ALMA/ESO/NAOJ/NRAO/NASA/ESA/Hubble"
+    module: 4
+
+  molecular-gas-merging-galaxies:
+    path: /assets/images/module-04/distribution-molecular-gas-merging-galaxies.webp
+    caption: "**What to notice:** Molecular gas is the raw material for star formation. Comparing many merging galaxies shows where gravity has concentrated that fuel."
+    alt: "Grid of small galaxy images showing molecular gas distributions in multiple merging systems, with colored contours or emission patches highlighting where cold gas is concentrated."
+    module: 4
+
+  starburst-m82:
+    path: /assets/images/module-04/starburst-M82.jpg
+    caption: "**What to notice:** Feedback can drive material out of a galaxy. In M82, intense star formation powers an outflow that carries gas, metals, and energy away from the disk."
+    alt: "Image of the starburst galaxy M82 seen edge-on, with a bright central region and reddish outflowing material extending perpendicular to the disk."
+    credit: "NASA/ESA/Hubble"
+    module: 4
+
+  star-formation-cosmic-time:
+    path: /assets/images/module-04/star-formation-across-cosmic-time-nas.jpg
+    caption: "**What to notice:** The universe did not form stars at a constant rate. Star formation rose to a peak billions of years ago and then declined toward the present."
+    alt: "Plot or infographic showing the cosmic star-formation rate increasing early in cosmic history, peaking at redshifts of a few, and declining toward the present day."
+    credit: "NASA"
+    module: 4
+
+  rubin-cosmic-treasure-chest:
+    path: /assets/images/module-04/lsst-cosmic-treasure-chest.webp
+    caption: "**What to notice:** A deep Rubin/LSST field is a galaxy census, not just a pretty picture. The field contains many galaxy colors, shapes, sizes, and distances at once."
+    alt: "Deep-field image from Rubin Observatory showing many galaxies of different apparent sizes, colors, and morphologies against a dark background."
+    credit: "NSF-DOE Vera C. Rubin Observatory"
+    module: 4
+
+  types-of-galaxies:
+    path: /assets/images/module-04/types-of-galaxies-2.webp
+    caption: "**What to notice:** Galaxy diversity is visible before we explain it. Spirals, ellipticals, irregulars, and peculiar systems point to different gas contents, star-formation histories, and dynamical histories."
+    alt: "Infographic showing several galaxy types, including spiral, barred spiral, elliptical, lenticular, irregular, and peculiar galaxies, each represented by a galaxy image."
+    module: 4
+
+  andromeda-panorama:
+    path: /assets/images/module-04/andromeda-panoramic-hubble.jpg
+    caption: "**What to notice:** Andromeda is close enough for Hubble to resolve structure across its disk. Nearby galaxies let us connect individual stars and gas structures to galaxy-scale history."
+    alt: "Wide panoramic Hubble view of the Andromeda galaxy showing a long, bright, flattened stellar disk with dust lanes and dense star fields."
+    credit: "NASA/ESA/Hubble"
+    module: 4
+
+  whirlpool-merger:
+    path: /assets/images/module-04/whirlpool-galaxy-merger.jpg
+    caption: "**What to notice:** Interactions can reshape spiral structure and trigger star formation. The Whirlpool Galaxy's companion is not just nearby; it is part of the system's dynamical story."
+    alt: "Image of the Whirlpool Galaxy with a prominent spiral disk interacting with a smaller companion galaxy at the end of one spiral arm."
+    credit: "NASA/ESA/Hubble"
+    module: 4
+
+  local-group-map:
+    path: /assets/images/module-04/06-Local_Group.png
+    caption: "**What to notice:** The Milky Way is not isolated. It belongs to the Local Group, where gravity binds galaxies into a small cosmic neighborhood."
+    alt: "Map of the Local Group showing the Milky Way, Andromeda, Triangulum, and many dwarf galaxies arranged in a three-dimensional neighborhood."
+    module: 4
+
+  local-group-galaxy-comparison:
+    path: /assets/images/module-04/Local_Group_Galaxies_Comparison.png
+    caption: "**What to notice:** Galaxy masses and sizes span a huge range even within the Local Group. The Milky Way and Andromeda dominate, while dwarf galaxies are numerous and faint."
+    alt: "Comparison chart of Local Group galaxies, showing several galaxies at different apparent sizes including the Milky Way, Andromeda, Triangulum, and smaller dwarf galaxies."
+    module: 4
+
+  hubble-tuning-fork:
+    path: /assets/images/module-04/Interactive_Hubble_Tuning_Fork.jpg
+    caption: "**What to notice:** Galaxy morphology is an observational classification, not an explanation by itself. Shapes point us toward histories involving gas content, star formation, rotation, and mergers."
+    alt: "Hubble tuning fork diagram classifying galaxies into elliptical, lenticular, spiral, barred spiral, and irregular types, illustrated with many galaxy images."
+    module: 4
+
+  keplerian-rotation-curve-solar-system:
+    path: /assets/images/module-04/keplerian-rotation-curve-solar-system.svg
+    caption: "**What to notice:** In a central-mass system like the Solar System, orbital speed falls with distance. This is the prediction that fails for the outer parts of spiral galaxies."
+    alt: "Teaching plot showing that orbital speed decreases with distance in the Solar System because the Sun contains nearly all of the enclosed mass."
+    credit: "Course illustration (A. Rosen)"
+    module: 4
+
+  milky-way-rotation-curve:
+    path: /assets/images/module-04/Rotation_curve_Milky_Way.png
+    caption: "**What to notice:** The Milky Way's rotation curve stays roughly flat instead of falling like a Solar-System curve. The simplest inference is that mass keeps increasing with radius even where there is little visible light."
+    alt: "Plot of the Milky Way rotation curve showing orbital speed versus distance from the Galactic center, with data points remaining high at large radii compared with a declining luminous-matter expectation."
+    module: 4
+
+  ugc11455-rotation-curve:
+    path: /assets/images/module-04/Rotation_Curve_UGC11455.png
+    caption: "**What to notice:** External galaxy rotation curves show the same pattern: measured speeds remain high far from the bright disk. This makes dark matter a population-level inference, not a one-galaxy oddity."
+    alt: "Plot of the rotation curve for galaxy UGC 11455, with observed speeds at large radius exceeding the curve expected from visible components alone."
+    module: 4
+
+  rotation-curve-dark-matter:
+    path: /assets/images/module-04/rotation-curve-dark-matter1.jpg
+    caption: "**What to notice:** The observed rotation curve stays flat while the curve predicted from visible matter declines. The gap is the evidence a dark matter halo is meant to explain."
+    alt: "Diagram comparing an observed flat galaxy rotation curve with an expected declining curve from observed luminosity, overlaid on an image of a spiral galaxy."
+    module: 4
+
+  s-stars-orbits:
+    path: /assets/images/module-04/S-stars-Orbits.png
+    caption: "**What to notice:** Stars orbiting the Galactic center act like test particles. Their small, fast orbits require a compact mass of about four million solar masses: Sagittarius A*."
+    alt: "Plot of S-star orbits around the Milky Way's central black hole, showing several elliptical tracks around a compact central source."
+    module: 4
+
+  sgr-a-polarized-eht:
+    path: /assets/images/module-04/eso2406a-EHT-SagAstar-polarized.jpg
+    caption: "**What to notice:** The Event Horizon Telescope image of Sgr A* traces emission near the event-horizon scale. The object inferred from stellar orbits is also visible through horizon-scale plasma."
+    alt: "Polarized Event Horizon Telescope image of Sagittarius A star, showing a bright ring-like structure around a dark central region with polarization structure."
+    credit: "EHT Collaboration"
+    module: 4
+
+  agn-structure:
+    path: /assets/images/module-04/agn_structure_illustration.png
+    caption: "**What to notice:** An active galactic nucleus is powered by accretion onto a supermassive black hole. The disk, dusty torus, and jets make the same central engine look different from different viewing angles."
+    alt: "Schematic of an active galactic nucleus showing a central black hole, accretion disk, dusty torus, broad-line region, and jets emerging perpendicular to the disk."
+    module: 4
+
+  active-galactic-nucleus:
+    path: /assets/images/module-04/Active-Galactic-Nucleus-ESO.jpg
+    caption: "**What to notice:** AGN feedback is a galaxy-scale energy source. Jets and outflows show that a central black hole can affect gas far beyond the event horizon."
+    alt: "Astronomical image or composite of an active galactic nucleus with bright central emission and extended jet-like or lobe-like structures."
+    credit: "ESO"
+    module: 4
+
+  bullet-cluster-composite:
+    path: /assets/images/module-04/bullet-cluster-composite.jpg
+    caption: "**What to notice:** In the Bullet Cluster, hot gas and gravitational mass are offset. The separation is powerful evidence that most of the mass is not ordinary gas."
+    alt: "Composite image of the Bullet Cluster with optical galaxies, pink X-ray emitting gas, and blue gravitational lensing mass maps offset from the gas."
+    credit: "NASA/CXC/STScI/ESO"
+    module: 4
+
+  bullet-cluster-jwst-chandra:
+    path: /assets/images/module-04/bullet-cluster-jwst-chandra.png
+    caption: "**What to notice:** Multiple observatories separate different components of the same collision: galaxies, hot gas, and gravitational mass. The model has to explain all three at once."
+    alt: "Wide composite image of the Bullet Cluster combining JWST and Chandra data, showing colliding clusters with hot gas and lensing structures across a large field."
+    credit: "NASA/ESA/CSA/STScI/CXC"
+    module: 4
+
+  desi-cosmic-web:
+    path: /assets/images/module-04/desi-noirlab2512aa-scaled.jpg
+    caption: "**What to notice:** Galaxies are not sprinkled randomly. Redshift surveys reveal filaments, walls, clusters, and voids: the cosmic web built by gravity."
+    alt: "Three-dimensional visualization from a galaxy redshift survey showing galaxies arranged in a web of filaments and clusters with large empty voids."
+    credit: "DESI Collaboration/NOIRLab/NSF/AURA"
+    module: 4
+
+  cepheid-light-curve:
+    path: /assets/images/module-04/cepheid-light-curve-eso.jpg
+    caption: "**What to notice:** Cepheids are useful because their brightness varies periodically. The period is the observable that calibrates their luminosity."
+    alt: "Cepheid variable star light curve showing brightness rising and falling repeatedly over time, with points and a periodic curve overlaid on a star field."
+    credit: "ESO"
+    module: 4
+
+  cepheid-period-luminosity:
+    path: /assets/images/module-04/cepheids-P-L-plot.jpg
+    caption: "**What to notice:** Longer-period Cepheids are more luminous. This relation turns a time measurement into a luminosity estimate, and luminosity plus flux gives distance."
+    alt: "Plot of Cepheid luminosity or magnitude versus pulsation period, showing a clear period-luminosity relation with example Cepheids."
+    module: 4
+
+  hubble-host-supernova-galaxies:
+    path: /assets/images/module-04/hubble-host-sne-galaxies-galaxy-zoo.jpg
+    caption: "**What to notice:** Supernova host galaxies connect the local distance ladder to the Hubble flow. Standard candles let us compare distance and redshift far beyond the Milky Way."
+    alt: "Montage of galaxies that hosted supernovae, showing many galaxy images used for distance ladder and expansion measurements."
+    credit: "NASA/ESA/Hubble/Galaxy Zoo"
+    module: 4
+
+  measuring-hubble-constant-three-ways:
+    path: /assets/images/module-04/measuring-hubble-constant-3ways.jpg
+    caption: "**What to notice:** The Hubble constant can be inferred through multiple chains of evidence. Agreement or tension between methods is a test of the model, not just a bookkeeping detail."
+    alt: "Infographic showing three methods for measuring the Hubble constant, including distance ladder measurements and early-universe or large-scale-structure approaches."
+    module: 4
+
+  expanding-universe-schematic:
+    path: /assets/images/module-04/expansion-universe-galaxies-schematic.jpeg
+    caption: "**What to notice:** In an expanding universe, large-scale distances stretch with time. The galaxies are not flying through a pre-existing space in the simple everyday sense; the scale of space changes."
+    alt: "Schematic timeline of the expanding universe showing galaxies farther apart at later cosmic times, with expansion represented by a widening space-time diagram."
+    module: 4
+
+  jwst-cosmological-redshift:
+    path: /assets/images/module-04/jwst-cosmological-redshift.png
+    caption: "**What to notice:** Cosmological redshift stretches wavelengths by the expansion factor. A galaxy's spectrum carries a timestamp from when its light was emitted."
+    alt: "Tall infographic explaining cosmological redshift, showing emitted light from distant galaxies stretched to longer wavelengths as the universe expands."
+    credit: "NASA/ESA/CSA/STScI"
+    module: 4
+
+  hubble-ultra-deep-field:
+    path: /assets/images/module-04/hubble-ultra-deep-field-hst.jpg
+    caption: "**What to notice:** A deep field is a time machine. Faint galaxies in the same image can be billions of years apart in lookback time."
+    alt: "Hubble Ultra Deep Field image filled with thousands of galaxies of many colors, shapes, and apparent sizes against a dark sky."
+    credit: "NASA/ESA/Hubble"
+    module: 4
+
+  mom-z14-jwst:
+    path: /assets/images/module-04/MoM-z14-jwst.jpg
+    caption: "**What to notice:** Very high-redshift galaxies let us test how quickly structure formed after the Big Bang. The farther back we look, the closer we get to the first generations of galaxies."
+    alt: "JWST image or annotated field showing a very distant high-redshift galaxy candidate with inset markings against a background of faint galaxies."
+    credit: "NASA/ESA/CSA/STScI"
     module: 4
 
   cmb-map:

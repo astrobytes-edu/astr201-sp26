@@ -1,0 +1,118 @@
+---
+title: "Lecture 2: The Dynamical Universe"
+subtitle: "Gravity turns motion into mass, halos, clusters, and the cosmic web"
+author: "Dr. Anna Rosen"
+date: "2026-04-28"
+description: "Milky Way structure, external galaxies, dark matter, supermassive black holes, clusters, and large-scale structure as gravitational inferences from motion."
+draft: false
+categories: [galaxy-dynamics, dark-matter, rotation-curves, supermassive-black-holes, clusters, cosmic-web]
+course: ASTR 201
+module: "4 - Galaxies & Cosmology"
+learning-objectives:
+  - Use circular motion to infer enclosed mass from orbital speed and radius
+  - Explain why flat galaxy rotation curves imply extended mass distributions
+  - Describe multiple lines of evidence for dark matter from galaxies, clusters, and large-scale structure
+  - Connect galaxy groups, clusters, and the cosmic web to gravitational structure growth
+math-level: symbolic_with_interpretation
+mode: Planning Sketch
+prerequisites: "Kepler's laws and Newtonian gravity, Doppler shifts, binary-star mass inference, Module 3 compact objects"
+---
+
+::: {.callout-note title="Reading Status"}
+This is the public reading plan for Lecture 2. It fixes the throughline, figures, equations, and retrieval-practice targets before the full narrative draft.
+:::
+
+## Throughline
+
+By the end of this reading, students should be able to infer hidden mass from measured motion by using gravity as the translation model. The governing idea is simple and powerful: if we can measure how fast something orbits, we can weigh what pulls on it. The surprise is that galaxies, clusters, and the cosmic web all tell us gravity is responding to more matter than we can see.
+
+## Equation Anchor
+
+{{< include ../../../_includes/equations/enclosed-mass-circular-speed.qmd >}}
+{{< eqrefcard enclosed-mass-circular-speed >}}
+
+## Observe → Model → Infer
+
+| Step | Reading role | Figure spine |
+|---|---|---|
+| Observe | Begin nearby: Local Group context, S-star orbits around Sgr A*, Milky Way rotation, and external rotation curves. | `local-group-map`, `local-group-galaxy-comparison`, `s-stars-orbits`, `milky-way-rotation-curve`, `ugc11455-rotation-curve` |
+| Model | Use circular motion and enclosed mass to compare central-mass expectations with galaxy-scale behavior. | `keplerian-rotation-curve-solar-system`, `rotation-curve-dark-matter` |
+| Infer | Extend the same logic to supermassive black holes, AGN feedback, dark matter halos, cluster collisions, and the cosmic web. | `sgr-a-polarized-eht`, `agn-structure`, `active-galactic-nucleus`, `bullet-cluster-composite`, `bullet-cluster-jwst-chandra`, `desi-cosmic-web` |
+
+## Planned Structure
+
+### Part 1: Our Galaxy Is One Member of a Gravitating Neighborhood
+
+Use the Local Group to break the implicit assumption that the Milky Way is the whole stage. The Local Group is the first scale where galaxies themselves become moving objects in a bound system.
+
+Planned figures:
+
+{{< fig local-group-map >}}
+
+{{< fig local-group-galaxy-comparison >}}
+
+### Part 2: Motion Weighs What Light Cannot Show
+
+Rehearse the familiar logic from binaries and orbits, then apply it to S-star orbits and rotation curves. Students should see the same inference machine working at different scales.
+
+Planned figures:
+
+{{< fig s-stars-orbits >}}
+
+{{< fig sgr-a-polarized-eht >}}
+
+{{< fig keplerian-rotation-curve-solar-system >}}
+
+{{< fig milky-way-rotation-curve >}}
+
+### Part 3: The Rotation-Curve Surprise
+
+Make the prediction first: if most mass were concentrated where the light is, speeds should fall outward. Then reveal the flat curves. The inference should land cleanly: the mass distribution is more extended than the light distribution.
+
+Planned figures:
+
+{{< fig ugc11455-rotation-curve >}}
+
+{{< fig rotation-curve-dark-matter >}}
+
+### Part 4: Compact Engines Inside Galaxies
+
+Keep AGN as a focused extension of the same dynamical story. S-star orbits infer the central mass in the Milky Way; accretion and jets show how supermassive black holes can become visible and mechanically important for their host galaxies.
+
+Planned figures:
+
+{{< fig agn-structure >}}
+
+{{< fig active-galactic-nucleus >}}
+
+### Part 5: Dark Matter Beyond Spiral Galaxies
+
+Use the Bullet Cluster as the second independent line of reasoning. The key observation is not just "there is lensing"; it is that the gravitational mass is offset from the hot gas after a cluster collision.
+
+Planned figures:
+
+{{< fig bullet-cluster-composite >}}
+
+{{< fig bullet-cluster-jwst-chandra >}}
+
+### Part 6: Gravity Builds the Large-Scale Universe
+
+End with the cosmic web. This sets up Reading 3 by showing that cosmology is not only about expansion; it is also about the competition between expansion and gravitational structure growth.
+
+Planned figure:
+
+{{< fig desi-cosmic-web >}}
+
+## Retrieval-Practice Targets
+
+::: {.callout-note title="Quick Checks to Draft"}
+1. If a galaxy's orbital speed stays constant while radius increases, what happens to enclosed mass?
+2. Why is a flat rotation curve surprising if most mass follows visible light?
+3. What does the Bullet Cluster add that a single galaxy rotation curve cannot show by itself?
+:::
+
+## Drafting Notes
+
+- Keep AGN and supermassive black holes focused: Sgr A* is the compact-object bridge, not a separate fourth lecture.
+- Use "dark matter" as the name for an inference from gravity, not as a particle claim.
+- End by asking what happens when we map enough galaxies to see the universe itself as a structure.

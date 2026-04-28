@@ -547,3 +547,32 @@ tov_limit:
     - "General relativistic hydrostatic equilibrium (TOV equation)"
     - "Cold nuclear matter equation of state (uncertain above nuclear density)"
     - "One of the most massive securely measured neutron stars is $2.08 \\pm 0.07\\,M_\\odot$ (PSR J0740+6620)"
+
+# ===== Module 4: Galaxies & Cosmology =====
+
+enclosed_mass_circular_speed:
+  predicts: "Given circular speed $v$ at radius $r$, it predicts the mass $M(<r)$ enclosed inside that orbit."
+  depends: "Scales as $M(<r) \\propto r v^2$. At fixed speed, enclosing larger radii requires more mass."
+  says: "Orbital motion weighs galaxies. If speeds stay high at large radius, the enclosed mass must keep increasing even where the visible light fades."
+  assumptions:
+    - "Approximately circular orbit"
+    - "Gravity supplies the centripetal acceleration"
+    - "Spherical or effectively enclosed mass approximation; real galaxy disks need more detailed modeling"
+
+hubble_law:
+  predicts: "Given distance $d$, it predicts recession speed $v$ in the smooth Hubble flow."
+  depends: "Scales linearly: doubling distance doubles recession speed for a fixed $H_0$."
+  says: "On large enough scales, more distant galaxies recede faster because the universe is expanding. The slope $H_0$ sets the current expansion rate."
+  assumptions:
+    - "Applies to large-scale cosmic expansion, not to nearby bound systems dominated by local gravity"
+    - "Uses low-redshift recession speed form; high-redshift cosmology needs the full expansion history"
+    - "$H_0$ is measured, not predicted by this equation"
+
+cosmological_redshift:
+  predicts: "Given emitted and observed wavelengths, it predicts how much the universe expanded while the light traveled."
+  depends: "The redshift factor equals the ratio of today's scale factor to the scale factor when the light was emitted."
+  says: "Cosmological redshift is a stretch record. Light from earlier times has been stretched along with space, so redshift connects observation to cosmic history."
+  assumptions:
+    - "Redshift is dominated by cosmic expansion, not local Doppler motion"
+    - "Scale factor today is often normalized to $a_0 = 1$"
+    - "Interpreting distance and age from $z$ requires a cosmological model"
