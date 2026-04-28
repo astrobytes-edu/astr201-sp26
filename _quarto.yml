@@ -66,7 +66,7 @@ website:
   announcement:
     icon: info-circle
     dismissable: true
-    content: "**This week:** [Homework 8](/homework/astr201-hw8.qmd) and the [Homework 8 solutions](/homework/solutions/astr201-hw8-solutions.qmd) are posted. Use the solutions to self-assess before the grade memo due Friday, April 17 at 11:59 pm, and remember that [Exam 2](/exams/index.qmd) is Tuesday, April 21 covering everything through Module 3, Lecture 8. See the [Homework](/homework/index.qmd) and [Exams](/exams/index.qmd) pages for details."
+    content: "**This week:** Module 4 readings are posted, and [Midterm 2 materials](/exams/index.qmd) are available for review. See [Module 4](/modules/module-04/index.qmd) for galaxies and cosmology readings, and [Homework 9](/homework/index.qmd) for the final synthesis assignment."
     type: primary
     position: below-navbar
   navbar:
@@ -211,7 +211,19 @@ website:
 
       - section: "Module 4: Galaxies & Cosmology"
         href: modules/module-04/index.qmd
-        contents: []
+        contents:
+          - section: "Lecture 1: Galaxies as Ecosystems"
+            contents:
+              - text: "Reading"
+                href: modules/module-04/readings/lecture-01-galaxies-as-ecosystems.qmd
+          - section: "Lecture 2: The Dynamical Universe"
+            contents:
+              - text: "Reading"
+                href: modules/module-04/readings/lecture-02-the-dynamical-universe.qmd
+          - section: "Lecture 3: The Universe as an Evolving Spacetime"
+            contents:
+              - text: "Reading"
+                href: modules/module-04/readings/lecture-03-evolving-spacetime.qmd
 
       - section: "Homework"
         contents:
@@ -240,6 +252,10 @@ website:
             href: exams/astr201-Midterm1-solutions.pdf
           - text: "Formula Sheet — Midterm 1"
             href: handouts/formula-sheets/FormulaSheet-Midterm1-SP26.pdf
+          - text: "Midterm 2 Exam"
+            href: exams/astr201-Midterm2.pdf
+          - text: "Midterm 2 Solutions"
+            href: exams/astr201-Midterm2-solutions.pdf
           - text: "Formula Sheet — Midterm 2"
             href: handouts/formula-sheets/FormulaSheet-Midterm2-SP26.pdf
 

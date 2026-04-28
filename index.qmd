@@ -42,11 +42,11 @@ You'll develop skills in dimensional analysis, scaling relations, and order-of-m
 ---
 
 ::: {.callout-important appearance="simple"}
-## <i class="bi bi-megaphone"></i> Announcement — Midterm 2: Tuesday, April 21
+## <i class="bi bi-megaphone"></i> Announcement — Module 4 + Midterm 2 Review
 
-**Midterm 2 is in class on Tuesday, April 21, 2026.** Coverage: Module 3 Lectures 1–8 (stellar structure, fusion, radiation transport, white dwarfs, Chandrasekhar limit), cumulative with Modules 1–2.
+**Module 4 readings are posted.** We are closing the course with galaxies, dark matter, expansion, the CMB, and the origin of the first nuclei.
 
-📄 **[Download the Midterm 2 Formula Sheet (PDF)](handouts/formula-sheets/FormulaSheet-Midterm2-SP26.pdf)** — available now to study in advance.
+📄 **[Midterm 2 materials are available on the Exams page](exams/index.qmd)** for review, including the formula sheet, exam, and solutions.
 :::
 
 ::: {.callout-note appearance="simple"}
@@ -102,7 +102,7 @@ We start by learning to measure what looks unmeasurable: distances to stars, and
 What’s happening inside a star is a balancing act: gravity pulling in, pressure pushing out, and nuclear fusion rewriting the periodic table. Stars fuse hydrogen into helium and (in later stages) build heavier nuclei; their deaths spread those elements into space. The finale depends on mass — ending as a white dwarf, a neutron star, or a black hole.
 
 **Module 4: Galaxies & Cosmology**
-We zoom out from stars to the universe itself: a hot beginning, the *first three minutes* when the lightest elements formed, and an expanding cosmos we can measure in multiple ways. Galaxy motions point to unseen mass (dark matter), and the expansion appears to be speeding up (dark energy). Together they dominate the universe’s budget — and we can measure their effects far better than we understand their nature.
+We zoom out from stars to galaxies and the universe itself. Galaxies become evolving ecosystems of gas, dust, stars, and feedback; galaxy and cluster motions reveal unseen mass; redshift, deep fields, the cosmic microwave background, and light-element abundances reveal an expanding universe with a hot early history.
 :::
 :::
 
@@ -119,4 +119,3 @@ We zoom out from stars to the universe itself: a hot beginning, the *first three
 - **Canvas discussion:** Post questions others might share
 - **SDSU Astronomy Help Room:** Free tutoring (schedule on Canvas)
 :::
-

@@ -8,7 +8,7 @@ draft: false
 | Exam | Topics | Date | Formula Sheet | Solutions |
 |------|--------|------|---------------|-----------|
 | Midterm 1 | Modules 1–2 | March 5, 2026 | [Formula Sheet](../handouts/formula-sheets/FormulaSheet-Midterm1-SP26.pdf) | [Solutions](astr201-Midterm1-solutions.pdf) |
-| Midterm 2 | Module 3 (Lectures 1–8), cumulative | **April 21, 2026** | [Formula Sheet](../handouts/formula-sheets/FormulaSheet-Midterm2-SP26.pdf) | *Posted after exam* |
+| Midterm 2 | Module 3 (Lectures 1–8), cumulative | **April 21, 2026** | [Formula Sheet](../handouts/formula-sheets/FormulaSheet-Midterm2-SP26.pdf) + [Exam](astr201-Midterm2.pdf) | [Solutions](astr201-Midterm2-solutions.pdf) |
 | Final | Comprehensive | Finals Week | *Posted before exam* | *Posted after exam* |
 
 ## Exam Policies

@@ -6,7 +6,7 @@ draft: false
 ## Assignments
 
 ::: {.callout-tip}
-**Current cycle:** [Homework 8](astr201-hw8.qmd) and the [Homework 8 solutions](solutions/astr201-hw8-solutions.qmd) are now posted. Use the solutions to self-assess before writing the Homework 8 grade memo, which is due Friday, April 17, 2026 at 11:59 pm. [Exam 2](../exams/index.qmd) is Tuesday, April 21, 2026.
+**Current cycle:** Homework 9 is the final synthesis assignment, due Tuesday, May 5, 2026. Midterm 2 review materials are posted on the [Exams](../exams/index.qmd) page.
 :::
 
 | Assignment | Posted | Due | Grade Memo Due | Solutions |
