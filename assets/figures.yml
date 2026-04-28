@@ -1116,9 +1116,9 @@ figures:
     module: 3
 
   compact-object-scale:
-    path: /assets/images/module-03/compact-object-scale.png
-    caption: "**Size comparison of compact objects.** Earth and a typical white dwarf are similar in size (~6,000 km radius), but the white dwarf packs ~0.6 M☉ into that volume. A neutron star is ~600× smaller (~10 km radius) with ~1.4 M☉. A stellar-mass black hole's Schwarzschild radius is comparable to the neutron star — but it has no surface at all."
-    alt: "Four objects shown to approximate scale: Earth (6,371 km), white dwarf (6,000 km, 0.6 solar masses), neutron star (10 km, 1.4 solar masses), and black hole (Schwarzschild radius 8.9 km, 3 solar masses). Densities labeled for each."
+    path: /assets/images/module-03/compact-object-scale.svg
+    caption: "**What to notice:** this figure uses two honest scales. Earth and a white dwarf are comparable in radius, but a neutron star and a stellar-mass black-hole horizon are hundreds of times smaller. The black hole is not the next smaller solid sphere; it has no material surface."
+    alt: "Two-panel scale comparison. The left panel shows Earth and a white dwarf at a thousands-of-kilometers scale. The right panel zooms in by about 600 times to compare a 10 kilometer neutron star with a roughly 9 kilometer stellar-mass black-hole horizon, emphasizing that the neutron star has a surface while the black hole has an event horizon."
     credit: "ASTR 201 (generated)"
     module: 3
 
@@ -1258,23 +1258,23 @@ figures:
     module: 3
 
   schwarzschild-radius-scaling:
-    path: /assets/images/module-03/schwarzschild-radius-scaling.png
+    path: /assets/images/module-03/schwarzschild-radius-scaling.svg
     caption: "**What to notice:** Schwarzschild radius scales linearly with mass. Doubling the mass doubles the event-horizon radius, which is why the scaling $R_s \\approx 3.0\\,\\mathrm{km}(M/M_\\odot)$ is so powerful."
-    alt: "Log-log line plot of Schwarzschild radius in kilometers versus mass in solar masses. A straight line with slope one is annotated at the Sun, a ten-solar-mass black hole, and Sgr A star."
+    alt: "Log-log line plot of Schwarzschild radius in kilometers versus mass in solar masses. A straight slope-one line is annotated at the Sun, a ten-solar-mass black hole, and Sgr A star."
     credit: "ASTR 201 (generated)"
     module: 3
 
   compactness-ladder:
-    path: /assets/images/module-03/compactness-ladder.png
+    path: /assets/images/module-03/compactness-ladder.svg
     caption: "**What to notice:** compactness $R_s/R$ is tiny for Earth and the Sun, larger for white dwarfs, a large fraction of unity for neutron stars, and exactly $1$ at a black-hole event horizon. Compactness, not mass alone, tells us when general relativity matters."
     alt: "Bar chart on a logarithmic scale showing compactness R_s over R for Earth, Sun, white dwarf, neutron star, and black hole event horizon. Values rise from about 10 to the minus 9 for Earth to 1 for the black hole horizon."
     credit: "ASTR 201 (generated)"
     module: 3
 
   compact-object-evidence-map:
-    path: /assets/images/module-03/compact-object-evidence-map.png
+    path: /assets/images/module-03/compact-object-evidence-map.svg
     caption: "**What to notice:** no single observation carries the whole argument. Pulses, X-ray binaries, stellar orbits, gravitational waves, and horizon-scale images converge on neutron-star and black-hole models."
-    alt: "Concept map connecting observables such as pulsar periods, X-ray binaries, stellar orbits, gravitational waves, and horizon-scale images to models of neutron stars and black holes, then to physical inferences about dense matter and event horizons."
+    alt: "Concept map connecting observables such as pulsar periods, X-ray bursts, high-mass X-ray binaries, stellar orbits, gravitational waves, and horizon-scale images to neutron-star and black-hole models, then to physical inferences about dense matter and event horizons."
     credit: "ASTR 201 (generated)"
     module: 3
 
