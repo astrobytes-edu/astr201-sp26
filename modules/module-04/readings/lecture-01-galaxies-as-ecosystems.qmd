@@ -34,8 +34,16 @@ After completing this reading, you should be able to:
 
 This is the first reading in the final module of ASTR 201. We are zooming out from individual stars to the environments that make stars possible. The same course method still applies: **observe → model → infer**. We observe light at many wavelengths. We model which physical component produces that light. Then we infer what the galaxy is doing now and what it has been doing over cosmic time.
 
+::: {.callout-note title="Reading Map — Choose Your Track"}
+**Track A (Core, ~30 min):** Read **Parts 1–7** in order, including the Quick Checks, the dynamical-timescale checkpoint, and the exit ticket. This gives you the galaxy-as-ecosystem model you need for class.
+
+**Track B (Full, ~40 min):** Read everything in Track A, then linger on the Rubin video and each figure long enough to write one observable clue from it. This deeper pass is especially useful if galaxy images feel like pictures rather than evidence yet.
+
+*Both tracks cover the learning objectives. Track B adds practice turning visual structure into physical history.*
+:::
+
 ::: {.callout-note title="Opening Video: Galaxy Diversity"}
-Start class with the Rubin/LSST zoom-out. Before naming the lesson, ask what kinds of structure you notice: smooth blobs, spirals, interacting systems, color differences, and sheer number density. The point is not to classify everything yet; it is to make galaxy diversity the observable.
+Watch the Rubin/LSST zoom-out before you read the rest of the lesson. As you watch, notice the observable diversity: smooth blobs, spirals, interacting systems, color differences, and sheer number density. The point is not to classify everything yet; it is to make galaxy diversity the evidence.
 
 {{< media rubin-zoomout-galaxies width="100%" >}}
 :::
@@ -57,6 +65,10 @@ This is where our course throughline matters. If we stopped at observation, we w
 {{< fig types-of-galaxies >}}
 
 Galaxy morphology is a first pass at organizing the evidence. Spiral galaxies often contain cold gas, dust, and ongoing star formation. Elliptical galaxies are often smoother, redder, and poorer in cold gas. Irregular and peculiar galaxies often carry the signatures of disturbance: gravitational interactions, recent star formation, or disrupted structure. These are tendencies, not laws of nature. The point is not to memorize a taxonomy. The point is to ask: *What history would produce this appearance?*
+
+::: {.callout-note collapse="true" title="Enrichment (Track B): What Rubin Changes"}
+Rubin Observatory will not just give astronomers prettier galaxy images. Its power comes from scale and repetition: wide fields, many objects, and repeated observations. That changes the question from "What kind of galaxy is this?" to "How do galaxy populations vary across environment and time?" In other words, Rubin turns diversity into statistics.
+:::
 
 ::: {.callout-tip title="Observe → Model → Infer"}
 **Observable:** color, shape, dust lanes, clumps, tidal features, and brightness patterns.
@@ -86,6 +98,14 @@ This figure is useful, but it can also mislead if we read it as a static object.
 
 We should also be honest about the challenge: the Milky Way is partly hidden from us by its own dust. Optical light cannot pass cleanly through the Galactic plane. That means visible-light maps alone are incomplete. To map a galaxy from the inside, we need wavelengths that reveal components optical light misses.
 
+::: {.callout-note title="Quick Check 2"}
+Why is the Milky Way both our best-studied galaxy and one of the hardest galaxies to map cleanly?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+It is best-studied because we can measure individual stars, gas clouds, and motions from inside it. It is hard to map because we are embedded in its dusty disk, so optical light gives an incomplete view of the full structure.
+:::
+
 ---
 
 ## Part 3: Different Wavelengths Reveal Different Ingredients
@@ -106,7 +126,7 @@ Nearby galaxies let us connect the inside-out Milky Way view to a more external 
 
 {{< fig andromeda-panorama >}}
 
-::: {.callout-note title="Quick Check 2"}
+::: {.callout-note title="Quick Check 3"}
 Why is a radio map of neutral hydrogen not just a lower-resolution version of an optical image?
 :::
 
@@ -120,6 +140,28 @@ Because it is mapping a different physical component. Optical light is mostly st
 
 Stars form when part of a gas cloud becomes dense and cold enough for gravity to win locally. That sentence is short, but it contains the central physics. Gas has pressure, turbulence, magnetic fields, and radiation acting against collapse. Gravity has to overcome those forms of support. Cooling helps because cooler gas has lower thermal pressure. Higher density helps because gravity becomes more effective when more mass is packed into a smaller region.
 
+One compact way to express gravity's clock is the **dynamical timescale**:
+
+{{< include ../../../_includes/equations/dynamical-timescale.qmd >}}
+{{< eqrefcard dynamical-timescale >}}
+
+Here **$\tau_{\text{dyn}}$** is an order-of-magnitude collapse or rearrangement time, **$G$** is the gravitational constant, and **$\bar{\rho}$** is the average density of the region. The equation says that denser regions have shorter gravitational response times. It is not a promise that every dense clump will form stars, because pressure, turbulence, magnetic fields, radiation, and feedback can slow or stop collapse. It is a way to read the competition: density helps gravity act faster.
+
+::: {.callout-note title="Units Sanity Check"}
+In cgs units, $G$ has units of $\mathrm{cm^3\,g^{-1}\,s^{-2}}$ and density has units of $\mathrm{g\,cm^{-3}}$:
+
+$$
+G\bar{\rho}
+\sim
+\left(\mathrm{cm^3\,g^{-1}\,s^{-2}}\right)
+\left(\mathrm{g\,cm^{-3}}\right)
+=
+\mathrm{s^{-2}}
+$$
+
+Taking the square root gives $\mathrm{s^{-1}}$, so $1/\sqrt{G\bar{\rho}}$ has units of seconds. The equation really does predict a timescale.
+:::
+
 This is why star formation is not spread smoothly through a galaxy. It is concentrated in clouds, filaments, shells, and clumps. The interstellar medium — the gas and dust between stars — is structured. It is not an empty background.
 
 {{< fig cats-paw-nebula-jwst >}}
@@ -129,6 +171,24 @@ Infrared images of star-forming regions are especially revealing because young s
 The word **baryon** means ordinary matter made mostly of protons and neutrons: gas, stars, planets, dust, and people. In galaxy evolution, the **baryon cycle** is the movement of ordinary matter through different phases. Gas can cool into molecular clouds. Molecular clouds can form stars. Stars return mass through winds and supernovae. Some gas is heated, some is expelled, some cools again, and some gets locked into long-lived stars and remnants.
 
 That cycle connects Module 3 directly to Module 4. A massive star does not only live and die for itself. Its radiation, winds, and supernova enrich the surrounding gas with heavy elements and inject energy into the galaxy. A galaxy's future star formation depends partly on what its previous stars have done.
+
+::: {.quiz}
+
+Which change would make gravity act faster in the dynamical-timescale estimate?
+
+- [x] Increasing the gas density
+- [ ] Decreasing the gas density
+- [ ] Changing from infrared to optical light
+
+:::
+
+::: {.callout-note title="Quick Check 4"}
+If a cloud is bright in infrared but partly hidden in visible light, what does that suggest about the material around young stars?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+It suggests that young stars are embedded in dusty gas. Dust blocks or scatters much of the visible light, while infrared light can escape more easily and can also trace warm dust heated by young stars.
+:::
 
 ---
 
@@ -148,7 +208,7 @@ Multiwavelength observations matter here because stars and gas do not always occ
 
 {{< fig molecular-gas-merging-galaxies >}}
 
-::: {.callout-note title="Quick Check 3"}
+::: {.callout-note title="Quick Check 5"}
 Why can a galaxy interaction trigger star formation even though individual stars almost never collide?
 :::
 
@@ -174,6 +234,14 @@ The classification schemes we use for galaxies are therefore only the first laye
 
 One caution: the Hubble tuning fork is not an evolutionary ladder. Ellipticals do not simply become spirals by moving across the diagram, and spirals do not automatically become ellipticals by sliding to another branch. Galaxy evolution is messier and more physical than that. Shape is an observable. The model has to explain how that shape came to be.
 
+::: {.callout-note title="Quick Check 6"}
+Why is feedback not simply "stars stopping star formation"?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Feedback can suppress star formation by heating or expelling gas, but it can also compress nearby gas and help trigger collapse. The effect depends on the local environment, timing, and how much gas is available.
+:::
+
 ---
 
 ## Part 7: The Universe Has a Star-Formation History
@@ -183,6 +251,14 @@ If we zoom out from individual galaxies to the whole observable universe, we fin
 {{< fig star-formation-cosmic-time >}}
 
 This trend is one of the cleanest ways to end the first reading. It tells us that galaxies evolve, and they evolve together with the universe around them. Early galaxies had more gas available for rapid star formation. Over time, gas was consumed, heated, expelled, locked into long-lived stars, or rearranged by environment. The cosmic star-formation history is the population-level version of the baryon cycle.
+
+::: {.callout-note title="Quick Check 7"}
+If the cosmic star-formation rate was higher in the past than it is today, what does that suggest about the average gas supply and galaxy conditions at earlier cosmic times?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+It suggests that earlier galaxies, on average, had more available cold gas or more conditions that drove gas into star-forming regions. Over time, gas can be consumed, heated, expelled, or locked into long-lived stars and remnants.
+:::
 
 This sets up the next reading. If galaxies are ecosystems, then the next question is: *what organizes the ecosystem?* The answer is gravity. Gravity collects gas, binds galaxies, drives mergers, shapes clusters, and reveals dark matter through motion. In the next reading, we will use dynamics to weigh what light cannot show.
 

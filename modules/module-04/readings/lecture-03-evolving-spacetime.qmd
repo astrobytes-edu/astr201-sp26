@@ -38,6 +38,14 @@ This final reading brings the course back to its biggest question: how can we in
 
 By the end, we will connect stars and cosmology into one story. Stars build carbon, oxygen, silicon, iron, and many heavier elements. But most of the hydrogen and helium in the universe were not made in stars. They are relics of the first few minutes.
 
+::: {.callout-note title="Reading Map — Choose Your Track"}
+**Track A (Core, ~30 min):** Read **Parts 1–7** in order, including the Hubble-law and redshift equations, Quick Checks, and final exit ticket. This gives you the expansion-history argument.
+
+**Track B (Full, ~40 min):** Read everything in Track A, then spend extra time on the deep-field, CMB, and periodic-table figures. For each one, write the observation before you write the inference.
+
+*Both tracks cover the learning objectives. Track B adds more practice treating cosmology as an evidence chain instead of a set of spectacular images.*
+:::
+
 ---
 
 ## Part 1: Distance First, Then Expansion
@@ -98,6 +106,14 @@ $$
 The units match a speed, as they should.
 :::
 
+::: {.callout-note title="Quick Check 2"}
+Why does Hubble's law work better for large-scale galaxy samples than for nearby bound systems such as the Local Group?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Nearby bound systems can have motions dominated by local gravity. Hubble's law describes the large-scale average expansion pattern after local gravitational motions are averaged over.
+:::
+
 ---
 
 ## Part 3: Redshift as a Scale-Factor Record
@@ -119,7 +135,17 @@ This does not mean galaxies are flying away from a central explosion point into 
 
 Cosmological redshift is therefore a time-and-scale clue. It tells us that the light we receive has crossed an evolving universe. To turn redshift into a precise distance or age, we need a cosmological model, including the effects of matter, radiation, curvature if present, and dark energy. But the core idea is already enough for this course: **redshift records expansion**.
 
-::: {.callout-note title="Quick Check 2"}
+::: {.quiz}
+
+If today's scale factor is $a_0 = 1$ and light was emitted when $a_{\text{emit}} = 1/4$, what redshift do we observe?
+
+- [ ] $z = 1/4$
+- [ ] $z = 1$
+- [x] $z = 3$
+
+:::
+
+::: {.callout-note title="Quick Check 3"}
 If a galaxy has redshift $z = 3$, what is the wavelength stretch factor $1+z$? What does that mean in scale-factor language?
 :::
 
@@ -145,6 +171,14 @@ JWST pushes this logic closer to the first generations of galaxies. Very high-re
 
 The frontier is exciting because it is a stress test. If galaxies appear earlier, brighter, or more massive than expected, then models of early galaxy formation must explain how gas cooled, formed stars, and assembled structure quickly enough. As always, the observation is not the final answer. The observation is the constraint that the model must survive.
 
+::: {.callout-note title="Quick Check 4"}
+Why should we read a deep field as a time archive rather than a flat collection of galaxies?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Because light travel time matters. More distant galaxies are seen as they were farther in the past, so a deep field mixes nearby recent galaxies with distant galaxies observed when the universe was younger.
+:::
+
 ---
 
 ## Part 5: The Cosmic Microwave Background
@@ -167,6 +201,14 @@ This connects directly back to the previous reading. The cosmic web did not appe
 **Inference:** the CMB is relic light from an early hot phase and contains the seeds of later structure.
 :::
 
+::: {.callout-note title="Quick Check 5"}
+What makes the CMB stronger evidence than simply saying, "the universe has old light in it"?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+The CMB has the expected properties of radiation from a hot dense early universe that cooled by expansion, and its tiny temperature variations connect to the later growth of structure. It is not just old; it matches a physical model.
+:::
+
 ---
 
 ## Part 6: The First Three Minutes
@@ -185,7 +227,7 @@ This figure is the punchline to the whole course. The periodic table is a fossil
 
 That means you can read the matter around you as an astrophysical archive. The hydrogen in water is ancient in a different way than the oxygen in water. The hydrogen is mostly a Big Bang relic. The oxygen was forged later, inside stars. The same molecule carries multiple chapters of cosmic history.
 
-::: {.callout-note title="Quick Check 3"}
+::: {.callout-note title="Quick Check 6"}
 Why is it misleading to say "stars made all the elements"?
 :::
 

@@ -36,6 +36,14 @@ This reading is about dynamics: how motion reveals mass. You already know the co
 
 The method is still **observe → model → infer**. We observe positions, velocities, redshifts, or lensing patterns. We model them with gravity. Then we infer masses, dark matter, compact objects, and the architecture of large-scale structure.
 
+::: {.callout-note title="Reading Map — Choose Your Track"}
+**Track A (Core, ~30 min):** Read **Parts 1–6** in order, including the enclosed-mass equation, Quick Checks, and exit ticket. This gives you the gravitational inference chain for galaxies, black holes, clusters, and the cosmic web.
+
+**Track B (Full, ~40 min):** Read everything in Track A, then pause at each figure and ask, "What motion, lensing, or spatial pattern is being used as the mass measurement?" This deeper pass is the best preparation for class discussion.
+
+*Both tracks cover the learning objectives. Track B adds more practice separating luminous matter from gravitating matter.*
+:::
+
 ---
 
 ## Part 1: The Milky Way Is Not Alone
@@ -100,6 +108,14 @@ The Event Horizon Telescope gives a different kind of evidence. It does not repl
 
 This is a good example of how astronomy builds confidence. One observation rarely carries the whole story. Stellar orbits, radio emission, infrared observations, and horizon-scale imaging all point toward the same physical model: a supermassive black hole at the center of the Milky Way.
 
+::: {.callout-note title="Quick Check 2"}
+What is the observable in the S-star argument, and what is the inference?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+The observable is the motion of stars orbiting near the Galactic center. The model is gravity, and the inference is that a very large mass must be packed into a very small region: Sagittarius A*, the Milky Way's central supermassive black hole.
+:::
+
 ---
 
 ## Part 3: The Rotation-Curve Surprise
@@ -126,7 +142,17 @@ This matters because it turns dark matter from a one-galaxy oddity into a popula
 
 The term **dark matter** is a name for the inferred gravitating component that does not emit, absorb, or scatter enough light for us to see directly. The word "dark" does not mean mysterious magic. It means electromagnetically dark: visible through gravity, not through ordinary light. We infer it because the gravitational model requires more mass than the luminous matter provides.
 
-::: {.callout-note title="Quick Check 2"}
+::: {.quiz}
+
+If a spiral galaxy has a flat rotation curve far beyond its bright stellar disk, what is the most direct inference from $M(<r) = rv^2/G$?
+
+- [ ] The galaxy has almost no mass outside the bright disk
+- [x] The enclosed mass keeps increasing at large radius
+- [ ] The outer gas is not affected by gravity
+
+:::
+
+::: {.callout-note title="Quick Check 3"}
 Suppose a galaxy's rotation speed stays about constant as radius doubles. According to $M(<r) = r v^2/G$, what happens to the enclosed mass?
 :::
 
@@ -150,7 +176,7 @@ The geometry matters. A disk, dusty torus, broad-line region, and jets can look 
 
 AGN matter for galaxy evolution because they can inject energy into surrounding gas. A jet or outflow can heat gas, stir it, or push it out of the galaxy. This connects back to the ecosystem model from the previous reading. Stars provide feedback; supermassive black holes can provide feedback too. Both change the gas supply that future star formation depends on.
 
-::: {.callout-note title="Quick Check 3"}
+::: {.callout-note title="Quick Check 4"}
 Why is an AGN not simply "a bright black hole"?
 :::
 
@@ -174,12 +200,24 @@ In a cluster collision, the galaxies mostly pass through one another because the
 
 This does not make every detail of dark matter simple. It does make one thing hard to avoid: gravity is responding to a mass component that is not the hot X-ray gas and not the visible stars alone. The dark matter inference survives a very different kind of observation than a rotation curve.
 
+::: {.callout-note collapse="true" title="Enrichment (Track B): What Would an Alternative Have to Explain?"}
+Rotation curves alone are not the whole dark matter argument. Any alternative model would also have to explain why gravitational lensing in cluster collisions can separate from the hot X-ray gas, why galaxies cluster into a cosmic web, and why the same gravitational framework works across many scales. This is why the evidence chain matters more than any single famous example.
+:::
+
 ::: {.callout-tip title="Evidence Chain"}
 **Observable:** galaxies, X-ray gas, and gravitational lensing peaks are spatially separated after a cluster collision.
 
 **Model:** ordinary gas collides and slows; collisionless mass passes through more easily; lensing traces total mass.
 
 **Inference:** most of the gravitating mass is not ordinary hot gas.
+:::
+
+::: {.callout-note title="Quick Check 5"}
+Why does the Bullet Cluster provide a different kind of evidence than a spiral-galaxy rotation curve?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+A rotation curve uses orbital speeds to infer mass inside a galaxy. The Bullet Cluster uses a collision plus gravitational lensing to compare where hot gas is located with where the total gravitating mass is located. It tests dark matter with a different observable and a different physical setup.
 :::
 
 ---
@@ -193,6 +231,14 @@ The final scale in this reading is larger than a galaxy or a cluster. Redshift s
 This is gravity at work on the largest observable scales. Slightly denser regions pull in matter. Under gravity, structure grows. Dark matter matters here because it begins forming gravitational scaffolding before ordinary gas can cool and form luminous galaxies. Galaxies trace the web, but they are not the whole web.
 
 This prepares us for the next reading. Cosmology is not only the story of expansion. It is the story of expansion plus gravity. Expansion stretches distances on large scales. Gravity pulls matter together into structure. The universe we observe is the result of both.
+
+::: {.callout-note title="Quick Check 6"}
+Why is the cosmic web evidence for gravity acting over cosmic time, rather than just a map of where galaxies happen to be today?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+The web is a large-scale pattern of clusters, filaments, walls, and voids. Such structure is modeled as growth from small density differences under gravity. Galaxies trace that structure today, but the pattern records the history of gravitational growth.
+:::
 
 ## Summary
 

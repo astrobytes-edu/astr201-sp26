@@ -293,7 +293,7 @@ magnitude_flux:
 dynamical_timescale:
   predicts: "Given mean density $\\bar{\\rho}$, it predicts the timescale for gravitational rearrangement."
   depends: "Scales as $\\tau_\\text{dyn} \\propto \\bar{\\rho}^{-1/2}$. Denser objects respond faster."
-  says: "If pressure support were removed, gravity would collapse the star in roughly this time. The Sun's dynamical time is ~50 minutes."
+  says: "If pressure support were removed, gravity would rearrange or collapse a self-gravitating object in roughly this time. The Sun's dynamical time is ~50 minutes."
   assumptions:
     - "Uniform density approximation (order-of-magnitude estimate)"
     - "Free-fall timescale — actual collapse is modified by pressure response"
