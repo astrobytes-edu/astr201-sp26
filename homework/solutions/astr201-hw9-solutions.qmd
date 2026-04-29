@@ -1,0 +1,587 @@
+---
+title: "Homework 9 Solutions"
+subtitle: "Final Synthesis — Stellar Death, Galaxies, Dark Matter, and Cosmology"
+author: "Dr. Anna Rosen"
+date: "2026-05-06"
+description: "Draft solutions to Homework 9."
+draft: true
+course: ASTR 201
+module: "Module 3 Lectures 9–10 + Module 4"
+---
+
+::: {.callout-note}
+**Student note:** These are model solutions written to show reasoning, units, assumptions, and checks. Your own work can be shorter if the physics is clear, but you should always show enough setup that another person can trust what you did.
+
+**Instructor note:** This solutions page is intentionally marked `draft: true` until it is ready to post.
+:::
+
+::: {.callout-tip}
+**How to study from this page:** For each problem, pause before reading the answer and name the observable, the model, and the inference. This homework is a final rehearsal of the course's central habit.
+:::
+
+---
+
+## Part A — Stellar Death and Compact Remnants
+
+## Problem 1 — Massive Stars Do Not Just "Run Out of Fuel"
+
+<!-- Problem: Conceptual / Connection / O→M→I / Tools: Energy, Model-Inversion, Uncertainty/Assumptions / ⭐⭐ -->
+
+**Restatement:** Explain why core-collapse supernovae require more than the phrase "the star ran out of fuel."
+
+**Key insight:** The important failure is the loss of pressure support in an iron-group core. Massive stars keep igniting new fuels until ordinary fusion stops being an energy source.
+
+**Answer:**
+
+For part (a), the statement is incomplete because massive stars do not simply burn one fuel and stop. After core hydrogen exhaustion, a high-mass star can ignite helium, carbon, neon, oxygen, and silicon in successive stages. These stages build an onion-shell structure, with lighter fuels in outer shells and iron-group nuclei collecting near the center. The crisis happens when the core becomes dominated by iron-group material and can no longer gain pressure-supporting energy from ordinary fusion.
+
+For part (b), iron-group nuclei sit near the peak of the binding-energy-per-nucleon curve. Fusion releases energy only when the final nuclei are more tightly bound per nucleon than the initial nuclei. For nuclei lighter than the iron group, fusion can usually move matter upward on that curve. Past the iron-group peak, further fusion is endothermic, so it removes energy instead of supplying it.
+
+For part (c), electron capture removes electrons that were helping provide degeneracy pressure:
+
+$$
+p + e^- \rightarrow n + \nu_e.
+$$
+
+Photodisintegration uses energetic photons to break iron-group nuclei apart, which absorbs thermal energy. Both processes reduce pressure support, so gravity wins faster rather than more slowly.
+
+For part (d), a better causal chain is: a massive star burns through successive fuels and builds an iron-group core. Iron-group fusion no longer supplies net energy, so the core relies on degeneracy pressure while it grows. When the core becomes unstable near an effective Chandrasekhar mass, electron capture and photodisintegration reduce support. The core collapses, releases gravitational energy, forms a compact remnant, and drives a supernova that ejects enriched material.
+
+**Common misconception:** "Out of fuel" sounds like the star quietly empties a tank. The real story is a support failure in a degenerate iron core.
+
+---
+
+## Problem 2 — Collapse Timescale and Supernova Energy Budget
+
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Dimensional, Unit-Conversion, Order-of-Magnitude, Energy / ⭐⭐ -->
+
+**Given:**
+$$
+\bar{\rho} = 1.0 \times 10^{10}~\text{g/cm}^3,
+\qquad
+M = 1.4\,M_\odot,
+\qquad
+R = 10~\text{km}
+$$
+$$
+G = 6.674 \times 10^{-8}~\text{cm}^3\,\text{g}^{-1}\,\text{s}^{-2},
+\qquad
+M_\odot = 2.0 \times 10^{33}~\text{g}
+$$
+
+**Find:** The dynamical timescale, the gravitational energy scale, and the photon-to-neutrino energy ratio.
+
+**Equations:**
+$$
+\tau_{\text{dyn}} \sim \frac{1}{\sqrt{G\bar{\rho}}},
+\qquad
+\Delta E_{\text{grav}} \sim \frac{GM^2}{R}
+$$
+
+**Assumption:** This is an order-of-magnitude core-collapse estimate. Real supernova simulations require detailed equations of state, neutrino transport, and multidimensional fluid motion.
+
+**Steps:**
+
+For part (a),
+$$
+\tau_{\text{dyn}}
+\sim
+\frac{1}{\sqrt{
+\left(6.674 \times 10^{-8}~\text{cm}^3\,\text{g}^{-1}\,\text{s}^{-2}\right)
+\left(1.0 \times 10^{10}~\text{g/cm}^3\right)
+}}.
+$$
+
+The units inside the square root are
+$$
+\left(\text{cm}^3\,\text{g}^{-1}\,\text{s}^{-2}\right)
+\left(\text{g}\,\text{cm}^{-3}\right)
+=
+\text{s}^{-2},
+$$
+so the final result has units of seconds.
+
+Now evaluate:
+$$
+G\bar{\rho}
+=
+6.674 \times 10^2~\text{s}^{-2}.
+$$
+
+$$
+\tau_{\text{dyn}}
+\sim
+\frac{1}{\sqrt{6.674 \times 10^2~\text{s}^{-2}}}
+\approx
+3.9 \times 10^{-2}~\text{s}.
+$$
+
+$$
+\boxed{\tau_{\text{dyn}} \approx 0.04~\text{s}}
+$$
+
+For part (b), convert the mass:
+$$
+M = 1.4\,M_\odot
+\left(\frac{2.0 \times 10^{33}~\text{g}}{1\,M_\odot}\right)
+=
+2.8 \times 10^{33}~\text{g}.
+$$
+
+Convert the radius:
+$$
+R =
+10~\text{km}
+\left(\frac{10^5~\text{cm}}{1~\text{km}}\right)
+=
+1.0 \times 10^6~\text{cm}.
+$$
+
+For part (c),
+$$
+\Delta E_{\text{grav}}
+\sim
+\frac{
+\left(6.674 \times 10^{-8}~\text{cm}^3\,\text{g}^{-1}\,\text{s}^{-2}\right)
+\left(2.8 \times 10^{33}~\text{g}\right)^2
+}
+{1.0 \times 10^6~\text{cm}}.
+$$
+
+$$
+\Delta E_{\text{grav}}
+\sim
+\frac{
+\left(6.674 \times 10^{-8}\right)
+\left(7.84 \times 10^{66}\right)
+}
+{1.0 \times 10^6}
+~\text{g}\,\text{cm}^2\,\text{s}^{-2}.
+$$
+
+$$
+\Delta E_{\text{grav}}
+\sim
+5.2 \times 10^{53}~\text{erg}.
+$$
+
+$$
+\boxed{\Delta E_{\text{grav}} \sim 5 \times 10^{53}~\text{erg}}
+$$
+
+For part (d),
+$$
+\frac{E_{\text{light}}}{E_\nu}
+=
+\frac{10^{49}~\text{erg}}{3\times10^{53}~\text{erg}}
+=
+\frac{1}{3}\times10^{-4}
+\approx
+3.3\times10^{-5}.
+$$
+
+$$
+\boxed{\frac{E_{\text{light}}}{E_\nu} \approx 3\times10^{-5}}
+$$
+
+**Unit check:** The collapse energy has units
+$$
+\frac{
+\left(\text{cm}^3\,\text{g}^{-1}\,\text{s}^{-2}\right)\text{g}^2
+}{\text{cm}}
+=
+\text{g}\,\text{cm}^2\,\text{s}^{-2}
+=
+\text{erg}.
+$$
+
+**Sanity check:** The collapse time is much less than a second, as expected for a core that has lost pressure support. The energy is a few $\times10^{53}~\text{erg}$, matching the scale quoted in the reading. The visible-light fraction is tiny, so "bright" does not mean "energetically dominant."
+
+**Answer:** A core-collapse supernova is visually spectacular because photons are easy for us to detect and can briefly outshine a galaxy. Energetically, however, neutrinos dominate; visible light is only a small observational window into a much larger gravitational-energy release.
+
+---
+
+## Problem 3 — Compact Remnant Decision Tree
+
+<!-- Problem: Synthesis / Connection / O→M→I / Tools: Scaling/Ratio, Model-Inversion, Uncertainty/Assumptions / ⭐⭐ -->
+
+**Restatement:** Classify three compact objects using mass, size, pulses, X-rays, and compact-object mass limits.
+
+**Key elements:** A complete answer should distinguish the observed evidence from the model used to interpret it.
+
+**Sample response:**
+
+For **Object A**, the observable is an Earth-sized compact object with mass $0.8\,M_\odot$ and no fusion. The model is a degenerate stellar remnant below the Chandrasekhar mass. The inference is a **white dwarf**. Its mass is comfortably below $M_{\text{Ch}} \approx 1.4\,M_\odot$, and an Earth-sized radius is the right scale for a white dwarf, not a neutron star or black hole.
+
+For **Object B**, the observable is a source in a supernova remnant producing regular radio pulses every $0.033~\text{s}$. The model is the pulsar lighthouse model: a rotating magnetized neutron star whose beam sweeps across Earth. The inference is a **neutron star**. A normal star cannot rotate that rapidly without flying apart, and the supernova-remnant context points to a collapsed massive-star core.
+
+For **Object C**, the observable is an unseen $6\,M_\odot$ companion in an X-ray binary, with accretion-powered X-rays and no evidence for bursts from a solid surface. The model is compact-object classification by mass limits and accretion evidence. The inference is a **black hole**.
+
+For part (d), Object C is unlikely to be a white dwarf because $6\,M_\odot$ is far above the Chandrasekhar limit:
+$$
+6\,M_\odot > 1.4\,M_\odot.
+$$
+
+For part (e), Object C is unlikely to be a stable neutron star because it is above the course-level TOV dividing value:
+$$
+6\,M_\odot > 2.5\,M_\odot.
+$$
+
+If no known pressure support can hold a stable neutron star at that mass, the black-hole model is favored.
+
+For part (f), one assumption is that the measured companion mass is reliable and not strongly biased by inclination or other binary-model uncertainties. Another assumption is that the actual TOV limit is well below $6\,M_\odot$, which is very plausible but still rooted in uncertain dense-matter physics.
+
+**Grading guidance:** Full credit requires all three classifications plus an explicit observe → model → infer chain. Partial credit is appropriate if the object names are correct but the reasoning is only listed as facts.
+
+---
+
+## Part B — Galaxies as Ecosystems and Dynamical Evidence
+
+## Problem 4 — A Galaxy Image Is Evidence
+
+<!-- Problem: Conceptual / Connection / O→M→I / Tools: Data/Graph, Model-Inversion / ⭐ -->
+
+**Restatement:** Interpret multiwavelength images as complementary evidence about galaxy components.
+
+**Key insight:** Wavelength is a physical filter. Different bands reveal different ingredients, not different "realities."
+
+**Answer:**
+
+For part (a), optical light reveals much of the stellar disk and highlights young blue stars, while dust lanes appear as dark absorbing structures. Infrared light reveals warm dust and embedded star-forming regions because dust absorbs shorter-wavelength light and re-radiates in the infrared. The 21-cm radio line traces neutral hydrogen gas, including gas that can extend beyond the bright stellar disk. X-rays trace very hot gas and energetic processes, including accretion near an active galactic nucleus.
+
+For part (b), none of these images is the full galaxy by itself because each wavelength emphasizes a different physical component. A galaxy contains stars, gas, dust, plasma, compact remnants, dark matter, and feedback. No single observing band captures all of those ingredients.
+
+For part (c), one observe → model → infer chain is:
+
+**Observable:** blue clumps, dust lanes, infrared emission, extended radio gas, and central X-rays.  
+**Model:** galaxies are ecosystems where gas cools, forms stars, gets enriched, heated, and rearranged by stellar and black-hole feedback.  
+**Inference:** this galaxy likely contains ongoing star formation, a cold-gas reservoir, dust-embedded young regions, and energetic central feedback that can influence future star formation.
+
+**Common misconception:** A multiwavelength view is not just a prettier picture. It is a way to separate physical components.
+
+---
+
+## Problem 5 — A Flat Rotation Curve Is Not an Empty Galaxy
+
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Unit-Conversion, Scaling/Ratio, Model-Inversion / ⭐⭐ -->
+
+**Given:**
+$$
+v = 200~\text{km/s},
+\qquad
+r_1 = 10~\text{kpc},
+\qquad
+r_2 = 30~\text{kpc}
+$$
+$$
+G = 6.674 \times 10^{-8}~\text{cm}^3\,\text{g}^{-1}\,\text{s}^{-2},
+\qquad
+1~\text{kpc}=3.086\times10^{21}~\text{cm}
+$$
+
+**Find:** $M(<r_1)$, $M(<r_2)$, and the physical meaning of the flat rotation curve.
+
+**Equation:**
+$$
+M(<r) = \frac{rv^2}{G}
+$$
+
+**Assumption:** This uses the circular-speed enclosed-mass estimate. Real galaxy disks require more detailed modeling, but this captures the essential inference.
+
+**Steps:**
+
+For part (a), convert the speed:
+$$
+v =
+200~\text{km/s}
+\left(\frac{10^5~\text{cm}}{1~\text{km}}\right)
+=
+2.00 \times 10^7~\text{cm/s}.
+$$
+
+Convert the radii:
+$$
+r_1 =
+10~\text{kpc}
+\left(\frac{3.086\times10^{21}~\text{cm}}{1~\text{kpc}}\right)
+=
+3.086\times10^{22}~\text{cm}.
+$$
+
+$$
+r_2 =
+30~\text{kpc}
+\left(\frac{3.086\times10^{21}~\text{cm}}{1~\text{kpc}}\right)
+=
+9.258\times10^{22}~\text{cm}.
+$$
+
+For part (b),
+$$
+M(<r_1)
+=
+\frac{
+\left(3.086\times10^{22}~\text{cm}\right)
+\left(2.00\times10^7~\text{cm/s}\right)^2
+}
+{6.674\times10^{-8}~\text{cm}^3\,\text{g}^{-1}\,\text{s}^{-2}}.
+$$
+
+$$
+M(<r_1)
+=
+\frac{
+\left(3.086\times10^{22}\right)
+\left(4.00\times10^{14}\right)
+}
+{6.674\times10^{-8}}
+~\text{g}.
+$$
+
+$$
+M(<r_1)
+\approx
+1.85\times10^{44}~\text{g}.
+$$
+
+Convert to solar masses:
+$$
+1.85\times10^{44}~\text{g}
+\left(\frac{1\,M_\odot}{2.0\times10^{33}~\text{g}}\right)
+=
+9.25\times10^{10}\,M_\odot.
+$$
+
+$$
+\boxed{M(<10~\text{kpc}) \approx 9.3\times10^{10}\,M_\odot}
+$$
+
+For part (c), because $v$ is the same and $r_2 = 3r_1$, the mass should be three times larger. Calculating directly:
+$$
+M(<r_2)
+=
+\frac{
+\left(9.258\times10^{22}~\text{cm}\right)
+\left(2.00\times10^7~\text{cm/s}\right)^2
+}
+{6.674\times10^{-8}~\text{cm}^3\,\text{g}^{-1}\,\text{s}^{-2}}
+\approx
+5.55\times10^{44}~\text{g}.
+$$
+
+$$
+5.55\times10^{44}~\text{g}
+\left(\frac{1\,M_\odot}{2.0\times10^{33}~\text{g}}\right)
+=
+2.78\times10^{11}\,M_\odot.
+$$
+
+$$
+\boxed{M(<30~\text{kpc}) \approx 2.8\times10^{11}\,M_\odot}
+$$
+
+For part (d),
+$$
+\frac{M(<r_2)}{M(<r_1)}
+=
+\frac{2.78\times10^{11}\,M_\odot}{9.25\times10^{10}\,M_\odot}
+\approx
+3.0.
+$$
+
+$$
+\boxed{\text{The enclosed mass increases by a factor of }3.}
+$$
+
+**Unit check:**
+$$
+\frac{
+\text{cm}\left(\text{cm/s}\right)^2
+}
+{\text{cm}^3\,\text{g}^{-1}\,\text{s}^{-2}}
+=
+\frac{\text{cm}^3\,\text{s}^{-2}}{\text{cm}^3\,\text{g}^{-1}\,\text{s}^{-2}}
+=
+\text{g}.
+$$
+
+**Sanity check:** Since the speed stays constant while the radius triples, $M(<r)$ should triple. The numbers do exactly that.
+
+**Answer:** A Solar-System-like mass distribution would have most of the mass concentrated near the center, so orbital speed would fall at large radius. A flat rotation curve means high speeds persist far from the bright center, so the enclosed mass keeps increasing. The natural inference is an extended dark matter halo.
+
+---
+
+## Problem 6 — Hidden Mass, Compact Engines, and Feedback
+
+<!-- Problem: Synthesis / Connection / O→M→I / Tools: Data/Graph, Model-Inversion, Uncertainty/Assumptions / ⭐⭐ -->
+
+**Restatement:** Distinguish compact central black holes from extended dark matter halos, then connect AGN feedback to galaxy evolution.
+
+**Key elements:** A complete answer should use two different mass-inference chains and should not treat all unseen mass as the same physical object.
+
+**Sample response:**
+
+For part (a), S-star orbits near the Milky Way's center provide direct dynamical evidence. The observable is the motion of stars on tight orbits near the Galactic center. The model is gravity: orbital speeds and periods reveal the mass enclosed within the orbit. The inference is that about four million solar masses are packed into a very small region, which supports the supermassive black hole model for Sagittarius A*.
+
+For part (b), galaxy rotation curves provide a different kind of dynamical evidence. The observable is that gas and stars far from the center of spiral galaxies often orbit at roughly constant speed. The model is circular motion under gravity, summarized by $M(<r)=rv^2/G$. The inference is that the enclosed mass keeps increasing with radius, even where the visible light fades. That points to an extended dark matter halo.
+
+For part (c), a supermassive black hole cannot be the dark matter halo of a spiral galaxy because the geometry and dynamics are different. A central black hole is compact and dominates only very near the galaxy center. A dark matter halo must be extended over tens to hundreds of kiloparsecs to keep rotation speeds high at large radius.
+
+For part (d), an AGN shines because gas outside the event horizon heats up as it accretes onto the black hole. The black hole itself does not emit light from inside the horizon, but the surrounding accretion disk, jets, and outflows can inject energy and momentum into the galaxy. That feedback can heat gas, expel gas, or stir the interstellar medium, changing the future star-formation rate.
+
+For part (e), this fits the ecosystem model because a galaxy is not just stars sitting in space. Gas supply, feedback, gravity, compact remnants, and dark matter all affect its future. Stars and black holes can return energy to the gas, while dark matter shapes the gravitational environment in which gas collects and galaxies grow.
+
+**Grading guidance:** Full credit requires distinguishing compact central mass from extended halo mass. Treating "black holes" as the explanation for galaxy rotation curves should lose credit.
+
+---
+
+## Part C — Expansion, Early-Universe Relics, and the Final Synthesis
+
+## Problem 7 — Expansion from Distances and Redshifts
+
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Scaling/Ratio, Unit-Conversion, Model-Inversion / ⭐⭐ -->
+
+**Given:**
+$$
+H_0 = 70~\text{km/s/Mpc},
+\qquad
+d = 120~\text{Mpc}
+$$
+$$
+\lambda_{\text{emit}} = 500~\text{nm},
+\qquad
+\lambda_{\text{obs}} = 1500~\text{nm},
+\qquad
+a_0 = 1
+$$
+
+**Find:** Recession speed, redshift, emitted scale factor, and interpretation.
+
+**Equations:**
+$$
+v = H_0 d,
+\qquad
+1+z = \frac{\lambda_{\text{obs}}}{\lambda_{\text{emit}}},
+\qquad
+1+z = \frac{a_0}{a_{\text{emit}}}
+$$
+
+**Steps:**
+
+For part (a),
+$$
+v =
+\left(70~\frac{\text{km/s}}{\text{Mpc}}\right)
+\left(120~\text{Mpc}\right).
+$$
+
+The Mpc units cancel:
+$$
+v =
+8400~\text{km/s}.
+$$
+
+$$
+\boxed{v \approx 8.4\times10^3~\text{km/s}}
+$$
+
+For part (b), Hubble's law describes the large-scale expansion pattern after local gravitational motions average out. It is not appropriate for the Moon, Solar System, or Local Group because those systems are gravitationally bound. Their motions are dominated by local gravity, not by the smooth expansion of the universe.
+
+For part (c),
+$$
+1+z =
+\frac{\lambda_{\text{obs}}}{\lambda_{\text{emit}}}
+=
+\frac{1500~\text{nm}}{500~\text{nm}}
+=
+3.
+$$
+
+Therefore,
+$$
+z = 3 - 1 = 2.
+$$
+
+$$
+\boxed{1+z = 3,\qquad z = 2}
+$$
+
+For part (d),
+$$
+1+z = \frac{a_0}{a_{\text{emit}}}.
+$$
+
+With $a_0=1$ and $1+z=3$,
+$$
+3 = \frac{1}{a_{\text{emit}}},
+$$
+so
+$$
+a_{\text{emit}} = \frac{1}{3}.
+$$
+
+$$
+\boxed{a_{\text{emit}} = \frac{1}{3}}
+$$
+
+**Unit check:** Hubble's law gives
+$$
+\left(\frac{\text{km/s}}{\text{Mpc}}\right)\left(\text{Mpc}\right)
+=
+\text{km/s}.
+$$
+The redshift calculation is a ratio of wavelengths, so it is dimensionless.
+
+**Sanity check:** Observed wavelength is three times the emitted wavelength, so the universe being one-third its present scale at emission is exactly the expected scale-factor interpretation.
+
+**Answer:** The line has been stretched by a factor of 3. If today's scale factor is 1, then the universe had scale factor $1/3$ when the light was emitted. This calculation does not by itself give an exact lookback time; converting redshift to time requires a cosmological model with matter, radiation, dark energy, and the expansion history.
+
+---
+
+## Problem 8 — Two Relics of the Hot Early Universe
+
+<!-- Problem: Conceptual / Connection / O→M→I / Tools: Model-Inversion, Uncertainty/Assumptions / ⭐⭐ -->
+
+**Restatement:** Build evidence chains for the CMB and Big Bang nucleosynthesis.
+
+**Key insight:** These are early-universe relics, not products of ordinary stellar evolution.
+
+**Answer:**
+
+For the **cosmic microwave background**:
+
+**Observable:** Microwave radiation arrives from every direction with an almost uniform temperature, plus tiny fluctuations.  
+**Model:** The universe was once hot, dense, ionized, and opaque. As it expanded, it cooled until electrons and nuclei combined into neutral atoms, allowing photons to travel freely. Expansion then stretched those photons into microwave wavelengths.  
+**Inference:** The CMB is relic radiation from an early hot phase of the universe, and its small fluctuations record the seeds of later structure.
+
+For **Big Bang nucleosynthesis**:
+
+**Observable:** The universe is dominated by hydrogen and contains a substantial abundance of helium, with small amounts of other light nuclei.  
+**Model:** During the first few minutes, the hot early universe was dense and hot enough for nuclear reactions to assemble light nuclei. As expansion cooled and diluted the universe, those reactions froze out.  
+**Inference:** Most hydrogen and helium were produced in the early universe, before the first stars formed.
+
+For part (d), this evidence is different from stellar evidence because it points to conditions before ordinary stars existed. Stars build many heavier elements, including carbon, oxygen, silicon, and iron-group nuclei. The CMB and Big Bang nucleosynthesis instead tell us about the hot, dense early universe that supplied the original hydrogen and helium reservoir from which later stars and galaxies formed.
+
+**Common misconception:** "Old light" alone is not the CMB argument. The CMB matters because its spectrum, uniformity, and fluctuations match a physical model of an expanding, cooling early universe.
+
+---
+
+## Problem 9 — Final Capstone: The Matter-Cycle of the Universe
+
+<!-- Problem: Synthesis / Connection / O→M→I / Tools: Data/Graph, Model-Inversion, Uncertainty/Assumptions / ⭐⭐⭐ -->
+
+**Restatement:** Connect early-universe matter, stellar evolution, galaxies, dark matter, and expansion into one final synthesis.
+
+**Key elements:** A complete answer should include Big Bang nucleosynthesis, stellar nucleosynthesis, stellar death, galaxy ecosystems, dark matter structure, cosmological expansion, and an explicit observe → model → infer sentence.
+
+**Sample response:**
+
+Most hydrogen and helium in the universe were made before stars existed. In the hot early universe, protons and neutrons could briefly combine into light nuclei; as the universe expanded and cooled, Big Bang nucleosynthesis froze out. That left a universe dominated by hydrogen, with substantial helium and trace light nuclei. The CMB is the other major early-universe relic: radiation released when the universe became transparent and later stretched into microwave wavelengths by cosmic expansion.
+
+Stars then changed that original chemical mixture. Main-sequence stars fuse hydrogen into helium, while later stellar stages build carbon, oxygen, silicon, and iron-group elements. Massive stars can develop onion-shell structures and iron-group cores; when pressure support fails, core collapse creates a supernova and a compact remnant. Supernovae, stellar winds, AGB stars, and neutron-rich events such as neutron-star mergers return heavy elements and energy to the surrounding gas. That enriched material becomes part of the interstellar medium from which later stars and planets form.
+
+Galaxies are the environments where this recycling happens. Gas cools, collapses, forms stars, and is reshaped by radiation, winds, supernovae, and AGN feedback. But galaxies are not organized by visible matter alone. Rotation curves, gravitational lensing, cluster collisions, and the cosmic web all point to dark matter: mass that gravitates but does not emit, absorb, or scatter enough light for us to image directly. Dark matter provides much of the gravitational scaffolding in which ordinary gas collects, cools, and forms luminous galaxies.
+
+Cosmology ties the whole story to spacetime. Hubble's law shows that distant galaxies participate in a large-scale expansion pattern. Cosmological redshift tells us that light has been stretched as the universe expanded, so high-redshift galaxies are also lookback-time records. The CMB and light-element abundances point back to a hot dense beginning, while galaxies and stars show how structure and chemistry developed afterward. We observe redshifts, element abundances, galaxy motions, multiwavelength emission, and relic radiation; model gravity, nuclear physics, feedback, and expanding spacetime; and infer a universe that evolved from hot early plasma into stars, galaxies, compact remnants, dark matter structure, and chemically enriched worlds.
+
+**Grading guidance:** Full credit requires synthesis, not a list. A strong response uses causal connectors: because, therefore, as a result, and this implies. Partial credit is appropriate for correct isolated facts that do not yet form an inference chain.

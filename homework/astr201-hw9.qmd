@@ -1,0 +1,277 @@
+---
+title: "Homework 9"
+subtitle: "Final Synthesis — Stellar Death, Galaxies, Dark Matter, and Cosmology"
+author: "Dr. Anna Rosen"
+course: ASTR 201
+module: "Module 3 Lectures 9–10 + Module 4"
+lectures: "Module 3 Lectures 9–10; Module 4 Lectures 1–3"
+math-level: symbolic_with_interpretation
+draft: false
+estimated-time: "4–6 hours"
+due: "Tuesday, May 5, 2026 at 11:59 pm"
+submission: "Canvas; upload a single clearly scanned PDF or a legible PDF export"
+format:
+  html:
+    toc: true
+  pdf:
+    toc: false
+    geometry: margin=1in
+    fontsize: 11pt
+---
+
+{{< hwmeta >}}
+
+## Learning Objectives
+
+- Explain why high-mass stars build iron cores, collapse, and seed later generations with heavy elements.
+- Use compact-object limits, compactness, and evidence chains to distinguish white dwarfs, neutron stars, and black holes.
+- Interpret galaxy images and multiwavelength observations as evidence for gas, dust, star formation, feedback, and galaxy history.
+- Use circular motion to infer enclosed mass and explain why flat rotation curves imply extended dark matter halos.
+- Use Hubble's law and cosmological redshift to connect distance, expansion, wavelength stretch, and scale factor.
+- Connect the CMB, Big Bang nucleosynthesis, stellar nucleosynthesis, galaxies, dark matter, and cosmic expansion into one coherent observe → model → infer story.
+
+## Concept Throughline
+
+- **Massive stars do not simply disappear when they die.** Their collapse creates compact remnants and ejects enriched gas back into galaxies.
+- **Compact remnants are inferred from evidence.** Pulses, orbits, X-rays, gravitational waves, and compactness all translate observations into physical models.
+- **Galaxies are ecosystems.** Gas becomes stars, stars return energy and heavy elements, and feedback changes the next generation of star formation.
+- **Motion weighs what light cannot show.** Rotation curves, stellar orbits, lensing, and large-scale structure reveal hidden mass.
+- **Cosmology turns light into history.** Redshift, the CMB, and light-element abundances let us infer the evolution of spacetime and matter.
+
+## Prerequisites
+
+- Module 3 Readings 9–10
+- Module 4 Readings 1–3
+- Ratio methods, CGS unit conversion, and order-of-magnitude reasoning
+- Observable → model → inference reasoning in complete sentences
+
+## Relevant Sources (Module-Based)
+
+- [Module 3 (reading): Lecture 9 — The Death of Giants: High-Mass Evolution and Supernovae](https://astrobytes-edu.github.io/astr201-sp26/modules/module-03/readings/lecture-09-high-mass-evolution-supernovae.html)
+- [Module 3 (reading): Lecture 10 — Neutron Stars and Black Holes](https://astrobytes-edu.github.io/astr201-sp26/modules/module-03/readings/lecture-10-neutron-stars-black-holes.html)
+- [Module 4 (reading): Lecture 1 — Galaxies as Ecosystems](https://astrobytes-edu.github.io/astr201-sp26/modules/module-04/readings/lecture-01-galaxies-as-ecosystems.html)
+- [Module 4 (reading): Lecture 2 — The Dynamical Universe](https://astrobytes-edu.github.io/astr201-sp26/modules/module-04/readings/lecture-02-the-dynamical-universe.html)
+- [Module 4 (reading): Lecture 3 — The Universe as an Evolving Spacetime](https://astrobytes-edu.github.io/astr201-sp26/modules/module-04/readings/lecture-03-evolving-spacetime.html)
+
+::: {.callout-note}
+**Before you start:** Review the [Homework Guidelines](hw-tips.qmd) for required format and tools.
+:::
+
+::: {.callout-tip}
+**HW9 note:** This is the final synthesis homework. It is not trying to test every fact from the last part of the course. It is asking you to show that you can connect observations to models, models to inferences, and local astrophysics to cosmic history.
+:::
+
+::: {.callout-note}
+Use these values and relations unless a problem states otherwise:
+
+- Dynamical timescale:
+  $$
+  \tau_{\text{dyn}} \sim \frac{1}{\sqrt{G\bar{\rho}}}
+  $$
+- Gravitational energy released in collapse, as an order-of-magnitude estimate:
+  $$
+  \Delta E_{\text{grav}} \sim \frac{G M^2}{R}
+  $$
+- Schwarzschild-radius scaling:
+  $$
+  R_s \approx 3.0~\text{km}\left(\frac{M}{M_\odot}\right)
+  $$
+- Enclosed mass from circular speed:
+  $$
+  M(<r) = \frac{rv^2}{G}
+  $$
+- Hubble's law at low redshift:
+  $$
+  v = H_0 d
+  $$
+- Cosmological redshift and scale factor:
+  $$
+  1+z = \frac{\lambda_{\text{obs}}}{\lambda_{\text{emit}}}
+  =
+  \frac{a_0}{a_{\text{emit}}}
+  $$
+- Constants:
+  $$
+  G = 6.674 \times 10^{-8}~\text{cm}^3\,\text{g}^{-1}\,\text{s}^{-2},
+  \quad
+  c = 3.0 \times 10^{10}~\text{cm/s},
+  \quad
+  M_\odot = 2.0 \times 10^{33}~\text{g}
+  $$
+  $$
+  1~\text{km} = 10^5~\text{cm},
+  \quad
+  1~\text{kpc} = 3.086 \times 10^{21}~\text{cm},
+  \quad
+  H_0 = 70~\text{km/s/Mpc}
+  $$
+- Compact-object reference values:
+  $$
+  M_{\text{Ch}} \approx 1.4\,M_\odot,
+  \qquad
+  M_{\text{TOV}} \approx 2.5\,M_\odot
+  $$
+
+Treat $M_{\text{TOV}}$ as a course-level, order-of-magnitude dividing value. The exact neutron-star maximum mass depends on dense-matter physics and general relativity.
+:::
+
+::: {.callout-note}
+**Required reporting format:**
+
+- Every numeric answer must include units.
+- Show the identity-trick logic for unit conversions instead of skipping straight to a converted number.
+- Include a one-line sanity check for each calculation problem.
+- For conceptual and synthesis problems, write in complete sentences and name the key physical idea explicitly.
+- When a problem asks for an observe → model → infer chain, explicitly label all three parts.
+- When you use a simplified relation, state at least one assumption or limitation.
+:::
+
+---
+
+This homework is one connected scientific story. Massive stars enrich galaxies when they die. Compact remnants reveal themselves through motion, pulses, X-rays, and gravitational waves. Galaxies recycle gas into new stars while gravity exposes hidden mass. Cosmology then zooms out: the hydrogen and helium reservoir came from the early universe, while later stars and galaxies wrote the rest of the chemical and dynamical history.
+
+## Problems (9 total)
+
+### Part A — Stellar Death and Compact Remnants
+
+<!-- Problem: Conceptual / Connection / O→M→I / Tools: Energy, Model-Inversion, Uncertainty/Assumptions / ⭐⭐ -->
+### Problem 1 — Massive Stars Do Not Just "Run Out of Fuel"
+
+A student says, "A massive star goes supernova because it runs out of fuel, so the core just explodes."
+
+- (a) Explain why this statement is incomplete. Your answer should mention onion-shell burning and the iron-group core.
+- (b) Explain why iron-group nuclei mark the endpoint of ordinary exothermic fusion in stellar cores.
+- (c) Explain why electron capture and photodisintegration make collapse worse once the iron core becomes unstable.
+- (d) In 3–5 sentences, rewrite the student's statement as a more accurate causal chain from massive-star evolution to core collapse.
+
+---
+
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Dimensional, Unit-Conversion, Order-of-Magnitude, Energy / ⭐⭐ -->
+### Problem 2 — Collapse Timescale and Supernova Energy Budget
+
+Use an order-of-magnitude model for a collapsing iron core.
+
+Take:
+
+- collapsing-core mean density: $\bar{\rho} = 1.0 \times 10^{10}~\text{g/cm}^3$
+- remnant mass: $M = 1.4\,M_\odot$
+- neutron-star radius: $R = 10~\text{km}$
+
+- (a) Use $\tau_{\text{dyn}} \sim 1/\sqrt{G\bar{\rho}}$ to estimate the collapse timescale in seconds.
+- (b) Convert $R = 10~\text{km}$ to cm and $M = 1.4\,M_\odot$ to g.
+- (c) Use $\Delta E_{\text{grav}} \sim GM^2/R$ to estimate the gravitational energy released.
+- (d) A representative core-collapse supernova releases about $3\times10^{53}~\text{erg}$ in neutrinos and about $10^{49}~\text{erg}$ in visible light. Compute the ratio $E_{\text{light}}/E_\nu$.
+- (e) Explain why a supernova can be visually spectacular even though photons carry only a tiny fraction of the total energy.
+
+---
+
+<!-- Problem: Synthesis / Connection / O→M→I / Tools: Scaling/Ratio, Model-Inversion, Uncertainty/Assumptions / ⭐⭐ -->
+### Problem 3 — Compact Remnant Decision Tree
+
+For each object below, identify the most likely compact-remnant model: **white dwarf**, **neutron star**, or **black hole**. For each case, state the observable evidence, the model you are applying, and the inference.
+
+- **Object A:** An Earth-sized compact object in a binary has mass $0.8\,M_\odot$ and no fusion.
+- **Object B:** A supernova remnant contains a source that produces extremely regular radio pulses every $0.033~\text{s}$.
+- **Object C:** An unseen companion in an X-ray binary has mass $6\,M_\odot$. There is strong X-ray emission from accreting gas, but no evidence for bursts from a solid surface.
+
+Then answer:
+
+- (d) Why is Object C unlikely to be a white dwarf?
+- (e) Why is Object C unlikely to be a stable neutron star, using the course-level TOV limit?
+- (f) State one assumption or uncertainty in this compact-remnant classification.
+
+---
+
+### Part B — Galaxies as Ecosystems and Dynamical Evidence
+
+<!-- Problem: Conceptual / Connection / O→M→I / Tools: Data/Graph, Model-Inversion / ⭐ -->
+### Problem 4 — A Galaxy Image Is Evidence
+
+Imagine observing the same nearby galaxy in four wavelength bands:
+
+- optical light shows a spiral disk with blue clumps and dark dust lanes;
+- infrared light shows warm dust and embedded star-forming regions;
+- 21-cm radio emission extends beyond the bright stellar disk;
+- X-ray emission appears from hot gas near a central active nucleus.
+
+- (a) For each wavelength band, identify one physical component or process it helps reveal.
+- (b) Explain why none of these images is the "real" galaxy by itself.
+- (c) In 3–5 sentences, build an observe → model → infer chain for this galaxy as an ecosystem.
+
+---
+
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Unit-Conversion, Scaling/Ratio, Model-Inversion / ⭐⭐ -->
+### Problem 5 — A Flat Rotation Curve Is Not an Empty Galaxy
+
+A spiral galaxy has a flat rotation curve with orbital speed $v = 200~\text{km/s}$ at both $r_1 = 10~\text{kpc}$ and $r_2 = 30~\text{kpc}$.
+
+- (a) Convert $v$ to $\text{cm/s}$, $r_1$ to cm, and $r_2$ to cm.
+- (b) Use $M(<r)=rv^2/G$ to compute the enclosed mass inside $r_1$ in grams and in $M_\odot$.
+- (c) Compute the enclosed mass inside $r_2$ in grams and in $M_\odot$.
+- (d) By what factor does the enclosed mass increase from $10~\text{kpc}$ to $30~\text{kpc}$?
+- (e) Explain why this is evidence for an extended dark matter halo rather than a Solar-System-like mass distribution.
+
+---
+
+<!-- Problem: Synthesis / Connection / O→M→I / Tools: Data/Graph, Model-Inversion, Uncertainty/Assumptions / ⭐⭐ -->
+### Problem 6 — Hidden Mass, Compact Engines, and Feedback
+
+Galaxies contain both dark matter halos and supermassive black holes, but these are not the same thing.
+
+- (a) Explain how S-star orbits near the Milky Way's center provide evidence for a compact central mass.
+- (b) Explain how galaxy rotation curves provide evidence for extended dark matter halos.
+- (c) Explain why a supermassive black hole cannot be the dark matter halo of a spiral galaxy.
+- (d) Explain how an active galactic nucleus can affect future star formation even though the black hole itself does not shine.
+- (e) In one paragraph, connect this problem back to the galaxy-as-ecosystem model.
+
+---
+
+### Part C — Expansion, Early-Universe Relics, and the Final Synthesis
+
+<!-- Problem: Calculation:Full / Application / O→M→I / Tools: Scaling/Ratio, Unit-Conversion, Model-Inversion / ⭐⭐ -->
+### Problem 7 — Expansion from Distances and Redshifts
+
+Use $H_0 = 70~\text{km/s/Mpc}$ for this problem.
+
+- (a) A galaxy is at distance $d = 120~\text{Mpc}$. Use Hubble's law to estimate its recession speed in $\text{km/s}$.
+- (b) Explain why Hubble's law is appropriate for large-scale galaxy samples but not for the Moon, the Solar System, or the bound Local Group.
+- (c) A spectral line emitted at $\lambda_{\text{emit}} = 500~\text{nm}$ is observed at $\lambda_{\text{obs}} = 1500~\text{nm}$. Compute $1+z$ and $z$.
+- (d) If $a_0 = 1$, compute $a_{\text{emit}}$.
+- (e) State in words what this redshift says about the scale of the universe when the light was emitted. Does this calculation by itself give an exact lookback time?
+
+---
+
+<!-- Problem: Conceptual / Connection / O→M→I / Tools: Model-Inversion, Uncertainty/Assumptions / ⭐⭐ -->
+### Problem 8 — Two Relics of the Hot Early Universe
+
+Build two observe → model → infer chains:
+
+- one for the **cosmic microwave background**;
+- one for **Big Bang nucleosynthesis** and the abundance of light elements.
+
+For each chain:
+
+- (a) State what is observed today.
+- (b) State the physical model that connects the observation to the early universe.
+- (c) State the inference about the early universe.
+- (d) Explain why this evidence is different from evidence produced by stars and stellar remnants.
+
+---
+
+<!-- Problem: Synthesis / Connection / O→M→I / Tools: Data/Graph, Model-Inversion, Uncertainty/Assumptions / ⭐⭐⭐ -->
+### Problem 9 — Final Capstone: The Matter-Cycle of the Universe
+
+Write a structured synthesis that connects the whole final arc of the course. Your response should be about 2–4 substantial paragraphs, or an equivalent clearly organized set of short sections.
+
+Your answer must include:
+
+- **Big Bang nucleosynthesis:** where most hydrogen and helium come from.
+- **Stellar nucleosynthesis:** where carbon, oxygen, silicon, iron-group elements, and many heavier elements come from.
+- **High-mass stellar death:** how supernovae and compact remnants return energy and enriched material to galaxies.
+- **Galaxies as ecosystems:** how gas, stars, dust, feedback, and recycling shape future star formation.
+- **Dark matter and structure:** why galaxies and the cosmic web require gravity from mass we do not see directly in ordinary light.
+- **Cosmological expansion:** how redshift, scale factor, and the CMB turn present-day observations into evidence for cosmic history.
+
+End with one sentence that explicitly uses the course throughline:
+
+**We observe ____, model ____, and infer ____.**
