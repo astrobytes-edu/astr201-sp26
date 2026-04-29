@@ -228,6 +228,7 @@ website:
       - section: "Homework"
         contents:
           - homework/index.qmd
+          - homework/astr201-hw9.qmd
           - homework/astr201-hw8.qmd
           - homework/solutions/astr201-hw8-solutions.qmd
           - homework/astr201-hw7.qmd
