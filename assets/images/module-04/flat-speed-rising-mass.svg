@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="720" viewBox="0 0 960 720" role="img" aria-labelledby="title desc">
+  <title id="title">Flat speed curve with rising enclosed mass</title>
+  <desc id="desc">Two-panel teaching plot. The top panel shows orbital speed staying nearly constant with radius. The bottom panel shows enclosed mass rising linearly with radius for the same flat speed curve.</desc>
+  <defs>
+    <style>
+      .bg { fill: #fbfaf7; }
+      .panel { fill: #ffffff; stroke: #d7d2c8; stroke-width: 2; }
+      .axis { stroke: #302d2a; stroke-width: 2.4; stroke-linecap: round; }
+      .grid { stroke: #e6e0d5; stroke-width: 1.2; }
+      .speed { fill: none; stroke: #1f77b4; stroke-width: 6; stroke-linecap: round; }
+      .mass { fill: none; stroke: #c43c39; stroke-width: 6; stroke-linecap: round; }
+      .dash { stroke-dasharray: 8 8; }
+      .label { fill: #302d2a; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 24px; font-weight: 650; }
+      .small { fill: #514d47; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 20px; }
+      .tiny { fill: #514d47; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 17px; }
+      .note-blue { fill: #eaf4fb; stroke: #1f77b4; stroke-width: 1.5; }
+      .note-red { fill: #fbeeed; stroke: #c43c39; stroke-width: 1.5; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="960" height="720"/>
+  <text x="480" y="54" text-anchor="middle" class="label">Flat speed does not mean flat mass</text>
+  <text x="480" y="86" text-anchor="middle" class="small">For M(&lt;r) = r v^2 / G, constant speed makes enclosed mass rise with radius.</text>
+
+  <rect class="panel" x="92" y="122" width="776" height="232" rx="10"/>
+  <rect class="panel" x="92" y="426" width="776" height="232" rx="10"/>
+
+  <!-- Top panel grid and axes -->
+  <g>
+    <line class="grid" x1="170" y1="174" x2="812" y2="174"/>
+    <line class="grid" x1="170" y1="236" x2="812" y2="236"/>
+    <line class="grid" x1="170" y1="298" x2="812" y2="298"/>
+    <line class="grid" x1="286" y1="152" x2="286" y2="314"/>
+    <line class="grid" x1="402" y1="152" x2="402" y2="314"/>
+    <line class="grid" x1="518" y1="152" x2="518" y2="314"/>
+    <line class="grid" x1="634" y1="152" x2="634" y2="314"/>
+    <line class="grid" x1="750" y1="152" x2="750" y2="314"/>
+    <line class="axis" x1="170" y1="314" x2="812" y2="314"/>
+    <line class="axis" x1="170" y1="314" x2="170" y2="152"/>
+    <path class="speed" d="M 188 213 C 280 205, 372 207, 464 206 S 648 207, 794 204"/>
+    <line class="speed dash" x1="188" y1="244" x2="794" y2="244" opacity="0.42"/>
+    <text x="116" y="228" text-anchor="middle" class="small" transform="rotate(-90 116 228)">orbital speed v</text>
+    <text x="491" y="344" text-anchor="middle" class="small">radius r</text>
+    <rect class="note-blue" x="552" y="168" width="248" height="44" rx="8"/>
+    <text x="676" y="197" text-anchor="middle" class="tiny">v(r) approx constant</text>
+  </g>
+
+  <!-- Bottom panel grid and axes -->
+  <g>
+    <line class="grid" x1="170" y1="478" x2="812" y2="478"/>
+    <line class="grid" x1="170" y1="540" x2="812" y2="540"/>
+    <line class="grid" x1="170" y1="602" x2="812" y2="602"/>
+    <line class="grid" x1="286" y1="456" x2="286" y2="618"/>
+    <line class="grid" x1="402" y1="456" x2="402" y2="618"/>
+    <line class="grid" x1="518" y1="456" x2="518" y2="618"/>
+    <line class="grid" x1="634" y1="456" x2="634" y2="618"/>
+    <line class="grid" x1="750" y1="456" x2="750" y2="618"/>
+    <line class="axis" x1="170" y1="618" x2="812" y2="618"/>
+    <line class="axis" x1="170" y1="618" x2="170" y2="456"/>
+    <path class="mass" d="M 188 598 L 794 474"/>
+    <line class="mass dash" x1="188" y1="598" x2="794" y2="598" opacity="0.32"/>
+    <text x="116" y="540" text-anchor="middle" class="small" transform="rotate(-90 116 540)">enclosed mass M(&lt;r)</text>
+    <text x="491" y="648" text-anchor="middle" class="small">radius r</text>
+    <rect class="note-red" x="544" y="518" width="264" height="44" rx="8"/>
+    <text x="676" y="547" text-anchor="middle" class="tiny">M(&lt;r) proportional to r</text>
+  </g>
+
+  <text x="176" y="688" class="tiny">Key idea: if speed stays high as radius grows, gravity requires more enclosed mass at larger radius.</text>
+</svg>

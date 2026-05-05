@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">Scale ladder from galaxies to the cosmic web</title>
+  <desc id="desc">A scale ladder diagram showing galaxy, group, cluster, filament, and cosmic web or void scales as increasingly large gravitational structures.</desc>
+  <defs>
+    <style>
+      .bg { fill: #fbfaf7; }
+      .title { fill: #17161a; font: 750 29px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      .subtitle { fill: #55515d; font: 500 17px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      .card { fill: #ffffff; stroke: #d8d2c8; stroke-width: 1.6; }
+      .label { fill: #17161a; font: 750 18px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      .small { fill: #55515d; font: 500 13.5px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      .thread { stroke: #257180; stroke-width: 6; fill: none; stroke-linecap: round; opacity: .75; }
+      .node { fill: #257180; stroke: #ffffff; stroke-width: 3; }
+      .node2 { fill: #655d8a; stroke: #ffffff; stroke-width: 3; }
+      .node3 { fill: #a35c7a; stroke: #ffffff; stroke-width: 3; }
+      .void { fill: none; stroke: #d7b56d; stroke-width: 3; stroke-dasharray: 8 8; opacity: .8; }
+      .arrow { stroke: #655d8a; stroke-width: 2.5; fill: none; marker-end: url(#arrowhead); }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M 0 0 L 10 4 L 0 8 z" fill="#655d8a"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="960" height="540"/>
+  <text x="480" y="44" text-anchor="middle" class="title">Large-scale structure is a hierarchy</text>
+  <text x="480" y="72" text-anchor="middle" class="subtitle">Galaxies live in groups, clusters, filaments, and voids shaped by gravity over cosmic time.</text>
+
+  <rect class="card" x="48" y="120" width="160" height="250" rx="16"/>
+  <rect class="card" x="228" y="120" width="160" height="250" rx="16"/>
+  <rect class="card" x="408" y="120" width="160" height="250" rx="16"/>
+  <rect class="card" x="588" y="120" width="160" height="250" rx="16"/>
+  <rect class="card" x="768" y="120" width="144" height="250" rx="16"/>
+
+  <text x="128" y="158" text-anchor="middle" class="label">Galaxy</text>
+  <circle class="node" cx="128" cy="236" r="28"/>
+  <path d="M 104 236 C 124 218, 144 218, 152 236 C 140 254, 116 254, 104 236" fill="none" stroke="#ffffff" stroke-width="3"/>
+  <text x="128" y="322" text-anchor="middle" class="small">stars, gas,</text>
+  <text x="128" y="342" text-anchor="middle" class="small">dark halo</text>
+
+  <text x="308" y="158" text-anchor="middle" class="label">Group</text>
+  <circle class="node" cx="278" cy="232" r="15"/><circle class="node2" cx="330" cy="220" r="20"/><circle class="node3" cx="320" cy="276" r="10"/>
+  <text x="308" y="322" text-anchor="middle" class="small">few large galaxies</text>
+  <text x="308" y="342" text-anchor="middle" class="small">plus dwarfs</text>
+
+  <text x="488" y="158" text-anchor="middle" class="label">Cluster</text>
+  <g>
+    <circle class="node" cx="458" cy="212" r="9"/><circle class="node2" cx="494" cy="218" r="12"/><circle class="node3" cx="516" cy="256" r="8"/>
+    <circle class="node" cx="464" cy="270" r="10"/><circle class="node2" cx="528" cy="222" r="7"/><circle class="node" cx="490" cy="286" r="8"/>
+  </g>
+  <ellipse cx="492" cy="248" rx="70" ry="58" fill="#a35c7a" opacity=".16"/>
+  <text x="488" y="322" text-anchor="middle" class="small">galaxies, hot gas,</text>
+  <text x="488" y="342" text-anchor="middle" class="small">dark matter</text>
+
+  <text x="668" y="158" text-anchor="middle" class="label">Filament</text>
+  <path class="thread" d="M 612 282 C 638 220, 682 202, 724 176"/>
+  <circle class="node" cx="622" cy="260" r="10"/><circle class="node2" cx="652" cy="230" r="8"/><circle class="node3" cx="686" cy="206" r="11"/><circle class="node" cx="718" cy="180" r="8"/>
+  <text x="668" y="322" text-anchor="middle" class="small">galaxies trace</text>
+  <text x="668" y="342" text-anchor="middle" class="small">matter bridges</text>
+
+  <text x="840" y="158" text-anchor="middle" class="label">Web + void</text>
+  <path class="thread" d="M 792 214 C 830 176, 868 196, 896 164"/>
+  <path class="thread" d="M 792 294 C 832 252, 872 284, 900 244"/>
+  <path class="thread" d="M 812 186 C 844 236, 856 282, 888 322"/>
+  <ellipse class="void" cx="850" cy="246" rx="44" ry="62"/>
+  <circle class="node" cx="806" cy="202" r="7"/><circle class="node2" cx="842" cy="184" r="7"/><circle class="node3" cx="884" cy="260" r="8"/>
+  <text x="840" y="322" text-anchor="middle" class="small">filaments frame</text>
+  <text x="840" y="342" text-anchor="middle" class="small">large voids</text>
+
+  <path class="arrow" d="M 208 246 H 228"/>
+  <path class="arrow" d="M 388 246 H 408"/>
+  <path class="arrow" d="M 568 246 H 588"/>
+  <path class="arrow" d="M 748 246 H 768"/>
+
+  <rect x="96" y="424" width="768" height="48" rx="24" fill="#ffffff" stroke="#d8d2c8"/>
+  <text x="480" y="454" text-anchor="middle" class="small">What to notice: the cosmic web is not a new kind of object; it is the largest-scale pattern of gravitational growth.</text>
+</svg>

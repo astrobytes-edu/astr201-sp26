@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">Deriving enclosed mass from acceleration balance</title>
+  <desc id="desc">A flow diagram deriving enclosed mass by setting gravitational acceleration equal to centripetal acceleration, substituting the two expressions, and solving for mass.</desc>
+  <defs>
+    <style>
+      .bg { fill: #fbfaf7; }
+      .title { fill: #17161a; font: 750 29px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      .subtitle { fill: #55515d; font: 500 17px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      .box { fill: #ffffff; stroke: #d8d2c8; stroke-width: 1.6; }
+      .teal { fill: #dceef0; stroke: #257180; }
+      .violet { fill: #e7e4f0; stroke: #655d8a; }
+      .pink { fill: #f3e2ea; stroke: #a35c7a; }
+      .gold { fill: #f4ead6; stroke: #b4832f; }
+      .label { fill: #17161a; font: 750 19px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      .math { fill: #17161a; font: 650 20px Georgia, "Times New Roman", serif; }
+      .small { fill: #55515d; font: 500 14px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      .axis { stroke: #55515d; stroke-width: 2.4; fill: none; marker-end: url(#arrowhead); }
+      .orbit { fill: none; stroke: #257180; stroke-width: 3; }
+      .mass { fill: #a35c7a; }
+      .body { fill: #655d8a; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M 0 0 L 10 4 L 0 8 z" fill="#55515d"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="960" height="540"/>
+  <text x="480" y="44" text-anchor="middle" class="title">The mass equation is an acceleration balance</text>
+  <text x="480" y="72" text-anchor="middle" class="subtitle">Circular motion turns a measured speed and radius into enclosed gravitating mass.</text>
+
+  <g transform="translate(64,120)">
+    <circle cx="112" cy="118" r="82" class="orbit"/>
+    <circle cx="112" cy="118" r="18" class="mass"/>
+    <circle cx="178" cy="72" r="11" class="body"/>
+    <path class="axis" d="M 178 72 C 195 92, 204 118, 202 146"/>
+    <path class="axis" d="M 178 72 L 128 106"/>
+    <text x="112" y="226" text-anchor="middle" class="small">gravity bends motion inward</text>
+    <text x="198" y="55" class="small">speed v</text>
+    <text x="132" y="101" class="small">radius r</text>
+  </g>
+
+  <rect class="box teal" x="306" y="118" width="282" height="92" rx="14"/>
+  <text x="447" y="147" text-anchor="middle" class="label">Gravity provides</text>
+  <text x="447" y="178" text-anchor="middle" class="math">a_grav = GM(&lt;r) / r^2</text>
+  <text x="447" y="198" text-anchor="middle" class="small">inward acceleration from enclosed mass</text>
+
+  <rect class="box violet" x="306" y="242" width="282" height="92" rx="14"/>
+  <text x="447" y="271" text-anchor="middle" class="label">Circular motion needs</text>
+  <text x="447" y="302" text-anchor="middle" class="math">a_cent = v^2 / r</text>
+  <text x="447" y="322" text-anchor="middle" class="small">inward acceleration to turn the path</text>
+
+  <path class="axis" d="M 588 164 H 618"/>
+  <path class="axis" d="M 588 288 H 618"/>
+  <rect class="box gold" x="632" y="184" width="250" height="84" rx="14"/>
+  <text x="751" y="214" text-anchor="middle" class="label">Set them equal</text>
+  <text x="757" y="245" text-anchor="middle" class="math">GM(&lt;r) / r^2 = v^2 / r</text>
+
+  <path class="axis" d="M 751 268 V 330"/>
+  <rect class="box pink" x="632" y="346" width="238" height="86" rx="14"/>
+  <text x="751" y="375" text-anchor="middle" class="label">Solve for mass</text>
+  <text x="751" y="407" text-anchor="middle" class="math">M(&lt;r) = r v^2 / G</text>
+
+  <rect x="82" y="468" width="796" height="42" rx="21" fill="#ffffff" stroke="#d8d2c8"/>
+  <text x="480" y="495" text-anchor="middle" class="small">What to notice: the equation is not magic; it is the statement that gravity supplies the centripetal acceleration.</text>
+</svg>

@@ -569,8 +569,8 @@ hubble_law:
     - "$H_0$ is measured, not predicted by this equation"
 
 cosmological_redshift:
-  predicts: "Given emitted and observed wavelengths, it predicts how much the universe expanded while the light traveled."
-  depends: "The redshift factor equals the ratio of today's scale factor to the scale factor when the light was emitted."
+  predicts: "Given emitted and observed wavelengths, it predicts the redshift $z$ and how much the universe expanded while the light traveled."
+  depends: "$z$ is the fractional wavelength increase; the redshift factor $1+z$ equals the ratio of today's scale factor to the scale factor when the light was emitted."
   says: "Cosmological redshift is a stretch record. Light from earlier times has been stretched along with space, so redshift connects observation to cosmic history."
   assumptions:
     - "Redshift is dominated by cosmic expansion, not local Doppler motion"

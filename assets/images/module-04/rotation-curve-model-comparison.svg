@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">Three rotation curve models</title>
+  <desc id="desc">Three side-by-side plots compare a central mass system with falling speed, a luminous disk only model that cannot sustain high outer speeds, and a disk plus dark halo model with an approximately flat outer rotation curve.</desc>
+  <defs>
+    <style>
+      .bg { fill: #fbfaf7; }
+      .title { fill: #17161a; font: 750 29px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      .subtitle { fill: #55515d; font: 500 17px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      .panel { fill: #ffffff; stroke: #d8d2c8; stroke-width: 1.6; }
+      .axis { stroke: #25232a; stroke-width: 2; }
+      .grid { stroke: #e5dfd6; stroke-width: 1; }
+      .light { fill: none; stroke: #b4832f; stroke-width: 5; stroke-linecap: round; }
+      .halo { fill: none; stroke: #655d8a; stroke-width: 5; stroke-linecap: round; }
+      .obs { fill: none; stroke: #257180; stroke-width: 6; stroke-linecap: round; }
+      .label { fill: #17161a; font: 750 18px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      .small { fill: #55515d; font: 500 13px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      .tiny { fill: #55515d; font: 500 12px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    </style>
+  </defs>
+  <rect class="bg" width="960" height="540"/>
+  <text x="480" y="44" text-anchor="middle" class="title">Different mass profiles make different rotation curves</text>
+  <text x="480" y="72" text-anchor="middle" class="subtitle">The dark halo is inferred because visible matter alone does not keep outer speeds high.</text>
+
+  <g transform="translate(48,112)">
+    <rect class="panel" x="0" y="0" width="264" height="308" rx="14"/>
+    <text x="132" y="33" text-anchor="middle" class="label">Central mass</text>
+    <line class="grid" x1="50" y1="82" x2="228" y2="82"/>
+    <line class="grid" x1="50" y1="150" x2="228" y2="150"/>
+    <line class="grid" x1="50" y1="218" x2="228" y2="218"/>
+    <line class="axis" x1="50" y1="250" x2="228" y2="250"/>
+    <line class="axis" x1="50" y1="250" x2="50" y2="62"/>
+    <path class="obs" d="M 62 83 C 82 103, 105 136, 132 169 S 188 221, 218 232"/>
+    <text x="132" y="282" text-anchor="middle" class="small">Solar-System intuition</text>
+    <text x="132" y="300" text-anchor="middle" class="tiny">v falls as radius grows</text>
+  </g>
+
+  <g transform="translate(348,112)">
+    <rect class="panel" x="0" y="0" width="264" height="308" rx="14"/>
+    <text x="132" y="33" text-anchor="middle" class="label">Visible disk only</text>
+    <line class="grid" x1="50" y1="82" x2="228" y2="82"/>
+    <line class="grid" x1="50" y1="150" x2="228" y2="150"/>
+    <line class="grid" x1="50" y1="218" x2="228" y2="218"/>
+    <line class="axis" x1="50" y1="250" x2="228" y2="250"/>
+    <line class="axis" x1="50" y1="250" x2="50" y2="62"/>
+    <path class="light" d="M 60 226 C 84 128, 116 88, 150 125 S 203 207, 220 226"/>
+    <text x="132" y="282" text-anchor="middle" class="small">Light predicts too little</text>
+    <text x="132" y="300" text-anchor="middle" class="tiny">outer speeds should drop</text>
+  </g>
+
+  <g transform="translate(648,112)">
+    <rect class="panel" x="0" y="0" width="264" height="308" rx="14"/>
+    <text x="132" y="33" text-anchor="middle" class="label">Disk plus halo</text>
+    <line class="grid" x1="50" y1="82" x2="228" y2="82"/>
+    <line class="grid" x1="50" y1="150" x2="228" y2="150"/>
+    <line class="grid" x1="50" y1="218" x2="228" y2="218"/>
+    <line class="axis" x1="50" y1="250" x2="228" y2="250"/>
+    <line class="axis" x1="50" y1="250" x2="50" y2="62"/>
+    <path class="light" d="M 60 226 C 84 128, 116 88, 150 125 S 203 207, 220 226" opacity=".42"/>
+    <path class="halo" d="M 60 232 C 92 190, 125 157, 160 132 S 205 104, 222 96" opacity=".78"/>
+    <path class="obs" d="M 60 224 C 86 116, 127 91, 166 95 S 206 98, 222 96"/>
+    <text x="132" y="282" text-anchor="middle" class="small">Observed outer speeds stay high</text>
+    <text x="132" y="300" text-anchor="middle" class="tiny">halo adds mass at large radius</text>
+  </g>
+
+  <text x="50" y="449" class="small">vertical axis: orbital speed v</text>
+  <text x="50" y="471" class="small">horizontal axis: radius r</text>
+  <path class="light" d="M 622 449 H 660"/><text x="670" y="454" class="small">visible matter contribution</text>
+  <path class="halo" d="M 622 476 H 660"/><text x="670" y="481" class="small">dark halo contribution</text>
+  <path class="obs" d="M 622 503 H 660"/><text x="670" y="508" class="small">observed or total curve</text>
+</svg>

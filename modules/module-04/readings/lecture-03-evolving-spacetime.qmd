@@ -38,6 +38,24 @@ This final reading brings the course back to its biggest question: how can we in
 
 By the end, we will connect stars and cosmology into one story. Stars build carbon, oxygen, silicon, iron, and many heavier elements. But most of the hydrogen and helium in the universe were not made in stars. They are relics of the first few minutes.
 
+::: {.callout-note title="What We Mean by Spacetime"}
+**Spacetime** is the combined description of space and time. In everyday life, we often talk as if space is a fixed stage and time is a separate clock. In cosmology, the scale of space changes with cosmic time, so distances between widely separated galaxies and the wavelengths of traveling light can stretch as the universe evolves.
+
+That changing scale is what the **scale factor**, $a(t)$, tracks. When this reading says the universe is an evolving spacetime, it means that cosmic history is encoded in how $a(t)$ changes.
+:::
+
+::: {.callout-note title="Watch: The Vacuum, Fields, and Spacetime"}
+This ScienceClic video is an optional conceptual bridge before the reading turns to redshift, the CMB, and Big Bang nucleosynthesis. As you watch, focus on one careful idea: in modern physics, "vacuum" does not simply mean ordinary empty space with nothing to describe. It is a physical state of fields, and spacetime itself is part of the model we use to describe cosmic history.
+
+For this lecture, you do not need the quantum details. Use the video to sharpen the vocabulary: **space**, **time**, **fields**, and **vacuum** are not just background scenery. They are part of the physical story.
+
+{{< media scienceclic-vacuum-interstellar-quantum >}}
+
+If the embedded player does not appear, open the video directly: [ScienceClic — The Vacuum (From Interstellar to Quantum)](https://youtu.be/3up46ehGz3w?si=wyre2b9Kn71MM8J5).
+:::
+
+{{< fig hot-big-bang-timeline-cnx >}}
+
 ::: {.callout-note title="Reading Map — Choose Your Track"}
 **Track A (Core, ~30 min):** Read **Parts 1–7** in order, including the Hubble-law and redshift equations, Quick Checks, and final exit ticket. This gives you the expansion-history argument.
 
@@ -123,7 +141,13 @@ In Module 1, we learned the Doppler shift: motion along the line of sight stretc
 {{< include ../../../_includes/equations/cosmological-redshift.qmd >}}
 {{< eqrefcard cosmological-redshift >}}
 
-This equation has two parts. The first part says that **$1+z$** is the ratio of observed wavelength to emitted wavelength. If a spectral line was emitted at one wavelength and observed at a longer wavelength, the redshift tells us the stretch factor. The second part connects that stretch to the scale factor **$a$**, which describes the relative size of the universe at a given cosmic time.
+This equation has three connected ways to read the same redshift. The quantity **$z$** is the fractional wavelength increase:
+
+$$
+z = \frac{\lambda_{\text{obs}} - \lambda_{\text{emit}}}{\lambda_{\text{emit}}}.
+$$
+
+The quantity **$1+z$** is the total stretch factor, the ratio of observed wavelength to emitted wavelength. If a spectral line was emitted at one wavelength and observed at a longer wavelength, the redshift tells us how much the wavelength stretched. The final part connects that stretch to the scale factor **$a$**, which describes the relative size of the universe at a given cosmic time.
 
 If we set today's scale factor to **$a_0 = 1$**, then light emitted when the universe had scale factor **$a_{\text{emit}} = 1/2$** is observed with **$1+z = 2$**, or **$z = 1$**. The universe doubled in scale while the light was traveling.
 
@@ -193,7 +217,11 @@ As the universe expanded, it cooled. Eventually electrons combined with nuclei t
 
 {{< fig cmb-map >}}
 
-The CMB is powerful evidence because it is not just "old light." It has the spectrum expected from a hot dense early universe that cooled by expansion. Its tiny temperature variations are also seeds of structure: slightly denser regions that gravity could later amplify into galaxies, clusters, and the cosmic web.
+The CMB is powerful evidence because it is not just "old light." It has the spectrum expected from a hot dense early universe that cooled by expansion.
+
+{{< fig cmb-blackbody-spectrum-cobe >}}
+
+Its tiny temperature variations are also seeds of structure: slightly denser regions that gravity could later amplify into galaxies, clusters, and the cosmic web. The **cosmic web** is the large-scale pattern of filaments, walls, clusters, and voids traced by galaxies today. In this reading, it matters because it connects early-universe physics to the later structure we can map with redshift surveys.
 
 This connects directly back to the previous reading. The cosmic web did not appear from nowhere. It grew from small initial density variations under gravity. Dark matter helped structure grow; ordinary matter later cooled into galaxies and stars within that gravitational scaffolding.
 
@@ -221,9 +249,15 @@ Now we arrive at the course finale: the origin of the first nuclei.
 
 In Module 3, we studied how stars generate energy by fusing light nuclei into heavier ones. Stars make carbon, oxygen, silicon, iron, and many other elements through stellar burning and explosions. But stars did not make most of the universe's hydrogen and helium. Those were already present before the first stars formed.
 
-In the hot early universe, the temperature was high enough for nuclear reactions. As the universe expanded and cooled, protons and neutrons could combine into light nuclei. This era is called **Big Bang nucleosynthesis**. It happened during the first few minutes, before the universe became too cool and too diffuse for those reactions to continue efficiently.
+In the hot early universe, the temperature was high enough for nuclear reactions. As the universe expanded and cooled, protons and neutrons could combine into light **nuclei**. This era is called **Big Bang nucleosynthesis**, or BBN. It happened during the first few minutes, before the universe became too cool and too diffuse for those reactions to continue efficiently.
 
-The result is a universe dominated by hydrogen, with a substantial amount of helium and tiny traces of a few other light nuclei. Heavier elements had to wait for stars.
+{{< fig early-universe-force-unification >}}
+
+This figure reaches beyond what we calculate in ASTR 201, but it shows the larger pattern: as the universe cools, different physical processes become important at different times. For this reading, the key transition is the one we can connect to matter around us: the short window when light nuclei could form.
+
+The main BBN outcome was a universe containing mostly hydrogen nuclei, which are single protons, plus deuterium, helium-3, helium-4, and trace lithium. This is not when neutral atoms formed. BBN made nuclei; neutral atoms formed much later, when the universe cooled enough for electrons to stay bound to nuclei during recombination.
+
+The result is a universe dominated by hydrogen, with a substantial amount of helium and tiny traces of a few other light nuclei. Heavier elements had to wait for stars and stellar remnants.
 
 {{< fig periodic-table-origins >}}
 
@@ -312,13 +346,17 @@ Use these values and ideas unless a problem states otherwise:
 
 ## Glossary
 
-**Big Bang nucleosynthesis:** The formation of light nuclei, especially hydrogen isotopes, helium, and traces of lithium, during the first few minutes of the hot early universe.
+**Big Bang nucleosynthesis:** The formation of light nuclei, especially deuterium, helium-3, helium-4, and traces of lithium, during the first few minutes of the hot early universe. After BBN, most nuclei were still hydrogen nuclei, which are single protons.
 
 **Cosmic microwave background (CMB):** Relic radiation from the early universe, released when the universe became transparent and later stretched into microwave wavelengths.
+
+**Cosmic web:** The large-scale network of galaxy clusters, filaments, walls, and voids that grew from early density differences under gravity.
 
 **Cosmological redshift:** Wavelength stretching caused by the expansion of the universe while light travels.
 
 **Distance ladder:** A chain of distance-measurement methods in which nearby calibrated methods support more distant methods.
+
+**Galaxy cluster:** A gravitationally bound system of many galaxies, hot X-ray-emitting gas, and dark matter.
 
 **Hubble constant ($H_0$):** The present-day expansion rate in Hubble's law, usually written in $\mathrm{km\,s^{-1}\,Mpc^{-1}}$.
 
@@ -329,6 +367,8 @@ Use these values and ideas unless a problem states otherwise:
 **Recombination:** The era when electrons combined with nuclei to form neutral atoms, allowing photons to travel freely.
 
 **Scale factor ($a$):** A quantity that describes the relative size of the universe at a given cosmic time.
+
+**Spacetime:** The combined description of space and time. In cosmology, expanding spacetime means the scale factor changes with time, stretching large-scale distances and the wavelengths of traveling light.
 
 **Standard candle:** An object whose luminosity can be inferred, allowing distance to be estimated from observed flux.
 

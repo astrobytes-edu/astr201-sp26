@@ -1381,6 +1381,20 @@ figures:
     alt: "Hubble tuning fork diagram classifying galaxies into elliptical, lenticular, spiral, barred spiral, and irregular types, illustrated with many galaxy images."
     module: 4
 
+  dynamical-inference-map:
+    path: /assets/images/module-04/dynamical-inference-map.svg
+    caption: "**What to notice:** The same reasoning pattern appears at every scale: identify an observable, choose the gravitational model that connects it to mass, and infer the mass distribution required by the data."
+    alt: "Concept map with four rows for the Galactic center, spiral galaxies, cluster collisions, and the cosmic web. Each row connects an observable to a gravity model and then to an inferred mass distribution."
+    credit: "Course illustration (A. Rosen)"
+    module: 4
+
+  enclosed-mass-derivation-flow:
+    path: /assets/images/module-04/enclosed-mass-derivation-flow.svg
+    caption: "**What to notice:** The enclosed-mass equation comes from an acceleration balance. Gravity supplies the inward acceleration needed for circular motion, and solving that balance gives $M(<r)=rv^2/G$."
+    alt: "Flow diagram showing a small object in circular orbit, gravitational acceleration, centripetal acceleration, the equality between them, and the solved enclosed-mass equation."
+    credit: "Course illustration (A. Rosen)"
+    module: 4
+
   keplerian-rotation-curve-solar-system:
     path: /assets/images/module-04/keplerian-rotation-curve-solar-system.svg
     caption: "**What to notice:** In a central-mass system like the Solar System, orbital speed falls with distance. This is the prediction that fails for the outer parts of spiral galaxies."
@@ -1404,6 +1418,20 @@ figures:
     path: /assets/images/module-04/rotation-curve-dark-matter1.jpg
     caption: "**What to notice:** The observed rotation curve stays flat while the curve predicted from visible matter declines. The gap is the evidence a dark matter halo is meant to explain."
     alt: "Diagram comparing an observed flat galaxy rotation curve with an expected declining curve from observed luminosity, overlaid on an image of a spiral galaxy."
+    module: 4
+
+  flat-speed-rising-mass:
+    path: /assets/images/module-04/flat-speed-rising-mass.svg
+    caption: "**What to notice:** A flat speed curve is not a flat mass curve. If orbital speed stays approximately constant while radius increases, then the enclosed mass must keep rising roughly in proportion to radius."
+    alt: "Two-panel teaching plot. The top panel shows orbital speed staying nearly constant with radius, while the bottom panel shows enclosed mass rising with radius for the same flat speed curve."
+    credit: "Course illustration (A. Rosen)"
+    module: 4
+
+  rotation-curve-model-comparison:
+    path: /assets/images/module-04/rotation-curve-model-comparison.svg
+    caption: "**What to notice:** A central mass gives falling speeds, visible matter alone cannot sustain high outer speeds, and adding an extended halo produces the approximately flat outer rotation curve we observe."
+    alt: "Three side-by-side model rotation curves comparing a central mass system, a visible disk only model, and a disk plus dark halo model with high outer orbital speeds."
+    credit: "Course illustration (A. Rosen)"
     module: 4
 
   s-stars-orbits:
@@ -1439,11 +1467,39 @@ figures:
     credit: "NASA/CXC/STScI/ESO"
     module: 4
 
+  bullet-cluster-component-schematic:
+    path: /assets/images/module-04/bullet-cluster-component-schematic.svg
+    caption: "**What to notice:** The simplified schematic separates the three tracers: galaxies pass through, hot gas collides and lags, and lensing mass peaks remain offset from the gas."
+    alt: "Simplified Bullet Cluster schematic showing optical galaxies and lensing mass peaks on the left and right, while X-ray gas is concentrated closer to the collision center."
+    credit: "Course illustration (A. Rosen)"
+    module: 4
+
   bullet-cluster-jwst-chandra:
     path: /assets/images/module-04/bullet-cluster-jwst-chandra.png
     caption: "**What to notice:** Multiple observatories separate different components of the same collision: galaxies, hot gas, and gravitational mass. The model has to explain all three at once."
     alt: "Wide composite image of the Bullet Cluster combining JWST and Chandra data, showing colliding clusters with hot gas and lensing structures across a large field."
     credit: "NASA/ESA/CSA/STScI/CXC"
+    module: 4
+
+  gravitational-lensing-cluster-diagram:
+    path: /assets/images/module-04/gravitational-lensing-diagram-esa.jpg
+    caption: "**What to notice:** A galaxy cluster acts like a gravitational lens. The cluster's mass bends light from a more distant background galaxy, so one source can appear as multiple stretched or distorted images."
+    alt: "Diagram of gravitational lensing by a galaxy cluster, showing light rays from a distant galaxy bent around the cluster and arriving at Earth as distorted lensed images."
+    credit: "User-provided course asset"
+    module: 4
+
+  galaxy-cluster-strong-lensing:
+    path: /assets/images/module-04/grav-lens-galaxy-cluster-hubble.webp
+    caption: "**What to notice:** The bright yellow galaxies belong to a foreground cluster, while the blue curved arcs are lensed images of more distant background galaxies. The arcs reveal the cluster's total gravitating mass, including dark matter."
+    alt: "Hubble image of a galaxy cluster with several bright foreground galaxies and curved blue arcs produced by strong gravitational lensing of background galaxies."
+    credit: "User-provided course asset"
+    module: 4
+
+  cosmic-structure-scale-ladder:
+    path: /assets/images/module-04/cosmic-structure-scale-ladder.svg
+    caption: "**What to notice:** Large-scale structure is hierarchical. Galaxies sit inside groups and clusters, clusters connect along filaments, and filaments surround large voids in the cosmic web."
+    alt: "Scale ladder diagram showing galaxy, group, cluster, filament, and cosmic web or void scales as increasingly large gravitational structures."
+    credit: "Course illustration (A. Rosen)"
     module: 4
 
   desi-cosmic-web:
@@ -1512,6 +1568,27 @@ figures:
     alt: "Planck satellite all-sky map of the Cosmic Microwave Background in Mollweide projection. Colors show tiny temperature fluctuations: blue regions are slightly cooler, red/orange regions slightly warmer than the 2.725 K average."
     credit: "ESA/Planck Collaboration"
     module: 1
+
+  cmb-blackbody-spectrum-cobe:
+    path: /assets/images/module-04/CNX_UPhysics_44_07_COBEPlot (1).jpg
+    caption: "**What to notice:** The CMB spectrum follows a nearly perfect 2.73 K blackbody curve. This is why the CMB is evidence for a hot, dense early universe that cooled by expansion, not just a collection of old photons."
+    alt: "Plot of cosmic microwave background intensity versus frequency and wavelength, with measurements from several instruments closely following a 2.73 K blackbody curve."
+    credit: "User-provided course asset"
+    module: 4
+
+  hot-big-bang-timeline-cnx:
+    path: /assets/images/module-04/CNX_UPhysics_44_07_Evolution.jpg
+    caption: "**What to notice:** The early universe changes state as it expands and cools. Nucleosynthesis happens early, the cosmic microwave background is released later when atoms form, and stars and galaxies appear much later."
+    alt: "Timeline diagram of the universe from the Big Bang to today, labeling inflation, particle formation, nucleosynthesis, the cosmic microwave background, first stars and galaxies, and the present."
+    credit: "User-provided course asset"
+    module: 4
+
+  early-universe-force-unification:
+    path: /assets/images/module-04/CNX_UPhysics_44_07_Unification (1).jpg
+    caption: "**What to notice:** In very early-universe physics, temperature and particle energy set which interactions matter. This figure is an optional big-picture reminder that cosmology connects expansion history to high-energy physics."
+    alt: "Diagram showing particle energy, universe temperature, and time after the Big Bang, with the strong nuclear, electromagnetic, weak nuclear, and gravitational forces separating across early cosmic history."
+    credit: "User-provided course asset"
+    module: 4
 
   # ==============================================================
   # Lecture 03: Gravity and Orbits (cococubed diagrams)

@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">Bullet Cluster component separation schematic</title>
+  <desc id="desc">A simplified Bullet Cluster schematic showing galaxies and lensing mass peaks on the left and right after a collision, while the X-ray gas is slowed and concentrated nearer the center.</desc>
+  <defs>
+    <style>
+      .bg { fill: #fbfaf7; }
+      .title { fill: #17161a; font: 750 29px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      .subtitle { fill: #55515d; font: 500 17px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      .panel { fill: #ffffff; stroke: #d8d2c8; stroke-width: 1.6; }
+      .gas { fill: #a35c7a; opacity: .58; stroke: #7a455c; stroke-width: 2; }
+      .mass { fill: #257180; opacity: .34; stroke: #1c5560; stroke-width: 3; }
+      .gal { fill: #26242b; opacity: .78; }
+      .arrow { stroke: #655d8a; stroke-width: 4; fill: none; marker-end: url(#arrowhead); }
+      .label { fill: #17161a; font: 750 18px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      .small { fill: #55515d; font: 500 14px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      .legend { fill: #ffffff; stroke: #d8d2c8; stroke-width: 1.3; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M 0 0 L 10 4 L 0 8 z" fill="#655d8a"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="960" height="540"/>
+  <text x="480" y="44" text-anchor="middle" class="title">Why the Bullet Cluster is a clean stress test</text>
+  <text x="480" y="72" text-anchor="middle" class="subtitle">After a collision, gas slows down; galaxies and most gravitating mass pass through more easily.</text>
+  <rect class="panel" x="70" y="112" width="820" height="320" rx="18"/>
+
+  <ellipse class="mass" cx="284" cy="266" rx="126" ry="88"/>
+  <ellipse class="mass" cx="676" cy="266" rx="126" ry="88"/>
+  <ellipse class="gas" cx="438" cy="268" rx="138" ry="72"/>
+  <ellipse class="gas" cx="536" cy="260" rx="102" ry="58"/>
+
+  <g>
+    <circle class="gal" cx="250" cy="226" r="6"/><circle class="gal" cx="286" cy="250" r="5"/><circle class="gal" cx="316" cy="288" r="7"/>
+    <circle class="gal" cx="220" cy="284" r="4"/><circle class="gal" cx="342" cy="232" r="4"/><circle class="gal" cx="272" cy="318" r="5"/>
+    <circle class="gal" cx="640" cy="230" r="5"/><circle class="gal" cx="692" cy="248" r="7"/><circle class="gal" cx="724" cy="292" r="5"/>
+    <circle class="gal" cx="626" cy="306" r="4"/><circle class="gal" cx="746" cy="224" r="4"/><circle class="gal" cx="670" cy="326" r="6"/>
+  </g>
+
+  <path class="arrow" d="M 326 150 C 384 128, 434 128, 492 150"/>
+  <path class="arrow" d="M 634 150 C 576 128, 526 128, 468 150"/>
+  <text x="480" y="132" text-anchor="middle" class="small">collision axis</text>
+
+  <text x="284" y="390" text-anchor="middle" class="label">lensing mass peak</text>
+  <text x="676" y="390" text-anchor="middle" class="label">lensing mass peak</text>
+  <text x="488" y="224" text-anchor="middle" class="label">X-ray gas</text>
+  <text x="488" y="246" text-anchor="middle" class="small">collides, shocks, slows</text>
+
+  <rect class="legend" x="124" y="452" width="712" height="56" rx="18"/>
+  <circle cx="166" cy="480" r="8" class="gal"/><text x="184" y="485" class="small">optical galaxies</text>
+  <ellipse cx="340" cy="480" rx="18" ry="10" class="gas"/><text x="366" y="485" class="small">hot X-ray gas</text>
+  <ellipse cx="550" cy="480" rx="22" ry="12" class="mass"/><text x="582" y="485" class="small">lensing mass map</text>
+</svg>

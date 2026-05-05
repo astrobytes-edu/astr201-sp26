@@ -36,6 +36,8 @@ This reading is about dynamics: how motion reveals mass. You already know the co
 
 The method is still **observe → model → infer**. We observe positions, velocities, redshifts, or lensing patterns. We model them with gravity. Then we infer masses, dark matter, compact objects, and the architecture of large-scale structure.
 
+{{< fig dynamical-inference-map >}}
+
 ::: {.callout-note title="Reading Map — Choose Your Track"}
 **Track A (Core, ~30 min):** Read **Parts 1–6** in order, including the enclosed-mass equation, Quick Checks, and exit ticket. This gives you the gravitational inference chain for galaxies, black holes, clusters, and the cosmic web.
 
@@ -70,16 +72,62 @@ Because the Milky Way and Andromeda are in a gravitationally bound local system.
 
 ## Part 2: Motion Weighs What Light Cannot Show
 
-The central equation for this reading comes from circular motion. If an object moves in a nearly circular orbit, gravity supplies the inward acceleration. Equating gravitational acceleration with centripetal acceleration gives a way to infer enclosed mass:
+The central equation for this reading comes from circular motion. Imagine a small object orbiting at radius $r$ with speed $v$. If gravity is the force bending that motion into a circle, then the inward gravitational acceleration must match the inward acceleration required for circular motion.
+
+For a roughly spherical mass distribution, the gravitational acceleration at radius $r$ depends on the mass enclosed inside that radius:
+
+$$
+a_{\text{grav}} = \frac{G M(<r)}{r^2}.
+$$
+
+The centripetal acceleration needed to keep an object moving in a circle is
+
+$$
+a_{\text{cent}} = \frac{v^2}{r}.
+$$
+
+For a circular orbit supported by gravity, these accelerations are equal:
+
+$$
+a_{\text{grav}} = a_{\text{cent}}.
+$$
+
+Substitute the two expressions:
+
+$$
+\frac{G M(<r)}{r^2} = \frac{v^2}{r}.
+$$
+
+Now multiply both sides by $r^2$:
+
+$$
+G M(<r) = r v^2.
+$$
+
+Finally, divide both sides by $G$:
 
 {{< include ../../../_includes/equations/enclosed-mass-circular-speed.qmd >}}
 {{< eqrefcard enclosed-mass-circular-speed >}}
 
 Let's read this equation like a sentence. **$M(<r)$** is the mass enclosed inside radius **$r$**. The speed **$v$** is the orbital speed at that radius, and **$G$** is the gravitational constant. The equation says that if you measure an orbital speed at some radius, you can infer how much mass must lie inside that orbit.
 
-The scaling is the important part. Mass grows as **$r v^2$**. If the orbital speed stays the same while radius increases, then the enclosed mass must keep increasing roughly in proportion to radius. That one sentence is the key to galaxy rotation curves.
+The scaling is the important part. The equality sign in $M(<r) = r v^2/G$ belongs to the idealized circular-orbit model. The approximately-equal sign, $\approx$, is what we should reach for when applying the model to real systems that are close to, but not exactly, ideal. The proportionality sign, $\propto$, is for scaling arguments where we care about how one quantity changes when another changes.
 
-We should also state the assumptions. This equation is cleanest for circular orbits and approximately spherical mass distributions. Real galaxy disks are not perfectly spherical, and detailed models are more complicated. But the equation captures the essential inference: **fast motion at large radius requires mass at large radius**.
+For this equation,
+
+$$
+M(<r) \propto r v^2.
+$$
+
+At fixed radius, increasing the speed increases the mass as $v^2$. At fixed speed, increasing the radius increases the enclosed mass in proportion to $r$. That one scaling statement is the key to galaxy rotation curves.
+
+{{< fig enclosed-mass-derivation-flow >}}
+
+::: {.callout-important title="Assumptions Behind the Equation"}
+This equation is cleanest when the orbit is approximately circular, gravity supplies the inward acceleration, and the mass distribution is spherical enough that the enclosed-mass approximation is useful.
+
+Real galaxy disks are not spherical, and detailed models separate disks, bulges, gas, and halos. The equation is still powerful because it captures the essential inference: **fast motion at large radius requires substantial gravitating mass at large radius**.
+:::
 
 ::: {.callout-note title="Units Sanity Check"}
 The right side has units:
@@ -102,6 +150,8 @@ Now apply the same idea to the center of the Milky Way. Near the Galactic center
 
 The observation is motion. The model is gravity. The inference is mass. The S-star orbits require about four million solar masses packed into a region far smaller than a normal star cluster could occupy stably. That compact mass is Sagittarius A*, the Milky Way's central supermassive black hole.
 
+The simple circular-speed equation is not how the final S-star mass is measured. Real S-star orbits are elliptical, and the best fits use the full orbital shape, timing, and, for the closest stars, relativistic corrections. The transferable idea is the gravitational principle: faster motion close to a common focus requires a large compact enclosed mass.
+
 The Event Horizon Telescope gives a different kind of evidence. It does not replace the orbital argument; it complements it by imaging plasma near the event-horizon scale.
 
 {{< fig sgr-a-polarized-eht >}}
@@ -122,15 +172,77 @@ The observable is the motion of stars orbiting near the Galactic center. The mod
 
 Now move from the central black hole to the entire disk of a galaxy. The Solar System gives us a useful expectation. Nearly all of the Solar System's mass is in the Sun. As you move outward from the Sun, the enclosed mass barely changes. The orbital speed therefore decreases with distance.
 
+You can see that directly from the same equation. Start with
+
+$$
+M(<r) = \frac{r v^2}{G}.
+$$
+
+Solve for $v^2$:
+
+$$
+v^2 = \frac{G M(<r)}{r}.
+$$
+
+For the Solar System outside the Sun, the enclosed mass is approximately constant:
+
+$$
+M(<r) \approx M_\odot.
+$$
+
+That means
+
+$$
+v^2 \propto \frac{1}{r},
+$$
+
+so
+
+$$
+v \propto r^{-1/2}.
+$$
+
+In a central-mass system, larger-radius orbits move more slowly.
+
 {{< fig keplerian-rotation-curve-solar-system >}}
 
 That falling curve is what we would expect if most of a galaxy's mass were concentrated where most of its light is. Spiral galaxies have bright stellar disks. If the visible disk contained most of the mass, then stars and gas far from the center should orbit more slowly, much like outer planets orbit the Sun more slowly than inner planets.
+
+{{< fig rotation-curve-model-comparison >}}
 
 But that is not what we observe.
 
 {{< fig milky-way-rotation-curve >}}
 
 The Milky Way's rotation curve stays roughly flat over a large range of radius. Gas and stars far from the Galactic center orbit faster than the visible matter alone would predict. The simplest interpretation is that the enclosed mass keeps increasing with radius, even where the visible light becomes faint.
+
+Here the word "flat" needs careful math grammar. A flat rotation curve means the speed is approximately constant:
+
+$$
+v(r) \approx \text{constant}.
+$$
+
+Put that into the enclosed-mass scaling:
+
+$$
+M(<r) \propto r v^2.
+$$
+
+If $v$ is approximately constant, then $v^2$ is also approximately constant, so
+
+$$
+M(<r) \propto r.
+$$
+
+The speed curve is flat, but the enclosed-mass curve rises.
+
+{{< fig flat-speed-rising-mass >}}
+
+::: {.callout-important title="Assumptions When Applying This to Galaxy Disks"}
+The circular-speed equation is a first-pass dynamical inference, not a full galaxy model. Real rotation-curve fits include the stellar disk, central bulge, gas, dark halo, viewing angle, and possible non-circular motions.
+
+The robust qualitative point survives those complications: if measured orbital speeds stay high at large radius, the gravitating mass cannot be confined only to the bright inner galaxy.
+:::
 
 External galaxies show the same pattern.
 
@@ -143,7 +255,7 @@ This matters because it turns dark matter from a one-galaxy oddity into a popula
 The term **dark matter** is a name for the inferred gravitating component that does not emit, absorb, or scatter enough light for us to see directly. The word "dark" does not mean mysterious magic. It means electromagnetically dark: visible through gravity, not through ordinary light. We infer it because the gravitational model requires more mass than the luminous matter provides.
 
 ::: {.callout-warning}
-## Misconception Check: "Flat rotation curve means nothing changes."
+## Misconception Check: Flat speed is not flat mass
 
 "Flat" describes the speed curve, not the mass curve. If $v$ stays approximately constant while $r$ increases, then
 
@@ -151,7 +263,7 @@ $$
 M(<r) = \frac{rv^2}{G}
 $$
 
-keeps increasing with radius. The surprise is not that the outer galaxy is motionless. The surprise is that objects far from the bright disk still orbit quickly, which means mass extends well beyond the light.
+keeps increasing with radius. The surprise is not that the outer galaxy is motionless. The surprise is that objects far from the bright disk still orbit quickly, which means gravitating mass extends well beyond the light.
 :::
 
 ::: {.quiz}
@@ -200,9 +312,19 @@ The black hole itself emits no light from inside the event horizon. The brightne
 
 ## Part 5: Dark Matter Beyond Spiral Galaxies
 
-Rotation curves are powerful, but they are not the only evidence for dark matter. A different kind of test comes from galaxy clusters. Clusters contain galaxies, hot gas, and dark matter. The hot gas emits X-rays. The total gravitating mass can be mapped through gravitational lensing, which measures how mass bends the paths of light from background galaxies.
+Rotation curves are powerful, but they are not the only evidence for dark matter. A different kind of test comes from **galaxy clusters**.
+
+A galaxy cluster is a large gravitationally bound system containing many galaxies, a huge reservoir of hot diffuse gas, and dark matter. The galaxies are the easiest component to see in optical light, but they are not most of the cluster's ordinary matter. Much of the ordinary matter is hot intracluster gas, which emits X-rays. The total gravitating mass can be mapped through **gravitational lensing**, which measures how mass bends the paths of light from background galaxies.
+
+{{< fig gravitational-lensing-cluster-diagram >}}
+
+Real cluster images show the same idea in a less schematic way. The cluster galaxies act together as a lens, distorting more distant background galaxies into arcs and streaks.
+
+{{< fig galaxy-cluster-strong-lensing >}}
 
 The Bullet Cluster is famous because it gives a clean visual separation between components.
+
+{{< fig bullet-cluster-component-schematic >}}
 
 {{< fig bullet-cluster-composite >}}
 
@@ -224,6 +346,14 @@ Rotation curves alone are not the whole dark matter argument. Any alternative mo
 **Inference:** most of the gravitating mass is not ordinary hot gas.
 :::
 
+::: {.callout-warning}
+## Misconception Check: The Bullet Cluster is not just a dramatic picture
+
+The colors in the composite image are not the evidence by themselves. The evidence comes from comparing three tracers: optical galaxies, X-ray-emitting gas, and the lensing map of total gravitating mass.
+
+The model must explain why the collisional gas is spatially separated from the strongest lensing signal. The inference is not simply "there is something dark here." It is that most of the gravitating mass behaves differently from ordinary hot gas during the collision.
+:::
+
 ::: {.callout-note title="Quick Check 5"}
 Why does the Bullet Cluster provide a different kind of evidence than a spiral-galaxy rotation curve?
 :::
@@ -236,7 +366,11 @@ A rotation curve uses orbital speeds to infer mass inside a galaxy. The Bullet C
 
 ## Part 6: Gravity Builds the Large-Scale Universe
 
-The final scale in this reading is larger than a galaxy or a cluster. Redshift surveys map the positions of huge numbers of galaxies in three dimensions. When we do this, galaxies do not appear randomly sprinkled through space. They form a cosmic web: filaments, walls, clusters, and voids.
+The final scale in this reading is larger than a galaxy or a cluster. Redshift surveys map the positions of huge numbers of galaxies in three dimensions. When we do this, galaxies do not appear randomly sprinkled through space. They form the **cosmic web**: a large-scale network of filaments, walls, clusters, and voids.
+
+The phrase **large-scale structure** refers to this pattern of matter on scales much larger than individual galaxies. Galaxies and clusters collect along filaments and walls, while large underdense regions become voids. The cosmic web is therefore not just a beautiful map. It is evidence that gravity has amplified small early density differences into the structure we observe today.
+
+{{< fig cosmic-structure-scale-ladder >}}
 
 {{< fig desi-cosmic-web >}}
 
@@ -250,6 +384,141 @@ Why is the cosmic web evidence for gravity acting over cosmic time, rather than 
 
 ::: {.callout-note collapse="true" title="Answer"}
 The web is a large-scale pattern of clusters, filaments, walls, and voids. Such structure is modeled as growth from small density differences under gravity. Galaxies trace that structure today, but the pattern records the history of gravitational growth.
+:::
+
+## Worked Example: Weighing a Galaxy
+
+Suppose gas orbits in a galaxy at radius
+
+$$
+r = 20 \ \text{kpc}
+$$
+
+with orbital speed
+
+$$
+v = 220 \ \text{km s}^{-1}.
+$$
+
+Estimate the enclosed mass using
+
+$$
+M(<r) = \frac{r v^2}{G}.
+$$
+
+Use CGS units:
+
+$$
+1 \ \text{kpc} = 3.086 \times 10^{21} \ \text{cm},
+$$
+
+$$
+1 \ \text{km s}^{-1} = 10^5 \ \text{cm s}^{-1},
+$$
+
+$$
+G = 6.674 \times 10^{-8} \ \text{cm}^3 \ \text{g}^{-1} \ \text{s}^{-2},
+$$
+
+and
+
+$$
+M_\odot = 2.0 \times 10^{33} \ \text{g}.
+$$
+
+First convert the radius:
+
+$$
+r
+=
+20 \ \text{kpc}
+\left(
+\frac{3.086 \times 10^{21} \ \text{cm}}{1 \ \text{kpc}}
+\right)
+=
+6.172 \times 10^{22} \ \text{cm}.
+$$
+
+Now convert the speed:
+
+$$
+v
+=
+220 \ \text{km s}^{-1}
+\left(
+\frac{10^5 \ \text{cm s}^{-1}}{1 \ \text{km s}^{-1}}
+\right)
+=
+2.20 \times 10^7 \ \text{cm s}^{-1}.
+$$
+
+Square the speed:
+
+$$
+v^2
+=
+\left(2.20 \times 10^7 \ \text{cm s}^{-1}\right)^2
+=
+4.84 \times 10^{14} \ \text{cm}^2 \ \text{s}^{-2}.
+$$
+
+Now substitute:
+
+$$
+M(<r)
+=
+\frac{
+\left(6.172 \times 10^{22} \ \text{cm}\right)
+\left(4.84 \times 10^{14} \ \text{cm}^2 \ \text{s}^{-2}\right)
+}
+{6.674 \times 10^{-8} \ \text{cm}^3 \ \text{g}^{-1} \ \text{s}^{-2}}.
+$$
+
+The numerator is
+
+$$
+2.99 \times 10^{37} \ \text{cm}^3 \ \text{s}^{-2}.
+$$
+
+Therefore,
+
+$$
+M(<r)
+\approx
+4.48 \times 10^{44} \ \text{g}.
+$$
+
+Convert to solar masses:
+
+$$
+M(<r)
+=
+4.48 \times 10^{44} \ \text{g}
+\left(
+\frac{1 M_\odot}{2.0 \times 10^{33} \ \text{g}}
+\right)
+\approx
+2.2 \times 10^{11} M_\odot.
+$$
+
+So the enclosed mass is
+
+$$
+\boxed{M(<20 \ \text{kpc}) \approx 2.2 \times 10^{11} M_\odot}.
+$$
+
+::: {.callout-important title="What This Number Means"}
+This is a dynamical mass: the amount of gravitating matter required to produce the measured motion under the model assumptions. It is not automatically the mass in stars. To separate stars, gas, black holes, and dark matter, astronomers compare the dynamical mass to the mass traced by light, gas emission, and other observables.
+:::
+
+## Synthesis: One Pattern, Many Scales
+
+The dark-matter argument is strong because it is not balanced on one observation. Galaxy rotation curves infer extended mass from orbital speeds. Cluster collisions compare X-ray gas to gravitational lensing maps. The cosmic web tests whether gravity can grow the observed pattern of filaments, clusters, and voids over cosmic time.
+
+Those are different observables and different models, but they point toward the same broad conclusion: visible matter is not the whole gravitating matter budget.
+
+::: {.callout-important title="Main Takeaway"}
+Dark matter is a convergent inference. It is built from multiple gravitational measurements, not from a single rotation curve or a single famous image.
 :::
 
 ## Practice Problems
@@ -325,7 +594,11 @@ Use these values and ideas unless a problem states otherwise:
 
 **Flat rotation curve:** A galaxy rotation curve in which orbital speed stays roughly constant with radius.
 
+**Galaxy cluster:** A gravitationally bound system of many galaxies, hot X-ray-emitting intracluster gas, and dark matter.
+
 **Gravitational lensing:** Bending of light by mass, used to map total gravitating matter whether or not it emits light.
+
+**Large-scale structure:** The distribution of matter on scales larger than individual galaxies, including galaxy groups, clusters, filaments, walls, and voids.
 
 **Local Group:** The gravitationally bound galaxy group containing the Milky Way, Andromeda, Triangulum, and many dwarf galaxies.
 
