@@ -259,6 +259,8 @@ website:
             href: exams/astr201-Midterm2-solutions.pdf
           - text: "Formula Sheet — Midterm 2"
             href: handouts/formula-sheets/FormulaSheet-Midterm2-SP26.pdf
+          - text: "Formula Sheet — Final"
+            href: handouts/formula-sheets/FormulaSheet-Final-SP26.pdf
 
       - section: "Explore"
         contents:
